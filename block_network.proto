@@ -8,10 +8,10 @@ import "google/protobuf/timestamp.proto";
 
 service Service {
     rpc Heartbeat(Request) returns (Response) {}
-    rpc Invite(NetworkServiceRequest) returns (NetworkServiceResponse) {}
-    rpc Accept(NetworkServiceRequest) returns (NetworkServiceResponse) {}
-    rpc GetConnections(NetworkServiceRequest) returns (NetworkServiceResponse) {}
-    rpc Remove(NetworkServiceRequest) returns (NetworkServiceResponse) {}
+    rpc Invite(NetworkRequest) returns (NetworkResponse) {}
+    rpc Accept(NetworkRequest) returns (NetworkResponse) {}
+    rpc GetConnections(NetworkRequest) returns (NetworkResponse) {}
+    rpc Remove(NetworkRequest) returns (NetworkResponse) {}
 }
 
 message NetworkRequest {
