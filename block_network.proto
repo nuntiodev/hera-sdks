@@ -14,6 +14,12 @@ service Service {
     rpc Remove(NetworkRequest) returns (NetworkResponse) {}
 }
 
+enum ConnectionStatus {
+    CONNECTION_SENT = 0;
+    CONNECTION_ACCEPTED = 1;
+    CONNECTION_DECLINED = 2;
+}
+
 message NetworkRequest {
     Connection connection = 1;
     ConnectionQuery query = 2;
@@ -36,11 +42,12 @@ message ConnectionQuery {
 }
 
 message Connection {
-    string idFrom = 1;
-    string idTo = 2;
-    bool accepted = 3;
-    google.protobuf.Timestamp sendAt = 4;
-    google.protobuf.Timestamp acceptedAt = 5;
+    string id = 1;
+    string idFrom = 2;
+    string idTo = 3;
+    ConnectionStatus status = 4;
+    google.protobuf.Timestamp sentAt = 5;
+    google.protobuf.Timestamp acceptedAt = 6;
 }
 
 message Request {}
