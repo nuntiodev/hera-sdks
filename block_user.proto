@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package BlockUser;
+
+option go_package = "./go_block/block_user";
+
+import "google/protobuf/timestamp.proto";
+
+service Service {
+    rpc Heartbeat(Request) returns (Response) {}
+    rpc Create(UserRequest) returns (UserResponse) {}
+    rpc UpdatePassword(UserRequest) returns (UserResponse) {}
+    rpc UpdateEmail(UserRequest) returns (UserResponse) {}
+    rpc UpdateProfile(UserRequest) returns (UserResponse) {}
+    rpc UpdateNamespace(UserRequest) returns (UserResponse) {}
+    rpc Get(UserRequest) returns (UserResponse) {}
+    rpc GetAll(UserRequest) returns (UserResponse) {}
+    rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
+    rpc Delete(UserRequest) returns (UserResponse) {}
+    rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
+}
+
+enum Gender {
+    INVALID_GENDER = 0;
+    MALE = 1;
+    FEMALE = 2;
+    OTHER = 3;
+}
+
+message User {
+    string id = 1;
+    string namespace = 2;
+    string role = 3;
+    string name = 4;
+    string email = 5;
+    string password = 6;
+    Gender gender = 7;
+    string country = 8;
+    string image = 9;
+    bool blocked = 10;
+    google.protobuf.Timestamp birthdate = 11;
+	google.protobuf.Timestamp createdAt = 12;
+    google.protobuf.Timestamp updatedAt = 13;
+}
+
+message UserRequest {
+    User user = 1;
+    User update = 2;
+    UserFilter filter = 3;
+    string namespace = 4;
+}
+
+message UserFilter {
+    enum SortBy {
+        CREATED_AT = 0;
+        UPDATE_AT = 1;
+        BIRTHDATE = 2;
+        NAME = 3;
+        EMAIL = 4;
+    }
+    enum Order {
+        INC = 0;
+        DEC = 1;
+    }
+    int32 from = 1;
+    int32 to = 2;
+    SortBy sort = 3;
+    Order order = 4;
+    string namespace = 5;
+    string search = 6;
+}
+
+message UserResponse {
+    User user = 1;
+    repeated User users = 2;
+}
+
+message Request {}
+
+message Response {
+    string msg = 1;
+}

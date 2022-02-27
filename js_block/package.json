@@ -1,0 +1,19 @@
+{
+  "name": "js_softcorp",
+  "version": "0.0.14",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softcorp-io/softcorp-proto.git"
+  },
+  "author": "softcorp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/softcorp-io/softcorp-proto/issues"
+  },
+  "homepage": "https://github.com/softcorp-io/softcorp-proto#readme"
+}

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package BlockNetwork;
+
+option go_package = "./go_block/block_network";
+
+import "google/protobuf/timestamp.proto";
+
+service Service {
+    rpc Heartbeat(Request) returns (Response) {}
+    rpc Invite(NetworkServiceRequest) returns (NetworkServiceResponse) {}
+    rpc Accept(NetworkServiceRequest) returns (NetworkServiceResponse) {}
+    rpc GetConnections(NetworkServiceRequest) returns (NetworkServiceResponse) {}
+    rpc Remove(NetworkServiceRequest) returns (NetworkServiceResponse) {}
+}
+
+message NetworkRequest {
+    Connection connection = 1;
+    ConnectionQuery query = 2;
+    bool accept = 3;
+}
+
+message NetworkResponse {
+    Connection connection = 1;
+}
+
+message ConnectionQuery {
+    enum Filter {
+        ALL = 0;
+        ONLY_ACCEPTED = 1;
+        ONLY_NOT_ACCEPTED = 2;
+    }
+    string userId = 1;
+    string namespace = 2;
+    Filter filter = 3;
+}
+
+message Connection {
+    string idFrom = 1;
+    string idTo = 2;
+    bool accepted = 3;
+    google.protobuf.Timestamp sendAt = 4;
+    google.protobuf.Timestamp acceptedAt = 5;
+}
+
+message Request {}
+
+message Response {
+    string msg = 1;
+}
