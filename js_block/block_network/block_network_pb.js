@@ -26,6 +26,7 @@ goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.BlockNetwork.Connection', null, global);
 goog.exportSymbol('proto.BlockNetwork.ConnectionQuery', null, global);
 goog.exportSymbol('proto.BlockNetwork.ConnectionQuery.Filter', null, global);
+goog.exportSymbol('proto.BlockNetwork.ConnectionStatus', null, global);
 goog.exportSymbol('proto.BlockNetwork.NetworkRequest', null, global);
 goog.exportSymbol('proto.BlockNetwork.NetworkResponse', null, global);
 goog.exportSymbol('proto.BlockNetwork.Request', null, global);
@@ -770,10 +771,11 @@ proto.BlockNetwork.Connection.prototype.toObject = function(opt_includeInstance)
  */
 proto.BlockNetwork.Connection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idfrom: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    idto: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    accepted: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    sendat: (f = msg.getSendat()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    idfrom: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    idto: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    sentat: (f = msg.getSentat()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     acceptedat: (f = msg.getAcceptedat()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
@@ -813,22 +815,26 @@ proto.BlockNetwork.Connection.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setIdfrom(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setIdto(value);
+      msg.setIdfrom(value);
       break;
     case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAccepted(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIdto(value);
       break;
     case 4:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setSendat(value);
+      var value = /** @type {!proto.BlockNetwork.ConnectionStatus} */ (reader.readEnum());
+      msg.setStatus(value);
       break;
     case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setSentat(value);
+      break;
+    case 6:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setAcceptedat(value);
@@ -862,31 +868,38 @@ proto.BlockNetwork.Connection.prototype.serializeBinary = function() {
  */
 proto.BlockNetwork.Connection.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIdfrom();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getIdto();
+  f = message.getIdfrom();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getAccepted();
-  if (f) {
-    writer.writeBool(
+  f = message.getIdto();
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
-  f = message.getSendat();
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
+  f = message.getSentat();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -894,7 +907,7 @@ proto.BlockNetwork.Connection.serializeBinaryToWriter = function(message, writer
   f = message.getAcceptedat();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -903,10 +916,10 @@ proto.BlockNetwork.Connection.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional string idFrom = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.BlockNetwork.Connection.prototype.getIdfrom = function() {
+proto.BlockNetwork.Connection.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -915,16 +928,16 @@ proto.BlockNetwork.Connection.prototype.getIdfrom = function() {
  * @param {string} value
  * @return {!proto.BlockNetwork.Connection} returns this
  */
-proto.BlockNetwork.Connection.prototype.setIdfrom = function(value) {
+proto.BlockNetwork.Connection.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string idTo = 2;
+ * optional string idFrom = 2;
  * @return {string}
  */
-proto.BlockNetwork.Connection.prototype.getIdto = function() {
+proto.BlockNetwork.Connection.prototype.getIdfrom = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -933,71 +946,52 @@ proto.BlockNetwork.Connection.prototype.getIdto = function() {
  * @param {string} value
  * @return {!proto.BlockNetwork.Connection} returns this
  */
-proto.BlockNetwork.Connection.prototype.setIdto = function(value) {
+proto.BlockNetwork.Connection.prototype.setIdfrom = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional bool accepted = 3;
- * @return {boolean}
+ * optional string idTo = 3;
+ * @return {string}
  */
-proto.BlockNetwork.Connection.prototype.getAccepted = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+proto.BlockNetwork.Connection.prototype.getIdto = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.BlockNetwork.Connection} returns this
  */
-proto.BlockNetwork.Connection.prototype.setAccepted = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
+proto.BlockNetwork.Connection.prototype.setIdto = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp sendAt = 4;
+ * optional ConnectionStatus status = 4;
+ * @return {!proto.BlockNetwork.ConnectionStatus}
+ */
+proto.BlockNetwork.Connection.prototype.getStatus = function() {
+  return /** @type {!proto.BlockNetwork.ConnectionStatus} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.BlockNetwork.ConnectionStatus} value
+ * @return {!proto.BlockNetwork.Connection} returns this
+ */
+proto.BlockNetwork.Connection.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp sentAt = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.BlockNetwork.Connection.prototype.getSendat = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.BlockNetwork.Connection} returns this
-*/
-proto.BlockNetwork.Connection.prototype.setSendat = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.BlockNetwork.Connection} returns this
- */
-proto.BlockNetwork.Connection.prototype.clearSendat = function() {
-  return this.setSendat(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.BlockNetwork.Connection.prototype.hasSendat = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp acceptedAt = 5;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.BlockNetwork.Connection.prototype.getAcceptedat = function() {
+proto.BlockNetwork.Connection.prototype.getSentat = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
@@ -1007,8 +1001,45 @@ proto.BlockNetwork.Connection.prototype.getAcceptedat = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.BlockNetwork.Connection} returns this
 */
-proto.BlockNetwork.Connection.prototype.setAcceptedat = function(value) {
+proto.BlockNetwork.Connection.prototype.setSentat = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockNetwork.Connection} returns this
+ */
+proto.BlockNetwork.Connection.prototype.clearSentat = function() {
+  return this.setSentat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockNetwork.Connection.prototype.hasSentat = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp acceptedAt = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockNetwork.Connection.prototype.getAcceptedat = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockNetwork.Connection} returns this
+*/
+proto.BlockNetwork.Connection.prototype.setAcceptedat = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -1026,7 +1057,7 @@ proto.BlockNetwork.Connection.prototype.clearAcceptedat = function() {
  * @return {boolean}
  */
 proto.BlockNetwork.Connection.prototype.hasAcceptedat = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -1260,5 +1291,14 @@ proto.BlockNetwork.Response.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.BlockNetwork.ConnectionStatus = {
+  CONNECTION_SENT: 0,
+  CONNECTION_ACCEPTED: 1,
+  CONNECTION_DECLINED: 2
+};
 
 goog.object.extend(exports, proto.BlockNetwork);
