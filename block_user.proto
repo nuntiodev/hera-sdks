@@ -49,6 +49,7 @@ message UserRequest {
     User update = 2;
     UserFilter filter = 3;
     string namespace = 4;
+    string search = 5;
 }
 
 message UserFilter {
@@ -67,7 +68,6 @@ message UserFilter {
     int32 to = 2;
     SortBy sort = 3;
     Order order = 4;
-    string search = 6;
 }
 
 message UserResponse {
