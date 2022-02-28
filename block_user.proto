@@ -66,7 +66,6 @@ message UserFilter {
     int32 to = 2;
     SortBy sort = 3;
     Order order = 4;
-    string namespace = 5;
     string search = 6;
 }
 
