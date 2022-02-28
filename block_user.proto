@@ -13,6 +13,7 @@ service Service {
     rpc UpdateEmail(UserRequest) returns (UserResponse) {}
     rpc UpdateProfile(UserRequest) returns (UserResponse) {}
     rpc UpdateNamespace(UserRequest) returns (UserResponse) {}
+    rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
     rpc Search(UserRequest) returns (UserResponse) {}
