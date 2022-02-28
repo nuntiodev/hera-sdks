@@ -1030,7 +1030,6 @@ proto.BlockUser.UserFilter.toObject = function(includeInstance, msg) {
     to: jspb.Message.getFieldWithDefault(msg, 2, 0),
     sort: jspb.Message.getFieldWithDefault(msg, 3, 0),
     order: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    namespace: jspb.Message.getFieldWithDefault(msg, 5, ""),
     search: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
@@ -1083,10 +1082,6 @@ proto.BlockUser.UserFilter.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {!proto.BlockUser.UserFilter.Order} */ (reader.readEnum());
       msg.setOrder(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -1146,13 +1141,6 @@ proto.BlockUser.UserFilter.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       4,
-      f
-    );
-  }
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
       f
     );
   }
@@ -1254,24 +1242,6 @@ proto.BlockUser.UserFilter.prototype.getOrder = function() {
  */
 proto.BlockUser.UserFilter.prototype.setOrder = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
-};
-
-
-/**
- * optional string namespace = 5;
- * @return {string}
- */
-proto.BlockUser.UserFilter.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.UserFilter} returns this
- */
-proto.BlockUser.UserFilter.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
