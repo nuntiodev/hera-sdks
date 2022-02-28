@@ -24,6 +24,7 @@ type ServiceClient interface {
 	UpdateEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateProfile(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Search(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -94,6 +95,15 @@ func (c *serviceClient) UpdateNamespace(ctx context.Context, in *UserRequest, op
 	return out, nil
 }
 
+func (c *serviceClient) UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.Service/UpdateSecurity", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *serviceClient) Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.Service/Get", in, out, opts...)
@@ -158,6 +168,7 @@ type ServiceServer interface {
 	UpdateEmail(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateProfile(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateNamespace(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error)
 	Get(context.Context, *UserRequest) (*UserResponse, error)
 	GetAll(context.Context, *UserRequest) (*UserResponse, error)
 	Search(context.Context, *UserRequest) (*UserResponse, error)
@@ -187,6 +198,9 @@ func (UnimplementedServiceServer) UpdateProfile(context.Context, *UserRequest) (
 }
 func (UnimplementedServiceServer) UpdateNamespace(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNamespace not implemented")
+}
+func (UnimplementedServiceServer) UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSecurity not implemented")
 }
 func (UnimplementedServiceServer) Get(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
@@ -322,6 +336,24 @@ func _Service_UpdateNamespace_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ServiceServer).UpdateNamespace(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Service_UpdateSecurity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ServiceServer).UpdateSecurity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.Service/UpdateSecurity",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ServiceServer).UpdateSecurity(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -464,6 +496,10 @@ var Service_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateNamespace",
 			Handler:    _Service_UpdateNamespace_Handler,
+		},
+		{
+			MethodName: "UpdateSecurity",
+			Handler:    _Service_UpdateSecurity_Handler,
 		},
 		{
 			MethodName: "Get",

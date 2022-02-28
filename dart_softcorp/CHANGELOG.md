@@ -289,3 +289,8 @@
 ## 0.0.31
 
 - New version.
+
+
+## 0.0.32
+
+- New version.
