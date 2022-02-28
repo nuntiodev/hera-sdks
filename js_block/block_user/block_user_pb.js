@@ -746,7 +746,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     user: (f = msg.getUser()) && proto.BlockUser.User.toObject(includeInstance, f),
     update: (f = msg.getUpdate()) && proto.BlockUser.User.toObject(includeInstance, f),
     filter: (f = msg.getFilter()) && proto.BlockUser.UserFilter.toObject(includeInstance, f),
-    namespace: jspb.Message.getFieldWithDefault(msg, 4, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    search: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -801,6 +802,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSearch(value);
       break;
     default:
       reader.skipField();
@@ -859,6 +864,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getSearch();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -994,6 +1006,24 @@ proto.BlockUser.UserRequest.prototype.setNamespace = function(value) {
 };
 
 
+/**
+ * optional string search = 5;
+ * @return {string}
+ */
+proto.BlockUser.UserRequest.prototype.getSearch = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setSearch = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 
 
@@ -1029,8 +1059,7 @@ proto.BlockUser.UserFilter.toObject = function(includeInstance, msg) {
     from: jspb.Message.getFieldWithDefault(msg, 1, 0),
     to: jspb.Message.getFieldWithDefault(msg, 2, 0),
     sort: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    order: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    search: jspb.Message.getFieldWithDefault(msg, 6, "")
+    order: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1082,10 +1111,6 @@ proto.BlockUser.UserFilter.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {!proto.BlockUser.UserFilter.Order} */ (reader.readEnum());
       msg.setOrder(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSearch(value);
       break;
     default:
       reader.skipField();
@@ -1141,13 +1166,6 @@ proto.BlockUser.UserFilter.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       4,
-      f
-    );
-  }
-  f = message.getSearch();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
       f
     );
   }
@@ -1242,24 +1260,6 @@ proto.BlockUser.UserFilter.prototype.getOrder = function() {
  */
 proto.BlockUser.UserFilter.prototype.setOrder = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
-};
-
-
-/**
- * optional string search = 6;
- * @return {string}
- */
-proto.BlockUser.UserFilter.prototype.getSearch = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.UserFilter} returns this
- */
-proto.BlockUser.UserFilter.prototype.setSearch = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

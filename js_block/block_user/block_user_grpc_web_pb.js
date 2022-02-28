@@ -566,6 +566,67 @@ proto.BlockUser.ServicePromiseClient.prototype.getAll =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
+const methodDescriptor_Service_Search = new grpc.web.MethodDescriptor(
+  '/BlockUser.Service/Search',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.ServiceClient.prototype.search =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.Service/Search',
+      request,
+      metadata || {},
+      methodDescriptor_Service_Search,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.ServicePromiseClient.prototype.search =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.Service/Search',
+      request,
+      metadata || {},
+      methodDescriptor_Service_Search);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
 const methodDescriptor_Service_ValidateCredentials = new grpc.web.MethodDescriptor(
   '/BlockUser.Service/ValidateCredentials',
   grpc.web.MethodType.UNARY,
