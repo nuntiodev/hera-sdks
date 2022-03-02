@@ -201,6 +201,7 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     country: jspb.Message.getFieldWithDefault(msg, 9, ""),
     image: jspb.Message.getFieldWithDefault(msg, 10, ""),
     blocked: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    verified: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
@@ -285,16 +286,20 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBlocked(value);
       break;
     case 12:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setBirthdate(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setVerified(value);
       break;
     case 13:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreatedAt(value);
+      msg.setBirthdate(value);
       break;
     case 14:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedAt(value);
+      break;
+    case 15:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
@@ -405,15 +410,14 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getBirthdate();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getVerified();
+  if (f) {
+    writer.writeBool(
       12,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getCreatedAt();
+  f = message.getBirthdate();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -421,10 +425,18 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getUpdatedAt();
+  f = message.getCreatedAt();
   if (f != null) {
     writer.writeMessage(
       14,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      15,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -631,12 +643,30 @@ proto.BlockUser.User.prototype.setBlocked = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp birthdate = 12;
+ * optional bool verified = 12;
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.getVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp birthdate = 13;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.User.prototype.getBirthdate = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
 };
 
 
@@ -645,7 +675,7 @@ proto.BlockUser.User.prototype.getBirthdate = function() {
  * @return {!proto.BlockUser.User} returns this
 */
 proto.BlockUser.User.prototype.setBirthdate = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -663,17 +693,17 @@ proto.BlockUser.User.prototype.clearBirthdate = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasBirthdate = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp created_at = 13;
+ * optional google.protobuf.Timestamp created_at = 14;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.User.prototype.getCreatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 14));
 };
 
 
@@ -682,7 +712,7 @@ proto.BlockUser.User.prototype.getCreatedAt = function() {
  * @return {!proto.BlockUser.User} returns this
 */
 proto.BlockUser.User.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -700,17 +730,17 @@ proto.BlockUser.User.prototype.clearCreatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasCreatedAt = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updated_at = 14;
+ * optional google.protobuf.Timestamp updated_at = 15;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.User.prototype.getUpdatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 14));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 15));
 };
 
 
@@ -719,7 +749,7 @@ proto.BlockUser.User.prototype.getUpdatedAt = function() {
  * @return {!proto.BlockUser.User} returns this
 */
 proto.BlockUser.User.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -737,7 +767,7 @@ proto.BlockUser.User.prototype.clearUpdatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasUpdatedAt = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
