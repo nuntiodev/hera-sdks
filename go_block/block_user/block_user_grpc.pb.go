@@ -21,7 +21,6 @@ type ServiceClient interface {
 	Heartbeat(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	Create(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdatePassword(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateProfile(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -62,15 +61,6 @@ func (c *serviceClient) Create(ctx context.Context, in *UserRequest, opts ...grp
 func (c *serviceClient) UpdatePassword(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.Service/UpdatePassword", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *serviceClient) UpdateEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.Service/UpdateEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -165,7 +155,6 @@ type ServiceServer interface {
 	Heartbeat(context.Context, *Request) (*Response, error)
 	Create(context.Context, *UserRequest) (*UserResponse, error)
 	UpdatePassword(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateEmail(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateProfile(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateNamespace(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error)
@@ -189,9 +178,6 @@ func (UnimplementedServiceServer) Create(context.Context, *UserRequest) (*UserRe
 }
 func (UnimplementedServiceServer) UpdatePassword(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePassword not implemented")
-}
-func (UnimplementedServiceServer) UpdateEmail(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateEmail not implemented")
 }
 func (UnimplementedServiceServer) UpdateProfile(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfile not implemented")
@@ -282,24 +268,6 @@ func _Service_UpdatePassword_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ServiceServer).UpdatePassword(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Service_UpdateEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ServiceServer).UpdateEmail(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.Service/UpdateEmail",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceServer).UpdateEmail(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -484,10 +452,6 @@ var Service_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePassword",
 			Handler:    _Service_UpdatePassword_Handler,
-		},
-		{
-			MethodName: "UpdateEmail",
-			Handler:    _Service_UpdateEmail_Handler,
 		},
 		{
 			MethodName: "UpdateProfile",
