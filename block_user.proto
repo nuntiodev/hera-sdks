@@ -40,9 +40,10 @@ message User {
     string country = 9;
     string image = 10;
     bool blocked = 11;
-    google.protobuf.Timestamp birthdate = 12;
-	google.protobuf.Timestamp created_at = 13;
-    google.protobuf.Timestamp updated_at = 14;
+    bool verified = 12;
+    google.protobuf.Timestamp birthdate = 13;
+	google.protobuf.Timestamp created_at = 14;
+    google.protobuf.Timestamp updated_at = 15;
 }
 
 message UserRequest {
