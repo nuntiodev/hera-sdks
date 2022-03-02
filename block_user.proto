@@ -41,9 +41,10 @@ message User {
     string image = 10;
     bool blocked = 11;
     bool verified = 12;
-    google.protobuf.Timestamp birthdate = 13;
-	google.protobuf.Timestamp created_at = 14;
-    google.protobuf.Timestamp updated_at = 15;
+    bool disable_authentication = 13;
+    google.protobuf.Timestamp birthdate = 14;
+	google.protobuf.Timestamp created_at = 15;
+    google.protobuf.Timestamp updated_at = 16;
 }
 
 message UserRequest {
