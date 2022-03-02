@@ -31,7 +31,7 @@ enum Gender {
 
 message User {
     string id = 1;
-    string optionalid = 2;
+    string optional_id = 2;
     string namespace = 3;
     string role = 4;
     string name = 5;
@@ -42,8 +42,8 @@ message User {
     string image = 10;
     bool blocked = 11;
     google.protobuf.Timestamp birthdate = 12;
-	google.protobuf.Timestamp createdat = 13;
-    google.protobuf.Timestamp updatedat = 14;
+	google.protobuf.Timestamp created_at = 13;
+    google.protobuf.Timestamp updated_at = 14;
 }
 
 message UserRequest {
