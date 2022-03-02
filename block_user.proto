@@ -10,7 +10,6 @@ service Service {
     rpc Heartbeat(Request) returns (Response) {}
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
-    rpc UpdateEmail(UserRequest) returns (UserResponse) {}
     rpc UpdateProfile(UserRequest) returns (UserResponse) {}
     rpc UpdateNamespace(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
