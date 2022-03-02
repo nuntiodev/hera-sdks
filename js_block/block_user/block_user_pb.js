@@ -191,7 +191,7 @@ proto.BlockUser.User.prototype.toObject = function(opt_includeInstance) {
 proto.BlockUser.User.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    optionalid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    optionalId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 3, ""),
     role: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -202,8 +202,8 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     image: jspb.Message.getFieldWithDefault(msg, 10, ""),
     blocked: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdat: (f = msg.getCreatedat()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updatedat: (f = msg.getUpdatedat()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -246,7 +246,7 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOptionalid(value);
+      msg.setOptionalId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -292,12 +292,12 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreatedat(value);
+      msg.setCreatedAt(value);
       break;
     case 14:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setUpdatedat(value);
+      msg.setUpdatedAt(value);
       break;
     default:
       reader.skipField();
@@ -335,7 +335,7 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOptionalid();
+  f = message.getOptionalId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -413,7 +413,7 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getCreatedat();
+  f = message.getCreatedAt();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -421,7 +421,7 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getUpdatedat();
+  f = message.getUpdatedAt();
   if (f != null) {
     writer.writeMessage(
       14,
@@ -451,10 +451,10 @@ proto.BlockUser.User.prototype.setId = function(value) {
 
 
 /**
- * optional string optionalId = 2;
+ * optional string optional_id = 2;
  * @return {string}
  */
-proto.BlockUser.User.prototype.getOptionalid = function() {
+proto.BlockUser.User.prototype.getOptionalId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -463,7 +463,7 @@ proto.BlockUser.User.prototype.getOptionalid = function() {
  * @param {string} value
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.setOptionalid = function(value) {
+proto.BlockUser.User.prototype.setOptionalId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -668,10 +668,10 @@ proto.BlockUser.User.prototype.hasBirthdate = function() {
 
 
 /**
- * optional google.protobuf.Timestamp createdAt = 13;
+ * optional google.protobuf.Timestamp created_at = 13;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.BlockUser.User.prototype.getCreatedat = function() {
+proto.BlockUser.User.prototype.getCreatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
 };
@@ -681,7 +681,7 @@ proto.BlockUser.User.prototype.getCreatedat = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.BlockUser.User} returns this
 */
-proto.BlockUser.User.prototype.setCreatedat = function(value) {
+proto.BlockUser.User.prototype.setCreatedAt = function(value) {
   return jspb.Message.setWrapperField(this, 13, value);
 };
 
@@ -690,8 +690,8 @@ proto.BlockUser.User.prototype.setCreatedat = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.clearCreatedat = function() {
-  return this.setCreatedat(undefined);
+proto.BlockUser.User.prototype.clearCreatedAt = function() {
+  return this.setCreatedAt(undefined);
 };
 
 
@@ -699,16 +699,16 @@ proto.BlockUser.User.prototype.clearCreatedat = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.BlockUser.User.prototype.hasCreatedat = function() {
+proto.BlockUser.User.prototype.hasCreatedAt = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updatedAt = 14;
+ * optional google.protobuf.Timestamp updated_at = 14;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.BlockUser.User.prototype.getUpdatedat = function() {
+proto.BlockUser.User.prototype.getUpdatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 14));
 };
@@ -718,7 +718,7 @@ proto.BlockUser.User.prototype.getUpdatedat = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.BlockUser.User} returns this
 */
-proto.BlockUser.User.prototype.setUpdatedat = function(value) {
+proto.BlockUser.User.prototype.setUpdatedAt = function(value) {
   return jspb.Message.setWrapperField(this, 14, value);
 };
 
@@ -727,8 +727,8 @@ proto.BlockUser.User.prototype.setUpdatedat = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.clearUpdatedat = function() {
-  return this.setUpdatedat(undefined);
+proto.BlockUser.User.prototype.clearUpdatedAt = function() {
+  return this.setUpdatedAt(undefined);
 };
 
 
@@ -736,7 +736,7 @@ proto.BlockUser.User.prototype.clearUpdatedat = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.BlockUser.User.prototype.hasUpdatedat = function() {
+proto.BlockUser.User.prototype.hasUpdatedAt = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
