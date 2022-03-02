@@ -30,20 +30,20 @@ enum Gender {
 }
 
 message User {
-    string id = 1;
-    string optional_id = 2;
-    string namespace = 3;
-    string role = 4;
-    string name = 5;
-    string email = 6;
-    string password = 7;
-    Gender gender = 8;
-    string country = 9;
-    string image = 10;
-    bool blocked = 11;
-    google.protobuf.Timestamp birthdate = 12;
-	google.protobuf.Timestamp created_at = 13;
-    google.protobuf.Timestamp updated_at = 14;
+    string id = 1 [json_name="id"];
+    string optional_id = 2 [json_name="optional_id"];
+    string namespace = 3 [json_name="namespace"];
+    string role = 4 [json_name="role"];
+    string name = 5 [json_name="name"];
+    string email = 6 [json_name="email"];
+    string password = 7 [json_name="password"];
+    Gender gender = 8 [json_name="gender"];
+    string country = 9 [json_name="country"];
+    string image = 10 [json_name="image"];
+    bool blocked = 11 [json_name="blocked"];
+    google.protobuf.Timestamp birthdate = 12 [json_name="birthdate"];
+	google.protobuf.Timestamp created_at = 13 [json_name="created_at"];
+    google.protobuf.Timestamp updated_at = 14 [json_name="updated_at"];
 }
 
 message UserRequest {
