@@ -339,3 +339,8 @@
 ## 0.0.44
 
 - New version.
+
+
+## 0.0.45
+
+- New version.
