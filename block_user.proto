@@ -41,7 +41,7 @@ message User {
     string image = 10;
     bool blocked = 11;
     bool verified = 12;
-    bool disable_authentication = 13;
+    bool disable_password_validation = 13;
     bool encrypted = 14;
     google.protobuf.Timestamp birthdate = 15;
 	google.protobuf.Timestamp created_at = 16;
