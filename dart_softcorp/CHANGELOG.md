@@ -404,3 +404,8 @@
 ## 0.0.59
 
 - New version.
+
+
+## 0.0.60
+
+- New version.
