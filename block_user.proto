@@ -47,14 +47,6 @@ message User {
     google.protobuf.Timestamp updated_at = 16;
 }
 
-message UserRequest {
-    User user = 1;
-    User update = 2;
-    UserFilter filter = 3;
-    string namespace = 4;
-    string search = 5;
-}
-
 message UserFilter {
     enum SortBy {
         CREATED_AT = 0;
@@ -71,6 +63,16 @@ message UserFilter {
     int32 to = 2;
     SortBy sort = 3;
     Order order = 4;
+}
+
+message UserRequest {
+    User user = 1;
+    User update = 2;
+    UserFilter filter = 3;
+    string namespace = 4;
+    string search = 5;
+    bool with_encryption = 6;
+    string encryption_key = 7;
 }
 
 message UserResponse {
