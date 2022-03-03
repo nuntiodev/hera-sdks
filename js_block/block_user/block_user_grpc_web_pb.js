@@ -322,67 +322,6 @@ proto.BlockUser.ServicePromiseClient.prototype.updateProfile =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_Service_UpdateNamespace = new grpc.web.MethodDescriptor(
-  '/BlockUser.Service/UpdateNamespace',
-  grpc.web.MethodType.UNARY,
-  proto.BlockUser.UserRequest,
-  proto.BlockUser.UserResponse,
-  /**
-   * @param {!proto.BlockUser.UserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.BlockUser.UserResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.BlockUser.ServiceClient.prototype.updateNamespace =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.Service/UpdateNamespace',
-      request,
-      metadata || {},
-      methodDescriptor_Service_UpdateNamespace,
-      callback);
-};
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.BlockUser.UserResponse>}
- *     Promise that resolves to the response
- */
-proto.BlockUser.ServicePromiseClient.prototype.updateNamespace =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.Service/UpdateNamespace',
-      request,
-      metadata || {},
-      methodDescriptor_Service_UpdateNamespace);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.BlockUser.UserRequest,
- *   !proto.BlockUser.UserResponse>}
- */
 const methodDescriptor_Service_UpdateSecurity = new grpc.web.MethodDescriptor(
   '/BlockUser.Service/UpdateSecurity',
   grpc.web.MethodType.UNARY,
