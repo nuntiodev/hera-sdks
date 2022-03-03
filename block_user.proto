@@ -42,9 +42,10 @@ message User {
     bool blocked = 11;
     bool verified = 12;
     bool disable_authentication = 13;
-    google.protobuf.Timestamp birthdate = 14;
-	google.protobuf.Timestamp created_at = 15;
-    google.protobuf.Timestamp updated_at = 16;
+    bool encrypted = 14;
+    google.protobuf.Timestamp birthdate = 15;
+	google.protobuf.Timestamp created_at = 16;
+    google.protobuf.Timestamp updated_at = 17;
 }
 
 message UserFilter {
