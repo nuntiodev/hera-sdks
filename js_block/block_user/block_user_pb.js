@@ -902,9 +902,7 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     update: (f = msg.getUpdate()) && proto.BlockUser.User.toObject(includeInstance, f),
     filter: (f = msg.getFilter()) && proto.BlockUser.UserFilter.toObject(includeInstance, f),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    search: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    field: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    encryptionKey: jspb.Message.getFieldWithDefault(msg, 7, "")
+    encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -961,14 +959,6 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       msg.setNamespace(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSearch(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setField(value);
-      break;
-    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setEncryptionKey(value);
       break;
@@ -1032,24 +1022,10 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getSearch();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getField();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
   f = message.getEncryptionKey();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      5,
       f
     );
   }
@@ -1186,10 +1162,10 @@ proto.BlockUser.UserRequest.prototype.setNamespace = function(value) {
 
 
 /**
- * optional string search = 5;
+ * optional string encryption_key = 5;
  * @return {string}
  */
-proto.BlockUser.UserRequest.prototype.getSearch = function() {
+proto.BlockUser.UserRequest.prototype.getEncryptionKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1198,44 +1174,8 @@ proto.BlockUser.UserRequest.prototype.getSearch = function() {
  * @param {string} value
  * @return {!proto.BlockUser.UserRequest} returns this
  */
-proto.BlockUser.UserRequest.prototype.setSearch = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string field = 6;
- * @return {string}
- */
-proto.BlockUser.UserRequest.prototype.getField = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.UserRequest} returns this
- */
-proto.BlockUser.UserRequest.prototype.setField = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string encryption_key = 7;
- * @return {string}
- */
-proto.BlockUser.UserRequest.prototype.getEncryptionKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.UserRequest} returns this
- */
 proto.BlockUser.UserRequest.prototype.setEncryptionKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
