@@ -20,40 +20,25 @@ service Service {
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
 }
 
-enum Gender {
-    INVALID_GENDER = 0;
-    MALE = 1;
-    FEMALE = 2;
-    OTHER = 3;
-}
-
 message User {
     string id = 1;
     string optional_id = 2;
     string namespace = 3;
     string role = 4;
-    string name = 5;
-    string email = 6;
-    string password = 7;
-    Gender gender = 8;
-    string country = 9;
-    string image = 10;
-    bool blocked = 11;
-    bool verified = 12;
-    bool disable_password_validation = 13;
-    bool encrypted = 14;
-    google.protobuf.Timestamp birthdate = 15;
-	google.protobuf.Timestamp created_at = 16;
-    google.protobuf.Timestamp updated_at = 17;
+    string email = 5;
+    string password = 6;
+    string image = 7;
+    bool encrypted = 8;
+    string metadata = 9;
+	google.protobuf.Timestamp created_at = 10;
+    google.protobuf.Timestamp updated_at = 11;
 }
 
 message UserFilter {
     enum SortBy {
         CREATED_AT = 0;
         UPDATE_AT = 1;
-        BIRTHDATE = 2;
-        NAME = 3;
-        EMAIL = 4;
+        EMAIL = 2;
     }
     enum Order {
         INC = 0;
@@ -71,7 +56,7 @@ message UserRequest {
     UserFilter filter = 3;
     string namespace = 4;
     string search = 5;
-    bool with_encryption = 6;
+    string field = 6;
     string encryption_key = 7;
 }
 
