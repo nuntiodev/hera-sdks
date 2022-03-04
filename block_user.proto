@@ -54,9 +54,7 @@ message UserRequest {
     User update = 2;
     UserFilter filter = 3;
     string namespace = 4;
-    string search = 5;
-    string field = 6;
-    string encryption_key = 7;
+    string encryption_key = 5;
 }
 
 message UserResponse {
