@@ -33,6 +33,11 @@ message User {
     google.protobuf.Timestamp updated_at = 11;
 }
 
+enum MetadataType {
+    METADATA_TYPE_JSON = 0;
+    METADATA_TYPE_STRING = 1;
+}
+
 message UserFilter {
     enum SortBy {
         CREATED_AT = 0;
