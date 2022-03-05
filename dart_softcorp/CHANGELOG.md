@@ -459,3 +459,8 @@
 ## 0.0.70
 
 - New version.
+
+
+## 0.0.72
+
+- New version.
