@@ -1,6 +1,6 @@
 name: dart_softcorp
 description: Dart Proto files for internal Softcorp Projects
-version: 0.0.73
+version: 0.0.74
 homepage: https://github.com/softcorp-io/softcorp-proto
 environment:
   sdk: ">=2.12.0 <3.0.0"
