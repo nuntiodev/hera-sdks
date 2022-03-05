@@ -261,8 +261,8 @@ proto.BlockUser.ServicePromiseClient.prototype.updatePassword =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_Service_UpdateProfile = new grpc.web.MethodDescriptor(
-  '/BlockUser.Service/UpdateProfile',
+const methodDescriptor_Service_UpdateMetadata = new grpc.web.MethodDescriptor(
+  '/BlockUser.Service/UpdateMetadata',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -287,13 +287,13 @@ const methodDescriptor_Service_UpdateProfile = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.ServiceClient.prototype.updateProfile =
+proto.BlockUser.ServiceClient.prototype.updateMetadata =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.Service/UpdateProfile',
+      '/BlockUser.Service/UpdateMetadata',
       request,
       metadata || {},
-      methodDescriptor_Service_UpdateProfile,
+      methodDescriptor_Service_UpdateMetadata,
       callback);
 };
 
@@ -306,13 +306,74 @@ proto.BlockUser.ServiceClient.prototype.updateProfile =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.ServicePromiseClient.prototype.updateProfile =
+proto.BlockUser.ServicePromiseClient.prototype.updateMetadata =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.Service/UpdateProfile',
+      '/BlockUser.Service/UpdateMetadata',
       request,
       metadata || {},
-      methodDescriptor_Service_UpdateProfile);
+      methodDescriptor_Service_UpdateMetadata);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
+const methodDescriptor_Service_UpdateImage = new grpc.web.MethodDescriptor(
+  '/BlockUser.Service/UpdateImage',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.ServiceClient.prototype.updateImage =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.Service/UpdateImage',
+      request,
+      metadata || {},
+      methodDescriptor_Service_UpdateImage,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.ServicePromiseClient.prototype.updateImage =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.Service/UpdateImage',
+      request,
+      metadata || {},
+      methodDescriptor_Service_UpdateImage);
 };
 
 
