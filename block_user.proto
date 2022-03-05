@@ -13,6 +13,7 @@ service Service {
     rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
     rpc UpdateImage(UserRequest) returns (UserResponse) {}
     rpc UpdateEmail(UserRequest) returns (UserResponse) {}
+    rpc UpdateOptionalId(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
