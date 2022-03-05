@@ -23,6 +23,7 @@ var global = (function() {
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+goog.exportSymbol('proto.BlockUser.MetadataType', null, global);
 goog.exportSymbol('proto.BlockUser.Request', null, global);
 goog.exportSymbol('proto.BlockUser.Response', null, global);
 goog.exportSymbol('proto.BlockUser.User', null, global);
@@ -1620,5 +1621,13 @@ proto.BlockUser.Response.prototype.setMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.BlockUser.MetadataType = {
+  METADATA_TYPE_JSON: 0,
+  METADATA_TYPE_STRING: 1
+};
 
 goog.object.extend(exports, proto.BlockUser);
