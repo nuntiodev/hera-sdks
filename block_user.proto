@@ -7,7 +7,7 @@ option go_package = "./go_block/block_user";
 import "google/protobuf/timestamp.proto";
 
 service Service {
-    rpc Heartbeat(Request) returns (Response) {}
+    rpc Heartbeat(UserRequest) returns (UserResponse) {}
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
     rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
@@ -68,10 +68,4 @@ message UserRequest {
 message UserResponse {
     User user = 1;
     repeated User users = 2;
-}
-
-message Request {}
-
-message Response {
-    string msg = 1;
 }
