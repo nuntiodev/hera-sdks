@@ -75,33 +75,33 @@ proto.BlockUser.ServicePromiseClient =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.BlockUser.Request,
- *   !proto.BlockUser.Response>}
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
  */
 const methodDescriptor_Service_Heartbeat = new grpc.web.MethodDescriptor(
   '/BlockUser.Service/Heartbeat',
   grpc.web.MethodType.UNARY,
-  proto.BlockUser.Request,
-  proto.BlockUser.Response,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
   /**
-   * @param {!proto.BlockUser.Request} request
+   * @param {!proto.BlockUser.UserRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.BlockUser.Response.deserializeBinary
+  proto.BlockUser.UserResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.BlockUser.Request} request The
+ * @param {!proto.BlockUser.UserRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.BlockUser.Response)}
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.Response>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.BlockUser.ServiceClient.prototype.heartbeat =
@@ -116,11 +116,11 @@ proto.BlockUser.ServiceClient.prototype.heartbeat =
 
 
 /**
- * @param {!proto.BlockUser.Request} request The
+ * @param {!proto.BlockUser.UserRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.BlockUser.Response>}
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
 proto.BlockUser.ServicePromiseClient.prototype.heartbeat =

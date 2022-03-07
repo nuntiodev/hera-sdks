@@ -18,7 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ServiceClient interface {
-	Heartbeat(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	Heartbeat(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Create(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdatePassword(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateMetadata(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -41,8 +41,8 @@ func NewServiceClient(cc grpc.ClientConnInterface) ServiceClient {
 	return &serviceClient{cc}
 }
 
-func (c *serviceClient) Heartbeat(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
-	out := new(Response)
+func (c *serviceClient) Heartbeat(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.Service/Heartbeat", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -162,7 +162,7 @@ func (c *serviceClient) DeleteNamespace(ctx context.Context, in *UserRequest, op
 // All implementations should embed UnimplementedServiceServer
 // for forward compatibility
 type ServiceServer interface {
-	Heartbeat(context.Context, *Request) (*Response, error)
+	Heartbeat(context.Context, *UserRequest) (*UserResponse, error)
 	Create(context.Context, *UserRequest) (*UserResponse, error)
 	UpdatePassword(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateMetadata(context.Context, *UserRequest) (*UserResponse, error)
@@ -181,7 +181,7 @@ type ServiceServer interface {
 type UnimplementedServiceServer struct {
 }
 
-func (UnimplementedServiceServer) Heartbeat(context.Context, *Request) (*Response, error) {
+func (UnimplementedServiceServer) Heartbeat(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Heartbeat not implemented")
 }
 func (UnimplementedServiceServer) Create(context.Context, *UserRequest) (*UserResponse, error) {
@@ -233,7 +233,7 @@ func RegisterServiceServer(s grpc.ServiceRegistrar, srv ServiceServer) {
 }
 
 func _Service_Heartbeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -245,7 +245,7 @@ func _Service_Heartbeat_Handler(srv interface{}, ctx context.Context, dec func(i
 		FullMethod: "/BlockUser.Service/Heartbeat",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceServer).Heartbeat(ctx, req.(*Request))
+		return srv.(ServiceServer).Heartbeat(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
