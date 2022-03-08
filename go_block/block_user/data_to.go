@@ -13,7 +13,7 @@ func (x *User) DataTo(to interface{}) error {
 	if strings.TrimSpace(x.Metadata) == "" {
 		return nil
 	}
-	if err := json.Unmarshal([]byte(x.Metadata), &to); err != nil {
+	if err := json.Unmarshal([]byte(x.Metadata), to); err != nil {
 		return err
 	}
 	return nil
