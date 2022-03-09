@@ -859,7 +859,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     update: (f = msg.getUpdate()) && proto.BlockUser.User.toObject(includeInstance, f),
     filter: (f = msg.getFilter()) && proto.BlockUser.UserFilter.toObject(includeInstance, f),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, "")
+    encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    accesstoken: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -918,6 +919,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setEncryptionKey(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccesstoken(value);
       break;
     default:
       reader.skipField();
@@ -983,6 +988,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getAccesstoken();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1133,6 +1145,24 @@ proto.BlockUser.UserRequest.prototype.getEncryptionKey = function() {
  */
 proto.BlockUser.UserRequest.prototype.setEncryptionKey = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string accessToken = 6;
+ * @return {string}
+ */
+proto.BlockUser.UserRequest.prototype.getAccesstoken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setAccesstoken = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
