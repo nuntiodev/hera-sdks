@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package BlockUser;
 
-option go_package = "./go_block/block_user";
+option go_package = "./go_block";
 
 import "google/protobuf/timestamp.proto";
 
