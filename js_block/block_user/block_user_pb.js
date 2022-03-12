@@ -1207,7 +1207,8 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     user: (f = msg.getUser()) && proto.BlockUser.User.toObject(includeInstance, f),
     usersList: jspb.Message.toObjectList(msg.getUsersList(),
-    proto.BlockUser.User.toObject, includeInstance)
+    proto.BlockUser.User.toObject, includeInstance),
+    usersamout: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1254,6 +1255,10 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       reader.readMessage(value,proto.BlockUser.User.deserializeBinaryFromReader);
       msg.addUsers(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setUsersamout(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1297,6 +1302,13 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
       2,
       f,
       proto.BlockUser.User.serializeBinaryToWriter
+    );
+  }
+  f = message.getUsersamout();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
     );
   }
 };
@@ -1374,6 +1386,24 @@ proto.BlockUser.UserResponse.prototype.addUsers = function(opt_value, opt_index)
  */
 proto.BlockUser.UserResponse.prototype.clearUsersList = function() {
   return this.setUsersList([]);
+};
+
+
+/**
+ * optional int32 usersAmout = 3;
+ * @return {number}
+ */
+proto.BlockUser.UserResponse.prototype.getUsersamout = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.setUsersamout = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
