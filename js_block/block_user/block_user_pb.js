@@ -1256,7 +1256,7 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       msg.addUsers(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setUsersamout(value);
       break;
     default:
@@ -1306,7 +1306,7 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
   }
   f = message.getUsersamout();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       3,
       f
     );
@@ -1390,7 +1390,7 @@ proto.BlockUser.UserResponse.prototype.clearUsersList = function() {
 
 
 /**
- * optional int32 usersAmout = 3;
+ * optional int64 usersAmout = 3;
  * @return {number}
  */
 proto.BlockUser.UserResponse.prototype.getUsersamout = function() {
