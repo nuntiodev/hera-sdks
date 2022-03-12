@@ -6,12 +6,12 @@ option go_package = "./go_block";
 
 import "google/protobuf/timestamp.proto";
 
-service Service {
-    rpc Heartbeat(FriendRequest) returns (FriendResponse) {}
-    rpc Invite(FriendRequest) returns (FriendResponse) {}
-    rpc Accept(FriendRequest) returns (FriendResponse) {}
-    rpc GetConnections(FriendRequest) returns (FriendResponse) {}
-    rpc Remove(FriendRequest) returns (FriendResponse) {}
+service FriendsService {
+    rpc Heartbeat(FriendsRequest) returns (FriendsResponse) {}
+    rpc Invite(FriendsRequest) returns (FriendsResponse) {}
+    rpc Accept(FriendsRequest) returns (FriendsResponse) {}
+    rpc GetConnections(FriendsRequest) returns (FriendsResponse) {}
+    rpc Remove(FriendsRequest) returns (FriendsResponse) {}
 }
 
 enum ConnectionStatus {
@@ -20,12 +20,12 @@ enum ConnectionStatus {
     CONNECTION_DECLINED = 2;
 }
 
-message FriendRequest {
+message FriendsRequest {
     Connection connection = 1;
     bool accept = 2;
 }
 
-message FriendResponse {
+message FriendsResponse {
     Connection connection = 1;
 }
 

@@ -6,7 +6,7 @@ option go_package = "./go_block";
 
 import "google/protobuf/timestamp.proto";
 
-service Service {
+service UserService {
     rpc Heartbeat(UserRequest) returns (UserResponse) {}
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
