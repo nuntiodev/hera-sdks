@@ -1,1 +1,0 @@
-# Softcorp Network Service Proto

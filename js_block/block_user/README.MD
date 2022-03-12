@@ -1,1 +1,0 @@
-# Softcorp User Service Proto
