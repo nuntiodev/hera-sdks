@@ -69,5 +69,5 @@ message UserRequest {
 message UserResponse {
     User user = 1;
     repeated User users = 2;
-    int64 usersAmout = 3;
+    int64 users_amount = 3;
 }
