@@ -63,7 +63,7 @@ message UserRequest {
     UserFilter filter = 3;
     string namespace = 4;
     string encryption_key = 5;
-    string accessToken = 6;
+    string access_token = 6;
 }
 
 message UserResponse {

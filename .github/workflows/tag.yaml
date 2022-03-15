@@ -104,7 +104,7 @@ jobs:
         run: git config --global user.email "dev@softcorp.io" && git config --global user.name "Softcorp Automation"
 
       - name: Add git credentials
-        run: git remote set-url --push origin https://softcorp-admin:$GITHUB_TOKEN@github.com/softcorp-io/block-proto
+        run: git remote set-url --push origin https://oscarsoftcorp:$GITHUB_TOKEN@github.com/softcorp-io/block-proto
 
       - name: Git commit
         run: git commit -am "updated protobuf files"
