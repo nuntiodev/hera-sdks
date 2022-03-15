@@ -23,17 +23,17 @@ service UserService {
 }
 
 message User {
-    string id = 1 [json_name="id"];
-    string optional_id = 2 [json_name="optional_id"];
-    string namespace = 3 [json_name="namespace"];
-    string role = 4 [json_name="role"];
-    string email = 5 [json_name="email"];
-    string password = 6 [json_name="password"];
-    string image = 7 [json_name="image"];
-    bool encrypted = 8 [json_name="encrypted"];
-    string metadata = 9 [json_name="metadata"];
-	google.protobuf.Timestamp created_at = 10 [json_name="created_at"];
-    google.protobuf.Timestamp updated_at = 11 [json_name="updated_at"];
+    string id = 1;
+    string optional_id = 2;
+    string namespace = 3;
+    string role = 4;
+    string email = 5;
+    string password = 6;
+    string image = 7;
+    bool encrypted = 8;
+    string metadata = 9;
+	google.protobuf.Timestamp created_at = 10;
+    google.protobuf.Timestamp updated_at = 11;
 }
 
 enum MetadataType {
@@ -51,23 +51,23 @@ message UserFilter {
         INC = 0;
         DEC = 1;
     }
-    int32 from = 1 [json_name="from"];
-    int32 to = 2 [json_name="to"];
-    SortBy sort = 3 [json_name="sort"];
-    Order order = 4 [json_name="order"];
+    int32 from = 1;
+    int32 to = 2;
+    SortBy sort = 3;
+    Order order = 4;
 }
 
 message UserRequest {
-    User user = 1 [json_name="user"];
-    User update = 2 [json_name="update"];
-    UserFilter filter = 3 [json_name="filter"];
-    string namespace = 4 [json_name="namespace"];
-    string encryption_key = 5 [json_name="encryption_key"];
-    string access_token = 6 [json_name="access_token"];
+    User user = 1;
+    User update = 2;
+    UserFilter filter = 3;
+    string namespace = 4;
+    string encryption_key = 5;
+    string access_token = 6;
 }
 
 message UserResponse {
     User user = 1;
-    repeated User users = 2 [json_name="users"];
-    int64 users_amount = 3 [json_name="users_amount"];
+    repeated User users = 2;
+    int64 users_amount = 3;
 }
