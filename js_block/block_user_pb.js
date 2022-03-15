@@ -83,7 +83,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.BlockUser.UserRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.BlockUser.UserRequest.repeatedFields_, null);
 };
 goog.inherits(proto.BlockUser.UserRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -824,6 +824,13 @@ proto.BlockUser.UserFilter.prototype.setOrder = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.BlockUser.UserRequest.repeatedFields_ = [7];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -860,7 +867,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     filter: (f = msg.getFilter()) && proto.BlockUser.UserFilter.toObject(includeInstance, f),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
     encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    accessToken: jspb.Message.getFieldWithDefault(msg, 6, "")
+    accessToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    userIdBatchList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -923,6 +931,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setAccessToken(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addUserIdBatch(value);
       break;
     default:
       reader.skipField();
@@ -995,6 +1007,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getUserIdBatchList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      7,
       f
     );
   }
@@ -1163,6 +1182,43 @@ proto.BlockUser.UserRequest.prototype.getAccessToken = function() {
  */
 proto.BlockUser.UserRequest.prototype.setAccessToken = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * repeated string user_id_batch = 7;
+ * @return {!Array<string>}
+ */
+proto.BlockUser.UserRequest.prototype.getUserIdBatchList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setUserIdBatchList = function(value) {
+  return jspb.Message.setField(this, 7, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.addUserIdBatch = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.clearUserIdBatchList = function() {
+  return this.setUserIdBatchList([]);
 };
 
 
