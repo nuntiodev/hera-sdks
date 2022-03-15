@@ -868,7 +868,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
     encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
     accessToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    userIdBatchList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
+    proto.BlockUser.User.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -933,8 +934,9 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       msg.setAccessToken(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addUserIdBatch(value);
+      var value = new proto.BlockUser.User;
+      reader.readMessage(value,proto.BlockUser.User.deserializeBinaryFromReader);
+      msg.addUserBatch(value);
       break;
     default:
       reader.skipField();
@@ -1010,11 +1012,12 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getUserIdBatchList();
+  f = message.getUserBatchList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeRepeatedMessage(
       7,
-      f
+      f,
+      proto.BlockUser.User.serializeBinaryToWriter
     );
   }
 };
@@ -1186,30 +1189,31 @@ proto.BlockUser.UserRequest.prototype.setAccessToken = function(value) {
 
 
 /**
- * repeated string user_id_batch = 7;
- * @return {!Array<string>}
+ * repeated User user_batch = 7;
+ * @return {!Array<!proto.BlockUser.User>}
  */
-proto.BlockUser.UserRequest.prototype.getUserIdBatchList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
+proto.BlockUser.UserRequest.prototype.getUserBatchList = function() {
+  return /** @type{!Array<!proto.BlockUser.User>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.BlockUser.User, 7));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {!Array<!proto.BlockUser.User>} value
  * @return {!proto.BlockUser.UserRequest} returns this
- */
-proto.BlockUser.UserRequest.prototype.setUserIdBatchList = function(value) {
-  return jspb.Message.setField(this, 7, value || []);
+*/
+proto.BlockUser.UserRequest.prototype.setUserBatchList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.BlockUser.User=} opt_value
  * @param {number=} opt_index
- * @return {!proto.BlockUser.UserRequest} returns this
+ * @return {!proto.BlockUser.User}
  */
-proto.BlockUser.UserRequest.prototype.addUserIdBatch = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+proto.BlockUser.UserRequest.prototype.addUserBatch = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.BlockUser.User, opt_index);
 };
 
 
@@ -1217,8 +1221,8 @@ proto.BlockUser.UserRequest.prototype.addUserIdBatch = function(value, opt_index
  * Clears the list making it empty but non-null.
  * @return {!proto.BlockUser.UserRequest} returns this
  */
-proto.BlockUser.UserRequest.prototype.clearUserIdBatchList = function() {
-  return this.setUserIdBatchList([]);
+proto.BlockUser.UserRequest.prototype.clearUserBatchList = function() {
+  return this.setUserBatchList([]);
 };
 
 
