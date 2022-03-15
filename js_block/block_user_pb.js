@@ -860,7 +860,7 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     filter: (f = msg.getFilter()) && proto.BlockUser.UserFilter.toObject(includeInstance, f),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
     encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    accesstoken: jspb.Message.getFieldWithDefault(msg, 6, "")
+    accessToken: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -922,7 +922,7 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAccesstoken(value);
+      msg.setAccessToken(value);
       break;
     default:
       reader.skipField();
@@ -991,7 +991,7 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getAccesstoken();
+  f = message.getAccessToken();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -1149,10 +1149,10 @@ proto.BlockUser.UserRequest.prototype.setEncryptionKey = function(value) {
 
 
 /**
- * optional string accessToken = 6;
+ * optional string access_token = 6;
  * @return {string}
  */
-proto.BlockUser.UserRequest.prototype.getAccesstoken = function() {
+proto.BlockUser.UserRequest.prototype.getAccessToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -1161,7 +1161,7 @@ proto.BlockUser.UserRequest.prototype.getAccesstoken = function() {
  * @param {string} value
  * @return {!proto.BlockUser.UserRequest} returns this
  */
-proto.BlockUser.UserRequest.prototype.setAccesstoken = function(value) {
+proto.BlockUser.UserRequest.prototype.setAccessToken = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
@@ -1208,7 +1208,7 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
     user: (f = msg.getUser()) && proto.BlockUser.User.toObject(includeInstance, f),
     usersList: jspb.Message.toObjectList(msg.getUsersList(),
     proto.BlockUser.User.toObject, includeInstance),
-    usersamout: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    usersAmount: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1257,7 +1257,7 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setUsersamout(value);
+      msg.setUsersAmount(value);
       break;
     default:
       reader.skipField();
@@ -1304,7 +1304,7 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
       proto.BlockUser.User.serializeBinaryToWriter
     );
   }
-  f = message.getUsersamout();
+  f = message.getUsersAmount();
   if (f !== 0) {
     writer.writeInt64(
       3,
@@ -1390,10 +1390,10 @@ proto.BlockUser.UserResponse.prototype.clearUsersList = function() {
 
 
 /**
- * optional int64 usersAmout = 3;
+ * optional int64 users_amount = 3;
  * @return {number}
  */
-proto.BlockUser.UserResponse.prototype.getUsersamout = function() {
+proto.BlockUser.UserResponse.prototype.getUsersAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -1402,7 +1402,7 @@ proto.BlockUser.UserResponse.prototype.getUsersamout = function() {
  * @param {number} value
  * @return {!proto.BlockUser.UserResponse} returns this
  */
-proto.BlockUser.UserResponse.prototype.setUsersamout = function(value) {
+proto.BlockUser.UserResponse.prototype.setUsersAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
