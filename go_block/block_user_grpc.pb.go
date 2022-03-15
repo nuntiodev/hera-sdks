@@ -149,7 +149,7 @@ func (c *userServiceClient) GetStream(ctx context.Context, in *UserRequest, opts
 }
 
 type UserService_GetStreamClient interface {
-	Recv() (*UserResponse, error)
+	Recv() (*UserStream, error)
 	grpc.ClientStream
 }
 
@@ -157,8 +157,8 @@ type userServiceGetStreamClient struct {
 	grpc.ClientStream
 }
 
-func (x *userServiceGetStreamClient) Recv() (*UserResponse, error) {
-	m := new(UserResponse)
+func (x *userServiceGetStreamClient) Recv() (*UserStream, error) {
+	m := new(UserStream)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -472,7 +472,7 @@ func _UserService_GetStream_Handler(srv interface{}, stream grpc.ServerStream) e
 }
 
 type UserService_GetStreamServer interface {
-	Send(*UserResponse) error
+	Send(*UserStream) error
 	grpc.ServerStream
 }
 
@@ -480,7 +480,7 @@ type userServiceGetStreamServer struct {
 	grpc.ServerStream
 }
 
-func (x *userServiceGetStreamServer) Send(m *UserResponse) error {
+func (x *userServiceGetStreamServer) Send(m *UserStream) error {
 	return x.ServerStream.SendMsg(m)
 }
 

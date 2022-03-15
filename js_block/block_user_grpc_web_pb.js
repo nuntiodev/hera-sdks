@@ -686,13 +686,13 @@ proto.BlockUser.UserServicePromiseClient.prototype.getAll =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.BlockUser.UserRequest,
- *   !proto.BlockUser.UserResponse>}
+ *   !proto.BlockUser.UserStream>}
  */
 const methodDescriptor_UserService_GetStream = new grpc.web.MethodDescriptor(
   '/BlockUser.UserService/GetStream',
   grpc.web.MethodType.SERVER_STREAMING,
   proto.BlockUser.UserRequest,
-  proto.BlockUser.UserResponse,
+  proto.BlockUser.UserStream,
   /**
    * @param {!proto.BlockUser.UserRequest} request
    * @return {!Uint8Array}
@@ -700,7 +700,7 @@ const methodDescriptor_UserService_GetStream = new grpc.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto.BlockUser.UserResponse.deserializeBinary
+  proto.BlockUser.UserStream.deserializeBinary
 );
 
 
@@ -708,7 +708,7 @@ const methodDescriptor_UserService_GetStream = new grpc.web.MethodDescriptor(
  * @param {!proto.BlockUser.UserRequest} request The request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>}
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserStream>}
  *     The XHR Node Readable Stream
  */
 proto.BlockUser.UserServiceClient.prototype.getStream =
@@ -725,7 +725,7 @@ proto.BlockUser.UserServiceClient.prototype.getStream =
  * @param {!proto.BlockUser.UserRequest} request The request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>}
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserStream>}
  *     The XHR Node Readable Stream
  */
 proto.BlockUser.UserServicePromiseClient.prototype.getStream =
