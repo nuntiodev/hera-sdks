@@ -17,7 +17,7 @@ service UserService {
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
-    rpc GetStream(UserRequest) returns (stream UserResponse) {}
+    rpc GetStream(UserRequest) returns (stream UserStream) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
@@ -73,4 +73,14 @@ message UserResponse {
     User user = 1;
     repeated User users = 2;
     int64 users_amount = 3;
+}
+
+message UserStream {
+    enum OperationType {
+        CREATE = 0;
+        UPDATE = 1;
+        DELETE = 2;
+    }
+    User user = 1;
+    OperationType operationType = 2;
 }
