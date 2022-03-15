@@ -688,6 +688,62 @@ proto.BlockUser.UserServicePromiseClient.prototype.getAll =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
+const methodDescriptor_UserService_GetStream = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetStream',
+  grpc.web.MethodType.SERVER_STREAMING,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.getStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/BlockUser.UserService/GetStream',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetStream);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.getStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/BlockUser.UserService/GetStream',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetStream);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
 const methodDescriptor_UserService_ValidateCredentials = new grpc.web.MethodDescriptor(
   '/BlockUser.UserService/ValidateCredentials',
   grpc.web.MethodType.UNARY,
