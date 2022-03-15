@@ -19,6 +19,7 @@ service UserService {
     rpc GetAll(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
+    rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
 }
 
@@ -64,6 +65,7 @@ message UserRequest {
     string namespace = 4;
     string encryption_key = 5;
     string access_token = 6;
+    repeated string user_id_batch = 7;
 }
 
 message UserResponse {
