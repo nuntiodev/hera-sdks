@@ -23,7 +23,7 @@ service UserService {
 }
 
 message User {
-    string id = 1 [] [json_name="id"];
+    string id = 1 [json_name="id"];
     string optional_id = 2 [json_name="optional_id"];
     string namespace = 3 [json_name="namespace"];
     string role = 4 [json_name="role"];
