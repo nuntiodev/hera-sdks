@@ -179,7 +179,8 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     encrypted: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     metadata: jspb.Message.getFieldWithDefault(msg, 9, ""),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    encryptedAt: (f = msg.getEncryptedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -261,6 +262,11 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
+      break;
+    case 12:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEncryptedAt(value);
       break;
     default:
       reader.skipField();
@@ -366,6 +372,14 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeMessage(
       11,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEncryptedAt();
+  if (f != null) {
+    writer.writeMessage(
+      12,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -609,6 +623,43 @@ proto.BlockUser.User.prototype.hasUpdatedAt = function() {
 };
 
 
+/**
+ * optional google.protobuf.Timestamp encrypted_at = 12;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.User.prototype.getEncryptedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.User} returns this
+*/
+proto.BlockUser.User.prototype.setEncryptedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearEncryptedAt = function() {
+  return this.setEncryptedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasEncryptedAt = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
 
 
 
@@ -762,8 +813,7 @@ proto.BlockUser.UserFilter.serializeBinaryToWriter = function(message, writer) {
  */
 proto.BlockUser.UserFilter.SortBy = {
   CREATED_AT: 0,
-  UPDATE_AT: 1,
-  EMAIL: 2
+  UPDATE_AT: 1
 };
 
 /**
