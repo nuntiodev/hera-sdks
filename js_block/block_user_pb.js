@@ -943,7 +943,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     accessToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
     proto.BlockUser.User.toObject, includeInstance),
-    streamTypeList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
+    streamTypeList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+    autoFollowStream: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -1017,6 +1018,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       for (var i = 0; i < values.length; i++) {
         msg.addStreamType(values[i]);
       }
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAutoFollowStream(value);
       break;
     default:
       reader.skipField();
@@ -1104,6 +1109,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writePackedEnum(
       8,
+      f
+    );
+  }
+  f = message.getAutoFollowStream();
+  if (f) {
+    writer.writeBool(
+      9,
       f
     );
   }
@@ -1347,6 +1359,24 @@ proto.BlockUser.UserRequest.prototype.addStreamType = function(value, opt_index)
  */
 proto.BlockUser.UserRequest.prototype.clearStreamTypeList = function() {
   return this.setStreamTypeList([]);
+};
+
+
+/**
+ * optional bool auto_follow_stream = 9;
+ * @return {boolean}
+ */
+proto.BlockUser.UserRequest.prototype.getAutoFollowStream = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setAutoFollowStream = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
