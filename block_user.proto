@@ -75,7 +75,7 @@ message UserRequest {
     string access_token = 6;
     repeated User user_batch = 7;
     repeated StreamType stream_type = 8;
-    bool autoFollowStream = 9;
+    bool auto_follow_stream = 9;
 }
 
 message UserResponse {
