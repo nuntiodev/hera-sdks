@@ -48,13 +48,13 @@ message User {
     string metadata = 9;
 	google.protobuf.Timestamp created_at = 10;
     google.protobuf.Timestamp updated_at = 11;
+    google.protobuf.Timestamp encrypted_at = 12;
 }
 
 message UserFilter {
     enum SortBy {
         CREATED_AT = 0;
         UPDATE_AT = 1;
-        EMAIL = 2;
     }
     enum Order {
         INC = 0;
