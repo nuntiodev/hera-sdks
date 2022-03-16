@@ -24,6 +24,18 @@ service UserService {
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
 }
 
+enum StreamType {
+        CREATE = 0;
+        UPDATE = 1;
+        DELETE = 2;
+}
+
+enum MetadataType {
+    METADATA_TYPE_JSON = 0;
+    METADATA_TYPE_STRING = 1;
+}
+
+
 message User {
     string id = 1;
     string optional_id = 2;
@@ -36,11 +48,6 @@ message User {
     string metadata = 9;
 	google.protobuf.Timestamp created_at = 10;
     google.protobuf.Timestamp updated_at = 11;
-}
-
-enum MetadataType {
-    METADATA_TYPE_JSON = 0;
-    METADATA_TYPE_STRING = 1;
 }
 
 message UserFilter {
@@ -67,6 +74,7 @@ message UserRequest {
     string encryption_key = 5;
     string access_token = 6;
     repeated User user_batch = 7;
+    repeated StreamType stream_type = 8;
 }
 
 message UserResponse {
@@ -76,11 +84,6 @@ message UserResponse {
 }
 
 message UserStream {
-    enum OperationType {
-        CREATE = 0;
-        UPDATE = 1;
-        DELETE = 2;
-    }
     User user = 1;
-    OperationType operationType = 2;
+    StreamType stream_type = 2;
 }
