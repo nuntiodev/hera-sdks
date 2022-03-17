@@ -1808,7 +1808,8 @@ proto.BlockUser.UserStream.prototype.setStreamType = function(value) {
 proto.BlockUser.StreamType = {
   CREATE: 0,
   UPDATE: 1,
-  DELETE: 2
+  DELETE: 2,
+  REBASE: 3
 };
 
 /**
