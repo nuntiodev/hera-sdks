@@ -40,16 +40,14 @@ enum MetadataType {
 message User {
     string id = 1;
     string optional_id = 2;
-    string namespace = 3;
-    string role = 4;
-    string email = 5;
-    string password = 6;
-    string image = 7;
-    bool encrypted = 8;
-    string metadata = 9;
-	google.protobuf.Timestamp created_at = 10;
-    google.protobuf.Timestamp updated_at = 11;
-    google.protobuf.Timestamp encrypted_at = 12;
+    string email = 3;
+    string password = 4;
+    string image = 5;
+    bool encrypted = 6;
+    string metadata = 7;
+	google.protobuf.Timestamp created_at = 8;
+    google.protobuf.Timestamp updated_at = 9;
+    google.protobuf.Timestamp encrypted_at = 10;
 }
 
 message UserFilter {
@@ -76,7 +74,7 @@ message UserRequest {
     string access_token = 6;
     repeated User user_batch = 7;
     repeated StreamType stream_type = 8;
-    bool auto_follow_stream = 9;
+    string sessionId = 9;
 }
 
 message UserResponse {
@@ -87,5 +85,6 @@ message UserResponse {
 
 message UserStream {
     User user = 1;
-    StreamType stream_type = 2;
+    repeated User users = 2;
+    StreamType stream_type = 3;
 }
