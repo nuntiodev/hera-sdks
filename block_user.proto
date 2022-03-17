@@ -31,12 +31,6 @@ enum StreamType {
         REBASE = 3;
 }
 
-enum MetadataType {
-    METADATA_TYPE_JSON = 0;
-    METADATA_TYPE_STRING = 1;
-}
-
-
 message User {
     string id = 1;
     string optional_id = 2;
@@ -74,7 +68,6 @@ message UserRequest {
     string access_token = 6;
     repeated User user_batch = 7;
     repeated StreamType stream_type = 8;
-    string sessionId = 9;
 }
 
 message UserResponse {
