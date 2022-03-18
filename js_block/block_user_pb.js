@@ -1805,10 +1805,10 @@ proto.BlockUser.UserStream.prototype.setStreamType = function(value) {
  * @enum {number}
  */
 proto.BlockUser.StreamType = {
-  CREATE: 0,
-  UPDATE: 1,
-  DELETE: 2,
-  REBASE: 3
+  INVALID: 0,
+  CREATE: 1,
+  UPDATE: 2,
+  DELETE: 3
 };
 
 goog.object.extend(exports, proto.BlockUser);
