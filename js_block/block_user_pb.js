@@ -23,7 +23,6 @@ var global = (function() {
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-goog.exportSymbol('proto.BlockUser.MetadataType', null, global);
 goog.exportSymbol('proto.BlockUser.StreamType', null, global);
 goog.exportSymbol('proto.BlockUser.User', null, global);
 goog.exportSymbol('proto.BlockUser.UserFilter', null, global);
@@ -883,8 +882,7 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     accessToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
     proto.BlockUser.User.toObject, includeInstance),
-    streamTypeList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    sessionid: jspb.Message.getFieldWithDefault(msg, 9, "")
+    streamTypeList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -958,10 +956,6 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       for (var i = 0; i < values.length; i++) {
         msg.addStreamType(values[i]);
       }
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSessionid(value);
       break;
     default:
       reader.skipField();
@@ -1049,13 +1043,6 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writePackedEnum(
       8,
-      f
-    );
-  }
-  f = message.getSessionid();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
       f
     );
   }
@@ -1299,24 +1286,6 @@ proto.BlockUser.UserRequest.prototype.addStreamType = function(value, opt_index)
  */
 proto.BlockUser.UserRequest.prototype.clearStreamTypeList = function() {
   return this.setStreamTypeList([]);
-};
-
-
-/**
- * optional string sessionId = 9;
- * @return {string}
- */
-proto.BlockUser.UserRequest.prototype.getSessionid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.UserRequest} returns this
- */
-proto.BlockUser.UserRequest.prototype.setSessionid = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -1810,14 +1779,6 @@ proto.BlockUser.StreamType = {
   UPDATE: 1,
   DELETE: 2,
   REBASE: 3
-};
-
-/**
- * @enum {number}
- */
-proto.BlockUser.MetadataType = {
-  METADATA_TYPE_JSON: 0,
-  METADATA_TYPE_STRING: 1
 };
 
 goog.object.extend(exports, proto.BlockUser);
