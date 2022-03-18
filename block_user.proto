@@ -68,6 +68,7 @@ message UserRequest {
     string access_token = 6;
     repeated User user_batch = 7;
     repeated StreamType stream_type = 8;
+    string session_id = 9;
 }
 
 message UserResponse {
