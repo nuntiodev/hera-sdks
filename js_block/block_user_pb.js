@@ -882,7 +882,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     accessToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
     proto.BlockUser.User.toObject, includeInstance),
-    streamTypeList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
+    streamTypeList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+    sessionId: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -956,6 +957,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       for (var i = 0; i < values.length; i++) {
         msg.addStreamType(values[i]);
       }
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSessionId(value);
       break;
     default:
       reader.skipField();
@@ -1043,6 +1048,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writePackedEnum(
       8,
+      f
+    );
+  }
+  f = message.getSessionId();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -1286,6 +1298,24 @@ proto.BlockUser.UserRequest.prototype.addStreamType = function(value, opt_index)
  */
 proto.BlockUser.UserRequest.prototype.clearStreamTypeList = function() {
   return this.setStreamTypeList([]);
+};
+
+
+/**
+ * optional string session_id = 9;
+ * @return {string}
+ */
+proto.BlockUser.UserRequest.prototype.getSessionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setSessionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
