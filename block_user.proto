@@ -17,18 +17,10 @@ service UserService {
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
-    rpc GetStream(UserRequest) returns (stream UserStream) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
-}
-
-enum StreamType {
-        INVALID = 0;
-        CREATE = 1;
-        UPDATE = 2;
-        DELETE = 3;
 }
 
 message User {
@@ -67,20 +59,10 @@ message UserRequest {
     string encryption_key = 5;
     string access_token = 6;
     repeated User user_batch = 7;
-    repeated StreamType stream_type = 8;
-    string session_id = 9;
 }
 
 message UserResponse {
     User user = 1;
     repeated User users = 2;
     int64 users_amount = 3;
-}
-
-message UserStream {
-    User user = 1;
-    repeated User users = 2;
-    StreamType stream_type = 3;
-    string namespace = 4;
-    string sessionId = 5;
 }
