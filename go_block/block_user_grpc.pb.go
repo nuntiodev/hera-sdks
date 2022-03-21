@@ -28,7 +28,6 @@ type UserServiceClient interface {
 	UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	GetStream(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (UserService_GetStreamClient, error)
 	ValidateCredentials(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -133,38 +132,6 @@ func (c *userServiceClient) GetAll(ctx context.Context, in *UserRequest, opts ..
 	return out, nil
 }
 
-func (c *userServiceClient) GetStream(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (UserService_GetStreamClient, error) {
-	stream, err := c.cc.NewStream(ctx, &UserService_ServiceDesc.Streams[0], "/BlockUser.UserService/GetStream", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &userServiceGetStreamClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
-}
-
-type UserService_GetStreamClient interface {
-	Recv() (*UserStream, error)
-	grpc.ClientStream
-}
-
-type userServiceGetStreamClient struct {
-	grpc.ClientStream
-}
-
-func (x *userServiceGetStreamClient) Recv() (*UserStream, error) {
-	m := new(UserStream)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
 func (c *userServiceClient) ValidateCredentials(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/ValidateCredentials", in, out, opts...)
@@ -215,7 +182,6 @@ type UserServiceServer interface {
 	UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error)
 	Get(context.Context, *UserRequest) (*UserResponse, error)
 	GetAll(context.Context, *UserRequest) (*UserResponse, error)
-	GetStream(*UserRequest, UserService_GetStreamServer) error
 	ValidateCredentials(context.Context, *UserRequest) (*UserResponse, error)
 	Delete(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteBatch(context.Context, *UserRequest) (*UserResponse, error)
@@ -255,9 +221,6 @@ func (UnimplementedUserServiceServer) Get(context.Context, *UserRequest) (*UserR
 }
 func (UnimplementedUserServiceServer) GetAll(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
-}
-func (UnimplementedUserServiceServer) GetStream(*UserRequest, UserService_GetStreamServer) error {
-	return status.Errorf(codes.Unimplemented, "method GetStream not implemented")
 }
 func (UnimplementedUserServiceServer) ValidateCredentials(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateCredentials not implemented")
@@ -463,27 +426,6 @@ func _UserService_GetAll_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetStream_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(UserRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(UserServiceServer).GetStream(m, &userServiceGetStreamServer{stream})
-}
-
-type UserService_GetStreamServer interface {
-	Send(*UserStream) error
-	grpc.ServerStream
-}
-
-type userServiceGetStreamServer struct {
-	grpc.ServerStream
-}
-
-func (x *userServiceGetStreamServer) Send(m *UserStream) error {
-	return x.ServerStream.SendMsg(m)
-}
-
 func _UserService_ValidateCredentials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
@@ -620,12 +562,6 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_DeleteNamespace_Handler,
 		},
 	},
-	Streams: []grpc.StreamDesc{
-		{
-			StreamName:    "GetStream",
-			Handler:       _UserService_GetStream_Handler,
-			ServerStreams: true,
-		},
-	},
+	Streams:  []grpc.StreamDesc{},
 	Metadata: "block_user.proto",
 }
