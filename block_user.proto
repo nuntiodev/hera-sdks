@@ -82,4 +82,5 @@ message UserStream {
     repeated User users = 2;
     StreamType stream_type = 3;
     string namespace = 4;
+    string sessionId = 5;
 }
