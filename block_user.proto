@@ -55,21 +55,24 @@ message UserFilter {
     Order order = 4;
 }
 
+message Token {
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
 message UserRequest {
     User user = 1;
     User update = 2;
     UserFilter filter = 3;
     string namespace = 4;
     string encryption_key = 5;
-    string access_token = 6;
-    repeated User user_batch = 7;
-    string refresh_token = 8;
+    repeated User user_batch = 6;
+    Token token = 7;
 }
 
 message UserResponse {
     User user = 1;
     repeated User users = 2;
     int64 users_amount = 3;
-    string access_token = 4;
-    string refresh_token = 5;
+    Token token = 4;
 }
