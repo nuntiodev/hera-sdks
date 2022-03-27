@@ -18,6 +18,10 @@ service UserService {
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
+    rpc Login(UserRequest) returns (UserResponse) {}
+    rpc ValidateToken(UserRequest) returns (UserResponse) {}
+    rpc BlockToken(UserRequest) returns (UserResponse) {}
+    rpc RefreshToken(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
@@ -59,10 +63,13 @@ message UserRequest {
     string encryption_key = 5;
     string access_token = 6;
     repeated User user_batch = 7;
+    string refresh_token = 8;
 }
 
 message UserResponse {
     User user = 1;
     repeated User users = 2;
     int64 users_amount = 3;
+    string access_token = 4;
+    string refresh_token = 5;
 }
