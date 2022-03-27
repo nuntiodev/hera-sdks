@@ -858,7 +858,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
     accessToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
-    proto.BlockUser.User.toObject, includeInstance)
+    proto.BlockUser.User.toObject, includeInstance),
+    refreshToken: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -926,6 +927,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.BlockUser.User;
       reader.readMessage(value,proto.BlockUser.User.deserializeBinaryFromReader);
       msg.addUserBatch(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRefreshToken(value);
       break;
     default:
       reader.skipField();
@@ -1007,6 +1012,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       7,
       f,
       proto.BlockUser.User.serializeBinaryToWriter
+    );
+  }
+  f = message.getRefreshToken();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -1215,6 +1227,24 @@ proto.BlockUser.UserRequest.prototype.clearUserBatchList = function() {
 };
 
 
+/**
+ * optional string refresh_token = 8;
+ * @return {string}
+ */
+proto.BlockUser.UserRequest.prototype.getRefreshToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setRefreshToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -1257,7 +1287,9 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
     user: (f = msg.getUser()) && proto.BlockUser.User.toObject(includeInstance, f),
     usersList: jspb.Message.toObjectList(msg.getUsersList(),
     proto.BlockUser.User.toObject, includeInstance),
-    usersAmount: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    usersAmount: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    accessToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    refreshToken: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1308,6 +1340,14 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       var value = /** @type {number} */ (reader.readInt64());
       msg.setUsersAmount(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccessToken(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRefreshToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1357,6 +1397,20 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
   if (f !== 0) {
     writer.writeInt64(
       3,
+      f
+    );
+  }
+  f = message.getAccessToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getRefreshToken();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -1453,6 +1507,42 @@ proto.BlockUser.UserResponse.prototype.getUsersAmount = function() {
  */
 proto.BlockUser.UserResponse.prototype.setUsersAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string access_token = 4;
+ * @return {string}
+ */
+proto.BlockUser.UserResponse.prototype.getAccessToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.setAccessToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string refresh_token = 5;
+ * @return {string}
+ */
+proto.BlockUser.UserResponse.prototype.getRefreshToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.setRefreshToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
