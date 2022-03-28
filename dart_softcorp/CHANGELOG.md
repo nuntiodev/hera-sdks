@@ -714,3 +714,8 @@
 ## 0.1.24
 
 - New version.
+
+
+## 0.1.26
+
+- New version.
