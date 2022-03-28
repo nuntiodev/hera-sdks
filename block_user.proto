@@ -76,5 +76,5 @@ message UserResponse {
     repeated User users = 2;
     int64 users_amount = 3;
     Token token = 4;
-    repeated bytes public_keys = 5;
+    map<string, bytes> public_keys = 5;
 }
