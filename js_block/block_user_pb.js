@@ -1203,7 +1203,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
     proto.BlockUser.User.toObject, includeInstance),
     token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f),
-    validatepassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    validatepassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    cloudToken: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -1276,6 +1277,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setValidatepassword(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCloudToken(value);
       break;
     default:
       reader.skipField();
@@ -1364,6 +1369,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getCloudToken();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -1607,6 +1619,24 @@ proto.BlockUser.UserRequest.prototype.getValidatepassword = function() {
  */
 proto.BlockUser.UserRequest.prototype.setValidatepassword = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional string cloud_token = 9;
+ * @return {string}
+ */
+proto.BlockUser.UserRequest.prototype.getCloudToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setCloudToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
