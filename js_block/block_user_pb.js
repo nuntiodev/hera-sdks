@@ -1424,7 +1424,7 @@ proto.BlockUser.UserRequest.prototype.hasToken = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.BlockUser.UserResponse.repeatedFields_ = [2];
+proto.BlockUser.UserResponse.repeatedFields_ = [2,5];
 
 
 
@@ -1461,7 +1461,8 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
     usersList: jspb.Message.toObjectList(msg.getUsersList(),
     proto.BlockUser.User.toObject, includeInstance),
     usersAmount: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f)
+    token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f),
+    publicKeysList: msg.getPublicKeysList_asB64()
   };
 
   if (includeInstance) {
@@ -1516,6 +1517,10 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.BlockUser.Token;
       reader.readMessage(value,proto.BlockUser.Token.deserializeBinaryFromReader);
       msg.setToken(value);
+      break;
+    case 5:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.addPublicKeys(value);
       break;
     default:
       reader.skipField();
@@ -1575,6 +1580,13 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
       4,
       f,
       proto.BlockUser.Token.serializeBinaryToWriter
+    );
+  }
+  f = message.getPublicKeysList_asU8();
+  if (f.length > 0) {
+    writer.writeRepeatedBytes(
+      5,
+      f
     );
   }
 };
@@ -1707,6 +1719,67 @@ proto.BlockUser.UserResponse.prototype.clearToken = function() {
  */
 proto.BlockUser.UserResponse.prototype.hasToken = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated bytes public_keys = 5;
+ * @return {!Array<string>}
+ */
+proto.BlockUser.UserResponse.prototype.getPublicKeysList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * repeated bytes public_keys = 5;
+ * This is a type-conversion wrapper around `getPublicKeysList()`
+ * @return {!Array<string>}
+ */
+proto.BlockUser.UserResponse.prototype.getPublicKeysList_asB64 = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
+      this.getPublicKeysList()));
+};
+
+
+/**
+ * repeated bytes public_keys = 5;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getPublicKeysList()`
+ * @return {!Array<!Uint8Array>}
+ */
+proto.BlockUser.UserResponse.prototype.getPublicKeysList_asU8 = function() {
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+      this.getPublicKeysList()));
+};
+
+
+/**
+ * @param {!(Array<!Uint8Array>|Array<string>)} value
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.setPublicKeysList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.addPublicKeys = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.clearPublicKeysList = function() {
+  return this.setPublicKeysList([]);
 };
 
 
