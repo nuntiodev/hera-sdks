@@ -22,6 +22,7 @@ service UserService {
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
     rpc BlockToken(UserRequest) returns (UserResponse) {}
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
+    rpc PublicKeys(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
