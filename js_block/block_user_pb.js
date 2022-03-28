@@ -1040,7 +1040,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
     proto.BlockUser.User.toObject, includeInstance),
-    token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f)
+    token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f),
+    validatepassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -1109,6 +1110,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.BlockUser.Token;
       reader.readMessage(value,proto.BlockUser.Token.deserializeBinaryFromReader);
       msg.setToken(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setValidatepassword(value);
       break;
     default:
       reader.skipField();
@@ -1191,6 +1196,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       7,
       f,
       proto.BlockUser.Token.serializeBinaryToWriter
+    );
+  }
+  f = message.getValidatepassword();
+  if (f) {
+    writer.writeBool(
+      8,
+      f
     );
   }
 };
@@ -1415,6 +1427,24 @@ proto.BlockUser.UserRequest.prototype.clearToken = function() {
  */
 proto.BlockUser.UserRequest.prototype.hasToken = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool validatePassword = 8;
+ * @return {boolean}
+ */
+proto.BlockUser.UserRequest.prototype.getValidatepassword = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setValidatepassword = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
