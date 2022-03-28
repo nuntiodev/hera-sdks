@@ -74,6 +74,7 @@ message UserRequest {
     repeated User user_batch = 6;
     Token token = 7;
     bool validatePassword = 8;
+    string cloud_token = 9;
 }
 
 message UserResponse {
