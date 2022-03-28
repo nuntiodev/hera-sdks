@@ -59,6 +59,9 @@ message UserFilter {
 message Token {
     string access_token = 1;
     string refresh_token = 2;
+    google.protobuf.Timestamp authenticated_at = 3;
+    google.protobuf.Timestamp refreshed_at = 4;
+    string device_info = 5;
 }
 
 message UserRequest {
