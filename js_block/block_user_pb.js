@@ -172,8 +172,9 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     email: jspb.Message.getFieldWithDefault(msg, 3, ""),
     password: jspb.Message.getFieldWithDefault(msg, 4, ""),
     image: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    encrypted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    metadata: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    externalEncrypted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    internalEncrypted: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    metadata: jspb.Message.getFieldWithDefault(msg, 8, ""),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     encryptedAt: (f = msg.getEncryptedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
@@ -235,23 +236,27 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEncrypted(value);
+      msg.setExternalEncrypted(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMetadata(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setInternalEncrypted(value);
       break;
     case 8:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreatedAt(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetadata(value);
       break;
     case 9:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setUpdatedAt(value);
+      msg.setCreatedAt(value);
       break;
     case 10:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdatedAt(value);
+      break;
+    case 11:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEncryptedAt(value);
@@ -320,29 +325,28 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getEncrypted();
+  f = message.getExternalEncrypted();
   if (f) {
     writer.writeBool(
       6,
       f
     );
   }
-  f = message.getMetadata();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getInternalEncrypted();
+  if (f) {
+    writer.writeBool(
       7,
       f
     );
   }
-  f = message.getCreatedAt();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getMetadata();
+  if (f.length > 0) {
+    writer.writeString(
       8,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getUpdatedAt();
+  f = message.getCreatedAt();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -350,10 +354,18 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getEncryptedAt();
+  f = message.getUpdatedAt();
   if (f != null) {
     writer.writeMessage(
       10,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEncryptedAt();
+  if (f != null) {
+    writer.writeMessage(
+      11,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -452,10 +464,10 @@ proto.BlockUser.User.prototype.setImage = function(value) {
 
 
 /**
- * optional bool encrypted = 6;
+ * optional bool external_encrypted = 6;
  * @return {boolean}
  */
-proto.BlockUser.User.prototype.getEncrypted = function() {
+proto.BlockUser.User.prototype.getExternalEncrypted = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -464,17 +476,35 @@ proto.BlockUser.User.prototype.getEncrypted = function() {
  * @param {boolean} value
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.setEncrypted = function(value) {
+proto.BlockUser.User.prototype.setExternalEncrypted = function(value) {
   return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
 /**
- * optional string metadata = 7;
+ * optional bool internal_encrypted = 7;
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.getInternalEncrypted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setInternalEncrypted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional string metadata = 8;
  * @return {string}
  */
 proto.BlockUser.User.prototype.getMetadata = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -483,17 +513,17 @@ proto.BlockUser.User.prototype.getMetadata = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setMetadata = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp created_at = 8;
+ * optional google.protobuf.Timestamp created_at = 9;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.User.prototype.getCreatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
 };
 
 
@@ -502,7 +532,7 @@ proto.BlockUser.User.prototype.getCreatedAt = function() {
  * @return {!proto.BlockUser.User} returns this
 */
 proto.BlockUser.User.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -520,17 +550,17 @@ proto.BlockUser.User.prototype.clearCreatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasCreatedAt = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updated_at = 9;
+ * optional google.protobuf.Timestamp updated_at = 10;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.User.prototype.getUpdatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
 };
 
 
@@ -539,7 +569,7 @@ proto.BlockUser.User.prototype.getUpdatedAt = function() {
  * @return {!proto.BlockUser.User} returns this
 */
 proto.BlockUser.User.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -557,17 +587,17 @@ proto.BlockUser.User.prototype.clearUpdatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasUpdatedAt = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp encrypted_at = 10;
+ * optional google.protobuf.Timestamp encrypted_at = 11;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.User.prototype.getEncryptedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
 };
 
 
@@ -576,7 +606,7 @@ proto.BlockUser.User.prototype.getEncryptedAt = function() {
  * @return {!proto.BlockUser.User} returns this
 */
 proto.BlockUser.User.prototype.setEncryptedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -594,7 +624,7 @@ proto.BlockUser.User.prototype.clearEncryptedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasEncryptedAt = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
