@@ -37,7 +37,7 @@ message User {
     bool external_encrypted = 6;
     int32 external_encryption_level = 7;
     bool internal_encrypted = 8;
-    int32 external_encryption_level = 9;
+    int32 internal_encryption_level = 9;
     string metadata = 10;
 	google.protobuf.Timestamp created_at = 11;
     google.protobuf.Timestamp updated_at = 12;
