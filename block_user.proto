@@ -35,11 +35,13 @@ message User {
     string password = 4;
     string image = 5;
     bool external_encrypted = 6;
-    bool internal_encrypted = 7;
-    string metadata = 8;
-	google.protobuf.Timestamp created_at = 9;
-    google.protobuf.Timestamp updated_at = 10;
-    google.protobuf.Timestamp encrypted_at = 11;
+    int external_encryption_level = 7;
+    bool internal_encrypted = 8;
+    bool external_encryption_level = 9;
+    string metadata = 10;
+	google.protobuf.Timestamp created_at = 11;
+    google.protobuf.Timestamp updated_at = 12;
+    google.protobuf.Timestamp encrypted_at = 13;
 }
 
 message UserFilter {
