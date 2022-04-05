@@ -779,3 +779,8 @@
 ## 0.1.39
 
 - New version.
+
+
+## 0.1.42
+
+- New version.
