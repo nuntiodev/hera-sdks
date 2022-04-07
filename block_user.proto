@@ -69,7 +69,7 @@ message Token {
     google.protobuf.Timestamp created_at = 6;
     google.protobuf.Timestamp used_at = 7;
     google.protobuf.Timestamp expires_at = 8;
-    google.protobuf.Timestamp encrypted = 9;
+    bool encrypted = 9;
     string access_token = 10;
     string refresh_token = 11;
 }
