@@ -22,6 +22,7 @@ service UserService {
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
     rpc BlockToken(UserRequest) returns (UserResponse) {}
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
+    rpc GetTokens(UserRequest) returns (UserResponse) {}
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
@@ -61,11 +62,16 @@ message UserFilter {
 
 message Token {
     string id = 1;
-    string access_token = 2;
-    string refresh_token = 3;
-    google.protobuf.Timestamp authenticated_at = 4;
-    google.protobuf.Timestamp refreshed_at = 5;
-    string device_info = 6;
+    string user_id = 2;
+    bool blocked = 3;
+    string device_info = 4;
+    google.protobuf.Timestamp blocked_at = 5;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp used_at = 7;
+    google.protobuf.Timestamp expires_at = 8;
+    google.protobuf.Timestamp encrypted = 9;
+    string access_token = 10;
+    string refresh_token = 11;
 }
 
 message UserRequest {
@@ -85,5 +91,6 @@ message UserResponse {
     repeated User users = 2;
     int64 users_amount = 3;
     Token token = 4;
-    map<string, bytes> public_keys = 5;
+    repeated Token tokens = 5
+    map<string, bytes> public_keys = 6;
 }
