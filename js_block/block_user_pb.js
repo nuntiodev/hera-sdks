@@ -957,11 +957,16 @@ proto.BlockUser.Token.prototype.toObject = function(opt_includeInstance) {
 proto.BlockUser.Token.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    authenticatedAt: (f = msg.getAuthenticatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    refreshedAt: (f = msg.getRefreshedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    deviceInfo: jspb.Message.getFieldWithDefault(msg, 6, "")
+    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    blocked: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    deviceInfo: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    blockedAt: (f = msg.getBlockedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    usedAt: (f = msg.getUsedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    expiresAt: (f = msg.getExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    encrypted: (f = msg.getEncrypted()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    accessToken: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    refreshToken: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -1004,25 +1009,48 @@ proto.BlockUser.Token.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAccessToken(value);
+      msg.setUserId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRefreshToken(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setBlocked(value);
       break;
     case 4:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setAuthenticatedAt(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDeviceInfo(value);
       break;
     case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setRefreshedAt(value);
+      msg.setBlockedAt(value);
       break;
     case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedAt(value);
+      break;
+    case 7:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUsedAt(value);
+      break;
+    case 8:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiresAt(value);
+      break;
+    case 9:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEncrypted(value);
+      break;
+    case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDeviceInfo(value);
+      msg.setAccessToken(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRefreshToken(value);
       break;
     default:
       reader.skipField();
@@ -1060,29 +1088,28 @@ proto.BlockUser.Token.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAccessToken();
+  f = message.getUserId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getRefreshToken();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getBlocked();
+  if (f) {
+    writer.writeBool(
       3,
       f
     );
   }
-  f = message.getAuthenticatedAt();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getDeviceInfo();
+  if (f.length > 0) {
+    writer.writeString(
       4,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getRefreshedAt();
+  f = message.getBlockedAt();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -1090,10 +1117,49 @@ proto.BlockUser.Token.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getDeviceInfo();
+  f = message.getCreatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUsedAt();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiresAt();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEncrypted();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getAccessToken();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      10,
+      f
+    );
+  }
+  f = message.getRefreshToken();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -1119,10 +1185,10 @@ proto.BlockUser.Token.prototype.setId = function(value) {
 
 
 /**
- * optional string access_token = 2;
+ * optional string user_id = 2;
  * @return {string}
  */
-proto.BlockUser.Token.prototype.getAccessToken = function() {
+proto.BlockUser.Token.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1131,17 +1197,35 @@ proto.BlockUser.Token.prototype.getAccessToken = function() {
  * @param {string} value
  * @return {!proto.BlockUser.Token} returns this
  */
-proto.BlockUser.Token.prototype.setAccessToken = function(value) {
+proto.BlockUser.Token.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string refresh_token = 3;
+ * optional bool blocked = 3;
+ * @return {boolean}
+ */
+proto.BlockUser.Token.prototype.getBlocked = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.setBlocked = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional string device_info = 4;
  * @return {string}
  */
-proto.BlockUser.Token.prototype.getRefreshToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.BlockUser.Token.prototype.getDeviceInfo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -1149,53 +1233,16 @@ proto.BlockUser.Token.prototype.getRefreshToken = function() {
  * @param {string} value
  * @return {!proto.BlockUser.Token} returns this
  */
-proto.BlockUser.Token.prototype.setRefreshToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.BlockUser.Token.prototype.setDeviceInfo = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp authenticated_at = 4;
+ * optional google.protobuf.Timestamp blocked_at = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.BlockUser.Token.prototype.getAuthenticatedAt = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.BlockUser.Token} returns this
-*/
-proto.BlockUser.Token.prototype.setAuthenticatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.BlockUser.Token} returns this
- */
-proto.BlockUser.Token.prototype.clearAuthenticatedAt = function() {
-  return this.setAuthenticatedAt(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.BlockUser.Token.prototype.hasAuthenticatedAt = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp refreshed_at = 5;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.BlockUser.Token.prototype.getRefreshedAt = function() {
+proto.BlockUser.Token.prototype.getBlockedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
@@ -1205,7 +1252,7 @@ proto.BlockUser.Token.prototype.getRefreshedAt = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.BlockUser.Token} returns this
 */
-proto.BlockUser.Token.prototype.setRefreshedAt = function(value) {
+proto.BlockUser.Token.prototype.setBlockedAt = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -1214,8 +1261,8 @@ proto.BlockUser.Token.prototype.setRefreshedAt = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.BlockUser.Token} returns this
  */
-proto.BlockUser.Token.prototype.clearRefreshedAt = function() {
-  return this.setRefreshedAt(undefined);
+proto.BlockUser.Token.prototype.clearBlockedAt = function() {
+  return this.setBlockedAt(undefined);
 };
 
 
@@ -1223,17 +1270,165 @@ proto.BlockUser.Token.prototype.clearRefreshedAt = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.BlockUser.Token.prototype.hasRefreshedAt = function() {
+proto.BlockUser.Token.prototype.hasBlockedAt = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string device_info = 6;
+ * optional google.protobuf.Timestamp created_at = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.Token.prototype.getCreatedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.Token} returns this
+*/
+proto.BlockUser.Token.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.clearCreatedAt = function() {
+  return this.setCreatedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Token.prototype.hasCreatedAt = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp used_at = 7;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.Token.prototype.getUsedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.Token} returns this
+*/
+proto.BlockUser.Token.prototype.setUsedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.clearUsedAt = function() {
+  return this.setUsedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Token.prototype.hasUsedAt = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp expires_at = 8;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.Token.prototype.getExpiresAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.Token} returns this
+*/
+proto.BlockUser.Token.prototype.setExpiresAt = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.clearExpiresAt = function() {
+  return this.setExpiresAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Token.prototype.hasExpiresAt = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp encrypted = 9;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.Token.prototype.getEncrypted = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.Token} returns this
+*/
+proto.BlockUser.Token.prototype.setEncrypted = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.clearEncrypted = function() {
+  return this.setEncrypted(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Token.prototype.hasEncrypted = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string access_token = 10;
  * @return {string}
  */
-proto.BlockUser.Token.prototype.getDeviceInfo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+proto.BlockUser.Token.prototype.getAccessToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -1241,8 +1436,26 @@ proto.BlockUser.Token.prototype.getDeviceInfo = function() {
  * @param {string} value
  * @return {!proto.BlockUser.Token} returns this
  */
-proto.BlockUser.Token.prototype.setDeviceInfo = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+proto.BlockUser.Token.prototype.setAccessToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string refresh_token = 11;
+ * @return {string}
+ */
+proto.BlockUser.Token.prototype.getRefreshToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.setRefreshToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
@@ -1736,7 +1949,7 @@ proto.BlockUser.UserRequest.prototype.setCloudToken = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.BlockUser.UserResponse.repeatedFields_ = [2];
+proto.BlockUser.UserResponse.repeatedFields_ = [2,5];
 
 
 
@@ -1774,6 +1987,8 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
     proto.BlockUser.User.toObject, includeInstance),
     usersAmount: jspb.Message.getFieldWithDefault(msg, 3, 0),
     token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f),
+    tokensList: jspb.Message.toObjectList(msg.getTokensList(),
+    proto.BlockUser.Token.toObject, includeInstance),
     publicKeysMap: (f = msg.getPublicKeysMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -1831,6 +2046,11 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       msg.setToken(value);
       break;
     case 5:
+      var value = new proto.BlockUser.Token;
+      reader.readMessage(value,proto.BlockUser.Token.deserializeBinaryFromReader);
+      msg.addTokens(value);
+      break;
+    case 6:
       var value = msg.getPublicKeysMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
@@ -1896,9 +2116,17 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
       proto.BlockUser.Token.serializeBinaryToWriter
     );
   }
+  f = message.getTokensList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.BlockUser.Token.serializeBinaryToWriter
+    );
+  }
   f = message.getPublicKeysMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -2034,14 +2262,52 @@ proto.BlockUser.UserResponse.prototype.hasToken = function() {
 
 
 /**
- * map<string, bytes> public_keys = 5;
+ * repeated Token tokens = 5;
+ * @return {!Array<!proto.BlockUser.Token>}
+ */
+proto.BlockUser.UserResponse.prototype.getTokensList = function() {
+  return /** @type{!Array<!proto.BlockUser.Token>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.BlockUser.Token, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.BlockUser.Token>} value
+ * @return {!proto.BlockUser.UserResponse} returns this
+*/
+proto.BlockUser.UserResponse.prototype.setTokensList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.BlockUser.Token=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.Token}
+ */
+proto.BlockUser.UserResponse.prototype.addTokens = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.BlockUser.Token, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.clearTokensList = function() {
+  return this.setTokensList([]);
+};
+
+
+/**
+ * map<string, bytes> public_keys = 6;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.BlockUser.UserResponse.prototype.getPublicKeysMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));
 };
 

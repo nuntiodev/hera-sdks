@@ -33,6 +33,7 @@ type UserServiceClient interface {
 	ValidateToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	BlockToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	RefreshToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetTokens(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	PublicKeys(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -182,6 +183,15 @@ func (c *userServiceClient) RefreshToken(ctx context.Context, in *UserRequest, o
 	return out, nil
 }
 
+func (c *userServiceClient) GetTokens(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetTokens", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userServiceClient) PublicKeys(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/PublicKeys", in, out, opts...)
@@ -237,6 +247,7 @@ type UserServiceServer interface {
 	ValidateToken(context.Context, *UserRequest) (*UserResponse, error)
 	BlockToken(context.Context, *UserRequest) (*UserResponse, error)
 	RefreshToken(context.Context, *UserRequest) (*UserResponse, error)
+	GetTokens(context.Context, *UserRequest) (*UserResponse, error)
 	PublicKeys(context.Context, *UserRequest) (*UserResponse, error)
 	Delete(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteBatch(context.Context, *UserRequest) (*UserResponse, error)
@@ -291,6 +302,9 @@ func (UnimplementedUserServiceServer) BlockToken(context.Context, *UserRequest) 
 }
 func (UnimplementedUserServiceServer) RefreshToken(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
+}
+func (UnimplementedUserServiceServer) GetTokens(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTokens not implemented")
 }
 func (UnimplementedUserServiceServer) PublicKeys(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PublicKeys not implemented")
@@ -586,6 +600,24 @@ func _UserService_RefreshToken_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_GetTokens_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).GetTokens(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/GetTokens",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).GetTokens(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _UserService_PublicKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
@@ -724,6 +756,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RefreshToken",
 			Handler:    _UserService_RefreshToken_Handler,
+		},
+		{
+			MethodName: "GetTokens",
+			Handler:    _UserService_GetTokens_Handler,
 		},
 		{
 			MethodName: "PublicKeys",
