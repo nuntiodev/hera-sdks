@@ -964,9 +964,10 @@ proto.BlockUser.Token.toObject = function(includeInstance, msg) {
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     usedAt: (f = msg.getUsedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     expiresAt: (f = msg.getExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    encrypted: (f = msg.getEncrypted()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    encrypted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     accessToken: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 11, "")
+    refreshToken: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -1040,8 +1041,7 @@ proto.BlockUser.Token.deserializeBinaryFromReader = function(msg, reader) {
       msg.setExpiresAt(value);
       break;
     case 9:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setEncrypted(value);
       break;
     case 10:
@@ -1051,6 +1051,10 @@ proto.BlockUser.Token.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setRefreshToken(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInternalEncryptionLevel(value);
       break;
     default:
       reader.skipField();
@@ -1142,11 +1146,10 @@ proto.BlockUser.Token.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getEncrypted();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       9,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
   f = message.getAccessToken();
@@ -1160,6 +1163,13 @@ proto.BlockUser.Token.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getInternalEncryptionLevel();
+  if (f !== 0) {
+    writer.writeInt32(
+      12,
       f
     );
   }
@@ -1387,39 +1397,20 @@ proto.BlockUser.Token.prototype.hasExpiresAt = function() {
 
 
 /**
- * optional google.protobuf.Timestamp encrypted = 9;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.BlockUser.Token.prototype.getEncrypted = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.BlockUser.Token} returns this
-*/
-proto.BlockUser.Token.prototype.setEncrypted = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.BlockUser.Token} returns this
- */
-proto.BlockUser.Token.prototype.clearEncrypted = function() {
-  return this.setEncrypted(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
+ * optional bool encrypted = 9;
  * @return {boolean}
  */
-proto.BlockUser.Token.prototype.hasEncrypted = function() {
-  return jspb.Message.getField(this, 9) != null;
+proto.BlockUser.Token.prototype.getEncrypted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.setEncrypted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
@@ -1456,6 +1447,24 @@ proto.BlockUser.Token.prototype.getRefreshToken = function() {
  */
 proto.BlockUser.Token.prototype.setRefreshToken = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional int32 internal_encryption_level = 12;
+ * @return {number}
+ */
+proto.BlockUser.Token.prototype.getInternalEncryptionLevel = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.setInternalEncryptionLevel = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 

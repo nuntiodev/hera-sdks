@@ -332,17 +332,18 @@ type Token struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	UserId       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Blocked      bool                   `protobuf:"varint,3,opt,name=blocked,proto3" json:"blocked,omitempty"`
-	DeviceInfo   string                 `protobuf:"bytes,4,opt,name=device_info,json=deviceInfo,proto3" json:"device_info,omitempty"`
-	BlockedAt    *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=blocked_at,json=blockedAt,proto3" json:"blocked_at,omitempty"`
-	CreatedAt    *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UsedAt       *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=used_at,json=usedAt,proto3" json:"used_at,omitempty"`
-	ExpiresAt    *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
-	Encrypted    *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=encrypted,proto3" json:"encrypted,omitempty"`
-	AccessToken  string                 `protobuf:"bytes,10,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
-	RefreshToken string                 `protobuf:"bytes,11,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                  string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Blocked                 bool                   `protobuf:"varint,3,opt,name=blocked,proto3" json:"blocked,omitempty"`
+	DeviceInfo              string                 `protobuf:"bytes,4,opt,name=device_info,json=deviceInfo,proto3" json:"device_info,omitempty"`
+	BlockedAt               *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=blocked_at,json=blockedAt,proto3" json:"blocked_at,omitempty"`
+	CreatedAt               *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UsedAt                  *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=used_at,json=usedAt,proto3" json:"used_at,omitempty"`
+	ExpiresAt               *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	Encrypted               bool                   `protobuf:"varint,9,opt,name=encrypted,proto3" json:"encrypted,omitempty"`
+	AccessToken             string                 `protobuf:"bytes,10,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	RefreshToken            string                 `protobuf:"bytes,11,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+	InternalEncryptionLevel int32                  `protobuf:"varint,12,opt,name=internal_encryption_level,json=internalEncryptionLevel,proto3" json:"internal_encryption_level,omitempty"`
 }
 
 func (x *Token) Reset() {
@@ -433,11 +434,11 @@ func (x *Token) GetExpiresAt() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *Token) GetEncrypted() *timestamppb.Timestamp {
+func (x *Token) GetEncrypted() bool {
 	if x != nil {
 		return x.Encrypted
 	}
-	return nil
+	return false
 }
 
 func (x *Token) GetAccessToken() string {
@@ -452,6 +453,13 @@ func (x *Token) GetRefreshToken() string {
 		return x.RefreshToken
 	}
 	return ""
+}
+
+func (x *Token) GetInternalEncryptionLevel() int32 {
+	if x != nil {
+		return x.InternalEncryptionLevel
+	}
+	return 0
 }
 
 type UserRequest struct {
@@ -707,7 +715,7 @@ var file_block_user_proto_rawDesc = []byte{
 	0x41, 0x54, 0x45, 0x44, 0x5f, 0x41, 0x54, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x55, 0x50, 0x44,
 	0x41, 0x54, 0x45, 0x5f, 0x41, 0x54, 0x10, 0x01, 0x22, 0x19, 0x0a, 0x05, 0x4f, 0x72, 0x64, 0x65,
 	0x72, 0x12, 0x07, 0x0a, 0x03, 0x49, 0x4e, 0x43, 0x10, 0x00, 0x12, 0x07, 0x0a, 0x03, 0x44, 0x45,
-	0x43, 0x10, 0x01, 0x22, 0xd3, 0x03, 0x0a, 0x05, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x0e, 0x0a,
+	0x43, 0x10, 0x01, 0x22, 0xf3, 0x03, 0x0a, 0x05, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x0e, 0x0a,
 	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x17, 0x0a,
 	0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
 	0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x65,
@@ -728,15 +736,17 @@ var file_block_user_proto_rawDesc = []byte{
 	0x65, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73, 0x5f, 0x61, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
 	0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x52, 0x09, 0x65, 0x78,
-	0x70, 0x69, 0x72, 0x65, 0x73, 0x41, 0x74, 0x12, 0x38, 0x0a, 0x09, 0x65, 0x6e, 0x63, 0x72, 0x79,
-	0x70, 0x74, 0x65, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d,
-	0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x52, 0x09, 0x65, 0x6e, 0x63, 0x72, 0x79, 0x70, 0x74, 0x65,
-	0x64, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f, 0x6b, 0x65,
-	0x6e, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54,
-	0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x23, 0x0a, 0x0d, 0x72, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x5f,
-	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x65, 0x66,
-	0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0xf4, 0x02, 0x0a, 0x0b, 0x55, 0x73,
+	0x70, 0x69, 0x72, 0x65, 0x73, 0x41, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x65, 0x6e, 0x63, 0x72, 0x79,
+	0x70, 0x74, 0x65, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x08, 0x52, 0x09, 0x65, 0x6e, 0x63, 0x72,
+	0x79, 0x70, 0x74, 0x65, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f,
+	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x63, 0x63,
+	0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x23, 0x0a, 0x0d, 0x72, 0x65, 0x66, 0x72,
+	0x65, 0x73, 0x68, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0c, 0x72, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x3a, 0x0a,
+	0x19, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x5f, 0x65, 0x6e, 0x63, 0x72, 0x79, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x17, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x45, 0x6e, 0x63, 0x72, 0x79, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x65, 0x76, 0x65, 0x6c, 0x22, 0xf4, 0x02, 0x0a, 0x0b, 0x55, 0x73,
 	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x23, 0x0a, 0x04, 0x75, 0x73, 0x65,
 	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x55,
 	0x73, 0x65, 0x72, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x04, 0x75, 0x73, 0x65, 0x72, 0x12, 0x27,
@@ -904,62 +914,61 @@ var file_block_user_proto_depIdxs = []int32{
 	8,  // 6: BlockUser.Token.created_at:type_name -> google.protobuf.Timestamp
 	8,  // 7: BlockUser.Token.used_at:type_name -> google.protobuf.Timestamp
 	8,  // 8: BlockUser.Token.expires_at:type_name -> google.protobuf.Timestamp
-	8,  // 9: BlockUser.Token.encrypted:type_name -> google.protobuf.Timestamp
-	2,  // 10: BlockUser.UserRequest.user:type_name -> BlockUser.User
-	2,  // 11: BlockUser.UserRequest.update:type_name -> BlockUser.User
-	3,  // 12: BlockUser.UserRequest.filter:type_name -> BlockUser.UserFilter
-	2,  // 13: BlockUser.UserRequest.user_batch:type_name -> BlockUser.User
-	4,  // 14: BlockUser.UserRequest.token:type_name -> BlockUser.Token
-	2,  // 15: BlockUser.UserResponse.user:type_name -> BlockUser.User
-	2,  // 16: BlockUser.UserResponse.users:type_name -> BlockUser.User
-	4,  // 17: BlockUser.UserResponse.token:type_name -> BlockUser.Token
-	4,  // 18: BlockUser.UserResponse.tokens:type_name -> BlockUser.Token
-	7,  // 19: BlockUser.UserResponse.public_keys:type_name -> BlockUser.UserResponse.PublicKeysEntry
-	5,  // 20: BlockUser.UserService.Heartbeat:input_type -> BlockUser.UserRequest
-	5,  // 21: BlockUser.UserService.Create:input_type -> BlockUser.UserRequest
-	5,  // 22: BlockUser.UserService.UpdatePassword:input_type -> BlockUser.UserRequest
-	5,  // 23: BlockUser.UserService.UpdateMetadata:input_type -> BlockUser.UserRequest
-	5,  // 24: BlockUser.UserService.UpdateImage:input_type -> BlockUser.UserRequest
-	5,  // 25: BlockUser.UserService.UpdateEmail:input_type -> BlockUser.UserRequest
-	5,  // 26: BlockUser.UserService.UpdateOptionalId:input_type -> BlockUser.UserRequest
-	5,  // 27: BlockUser.UserService.UpdateSecurity:input_type -> BlockUser.UserRequest
-	5,  // 28: BlockUser.UserService.Get:input_type -> BlockUser.UserRequest
-	5,  // 29: BlockUser.UserService.GetAll:input_type -> BlockUser.UserRequest
-	5,  // 30: BlockUser.UserService.ValidateCredentials:input_type -> BlockUser.UserRequest
-	5,  // 31: BlockUser.UserService.Login:input_type -> BlockUser.UserRequest
-	5,  // 32: BlockUser.UserService.ValidateToken:input_type -> BlockUser.UserRequest
-	5,  // 33: BlockUser.UserService.BlockToken:input_type -> BlockUser.UserRequest
-	5,  // 34: BlockUser.UserService.RefreshToken:input_type -> BlockUser.UserRequest
-	5,  // 35: BlockUser.UserService.GetTokens:input_type -> BlockUser.UserRequest
-	5,  // 36: BlockUser.UserService.PublicKeys:input_type -> BlockUser.UserRequest
-	5,  // 37: BlockUser.UserService.Delete:input_type -> BlockUser.UserRequest
-	5,  // 38: BlockUser.UserService.DeleteBatch:input_type -> BlockUser.UserRequest
-	5,  // 39: BlockUser.UserService.DeleteNamespace:input_type -> BlockUser.UserRequest
-	6,  // 40: BlockUser.UserService.Heartbeat:output_type -> BlockUser.UserResponse
-	6,  // 41: BlockUser.UserService.Create:output_type -> BlockUser.UserResponse
-	6,  // 42: BlockUser.UserService.UpdatePassword:output_type -> BlockUser.UserResponse
-	6,  // 43: BlockUser.UserService.UpdateMetadata:output_type -> BlockUser.UserResponse
-	6,  // 44: BlockUser.UserService.UpdateImage:output_type -> BlockUser.UserResponse
-	6,  // 45: BlockUser.UserService.UpdateEmail:output_type -> BlockUser.UserResponse
-	6,  // 46: BlockUser.UserService.UpdateOptionalId:output_type -> BlockUser.UserResponse
-	6,  // 47: BlockUser.UserService.UpdateSecurity:output_type -> BlockUser.UserResponse
-	6,  // 48: BlockUser.UserService.Get:output_type -> BlockUser.UserResponse
-	6,  // 49: BlockUser.UserService.GetAll:output_type -> BlockUser.UserResponse
-	6,  // 50: BlockUser.UserService.ValidateCredentials:output_type -> BlockUser.UserResponse
-	6,  // 51: BlockUser.UserService.Login:output_type -> BlockUser.UserResponse
-	6,  // 52: BlockUser.UserService.ValidateToken:output_type -> BlockUser.UserResponse
-	6,  // 53: BlockUser.UserService.BlockToken:output_type -> BlockUser.UserResponse
-	6,  // 54: BlockUser.UserService.RefreshToken:output_type -> BlockUser.UserResponse
-	6,  // 55: BlockUser.UserService.GetTokens:output_type -> BlockUser.UserResponse
-	6,  // 56: BlockUser.UserService.PublicKeys:output_type -> BlockUser.UserResponse
-	6,  // 57: BlockUser.UserService.Delete:output_type -> BlockUser.UserResponse
-	6,  // 58: BlockUser.UserService.DeleteBatch:output_type -> BlockUser.UserResponse
-	6,  // 59: BlockUser.UserService.DeleteNamespace:output_type -> BlockUser.UserResponse
-	40, // [40:60] is the sub-list for method output_type
-	20, // [20:40] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	2,  // 9: BlockUser.UserRequest.user:type_name -> BlockUser.User
+	2,  // 10: BlockUser.UserRequest.update:type_name -> BlockUser.User
+	3,  // 11: BlockUser.UserRequest.filter:type_name -> BlockUser.UserFilter
+	2,  // 12: BlockUser.UserRequest.user_batch:type_name -> BlockUser.User
+	4,  // 13: BlockUser.UserRequest.token:type_name -> BlockUser.Token
+	2,  // 14: BlockUser.UserResponse.user:type_name -> BlockUser.User
+	2,  // 15: BlockUser.UserResponse.users:type_name -> BlockUser.User
+	4,  // 16: BlockUser.UserResponse.token:type_name -> BlockUser.Token
+	4,  // 17: BlockUser.UserResponse.tokens:type_name -> BlockUser.Token
+	7,  // 18: BlockUser.UserResponse.public_keys:type_name -> BlockUser.UserResponse.PublicKeysEntry
+	5,  // 19: BlockUser.UserService.Heartbeat:input_type -> BlockUser.UserRequest
+	5,  // 20: BlockUser.UserService.Create:input_type -> BlockUser.UserRequest
+	5,  // 21: BlockUser.UserService.UpdatePassword:input_type -> BlockUser.UserRequest
+	5,  // 22: BlockUser.UserService.UpdateMetadata:input_type -> BlockUser.UserRequest
+	5,  // 23: BlockUser.UserService.UpdateImage:input_type -> BlockUser.UserRequest
+	5,  // 24: BlockUser.UserService.UpdateEmail:input_type -> BlockUser.UserRequest
+	5,  // 25: BlockUser.UserService.UpdateOptionalId:input_type -> BlockUser.UserRequest
+	5,  // 26: BlockUser.UserService.UpdateSecurity:input_type -> BlockUser.UserRequest
+	5,  // 27: BlockUser.UserService.Get:input_type -> BlockUser.UserRequest
+	5,  // 28: BlockUser.UserService.GetAll:input_type -> BlockUser.UserRequest
+	5,  // 29: BlockUser.UserService.ValidateCredentials:input_type -> BlockUser.UserRequest
+	5,  // 30: BlockUser.UserService.Login:input_type -> BlockUser.UserRequest
+	5,  // 31: BlockUser.UserService.ValidateToken:input_type -> BlockUser.UserRequest
+	5,  // 32: BlockUser.UserService.BlockToken:input_type -> BlockUser.UserRequest
+	5,  // 33: BlockUser.UserService.RefreshToken:input_type -> BlockUser.UserRequest
+	5,  // 34: BlockUser.UserService.GetTokens:input_type -> BlockUser.UserRequest
+	5,  // 35: BlockUser.UserService.PublicKeys:input_type -> BlockUser.UserRequest
+	5,  // 36: BlockUser.UserService.Delete:input_type -> BlockUser.UserRequest
+	5,  // 37: BlockUser.UserService.DeleteBatch:input_type -> BlockUser.UserRequest
+	5,  // 38: BlockUser.UserService.DeleteNamespace:input_type -> BlockUser.UserRequest
+	6,  // 39: BlockUser.UserService.Heartbeat:output_type -> BlockUser.UserResponse
+	6,  // 40: BlockUser.UserService.Create:output_type -> BlockUser.UserResponse
+	6,  // 41: BlockUser.UserService.UpdatePassword:output_type -> BlockUser.UserResponse
+	6,  // 42: BlockUser.UserService.UpdateMetadata:output_type -> BlockUser.UserResponse
+	6,  // 43: BlockUser.UserService.UpdateImage:output_type -> BlockUser.UserResponse
+	6,  // 44: BlockUser.UserService.UpdateEmail:output_type -> BlockUser.UserResponse
+	6,  // 45: BlockUser.UserService.UpdateOptionalId:output_type -> BlockUser.UserResponse
+	6,  // 46: BlockUser.UserService.UpdateSecurity:output_type -> BlockUser.UserResponse
+	6,  // 47: BlockUser.UserService.Get:output_type -> BlockUser.UserResponse
+	6,  // 48: BlockUser.UserService.GetAll:output_type -> BlockUser.UserResponse
+	6,  // 49: BlockUser.UserService.ValidateCredentials:output_type -> BlockUser.UserResponse
+	6,  // 50: BlockUser.UserService.Login:output_type -> BlockUser.UserResponse
+	6,  // 51: BlockUser.UserService.ValidateToken:output_type -> BlockUser.UserResponse
+	6,  // 52: BlockUser.UserService.BlockToken:output_type -> BlockUser.UserResponse
+	6,  // 53: BlockUser.UserService.RefreshToken:output_type -> BlockUser.UserResponse
+	6,  // 54: BlockUser.UserService.GetTokens:output_type -> BlockUser.UserResponse
+	6,  // 55: BlockUser.UserService.PublicKeys:output_type -> BlockUser.UserResponse
+	6,  // 56: BlockUser.UserService.Delete:output_type -> BlockUser.UserResponse
+	6,  // 57: BlockUser.UserService.DeleteBatch:output_type -> BlockUser.UserResponse
+	6,  // 58: BlockUser.UserService.DeleteNamespace:output_type -> BlockUser.UserResponse
+	39, // [39:59] is the sub-list for method output_type
+	19, // [19:39] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_block_user_proto_init() }
