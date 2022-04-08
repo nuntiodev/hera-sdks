@@ -73,6 +73,7 @@ message Token {
     string access_token = 10;
     string refresh_token = 11;
     int32 internal_encryption_level = 12;
+    string token_pointer = 13;
 }
 
 message UserRequest {
