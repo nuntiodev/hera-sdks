@@ -967,7 +967,8 @@ proto.BlockUser.Token.toObject = function(includeInstance, msg) {
     encrypted: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     accessToken: jspb.Message.getFieldWithDefault(msg, 10, ""),
     refreshToken: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    tokenPointer: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -1055,6 +1056,10 @@ proto.BlockUser.Token.deserializeBinaryFromReader = function(msg, reader) {
     case 12:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInternalEncryptionLevel(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTokenPointer(value);
       break;
     default:
       reader.skipField();
@@ -1170,6 +1175,13 @@ proto.BlockUser.Token.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       12,
+      f
+    );
+  }
+  f = message.getTokenPointer();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
       f
     );
   }
@@ -1465,6 +1477,24 @@ proto.BlockUser.Token.prototype.getInternalEncryptionLevel = function() {
  */
 proto.BlockUser.Token.prototype.setInternalEncryptionLevel = function(value) {
   return jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * optional string token_pointer = 13;
+ * @return {string}
+ */
+proto.BlockUser.Token.prototype.getTokenPointer = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.setTokenPointer = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
