@@ -22,6 +22,7 @@ build-friends-js-proto:
 build-proto:
 	make build-user-go-proto && \
 	make build-user-js-proto && \
+	make build-dart-user-proto && \
 	make build-friends-go-proto && \
 	make build-friends-js-proto
 	
