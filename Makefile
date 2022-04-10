@@ -8,7 +8,7 @@ build-user-js-proto:
 
 .PHONY: build-dart-user-proto
 build-dart-user-proto:
-	protoc -I. --dart_out=grpc:./dart_block/bin/ ./block_user.proto google/protobuf/timestamp.proto
+	protoc -I. --dart_out=grpc:./dart_block/lib/ ./block_user.proto google/protobuf/timestamp.proto
 
 .PHONY: build-friends-go-proto
 build-friends-go-proto:

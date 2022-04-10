@@ -2,8 +2,7 @@ name: Build, Test and Deploy
 
 on:
   push:
-    tags:
-      - "*"
+    branches: [main]
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
