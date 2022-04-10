@@ -2092,7 +2092,7 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
     case 6:
       var value = msg.getPublicKeysMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
     default:
@@ -2165,7 +2165,7 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
   }
   f = message.getPublicKeysMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -2339,13 +2339,13 @@ proto.BlockUser.UserResponse.prototype.clearTokensList = function() {
 
 
 /**
- * map<string, bytes> public_keys = 6;
+ * map<string, string> public_keys = 6;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ * @return {!jspb.Map<string,string>}
  */
 proto.BlockUser.UserResponse.prototype.getPublicKeysMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+  return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));
 };

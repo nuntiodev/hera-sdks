@@ -717,7 +717,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usersAmount')
     ..aOM<Token>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
     ..pc<Token>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokens', $pb.PbFieldType.PM, subBuilder: Token.create)
-    ..m<$core.String, $core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeys', entryClassName: 'UserResponse.PublicKeysEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OY, packageName: const $pb.PackageName('BlockUser'))
+    ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeys', entryClassName: 'UserResponse.PublicKeysEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
@@ -728,7 +728,7 @@ class UserResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? usersAmount,
     Token? token,
     $core.Iterable<Token>? tokens,
-    $core.Map<$core.String, $core.List<$core.int>>? publicKeys,
+    $core.Map<$core.String, $core.String>? publicKeys,
   }) {
     final _result = create();
     if (user != null) {
@@ -810,6 +810,6 @@ class UserResponse extends $pb.GeneratedMessage {
   $core.List<Token> get tokens => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.Map<$core.String, $core.List<$core.int>> get publicKeys => $_getMap(5);
+  $core.Map<$core.String, $core.String> get publicKeys => $_getMap(5);
 }
 
