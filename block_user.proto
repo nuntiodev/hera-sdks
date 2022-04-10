@@ -94,5 +94,5 @@ message UserResponse {
     int64 users_amount = 3;
     Token token = 4;
     repeated Token tokens = 5;
-    map<string, bytes> public_keys = 6;
+    map<string, string> public_keys = 6;
 }

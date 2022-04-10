@@ -22,8 +22,9 @@ jobs:
       - name: Get tag
         id: tag
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
-      - name: Set pubdev tag
-        run: sh build/update-pubdev-version.sh ${{ steps.tag.outputs.VERSION }}
+      
+      #- name: Set pubdev tag
+        #run: sh build/update-pubdev-version.sh ${{ steps.tag.outputs.VERSION }}
 
       - name: Checkout main branch
         run: git checkout main
@@ -103,7 +104,7 @@ jobs:
         run: git config --global user.email "dev@softcorp.io" && git config --global user.name "Softcorp Automation"
 
       - name: Add git credentials
-        run: git remote set-url --push origin https://oscarsoftcorp:$GITHUB_TOKEN@github.com/softcorp-io/block-proto
+        run: git remote set-url --push origin https://sinbad-io:$GITHUB_TOKEN@github.com/softcorp-io/block-proto
 
       - name: Git commit
         run: git commit -am "updated protobuf files"

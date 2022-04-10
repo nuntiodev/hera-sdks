@@ -1,6 +1,6 @@
 name: dart_softcorp_blocks
 description: gRPC files from softcorp blocks
-version: 0.0.1
+version: 0.0.3
 homepage: https://github.com/softcorp-io
 
 environment:
@@ -9,6 +9,7 @@ environment:
 dependencies:
   protobuf: ^2.0.1
   grpc: ^3.0.2
+  fixnum: ^1.0.0
 
 dev_dependencies:
   lints: ^1.0.0
