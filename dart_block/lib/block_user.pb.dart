@@ -340,6 +340,7 @@ class Token extends $pb.GeneratedMessage {
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accessToken')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refreshToken')
     ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
+    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'location')
     ..hasRequiredFields = false
   ;
 
@@ -357,6 +358,7 @@ class Token extends $pb.GeneratedMessage {
     $core.String? accessToken,
     $core.String? refreshToken,
     $core.int? internalEncryptionLevel,
+    $core.String? location,
   }) {
     final _result = create();
     if (id != null) {
@@ -394,6 +396,9 @@ class Token extends $pb.GeneratedMessage {
     }
     if (internalEncryptionLevel != null) {
       _result.internalEncryptionLevel = internalEncryptionLevel;
+    }
+    if (location != null) {
+      _result.location = location;
     }
     return _result;
   }
@@ -533,6 +538,15 @@ class Token extends $pb.GeneratedMessage {
   $core.bool hasInternalEncryptionLevel() => $_has(11);
   @$pb.TagNumber(12)
   void clearInternalEncryptionLevel() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get location => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set location($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasLocation() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLocation() => clearField(13);
 }
 
 class UserRequest extends $pb.GeneratedMessage {
