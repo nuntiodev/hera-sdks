@@ -92,11 +92,12 @@ const Location$json = const {
   '2': const [
     const {'1': 'latitude', '3': 1, '4': 1, '5': 1, '10': 'latitude'},
     const {'1': 'longitude', '3': 2, '4': 1, '5': 1, '10': 'longitude'},
+    const {'1': 'country', '3': 3, '4': 1, '5': 9, '10': 'country'},
   ],
 };
 
 /// Descriptor for `Location`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List locationDescriptor = $convert.base64Decode('CghMb2NhdGlvbhIaCghsYXRpdHVkZRgBIAEoAVIIbGF0aXR1ZGUSHAoJbG9uZ2l0dWRlGAIgASgBUglsb25naXR1ZGU=');
+final $typed_data.Uint8List locationDescriptor = $convert.base64Decode('CghMb2NhdGlvbhIaCghsYXRpdHVkZRgBIAEoAVIIbGF0aXR1ZGUSHAoJbG9uZ2l0dWRlGAIgASgBUglsb25naXR1ZGUSGAoHY291bnRyeRgDIAEoCVIHY291bnRyeQ==');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',

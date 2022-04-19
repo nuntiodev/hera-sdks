@@ -583,6 +583,7 @@ class Location extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Location', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latitude', $pb.PbFieldType.OD)
     ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'longitude', $pb.PbFieldType.OD)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
     ..hasRequiredFields = false
   ;
 
@@ -590,6 +591,7 @@ class Location extends $pb.GeneratedMessage {
   factory Location({
     $core.double? latitude,
     $core.double? longitude,
+    $core.String? country,
   }) {
     final _result = create();
     if (latitude != null) {
@@ -597,6 +599,9 @@ class Location extends $pb.GeneratedMessage {
     }
     if (longitude != null) {
       _result.longitude = longitude;
+    }
+    if (country != null) {
+      _result.country = country;
     }
     return _result;
   }
@@ -638,6 +643,15 @@ class Location extends $pb.GeneratedMessage {
   $core.bool hasLongitude() => $_has(1);
   @$pb.TagNumber(2)
   void clearLongitude() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get country => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set country($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCountry() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCountry() => clearField(3);
 }
 
 class UserRequest extends $pb.GeneratedMessage {

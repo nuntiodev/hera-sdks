@@ -1634,7 +1634,8 @@ proto.BlockUser.Location.prototype.toObject = function(opt_includeInstance) {
 proto.BlockUser.Location.toObject = function(includeInstance, msg) {
   var f, obj = {
     latitude: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    longitude: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+    longitude: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    country: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1679,6 +1680,10 @@ proto.BlockUser.Location.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readDouble());
       msg.setLongitude(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountry(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1722,6 +1727,13 @@ proto.BlockUser.Location.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getCountry();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1758,6 +1770,24 @@ proto.BlockUser.Location.prototype.getLongitude = function() {
  */
 proto.BlockUser.Location.prototype.setLongitude = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+/**
+ * optional string country = 3;
+ * @return {string}
+ */
+proto.BlockUser.Location.prototype.getCountry = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.Location} returns this
+ */
+proto.BlockUser.Location.prototype.setCountry = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
