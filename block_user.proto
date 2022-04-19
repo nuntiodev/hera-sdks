@@ -43,6 +43,8 @@ message User {
 	google.protobuf.Timestamp created_at = 11;
     google.protobuf.Timestamp updated_at = 12;
     google.protobuf.Timestamp encrypted_at = 13;
+    bool require_email_verification = 14;
+    bool send_welcome_email = 15;
 }
 
 message UserFilter {
