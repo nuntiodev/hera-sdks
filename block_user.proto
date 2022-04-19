@@ -81,6 +81,7 @@ message Token {
 message Location {
   double latitude = 1;
   double longitude = 2;
+  string country = 3;
 }
 
 message UserRequest {
