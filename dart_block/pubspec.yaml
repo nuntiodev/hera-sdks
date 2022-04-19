@@ -1,7 +1,7 @@
-name: dart_softcorp_blocks
-description: gRPC files from softcorp blocks
-version: 0.0.4
-homepage: https://github.com/softcorp-io
+name: nuntio_blocks
+description: gRPC files for nuntio blocks
+version: 0.0.1
+homepage: https://github.com/nuntiodev
 
 environment:
   sdk: '>=2.16.2 <3.0.0'

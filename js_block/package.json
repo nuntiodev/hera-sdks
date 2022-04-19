@@ -1,6 +1,6 @@
 {
-  "name": "js_softcorp_blocks",
-  "version": "0.0.6",
+  "name": "js_nuntio_blocks",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/softcorp-io/softcorp-proto.git"
+    "url": "git+https://github.com/nuntiodev/block-proto.git"
   },
   "author": "softcorp",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/softcorp-io/softcorp-proto/issues"
+    "url": "https://github.com/nuntiodev/block-proto/issues"
   },
-  "homepage": "https://github.com/softcorp-io/softcorp-proto#readme"
+  "homepage": "https://github.com/nuntiodev/block-proto#readme"
 }
