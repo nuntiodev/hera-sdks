@@ -369,6 +369,7 @@ class Token extends $pb.GeneratedMessage {
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refreshToken')
     ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loggedInFrom')
+    ..e<TokenType>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: TokenType.TOKEN_TYPE_INVALID, valueOf: TokenType.valueOf, enumValues: TokenType.values)
     ..hasRequiredFields = false
   ;
 
@@ -387,6 +388,7 @@ class Token extends $pb.GeneratedMessage {
     $core.String? refreshToken,
     $core.int? internalEncryptionLevel,
     $core.String? loggedInFrom,
+    TokenType? type,
   }) {
     final _result = create();
     if (id != null) {
@@ -427,6 +429,9 @@ class Token extends $pb.GeneratedMessage {
     }
     if (loggedInFrom != null) {
       _result.loggedInFrom = loggedInFrom;
+    }
+    if (type != null) {
+      _result.type = type;
     }
     return _result;
   }
@@ -575,6 +580,15 @@ class Token extends $pb.GeneratedMessage {
   $core.bool hasLoggedInFrom() => $_has(12);
   @$pb.TagNumber(13)
   void clearLoggedInFrom() => clearField(13);
+
+  @$pb.TagNumber(14)
+  TokenType get type => $_getN(13);
+  @$pb.TagNumber(14)
+  set type(TokenType v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasType() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearType() => clearField(14);
 }
 
 class UserRequest extends $pb.GeneratedMessage {

@@ -1029,7 +1029,8 @@ proto.BlockUser.Token.toObject = function(includeInstance, msg) {
     accessToken: jspb.Message.getFieldWithDefault(msg, 10, ""),
     refreshToken: jspb.Message.getFieldWithDefault(msg, 11, ""),
     internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    loggedInFrom: jspb.Message.getFieldWithDefault(msg, 13, "")
+    loggedInFrom: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
   if (includeInstance) {
@@ -1121,6 +1122,10 @@ proto.BlockUser.Token.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setLoggedInFrom(value);
+      break;
+    case 14:
+      var value = /** @type {!proto.BlockUser.TokenType} */ (reader.readEnum());
+      msg.setType(value);
       break;
     default:
       reader.skipField();
@@ -1243,6 +1248,13 @@ proto.BlockUser.Token.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       13,
+      f
+    );
+  }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      14,
       f
     );
   }
@@ -1556,6 +1568,24 @@ proto.BlockUser.Token.prototype.getLoggedInFrom = function() {
  */
 proto.BlockUser.Token.prototype.setLoggedInFrom = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional TokenType type = 14;
+ * @return {!proto.BlockUser.TokenType}
+ */
+proto.BlockUser.Token.prototype.getType = function() {
+  return /** @type {!proto.BlockUser.TokenType} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {!proto.BlockUser.TokenType} value
+ * @return {!proto.BlockUser.Token} returns this
+ */
+proto.BlockUser.Token.prototype.setType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 14, value);
 };
 
 
