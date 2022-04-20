@@ -8,6 +8,18 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use tokenTypeDescriptor instead')
+const TokenType$json = const {
+  '1': 'TokenType',
+  '2': const [
+    const {'1': 'TOKEN_TYPE_INVALID', '2': 0},
+    const {'1': 'TOKEN_TYPE_ACCESS', '2': 1},
+    const {'1': 'TOKEN_TYPE_REFRESH', '2': 2},
+  ],
+};
+
+/// Descriptor for `TokenType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List tokenTypeDescriptor = $convert.base64Decode('CglUb2tlblR5cGUSFgoSVE9LRU5fVFlQRV9JTlZBTElEEAASFQoRVE9LRU5fVFlQRV9BQ0NFU1MQARIWChJUT0tFTl9UWVBFX1JFRlJFU0gQAg==');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',

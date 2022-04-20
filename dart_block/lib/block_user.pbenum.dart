@@ -9,6 +9,23 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class TokenType extends $pb.ProtobufEnum {
+  static const TokenType TOKEN_TYPE_INVALID = TokenType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TOKEN_TYPE_INVALID');
+  static const TokenType TOKEN_TYPE_ACCESS = TokenType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TOKEN_TYPE_ACCESS');
+  static const TokenType TOKEN_TYPE_REFRESH = TokenType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TOKEN_TYPE_REFRESH');
+
+  static const $core.List<TokenType> values = <TokenType> [
+    TOKEN_TYPE_INVALID,
+    TOKEN_TYPE_ACCESS,
+    TOKEN_TYPE_REFRESH,
+  ];
+
+  static final $core.Map<$core.int, TokenType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static TokenType? valueOf($core.int value) => _byValue[value];
+
+  const TokenType._($core.int v, $core.String n) : super(v, n);
+}
+
 class UserFilter_SortBy extends $pb.ProtobufEnum {
   static const UserFilter_SortBy CREATED_AT = UserFilter_SortBy._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'CREATED_AT');
   static const UserFilter_SortBy UPDATE_AT = UserFilter_SortBy._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UPDATE_AT');

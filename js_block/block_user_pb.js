@@ -24,6 +24,7 @@ var global = (function() {
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.BlockUser.Token', null, global);
+goog.exportSymbol('proto.BlockUser.TokenType', null, global);
 goog.exportSymbol('proto.BlockUser.User', null, global);
 goog.exportSymbol('proto.BlockUser.UserFilter', null, global);
 goog.exportSymbol('proto.BlockUser.UserFilter.Order', null, global);
@@ -2449,5 +2450,14 @@ proto.BlockUser.UserResponse.prototype.clearPublicKeysMap = function() {
   this.getPublicKeysMap().clear();
   return this;};
 
+
+/**
+ * @enum {number}
+ */
+proto.BlockUser.TokenType = {
+  TOKEN_TYPE_INVALID: 0,
+  TOKEN_TYPE_ACCESS: 1,
+  TOKEN_TYPE_REFRESH: 2
+};
 
 goog.object.extend(exports, proto.BlockUser);
