@@ -1595,7 +1595,7 @@ proto.BlockUser.Token.prototype.setType = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.BlockUser.UserRequest.repeatedFields_ = [6];
+proto.BlockUser.UserRequest.repeatedFields_ = [6,11];
 
 
 
@@ -1638,7 +1638,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f),
     validatepassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     cloudToken: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    tokenPointer: jspb.Message.getFieldWithDefault(msg, 10, "")
+    tokenPointer: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    tokenidsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1719,6 +1720,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setTokenPointer(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTokenids(value);
       break;
     default:
       reader.skipField();
@@ -1821,6 +1826,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getTokenidsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      11,
       f
     );
   }
@@ -2100,6 +2112,43 @@ proto.BlockUser.UserRequest.prototype.getTokenPointer = function() {
  */
 proto.BlockUser.UserRequest.prototype.setTokenPointer = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * repeated string tokenIds = 11;
+ * @return {!Array<string>}
+ */
+proto.BlockUser.UserRequest.prototype.getTokenidsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setTokenidsList = function(value) {
+  return jspb.Message.setField(this, 11, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.addTokenids = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.clearTokenidsList = function() {
+  return this.setTokenidsList([]);
 };
 
 
