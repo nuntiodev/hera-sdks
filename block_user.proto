@@ -62,6 +62,12 @@ message UserFilter {
     Order order = 4;
 }
 
+enum TokenType {
+    TOKEN_TYPE_INVALID = 0;
+    TOKEN_TYPE_ACCESS = 1;
+    TOKEN_TYPE_REFRESH = 2;
+}
+
 message Token {
     string id = 1;
     string user_id = 2;
