@@ -368,7 +368,7 @@ class Token extends $pb.GeneratedMessage {
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accessToken')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refreshToken')
     ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
-    ..aOM<Location>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'location', subBuilder: Location.create)
+    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loggedInFrom')
     ..hasRequiredFields = false
   ;
 
@@ -386,7 +386,7 @@ class Token extends $pb.GeneratedMessage {
     $core.String? accessToken,
     $core.String? refreshToken,
     $core.int? internalEncryptionLevel,
-    Location? location,
+    $core.String? loggedInFrom,
   }) {
     final _result = create();
     if (id != null) {
@@ -425,8 +425,8 @@ class Token extends $pb.GeneratedMessage {
     if (internalEncryptionLevel != null) {
       _result.internalEncryptionLevel = internalEncryptionLevel;
     }
-    if (location != null) {
-      _result.location = location;
+    if (loggedInFrom != null) {
+      _result.loggedInFrom = loggedInFrom;
     }
     return _result;
   }
@@ -568,90 +568,13 @@ class Token extends $pb.GeneratedMessage {
   void clearInternalEncryptionLevel() => clearField(12);
 
   @$pb.TagNumber(13)
-  Location get location => $_getN(12);
+  $core.String get loggedInFrom => $_getSZ(12);
   @$pb.TagNumber(13)
-  set location(Location v) { setField(13, v); }
+  set loggedInFrom($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasLocation() => $_has(12);
+  $core.bool hasLoggedInFrom() => $_has(12);
   @$pb.TagNumber(13)
-  void clearLocation() => clearField(13);
-  @$pb.TagNumber(13)
-  Location ensureLocation() => $_ensure(12);
-}
-
-class Location extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Location', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latitude', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'longitude', $pb.PbFieldType.OD)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
-    ..hasRequiredFields = false
-  ;
-
-  Location._() : super();
-  factory Location({
-    $core.double? latitude,
-    $core.double? longitude,
-    $core.String? country,
-  }) {
-    final _result = create();
-    if (latitude != null) {
-      _result.latitude = latitude;
-    }
-    if (longitude != null) {
-      _result.longitude = longitude;
-    }
-    if (country != null) {
-      _result.country = country;
-    }
-    return _result;
-  }
-  factory Location.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Location.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Location clone() => Location()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Location copyWith(void Function(Location) updates) => super.copyWith((message) => updates(message as Location)) as Location; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Location create() => Location._();
-  Location createEmptyInstance() => create();
-  static $pb.PbList<Location> createRepeated() => $pb.PbList<Location>();
-  @$core.pragma('dart2js:noInline')
-  static Location getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Location>(create);
-  static Location? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.double get latitude => $_getN(0);
-  @$pb.TagNumber(1)
-  set latitude($core.double v) { $_setDouble(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasLatitude() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearLatitude() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.double get longitude => $_getN(1);
-  @$pb.TagNumber(2)
-  set longitude($core.double v) { $_setDouble(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasLongitude() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearLongitude() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get country => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set country($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasCountry() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearCountry() => clearField(3);
+  void clearLoggedInFrom() => clearField(13);
 }
 
 class UserRequest extends $pb.GeneratedMessage {
