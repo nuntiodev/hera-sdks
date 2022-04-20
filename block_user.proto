@@ -21,6 +21,7 @@ service UserService {
     rpc Login(UserRequest) returns (UserResponse) {}
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
     rpc BlockToken(UserRequest) returns (UserResponse) {}
+    rpc BlockTokenBatch(UserRequest) returns (UserResponse) {}
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
     rpc GetTokens(UserRequest) returns (UserResponse) {}
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
@@ -96,6 +97,7 @@ message UserRequest {
     bool validatePassword = 8;
     string cloud_token = 9;
     string token_pointer = 10;
+    repeated string tokenIds = 11;
 }
 
 message UserResponse {
