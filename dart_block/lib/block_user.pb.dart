@@ -591,6 +591,81 @@ class Token extends $pb.GeneratedMessage {
   void clearType() => clearField(14);
 }
 
+class ActiveMeasurement extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActiveMeasurement', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'averageSeconds', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalSeconds', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  ActiveMeasurement._() : super();
+  factory ActiveMeasurement({
+    $core.String? id,
+    $core.int? averageSeconds,
+    $core.int? totalSeconds,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (averageSeconds != null) {
+      _result.averageSeconds = averageSeconds;
+    }
+    if (totalSeconds != null) {
+      _result.totalSeconds = totalSeconds;
+    }
+    return _result;
+  }
+  factory ActiveMeasurement.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ActiveMeasurement.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ActiveMeasurement clone() => ActiveMeasurement()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ActiveMeasurement copyWith(void Function(ActiveMeasurement) updates) => super.copyWith((message) => updates(message as ActiveMeasurement)) as ActiveMeasurement; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ActiveMeasurement create() => ActiveMeasurement._();
+  ActiveMeasurement createEmptyInstance() => create();
+  static $pb.PbList<ActiveMeasurement> createRepeated() => $pb.PbList<ActiveMeasurement>();
+  @$core.pragma('dart2js:noInline')
+  static ActiveMeasurement getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActiveMeasurement>(create);
+  static ActiveMeasurement? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get averageSeconds => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set averageSeconds($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAverageSeconds() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAverageSeconds() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get totalSeconds => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set totalSeconds($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTotalSeconds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalSeconds() => clearField(3);
+}
+
 class UserRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOM<User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: User.create)
@@ -603,6 +678,7 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword', protoName: 'validatePassword')
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
+    ..aOM<ActiveMeasurement>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
     ..hasRequiredFields = false
   ;
 
@@ -618,6 +694,7 @@ class UserRequest extends $pb.GeneratedMessage {
     $core.bool? validatePassword,
     $core.String? cloudToken,
     $core.String? tokenPointer,
+    ActiveMeasurement? activeMeasurement,
   }) {
     final _result = create();
     if (user != null) {
@@ -649,6 +726,9 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (tokenPointer != null) {
       _result.tokenPointer = tokenPointer;
+    }
+    if (activeMeasurement != null) {
+      _result.activeMeasurement = activeMeasurement;
     }
     return _result;
   }
@@ -764,6 +844,17 @@ class UserRequest extends $pb.GeneratedMessage {
   $core.bool hasTokenPointer() => $_has(9);
   @$pb.TagNumber(10)
   void clearTokenPointer() => clearField(10);
+
+  @$pb.TagNumber(11)
+  ActiveMeasurement get activeMeasurement => $_getN(10);
+  @$pb.TagNumber(11)
+  set activeMeasurement(ActiveMeasurement v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasActiveMeasurement() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearActiveMeasurement() => clearField(11);
+  @$pb.TagNumber(11)
+  ActiveMeasurement ensureActiveMeasurement() => $_ensure(10);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
@@ -774,6 +865,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..aOM<Token>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
     ..pc<Token>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokens', $pb.PbFieldType.PM, subBuilder: Token.create)
     ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeys', entryClassName: 'UserResponse.PublicKeysEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('BlockUser'))
+    ..aOM<ActiveMeasurement>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
     ..hasRequiredFields = false
   ;
 
@@ -785,6 +877,7 @@ class UserResponse extends $pb.GeneratedMessage {
     Token? token,
     $core.Iterable<Token>? tokens,
     $core.Map<$core.String, $core.String>? publicKeys,
+    ActiveMeasurement? activeMeasurement,
   }) {
     final _result = create();
     if (user != null) {
@@ -804,6 +897,9 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     if (publicKeys != null) {
       _result.publicKeys.addAll(publicKeys);
+    }
+    if (activeMeasurement != null) {
+      _result.activeMeasurement = activeMeasurement;
     }
     return _result;
   }
@@ -867,5 +963,16 @@ class UserResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.Map<$core.String, $core.String> get publicKeys => $_getMap(5);
+
+  @$pb.TagNumber(7)
+  ActiveMeasurement get activeMeasurement => $_getN(6);
+  @$pb.TagNumber(7)
+  set activeMeasurement(ActiveMeasurement v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasActiveMeasurement() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearActiveMeasurement() => clearField(7);
+  @$pb.TagNumber(7)
+  ActiveMeasurement ensureActiveMeasurement() => $_ensure(6);
 }
 

@@ -100,6 +100,21 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/PublicKeys',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$recordActiveMeasurement =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/RecordActiveMeasurement',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$getUserActiveMeasurement =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/GetUserActiveMeasurement',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$getTotalActiveMeasurement =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/GetTotalActiveMeasurement',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$delete = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
       '/BlockUser.UserService/Delete',
       ($0.UserRequest value) => value.writeToBuffer(),
@@ -209,6 +224,27 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.UserResponse> publicKeys($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$publicKeys, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> recordActiveMeasurement(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$recordActiveMeasurement, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> getUserActiveMeasurement(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getUserActiveMeasurement, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> getTotalActiveMeasurement(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getTotalActiveMeasurement, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> delete($0.UserRequest request,
@@ -358,6 +394,27 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'RecordActiveMeasurement',
+        recordActiveMeasurement_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'GetUserActiveMeasurement',
+        getUserActiveMeasurement_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'GetTotalActiveMeasurement',
+        getTotalActiveMeasurement_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'Delete',
         delete_Pre,
         false,
@@ -470,6 +527,21 @@ abstract class UserServiceBase extends $grpc.Service {
     return publicKeys(call, await request);
   }
 
+  $async.Future<$0.UserResponse> recordActiveMeasurement_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return recordActiveMeasurement(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> getUserActiveMeasurement_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return getUserActiveMeasurement(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> getTotalActiveMeasurement_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return getTotalActiveMeasurement(call, await request);
+  }
+
   $async.Future<$0.UserResponse> delete_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return delete(call, await request);
@@ -520,6 +592,12 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> getTokens(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> publicKeys(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> recordActiveMeasurement(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> getUserActiveMeasurement(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> getTotalActiveMeasurement(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> delete(
       $grpc.ServiceCall call, $0.UserRequest request);

@@ -1176,6 +1176,189 @@ proto.BlockUser.UserServicePromiseClient.prototype.publicKeys =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
+const methodDescriptor_UserService_RecordActiveMeasurement = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/RecordActiveMeasurement',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.recordActiveMeasurement =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/RecordActiveMeasurement',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_RecordActiveMeasurement,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.recordActiveMeasurement =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/RecordActiveMeasurement',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_RecordActiveMeasurement);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
+const methodDescriptor_UserService_GetUserActiveMeasurement = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetUserActiveMeasurement',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.getUserActiveMeasurement =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/GetUserActiveMeasurement',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetUserActiveMeasurement,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.getUserActiveMeasurement =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/GetUserActiveMeasurement',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetUserActiveMeasurement);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
+const methodDescriptor_UserService_GetTotalActiveMeasurement = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetTotalActiveMeasurement',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.getTotalActiveMeasurement =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/GetTotalActiveMeasurement',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetTotalActiveMeasurement,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.getTotalActiveMeasurement =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/GetTotalActiveMeasurement',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetTotalActiveMeasurement);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
 const methodDescriptor_UserService_Delete = new grpc.web.MethodDescriptor(
   '/BlockUser.UserService/Delete',
   grpc.web.MethodType.UNARY,

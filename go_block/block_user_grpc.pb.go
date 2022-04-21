@@ -36,6 +36,9 @@ type UserServiceClient interface {
 	RefreshToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetTokens(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	PublicKeys(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	RecordActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetUserActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetTotalActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -211,6 +214,33 @@ func (c *userServiceClient) PublicKeys(ctx context.Context, in *UserRequest, opt
 	return out, nil
 }
 
+func (c *userServiceClient) RecordActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/RecordActiveMeasurement", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) GetUserActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetUserActiveMeasurement", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) GetTotalActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetTotalActiveMeasurement", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userServiceClient) Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/Delete", in, out, opts...)
@@ -260,6 +290,9 @@ type UserServiceServer interface {
 	RefreshToken(context.Context, *UserRequest) (*UserResponse, error)
 	GetTokens(context.Context, *UserRequest) (*UserResponse, error)
 	PublicKeys(context.Context, *UserRequest) (*UserResponse, error)
+	RecordActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error)
+	GetUserActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error)
+	GetTotalActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error)
 	Delete(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteBatch(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteNamespace(context.Context, *UserRequest) (*UserResponse, error)
@@ -322,6 +355,15 @@ func (UnimplementedUserServiceServer) GetTokens(context.Context, *UserRequest) (
 }
 func (UnimplementedUserServiceServer) PublicKeys(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PublicKeys not implemented")
+}
+func (UnimplementedUserServiceServer) RecordActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RecordActiveMeasurement not implemented")
+}
+func (UnimplementedUserServiceServer) GetUserActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserActiveMeasurement not implemented")
+}
+func (UnimplementedUserServiceServer) GetTotalActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTotalActiveMeasurement not implemented")
 }
 func (UnimplementedUserServiceServer) Delete(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
@@ -668,6 +710,60 @@ func _UserService_PublicKeys_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_RecordActiveMeasurement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).RecordActiveMeasurement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/RecordActiveMeasurement",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).RecordActiveMeasurement(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_GetUserActiveMeasurement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).GetUserActiveMeasurement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/GetUserActiveMeasurement",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).GetUserActiveMeasurement(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_GetTotalActiveMeasurement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).GetTotalActiveMeasurement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/GetTotalActiveMeasurement",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).GetTotalActiveMeasurement(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _UserService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
@@ -800,6 +896,18 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PublicKeys",
 			Handler:    _UserService_PublicKeys_Handler,
+		},
+		{
+			MethodName: "RecordActiveMeasurement",
+			Handler:    _UserService_RecordActiveMeasurement_Handler,
+		},
+		{
+			MethodName: "GetUserActiveMeasurement",
+			Handler:    _UserService_GetUserActiveMeasurement_Handler,
+		},
+		{
+			MethodName: "GetTotalActiveMeasurement",
+			Handler:    _UserService_GetTotalActiveMeasurement_Handler,
 		},
 		{
 			MethodName: "Delete",

@@ -20,6 +20,22 @@ const TokenType$json = const {
 
 /// Descriptor for `TokenType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List tokenTypeDescriptor = $convert.base64Decode('CglUb2tlblR5cGUSFgoSVE9LRU5fVFlQRV9JTlZBTElEEAASFQoRVE9LRU5fVFlQRV9BQ0NFU1MQARIWChJUT0tFTl9UWVBFX1JFRlJFU0gQAg==');
+@$core.Deprecated('Use platformDescriptor instead')
+const Platform$json = const {
+  '1': 'Platform',
+  '2': const [
+    const {'1': 'INVALID_PLATFORM', '2': 0},
+    const {'1': 'IOS', '2': 1},
+    const {'1': 'ANDROID', '2': 2},
+    const {'1': 'WEB', '2': 3},
+    const {'1': 'MACOS', '2': 4},
+    const {'1': 'LINUX', '2': 5},
+    const {'1': 'WINDOWS', '2': 6},
+  ],
+};
+
+/// Descriptor for `Platform`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List platformDescriptor = $convert.base64Decode('CghQbGF0Zm9ybRIUChBJTlZBTElEX1BMQVRGT1JNEAASBwoDSU9TEAESCwoHQU5EUk9JRBACEgcKA1dFQhADEgkKBU1BQ09TEAQSCQoFTElOVVgQBRILCgdXSU5ET1dTEAY=');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
@@ -99,6 +115,18 @@ const Token$json = const {
 
 /// Descriptor for `Token`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tokenDescriptor = $convert.base64Decode('CgVUb2tlbhIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB2Jsb2NrZWQYAyABKAhSB2Jsb2NrZWQSHwoLZGV2aWNlX2luZm8YBCABKAlSCmRldmljZUluZm8SOQoKYmxvY2tlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWJsb2NrZWRBdBI5CgpjcmVhdGVkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjMKB3VzZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgZ1c2VkQXQSOQoKZXhwaXJlc19hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBIcCgllbmNyeXB0ZWQYCSABKAhSCWVuY3J5cHRlZBIhCgxhY2Nlc3NfdG9rZW4YCiABKAlSC2FjY2Vzc1Rva2VuEiMKDXJlZnJlc2hfdG9rZW4YCyABKAlSDHJlZnJlc2hUb2tlbhI6ChlpbnRlcm5hbF9lbmNyeXB0aW9uX2xldmVsGAwgASgFUhdpbnRlcm5hbEVuY3J5cHRpb25MZXZlbBIkCg5sb2dnZWRfaW5fZnJvbRgNIAEoCVIMbG9nZ2VkSW5Gcm9tEigKBHR5cGUYDiABKA4yFC5CbG9ja1VzZXIuVG9rZW5UeXBlUgR0eXBl');
+@$core.Deprecated('Use activeMeasurementDescriptor instead')
+const ActiveMeasurement$json = const {
+  '1': 'ActiveMeasurement',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    const {'1': 'average_seconds', '3': 2, '4': 1, '5': 5, '10': 'averageSeconds'},
+    const {'1': 'total_seconds', '3': 3, '4': 1, '5': 5, '10': 'totalSeconds'},
+  ],
+};
+
+/// Descriptor for `ActiveMeasurement`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode('ChFBY3RpdmVNZWFzdXJlbWVudBIOCgJpZBgBIAEoCVICaWQSJwoPYXZlcmFnZV9zZWNvbmRzGAIgASgFUg5hdmVyYWdlU2Vjb25kcxIjCg10b3RhbF9zZWNvbmRzGAMgASgFUgx0b3RhbFNlY29uZHM=');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',
@@ -113,11 +141,12 @@ const UserRequest$json = const {
     const {'1': 'validatePassword', '3': 8, '4': 1, '5': 8, '10': 'validatePassword'},
     const {'1': 'cloud_token', '3': 9, '4': 1, '5': 9, '10': 'cloudToken'},
     const {'1': 'token_pointer', '3': 10, '4': 1, '5': 9, '10': 'tokenPointer'},
+    const {'1': 'active_measurement', '3': 11, '4': 1, '5': 11, '6': '.BlockUser.ActiveMeasurement', '10': 'activeMeasurement'},
   ],
 };
 
 /// Descriptor for `UserRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIjCgR1c2VyGAEgASgLMg8uQmxvY2tVc2VyLlVzZXJSBHVzZXISJwoGdXBkYXRlGAIgASgLMg8uQmxvY2tVc2VyLlVzZXJSBnVwZGF0ZRItCgZmaWx0ZXIYAyABKAsyFS5CbG9ja1VzZXIuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5Ei4KCnVzZXJfYmF0Y2gYBiADKAsyDy5CbG9ja1VzZXIuVXNlclIJdXNlckJhdGNoEiYKBXRva2VuGAcgASgLMhAuQmxvY2tVc2VyLlRva2VuUgV0b2tlbhIqChB2YWxpZGF0ZVBhc3N3b3JkGAggASgIUhB2YWxpZGF0ZVBhc3N3b3JkEh8KC2Nsb3VkX3Rva2VuGAkgASgJUgpjbG91ZFRva2VuEiMKDXRva2VuX3BvaW50ZXIYCiABKAlSDHRva2VuUG9pbnRlcg==');
+final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIjCgR1c2VyGAEgASgLMg8uQmxvY2tVc2VyLlVzZXJSBHVzZXISJwoGdXBkYXRlGAIgASgLMg8uQmxvY2tVc2VyLlVzZXJSBnVwZGF0ZRItCgZmaWx0ZXIYAyABKAsyFS5CbG9ja1VzZXIuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5Ei4KCnVzZXJfYmF0Y2gYBiADKAsyDy5CbG9ja1VzZXIuVXNlclIJdXNlckJhdGNoEiYKBXRva2VuGAcgASgLMhAuQmxvY2tVc2VyLlRva2VuUgV0b2tlbhIqChB2YWxpZGF0ZVBhc3N3b3JkGAggASgIUhB2YWxpZGF0ZVBhc3N3b3JkEh8KC2Nsb3VkX3Rva2VuGAkgASgJUgpjbG91ZFRva2VuEiMKDXRva2VuX3BvaW50ZXIYCiABKAlSDHRva2VuUG9pbnRlchJLChJhY3RpdmVfbWVhc3VyZW1lbnQYCyABKAsyHC5CbG9ja1VzZXIuQWN0aXZlTWVhc3VyZW1lbnRSEWFjdGl2ZU1lYXN1cmVtZW50');
 @$core.Deprecated('Use userResponseDescriptor instead')
 const UserResponse$json = const {
   '1': 'UserResponse',
@@ -128,6 +157,7 @@ const UserResponse$json = const {
     const {'1': 'token', '3': 4, '4': 1, '5': 11, '6': '.BlockUser.Token', '10': 'token'},
     const {'1': 'tokens', '3': 5, '4': 3, '5': 11, '6': '.BlockUser.Token', '10': 'tokens'},
     const {'1': 'public_keys', '3': 6, '4': 3, '5': 11, '6': '.BlockUser.UserResponse.PublicKeysEntry', '10': 'publicKeys'},
+    const {'1': 'active_measurement', '3': 7, '4': 1, '5': 11, '6': '.BlockUser.ActiveMeasurement', '10': 'activeMeasurement'},
   ],
   '3': const [UserResponse_PublicKeysEntry$json],
 };
@@ -143,4 +173,4 @@ const UserResponse_PublicKeysEntry$json = const {
 };
 
 /// Descriptor for `UserResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxVc2VyUmVzcG9uc2USIwoEdXNlchgBIAEoCzIPLkJsb2NrVXNlci5Vc2VyUgR1c2VyEiUKBXVzZXJzGAIgAygLMg8uQmxvY2tVc2VyLlVzZXJSBXVzZXJzEiEKDHVzZXJzX2Ftb3VudBgDIAEoA1ILdXNlcnNBbW91bnQSJgoFdG9rZW4YBCABKAsyEC5CbG9ja1VzZXIuVG9rZW5SBXRva2VuEigKBnRva2VucxgFIAMoCzIQLkJsb2NrVXNlci5Ub2tlblIGdG9rZW5zEkgKC3B1YmxpY19rZXlzGAYgAygLMicuQmxvY2tVc2VyLlVzZXJSZXNwb25zZS5QdWJsaWNLZXlzRW50cnlSCnB1YmxpY0tleXMaPQoPUHVibGljS2V5c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
+final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxVc2VyUmVzcG9uc2USIwoEdXNlchgBIAEoCzIPLkJsb2NrVXNlci5Vc2VyUgR1c2VyEiUKBXVzZXJzGAIgAygLMg8uQmxvY2tVc2VyLlVzZXJSBXVzZXJzEiEKDHVzZXJzX2Ftb3VudBgDIAEoA1ILdXNlcnNBbW91bnQSJgoFdG9rZW4YBCABKAsyEC5CbG9ja1VzZXIuVG9rZW5SBXRva2VuEigKBnRva2VucxgFIAMoCzIQLkJsb2NrVXNlci5Ub2tlblIGdG9rZW5zEkgKC3B1YmxpY19rZXlzGAYgAygLMicuQmxvY2tVc2VyLlVzZXJSZXNwb25zZS5QdWJsaWNLZXlzRW50cnlSCnB1YmxpY0tleXMSSwoSYWN0aXZlX21lYXN1cmVtZW50GAcgASgLMhwuQmxvY2tVc2VyLkFjdGl2ZU1lYXN1cmVtZW50UhFhY3RpdmVNZWFzdXJlbWVudBo9Cg9QdWJsaWNLZXlzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4AQ==');
