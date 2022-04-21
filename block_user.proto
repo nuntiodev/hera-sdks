@@ -27,7 +27,7 @@ service UserService {
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
     rpc RecordActiveMeasurement(UserRequest) returns (UserResponse) {}
     rpc GetUserAverageActiveMeasurement(UserRequest) returns (UserResponse) {}
-    rpc GetTotalAverageActiveMeasurement(UserRequest) returns (UserResponse) {}
+    rpc GetNamespaceAverageActiveMeasurement(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
