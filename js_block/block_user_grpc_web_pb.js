@@ -1176,8 +1176,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.publicKeys =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_RecordActiveMeasurement = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/RecordActiveMeasurement',
+const methodDescriptor_UserService_RecordActive = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/RecordActive',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1202,13 +1202,13 @@ const methodDescriptor_UserService_RecordActiveMeasurement = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.recordActiveMeasurement =
+proto.BlockUser.UserServiceClient.prototype.recordActive =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/RecordActiveMeasurement',
+      '/BlockUser.UserService/RecordActive',
       request,
       metadata || {},
-      methodDescriptor_UserService_RecordActiveMeasurement,
+      methodDescriptor_UserService_RecordActive,
       callback);
 };
 
@@ -1221,13 +1221,13 @@ proto.BlockUser.UserServiceClient.prototype.recordActiveMeasurement =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.recordActiveMeasurement =
+proto.BlockUser.UserServicePromiseClient.prototype.recordActive =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/RecordActiveMeasurement',
+      '/BlockUser.UserService/RecordActive',
       request,
       metadata || {},
-      methodDescriptor_UserService_RecordActiveMeasurement);
+      methodDescriptor_UserService_RecordActive);
 };
 
 
@@ -1237,8 +1237,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.recordActiveMeasurement =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_GetUserAverageActiveMeasurement = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/GetUserAverageActiveMeasurement',
+const methodDescriptor_UserService_UserAverageActive = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UserAverageActive',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1263,13 +1263,13 @@ const methodDescriptor_UserService_GetUserAverageActiveMeasurement = new grpc.we
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.getUserAverageActiveMeasurement =
+proto.BlockUser.UserServiceClient.prototype.userAverageActive =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/GetUserAverageActiveMeasurement',
+      '/BlockUser.UserService/UserAverageActive',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetUserAverageActiveMeasurement,
+      methodDescriptor_UserService_UserAverageActive,
       callback);
 };
 
@@ -1282,13 +1282,13 @@ proto.BlockUser.UserServiceClient.prototype.getUserAverageActiveMeasurement =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.getUserAverageActiveMeasurement =
+proto.BlockUser.UserServicePromiseClient.prototype.userAverageActive =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/GetUserAverageActiveMeasurement',
+      '/BlockUser.UserService/UserAverageActive',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetUserAverageActiveMeasurement);
+      methodDescriptor_UserService_UserAverageActive);
 };
 
 
@@ -1298,8 +1298,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.getUserAverageActiveMeasureme
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_GetNamespaceAverageActiveMeasurement = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/GetNamespaceAverageActiveMeasurement',
+const methodDescriptor_UserService_NamespaceAverageActive = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/NamespaceAverageActive',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1324,13 +1324,13 @@ const methodDescriptor_UserService_GetNamespaceAverageActiveMeasurement = new gr
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.getNamespaceAverageActiveMeasurement =
+proto.BlockUser.UserServiceClient.prototype.namespaceAverageActive =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/GetNamespaceAverageActiveMeasurement',
+      '/BlockUser.UserService/NamespaceAverageActive',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetNamespaceAverageActiveMeasurement,
+      methodDescriptor_UserService_NamespaceAverageActive,
       callback);
 };
 
@@ -1343,13 +1343,13 @@ proto.BlockUser.UserServiceClient.prototype.getNamespaceAverageActiveMeasurement
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.getNamespaceAverageActiveMeasurement =
+proto.BlockUser.UserServicePromiseClient.prototype.namespaceAverageActive =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/GetNamespaceAverageActiveMeasurement',
+      '/BlockUser.UserService/NamespaceAverageActive',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetNamespaceAverageActiveMeasurement);
+      methodDescriptor_UserService_NamespaceAverageActive);
 };
 
 

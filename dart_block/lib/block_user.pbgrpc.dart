@@ -100,19 +100,19 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/PublicKeys',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$recordActiveMeasurement =
+  static final _$recordActive =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/RecordActiveMeasurement',
+          '/BlockUser.UserService/RecordActive',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$getUserAverageActiveMeasurement =
+  static final _$userAverageActive =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/GetUserAverageActiveMeasurement',
+          '/BlockUser.UserService/UserAverageActive',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$getNamespaceAverageActiveMeasurement =
+  static final _$namespaceAverageActive =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/GetNamespaceAverageActiveMeasurement',
+          '/BlockUser.UserService/NamespaceAverageActive',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$delete = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
@@ -226,24 +226,21 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$publicKeys, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> recordActiveMeasurement(
-      $0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> recordActive($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$recordActiveMeasurement, request,
-        options: options);
+    return $createUnaryCall(_$recordActive, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> getUserAverageActiveMeasurement(
+  $grpc.ResponseFuture<$0.UserResponse> userAverageActive(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getUserAverageActiveMeasurement, request,
-        options: options);
+    return $createUnaryCall(_$userAverageActive, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> getNamespaceAverageActiveMeasurement(
+  $grpc.ResponseFuture<$0.UserResponse> namespaceAverageActive(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getNamespaceAverageActiveMeasurement, request,
+    return $createUnaryCall(_$namespaceAverageActive, request,
         options: options);
   }
 
@@ -394,22 +391,22 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'RecordActiveMeasurement',
-        recordActiveMeasurement_Pre,
+        'RecordActive',
+        recordActive_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'GetUserAverageActiveMeasurement',
-        getUserAverageActiveMeasurement_Pre,
+        'UserAverageActive',
+        userAverageActive_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'GetNamespaceAverageActiveMeasurement',
-        getNamespaceAverageActiveMeasurement_Pre,
+        'NamespaceAverageActive',
+        namespaceAverageActive_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -527,19 +524,19 @@ abstract class UserServiceBase extends $grpc.Service {
     return publicKeys(call, await request);
   }
 
-  $async.Future<$0.UserResponse> recordActiveMeasurement_Pre(
+  $async.Future<$0.UserResponse> recordActive_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return recordActiveMeasurement(call, await request);
+    return recordActive(call, await request);
   }
 
-  $async.Future<$0.UserResponse> getUserAverageActiveMeasurement_Pre(
+  $async.Future<$0.UserResponse> userAverageActive_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return getUserAverageActiveMeasurement(call, await request);
+    return userAverageActive(call, await request);
   }
 
-  $async.Future<$0.UserResponse> getNamespaceAverageActiveMeasurement_Pre(
+  $async.Future<$0.UserResponse> namespaceAverageActive_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return getNamespaceAverageActiveMeasurement(call, await request);
+    return namespaceAverageActive(call, await request);
   }
 
   $async.Future<$0.UserResponse> delete_Pre(
@@ -593,11 +590,11 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> publicKeys(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> recordActiveMeasurement(
+  $async.Future<$0.UserResponse> recordActive(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> getUserAverageActiveMeasurement(
+  $async.Future<$0.UserResponse> userAverageActive(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> getNamespaceAverageActiveMeasurement(
+  $async.Future<$0.UserResponse> namespaceAverageActive(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> delete(
       $grpc.ServiceCall call, $0.UserRequest request);
