@@ -25,6 +25,9 @@ service UserService {
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
     rpc GetTokens(UserRequest) returns (UserResponse) {}
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
+    rpc RecordActiveMeasurement(UserRequest) returns (UserResponse)
+    rpc GetUserActiveMeasurement(UserRequest) returns (UserResponse)
+    rpc GetTotalActiveMeasurement(UserRequest) returns (UserResponse)
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
@@ -86,6 +89,12 @@ message Token {
     TokenType type = 14;
 }
 
+message ActiveMeasurement {
+    string id = 1;
+    int32 average_seconds = 2;
+    int32 total_seconds = 3;
+}
+
 message UserRequest {
     User user = 1;
     User update = 2;
@@ -97,6 +106,7 @@ message UserRequest {
     bool validatePassword = 8;
     string cloud_token = 9;
     string token_pointer = 10;
+    ActiveMeasurement active_measurement = 11;
 }
 
 message UserResponse {
