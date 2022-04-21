@@ -1,2 +1,2 @@
-# Softcorp Micro Blocks
-This project contains protobuf files used in *Softcorp Block* projects.
+# Nuntio Blocks
+This project contains protobuf files used in *Nuntio Block* projects.
