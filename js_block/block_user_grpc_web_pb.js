@@ -1298,8 +1298,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.getUserAverageActiveMeasureme
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_GetTotalAverageActiveMeasurement = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/GetTotalAverageActiveMeasurement',
+const methodDescriptor_UserService_GetNamespaceAverageActiveMeasurement = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetNamespaceAverageActiveMeasurement',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1324,13 +1324,13 @@ const methodDescriptor_UserService_GetTotalAverageActiveMeasurement = new grpc.w
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.getTotalAverageActiveMeasurement =
+proto.BlockUser.UserServiceClient.prototype.getNamespaceAverageActiveMeasurement =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/GetTotalAverageActiveMeasurement',
+      '/BlockUser.UserService/GetNamespaceAverageActiveMeasurement',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetTotalAverageActiveMeasurement,
+      methodDescriptor_UserService_GetNamespaceAverageActiveMeasurement,
       callback);
 };
 
@@ -1343,13 +1343,13 @@ proto.BlockUser.UserServiceClient.prototype.getTotalAverageActiveMeasurement =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.getTotalAverageActiveMeasurement =
+proto.BlockUser.UserServicePromiseClient.prototype.getNamespaceAverageActiveMeasurement =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/GetTotalAverageActiveMeasurement',
+      '/BlockUser.UserService/GetNamespaceAverageActiveMeasurement',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetTotalAverageActiveMeasurement);
+      methodDescriptor_UserService_GetNamespaceAverageActiveMeasurement);
 };
 
 

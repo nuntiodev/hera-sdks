@@ -38,7 +38,7 @@ type UserServiceClient interface {
 	PublicKeys(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	RecordActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetUserAverageActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	GetTotalAverageActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetNamespaceAverageActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -232,9 +232,9 @@ func (c *userServiceClient) GetUserAverageActiveMeasurement(ctx context.Context,
 	return out, nil
 }
 
-func (c *userServiceClient) GetTotalAverageActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) GetNamespaceAverageActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetTotalAverageActiveMeasurement", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetNamespaceAverageActiveMeasurement", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -292,7 +292,7 @@ type UserServiceServer interface {
 	PublicKeys(context.Context, *UserRequest) (*UserResponse, error)
 	RecordActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error)
 	GetUserAverageActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error)
-	GetTotalAverageActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error)
+	GetNamespaceAverageActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error)
 	Delete(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteBatch(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteNamespace(context.Context, *UserRequest) (*UserResponse, error)
@@ -362,8 +362,8 @@ func (UnimplementedUserServiceServer) RecordActiveMeasurement(context.Context, *
 func (UnimplementedUserServiceServer) GetUserAverageActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserAverageActiveMeasurement not implemented")
 }
-func (UnimplementedUserServiceServer) GetTotalAverageActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTotalAverageActiveMeasurement not implemented")
+func (UnimplementedUserServiceServer) GetNamespaceAverageActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNamespaceAverageActiveMeasurement not implemented")
 }
 func (UnimplementedUserServiceServer) Delete(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
@@ -746,20 +746,20 @@ func _UserService_GetUserAverageActiveMeasurement_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetTotalAverageActiveMeasurement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetNamespaceAverageActiveMeasurement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetTotalAverageActiveMeasurement(ctx, in)
+		return srv.(UserServiceServer).GetNamespaceAverageActiveMeasurement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/GetTotalAverageActiveMeasurement",
+		FullMethod: "/BlockUser.UserService/GetNamespaceAverageActiveMeasurement",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetTotalAverageActiveMeasurement(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).GetNamespaceAverageActiveMeasurement(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -906,8 +906,8 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_GetUserAverageActiveMeasurement_Handler,
 		},
 		{
-			MethodName: "GetTotalAverageActiveMeasurement",
-			Handler:    _UserService_GetTotalAverageActiveMeasurement_Handler,
+			MethodName: "GetNamespaceAverageActiveMeasurement",
+			Handler:    _UserService_GetNamespaceAverageActiveMeasurement_Handler,
 		},
 		{
 			MethodName: "Delete",
