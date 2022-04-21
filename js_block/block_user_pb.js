@@ -1645,8 +1645,9 @@ proto.BlockUser.ActiveMeasurement.prototype.toObject = function(opt_includeInsta
 proto.BlockUser.ActiveMeasurement.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    averageSeconds: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    totalSeconds: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    seconds: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1688,12 +1689,17 @@ proto.BlockUser.ActiveMeasurement.deserializeBinaryFromReader = function(msg, re
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setAverageSeconds(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalSeconds(value);
+      msg.setSeconds(value);
+      break;
+    case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedAt(value);
       break;
     default:
       reader.skipField();
@@ -1731,18 +1737,26 @@ proto.BlockUser.ActiveMeasurement.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getAverageSeconds();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
   }
-  f = message.getTotalSeconds();
+  f = message.getSeconds();
   if (f !== 0) {
     writer.writeInt32(
       3,
       f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -1767,28 +1781,28 @@ proto.BlockUser.ActiveMeasurement.prototype.setId = function(value) {
 
 
 /**
- * optional int32 average_seconds = 2;
- * @return {number}
+ * optional string user_id = 2;
+ * @return {string}
  */
-proto.BlockUser.ActiveMeasurement.prototype.getAverageSeconds = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.BlockUser.ActiveMeasurement.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.BlockUser.ActiveMeasurement} returns this
  */
-proto.BlockUser.ActiveMeasurement.prototype.setAverageSeconds = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+proto.BlockUser.ActiveMeasurement.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional int32 total_seconds = 3;
+ * optional int32 seconds = 3;
  * @return {number}
  */
-proto.BlockUser.ActiveMeasurement.prototype.getTotalSeconds = function() {
+proto.BlockUser.ActiveMeasurement.prototype.getSeconds = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -1797,8 +1811,45 @@ proto.BlockUser.ActiveMeasurement.prototype.getTotalSeconds = function() {
  * @param {number} value
  * @return {!proto.BlockUser.ActiveMeasurement} returns this
  */
-proto.BlockUser.ActiveMeasurement.prototype.setTotalSeconds = function(value) {
+proto.BlockUser.ActiveMeasurement.prototype.setSeconds = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp created_at = 5;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.ActiveMeasurement.prototype.getCreatedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.ActiveMeasurement} returns this
+*/
+proto.BlockUser.ActiveMeasurement.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.ActiveMeasurement} returns this
+ */
+proto.BlockUser.ActiveMeasurement.prototype.clearCreatedAt = function() {
+  return this.setCreatedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.ActiveMeasurement.prototype.hasCreatedAt = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -1852,7 +1903,9 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     validatepassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     cloudToken: jspb.Message.getFieldWithDefault(msg, 9, ""),
     tokenPointer: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    activeMeasurement: (f = msg.getActiveMeasurement()) && proto.BlockUser.ActiveMeasurement.toObject(includeInstance, f)
+    activeMeasurement: (f = msg.getActiveMeasurement()) && proto.BlockUser.ActiveMeasurement.toObject(includeInstance, f),
+    totalActiveTime: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    averageActiveTime: jspb.Message.getFieldWithDefault(msg, 13, 0)
   };
 
   if (includeInstance) {
@@ -1938,6 +1991,14 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.BlockUser.ActiveMeasurement;
       reader.readMessage(value,proto.BlockUser.ActiveMeasurement.deserializeBinaryFromReader);
       msg.setActiveMeasurement(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTotalActiveTime(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAverageActiveTime(value);
       break;
     default:
       reader.skipField();
@@ -2049,6 +2110,20 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       11,
       f,
       proto.BlockUser.ActiveMeasurement.serializeBinaryToWriter
+    );
+  }
+  f = message.getTotalActiveTime();
+  if (f !== 0) {
+    writer.writeInt32(
+      12,
+      f
+    );
+  }
+  f = message.getAverageActiveTime();
+  if (f !== 0) {
+    writer.writeInt32(
+      13,
+      f
     );
   }
 };
@@ -2364,6 +2439,42 @@ proto.BlockUser.UserRequest.prototype.clearActiveMeasurement = function() {
  */
 proto.BlockUser.UserRequest.prototype.hasActiveMeasurement = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional int32 total_active_time = 12;
+ * @return {number}
+ */
+proto.BlockUser.UserRequest.prototype.getTotalActiveTime = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setTotalActiveTime = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * optional int32 average_active_time = 13;
+ * @return {number}
+ */
+proto.BlockUser.UserRequest.prototype.getAverageActiveTime = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setAverageActiveTime = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
 };
 
 

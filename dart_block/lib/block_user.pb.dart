@@ -594,26 +594,31 @@ class Token extends $pb.GeneratedMessage {
 class ActiveMeasurement extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActiveMeasurement', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'averageSeconds', $pb.PbFieldType.O3)
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalSeconds', $pb.PbFieldType.O3)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'seconds', $pb.PbFieldType.O3)
+    ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
   ActiveMeasurement._() : super();
   factory ActiveMeasurement({
     $core.String? id,
-    $core.int? averageSeconds,
-    $core.int? totalSeconds,
+    $core.String? userId,
+    $core.int? seconds,
+    $1.Timestamp? createdAt,
   }) {
     final _result = create();
     if (id != null) {
       _result.id = id;
     }
-    if (averageSeconds != null) {
-      _result.averageSeconds = averageSeconds;
+    if (userId != null) {
+      _result.userId = userId;
     }
-    if (totalSeconds != null) {
-      _result.totalSeconds = totalSeconds;
+    if (seconds != null) {
+      _result.seconds = seconds;
+    }
+    if (createdAt != null) {
+      _result.createdAt = createdAt;
     }
     return _result;
   }
@@ -648,22 +653,33 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.int get averageSeconds => $_getIZ(1);
+  $core.String get userId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set averageSeconds($core.int v) { $_setSignedInt32(1, v); }
+  set userId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasAverageSeconds() => $_has(1);
+  $core.bool hasUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAverageSeconds() => clearField(2);
+  void clearUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get totalSeconds => $_getIZ(2);
+  $core.int get seconds => $_getIZ(2);
   @$pb.TagNumber(3)
-  set totalSeconds($core.int v) { $_setSignedInt32(2, v); }
+  set seconds($core.int v) { $_setSignedInt32(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasTotalSeconds() => $_has(2);
+  $core.bool hasSeconds() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTotalSeconds() => clearField(3);
+  void clearSeconds() => clearField(3);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get createdAt => $_getN(3);
+  @$pb.TagNumber(5)
+  set createdAt($1.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureCreatedAt() => $_ensure(3);
 }
 
 class UserRequest extends $pb.GeneratedMessage {
@@ -679,6 +695,8 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
     ..aOM<ActiveMeasurement>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
+    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalActiveTime', $pb.PbFieldType.O3)
+    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'averageActiveTime', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -695,6 +713,8 @@ class UserRequest extends $pb.GeneratedMessage {
     $core.String? cloudToken,
     $core.String? tokenPointer,
     ActiveMeasurement? activeMeasurement,
+    $core.int? totalActiveTime,
+    $core.int? averageActiveTime,
   }) {
     final _result = create();
     if (user != null) {
@@ -729,6 +749,12 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (activeMeasurement != null) {
       _result.activeMeasurement = activeMeasurement;
+    }
+    if (totalActiveTime != null) {
+      _result.totalActiveTime = totalActiveTime;
+    }
+    if (averageActiveTime != null) {
+      _result.averageActiveTime = averageActiveTime;
     }
     return _result;
   }
@@ -855,6 +881,24 @@ class UserRequest extends $pb.GeneratedMessage {
   void clearActiveMeasurement() => clearField(11);
   @$pb.TagNumber(11)
   ActiveMeasurement ensureActiveMeasurement() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $core.int get totalActiveTime => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set totalActiveTime($core.int v) { $_setSignedInt32(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasTotalActiveTime() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTotalActiveTime() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.int get averageActiveTime => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set averageActiveTime($core.int v) { $_setSignedInt32(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasAverageActiveTime() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearAverageActiveTime() => clearField(13);
 }
 
 class UserResponse extends $pb.GeneratedMessage {

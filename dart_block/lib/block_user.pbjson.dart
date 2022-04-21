@@ -120,13 +120,14 @@ const ActiveMeasurement$json = const {
   '1': 'ActiveMeasurement',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    const {'1': 'average_seconds', '3': 2, '4': 1, '5': 5, '10': 'averageSeconds'},
-    const {'1': 'total_seconds', '3': 3, '4': 1, '5': 5, '10': 'totalSeconds'},
+    const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    const {'1': 'seconds', '3': 3, '4': 1, '5': 5, '10': 'seconds'},
+    const {'1': 'created_at', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
   ],
 };
 
 /// Descriptor for `ActiveMeasurement`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode('ChFBY3RpdmVNZWFzdXJlbWVudBIOCgJpZBgBIAEoCVICaWQSJwoPYXZlcmFnZV9zZWNvbmRzGAIgASgFUg5hdmVyYWdlU2Vjb25kcxIjCg10b3RhbF9zZWNvbmRzGAMgASgFUgx0b3RhbFNlY29uZHM=');
+final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode('ChFBY3RpdmVNZWFzdXJlbWVudBIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB3NlY29uZHMYAyABKAVSB3NlY29uZHMSOQoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',
@@ -142,11 +143,13 @@ const UserRequest$json = const {
     const {'1': 'cloud_token', '3': 9, '4': 1, '5': 9, '10': 'cloudToken'},
     const {'1': 'token_pointer', '3': 10, '4': 1, '5': 9, '10': 'tokenPointer'},
     const {'1': 'active_measurement', '3': 11, '4': 1, '5': 11, '6': '.BlockUser.ActiveMeasurement', '10': 'activeMeasurement'},
+    const {'1': 'total_active_time', '3': 12, '4': 1, '5': 5, '10': 'totalActiveTime'},
+    const {'1': 'average_active_time', '3': 13, '4': 1, '5': 5, '10': 'averageActiveTime'},
   ],
 };
 
 /// Descriptor for `UserRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIjCgR1c2VyGAEgASgLMg8uQmxvY2tVc2VyLlVzZXJSBHVzZXISJwoGdXBkYXRlGAIgASgLMg8uQmxvY2tVc2VyLlVzZXJSBnVwZGF0ZRItCgZmaWx0ZXIYAyABKAsyFS5CbG9ja1VzZXIuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5Ei4KCnVzZXJfYmF0Y2gYBiADKAsyDy5CbG9ja1VzZXIuVXNlclIJdXNlckJhdGNoEiYKBXRva2VuGAcgASgLMhAuQmxvY2tVc2VyLlRva2VuUgV0b2tlbhIqChB2YWxpZGF0ZVBhc3N3b3JkGAggASgIUhB2YWxpZGF0ZVBhc3N3b3JkEh8KC2Nsb3VkX3Rva2VuGAkgASgJUgpjbG91ZFRva2VuEiMKDXRva2VuX3BvaW50ZXIYCiABKAlSDHRva2VuUG9pbnRlchJLChJhY3RpdmVfbWVhc3VyZW1lbnQYCyABKAsyHC5CbG9ja1VzZXIuQWN0aXZlTWVhc3VyZW1lbnRSEWFjdGl2ZU1lYXN1cmVtZW50');
+final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIjCgR1c2VyGAEgASgLMg8uQmxvY2tVc2VyLlVzZXJSBHVzZXISJwoGdXBkYXRlGAIgASgLMg8uQmxvY2tVc2VyLlVzZXJSBnVwZGF0ZRItCgZmaWx0ZXIYAyABKAsyFS5CbG9ja1VzZXIuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5Ei4KCnVzZXJfYmF0Y2gYBiADKAsyDy5CbG9ja1VzZXIuVXNlclIJdXNlckJhdGNoEiYKBXRva2VuGAcgASgLMhAuQmxvY2tVc2VyLlRva2VuUgV0b2tlbhIqChB2YWxpZGF0ZVBhc3N3b3JkGAggASgIUhB2YWxpZGF0ZVBhc3N3b3JkEh8KC2Nsb3VkX3Rva2VuGAkgASgJUgpjbG91ZFRva2VuEiMKDXRva2VuX3BvaW50ZXIYCiABKAlSDHRva2VuUG9pbnRlchJLChJhY3RpdmVfbWVhc3VyZW1lbnQYCyABKAsyHC5CbG9ja1VzZXIuQWN0aXZlTWVhc3VyZW1lbnRSEWFjdGl2ZU1lYXN1cmVtZW50EioKEXRvdGFsX2FjdGl2ZV90aW1lGAwgASgFUg90b3RhbEFjdGl2ZVRpbWUSLgoTYXZlcmFnZV9hY3RpdmVfdGltZRgNIAEoBVIRYXZlcmFnZUFjdGl2ZVRpbWU=');
 @$core.Deprecated('Use userResponseDescriptor instead')
 const UserResponse$json = const {
   '1': 'UserResponse',
