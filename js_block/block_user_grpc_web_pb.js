@@ -1237,8 +1237,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.recordActiveMeasurement =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_GetUserActiveMeasurement = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/GetUserActiveMeasurement',
+const methodDescriptor_UserService_GetUserAverageActiveMeasurement = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetUserAverageActiveMeasurement',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1263,13 +1263,13 @@ const methodDescriptor_UserService_GetUserActiveMeasurement = new grpc.web.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.getUserActiveMeasurement =
+proto.BlockUser.UserServiceClient.prototype.getUserAverageActiveMeasurement =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/GetUserActiveMeasurement',
+      '/BlockUser.UserService/GetUserAverageActiveMeasurement',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetUserActiveMeasurement,
+      methodDescriptor_UserService_GetUserAverageActiveMeasurement,
       callback);
 };
 
@@ -1282,13 +1282,13 @@ proto.BlockUser.UserServiceClient.prototype.getUserActiveMeasurement =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.getUserActiveMeasurement =
+proto.BlockUser.UserServicePromiseClient.prototype.getUserAverageActiveMeasurement =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/GetUserActiveMeasurement',
+      '/BlockUser.UserService/GetUserAverageActiveMeasurement',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetUserActiveMeasurement);
+      methodDescriptor_UserService_GetUserAverageActiveMeasurement);
 };
 
 
@@ -1298,8 +1298,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.getUserActiveMeasurement =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_GetTotalActiveMeasurement = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/GetTotalActiveMeasurement',
+const methodDescriptor_UserService_GetTotalAverageActiveMeasurement = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetTotalAverageActiveMeasurement',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1324,13 +1324,13 @@ const methodDescriptor_UserService_GetTotalActiveMeasurement = new grpc.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.getTotalActiveMeasurement =
+proto.BlockUser.UserServiceClient.prototype.getTotalAverageActiveMeasurement =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/GetTotalActiveMeasurement',
+      '/BlockUser.UserService/GetTotalAverageActiveMeasurement',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetTotalActiveMeasurement,
+      methodDescriptor_UserService_GetTotalAverageActiveMeasurement,
       callback);
 };
 
@@ -1343,13 +1343,13 @@ proto.BlockUser.UserServiceClient.prototype.getTotalActiveMeasurement =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.getTotalActiveMeasurement =
+proto.BlockUser.UserServicePromiseClient.prototype.getTotalAverageActiveMeasurement =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/GetTotalActiveMeasurement',
+      '/BlockUser.UserService/GetTotalAverageActiveMeasurement',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetTotalActiveMeasurement);
+      methodDescriptor_UserService_GetTotalAverageActiveMeasurement);
 };
 
 

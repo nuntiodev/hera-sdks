@@ -105,14 +105,14 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/RecordActiveMeasurement',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$getUserActiveMeasurement =
+  static final _$getUserAverageActiveMeasurement =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/GetUserActiveMeasurement',
+          '/BlockUser.UserService/GetUserAverageActiveMeasurement',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$getTotalActiveMeasurement =
+  static final _$getTotalAverageActiveMeasurement =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/GetTotalActiveMeasurement',
+          '/BlockUser.UserService/GetTotalAverageActiveMeasurement',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$delete = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
@@ -233,17 +233,17 @@ class UserServiceClient extends $grpc.Client {
         options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> getUserActiveMeasurement(
+  $grpc.ResponseFuture<$0.UserResponse> getUserAverageActiveMeasurement(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getUserActiveMeasurement, request,
+    return $createUnaryCall(_$getUserAverageActiveMeasurement, request,
         options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> getTotalActiveMeasurement(
+  $grpc.ResponseFuture<$0.UserResponse> getTotalAverageActiveMeasurement(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getTotalActiveMeasurement, request,
+    return $createUnaryCall(_$getTotalAverageActiveMeasurement, request,
         options: options);
   }
 
@@ -401,15 +401,15 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'GetUserActiveMeasurement',
-        getUserActiveMeasurement_Pre,
+        'GetUserAverageActiveMeasurement',
+        getUserAverageActiveMeasurement_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'GetTotalActiveMeasurement',
-        getTotalActiveMeasurement_Pre,
+        'GetTotalAverageActiveMeasurement',
+        getTotalAverageActiveMeasurement_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -532,14 +532,14 @@ abstract class UserServiceBase extends $grpc.Service {
     return recordActiveMeasurement(call, await request);
   }
 
-  $async.Future<$0.UserResponse> getUserActiveMeasurement_Pre(
+  $async.Future<$0.UserResponse> getUserAverageActiveMeasurement_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return getUserActiveMeasurement(call, await request);
+    return getUserAverageActiveMeasurement(call, await request);
   }
 
-  $async.Future<$0.UserResponse> getTotalActiveMeasurement_Pre(
+  $async.Future<$0.UserResponse> getTotalAverageActiveMeasurement_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return getTotalActiveMeasurement(call, await request);
+    return getTotalAverageActiveMeasurement(call, await request);
   }
 
   $async.Future<$0.UserResponse> delete_Pre(
@@ -595,9 +595,9 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> recordActiveMeasurement(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> getUserActiveMeasurement(
+  $async.Future<$0.UserResponse> getUserAverageActiveMeasurement(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> getTotalActiveMeasurement(
+  $async.Future<$0.UserResponse> getTotalAverageActiveMeasurement(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> delete(
       $grpc.ServiceCall call, $0.UserRequest request);
