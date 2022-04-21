@@ -603,7 +603,6 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword', protoName: 'validatePassword')
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
-    ..pPS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenIds', protoName: 'tokenIds')
     ..hasRequiredFields = false
   ;
 
@@ -619,7 +618,6 @@ class UserRequest extends $pb.GeneratedMessage {
     $core.bool? validatePassword,
     $core.String? cloudToken,
     $core.String? tokenPointer,
-    $core.Iterable<$core.String>? tokenIds,
   }) {
     final _result = create();
     if (user != null) {
@@ -651,9 +649,6 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (tokenPointer != null) {
       _result.tokenPointer = tokenPointer;
-    }
-    if (tokenIds != null) {
-      _result.tokenIds.addAll(tokenIds);
     }
     return _result;
   }
@@ -769,9 +764,6 @@ class UserRequest extends $pb.GeneratedMessage {
   $core.bool hasTokenPointer() => $_has(9);
   @$pb.TagNumber(10)
   void clearTokenPointer() => clearField(10);
-
-  @$pb.TagNumber(11)
-  $core.List<$core.String> get tokenIds => $_getList(10);
 }
 
 class UserResponse extends $pb.GeneratedMessage {

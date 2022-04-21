@@ -32,7 +32,7 @@ type UserServiceClient interface {
 	Login(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	ValidateToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	BlockToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	BlockTokenBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	BlockTokenById(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	RefreshToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetTokens(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	PublicKeys(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -175,9 +175,9 @@ func (c *userServiceClient) BlockToken(ctx context.Context, in *UserRequest, opt
 	return out, nil
 }
 
-func (c *userServiceClient) BlockTokenBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) BlockTokenById(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/BlockTokenBatch", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/BlockTokenById", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -256,7 +256,7 @@ type UserServiceServer interface {
 	Login(context.Context, *UserRequest) (*UserResponse, error)
 	ValidateToken(context.Context, *UserRequest) (*UserResponse, error)
 	BlockToken(context.Context, *UserRequest) (*UserResponse, error)
-	BlockTokenBatch(context.Context, *UserRequest) (*UserResponse, error)
+	BlockTokenById(context.Context, *UserRequest) (*UserResponse, error)
 	RefreshToken(context.Context, *UserRequest) (*UserResponse, error)
 	GetTokens(context.Context, *UserRequest) (*UserResponse, error)
 	PublicKeys(context.Context, *UserRequest) (*UserResponse, error)
@@ -311,8 +311,8 @@ func (UnimplementedUserServiceServer) ValidateToken(context.Context, *UserReques
 func (UnimplementedUserServiceServer) BlockToken(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BlockToken not implemented")
 }
-func (UnimplementedUserServiceServer) BlockTokenBatch(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BlockTokenBatch not implemented")
+func (UnimplementedUserServiceServer) BlockTokenById(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BlockTokenById not implemented")
 }
 func (UnimplementedUserServiceServer) RefreshToken(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
@@ -596,20 +596,20 @@ func _UserService_BlockToken_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_BlockTokenBatch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_BlockTokenById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).BlockTokenBatch(ctx, in)
+		return srv.(UserServiceServer).BlockTokenById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/BlockTokenBatch",
+		FullMethod: "/BlockUser.UserService/BlockTokenById",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).BlockTokenBatch(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).BlockTokenById(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -786,8 +786,8 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_BlockToken_Handler,
 		},
 		{
-			MethodName: "BlockTokenBatch",
-			Handler:    _UserService_BlockTokenBatch_Handler,
+			MethodName: "BlockTokenById",
+			Handler:    _UserService_BlockTokenById_Handler,
 		},
 		{
 			MethodName: "RefreshToken",

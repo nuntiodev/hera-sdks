@@ -932,8 +932,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.blockToken =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_BlockTokenBatch = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/BlockTokenBatch',
+const methodDescriptor_UserService_BlockTokenById = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/BlockTokenById',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -958,13 +958,13 @@ const methodDescriptor_UserService_BlockTokenBatch = new grpc.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.blockTokenBatch =
+proto.BlockUser.UserServiceClient.prototype.blockTokenById =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/BlockTokenBatch',
+      '/BlockUser.UserService/BlockTokenById',
       request,
       metadata || {},
-      methodDescriptor_UserService_BlockTokenBatch,
+      methodDescriptor_UserService_BlockTokenById,
       callback);
 };
 
@@ -977,13 +977,13 @@ proto.BlockUser.UserServiceClient.prototype.blockTokenBatch =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.blockTokenBatch =
+proto.BlockUser.UserServicePromiseClient.prototype.blockTokenById =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/BlockTokenBatch',
+      '/BlockUser.UserService/BlockTokenById',
       request,
       metadata || {},
-      methodDescriptor_UserService_BlockTokenBatch);
+      methodDescriptor_UserService_BlockTokenById);
 };
 
 
