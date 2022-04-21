@@ -101,8 +101,9 @@ message Token {
 
 message ActiveMeasurement {
     string id = 1;
-    int32 average_seconds = 2;
-    int32 total_seconds = 3;
+    string user_id = 2;
+    int32 seconds = 3;
+    google.protobuf.Timestamp created_at = 5;
 }
 
 message UserRequest {
@@ -117,6 +118,8 @@ message UserRequest {
     string cloud_token = 9;
     string token_pointer = 10;
     ActiveMeasurement active_measurement = 11;
+    int32 total_active_time = 12;
+    int32 average_active_time = 13;
 }
 
 message UserResponse {
