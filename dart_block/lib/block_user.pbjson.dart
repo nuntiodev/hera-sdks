@@ -123,11 +123,56 @@ const ActiveMeasurement$json = const {
     const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
     const {'1': 'seconds', '3': 3, '4': 1, '5': 5, '10': 'seconds'},
     const {'1': 'created_at', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'expires_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
   ],
 };
 
 /// Descriptor for `ActiveMeasurement`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode('ChFBY3RpdmVNZWFzdXJlbWVudBIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB3NlY29uZHMYAyABKAVSB3NlY29uZHMSOQoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode('ChFBY3RpdmVNZWFzdXJlbWVudBIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB3NlY29uZHMYAyABKAVSB3NlY29uZHMSOQoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5CgpleHBpcmVzX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0');
+@$core.Deprecated('Use monthDayMapDescriptor instead')
+const MonthDayMap$json = const {
+  '1': 'MonthDayMap',
+  '2': const [
+    const {'1': 'seconds', '3': 1, '4': 3, '5': 11, '6': '.BlockUser.MonthDayMap.SecondsEntry', '10': 'seconds'},
+  ],
+  '3': const [MonthDayMap_SecondsEntry$json],
+};
+
+@$core.Deprecated('Use monthDayMapDescriptor instead')
+const MonthDayMap_SecondsEntry$json = const {
+  '1': 'SecondsEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 5, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 5, '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
+/// Descriptor for `MonthDayMap`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List monthDayMapDescriptor = $convert.base64Decode('CgtNb250aERheU1hcBI9CgdzZWNvbmRzGAEgAygLMiMuQmxvY2tVc2VyLk1vbnRoRGF5TWFwLlNlY29uZHNFbnRyeVIHc2Vjb25kcxo6CgxTZWNvbmRzRW50cnkSEAoDa2V5GAEgASgFUgNrZXkSFAoFdmFsdWUYAiABKAVSBXZhbHVlOgI4AQ==');
+@$core.Deprecated('Use activeHistoryDescriptor instead')
+const ActiveHistory$json = const {
+  '1': 'ActiveHistory',
+  '2': const [
+    const {'1': 'year', '3': 1, '4': 1, '5': 5, '10': 'year'},
+    const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    const {'1': 'data', '3': 3, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistory.DataEntry', '10': 'data'},
+  ],
+  '3': const [ActiveHistory_DataEntry$json],
+};
+
+@$core.Deprecated('Use activeHistoryDescriptor instead')
+const ActiveHistory_DataEntry$json = const {
+  '1': 'DataEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 5, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.BlockUser.MonthDayMap', '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
+/// Descriptor for `ActiveHistory`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List activeHistoryDescriptor = $convert.base64Decode('Cg1BY3RpdmVIaXN0b3J5EhIKBHllYXIYASABKAVSBHllYXISFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEjYKBGRhdGEYAyADKAsyIi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeS5EYXRhRW50cnlSBGRhdGEaTwoJRGF0YUVudHJ5EhAKA2tleRgBIAEoBVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuQmxvY2tVc2VyLk1vbnRoRGF5TWFwUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',

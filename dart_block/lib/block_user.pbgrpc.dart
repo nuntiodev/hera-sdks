@@ -110,9 +110,19 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/UserAverageActive',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$userActiveHistory =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/UserActiveHistory',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$namespaceAverageActive =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/NamespaceAverageActive',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$namespaceActiveHistory =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/NamespaceActiveHistory',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$delete = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
@@ -237,10 +247,23 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$userAverageActive, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.UserResponse> userActiveHistory(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$userActiveHistory, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.UserResponse> namespaceAverageActive(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$namespaceAverageActive, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> namespaceActiveHistory(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$namespaceActiveHistory, request,
         options: options);
   }
 
@@ -405,8 +428,22 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UserActiveHistory',
+        userActiveHistory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'NamespaceAverageActive',
         namespaceAverageActive_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'NamespaceActiveHistory',
+        namespaceActiveHistory_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -534,9 +571,19 @@ abstract class UserServiceBase extends $grpc.Service {
     return userAverageActive(call, await request);
   }
 
+  $async.Future<$0.UserResponse> userActiveHistory_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return userActiveHistory(call, await request);
+  }
+
   $async.Future<$0.UserResponse> namespaceAverageActive_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return namespaceAverageActive(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> namespaceActiveHistory_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return namespaceActiveHistory(call, await request);
   }
 
   $async.Future<$0.UserResponse> delete_Pre(
@@ -594,7 +641,11 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> userAverageActive(
       $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> userActiveHistory(
+      $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> namespaceAverageActive(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> namespaceActiveHistory(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> delete(
       $grpc.ServiceCall call, $0.UserRequest request);

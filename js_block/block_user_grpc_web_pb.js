@@ -1298,6 +1298,67 @@ proto.BlockUser.UserServicePromiseClient.prototype.userAverageActive =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
+const methodDescriptor_UserService_UserActiveHistory = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UserActiveHistory',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.userActiveHistory =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/UserActiveHistory',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UserActiveHistory,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.userActiveHistory =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/UserActiveHistory',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UserActiveHistory);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
 const methodDescriptor_UserService_NamespaceAverageActive = new grpc.web.MethodDescriptor(
   '/BlockUser.UserService/NamespaceAverageActive',
   grpc.web.MethodType.UNARY,
@@ -1350,6 +1411,67 @@ proto.BlockUser.UserServicePromiseClient.prototype.namespaceAverageActive =
       request,
       metadata || {},
       methodDescriptor_UserService_NamespaceAverageActive);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
+const methodDescriptor_UserService_NamespaceActiveHistory = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/NamespaceActiveHistory',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.namespaceActiveHistory =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/NamespaceActiveHistory',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_NamespaceActiveHistory,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.namespaceActiveHistory =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/NamespaceActiveHistory',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_NamespaceActiveHistory);
 };
 
 

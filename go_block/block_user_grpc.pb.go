@@ -38,7 +38,9 @@ type UserServiceClient interface {
 	PublicKeys(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	RecordActive(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UserAverageActive(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UserActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	NamespaceAverageActive(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	NamespaceActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -232,9 +234,27 @@ func (c *userServiceClient) UserAverageActive(ctx context.Context, in *UserReque
 	return out, nil
 }
 
+func (c *userServiceClient) UserActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UserActiveHistory", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userServiceClient) NamespaceAverageActive(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/NamespaceAverageActive", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) NamespaceActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/NamespaceActiveHistory", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -292,7 +312,9 @@ type UserServiceServer interface {
 	PublicKeys(context.Context, *UserRequest) (*UserResponse, error)
 	RecordActive(context.Context, *UserRequest) (*UserResponse, error)
 	UserAverageActive(context.Context, *UserRequest) (*UserResponse, error)
+	UserActiveHistory(context.Context, *UserRequest) (*UserResponse, error)
 	NamespaceAverageActive(context.Context, *UserRequest) (*UserResponse, error)
+	NamespaceActiveHistory(context.Context, *UserRequest) (*UserResponse, error)
 	Delete(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteBatch(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteNamespace(context.Context, *UserRequest) (*UserResponse, error)
@@ -362,8 +384,14 @@ func (UnimplementedUserServiceServer) RecordActive(context.Context, *UserRequest
 func (UnimplementedUserServiceServer) UserAverageActive(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserAverageActive not implemented")
 }
+func (UnimplementedUserServiceServer) UserActiveHistory(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UserActiveHistory not implemented")
+}
 func (UnimplementedUserServiceServer) NamespaceAverageActive(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NamespaceAverageActive not implemented")
+}
+func (UnimplementedUserServiceServer) NamespaceActiveHistory(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method NamespaceActiveHistory not implemented")
 }
 func (UnimplementedUserServiceServer) Delete(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
@@ -746,6 +774,24 @@ func _UserService_UserAverageActive_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_UserActiveHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UserActiveHistory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UserActiveHistory",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UserActiveHistory(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _UserService_NamespaceAverageActive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
@@ -760,6 +806,24 @@ func _UserService_NamespaceAverageActive_Handler(srv interface{}, ctx context.Co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserServiceServer).NamespaceAverageActive(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_NamespaceActiveHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).NamespaceActiveHistory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/NamespaceActiveHistory",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).NamespaceActiveHistory(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -906,8 +970,16 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_UserAverageActive_Handler,
 		},
 		{
+			MethodName: "UserActiveHistory",
+			Handler:    _UserService_UserActiveHistory_Handler,
+		},
+		{
 			MethodName: "NamespaceAverageActive",
 			Handler:    _UserService_NamespaceAverageActive_Handler,
+		},
+		{
+			MethodName: "NamespaceActiveHistory",
+			Handler:    _UserService_NamespaceActiveHistory_Handler,
 		},
 		{
 			MethodName: "Delete",
