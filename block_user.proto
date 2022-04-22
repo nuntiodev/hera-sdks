@@ -51,6 +51,9 @@ message User {
     google.protobuf.Timestamp encrypted_at = 13;
     bool require_email_verification = 14;
     bool send_welcome_email = 15;
+    string first_name = 16;
+    string last_name = 17;
+    google.protobuf.Timestamp birthdate = 18;
 }
 
 message UserFilter {
