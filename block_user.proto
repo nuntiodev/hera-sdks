@@ -119,10 +119,6 @@ message ActiveHistory {
     map<int32, MonthDayMap> data = 3;
 }
 
-message UserAverageActiveHistory {
-
-}
-
 message UserRequest {
     User user = 1;
     User update = 2;
