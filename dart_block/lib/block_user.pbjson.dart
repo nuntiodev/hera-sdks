@@ -55,11 +55,14 @@ const User$json = const {
     const {'1': 'encrypted_at', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'encryptedAt'},
     const {'1': 'require_email_verification', '3': 14, '4': 1, '5': 8, '10': 'requireEmailVerification'},
     const {'1': 'send_welcome_email', '3': 15, '4': 1, '5': 8, '10': 'sendWelcomeEmail'},
+    const {'1': 'first_name', '3': 16, '4': 1, '5': 9, '10': 'firstName'},
+    const {'1': 'last_name', '3': 17, '4': 1, '5': 9, '10': 'lastName'},
+    const {'1': 'birthdate', '3': 18, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgtvcHRpb25hbF9pZBgCIAEoCVIKb3B0aW9uYWxJZBIUCgVlbWFpbBgDIAEoCVIFZW1haWwSGgoIcGFzc3dvcmQYBCABKAlSCHBhc3N3b3JkEhQKBWltYWdlGAUgASgJUgVpbWFnZRItChJleHRlcm5hbF9lbmNyeXB0ZWQYBiABKAhSEWV4dGVybmFsRW5jcnlwdGVkEjoKGWV4dGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYByABKAVSF2V4dGVybmFsRW5jcnlwdGlvbkxldmVsEi0KEmludGVybmFsX2VuY3J5cHRlZBgIIAEoCFIRaW50ZXJuYWxFbmNyeXB0ZWQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgJIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSGgoIbWV0YWRhdGEYCiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBI8ChpyZXF1aXJlX2VtYWlsX3ZlcmlmaWNhdGlvbhgOIAEoCFIYcmVxdWlyZUVtYWlsVmVyaWZpY2F0aW9uEiwKEnNlbmRfd2VsY29tZV9lbWFpbBgPIAEoCFIQc2VuZFdlbGNvbWVFbWFpbA==');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgtvcHRpb25hbF9pZBgCIAEoCVIKb3B0aW9uYWxJZBIUCgVlbWFpbBgDIAEoCVIFZW1haWwSGgoIcGFzc3dvcmQYBCABKAlSCHBhc3N3b3JkEhQKBWltYWdlGAUgASgJUgVpbWFnZRItChJleHRlcm5hbF9lbmNyeXB0ZWQYBiABKAhSEWV4dGVybmFsRW5jcnlwdGVkEjoKGWV4dGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYByABKAVSF2V4dGVybmFsRW5jcnlwdGlvbkxldmVsEi0KEmludGVybmFsX2VuY3J5cHRlZBgIIAEoCFIRaW50ZXJuYWxFbmNyeXB0ZWQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgJIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSGgoIbWV0YWRhdGEYCiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBI8ChpyZXF1aXJlX2VtYWlsX3ZlcmlmaWNhdGlvbhgOIAEoCFIYcmVxdWlyZUVtYWlsVmVyaWZpY2F0aW9uEiwKEnNlbmRfd2VsY29tZV9lbWFpbBgPIAEoCFIQc2VuZFdlbGNvbWVFbWFpbBIdCgpmaXJzdF9uYW1lGBAgASgJUglmaXJzdE5hbWUSGwoJbGFzdF9uYW1lGBEgASgJUghsYXN0TmFtZRI4CgliaXJ0aGRhdGUYEiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgliaXJ0aGRhdGU=');
 @$core.Deprecated('Use userFilterDescriptor instead')
 const UserFilter$json = const {
   '1': 'UserFilter',
