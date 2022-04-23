@@ -110,6 +110,7 @@ message ActiveMeasurement {
     int32 seconds = 3;
     google.protobuf.Timestamp created_at = 5;
     google.protobuf.Timestamp expires_at = 6;
+    string from = 7;
 }
 
 message ActiveHistoryData {
