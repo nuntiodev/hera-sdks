@@ -85,6 +85,12 @@ enum Platform {
     WINDOWS = 6;
 }
 
+message Location {
+    string country = 1;
+    string country_code = 2;
+    string city = 3;
+}
+
 message Token {
     string id = 1;
     string user_id = 2;
@@ -98,7 +104,7 @@ message Token {
     string access_token = 10;
     string refresh_token = 11;
     int32 internal_encryption_level = 12;
-    string logged_in_from = 13;
+    Location logged_in_from = 13;
     TokenType type = 14;
 }
 
@@ -108,7 +114,7 @@ message ActiveMeasurement {
     int32 seconds = 3;
     google.protobuf.Timestamp created_at = 5;
     google.protobuf.Timestamp expires_at = 6;
-    string from = 7;
+    Location from = 7;
 }
 
 message ActiveHistoryData {
