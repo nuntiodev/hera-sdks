@@ -1176,8 +1176,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.publicKeys =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_RecordActive = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/RecordActive',
+const methodDescriptor_UserService_RecordActiveMeasurement = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/RecordActiveMeasurement',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1202,13 +1202,13 @@ const methodDescriptor_UserService_RecordActive = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.recordActive =
+proto.BlockUser.UserServiceClient.prototype.recordActiveMeasurement =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/RecordActive',
+      '/BlockUser.UserService/RecordActiveMeasurement',
       request,
       metadata || {},
-      methodDescriptor_UserService_RecordActive,
+      methodDescriptor_UserService_RecordActiveMeasurement,
       callback);
 };
 
@@ -1221,74 +1221,13 @@ proto.BlockUser.UserServiceClient.prototype.recordActive =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.recordActive =
+proto.BlockUser.UserServicePromiseClient.prototype.recordActiveMeasurement =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/RecordActive',
+      '/BlockUser.UserService/RecordActiveMeasurement',
       request,
       metadata || {},
-      methodDescriptor_UserService_RecordActive);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.BlockUser.UserRequest,
- *   !proto.BlockUser.UserResponse>}
- */
-const methodDescriptor_UserService_UserAverageActive = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/UserAverageActive',
-  grpc.web.MethodType.UNARY,
-  proto.BlockUser.UserRequest,
-  proto.BlockUser.UserResponse,
-  /**
-   * @param {!proto.BlockUser.UserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.BlockUser.UserResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.BlockUser.UserServiceClient.prototype.userAverageActive =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/UserAverageActive',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_UserAverageActive,
-      callback);
-};
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.BlockUser.UserResponse>}
- *     Promise that resolves to the response
- */
-proto.BlockUser.UserServicePromiseClient.prototype.userAverageActive =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/UserAverageActive',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_UserAverageActive);
+      methodDescriptor_UserService_RecordActiveMeasurement);
 };
 
 
@@ -1350,67 +1289,6 @@ proto.BlockUser.UserServicePromiseClient.prototype.userActiveHistory =
       request,
       metadata || {},
       methodDescriptor_UserService_UserActiveHistory);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.BlockUser.UserRequest,
- *   !proto.BlockUser.UserResponse>}
- */
-const methodDescriptor_UserService_NamespaceAverageActive = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/NamespaceAverageActive',
-  grpc.web.MethodType.UNARY,
-  proto.BlockUser.UserRequest,
-  proto.BlockUser.UserResponse,
-  /**
-   * @param {!proto.BlockUser.UserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.BlockUser.UserResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.BlockUser.UserServiceClient.prototype.namespaceAverageActive =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/NamespaceAverageActive',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_NamespaceAverageActive,
-      callback);
-};
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.BlockUser.UserResponse>}
- *     Promise that resolves to the response
- */
-proto.BlockUser.UserServicePromiseClient.prototype.namespaceAverageActive =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/NamespaceAverageActive',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_NamespaceAverageActive);
 };
 
 
