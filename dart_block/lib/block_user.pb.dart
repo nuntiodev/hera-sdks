@@ -745,16 +745,21 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
 class MonthDayMap extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MonthDayMap', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..m<$core.int, $core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'seconds', entryClassName: 'MonthDayMap.SecondsEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
+    ..m<$core.int, $core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'points', entryClassName: 'MonthDayMap.PointsEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
   MonthDayMap._() : super();
   factory MonthDayMap({
     $core.Map<$core.int, $core.int>? seconds,
+    $core.Map<$core.int, $core.int>? points,
   }) {
     final _result = create();
     if (seconds != null) {
       _result.seconds.addAll(seconds);
+    }
+    if (points != null) {
+      _result.points.addAll(points);
     }
     return _result;
   }
@@ -781,6 +786,9 @@ class MonthDayMap extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.Map<$core.int, $core.int> get seconds => $_getMap(0);
+
+  @$pb.TagNumber(2)
+  $core.Map<$core.int, $core.int> get points => $_getMap(1);
 }
 
 class ActiveHistory extends $pb.GeneratedMessage {

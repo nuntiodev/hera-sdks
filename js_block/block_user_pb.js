@@ -2091,7 +2091,8 @@ proto.BlockUser.MonthDayMap.prototype.toObject = function(opt_includeInstance) {
  */
 proto.BlockUser.MonthDayMap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    secondsMap: (f = msg.getSecondsMap()) ? f.toObject(includeInstance, undefined) : []
+    secondsMap: (f = msg.getSecondsMap()) ? f.toObject(includeInstance, undefined) : [],
+    pointsMap: (f = msg.getPointsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2134,6 +2135,12 @@ proto.BlockUser.MonthDayMap.deserializeBinaryFromReader = function(msg, reader) 
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readInt32, null, 0, 0);
          });
       break;
+    case 2:
+      var value = msg.getPointsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readInt32, null, 0, 0);
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -2167,6 +2174,10 @@ proto.BlockUser.MonthDayMap.serializeBinaryToWriter = function(message, writer) 
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeInt32);
   }
+  f = message.getPointsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeInt32);
+  }
 };
 
 
@@ -2189,6 +2200,28 @@ proto.BlockUser.MonthDayMap.prototype.getSecondsMap = function(opt_noLazyCreate)
  */
 proto.BlockUser.MonthDayMap.prototype.clearSecondsMap = function() {
   this.getSecondsMap().clear();
+  return this;};
+
+
+/**
+ * map<int32, int32> points = 2;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
+ */
+proto.BlockUser.MonthDayMap.prototype.getPointsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.BlockUser.MonthDayMap} returns this
+ */
+proto.BlockUser.MonthDayMap.prototype.clearPointsMap = function() {
+  this.getPointsMap().clear();
   return this;};
 
 

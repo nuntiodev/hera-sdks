@@ -137,8 +137,9 @@ const MonthDayMap$json = const {
   '1': 'MonthDayMap',
   '2': const [
     const {'1': 'seconds', '3': 1, '4': 3, '5': 11, '6': '.BlockUser.MonthDayMap.SecondsEntry', '10': 'seconds'},
+    const {'1': 'points', '3': 2, '4': 3, '5': 11, '6': '.BlockUser.MonthDayMap.PointsEntry', '10': 'points'},
   ],
-  '3': const [MonthDayMap_SecondsEntry$json],
+  '3': const [MonthDayMap_SecondsEntry$json, MonthDayMap_PointsEntry$json],
 };
 
 @$core.Deprecated('Use monthDayMapDescriptor instead')
@@ -151,8 +152,18 @@ const MonthDayMap_SecondsEntry$json = const {
   '7': const {'7': true},
 };
 
+@$core.Deprecated('Use monthDayMapDescriptor instead')
+const MonthDayMap_PointsEntry$json = const {
+  '1': 'PointsEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 5, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 5, '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 /// Descriptor for `MonthDayMap`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List monthDayMapDescriptor = $convert.base64Decode('CgtNb250aERheU1hcBI9CgdzZWNvbmRzGAEgAygLMiMuQmxvY2tVc2VyLk1vbnRoRGF5TWFwLlNlY29uZHNFbnRyeVIHc2Vjb25kcxo6CgxTZWNvbmRzRW50cnkSEAoDa2V5GAEgASgFUgNrZXkSFAoFdmFsdWUYAiABKAVSBXZhbHVlOgI4AQ==');
+final $typed_data.Uint8List monthDayMapDescriptor = $convert.base64Decode('CgtNb250aERheU1hcBI9CgdzZWNvbmRzGAEgAygLMiMuQmxvY2tVc2VyLk1vbnRoRGF5TWFwLlNlY29uZHNFbnRyeVIHc2Vjb25kcxI6CgZwb2ludHMYAiADKAsyIi5CbG9ja1VzZXIuTW9udGhEYXlNYXAuUG9pbnRzRW50cnlSBnBvaW50cxo6CgxTZWNvbmRzRW50cnkSEAoDa2V5GAEgASgFUgNrZXkSFAoFdmFsdWUYAiABKAVSBXZhbHVlOgI4ARo5CgtQb2ludHNFbnRyeRIQCgNrZXkYASABKAVSA2tleRIUCgV2YWx1ZRgCIAEoBVIFdmFsdWU6AjgB');
 @$core.Deprecated('Use activeHistoryDescriptor instead')
 const ActiveHistory$json = const {
   '1': 'ActiveHistory',
