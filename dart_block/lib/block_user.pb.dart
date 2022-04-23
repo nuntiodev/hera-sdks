@@ -742,60 +742,80 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
   $1.Timestamp ensureExpiresAt() => $_ensure(4);
 }
 
-class MonthDayMap extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MonthDayMap', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..m<$core.int, $core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'seconds', entryClassName: 'MonthDayMap.SecondsEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
-    ..m<$core.int, $core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'points', entryClassName: 'MonthDayMap.PointsEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
+class ActiveHistoryData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActiveHistoryData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'seconds', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'points', $pb.PbFieldType.O3)
+    ..m<$core.String, $core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', entryClassName: 'ActiveHistoryData.FromEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
-  MonthDayMap._() : super();
-  factory MonthDayMap({
-    $core.Map<$core.int, $core.int>? seconds,
-    $core.Map<$core.int, $core.int>? points,
+  ActiveHistoryData._() : super();
+  factory ActiveHistoryData({
+    $core.int? seconds,
+    $core.int? points,
+    $core.Map<$core.String, $core.int>? from,
   }) {
     final _result = create();
     if (seconds != null) {
-      _result.seconds.addAll(seconds);
+      _result.seconds = seconds;
     }
     if (points != null) {
-      _result.points.addAll(points);
+      _result.points = points;
+    }
+    if (from != null) {
+      _result.from.addAll(from);
     }
     return _result;
   }
-  factory MonthDayMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MonthDayMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ActiveHistoryData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ActiveHistoryData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  MonthDayMap clone() => MonthDayMap()..mergeFromMessage(this);
+  ActiveHistoryData clone() => ActiveHistoryData()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MonthDayMap copyWith(void Function(MonthDayMap) updates) => super.copyWith((message) => updates(message as MonthDayMap)) as MonthDayMap; // ignore: deprecated_member_use
+  ActiveHistoryData copyWith(void Function(ActiveHistoryData) updates) => super.copyWith((message) => updates(message as ActiveHistoryData)) as ActiveHistoryData; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static MonthDayMap create() => MonthDayMap._();
-  MonthDayMap createEmptyInstance() => create();
-  static $pb.PbList<MonthDayMap> createRepeated() => $pb.PbList<MonthDayMap>();
+  static ActiveHistoryData create() => ActiveHistoryData._();
+  ActiveHistoryData createEmptyInstance() => create();
+  static $pb.PbList<ActiveHistoryData> createRepeated() => $pb.PbList<ActiveHistoryData>();
   @$core.pragma('dart2js:noInline')
-  static MonthDayMap getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MonthDayMap>(create);
-  static MonthDayMap? _defaultInstance;
+  static ActiveHistoryData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActiveHistoryData>(create);
+  static ActiveHistoryData? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.int, $core.int> get seconds => $_getMap(0);
+  $core.int get seconds => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set seconds($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSeconds() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeconds() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.Map<$core.int, $core.int> get points => $_getMap(1);
+  $core.int get points => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set points($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPoints() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPoints() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.Map<$core.String, $core.int> get from => $_getMap(2);
 }
 
 class ActiveHistory extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActiveHistory', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'year', $pb.PbFieldType.O3)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
-    ..m<$core.int, MonthDayMap>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', entryClassName: 'ActiveHistory.DataEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: MonthDayMap.create, packageName: const $pb.PackageName('BlockUser'))
+    ..m<$core.int, ActiveHistoryData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', entryClassName: 'ActiveHistory.DataEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: ActiveHistoryData.create, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
@@ -803,7 +823,7 @@ class ActiveHistory extends $pb.GeneratedMessage {
   factory ActiveHistory({
     $core.int? year,
     $core.String? userId,
-    $core.Map<$core.int, MonthDayMap>? data,
+    $core.Map<$core.int, ActiveHistoryData>? data,
   }) {
     final _result = create();
     if (year != null) {
@@ -857,7 +877,7 @@ class ActiveHistory extends $pb.GeneratedMessage {
   void clearUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.Map<$core.int, MonthDayMap> get data => $_getMap(2);
+  $core.Map<$core.int, ActiveHistoryData> get data => $_getMap(2);
 }
 
 class UserRequest extends $pb.GeneratedMessage {
