@@ -837,22 +837,17 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
 
 class CityHistoryMap extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CityHistoryMap', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'city')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.O3)
+    ..m<$core.String, $core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cityAmount', entryClassName: 'CityHistoryMap.CityAmountEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
   CityHistoryMap._() : super();
   factory CityHistoryMap({
-    $core.String? city,
-    $core.int? amount,
+    $core.Map<$core.String, $core.int>? cityAmount,
   }) {
     final _result = create();
-    if (city != null) {
-      _result.city = city;
-    }
-    if (amount != null) {
-      _result.amount = amount;
+    if (cityAmount != null) {
+      _result.cityAmount.addAll(cityAmount);
     }
     return _result;
   }
@@ -878,22 +873,7 @@ class CityHistoryMap extends $pb.GeneratedMessage {
   static CityHistoryMap? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get city => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set city($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasCity() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearCity() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.int get amount => $_getIZ(1);
-  @$pb.TagNumber(2)
-  set amount($core.int v) { $_setSignedInt32(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasAmount() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearAmount() => clearField(2);
+  $core.Map<$core.String, $core.int> get cityAmount => $_getMap(0);
 }
 
 class ActiveHistoryData extends $pb.GeneratedMessage {

@@ -2397,8 +2397,7 @@ proto.BlockUser.CityHistoryMap.prototype.toObject = function(opt_includeInstance
  */
 proto.BlockUser.CityHistoryMap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    city: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    cityAmountMap: (f = msg.getCityAmountMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -2436,12 +2435,10 @@ proto.BlockUser.CityHistoryMap.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCity(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setAmount(value);
+      var value = msg.getCityAmountMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
       break;
     default:
       reader.skipField();
@@ -2472,57 +2469,33 @@ proto.BlockUser.CityHistoryMap.prototype.serializeBinary = function() {
  */
 proto.BlockUser.CityHistoryMap.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCity();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getAmount();
-  if (f !== 0) {
-    writer.writeInt32(
-      2,
-      f
-    );
+  f = message.getCityAmountMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
   }
 };
 
 
 /**
- * optional string city = 1;
- * @return {string}
+ * map<string, int32> city_amount = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
  */
-proto.BlockUser.CityHistoryMap.prototype.getCity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.BlockUser.CityHistoryMap.prototype.getCityAmountMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {string} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.BlockUser.CityHistoryMap} returns this
  */
-proto.BlockUser.CityHistoryMap.prototype.setCity = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional int32 amount = 2;
- * @return {number}
- */
-proto.BlockUser.CityHistoryMap.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.BlockUser.CityHistoryMap} returns this
- */
-proto.BlockUser.CityHistoryMap.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
-};
+proto.BlockUser.CityHistoryMap.prototype.clearCityAmountMap = function() {
+  this.getCityAmountMap().clear();
+  return this;};
 
 
 

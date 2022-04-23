@@ -783,8 +783,7 @@ type CityHistoryMap struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	City   string `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
-	Amount int32  `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	CityAmount map[string]int32 `protobuf:"bytes,1,rep,name=city_amount,json=cityAmount,proto3" json:"city_amount,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3"`
 }
 
 func (x *CityHistoryMap) Reset() {
@@ -819,18 +818,11 @@ func (*CityHistoryMap) Descriptor() ([]byte, []int) {
 	return file_block_user_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *CityHistoryMap) GetCity() string {
+func (x *CityHistoryMap) GetCityAmount() map[string]int32 {
 	if x != nil {
-		return x.City
+		return x.CityAmount
 	}
-	return ""
-}
-
-func (x *CityHistoryMap) GetAmount() int32 {
-	if x != nil {
-		return x.Amount
-	}
-	return 0
+	return nil
 }
 
 type ActiveHistoryData struct {
@@ -1325,11 +1317,17 @@ var file_block_user_proto_rawDesc = []byte{
 	0x70, 0x52, 0x09, 0x65, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73, 0x41, 0x74, 0x12, 0x27, 0x0a, 0x04,
 	0x66, 0x72, 0x6f, 0x6d, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x42, 0x6c, 0x6f,
 	0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
-	0x04, 0x66, 0x72, 0x6f, 0x6d, 0x22, 0x3c, 0x0a, 0x0e, 0x43, 0x69, 0x74, 0x79, 0x48, 0x69, 0x73,
-	0x74, 0x6f, 0x72, 0x79, 0x4d, 0x61, 0x70, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x69, 0x74, 0x79, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x63, 0x69, 0x74, 0x79, 0x12, 0x16, 0x0a, 0x06, 0x61,
-	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x61, 0x6d, 0x6f,
-	0x75, 0x6e, 0x74, 0x22, 0xd5, 0x01, 0x0a, 0x11, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x48, 0x69,
+	0x04, 0x66, 0x72, 0x6f, 0x6d, 0x22, 0x9b, 0x01, 0x0a, 0x0e, 0x43, 0x69, 0x74, 0x79, 0x48, 0x69,
+	0x73, 0x74, 0x6f, 0x72, 0x79, 0x4d, 0x61, 0x70, 0x12, 0x4a, 0x0a, 0x0b, 0x63, 0x69, 0x74, 0x79,
+	0x5f, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x29, 0x2e,
+	0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e, 0x43, 0x69, 0x74, 0x79, 0x48, 0x69,
+	0x73, 0x74, 0x6f, 0x72, 0x79, 0x4d, 0x61, 0x70, 0x2e, 0x43, 0x69, 0x74, 0x79, 0x41, 0x6d, 0x6f,
+	0x75, 0x6e, 0x74, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x0a, 0x63, 0x69, 0x74, 0x79, 0x41, 0x6d,
+	0x6f, 0x75, 0x6e, 0x74, 0x1a, 0x3d, 0x0a, 0x0f, 0x43, 0x69, 0x74, 0x79, 0x41, 0x6d, 0x6f, 0x75,
+	0x6e, 0x74, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c,
+	0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a,
+	0x02, 0x38, 0x01, 0x22, 0xd5, 0x01, 0x0a, 0x11, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x48, 0x69,
 	0x73, 0x74, 0x6f, 0x72, 0x79, 0x44, 0x61, 0x74, 0x61, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x65, 0x63,
 	0x6f, 0x6e, 0x64, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x73, 0x65, 0x63, 0x6f,
 	0x6e, 0x64, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x73, 0x18, 0x02, 0x20,
@@ -1548,7 +1546,7 @@ func file_block_user_proto_rawDescGZIP() []byte {
 }
 
 var file_block_user_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_block_user_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_block_user_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_block_user_proto_goTypes = []interface{}{
 	(TokenType)(0),                // 0: BlockUser.TokenType
 	(Platform)(0),                 // 1: BlockUser.Platform
@@ -1564,96 +1562,98 @@ var file_block_user_proto_goTypes = []interface{}{
 	(*ActiveHistory)(nil),         // 11: BlockUser.ActiveHistory
 	(*UserRequest)(nil),           // 12: BlockUser.UserRequest
 	(*UserResponse)(nil),          // 13: BlockUser.UserResponse
-	nil,                           // 14: BlockUser.ActiveHistoryData.FromEntry
-	nil,                           // 15: BlockUser.ActiveHistory.DataEntry
-	nil,                           // 16: BlockUser.UserResponse.PublicKeysEntry
-	(*timestamppb.Timestamp)(nil), // 17: google.protobuf.Timestamp
+	nil,                           // 14: BlockUser.CityHistoryMap.CityAmountEntry
+	nil,                           // 15: BlockUser.ActiveHistoryData.FromEntry
+	nil,                           // 16: BlockUser.ActiveHistory.DataEntry
+	nil,                           // 17: BlockUser.UserResponse.PublicKeysEntry
+	(*timestamppb.Timestamp)(nil), // 18: google.protobuf.Timestamp
 }
 var file_block_user_proto_depIdxs = []int32{
-	17, // 0: BlockUser.User.created_at:type_name -> google.protobuf.Timestamp
-	17, // 1: BlockUser.User.updated_at:type_name -> google.protobuf.Timestamp
-	17, // 2: BlockUser.User.encrypted_at:type_name -> google.protobuf.Timestamp
-	17, // 3: BlockUser.User.birthdate:type_name -> google.protobuf.Timestamp
+	18, // 0: BlockUser.User.created_at:type_name -> google.protobuf.Timestamp
+	18, // 1: BlockUser.User.updated_at:type_name -> google.protobuf.Timestamp
+	18, // 2: BlockUser.User.encrypted_at:type_name -> google.protobuf.Timestamp
+	18, // 3: BlockUser.User.birthdate:type_name -> google.protobuf.Timestamp
 	2,  // 4: BlockUser.UserFilter.sort:type_name -> BlockUser.UserFilter.SortBy
 	3,  // 5: BlockUser.UserFilter.order:type_name -> BlockUser.UserFilter.Order
-	17, // 6: BlockUser.Token.blocked_at:type_name -> google.protobuf.Timestamp
-	17, // 7: BlockUser.Token.created_at:type_name -> google.protobuf.Timestamp
-	17, // 8: BlockUser.Token.used_at:type_name -> google.protobuf.Timestamp
-	17, // 9: BlockUser.Token.expires_at:type_name -> google.protobuf.Timestamp
+	18, // 6: BlockUser.Token.blocked_at:type_name -> google.protobuf.Timestamp
+	18, // 7: BlockUser.Token.created_at:type_name -> google.protobuf.Timestamp
+	18, // 8: BlockUser.Token.used_at:type_name -> google.protobuf.Timestamp
+	18, // 9: BlockUser.Token.expires_at:type_name -> google.protobuf.Timestamp
 	6,  // 10: BlockUser.Token.logged_in_from:type_name -> BlockUser.Location
 	0,  // 11: BlockUser.Token.type:type_name -> BlockUser.TokenType
-	17, // 12: BlockUser.ActiveMeasurement.created_at:type_name -> google.protobuf.Timestamp
-	17, // 13: BlockUser.ActiveMeasurement.expires_at:type_name -> google.protobuf.Timestamp
+	18, // 12: BlockUser.ActiveMeasurement.created_at:type_name -> google.protobuf.Timestamp
+	18, // 13: BlockUser.ActiveMeasurement.expires_at:type_name -> google.protobuf.Timestamp
 	6,  // 14: BlockUser.ActiveMeasurement.from:type_name -> BlockUser.Location
-	14, // 15: BlockUser.ActiveHistoryData.from:type_name -> BlockUser.ActiveHistoryData.FromEntry
-	15, // 16: BlockUser.ActiveHistory.data:type_name -> BlockUser.ActiveHistory.DataEntry
-	4,  // 17: BlockUser.UserRequest.user:type_name -> BlockUser.User
-	4,  // 18: BlockUser.UserRequest.update:type_name -> BlockUser.User
-	5,  // 19: BlockUser.UserRequest.filter:type_name -> BlockUser.UserFilter
-	4,  // 20: BlockUser.UserRequest.user_batch:type_name -> BlockUser.User
-	7,  // 21: BlockUser.UserRequest.token:type_name -> BlockUser.Token
-	8,  // 22: BlockUser.UserRequest.active_measurement:type_name -> BlockUser.ActiveMeasurement
-	4,  // 23: BlockUser.UserResponse.user:type_name -> BlockUser.User
-	4,  // 24: BlockUser.UserResponse.users:type_name -> BlockUser.User
-	7,  // 25: BlockUser.UserResponse.token:type_name -> BlockUser.Token
-	7,  // 26: BlockUser.UserResponse.tokens:type_name -> BlockUser.Token
-	16, // 27: BlockUser.UserResponse.public_keys:type_name -> BlockUser.UserResponse.PublicKeysEntry
-	8,  // 28: BlockUser.UserResponse.active_measurement:type_name -> BlockUser.ActiveMeasurement
-	9,  // 29: BlockUser.ActiveHistoryData.FromEntry.value:type_name -> BlockUser.CityHistoryMap
-	10, // 30: BlockUser.ActiveHistory.DataEntry.value:type_name -> BlockUser.ActiveHistoryData
-	12, // 31: BlockUser.UserService.Heartbeat:input_type -> BlockUser.UserRequest
-	12, // 32: BlockUser.UserService.Create:input_type -> BlockUser.UserRequest
-	12, // 33: BlockUser.UserService.UpdatePassword:input_type -> BlockUser.UserRequest
-	12, // 34: BlockUser.UserService.UpdateMetadata:input_type -> BlockUser.UserRequest
-	12, // 35: BlockUser.UserService.UpdateImage:input_type -> BlockUser.UserRequest
-	12, // 36: BlockUser.UserService.UpdateEmail:input_type -> BlockUser.UserRequest
-	12, // 37: BlockUser.UserService.UpdateOptionalId:input_type -> BlockUser.UserRequest
-	12, // 38: BlockUser.UserService.UpdateSecurity:input_type -> BlockUser.UserRequest
-	12, // 39: BlockUser.UserService.Get:input_type -> BlockUser.UserRequest
-	12, // 40: BlockUser.UserService.GetAll:input_type -> BlockUser.UserRequest
-	12, // 41: BlockUser.UserService.ValidateCredentials:input_type -> BlockUser.UserRequest
-	12, // 42: BlockUser.UserService.Login:input_type -> BlockUser.UserRequest
-	12, // 43: BlockUser.UserService.ValidateToken:input_type -> BlockUser.UserRequest
-	12, // 44: BlockUser.UserService.BlockToken:input_type -> BlockUser.UserRequest
-	12, // 45: BlockUser.UserService.BlockTokenById:input_type -> BlockUser.UserRequest
-	12, // 46: BlockUser.UserService.RefreshToken:input_type -> BlockUser.UserRequest
-	12, // 47: BlockUser.UserService.GetTokens:input_type -> BlockUser.UserRequest
-	12, // 48: BlockUser.UserService.PublicKeys:input_type -> BlockUser.UserRequest
-	12, // 49: BlockUser.UserService.RecordActiveMeasurement:input_type -> BlockUser.UserRequest
-	12, // 50: BlockUser.UserService.UserActiveHistory:input_type -> BlockUser.UserRequest
-	12, // 51: BlockUser.UserService.NamespaceActiveHistory:input_type -> BlockUser.UserRequest
-	12, // 52: BlockUser.UserService.Delete:input_type -> BlockUser.UserRequest
-	12, // 53: BlockUser.UserService.DeleteBatch:input_type -> BlockUser.UserRequest
-	12, // 54: BlockUser.UserService.DeleteNamespace:input_type -> BlockUser.UserRequest
-	13, // 55: BlockUser.UserService.Heartbeat:output_type -> BlockUser.UserResponse
-	13, // 56: BlockUser.UserService.Create:output_type -> BlockUser.UserResponse
-	13, // 57: BlockUser.UserService.UpdatePassword:output_type -> BlockUser.UserResponse
-	13, // 58: BlockUser.UserService.UpdateMetadata:output_type -> BlockUser.UserResponse
-	13, // 59: BlockUser.UserService.UpdateImage:output_type -> BlockUser.UserResponse
-	13, // 60: BlockUser.UserService.UpdateEmail:output_type -> BlockUser.UserResponse
-	13, // 61: BlockUser.UserService.UpdateOptionalId:output_type -> BlockUser.UserResponse
-	13, // 62: BlockUser.UserService.UpdateSecurity:output_type -> BlockUser.UserResponse
-	13, // 63: BlockUser.UserService.Get:output_type -> BlockUser.UserResponse
-	13, // 64: BlockUser.UserService.GetAll:output_type -> BlockUser.UserResponse
-	13, // 65: BlockUser.UserService.ValidateCredentials:output_type -> BlockUser.UserResponse
-	13, // 66: BlockUser.UserService.Login:output_type -> BlockUser.UserResponse
-	13, // 67: BlockUser.UserService.ValidateToken:output_type -> BlockUser.UserResponse
-	13, // 68: BlockUser.UserService.BlockToken:output_type -> BlockUser.UserResponse
-	13, // 69: BlockUser.UserService.BlockTokenById:output_type -> BlockUser.UserResponse
-	13, // 70: BlockUser.UserService.RefreshToken:output_type -> BlockUser.UserResponse
-	13, // 71: BlockUser.UserService.GetTokens:output_type -> BlockUser.UserResponse
-	13, // 72: BlockUser.UserService.PublicKeys:output_type -> BlockUser.UserResponse
-	13, // 73: BlockUser.UserService.RecordActiveMeasurement:output_type -> BlockUser.UserResponse
-	13, // 74: BlockUser.UserService.UserActiveHistory:output_type -> BlockUser.UserResponse
-	13, // 75: BlockUser.UserService.NamespaceActiveHistory:output_type -> BlockUser.UserResponse
-	13, // 76: BlockUser.UserService.Delete:output_type -> BlockUser.UserResponse
-	13, // 77: BlockUser.UserService.DeleteBatch:output_type -> BlockUser.UserResponse
-	13, // 78: BlockUser.UserService.DeleteNamespace:output_type -> BlockUser.UserResponse
-	55, // [55:79] is the sub-list for method output_type
-	31, // [31:55] is the sub-list for method input_type
-	31, // [31:31] is the sub-list for extension type_name
-	31, // [31:31] is the sub-list for extension extendee
-	0,  // [0:31] is the sub-list for field type_name
+	14, // 15: BlockUser.CityHistoryMap.city_amount:type_name -> BlockUser.CityHistoryMap.CityAmountEntry
+	15, // 16: BlockUser.ActiveHistoryData.from:type_name -> BlockUser.ActiveHistoryData.FromEntry
+	16, // 17: BlockUser.ActiveHistory.data:type_name -> BlockUser.ActiveHistory.DataEntry
+	4,  // 18: BlockUser.UserRequest.user:type_name -> BlockUser.User
+	4,  // 19: BlockUser.UserRequest.update:type_name -> BlockUser.User
+	5,  // 20: BlockUser.UserRequest.filter:type_name -> BlockUser.UserFilter
+	4,  // 21: BlockUser.UserRequest.user_batch:type_name -> BlockUser.User
+	7,  // 22: BlockUser.UserRequest.token:type_name -> BlockUser.Token
+	8,  // 23: BlockUser.UserRequest.active_measurement:type_name -> BlockUser.ActiveMeasurement
+	4,  // 24: BlockUser.UserResponse.user:type_name -> BlockUser.User
+	4,  // 25: BlockUser.UserResponse.users:type_name -> BlockUser.User
+	7,  // 26: BlockUser.UserResponse.token:type_name -> BlockUser.Token
+	7,  // 27: BlockUser.UserResponse.tokens:type_name -> BlockUser.Token
+	17, // 28: BlockUser.UserResponse.public_keys:type_name -> BlockUser.UserResponse.PublicKeysEntry
+	8,  // 29: BlockUser.UserResponse.active_measurement:type_name -> BlockUser.ActiveMeasurement
+	9,  // 30: BlockUser.ActiveHistoryData.FromEntry.value:type_name -> BlockUser.CityHistoryMap
+	10, // 31: BlockUser.ActiveHistory.DataEntry.value:type_name -> BlockUser.ActiveHistoryData
+	12, // 32: BlockUser.UserService.Heartbeat:input_type -> BlockUser.UserRequest
+	12, // 33: BlockUser.UserService.Create:input_type -> BlockUser.UserRequest
+	12, // 34: BlockUser.UserService.UpdatePassword:input_type -> BlockUser.UserRequest
+	12, // 35: BlockUser.UserService.UpdateMetadata:input_type -> BlockUser.UserRequest
+	12, // 36: BlockUser.UserService.UpdateImage:input_type -> BlockUser.UserRequest
+	12, // 37: BlockUser.UserService.UpdateEmail:input_type -> BlockUser.UserRequest
+	12, // 38: BlockUser.UserService.UpdateOptionalId:input_type -> BlockUser.UserRequest
+	12, // 39: BlockUser.UserService.UpdateSecurity:input_type -> BlockUser.UserRequest
+	12, // 40: BlockUser.UserService.Get:input_type -> BlockUser.UserRequest
+	12, // 41: BlockUser.UserService.GetAll:input_type -> BlockUser.UserRequest
+	12, // 42: BlockUser.UserService.ValidateCredentials:input_type -> BlockUser.UserRequest
+	12, // 43: BlockUser.UserService.Login:input_type -> BlockUser.UserRequest
+	12, // 44: BlockUser.UserService.ValidateToken:input_type -> BlockUser.UserRequest
+	12, // 45: BlockUser.UserService.BlockToken:input_type -> BlockUser.UserRequest
+	12, // 46: BlockUser.UserService.BlockTokenById:input_type -> BlockUser.UserRequest
+	12, // 47: BlockUser.UserService.RefreshToken:input_type -> BlockUser.UserRequest
+	12, // 48: BlockUser.UserService.GetTokens:input_type -> BlockUser.UserRequest
+	12, // 49: BlockUser.UserService.PublicKeys:input_type -> BlockUser.UserRequest
+	12, // 50: BlockUser.UserService.RecordActiveMeasurement:input_type -> BlockUser.UserRequest
+	12, // 51: BlockUser.UserService.UserActiveHistory:input_type -> BlockUser.UserRequest
+	12, // 52: BlockUser.UserService.NamespaceActiveHistory:input_type -> BlockUser.UserRequest
+	12, // 53: BlockUser.UserService.Delete:input_type -> BlockUser.UserRequest
+	12, // 54: BlockUser.UserService.DeleteBatch:input_type -> BlockUser.UserRequest
+	12, // 55: BlockUser.UserService.DeleteNamespace:input_type -> BlockUser.UserRequest
+	13, // 56: BlockUser.UserService.Heartbeat:output_type -> BlockUser.UserResponse
+	13, // 57: BlockUser.UserService.Create:output_type -> BlockUser.UserResponse
+	13, // 58: BlockUser.UserService.UpdatePassword:output_type -> BlockUser.UserResponse
+	13, // 59: BlockUser.UserService.UpdateMetadata:output_type -> BlockUser.UserResponse
+	13, // 60: BlockUser.UserService.UpdateImage:output_type -> BlockUser.UserResponse
+	13, // 61: BlockUser.UserService.UpdateEmail:output_type -> BlockUser.UserResponse
+	13, // 62: BlockUser.UserService.UpdateOptionalId:output_type -> BlockUser.UserResponse
+	13, // 63: BlockUser.UserService.UpdateSecurity:output_type -> BlockUser.UserResponse
+	13, // 64: BlockUser.UserService.Get:output_type -> BlockUser.UserResponse
+	13, // 65: BlockUser.UserService.GetAll:output_type -> BlockUser.UserResponse
+	13, // 66: BlockUser.UserService.ValidateCredentials:output_type -> BlockUser.UserResponse
+	13, // 67: BlockUser.UserService.Login:output_type -> BlockUser.UserResponse
+	13, // 68: BlockUser.UserService.ValidateToken:output_type -> BlockUser.UserResponse
+	13, // 69: BlockUser.UserService.BlockToken:output_type -> BlockUser.UserResponse
+	13, // 70: BlockUser.UserService.BlockTokenById:output_type -> BlockUser.UserResponse
+	13, // 71: BlockUser.UserService.RefreshToken:output_type -> BlockUser.UserResponse
+	13, // 72: BlockUser.UserService.GetTokens:output_type -> BlockUser.UserResponse
+	13, // 73: BlockUser.UserService.PublicKeys:output_type -> BlockUser.UserResponse
+	13, // 74: BlockUser.UserService.RecordActiveMeasurement:output_type -> BlockUser.UserResponse
+	13, // 75: BlockUser.UserService.UserActiveHistory:output_type -> BlockUser.UserResponse
+	13, // 76: BlockUser.UserService.NamespaceActiveHistory:output_type -> BlockUser.UserResponse
+	13, // 77: BlockUser.UserService.Delete:output_type -> BlockUser.UserResponse
+	13, // 78: BlockUser.UserService.DeleteBatch:output_type -> BlockUser.UserResponse
+	13, // 79: BlockUser.UserService.DeleteNamespace:output_type -> BlockUser.UserResponse
+	56, // [56:80] is the sub-list for method output_type
+	32, // [32:56] is the sub-list for method input_type
+	32, // [32:32] is the sub-list for extension type_name
+	32, // [32:32] is the sub-list for extension extendee
+	0,  // [0:32] is the sub-list for field type_name
 }
 
 func init() { file_block_user_proto_init() }
@@ -1789,7 +1789,7 @@ func file_block_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_block_user_proto_rawDesc,
 			NumEnums:      4,
-			NumMessages:   13,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

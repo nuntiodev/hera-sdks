@@ -149,13 +149,23 @@ final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode(
 const CityHistoryMap$json = const {
   '1': 'CityHistoryMap',
   '2': const [
-    const {'1': 'city', '3': 1, '4': 1, '5': 9, '10': 'city'},
-    const {'1': 'amount', '3': 2, '4': 1, '5': 5, '10': 'amount'},
+    const {'1': 'city_amount', '3': 1, '4': 3, '5': 11, '6': '.BlockUser.CityHistoryMap.CityAmountEntry', '10': 'cityAmount'},
   ],
+  '3': const [CityHistoryMap_CityAmountEntry$json],
+};
+
+@$core.Deprecated('Use cityHistoryMapDescriptor instead')
+const CityHistoryMap_CityAmountEntry$json = const {
+  '1': 'CityAmountEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 5, '10': 'value'},
+  ],
+  '7': const {'7': true},
 };
 
 /// Descriptor for `CityHistoryMap`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List cityHistoryMapDescriptor = $convert.base64Decode('Cg5DaXR5SGlzdG9yeU1hcBISCgRjaXR5GAEgASgJUgRjaXR5EhYKBmFtb3VudBgCIAEoBVIGYW1vdW50');
+final $typed_data.Uint8List cityHistoryMapDescriptor = $convert.base64Decode('Cg5DaXR5SGlzdG9yeU1hcBJKCgtjaXR5X2Ftb3VudBgBIAMoCzIpLkJsb2NrVXNlci5DaXR5SGlzdG9yeU1hcC5DaXR5QW1vdW50RW50cnlSCmNpdHlBbW91bnQaPQoPQ2l0eUFtb3VudEVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgFUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use activeHistoryDataDescriptor instead')
 const ActiveHistoryData$json = const {
   '1': 'ActiveHistoryData',
