@@ -117,10 +117,15 @@ message ActiveMeasurement {
     Location from = 7;
 }
 
+message CityHistoryMap {
+    string city = 1;
+    int32 amount = 2;
+}
+
 message ActiveHistoryData {
     int32 seconds = 1;   
     int32 points = 2;
-    map<Location, int32> from = 3;
+    map<string, CityHistoryMap> from = 3;
 }
 
 message ActiveHistory {
