@@ -113,7 +113,8 @@ message ActiveMeasurement {
 }
 
 message MonthDayMap {
-    map<int32, int32> seconds = 1;
+    map<int32, int32> seconds = 1;   
+    map<int32, int32> points = 2;
 }
 
 message ActiveHistory {
