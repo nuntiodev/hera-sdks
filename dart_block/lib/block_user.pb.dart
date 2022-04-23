@@ -835,11 +835,72 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
   Location ensureFrom() => $_ensure(5);
 }
 
+class CityHistoryMap extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CityHistoryMap', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'city')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  CityHistoryMap._() : super();
+  factory CityHistoryMap({
+    $core.String? city,
+    $core.int? amount,
+  }) {
+    final _result = create();
+    if (city != null) {
+      _result.city = city;
+    }
+    if (amount != null) {
+      _result.amount = amount;
+    }
+    return _result;
+  }
+  factory CityHistoryMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CityHistoryMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CityHistoryMap clone() => CityHistoryMap()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CityHistoryMap copyWith(void Function(CityHistoryMap) updates) => super.copyWith((message) => updates(message as CityHistoryMap)) as CityHistoryMap; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static CityHistoryMap create() => CityHistoryMap._();
+  CityHistoryMap createEmptyInstance() => create();
+  static $pb.PbList<CityHistoryMap> createRepeated() => $pb.PbList<CityHistoryMap>();
+  @$core.pragma('dart2js:noInline')
+  static CityHistoryMap getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CityHistoryMap>(create);
+  static CityHistoryMap? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get city => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set city($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCity() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCity() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get amount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set amount($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAmount() => clearField(2);
+}
+
 class ActiveHistoryData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActiveHistoryData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'seconds', $pb.PbFieldType.O3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'points', $pb.PbFieldType.O3)
-    ..m<$core.String, $core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', entryClassName: 'ActiveHistoryData.FromEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
+    ..m<$core.String, CityHistoryMap>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', entryClassName: 'ActiveHistoryData.FromEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: CityHistoryMap.create, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
@@ -847,7 +908,7 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
   factory ActiveHistoryData({
     $core.int? seconds,
     $core.int? points,
-    $core.Map<$core.String, $core.int>? from,
+    $core.Map<$core.String, CityHistoryMap>? from,
   }) {
     final _result = create();
     if (seconds != null) {
@@ -901,7 +962,7 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
   void clearPoints() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.Map<$core.String, $core.int> get from => $_getMap(2);
+  $core.Map<$core.String, CityHistoryMap> get from => $_getMap(2);
 }
 
 class ActiveHistory extends $pb.GeneratedMessage {

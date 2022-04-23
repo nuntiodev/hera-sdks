@@ -145,6 +145,17 @@ const ActiveMeasurement$json = const {
 
 /// Descriptor for `ActiveMeasurement`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode('ChFBY3RpdmVNZWFzdXJlbWVudBIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB3NlY29uZHMYAyABKAVSB3NlY29uZHMSOQoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5CgpleHBpcmVzX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0EicKBGZyb20YByABKAsyEy5CbG9ja1VzZXIuTG9jYXRpb25SBGZyb20=');
+@$core.Deprecated('Use cityHistoryMapDescriptor instead')
+const CityHistoryMap$json = const {
+  '1': 'CityHistoryMap',
+  '2': const [
+    const {'1': 'city', '3': 1, '4': 1, '5': 9, '10': 'city'},
+    const {'1': 'amount', '3': 2, '4': 1, '5': 5, '10': 'amount'},
+  ],
+};
+
+/// Descriptor for `CityHistoryMap`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cityHistoryMapDescriptor = $convert.base64Decode('Cg5DaXR5SGlzdG9yeU1hcBISCgRjaXR5GAEgASgJUgRjaXR5EhYKBmFtb3VudBgCIAEoBVIGYW1vdW50');
 @$core.Deprecated('Use activeHistoryDataDescriptor instead')
 const ActiveHistoryData$json = const {
   '1': 'ActiveHistoryData',
@@ -161,13 +172,13 @@ const ActiveHistoryData_FromEntry$json = const {
   '1': 'FromEntry',
   '2': const [
     const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    const {'1': 'value', '3': 2, '4': 1, '5': 5, '10': 'value'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.BlockUser.CityHistoryMap', '10': 'value'},
   ],
   '7': const {'7': true},
 };
 
 /// Descriptor for `ActiveHistoryData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeHistoryDataDescriptor = $convert.base64Decode('ChFBY3RpdmVIaXN0b3J5RGF0YRIYCgdzZWNvbmRzGAEgASgFUgdzZWNvbmRzEhYKBnBvaW50cxgCIAEoBVIGcG9pbnRzEjoKBGZyb20YAyADKAsyJi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGEuRnJvbUVudHJ5UgRmcm9tGjcKCUZyb21FbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoBVIFdmFsdWU6AjgB');
+final $typed_data.Uint8List activeHistoryDataDescriptor = $convert.base64Decode('ChFBY3RpdmVIaXN0b3J5RGF0YRIYCgdzZWNvbmRzGAEgASgFUgdzZWNvbmRzEhYKBnBvaW50cxgCIAEoBVIGcG9pbnRzEjoKBGZyb20YAyADKAsyJi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGEuRnJvbUVudHJ5UgRmcm9tGlIKCUZyb21FbnRyeRIQCgNrZXkYASABKAlSA2tleRIvCgV2YWx1ZRgCIAEoCzIZLkJsb2NrVXNlci5DaXR5SGlzdG9yeU1hcFIFdmFsdWU6AjgB');
 @$core.Deprecated('Use activeHistoryDescriptor instead')
 const ActiveHistory$json = const {
   '1': 'ActiveHistory',
