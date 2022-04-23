@@ -118,8 +118,7 @@ message ActiveMeasurement {
 }
 
 message CityHistoryMap {
-    string city = 1;
-    int32 amount = 2;
+    map<string, int32> city_amount = 1;
 }
 
 message ActiveHistoryData {
