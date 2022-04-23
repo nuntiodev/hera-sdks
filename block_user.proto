@@ -120,7 +120,7 @@ message ActiveMeasurement {
 message ActiveHistoryData {
     int32 seconds = 1;   
     int32 points = 2;
-    map<string, int32> from = 3;
+    map<Location, int32> from = 3;
 }
 
 message ActiveHistory {
