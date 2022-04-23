@@ -100,24 +100,14 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/PublicKeys',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$recordActive =
+  static final _$recordActiveMeasurement =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/RecordActive',
-          ($0.UserRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$userAverageActive =
-      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UserAverageActive',
+          '/BlockUser.UserService/RecordActiveMeasurement',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$userActiveHistory =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UserActiveHistory',
-          ($0.UserRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$namespaceAverageActive =
-      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/NamespaceAverageActive',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$namespaceActiveHistory =
@@ -236,28 +226,17 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$publicKeys, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> recordActive($0.UserRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$recordActive, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UserResponse> userAverageActive(
+  $grpc.ResponseFuture<$0.UserResponse> recordActiveMeasurement(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$userAverageActive, request, options: options);
+    return $createUnaryCall(_$recordActiveMeasurement, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> userActiveHistory(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$userActiveHistory, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UserResponse> namespaceAverageActive(
-      $0.UserRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$namespaceAverageActive, request,
-        options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> namespaceActiveHistory(
@@ -414,15 +393,8 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'RecordActive',
-        recordActive_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
-        ($0.UserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UserAverageActive',
-        userAverageActive_Pre,
+        'RecordActiveMeasurement',
+        recordActiveMeasurement_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -430,13 +402,6 @@ abstract class UserServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UserActiveHistory',
         userActiveHistory_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
-        ($0.UserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'NamespaceAverageActive',
-        namespaceAverageActive_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -561,24 +526,14 @@ abstract class UserServiceBase extends $grpc.Service {
     return publicKeys(call, await request);
   }
 
-  $async.Future<$0.UserResponse> recordActive_Pre(
+  $async.Future<$0.UserResponse> recordActiveMeasurement_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return recordActive(call, await request);
-  }
-
-  $async.Future<$0.UserResponse> userAverageActive_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return userAverageActive(call, await request);
+    return recordActiveMeasurement(call, await request);
   }
 
   $async.Future<$0.UserResponse> userActiveHistory_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return userActiveHistory(call, await request);
-  }
-
-  $async.Future<$0.UserResponse> namespaceAverageActive_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return namespaceAverageActive(call, await request);
   }
 
   $async.Future<$0.UserResponse> namespaceActiveHistory_Pre(
@@ -637,13 +592,9 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> publicKeys(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> recordActive(
-      $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> userAverageActive(
+  $async.Future<$0.UserResponse> recordActiveMeasurement(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> userActiveHistory(
-      $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> namespaceAverageActive(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> namespaceActiveHistory(
       $grpc.ServiceCall call, $0.UserRequest request);
