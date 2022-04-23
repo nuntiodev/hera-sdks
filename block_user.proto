@@ -112,15 +112,16 @@ message ActiveMeasurement {
     google.protobuf.Timestamp expires_at = 6;
 }
 
-message MonthDayMap {
-    map<int32, int32> seconds = 1;   
-    map<int32, int32> points = 2;
+message ActiveHistoryData {
+    int32 seconds = 1;   
+    int32 points = 2;
+    map<string, int32> from = 3;
 }
 
 message ActiveHistory {
     int32 year = 1;
     string user_id = 2;
-    map<int32, MonthDayMap> data = 3;
+    map<int32, ActiveHistoryData> data = 3;
 }
 
 message UserRequest {
