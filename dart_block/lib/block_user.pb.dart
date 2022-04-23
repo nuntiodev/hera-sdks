@@ -642,6 +642,7 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'seconds', $pb.PbFieldType.O3)
     ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiresAt', subBuilder: $1.Timestamp.create)
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from')
     ..hasRequiredFields = false
   ;
 
@@ -652,6 +653,7 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     $core.int? seconds,
     $1.Timestamp? createdAt,
     $1.Timestamp? expiresAt,
+    $core.String? from,
   }) {
     final _result = create();
     if (id != null) {
@@ -668,6 +670,9 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     }
     if (expiresAt != null) {
       _result.expiresAt = expiresAt;
+    }
+    if (from != null) {
+      _result.from = from;
     }
     return _result;
   }
@@ -740,6 +745,15 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
   void clearExpiresAt() => clearField(6);
   @$pb.TagNumber(6)
   $1.Timestamp ensureExpiresAt() => $_ensure(4);
+
+  @$pb.TagNumber(7)
+  $core.String get from => $_getSZ(5);
+  @$pb.TagNumber(7)
+  set from($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasFrom() => $_has(5);
+  @$pb.TagNumber(7)
+  void clearFrom() => clearField(7);
 }
 
 class ActiveHistoryData extends $pb.GeneratedMessage {
