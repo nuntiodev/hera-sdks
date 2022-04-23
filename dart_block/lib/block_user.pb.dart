@@ -33,6 +33,9 @@ class User extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
     ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sendWelcomeEmail')
+    ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
+    ..aOS(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
+    ..aOM<$1.Timestamp>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -53,6 +56,9 @@ class User extends $pb.GeneratedMessage {
     $1.Timestamp? encryptedAt,
     $core.bool? requireEmailVerification,
     $core.bool? sendWelcomeEmail,
+    $core.String? firstName,
+    $core.String? lastName,
+    $1.Timestamp? birthdate,
   }) {
     final _result = create();
     if (id != null) {
@@ -99,6 +105,15 @@ class User extends $pb.GeneratedMessage {
     }
     if (sendWelcomeEmail != null) {
       _result.sendWelcomeEmail = sendWelcomeEmail;
+    }
+    if (firstName != null) {
+      _result.firstName = firstName;
+    }
+    if (lastName != null) {
+      _result.lastName = lastName;
+    }
+    if (birthdate != null) {
+      _result.birthdate = birthdate;
     }
     return _result;
   }
@@ -263,6 +278,35 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasSendWelcomeEmail() => $_has(14);
   @$pb.TagNumber(15)
   void clearSendWelcomeEmail() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get firstName => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set firstName($core.String v) { $_setString(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasFirstName() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearFirstName() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get lastName => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set lastName($core.String v) { $_setString(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasLastName() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearLastName() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $1.Timestamp get birthdate => $_getN(17);
+  @$pb.TagNumber(18)
+  set birthdate($1.Timestamp v) { setField(18, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasBirthdate() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearBirthdate() => clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureBirthdate() => $_ensure(17);
 }
 
 class UserFilter extends $pb.GeneratedMessage {

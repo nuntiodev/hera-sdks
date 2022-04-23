@@ -249,7 +249,10 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     encryptedAt: (f = msg.getEncryptedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
-    sendWelcomeEmail: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
+    sendWelcomeEmail: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    firstName: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -348,6 +351,19 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSendWelcomeEmail(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFirstName(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastName(value);
+      break;
+    case 18:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setBirthdate(value);
       break;
     default:
       reader.skipField();
@@ -484,6 +500,28 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
     writer.writeBool(
       15,
       f
+    );
+  }
+  f = message.getFirstName();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
+  f = message.getLastName();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
+  f = message.getBirthdate();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -813,6 +851,79 @@ proto.BlockUser.User.prototype.getSendWelcomeEmail = function() {
  */
 proto.BlockUser.User.prototype.setSendWelcomeEmail = function(value) {
   return jspb.Message.setProto3BooleanField(this, 15, value);
+};
+
+
+/**
+ * optional string first_name = 16;
+ * @return {string}
+ */
+proto.BlockUser.User.prototype.getFirstName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setFirstName = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
+};
+
+
+/**
+ * optional string last_name = 17;
+ * @return {string}
+ */
+proto.BlockUser.User.prototype.getLastName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setLastName = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp birthdate = 18;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.User.prototype.getBirthdate = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 18));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.User} returns this
+*/
+proto.BlockUser.User.prototype.setBirthdate = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearBirthdate = function() {
+  return this.setBirthdate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasBirthdate = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
