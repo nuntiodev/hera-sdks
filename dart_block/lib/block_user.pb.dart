@@ -16,6 +16,263 @@ import 'block_user.pbenum.dart';
 
 export 'block_user.pbenum.dart';
 
+class AuthConfig extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AuthConfig', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeTitle')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeDetails')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginButton')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginTitle')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginDetails')
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerButton')
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerTitle')
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerDetails')
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'missingPasswordTitle')
+    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'missingPasswordDetails')
+    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'missingEmailTitle')
+    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'missingEmailDetails')
+    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'passwordDoNotMatchTitle')
+    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'passwordDoNotMatchDetails')
+    ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdBy')
+    ..hasRequiredFields = false
+  ;
+
+  AuthConfig._() : super();
+  factory AuthConfig({
+    $core.String? logo,
+    $core.String? welcomeTitle,
+    $core.String? welcomeDetails,
+    $core.String? loginButton,
+    $core.String? loginTitle,
+    $core.String? loginDetails,
+    $core.String? registerButton,
+    $core.String? registerTitle,
+    $core.String? registerDetails,
+    $core.String? missingPasswordTitle,
+    $core.String? missingPasswordDetails,
+    $core.String? missingEmailTitle,
+    $core.String? missingEmailDetails,
+    $core.String? passwordDoNotMatchTitle,
+    $core.String? passwordDoNotMatchDetails,
+    $core.String? createdBy,
+  }) {
+    final _result = create();
+    if (logo != null) {
+      _result.logo = logo;
+    }
+    if (welcomeTitle != null) {
+      _result.welcomeTitle = welcomeTitle;
+    }
+    if (welcomeDetails != null) {
+      _result.welcomeDetails = welcomeDetails;
+    }
+    if (loginButton != null) {
+      _result.loginButton = loginButton;
+    }
+    if (loginTitle != null) {
+      _result.loginTitle = loginTitle;
+    }
+    if (loginDetails != null) {
+      _result.loginDetails = loginDetails;
+    }
+    if (registerButton != null) {
+      _result.registerButton = registerButton;
+    }
+    if (registerTitle != null) {
+      _result.registerTitle = registerTitle;
+    }
+    if (registerDetails != null) {
+      _result.registerDetails = registerDetails;
+    }
+    if (missingPasswordTitle != null) {
+      _result.missingPasswordTitle = missingPasswordTitle;
+    }
+    if (missingPasswordDetails != null) {
+      _result.missingPasswordDetails = missingPasswordDetails;
+    }
+    if (missingEmailTitle != null) {
+      _result.missingEmailTitle = missingEmailTitle;
+    }
+    if (missingEmailDetails != null) {
+      _result.missingEmailDetails = missingEmailDetails;
+    }
+    if (passwordDoNotMatchTitle != null) {
+      _result.passwordDoNotMatchTitle = passwordDoNotMatchTitle;
+    }
+    if (passwordDoNotMatchDetails != null) {
+      _result.passwordDoNotMatchDetails = passwordDoNotMatchDetails;
+    }
+    if (createdBy != null) {
+      _result.createdBy = createdBy;
+    }
+    return _result;
+  }
+  factory AuthConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AuthConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AuthConfig clone() => AuthConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AuthConfig copyWith(void Function(AuthConfig) updates) => super.copyWith((message) => updates(message as AuthConfig)) as AuthConfig; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AuthConfig create() => AuthConfig._();
+  AuthConfig createEmptyInstance() => create();
+  static $pb.PbList<AuthConfig> createRepeated() => $pb.PbList<AuthConfig>();
+  @$core.pragma('dart2js:noInline')
+  static AuthConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthConfig>(create);
+  static AuthConfig? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get logo => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set logo($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLogo() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLogo() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get welcomeTitle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set welcomeTitle($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWelcomeTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWelcomeTitle() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get welcomeDetails => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set welcomeDetails($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWelcomeDetails() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWelcomeDetails() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get loginButton => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set loginButton($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLoginButton() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLoginButton() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get loginTitle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set loginTitle($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLoginTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLoginTitle() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get loginDetails => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set loginDetails($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasLoginDetails() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLoginDetails() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get registerButton => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set registerButton($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasRegisterButton() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRegisterButton() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get registerTitle => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set registerTitle($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasRegisterTitle() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRegisterTitle() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get registerDetails => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set registerDetails($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasRegisterDetails() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRegisterDetails() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get missingPasswordTitle => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set missingPasswordTitle($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasMissingPasswordTitle() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMissingPasswordTitle() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get missingPasswordDetails => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set missingPasswordDetails($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasMissingPasswordDetails() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearMissingPasswordDetails() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get missingEmailTitle => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set missingEmailTitle($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasMissingEmailTitle() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearMissingEmailTitle() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get missingEmailDetails => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set missingEmailDetails($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasMissingEmailDetails() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearMissingEmailDetails() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get passwordDoNotMatchTitle => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set passwordDoNotMatchTitle($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasPasswordDoNotMatchTitle() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearPasswordDoNotMatchTitle() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get passwordDoNotMatchDetails => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set passwordDoNotMatchDetails($core.String v) { $_setString(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasPasswordDoNotMatchDetails() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearPasswordDoNotMatchDetails() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get createdBy => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set createdBy($core.String v) { $_setString(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasCreatedBy() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearCreatedBy() => clearField(16);
+}
+
 class Config extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Config', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
@@ -24,11 +281,12 @@ class Config extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'about')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableVerified')
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enabledNuntioVerified')
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultSignup')
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultLogin')
     ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<AuthConfig>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authConfig', subBuilder: AuthConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -40,11 +298,12 @@ class Config extends $pb.GeneratedMessage {
     $core.String? about,
     $core.String? email,
     $core.String? logo,
-    $core.bool? enableVerified,
+    $core.bool? enabledNuntioVerified,
     $core.bool? disableDefaultSignup,
     $core.bool? disableDefaultLogin,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
+    AuthConfig? authConfig,
   }) {
     final _result = create();
     if (id != null) {
@@ -65,8 +324,8 @@ class Config extends $pb.GeneratedMessage {
     if (logo != null) {
       _result.logo = logo;
     }
-    if (enableVerified != null) {
-      _result.enableVerified = enableVerified;
+    if (enabledNuntioVerified != null) {
+      _result.enabledNuntioVerified = enabledNuntioVerified;
     }
     if (disableDefaultSignup != null) {
       _result.disableDefaultSignup = disableDefaultSignup;
@@ -79,6 +338,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (updatedAt != null) {
       _result.updatedAt = updatedAt;
+    }
+    if (authConfig != null) {
+      _result.authConfig = authConfig;
     }
     return _result;
   }
@@ -158,13 +420,13 @@ class Config extends $pb.GeneratedMessage {
   void clearLogo() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get enableVerified => $_getBF(6);
+  $core.bool get enabledNuntioVerified => $_getBF(6);
   @$pb.TagNumber(7)
-  set enableVerified($core.bool v) { $_setBool(6, v); }
+  set enabledNuntioVerified($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasEnableVerified() => $_has(6);
+  $core.bool hasEnabledNuntioVerified() => $_has(6);
   @$pb.TagNumber(7)
-  void clearEnableVerified() => clearField(7);
+  void clearEnabledNuntioVerified() => clearField(7);
 
   @$pb.TagNumber(8)
   $core.bool get disableDefaultSignup => $_getBF(7);
@@ -205,6 +467,17 @@ class Config extends $pb.GeneratedMessage {
   void clearUpdatedAt() => clearField(11);
   @$pb.TagNumber(11)
   $1.Timestamp ensureUpdatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(13)
+  AuthConfig get authConfig => $_getN(11);
+  @$pb.TagNumber(13)
+  set authConfig(AuthConfig v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasAuthConfig() => $_has(11);
+  @$pb.TagNumber(13)
+  void clearAuthConfig() => clearField(13);
+  @$pb.TagNumber(13)
+  AuthConfig ensureAuthConfig() => $_ensure(11);
 }
 
 class User extends $pb.GeneratedMessage {

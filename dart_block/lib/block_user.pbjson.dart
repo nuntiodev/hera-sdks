@@ -36,6 +36,31 @@ const Platform$json = const {
 
 /// Descriptor for `Platform`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List platformDescriptor = $convert.base64Decode('CghQbGF0Zm9ybRIUChBJTlZBTElEX1BMQVRGT1JNEAASBwoDSU9TEAESCwoHQU5EUk9JRBACEgcKA1dFQhADEgkKBU1BQ09TEAQSCQoFTElOVVgQBRILCgdXSU5ET1dTEAY=');
+@$core.Deprecated('Use authConfigDescriptor instead')
+const AuthConfig$json = const {
+  '1': 'AuthConfig',
+  '2': const [
+    const {'1': 'logo', '3': 1, '4': 1, '5': 9, '10': 'logo'},
+    const {'1': 'welcome_title', '3': 2, '4': 1, '5': 9, '10': 'welcomeTitle'},
+    const {'1': 'welcome_details', '3': 3, '4': 1, '5': 9, '10': 'welcomeDetails'},
+    const {'1': 'login_button', '3': 4, '4': 1, '5': 9, '10': 'loginButton'},
+    const {'1': 'login_title', '3': 5, '4': 1, '5': 9, '10': 'loginTitle'},
+    const {'1': 'login_details', '3': 6, '4': 1, '5': 9, '10': 'loginDetails'},
+    const {'1': 'register_button', '3': 7, '4': 1, '5': 9, '10': 'registerButton'},
+    const {'1': 'register_title', '3': 8, '4': 1, '5': 9, '10': 'registerTitle'},
+    const {'1': 'register_details', '3': 9, '4': 1, '5': 9, '10': 'registerDetails'},
+    const {'1': 'missing_password_title', '3': 10, '4': 1, '5': 9, '10': 'missingPasswordTitle'},
+    const {'1': 'missing_password_details', '3': 11, '4': 1, '5': 9, '10': 'missingPasswordDetails'},
+    const {'1': 'missing_email_title', '3': 12, '4': 1, '5': 9, '10': 'missingEmailTitle'},
+    const {'1': 'missing_email_details', '3': 13, '4': 1, '5': 9, '10': 'missingEmailDetails'},
+    const {'1': 'password_do_not_match_title', '3': 14, '4': 1, '5': 9, '10': 'passwordDoNotMatchTitle'},
+    const {'1': 'password_do_not_match_details', '3': 15, '4': 1, '5': 9, '10': 'passwordDoNotMatchDetails'},
+    const {'1': 'created_by', '3': 16, '4': 1, '5': 9, '10': 'createdBy'},
+  ],
+};
+
+/// Descriptor for `AuthConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authConfigDescriptor = $convert.base64Decode('CgpBdXRoQ29uZmlnEhIKBGxvZ28YASABKAlSBGxvZ28SIwoNd2VsY29tZV90aXRsZRgCIAEoCVIMd2VsY29tZVRpdGxlEicKD3dlbGNvbWVfZGV0YWlscxgDIAEoCVIOd2VsY29tZURldGFpbHMSIQoMbG9naW5fYnV0dG9uGAQgASgJUgtsb2dpbkJ1dHRvbhIfCgtsb2dpbl90aXRsZRgFIAEoCVIKbG9naW5UaXRsZRIjCg1sb2dpbl9kZXRhaWxzGAYgASgJUgxsb2dpbkRldGFpbHMSJwoPcmVnaXN0ZXJfYnV0dG9uGAcgASgJUg5yZWdpc3RlckJ1dHRvbhIlCg5yZWdpc3Rlcl90aXRsZRgIIAEoCVINcmVnaXN0ZXJUaXRsZRIpChByZWdpc3Rlcl9kZXRhaWxzGAkgASgJUg9yZWdpc3RlckRldGFpbHMSNAoWbWlzc2luZ19wYXNzd29yZF90aXRsZRgKIAEoCVIUbWlzc2luZ1Bhc3N3b3JkVGl0bGUSOAoYbWlzc2luZ19wYXNzd29yZF9kZXRhaWxzGAsgASgJUhZtaXNzaW5nUGFzc3dvcmREZXRhaWxzEi4KE21pc3NpbmdfZW1haWxfdGl0bGUYDCABKAlSEW1pc3NpbmdFbWFpbFRpdGxlEjIKFW1pc3NpbmdfZW1haWxfZGV0YWlscxgNIAEoCVITbWlzc2luZ0VtYWlsRGV0YWlscxI8ChtwYXNzd29yZF9kb19ub3RfbWF0Y2hfdGl0bGUYDiABKAlSF3Bhc3N3b3JkRG9Ob3RNYXRjaFRpdGxlEkAKHXBhc3N3b3JkX2RvX25vdF9tYXRjaF9kZXRhaWxzGA8gASgJUhlwYXNzd29yZERvTm90TWF0Y2hEZXRhaWxzEh0KCmNyZWF0ZWRfYnkYECABKAlSCWNyZWF0ZWRCeQ==');
 @$core.Deprecated('Use configDescriptor instead')
 const Config$json = const {
   '1': 'Config',
@@ -46,16 +71,17 @@ const Config$json = const {
     const {'1': 'about', '3': 4, '4': 1, '5': 9, '10': 'about'},
     const {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
     const {'1': 'logo', '3': 6, '4': 1, '5': 9, '10': 'logo'},
-    const {'1': 'enable_verified', '3': 7, '4': 1, '5': 8, '10': 'enableVerified'},
+    const {'1': 'enabled_nuntio_verified', '3': 7, '4': 1, '5': 8, '10': 'enabledNuntioVerified'},
     const {'1': 'disable_default_signup', '3': 8, '4': 1, '5': 8, '10': 'disableDefaultSignup'},
     const {'1': 'disable_default_login', '3': 9, '4': 1, '5': 8, '10': 'disableDefaultLogin'},
     const {'1': 'created_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'updated_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'auth_config', '3': 13, '4': 1, '5': 11, '6': '.BlockUser.AuthConfig', '10': 'authConfig'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHd2Vic2l0ZRgDIAEoCVIHd2Vic2l0ZRIUCgVhYm91dBgEIAEoCVIFYWJvdXQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhIKBGxvZ28YBiABKAlSBGxvZ28SJwoPZW5hYmxlX3ZlcmlmaWVkGAcgASgIUg5lbmFibGVWZXJpZmllZBI0ChZkaXNhYmxlX2RlZmF1bHRfc2lnbnVwGAggASgIUhRkaXNhYmxlRGVmYXVsdFNpZ251cBIyChVkaXNhYmxlX2RlZmF1bHRfbG9naW4YCSABKAhSE2Rpc2FibGVEZWZhdWx0TG9naW4SOQoKY3JlYXRlZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHd2Vic2l0ZRgDIAEoCVIHd2Vic2l0ZRIUCgVhYm91dBgEIAEoCVIFYWJvdXQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhIKBGxvZ28YBiABKAlSBGxvZ28SNgoXZW5hYmxlZF9udW50aW9fdmVyaWZpZWQYByABKAhSFWVuYWJsZWROdW50aW9WZXJpZmllZBI0ChZkaXNhYmxlX2RlZmF1bHRfc2lnbnVwGAggASgIUhRkaXNhYmxlRGVmYXVsdFNpZ251cBIyChVkaXNhYmxlX2RlZmF1bHRfbG9naW4YCSABKAhSE2Rpc2FibGVEZWZhdWx0TG9naW4SOQoKY3JlYXRlZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0EjYKC2F1dGhfY29uZmlnGA0gASgLMhUuQmxvY2tVc2VyLkF1dGhDb25maWdSCmF1dGhDb25maWc=');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
