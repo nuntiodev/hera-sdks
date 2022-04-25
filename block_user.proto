@@ -12,6 +12,8 @@ service UserService {
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
     rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
     rpc UpdateImage(UserRequest) returns (UserResponse) {}
+    rpc UpdateName(UserRequest) returns (UserResponse) {}
+    rpc UpdateBirthdate(UserRequest) returns (UserResponse) {}
     rpc UpdateEmail(UserRequest) returns (UserResponse) {}
     rpc UpdateOptionalId(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
@@ -48,10 +50,9 @@ message User {
     google.protobuf.Timestamp updated_at = 12;
     google.protobuf.Timestamp encrypted_at = 13;
     bool require_email_verification = 14;
-    bool send_welcome_email = 15;
-    string first_name = 16;
-    string last_name = 17;
-    google.protobuf.Timestamp birthdate = 18;
+    string first_name = 15;
+    string last_name = 16;
+    google.protobuf.Timestamp birthdate = 17;
 }
 
 message UserFilter {
