@@ -203,6 +203,7 @@ message UserResponse {
 message ConfigRequest {
     Config config = 1;
     Config update = 2;
+    string namespace = 3;
 }
 
 message ConfigResponse {
