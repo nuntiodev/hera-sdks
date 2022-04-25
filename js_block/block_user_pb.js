@@ -953,7 +953,7 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     about: jspb.Message.getFieldWithDefault(msg, 4, ""),
     email: jspb.Message.getFieldWithDefault(msg, 5, ""),
     logo: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    enabledNuntioVerified: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    enableNuntioConnect: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     disableDefaultSignup: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     disableDefaultLogin: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1021,7 +1021,7 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnabledNuntioVerified(value);
+      msg.setEnableNuntioConnect(value);
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -1117,7 +1117,7 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getEnabledNuntioVerified();
+  f = message.getEnableNuntioConnect();
   if (f) {
     writer.writeBool(
       7,
@@ -1274,10 +1274,10 @@ proto.BlockUser.Config.prototype.setLogo = function(value) {
 
 
 /**
- * optional bool enabled_nuntio_verified = 7;
+ * optional bool enable_nuntio_connect = 7;
  * @return {boolean}
  */
-proto.BlockUser.Config.prototype.getEnabledNuntioVerified = function() {
+proto.BlockUser.Config.prototype.getEnableNuntioConnect = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
@@ -1286,7 +1286,7 @@ proto.BlockUser.Config.prototype.getEnabledNuntioVerified = function() {
  * @param {boolean} value
  * @return {!proto.BlockUser.Config} returns this
  */
-proto.BlockUser.Config.prototype.setEnabledNuntioVerified = function(value) {
+proto.BlockUser.Config.prototype.setEnableNuntioConnect = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
