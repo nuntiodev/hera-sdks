@@ -45,7 +45,8 @@ type UserServiceClient interface {
 	DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	CreateConifg(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
-	UpdateConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
+	UpdateSettings(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
+	UpdateAuthConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
 	GetConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
 	DeleteConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
 }
@@ -301,9 +302,18 @@ func (c *userServiceClient) CreateConifg(ctx context.Context, in *ConfigRequest,
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error) {
+func (c *userServiceClient) UpdateSettings(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error) {
 	out := new(ConfigResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateConfig", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateSettings", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateAuthConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error) {
+	out := new(ConfigResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateAuthConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -359,7 +369,8 @@ type UserServiceServer interface {
 	DeleteBatch(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteNamespace(context.Context, *UserRequest) (*UserResponse, error)
 	CreateConifg(context.Context, *ConfigRequest) (*ConfigResponse, error)
-	UpdateConfig(context.Context, *ConfigRequest) (*ConfigResponse, error)
+	UpdateSettings(context.Context, *ConfigRequest) (*ConfigResponse, error)
+	UpdateAuthConfig(context.Context, *ConfigRequest) (*ConfigResponse, error)
 	GetConfig(context.Context, *ConfigRequest) (*ConfigResponse, error)
 	DeleteConfig(context.Context, *ConfigRequest) (*ConfigResponse, error)
 }
@@ -449,8 +460,11 @@ func (UnimplementedUserServiceServer) DeleteNamespace(context.Context, *UserRequ
 func (UnimplementedUserServiceServer) CreateConifg(context.Context, *ConfigRequest) (*ConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateConifg not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateConfig(context.Context, *ConfigRequest) (*ConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfig not implemented")
+func (UnimplementedUserServiceServer) UpdateSettings(context.Context, *ConfigRequest) (*ConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSettings not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateAuthConfig(context.Context, *ConfigRequest) (*ConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAuthConfig not implemented")
 }
 func (UnimplementedUserServiceServer) GetConfig(context.Context, *ConfigRequest) (*ConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConfig not implemented")
@@ -956,20 +970,38 @@ func _UserService_CreateConifg_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_UpdateSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateConfig(ctx, in)
+		return srv.(UserServiceServer).UpdateSettings(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateConfig",
+		FullMethod: "/BlockUser.UserService/UpdateSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateConfig(ctx, req.(*ConfigRequest))
+		return srv.(UserServiceServer).UpdateSettings(ctx, req.(*ConfigRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateAuthConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfigRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateAuthConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateAuthConfig",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateAuthConfig(ctx, req.(*ConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1126,8 +1158,12 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_CreateConifg_Handler,
 		},
 		{
-			MethodName: "UpdateConfig",
-			Handler:    _UserService_UpdateConfig_Handler,
+			MethodName: "UpdateSettings",
+			Handler:    _UserService_UpdateSettings_Handler,
+		},
+		{
+			MethodName: "UpdateAuthConfig",
+			Handler:    _UserService_UpdateAuthConfig_Handler,
 		},
 		{
 			MethodName: "GetConfig",

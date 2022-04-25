@@ -144,9 +144,14 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/CreateConifg',
           ($0.ConfigRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
-  static final _$updateConfig =
+  static final _$updateSettings =
       $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
-          '/BlockUser.UserService/UpdateConfig',
+          '/BlockUser.UserService/UpdateSettings',
+          ($0.ConfigRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
+  static final _$updateAuthConfig =
+      $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
+          '/BlockUser.UserService/UpdateAuthConfig',
           ($0.ConfigRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
   static final _$getConfig =
@@ -306,9 +311,16 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createConifg, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ConfigResponse> updateConfig($0.ConfigRequest request,
+  $grpc.ResponseFuture<$0.ConfigResponse> updateSettings(
+      $0.ConfigRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateConfig, request, options: options);
+    return $createUnaryCall(_$updateSettings, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfigResponse> updateAuthConfig(
+      $0.ConfigRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateAuthConfig, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.ConfigResponse> getConfig($0.ConfigRequest request,
@@ -516,8 +528,15 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
         ($0.ConfigResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
-        'UpdateConfig',
-        updateConfig_Pre,
+        'UpdateSettings',
+        updateSettings_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
+        ($0.ConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
+        'UpdateAuthConfig',
+        updateAuthConfig_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
@@ -673,9 +692,14 @@ abstract class UserServiceBase extends $grpc.Service {
     return createConifg(call, await request);
   }
 
-  $async.Future<$0.ConfigResponse> updateConfig_Pre(
+  $async.Future<$0.ConfigResponse> updateSettings_Pre(
       $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
-    return updateConfig(call, await request);
+    return updateSettings(call, await request);
+  }
+
+  $async.Future<$0.ConfigResponse> updateAuthConfig_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
+    return updateAuthConfig(call, await request);
   }
 
   $async.Future<$0.ConfigResponse> getConfig_Pre(
@@ -742,7 +766,9 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.ConfigResponse> createConifg(
       $grpc.ServiceCall call, $0.ConfigRequest request);
-  $async.Future<$0.ConfigResponse> updateConfig(
+  $async.Future<$0.ConfigResponse> updateSettings(
+      $grpc.ServiceCall call, $0.ConfigRequest request);
+  $async.Future<$0.ConfigResponse> updateAuthConfig(
       $grpc.ServiceCall call, $0.ConfigRequest request);
   $async.Future<$0.ConfigResponse> getConfig(
       $grpc.ServiceCall call, $0.ConfigRequest request);

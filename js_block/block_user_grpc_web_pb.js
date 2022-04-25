@@ -1725,8 +1725,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.createConifg =
  *   !proto.BlockUser.ConfigRequest,
  *   !proto.BlockUser.ConfigResponse>}
  */
-const methodDescriptor_UserService_UpdateConfig = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/UpdateConfig',
+const methodDescriptor_UserService_UpdateSettings = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UpdateSettings',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.ConfigRequest,
   proto.BlockUser.ConfigResponse,
@@ -1751,13 +1751,13 @@ const methodDescriptor_UserService_UpdateConfig = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.ConfigResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.updateConfig =
+proto.BlockUser.UserServiceClient.prototype.updateSettings =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateConfig',
+      '/BlockUser.UserService/UpdateSettings',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateConfig,
+      methodDescriptor_UserService_UpdateSettings,
       callback);
 };
 
@@ -1770,13 +1770,74 @@ proto.BlockUser.UserServiceClient.prototype.updateConfig =
  * @return {!Promise<!proto.BlockUser.ConfigResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.updateConfig =
+proto.BlockUser.UserServicePromiseClient.prototype.updateSettings =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateConfig',
+      '/BlockUser.UserService/UpdateSettings',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateConfig);
+      methodDescriptor_UserService_UpdateSettings);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.ConfigRequest,
+ *   !proto.BlockUser.ConfigResponse>}
+ */
+const methodDescriptor_UserService_UpdateAuthConfig = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UpdateAuthConfig',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.ConfigRequest,
+  proto.BlockUser.ConfigResponse,
+  /**
+   * @param {!proto.BlockUser.ConfigRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.ConfigResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.ConfigResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.ConfigResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.updateAuthConfig =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateAuthConfig',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateAuthConfig,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.ConfigResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.updateAuthConfig =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateAuthConfig',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateAuthConfig);
 };
 
 
