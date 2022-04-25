@@ -289,6 +289,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOM<AuthConfig>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authConfig', subBuilder: AuthConfig.create)
     ..a<$core.int>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
+    ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
     ..hasRequiredFields = false
   ;
 
@@ -308,6 +309,7 @@ class Config extends $pb.GeneratedMessage {
     $1.Timestamp? updatedAt,
     AuthConfig? authConfig,
     $core.int? internalEncryptionLevel,
+    $core.bool? validatePassword,
   }) {
     final _result = create();
     if (id != null) {
@@ -351,6 +353,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (internalEncryptionLevel != null) {
       _result.internalEncryptionLevel = internalEncryptionLevel;
+    }
+    if (validatePassword != null) {
+      _result.validatePassword = validatePassword;
     }
     return _result;
   }
@@ -506,6 +511,15 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasInternalEncryptionLevel() => $_has(13);
   @$pb.TagNumber(14)
   void clearInternalEncryptionLevel() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get validatePassword => $_getBF(14);
+  @$pb.TagNumber(15)
+  set validatePassword($core.bool v) { $_setBool(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasValidatePassword() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearValidatePassword() => clearField(15);
 }
 
 class User extends $pb.GeneratedMessage {

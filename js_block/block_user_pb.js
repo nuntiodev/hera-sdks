@@ -960,7 +960,8 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     authConfig: (f = msg.getAuthConfig()) && proto.BlockUser.AuthConfig.toObject(includeInstance, f),
-    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 14, 0)
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
   };
 
   if (includeInstance) {
@@ -1055,6 +1056,10 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 14:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInternalEncryptionLevel(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setValidatePassword(value);
       break;
     default:
       reader.skipField();
@@ -1183,6 +1188,13 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       14,
+      f
+    );
+  }
+  f = message.getValidatePassword();
+  if (f) {
+    writer.writeBool(
+      15,
       f
     );
   }
@@ -1495,6 +1507,24 @@ proto.BlockUser.Config.prototype.getInternalEncryptionLevel = function() {
  */
 proto.BlockUser.Config.prototype.setInternalEncryptionLevel = function(value) {
   return jspb.Message.setProto3IntField(this, 14, value);
+};
+
+
+/**
+ * optional bool validate_password = 15;
+ * @return {boolean}
+ */
+proto.BlockUser.Config.prototype.getValidatePassword = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setValidatePassword = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
