@@ -1658,5 +1658,249 @@ proto.BlockUser.UserServicePromiseClient.prototype.deleteNamespace =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.ConfigRequest,
+ *   !proto.BlockUser.ConfigResponse>}
+ */
+const methodDescriptor_UserService_CreateConifg = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/CreateConifg',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.ConfigRequest,
+  proto.BlockUser.ConfigResponse,
+  /**
+   * @param {!proto.BlockUser.ConfigRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.ConfigResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.ConfigResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.ConfigResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.createConifg =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/CreateConifg',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_CreateConifg,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.ConfigResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.createConifg =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/CreateConifg',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_CreateConifg);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.ConfigRequest,
+ *   !proto.BlockUser.ConfigResponse>}
+ */
+const methodDescriptor_UserService_UpdateConfig = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UpdateConfig',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.ConfigRequest,
+  proto.BlockUser.ConfigResponse,
+  /**
+   * @param {!proto.BlockUser.ConfigRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.ConfigResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.ConfigResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.ConfigResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.updateConfig =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateConfig',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateConfig,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.ConfigResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.updateConfig =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateConfig',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateConfig);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.ConfigRequest,
+ *   !proto.BlockUser.ConfigResponse>}
+ */
+const methodDescriptor_UserService_GetConfig = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetConfig',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.ConfigRequest,
+  proto.BlockUser.ConfigResponse,
+  /**
+   * @param {!proto.BlockUser.ConfigRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.ConfigResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.ConfigResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.ConfigResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.getConfig =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/GetConfig',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetConfig,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.ConfigResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.getConfig =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/GetConfig',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetConfig);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.ConfigRequest,
+ *   !proto.BlockUser.ConfigResponse>}
+ */
+const methodDescriptor_UserService_DeleteConfig = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/DeleteConfig',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.ConfigRequest,
+  proto.BlockUser.ConfigResponse,
+  /**
+   * @param {!proto.BlockUser.ConfigRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.ConfigResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.ConfigResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.ConfigResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.deleteConfig =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/DeleteConfig',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_DeleteConfig,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.ConfigResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.deleteConfig =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/DeleteConfig',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_DeleteConfig);
+};
+
+
 module.exports = proto.BlockUser;
 
