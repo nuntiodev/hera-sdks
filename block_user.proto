@@ -33,12 +33,12 @@ service UserService {
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
-    rpc CreateNamespaceConfig(ConfigRequest) returns (ConfigResponse) {}
-    rpc UpdateConfigSettings(ConfigRequest) returns (ConfigResponse) {}
-    rpc UpdateConfigDetails(ConfigRequest) returns (ConfigResponse) {}
-    rpc UpdateConfigAuthDetails(ConfigRequest) returns (ConfigResponse) {}
-    rpc GetConfig(ConfigRequest) returns (ConfigResponse) {}
-    rpc DeleteConfig(ConfigRequest) returns (ConfigResponse) {}
+    rpc CreateNamespaceConfig(UserRequest) returns (UserResponse) {}
+    rpc UpdateConfigSettings(UserRequest) returns (UserResponse) {}
+    rpc UpdateConfigDetails(UserRequest) returns (UserResponse) {}
+    rpc UpdateConfigAuthDetails(UserRequest) returns (UserResponse) {}
+    rpc GetConfig(UserRequest) returns (UserResponse) {}
+    rpc DeleteConfig(UserRequest) returns (UserResponse) {}
 }
 
 message AuthConfig {
@@ -191,6 +191,7 @@ message UserRequest {
     ActiveMeasurement active_measurement = 11;
     int32 total_active_time = 12;
     int32 average_active_time = 13;
+    Config config = 14;
 }
 
 message UserResponse {
@@ -201,13 +202,5 @@ message UserResponse {
     repeated Token tokens = 5;
     map<string, string> public_keys = 6;
     ActiveMeasurement active_measurement = 7;
-}
-
-message ConfigRequest {
-    Config config = 1;
-    string namespace = 2;
-}
-
-message ConfigResponse {
-    Config config = 1;
+    Config config = 8;
 }
