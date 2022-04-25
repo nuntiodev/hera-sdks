@@ -1725,6 +1725,67 @@ proto.BlockUser.UserServicePromiseClient.prototype.createNamespaceConfig =
  *   !proto.BlockUser.ConfigRequest,
  *   !proto.BlockUser.ConfigResponse>}
  */
+const methodDescriptor_UserService_UpdateConfigSettings = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UpdateConfigSettings',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.ConfigRequest,
+  proto.BlockUser.ConfigResponse,
+  /**
+   * @param {!proto.BlockUser.ConfigRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.ConfigResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.ConfigResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.ConfigResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.updateConfigSettings =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateConfigSettings',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateConfigSettings,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.ConfigRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.ConfigResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.updateConfigSettings =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateConfigSettings',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateConfigSettings);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.ConfigRequest,
+ *   !proto.BlockUser.ConfigResponse>}
+ */
 const methodDescriptor_UserService_UpdateConfigDetails = new grpc.web.MethodDescriptor(
   '/BlockUser.UserService/UpdateConfigDetails',
   grpc.web.MethodType.UNARY,
