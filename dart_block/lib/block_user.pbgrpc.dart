@@ -38,6 +38,16 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/UpdateImage',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateName =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/UpdateName',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateBirthdate =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/UpdateBirthdate',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateEmail =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UpdateEmail',
@@ -158,6 +168,16 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.UserResponse> updateImage($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateImage, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateName($0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateName, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateBirthdate($0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateBirthdate, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> updateEmail($0.UserRequest request,
@@ -297,6 +317,20 @@ abstract class UserServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateImage',
         updateImage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateName',
+        updateName_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateBirthdate',
+        updateBirthdate_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -461,6 +495,16 @@ abstract class UserServiceBase extends $grpc.Service {
     return updateImage(call, await request);
   }
 
+  $async.Future<$0.UserResponse> updateName_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateName(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> updateBirthdate_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateBirthdate(call, await request);
+  }
+
   $async.Future<$0.UserResponse> updateEmail_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateEmail(call, await request);
@@ -565,6 +609,10 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> updateMetadata(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateImage(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateName(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateBirthdate(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateEmail(
       $grpc.ServiceCall call, $0.UserRequest request);
