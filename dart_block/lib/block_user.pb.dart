@@ -1521,6 +1521,7 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOM<ActiveMeasurement>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
     ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalActiveTime', $pb.PbFieldType.O3)
     ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'averageActiveTime', $pb.PbFieldType.O3)
+    ..aOM<Config>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..hasRequiredFields = false
   ;
 
@@ -1539,6 +1540,7 @@ class UserRequest extends $pb.GeneratedMessage {
     ActiveMeasurement? activeMeasurement,
     $core.int? totalActiveTime,
     $core.int? averageActiveTime,
+    Config? config,
   }) {
     final _result = create();
     if (user != null) {
@@ -1579,6 +1581,9 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (averageActiveTime != null) {
       _result.averageActiveTime = averageActiveTime;
+    }
+    if (config != null) {
+      _result.config = config;
     }
     return _result;
   }
@@ -1723,6 +1728,17 @@ class UserRequest extends $pb.GeneratedMessage {
   $core.bool hasAverageActiveTime() => $_has(12);
   @$pb.TagNumber(13)
   void clearAverageActiveTime() => clearField(13);
+
+  @$pb.TagNumber(14)
+  Config get config => $_getN(13);
+  @$pb.TagNumber(14)
+  set config(Config v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasConfig() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearConfig() => clearField(14);
+  @$pb.TagNumber(14)
+  Config ensureConfig() => $_ensure(13);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
@@ -1734,6 +1750,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..pc<Token>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokens', $pb.PbFieldType.PM, subBuilder: Token.create)
     ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeys', entryClassName: 'UserResponse.PublicKeysEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('BlockUser'))
     ..aOM<ActiveMeasurement>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
+    ..aOM<Config>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..hasRequiredFields = false
   ;
 
@@ -1746,6 +1763,7 @@ class UserResponse extends $pb.GeneratedMessage {
     $core.Iterable<Token>? tokens,
     $core.Map<$core.String, $core.String>? publicKeys,
     ActiveMeasurement? activeMeasurement,
+    Config? config,
   }) {
     final _result = create();
     if (user != null) {
@@ -1768,6 +1786,9 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     if (activeMeasurement != null) {
       _result.activeMeasurement = activeMeasurement;
+    }
+    if (config != null) {
+      _result.config = config;
     }
     return _result;
   }
@@ -1842,117 +1863,16 @@ class UserResponse extends $pb.GeneratedMessage {
   void clearActiveMeasurement() => clearField(7);
   @$pb.TagNumber(7)
   ActiveMeasurement ensureActiveMeasurement() => $_ensure(6);
-}
 
-class ConfigRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ConfigRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..aOM<Config>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
-    ..hasRequiredFields = false
-  ;
-
-  ConfigRequest._() : super();
-  factory ConfigRequest({
-    Config? config,
-    $core.String? namespace,
-  }) {
-    final _result = create();
-    if (config != null) {
-      _result.config = config;
-    }
-    if (namespace != null) {
-      _result.namespace = namespace;
-    }
-    return _result;
-  }
-  factory ConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ConfigRequest clone() => ConfigRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ConfigRequest copyWith(void Function(ConfigRequest) updates) => super.copyWith((message) => updates(message as ConfigRequest)) as ConfigRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ConfigRequest create() => ConfigRequest._();
-  ConfigRequest createEmptyInstance() => create();
-  static $pb.PbList<ConfigRequest> createRepeated() => $pb.PbList<ConfigRequest>();
-  @$core.pragma('dart2js:noInline')
-  static ConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConfigRequest>(create);
-  static ConfigRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  Config get config => $_getN(0);
-  @$pb.TagNumber(1)
-  set config(Config v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasConfig() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearConfig() => clearField(1);
-  @$pb.TagNumber(1)
-  Config ensureConfig() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $core.String get namespace => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set namespace($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasNamespace() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearNamespace() => clearField(2);
-}
-
-class ConfigResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ConfigResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..aOM<Config>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
-    ..hasRequiredFields = false
-  ;
-
-  ConfigResponse._() : super();
-  factory ConfigResponse({
-    Config? config,
-  }) {
-    final _result = create();
-    if (config != null) {
-      _result.config = config;
-    }
-    return _result;
-  }
-  factory ConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ConfigResponse clone() => ConfigResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ConfigResponse copyWith(void Function(ConfigResponse) updates) => super.copyWith((message) => updates(message as ConfigResponse)) as ConfigResponse; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ConfigResponse create() => ConfigResponse._();
-  ConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<ConfigResponse> createRepeated() => $pb.PbList<ConfigResponse>();
-  @$core.pragma('dart2js:noInline')
-  static ConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConfigResponse>(create);
-  static ConfigResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  Config get config => $_getN(0);
-  @$pb.TagNumber(1)
-  set config(Config v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasConfig() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearConfig() => clearField(1);
-  @$pb.TagNumber(1)
-  Config ensureConfig() => $_ensure(0);
+  @$pb.TagNumber(8)
+  Config get config => $_getN(7);
+  @$pb.TagNumber(8)
+  set config(Config v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasConfig() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearConfig() => clearField(8);
+  @$pb.TagNumber(8)
+  Config ensureConfig() => $_ensure(7);
 }
 

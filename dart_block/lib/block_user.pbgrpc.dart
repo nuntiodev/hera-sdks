@@ -140,35 +140,35 @@ class UserServiceClient extends $grpc.Client {
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$createNamespaceConfig =
-      $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/CreateNamespaceConfig',
-          ($0.ConfigRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateConfigSettings =
-      $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UpdateConfigSettings',
-          ($0.ConfigRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateConfigDetails =
-      $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UpdateConfigDetails',
-          ($0.ConfigRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateConfigAuthDetails =
-      $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UpdateConfigAuthDetails',
-          ($0.ConfigRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$getConfig =
-      $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/GetConfig',
-          ($0.ConfigRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$deleteConfig =
-      $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/DeleteConfig',
-          ($0.ConfigRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
 
   UserServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -311,37 +311,37 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteNamespace, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ConfigResponse> createNamespaceConfig(
-      $0.ConfigRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> createNamespaceConfig(
+      $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createNamespaceConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ConfigResponse> updateConfigSettings(
-      $0.ConfigRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> updateConfigSettings(
+      $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateConfigSettings, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ConfigResponse> updateConfigDetails(
-      $0.ConfigRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> updateConfigDetails(
+      $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateConfigDetails, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ConfigResponse> updateConfigAuthDetails(
-      $0.ConfigRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> updateConfigAuthDetails(
+      $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateConfigAuthDetails, request,
         options: options);
   }
 
-  $grpc.ResponseFuture<$0.ConfigResponse> getConfig($0.ConfigRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> getConfig($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ConfigResponse> deleteConfig($0.ConfigRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> deleteConfig($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteConfig, request, options: options);
   }
@@ -533,48 +533,48 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'CreateNamespaceConfig',
         createNamespaceConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
-        ($0.ConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateConfigSettings',
         updateConfigSettings_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
-        ($0.ConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateConfigDetails',
         updateConfigDetails_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
-        ($0.ConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateConfigAuthDetails',
         updateConfigAuthDetails_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
-        ($0.ConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'GetConfig',
         getConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
-        ($0.ConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'DeleteConfig',
         deleteConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
-        ($0.ConfigResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.UserResponse> heartbeat_Pre(
@@ -707,33 +707,33 @@ abstract class UserServiceBase extends $grpc.Service {
     return deleteNamespace(call, await request);
   }
 
-  $async.Future<$0.ConfigResponse> createNamespaceConfig_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
+  $async.Future<$0.UserResponse> createNamespaceConfig_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return createNamespaceConfig(call, await request);
   }
 
-  $async.Future<$0.ConfigResponse> updateConfigSettings_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
+  $async.Future<$0.UserResponse> updateConfigSettings_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateConfigSettings(call, await request);
   }
 
-  $async.Future<$0.ConfigResponse> updateConfigDetails_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
+  $async.Future<$0.UserResponse> updateConfigDetails_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateConfigDetails(call, await request);
   }
 
-  $async.Future<$0.ConfigResponse> updateConfigAuthDetails_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
+  $async.Future<$0.UserResponse> updateConfigAuthDetails_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateConfigAuthDetails(call, await request);
   }
 
-  $async.Future<$0.ConfigResponse> getConfig_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
+  $async.Future<$0.UserResponse> getConfig_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return getConfig(call, await request);
   }
 
-  $async.Future<$0.ConfigResponse> deleteConfig_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
+  $async.Future<$0.UserResponse> deleteConfig_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return deleteConfig(call, await request);
   }
 
@@ -789,16 +789,16 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> deleteNamespace(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.ConfigResponse> createNamespaceConfig(
-      $grpc.ServiceCall call, $0.ConfigRequest request);
-  $async.Future<$0.ConfigResponse> updateConfigSettings(
-      $grpc.ServiceCall call, $0.ConfigRequest request);
-  $async.Future<$0.ConfigResponse> updateConfigDetails(
-      $grpc.ServiceCall call, $0.ConfigRequest request);
-  $async.Future<$0.ConfigResponse> updateConfigAuthDetails(
-      $grpc.ServiceCall call, $0.ConfigRequest request);
-  $async.Future<$0.ConfigResponse> getConfig(
-      $grpc.ServiceCall call, $0.ConfigRequest request);
-  $async.Future<$0.ConfigResponse> deleteConfig(
-      $grpc.ServiceCall call, $0.ConfigRequest request);
+  $async.Future<$0.UserResponse> createNamespaceConfig(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateConfigSettings(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateConfigDetails(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateConfigAuthDetails(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> getConfig(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> deleteConfig(
+      $grpc.ServiceCall call, $0.UserRequest request);
 }
