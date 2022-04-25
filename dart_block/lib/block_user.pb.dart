@@ -287,6 +287,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOM<AuthConfig>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authConfig', subBuilder: AuthConfig.create)
+    ..a<$core.int>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -304,6 +305,7 @@ class Config extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
     AuthConfig? authConfig,
+    $core.int? internalEncryptionLevel,
   }) {
     final _result = create();
     if (id != null) {
@@ -341,6 +343,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (authConfig != null) {
       _result.authConfig = authConfig;
+    }
+    if (internalEncryptionLevel != null) {
+      _result.internalEncryptionLevel = internalEncryptionLevel;
     }
     return _result;
   }
@@ -478,6 +483,15 @@ class Config extends $pb.GeneratedMessage {
   void clearAuthConfig() => clearField(13);
   @$pb.TagNumber(13)
   AuthConfig ensureAuthConfig() => $_ensure(11);
+
+  @$pb.TagNumber(14)
+  $core.int get internalEncryptionLevel => $_getIZ(12);
+  @$pb.TagNumber(14)
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(12, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasInternalEncryptionLevel() => $_has(12);
+  @$pb.TagNumber(14)
+  void clearInternalEncryptionLevel() => clearField(14);
 }
 
 class User extends $pb.GeneratedMessage {

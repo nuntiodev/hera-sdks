@@ -77,11 +77,12 @@ const Config$json = const {
     const {'1': 'created_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'updated_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
     const {'1': 'auth_config', '3': 13, '4': 1, '5': 11, '6': '.BlockUser.AuthConfig', '10': 'authConfig'},
+    const {'1': 'internal_encryption_level', '3': 14, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHd2Vic2l0ZRgDIAEoCVIHd2Vic2l0ZRIUCgVhYm91dBgEIAEoCVIFYWJvdXQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhIKBGxvZ28YBiABKAlSBGxvZ28SMgoVZW5hYmxlX251bnRpb19jb25uZWN0GAcgASgIUhNlbmFibGVOdW50aW9Db25uZWN0EjQKFmRpc2FibGVfZGVmYXVsdF9zaWdudXAYCCABKAhSFGRpc2FibGVEZWZhdWx0U2lnbnVwEjIKFWRpc2FibGVfZGVmYXVsdF9sb2dpbhgJIAEoCFITZGlzYWJsZURlZmF1bHRMb2dpbhI5CgpjcmVhdGVkX2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSNgoLYXV0aF9jb25maWcYDSABKAsyFS5CbG9ja1VzZXIuQXV0aENvbmZpZ1IKYXV0aENvbmZpZw==');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHd2Vic2l0ZRgDIAEoCVIHd2Vic2l0ZRIUCgVhYm91dBgEIAEoCVIFYWJvdXQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhIKBGxvZ28YBiABKAlSBGxvZ28SMgoVZW5hYmxlX251bnRpb19jb25uZWN0GAcgASgIUhNlbmFibGVOdW50aW9Db25uZWN0EjQKFmRpc2FibGVfZGVmYXVsdF9zaWdudXAYCCABKAhSFGRpc2FibGVEZWZhdWx0U2lnbnVwEjIKFWRpc2FibGVfZGVmYXVsdF9sb2dpbhgJIAEoCFITZGlzYWJsZURlZmF1bHRMb2dpbhI5CgpjcmVhdGVkX2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSNgoLYXV0aF9jb25maWcYDSABKAsyFS5CbG9ja1VzZXIuQXV0aENvbmZpZ1IKYXV0aENvbmZpZxI6ChlpbnRlcm5hbF9lbmNyeXB0aW9uX2xldmVsGA4gASgFUhdpbnRlcm5hbEVuY3J5cHRpb25MZXZlbA==');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',

@@ -958,7 +958,8 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     disableDefaultLogin: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    authConfig: (f = msg.getAuthConfig()) && proto.BlockUser.AuthConfig.toObject(includeInstance, f)
+    authConfig: (f = msg.getAuthConfig()) && proto.BlockUser.AuthConfig.toObject(includeInstance, f),
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
   if (includeInstance) {
@@ -1045,6 +1046,10 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.BlockUser.AuthConfig;
       reader.readMessage(value,proto.BlockUser.AuthConfig.deserializeBinaryFromReader);
       msg.setAuthConfig(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInternalEncryptionLevel(value);
       break;
     default:
       reader.skipField();
@@ -1160,6 +1165,13 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
       13,
       f,
       proto.BlockUser.AuthConfig.serializeBinaryToWriter
+    );
+  }
+  f = message.getInternalEncryptionLevel();
+  if (f !== 0) {
+    writer.writeInt32(
+      14,
+      f
     );
   }
 };
@@ -1435,6 +1447,24 @@ proto.BlockUser.Config.prototype.clearAuthConfig = function() {
  */
 proto.BlockUser.Config.prototype.hasAuthConfig = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional int32 internal_encryption_level = 14;
+ * @return {number}
+ */
+proto.BlockUser.Config.prototype.getInternalEncryptionLevel = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setInternalEncryptionLevel = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
 };
 
 
