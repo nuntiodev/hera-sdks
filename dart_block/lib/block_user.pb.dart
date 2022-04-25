@@ -1820,6 +1820,7 @@ class ConfigRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ConfigRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOM<Config>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOM<Config>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'update', subBuilder: Config.create)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
     ..hasRequiredFields = false
   ;
 
@@ -1827,6 +1828,7 @@ class ConfigRequest extends $pb.GeneratedMessage {
   factory ConfigRequest({
     Config? config,
     Config? update,
+    $core.String? namespace,
   }) {
     final _result = create();
     if (config != null) {
@@ -1834,6 +1836,9 @@ class ConfigRequest extends $pb.GeneratedMessage {
     }
     if (update != null) {
       _result.update = update;
+    }
+    if (namespace != null) {
+      _result.namespace = namespace;
     }
     return _result;
   }
@@ -1879,6 +1884,15 @@ class ConfigRequest extends $pb.GeneratedMessage {
   void clearUpdate() => clearField(2);
   @$pb.TagNumber(2)
   Config ensureUpdate() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get namespace => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set namespace($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNamespace() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNamespace() => clearField(3);
 }
 
 class ConfigResponse extends $pb.GeneratedMessage {

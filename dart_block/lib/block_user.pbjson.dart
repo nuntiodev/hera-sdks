@@ -313,11 +313,12 @@ const ConfigRequest$json = const {
   '2': const [
     const {'1': 'config', '3': 1, '4': 1, '5': 11, '6': '.BlockUser.Config', '10': 'config'},
     const {'1': 'update', '3': 2, '4': 1, '5': 11, '6': '.BlockUser.Config', '10': 'update'},
+    const {'1': 'namespace', '3': 3, '4': 1, '5': 9, '10': 'namespace'},
   ],
 };
 
 /// Descriptor for `ConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configRequestDescriptor = $convert.base64Decode('Cg1Db25maWdSZXF1ZXN0EikKBmNvbmZpZxgBIAEoCzIRLkJsb2NrVXNlci5Db25maWdSBmNvbmZpZxIpCgZ1cGRhdGUYAiABKAsyES5CbG9ja1VzZXIuQ29uZmlnUgZ1cGRhdGU=');
+final $typed_data.Uint8List configRequestDescriptor = $convert.base64Decode('Cg1Db25maWdSZXF1ZXN0EikKBmNvbmZpZxgBIAEoCzIRLkJsb2NrVXNlci5Db25maWdSBmNvbmZpZxIpCgZ1cGRhdGUYAiABKAsyES5CbG9ja1VzZXIuQ29uZmlnUgZ1cGRhdGUSHAoJbmFtZXNwYWNlGAMgASgJUgluYW1lc3BhY2U=');
 @$core.Deprecated('Use configResponseDescriptor instead')
 const ConfigResponse$json = const {
   '1': 'ConfigResponse',
