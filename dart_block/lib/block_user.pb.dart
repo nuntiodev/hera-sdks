@@ -281,7 +281,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'about')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enabledNuntioVerified')
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableNuntioConnect')
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultSignup')
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultLogin')
     ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
@@ -298,7 +298,7 @@ class Config extends $pb.GeneratedMessage {
     $core.String? about,
     $core.String? email,
     $core.String? logo,
-    $core.bool? enabledNuntioVerified,
+    $core.bool? enableNuntioConnect,
     $core.bool? disableDefaultSignup,
     $core.bool? disableDefaultLogin,
     $1.Timestamp? createdAt,
@@ -324,8 +324,8 @@ class Config extends $pb.GeneratedMessage {
     if (logo != null) {
       _result.logo = logo;
     }
-    if (enabledNuntioVerified != null) {
-      _result.enabledNuntioVerified = enabledNuntioVerified;
+    if (enableNuntioConnect != null) {
+      _result.enableNuntioConnect = enableNuntioConnect;
     }
     if (disableDefaultSignup != null) {
       _result.disableDefaultSignup = disableDefaultSignup;
@@ -420,13 +420,13 @@ class Config extends $pb.GeneratedMessage {
   void clearLogo() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get enabledNuntioVerified => $_getBF(6);
+  $core.bool get enableNuntioConnect => $_getBF(6);
   @$pb.TagNumber(7)
-  set enabledNuntioVerified($core.bool v) { $_setBool(6, v); }
+  set enableNuntioConnect($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasEnabledNuntioVerified() => $_has(6);
+  $core.bool hasEnableNuntioConnect() => $_has(6);
   @$pb.TagNumber(7)
-  void clearEnabledNuntioVerified() => clearField(7);
+  void clearEnableNuntioConnect() => clearField(7);
 
   @$pb.TagNumber(8)
   $core.bool get disableDefaultSignup => $_getBF(7);
