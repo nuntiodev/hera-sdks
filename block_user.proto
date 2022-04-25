@@ -39,6 +39,25 @@ service UserService {
     rpc DeleteConfig(ConfigRequest) returns (ConfigResponse) {}
 }
 
+message AuthConfig {
+    string logo = 1;
+    string welcome_title = 2; 
+    string welcome_details = 3;
+    string login_button = 4;
+    string login_title = 5;
+    string login_details = 6;
+    string register_button = 7;
+    string register_title = 8;
+    string register_details = 9;
+    string missing_password_title = 10;
+    string missing_password_details = 11;
+    string missing_email_title = 12;
+    string missing_email_details = 13;
+    string password_do_not_match_title = 14;
+    string password_do_not_match_details = 15;
+    string created_by = 16;
+}
+
 message Config {
     string id = 1;
     string name = 2;
@@ -46,11 +65,12 @@ message Config {
     string about = 4;
     string email = 5;
     string logo = 6;
-    bool enable_verified = 7;
+    bool enabled_nuntio_verified = 7;
     bool disable_default_signup = 8;
     bool disable_default_login = 9;
     google.protobuf.Timestamp created_at = 10;
     google.protobuf.Timestamp updated_at = 11;
+    AuthConfig auth_config = 13;
 }
 
 message User {
