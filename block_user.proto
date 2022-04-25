@@ -34,6 +34,7 @@ service UserService {
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
     rpc CreateNamespaceConfig(ConfigRequest) returns (ConfigResponse) {}
+    rpc UpdateConfigSettings(ConfigRequest) returns (ConfigResponse) {}
     rpc UpdateConfigDetails(ConfigRequest) returns (ConfigResponse) {}
     rpc UpdateConfigAuthDetails(ConfigRequest) returns (ConfigResponse) {}
     rpc GetConfig(ConfigRequest) returns (ConfigResponse) {}
