@@ -1664,8 +1664,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.deleteNamespace =
  *   !proto.BlockUser.ConfigRequest,
  *   !proto.BlockUser.ConfigResponse>}
  */
-const methodDescriptor_UserService_CreateConifg = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/CreateConifg',
+const methodDescriptor_UserService_CreateConfig = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/CreateConfig',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.ConfigRequest,
   proto.BlockUser.ConfigResponse,
@@ -1690,13 +1690,13 @@ const methodDescriptor_UserService_CreateConifg = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.ConfigResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.createConifg =
+proto.BlockUser.UserServiceClient.prototype.createConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/CreateConifg',
+      '/BlockUser.UserService/CreateConfig',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateConifg,
+      methodDescriptor_UserService_CreateConfig,
       callback);
 };
 
@@ -1709,13 +1709,13 @@ proto.BlockUser.UserServiceClient.prototype.createConifg =
  * @return {!Promise<!proto.BlockUser.ConfigResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.createConifg =
+proto.BlockUser.UserServicePromiseClient.prototype.createConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/CreateConifg',
+      '/BlockUser.UserService/CreateConfig',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateConifg);
+      methodDescriptor_UserService_CreateConfig);
 };
 
 

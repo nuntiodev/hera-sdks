@@ -139,9 +139,9 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/DeleteNamespace',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$createConifg =
+  static final _$createConfig =
       $grpc.ClientMethod<$0.ConfigRequest, $0.ConfigResponse>(
-          '/BlockUser.UserService/CreateConifg',
+          '/BlockUser.UserService/CreateConfig',
           ($0.ConfigRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.ConfigResponse.fromBuffer(value));
   static final _$updateSettings =
@@ -306,9 +306,9 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteNamespace, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ConfigResponse> createConifg($0.ConfigRequest request,
+  $grpc.ResponseFuture<$0.ConfigResponse> createConfig($0.ConfigRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createConifg, request, options: options);
+    return $createUnaryCall(_$createConfig, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.ConfigResponse> updateSettings(
@@ -521,8 +521,8 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ConfigRequest, $0.ConfigResponse>(
-        'CreateConifg',
-        createConifg_Pre,
+        'CreateConfig',
+        createConfig_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.ConfigRequest.fromBuffer(value),
@@ -687,9 +687,9 @@ abstract class UserServiceBase extends $grpc.Service {
     return deleteNamespace(call, await request);
   }
 
-  $async.Future<$0.ConfigResponse> createConifg_Pre(
+  $async.Future<$0.ConfigResponse> createConfig_Pre(
       $grpc.ServiceCall call, $async.Future<$0.ConfigRequest> request) async {
-    return createConifg(call, await request);
+    return createConfig(call, await request);
   }
 
   $async.Future<$0.ConfigResponse> updateSettings_Pre(
@@ -764,7 +764,7 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> deleteNamespace(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.ConfigResponse> createConifg(
+  $async.Future<$0.ConfigResponse> createConfig(
       $grpc.ServiceCall call, $0.ConfigRequest request);
   $async.Future<$0.ConfigResponse> updateSettings(
       $grpc.ServiceCall call, $0.ConfigRequest request);

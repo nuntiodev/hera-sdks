@@ -1819,23 +1819,18 @@ class UserResponse extends $pb.GeneratedMessage {
 class ConfigRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ConfigRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOM<Config>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
-    ..aOM<Config>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'update', subBuilder: Config.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
     ..hasRequiredFields = false
   ;
 
   ConfigRequest._() : super();
   factory ConfigRequest({
     Config? config,
-    Config? update,
     $core.String? namespace,
   }) {
     final _result = create();
     if (config != null) {
       _result.config = config;
-    }
-    if (update != null) {
-      _result.update = update;
     }
     if (namespace != null) {
       _result.namespace = namespace;
@@ -1875,24 +1870,13 @@ class ConfigRequest extends $pb.GeneratedMessage {
   Config ensureConfig() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  Config get update => $_getN(1);
+  $core.String get namespace => $_getSZ(1);
   @$pb.TagNumber(2)
-  set update(Config v) { setField(2, v); }
+  set namespace($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasUpdate() => $_has(1);
+  $core.bool hasNamespace() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUpdate() => clearField(2);
-  @$pb.TagNumber(2)
-  Config ensureUpdate() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $core.String get namespace => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set namespace($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasNamespace() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearNamespace() => clearField(3);
+  void clearNamespace() => clearField(2);
 }
 
 class ConfigResponse extends $pb.GeneratedMessage {

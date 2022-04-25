@@ -44,7 +44,7 @@ type UserServiceClient interface {
 	Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	CreateConifg(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
+	CreateConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
 	UpdateSettings(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
 	UpdateAuthConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
 	GetConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error)
@@ -293,9 +293,9 @@ func (c *userServiceClient) DeleteNamespace(ctx context.Context, in *UserRequest
 	return out, nil
 }
 
-func (c *userServiceClient) CreateConifg(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error) {
+func (c *userServiceClient) CreateConfig(ctx context.Context, in *ConfigRequest, opts ...grpc.CallOption) (*ConfigResponse, error) {
 	out := new(ConfigResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/CreateConifg", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/CreateConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -368,7 +368,7 @@ type UserServiceServer interface {
 	Delete(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteBatch(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteNamespace(context.Context, *UserRequest) (*UserResponse, error)
-	CreateConifg(context.Context, *ConfigRequest) (*ConfigResponse, error)
+	CreateConfig(context.Context, *ConfigRequest) (*ConfigResponse, error)
 	UpdateSettings(context.Context, *ConfigRequest) (*ConfigResponse, error)
 	UpdateAuthConfig(context.Context, *ConfigRequest) (*ConfigResponse, error)
 	GetConfig(context.Context, *ConfigRequest) (*ConfigResponse, error)
@@ -457,8 +457,8 @@ func (UnimplementedUserServiceServer) DeleteBatch(context.Context, *UserRequest)
 func (UnimplementedUserServiceServer) DeleteNamespace(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNamespace not implemented")
 }
-func (UnimplementedUserServiceServer) CreateConifg(context.Context, *ConfigRequest) (*ConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateConifg not implemented")
+func (UnimplementedUserServiceServer) CreateConfig(context.Context, *ConfigRequest) (*ConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateConfig not implemented")
 }
 func (UnimplementedUserServiceServer) UpdateSettings(context.Context, *ConfigRequest) (*ConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSettings not implemented")
@@ -952,20 +952,20 @@ func _UserService_DeleteNamespace_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_CreateConifg_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_CreateConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreateConifg(ctx, in)
+		return srv.(UserServiceServer).CreateConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/CreateConifg",
+		FullMethod: "/BlockUser.UserService/CreateConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateConifg(ctx, req.(*ConfigRequest))
+		return srv.(UserServiceServer).CreateConfig(ctx, req.(*ConfigRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1154,8 +1154,8 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_DeleteNamespace_Handler,
 		},
 		{
-			MethodName: "CreateConifg",
-			Handler:    _UserService_CreateConifg_Handler,
+			MethodName: "CreateConfig",
+			Handler:    _UserService_CreateConfig_Handler,
 		},
 		{
 			MethodName: "UpdateSettings",

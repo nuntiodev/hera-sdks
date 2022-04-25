@@ -5162,8 +5162,7 @@ proto.BlockUser.ConfigRequest.prototype.toObject = function(opt_includeInstance)
 proto.BlockUser.ConfigRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
-    update: (f = msg.getUpdate()) && proto.BlockUser.Config.toObject(includeInstance, f),
-    namespace: jspb.Message.getFieldWithDefault(msg, 3, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -5206,11 +5205,6 @@ proto.BlockUser.ConfigRequest.deserializeBinaryFromReader = function(msg, reader
       msg.setConfig(value);
       break;
     case 2:
-      var value = new proto.BlockUser.Config;
-      reader.readMessage(value,proto.BlockUser.Config.deserializeBinaryFromReader);
-      msg.setUpdate(value);
-      break;
-    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
@@ -5251,18 +5245,10 @@ proto.BlockUser.ConfigRequest.serializeBinaryToWriter = function(message, writer
       proto.BlockUser.Config.serializeBinaryToWriter
     );
   }
-  f = message.getUpdate();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      proto.BlockUser.Config.serializeBinaryToWriter
-    );
-  }
   f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
@@ -5307,48 +5293,11 @@ proto.BlockUser.ConfigRequest.prototype.hasConfig = function() {
 
 
 /**
- * optional Config update = 2;
- * @return {?proto.BlockUser.Config}
- */
-proto.BlockUser.ConfigRequest.prototype.getUpdate = function() {
-  return /** @type{?proto.BlockUser.Config} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.Config, 2));
-};
-
-
-/**
- * @param {?proto.BlockUser.Config|undefined} value
- * @return {!proto.BlockUser.ConfigRequest} returns this
-*/
-proto.BlockUser.ConfigRequest.prototype.setUpdate = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.BlockUser.ConfigRequest} returns this
- */
-proto.BlockUser.ConfigRequest.prototype.clearUpdate = function() {
-  return this.setUpdate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.BlockUser.ConfigRequest.prototype.hasUpdate = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string namespace = 3;
+ * optional string namespace = 2;
  * @return {string}
  */
 proto.BlockUser.ConfigRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -5357,7 +5306,7 @@ proto.BlockUser.ConfigRequest.prototype.getNamespace = function() {
  * @return {!proto.BlockUser.ConfigRequest} returns this
  */
 proto.BlockUser.ConfigRequest.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
