@@ -66,11 +66,12 @@ message Config {
     string about = 4;
     string email = 5;
     string logo = 6;
-    bool enable_nuntio_connect = 7;
-    bool disable_default_signup = 8;
-    bool disable_default_login = 9;
-    google.protobuf.Timestamp created_at = 10;
-    google.protobuf.Timestamp updated_at = 11;
+    string terms = 7;
+    bool enable_nuntio_connect = 8;
+    bool disable_default_signup = 9;
+    bool disable_default_login = 10;
+    google.protobuf.Timestamp created_at = 11;
+    google.protobuf.Timestamp updated_at = 12;
     AuthConfig auth_config = 13;
     int32 internal_encryption_level = 14;
 }
