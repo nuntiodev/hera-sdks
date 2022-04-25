@@ -33,6 +33,24 @@ service UserService {
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
+    rpc CreateConifg(ConfigRequest) returns (ConfigResponse) {}
+    rpc UpdateConfig(ConfigRequest) returns (ConfigResponse) {}
+    rpc GetConfig(ConfigRequest) returns (ConfigResponse) {}
+    rpc DeleteConfig(ConfigRequest) returns (ConfigResponse) {}
+}
+
+message Config {
+    string id = 1;
+    string name = 2;
+    string website = 3;
+    string about = 4;
+    string email = 5;
+    string logo = 6;
+    bool enable_verified = 6;
+    bool disable_default_signup = 7;
+    bool disable_default_login = 8;
+    google.protobuf.Timestamp created_at = 9;
+    google.protobuf.Timestamp updated_at = 10;
 }
 
 message User {
@@ -158,4 +176,13 @@ message UserResponse {
     repeated Token tokens = 5;
     map<string, string> public_keys = 6;
     ActiveMeasurement active_measurement = 7;
+}
+
+message ConfigRequest {
+    Config config = 1;
+    Config update = 2;
+}
+
+message ConfigResponse {
+    Config config = 1;
 }
