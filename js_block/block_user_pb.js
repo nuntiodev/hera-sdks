@@ -953,9 +953,10 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     about: jspb.Message.getFieldWithDefault(msg, 4, ""),
     email: jspb.Message.getFieldWithDefault(msg, 5, ""),
     logo: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    enableNuntioConnect: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    disableDefaultSignup: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    disableDefaultLogin: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    terms: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    enableNuntioConnect: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    disableDefaultSignup: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    disableDefaultLogin: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     authConfig: (f = msg.getAuthConfig()) && proto.BlockUser.AuthConfig.toObject(includeInstance, f),
@@ -1021,23 +1022,27 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLogo(value);
       break;
     case 7:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEnableNuntioConnect(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTerms(value);
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisableDefaultSignup(value);
+      msg.setEnableNuntioConnect(value);
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisableDefaultLogin(value);
+      msg.setDisableDefaultSignup(value);
       break;
     case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDisableDefaultLogin(value);
+      break;
+    case 11:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedAt(value);
       break;
-    case 11:
+    case 12:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
@@ -1122,31 +1127,38 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getEnableNuntioConnect();
-  if (f) {
-    writer.writeBool(
+  f = message.getTerms();
+  if (f.length > 0) {
+    writer.writeString(
       7,
       f
     );
   }
-  f = message.getDisableDefaultSignup();
+  f = message.getEnableNuntioConnect();
   if (f) {
     writer.writeBool(
       8,
       f
     );
   }
-  f = message.getDisableDefaultLogin();
+  f = message.getDisableDefaultSignup();
   if (f) {
     writer.writeBool(
       9,
       f
     );
   }
+  f = message.getDisableDefaultLogin();
+  if (f) {
+    writer.writeBool(
+      10,
+      f
+    );
+  }
   f = message.getCreatedAt();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1154,7 +1166,7 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getUpdatedAt();
   if (f != null) {
     writer.writeMessage(
-      11,
+      12,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1286,28 +1298,28 @@ proto.BlockUser.Config.prototype.setLogo = function(value) {
 
 
 /**
- * optional bool enable_nuntio_connect = 7;
+ * optional string terms = 7;
+ * @return {string}
+ */
+proto.BlockUser.Config.prototype.getTerms = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setTerms = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional bool enable_nuntio_connect = 8;
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.getEnableNuntioConnect = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setEnableNuntioConnect = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 7, value);
-};
-
-
-/**
- * optional bool disable_default_signup = 8;
- * @return {boolean}
- */
-proto.BlockUser.Config.prototype.getDisableDefaultSignup = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
@@ -1316,16 +1328,16 @@ proto.BlockUser.Config.prototype.getDisableDefaultSignup = function() {
  * @param {boolean} value
  * @return {!proto.BlockUser.Config} returns this
  */
-proto.BlockUser.Config.prototype.setDisableDefaultSignup = function(value) {
+proto.BlockUser.Config.prototype.setEnableNuntioConnect = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
 /**
- * optional bool disable_default_login = 9;
+ * optional bool disable_default_signup = 9;
  * @return {boolean}
  */
-proto.BlockUser.Config.prototype.getDisableDefaultLogin = function() {
+proto.BlockUser.Config.prototype.getDisableDefaultSignup = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
@@ -1334,18 +1346,36 @@ proto.BlockUser.Config.prototype.getDisableDefaultLogin = function() {
  * @param {boolean} value
  * @return {!proto.BlockUser.Config} returns this
  */
-proto.BlockUser.Config.prototype.setDisableDefaultLogin = function(value) {
+proto.BlockUser.Config.prototype.setDisableDefaultSignup = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp created_at = 10;
+ * optional bool disable_default_login = 10;
+ * @return {boolean}
+ */
+proto.BlockUser.Config.prototype.getDisableDefaultLogin = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setDisableDefaultLogin = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp created_at = 11;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.Config.prototype.getCreatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
 };
 
 
@@ -1354,7 +1384,7 @@ proto.BlockUser.Config.prototype.getCreatedAt = function() {
  * @return {!proto.BlockUser.Config} returns this
 */
 proto.BlockUser.Config.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -1372,17 +1402,17 @@ proto.BlockUser.Config.prototype.clearCreatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.hasCreatedAt = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updated_at = 11;
+ * optional google.protobuf.Timestamp updated_at = 12;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.Config.prototype.getUpdatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
 };
 
 
@@ -1391,7 +1421,7 @@ proto.BlockUser.Config.prototype.getUpdatedAt = function() {
  * @return {!proto.BlockUser.Config} returns this
 */
 proto.BlockUser.Config.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -1409,7 +1439,7 @@ proto.BlockUser.Config.prototype.clearUpdatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.hasUpdatedAt = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 

@@ -281,11 +281,12 @@ class Config extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'about')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableNuntioConnect')
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultSignup')
-    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultLogin')
-    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'terms')
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableNuntioConnect')
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultSignup')
+    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultLogin')
+    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOM<AuthConfig>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authConfig', subBuilder: AuthConfig.create)
     ..a<$core.int>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
@@ -299,6 +300,7 @@ class Config extends $pb.GeneratedMessage {
     $core.String? about,
     $core.String? email,
     $core.String? logo,
+    $core.String? terms,
     $core.bool? enableNuntioConnect,
     $core.bool? disableDefaultSignup,
     $core.bool? disableDefaultLogin,
@@ -325,6 +327,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (logo != null) {
       _result.logo = logo;
+    }
+    if (terms != null) {
+      _result.terms = terms;
     }
     if (enableNuntioConnect != null) {
       _result.enableNuntioConnect = enableNuntioConnect;
@@ -425,71 +430,80 @@ class Config extends $pb.GeneratedMessage {
   void clearLogo() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get enableNuntioConnect => $_getBF(6);
+  $core.String get terms => $_getSZ(6);
   @$pb.TagNumber(7)
-  set enableNuntioConnect($core.bool v) { $_setBool(6, v); }
+  set terms($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasEnableNuntioConnect() => $_has(6);
+  $core.bool hasTerms() => $_has(6);
   @$pb.TagNumber(7)
-  void clearEnableNuntioConnect() => clearField(7);
+  void clearTerms() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get disableDefaultSignup => $_getBF(7);
+  $core.bool get enableNuntioConnect => $_getBF(7);
   @$pb.TagNumber(8)
-  set disableDefaultSignup($core.bool v) { $_setBool(7, v); }
+  set enableNuntioConnect($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasDisableDefaultSignup() => $_has(7);
+  $core.bool hasEnableNuntioConnect() => $_has(7);
   @$pb.TagNumber(8)
-  void clearDisableDefaultSignup() => clearField(8);
+  void clearEnableNuntioConnect() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.bool get disableDefaultLogin => $_getBF(8);
+  $core.bool get disableDefaultSignup => $_getBF(8);
   @$pb.TagNumber(9)
-  set disableDefaultLogin($core.bool v) { $_setBool(8, v); }
+  set disableDefaultSignup($core.bool v) { $_setBool(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasDisableDefaultLogin() => $_has(8);
+  $core.bool hasDisableDefaultSignup() => $_has(8);
   @$pb.TagNumber(9)
-  void clearDisableDefaultLogin() => clearField(9);
+  void clearDisableDefaultSignup() => clearField(9);
 
   @$pb.TagNumber(10)
-  $1.Timestamp get createdAt => $_getN(9);
+  $core.bool get disableDefaultLogin => $_getBF(9);
   @$pb.TagNumber(10)
-  set createdAt($1.Timestamp v) { setField(10, v); }
+  set disableDefaultLogin($core.bool v) { $_setBool(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasCreatedAt() => $_has(9);
+  $core.bool hasDisableDefaultLogin() => $_has(9);
   @$pb.TagNumber(10)
-  void clearCreatedAt() => clearField(10);
-  @$pb.TagNumber(10)
-  $1.Timestamp ensureCreatedAt() => $_ensure(9);
+  void clearDisableDefaultLogin() => clearField(10);
 
   @$pb.TagNumber(11)
-  $1.Timestamp get updatedAt => $_getN(10);
+  $1.Timestamp get createdAt => $_getN(10);
   @$pb.TagNumber(11)
-  set updatedAt($1.Timestamp v) { setField(11, v); }
+  set createdAt($1.Timestamp v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasUpdatedAt() => $_has(10);
+  $core.bool hasCreatedAt() => $_has(10);
   @$pb.TagNumber(11)
-  void clearUpdatedAt() => clearField(11);
+  void clearCreatedAt() => clearField(11);
   @$pb.TagNumber(11)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(10);
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($1.Timestamp v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
 
   @$pb.TagNumber(13)
-  AuthConfig get authConfig => $_getN(11);
+  AuthConfig get authConfig => $_getN(12);
   @$pb.TagNumber(13)
   set authConfig(AuthConfig v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasAuthConfig() => $_has(11);
+  $core.bool hasAuthConfig() => $_has(12);
   @$pb.TagNumber(13)
   void clearAuthConfig() => clearField(13);
   @$pb.TagNumber(13)
-  AuthConfig ensureAuthConfig() => $_ensure(11);
+  AuthConfig ensureAuthConfig() => $_ensure(12);
 
   @$pb.TagNumber(14)
-  $core.int get internalEncryptionLevel => $_getIZ(12);
+  $core.int get internalEncryptionLevel => $_getIZ(13);
   @$pb.TagNumber(14)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(12, v); }
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(13, v); }
   @$pb.TagNumber(14)
-  $core.bool hasInternalEncryptionLevel() => $_has(12);
+  $core.bool hasInternalEncryptionLevel() => $_has(13);
   @$pb.TagNumber(14)
   void clearInternalEncryptionLevel() => clearField(14);
 }
