@@ -33,9 +33,9 @@ service UserService {
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
-    rpc CreateConfig(ConfigRequest) returns (ConfigResponse) {}
-    rpc UpdateSettings(ConfigRequest) returns (ConfigResponse) {}
-    rpc UpdateAuthConfig(ConfigRequest) returns (ConfigResponse) {}
+    rpc CreateNamespaceConfig(ConfigRequest) returns (ConfigResponse) {}
+    rpc UpdateConfigDetails(ConfigRequest) returns (ConfigResponse) {}
+    rpc UpdateConfigAuthDetails(ConfigRequest) returns (ConfigResponse) {}
     rpc GetConfig(ConfigRequest) returns (ConfigResponse) {}
     rpc DeleteConfig(ConfigRequest) returns (ConfigResponse) {}
 }
@@ -74,6 +74,7 @@ message Config {
     google.protobuf.Timestamp updated_at = 12;
     AuthConfig auth_config = 13;
     int32 internal_encryption_level = 14;
+    bool validate_password = 15;
 }
 
 message User {
