@@ -3933,7 +3933,7 @@ proto.BlockUser.ActiveHistory.toObject = function(includeInstance, msg) {
     year: jspb.Message.getFieldWithDefault(msg, 1, 0),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.BlockUser.ActiveHistoryData.toObject) : [],
-    dau: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    dauMap: (f = msg.getDauMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -3985,8 +3985,10 @@ proto.BlockUser.ActiveHistory.deserializeBinaryFromReader = function(msg, reader
          });
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setDau(value);
+      var value = msg.getDauMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readInt32, null, 0, 0);
+         });
       break;
     default:
       reader.skipField();
@@ -4035,12 +4037,9 @@ proto.BlockUser.ActiveHistory.serializeBinaryToWriter = function(message, writer
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeMessage, proto.BlockUser.ActiveHistoryData.serializeBinaryToWriter);
   }
-  f = message.getDau();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
+  f = message.getDauMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeInt32);
   }
 };
 
@@ -4104,21 +4103,25 @@ proto.BlockUser.ActiveHistory.prototype.clearDataMap = function() {
 
 
 /**
- * optional int32 dau = 4;
- * @return {number}
+ * map<int32, int32> dau = 4;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<number,number>}
  */
-proto.BlockUser.ActiveHistory.prototype.getDau = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+proto.BlockUser.ActiveHistory.prototype.getDauMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<number,number>} */ (
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {number} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.BlockUser.ActiveHistory} returns this
  */
-proto.BlockUser.ActiveHistory.prototype.setDau = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
+proto.BlockUser.ActiveHistory.prototype.clearDauMap = function() {
+  this.getDauMap().clear();
+  return this;};
 
 
 

@@ -1442,7 +1442,7 @@ class ActiveHistory extends $pb.GeneratedMessage {
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'year', $pb.PbFieldType.O3)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..m<$core.int, ActiveHistoryData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', entryClassName: 'ActiveHistory.DataEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: ActiveHistoryData.create, packageName: const $pb.PackageName('BlockUser'))
-    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dau', $pb.PbFieldType.O3)
+    ..m<$core.int, $core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dau', entryClassName: 'ActiveHistory.DauEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
@@ -1451,7 +1451,7 @@ class ActiveHistory extends $pb.GeneratedMessage {
     $core.int? year,
     $core.String? userId,
     $core.Map<$core.int, ActiveHistoryData>? data,
-    $core.int? dau,
+    $core.Map<$core.int, $core.int>? dau,
   }) {
     final _result = create();
     if (year != null) {
@@ -1464,7 +1464,7 @@ class ActiveHistory extends $pb.GeneratedMessage {
       _result.data.addAll(data);
     }
     if (dau != null) {
-      _result.dau = dau;
+      _result.dau.addAll(dau);
     }
     return _result;
   }
@@ -1511,13 +1511,7 @@ class ActiveHistory extends $pb.GeneratedMessage {
   $core.Map<$core.int, ActiveHistoryData> get data => $_getMap(2);
 
   @$pb.TagNumber(4)
-  $core.int get dau => $_getIZ(3);
-  @$pb.TagNumber(4)
-  set dau($core.int v) { $_setSignedInt32(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasDau() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearDau() => clearField(4);
+  $core.Map<$core.int, $core.int> get dau => $_getMap(3);
 }
 
 class UserRequest extends $pb.GeneratedMessage {
