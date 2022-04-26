@@ -221,8 +221,9 @@ const ActiveHistoryData$json = const {
     const {'1': 'seconds', '3': 1, '4': 1, '5': 5, '10': 'seconds'},
     const {'1': 'points', '3': 2, '4': 1, '5': 5, '10': 'points'},
     const {'1': 'from', '3': 3, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistoryData.FromEntry', '10': 'from'},
+    const {'1': 'dau', '3': 4, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistoryData.DauEntry', '10': 'dau'},
   ],
-  '3': const [ActiveHistoryData_FromEntry$json],
+  '3': const [ActiveHistoryData_FromEntry$json, ActiveHistoryData_DauEntry$json],
 };
 
 @$core.Deprecated('Use activeHistoryDataDescriptor instead')
@@ -235,8 +236,18 @@ const ActiveHistoryData_FromEntry$json = const {
   '7': const {'7': true},
 };
 
+@$core.Deprecated('Use activeHistoryDataDescriptor instead')
+const ActiveHistoryData_DauEntry$json = const {
+  '1': 'DauEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 8, '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 /// Descriptor for `ActiveHistoryData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeHistoryDataDescriptor = $convert.base64Decode('ChFBY3RpdmVIaXN0b3J5RGF0YRIYCgdzZWNvbmRzGAEgASgFUgdzZWNvbmRzEhYKBnBvaW50cxgCIAEoBVIGcG9pbnRzEjoKBGZyb20YAyADKAsyJi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGEuRnJvbUVudHJ5UgRmcm9tGlIKCUZyb21FbnRyeRIQCgNrZXkYASABKAlSA2tleRIvCgV2YWx1ZRgCIAEoCzIZLkJsb2NrVXNlci5DaXR5SGlzdG9yeU1hcFIFdmFsdWU6AjgB');
+final $typed_data.Uint8List activeHistoryDataDescriptor = $convert.base64Decode('ChFBY3RpdmVIaXN0b3J5RGF0YRIYCgdzZWNvbmRzGAEgASgFUgdzZWNvbmRzEhYKBnBvaW50cxgCIAEoBVIGcG9pbnRzEjoKBGZyb20YAyADKAsyJi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGEuRnJvbUVudHJ5UgRmcm9tEjcKA2RhdRgEIAMoCzIlLkJsb2NrVXNlci5BY3RpdmVIaXN0b3J5RGF0YS5EYXVFbnRyeVIDZGF1GlIKCUZyb21FbnRyeRIQCgNrZXkYASABKAlSA2tleRIvCgV2YWx1ZRgCIAEoCzIZLkJsb2NrVXNlci5DaXR5SGlzdG9yeU1hcFIFdmFsdWU6AjgBGjYKCERhdUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgIUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use activeHistoryDescriptor instead')
 const ActiveHistory$json = const {
   '1': 'ActiveHistory',
@@ -244,9 +255,8 @@ const ActiveHistory$json = const {
     const {'1': 'year', '3': 1, '4': 1, '5': 5, '10': 'year'},
     const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
     const {'1': 'data', '3': 3, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistory.DataEntry', '10': 'data'},
-    const {'1': 'dau', '3': 4, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistory.DauEntry', '10': 'dau'},
   ],
-  '3': const [ActiveHistory_DataEntry$json, ActiveHistory_DauEntry$json],
+  '3': const [ActiveHistory_DataEntry$json],
 };
 
 @$core.Deprecated('Use activeHistoryDescriptor instead')
@@ -259,18 +269,8 @@ const ActiveHistory_DataEntry$json = const {
   '7': const {'7': true},
 };
 
-@$core.Deprecated('Use activeHistoryDescriptor instead')
-const ActiveHistory_DauEntry$json = const {
-  '1': 'DauEntry',
-  '2': const [
-    const {'1': 'key', '3': 1, '4': 1, '5': 5, '10': 'key'},
-    const {'1': 'value', '3': 2, '4': 1, '5': 5, '10': 'value'},
-  ],
-  '7': const {'7': true},
-};
-
 /// Descriptor for `ActiveHistory`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeHistoryDescriptor = $convert.base64Decode('Cg1BY3RpdmVIaXN0b3J5EhIKBHllYXIYASABKAVSBHllYXISFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEjYKBGRhdGEYAyADKAsyIi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeS5EYXRhRW50cnlSBGRhdGESMwoDZGF1GAQgAygLMiEuQmxvY2tVc2VyLkFjdGl2ZUhpc3RvcnkuRGF1RW50cnlSA2RhdRpVCglEYXRhRW50cnkSEAoDa2V5GAEgASgFUgNrZXkSMgoFdmFsdWUYAiABKAsyHC5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGFSBXZhbHVlOgI4ARo2CghEYXVFbnRyeRIQCgNrZXkYASABKAVSA2tleRIUCgV2YWx1ZRgCIAEoBVIFdmFsdWU6AjgB');
+final $typed_data.Uint8List activeHistoryDescriptor = $convert.base64Decode('Cg1BY3RpdmVIaXN0b3J5EhIKBHllYXIYASABKAVSBHllYXISFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEjYKBGRhdGEYAyADKAsyIi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeS5EYXRhRW50cnlSBGRhdGEaVQoJRGF0YUVudHJ5EhAKA2tleRgBIAEoBVIDa2V5EjIKBXZhbHVlGAIgASgLMhwuQmxvY2tVc2VyLkFjdGl2ZUhpc3RvcnlEYXRhUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',
