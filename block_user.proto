@@ -169,7 +169,7 @@ message ActiveHistoryData {
     int32 seconds = 1;   
     int32 points = 2;
     map<string, CityHistoryMap> from = 3;
-    map<string, bool> dau = 4;
+    map<int32, string> dau = 4;
 }
 
 message ActiveHistory {
