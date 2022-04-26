@@ -256,6 +256,7 @@ const ActiveHistory$json = const {
     const {'1': 'year', '3': 1, '4': 1, '5': 5, '10': 'year'},
     const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
     const {'1': 'data', '3': 3, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistory.DataEntry', '10': 'data'},
+    const {'1': 'namespace_id', '3': 4, '4': 1, '5': 9, '10': 'namespaceId'},
   ],
   '3': const [ActiveHistory_DataEntry$json],
 };
@@ -271,7 +272,7 @@ const ActiveHistory_DataEntry$json = const {
 };
 
 /// Descriptor for `ActiveHistory`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeHistoryDescriptor = $convert.base64Decode('Cg1BY3RpdmVIaXN0b3J5EhIKBHllYXIYASABKAVSBHllYXISFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEjYKBGRhdGEYAyADKAsyIi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeS5EYXRhRW50cnlSBGRhdGEaVQoJRGF0YUVudHJ5EhAKA2tleRgBIAEoBVIDa2V5EjIKBXZhbHVlGAIgASgLMhwuQmxvY2tVc2VyLkFjdGl2ZUhpc3RvcnlEYXRhUgV2YWx1ZToCOAE=');
+final $typed_data.Uint8List activeHistoryDescriptor = $convert.base64Decode('Cg1BY3RpdmVIaXN0b3J5EhIKBHllYXIYASABKAVSBHllYXISFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEjYKBGRhdGEYAyADKAsyIi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeS5EYXRhRW50cnlSBGRhdGESIQoMbmFtZXNwYWNlX2lkGAQgASgJUgtuYW1lc3BhY2VJZBpVCglEYXRhRW50cnkSEAoDa2V5GAEgASgFUgNrZXkSMgoFdmFsdWUYAiABKAsyHC5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGFSBXZhbHVlOgI4AQ==');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',

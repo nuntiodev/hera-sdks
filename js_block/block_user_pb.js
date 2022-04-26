@@ -3995,7 +3995,8 @@ proto.BlockUser.ActiveHistory.toObject = function(includeInstance, msg) {
   var f, obj = {
     year: jspb.Message.getFieldWithDefault(msg, 1, 0),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.BlockUser.ActiveHistoryData.toObject) : []
+    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.BlockUser.ActiveHistoryData.toObject) : [],
+    namespaceId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -4046,6 +4047,10 @@ proto.BlockUser.ActiveHistory.deserializeBinaryFromReader = function(msg, reader
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.BlockUser.ActiveHistoryData.deserializeBinaryFromReader, 0, new proto.BlockUser.ActiveHistoryData());
          });
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespaceId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4092,6 +4097,13 @@ proto.BlockUser.ActiveHistory.serializeBinaryToWriter = function(message, writer
   f = message.getDataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeMessage, proto.BlockUser.ActiveHistoryData.serializeBinaryToWriter);
+  }
+  f = message.getNamespaceId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
   }
 };
 
@@ -4152,6 +4164,24 @@ proto.BlockUser.ActiveHistory.prototype.getDataMap = function(opt_noLazyCreate) 
 proto.BlockUser.ActiveHistory.prototype.clearDataMap = function() {
   this.getDataMap().clear();
   return this;};
+
+
+/**
+ * optional string namespace_id = 4;
+ * @return {string}
+ */
+proto.BlockUser.ActiveHistory.prototype.getNamespaceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.ActiveHistory} returns this
+ */
+proto.BlockUser.ActiveHistory.prototype.setNamespaceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
 
 
 
