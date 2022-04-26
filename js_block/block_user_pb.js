@@ -3932,7 +3932,8 @@ proto.BlockUser.ActiveHistory.toObject = function(includeInstance, msg) {
   var f, obj = {
     year: jspb.Message.getFieldWithDefault(msg, 1, 0),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.BlockUser.ActiveHistoryData.toObject) : []
+    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.BlockUser.ActiveHistoryData.toObject) : [],
+    dau: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -3983,6 +3984,10 @@ proto.BlockUser.ActiveHistory.deserializeBinaryFromReader = function(msg, reader
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.BlockUser.ActiveHistoryData.deserializeBinaryFromReader, 0, new proto.BlockUser.ActiveHistoryData());
          });
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setDau(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4029,6 +4034,13 @@ proto.BlockUser.ActiveHistory.serializeBinaryToWriter = function(message, writer
   f = message.getDataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeInt32, jspb.BinaryWriter.prototype.writeMessage, proto.BlockUser.ActiveHistoryData.serializeBinaryToWriter);
+  }
+  f = message.getDau();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
   }
 };
 
@@ -4089,6 +4101,24 @@ proto.BlockUser.ActiveHistory.prototype.getDataMap = function(opt_noLazyCreate) 
 proto.BlockUser.ActiveHistory.prototype.clearDataMap = function() {
   this.getDataMap().clear();
   return this;};
+
+
+/**
+ * optional int32 dau = 4;
+ * @return {number}
+ */
+proto.BlockUser.ActiveHistory.prototype.getDau = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.ActiveHistory} returns this
+ */
+proto.BlockUser.ActiveHistory.prototype.setDau = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
 
 
 
