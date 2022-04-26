@@ -159,6 +159,7 @@ message ActiveMeasurement {
     google.protobuf.Timestamp created_at = 5;
     google.protobuf.Timestamp expires_at = 6;
     Location from = 7;
+    int32 year = 8;
 }
 
 message CityHistoryMap {
@@ -204,4 +205,5 @@ message UserResponse {
     map<string, string> public_keys = 6;
     ActiveMeasurement active_measurement = 7;
     Config config = 8;
+    ActiveHistory active_history = 9;
 }
