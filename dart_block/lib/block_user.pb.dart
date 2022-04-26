@@ -1212,6 +1212,7 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiresAt', subBuilder: $1.Timestamp.create)
     ..aOM<Location>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', subBuilder: Location.create)
+    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'year', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -1223,6 +1224,7 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $1.Timestamp? expiresAt,
     Location? from,
+    $core.int? year,
   }) {
     final _result = create();
     if (id != null) {
@@ -1242,6 +1244,9 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     }
     if (from != null) {
       _result.from = from;
+    }
+    if (year != null) {
+      _result.year = year;
     }
     return _result;
   }
@@ -1325,6 +1330,15 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
   void clearFrom() => clearField(7);
   @$pb.TagNumber(7)
   Location ensureFrom() => $_ensure(5);
+
+  @$pb.TagNumber(8)
+  $core.int get year => $_getIZ(6);
+  @$pb.TagNumber(8)
+  set year($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasYear() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearYear() => clearField(8);
 }
 
 class CityHistoryMap extends $pb.GeneratedMessage {
@@ -1759,6 +1773,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeys', entryClassName: 'UserResponse.PublicKeysEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('BlockUser'))
     ..aOM<ActiveMeasurement>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
     ..aOM<Config>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
+    ..aOM<ActiveHistory>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeHistory', subBuilder: ActiveHistory.create)
     ..hasRequiredFields = false
   ;
 
@@ -1772,6 +1787,7 @@ class UserResponse extends $pb.GeneratedMessage {
     $core.Map<$core.String, $core.String>? publicKeys,
     ActiveMeasurement? activeMeasurement,
     Config? config,
+    ActiveHistory? activeHistory,
   }) {
     final _result = create();
     if (user != null) {
@@ -1797,6 +1813,9 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     if (config != null) {
       _result.config = config;
+    }
+    if (activeHistory != null) {
+      _result.activeHistory = activeHistory;
     }
     return _result;
   }
@@ -1882,5 +1901,16 @@ class UserResponse extends $pb.GeneratedMessage {
   void clearConfig() => clearField(8);
   @$pb.TagNumber(8)
   Config ensureConfig() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  ActiveHistory get activeHistory => $_getN(8);
+  @$pb.TagNumber(9)
+  set activeHistory(ActiveHistory v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasActiveHistory() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearActiveHistory() => clearField(9);
+  @$pb.TagNumber(9)
+  ActiveHistory ensureActiveHistory() => $_ensure(8);
 }
 

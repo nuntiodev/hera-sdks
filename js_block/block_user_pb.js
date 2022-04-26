@@ -3266,7 +3266,8 @@ proto.BlockUser.ActiveMeasurement.toObject = function(includeInstance, msg) {
     seconds: jspb.Message.getFieldWithDefault(msg, 3, 0),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     expiresAt: (f = msg.getExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    from: (f = msg.getFrom()) && proto.BlockUser.Location.toObject(includeInstance, f)
+    from: (f = msg.getFrom()) && proto.BlockUser.Location.toObject(includeInstance, f),
+    year: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -3329,6 +3330,10 @@ proto.BlockUser.ActiveMeasurement.deserializeBinaryFromReader = function(msg, re
       var value = new proto.BlockUser.Location;
       reader.readMessage(value,proto.BlockUser.Location.deserializeBinaryFromReader);
       msg.setFrom(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setYear(value);
       break;
     default:
       reader.skipField();
@@ -3402,6 +3407,13 @@ proto.BlockUser.ActiveMeasurement.serializeBinaryToWriter = function(message, wr
       7,
       f,
       proto.BlockUser.Location.serializeBinaryToWriter
+    );
+  }
+  f = message.getYear();
+  if (f !== 0) {
+    writer.writeInt32(
+      8,
+      f
     );
   }
 };
@@ -3569,6 +3581,24 @@ proto.BlockUser.ActiveMeasurement.prototype.clearFrom = function() {
  */
 proto.BlockUser.ActiveMeasurement.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int32 year = 8;
+ * @return {number}
+ */
+proto.BlockUser.ActiveMeasurement.prototype.getYear = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.ActiveMeasurement} returns this
+ */
+proto.BlockUser.ActiveMeasurement.prototype.setYear = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
@@ -4848,7 +4878,8 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
     proto.BlockUser.Token.toObject, includeInstance),
     publicKeysMap: (f = msg.getPublicKeysMap()) ? f.toObject(includeInstance, undefined) : [],
     activeMeasurement: (f = msg.getActiveMeasurement()) && proto.BlockUser.ActiveMeasurement.toObject(includeInstance, f),
-    config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f)
+    config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
+    activeHistory: (f = msg.getActiveHistory()) && proto.BlockUser.ActiveHistory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4924,6 +4955,11 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.BlockUser.Config;
       reader.readMessage(value,proto.BlockUser.Config.deserializeBinaryFromReader);
       msg.setConfig(value);
+      break;
+    case 9:
+      var value = new proto.BlockUser.ActiveHistory;
+      reader.readMessage(value,proto.BlockUser.ActiveHistory.deserializeBinaryFromReader);
+      msg.setActiveHistory(value);
       break;
     default:
       reader.skipField();
@@ -5011,6 +5047,14 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
       8,
       f,
       proto.BlockUser.Config.serializeBinaryToWriter
+    );
+  }
+  f = message.getActiveHistory();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.BlockUser.ActiveHistory.serializeBinaryToWriter
     );
   }
 };
@@ -5277,6 +5321,43 @@ proto.BlockUser.UserResponse.prototype.clearConfig = function() {
  */
 proto.BlockUser.UserResponse.prototype.hasConfig = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional ActiveHistory active_history = 9;
+ * @return {?proto.BlockUser.ActiveHistory}
+ */
+proto.BlockUser.UserResponse.prototype.getActiveHistory = function() {
+  return /** @type{?proto.BlockUser.ActiveHistory} */ (
+    jspb.Message.getWrapperField(this, proto.BlockUser.ActiveHistory, 9));
+};
+
+
+/**
+ * @param {?proto.BlockUser.ActiveHistory|undefined} value
+ * @return {!proto.BlockUser.UserResponse} returns this
+*/
+proto.BlockUser.UserResponse.prototype.setActiveHistory = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.clearActiveHistory = function() {
+  return this.setActiveHistory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.UserResponse.prototype.hasActiveHistory = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
