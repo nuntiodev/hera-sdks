@@ -160,6 +160,7 @@ message ActiveMeasurement {
     google.protobuf.Timestamp expires_at = 6;
     Location from = 7;
     int32 year = 8;
+    Platform device = 9;
 }
 
 message CityHistoryMap {
