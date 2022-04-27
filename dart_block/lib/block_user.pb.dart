@@ -1388,6 +1388,7 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'points', $pb.PbFieldType.O3)
     ..m<$core.String, CityHistoryMap>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', entryClassName: 'ActiveHistoryData.FromEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: CityHistoryMap.create, packageName: const $pb.PackageName('BlockUser'))
     ..m<$core.int, $core.String>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dau', entryClassName: 'ActiveHistoryData.DauEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('BlockUser'))
+    ..m<$core.int, $core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'device', entryClassName: 'ActiveHistoryData.DeviceEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
@@ -1397,6 +1398,7 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
     $core.int? points,
     $core.Map<$core.String, CityHistoryMap>? from,
     $core.Map<$core.int, $core.String>? dau,
+    $core.Map<$core.int, $core.int>? device,
   }) {
     final _result = create();
     if (seconds != null) {
@@ -1410,6 +1412,9 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
     }
     if (dau != null) {
       _result.dau.addAll(dau);
+    }
+    if (device != null) {
+      _result.device.addAll(device);
     }
     return _result;
   }
@@ -1457,6 +1462,9 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.Map<$core.int, $core.String> get dau => $_getMap(3);
+
+  @$pb.TagNumber(5)
+  $core.Map<$core.int, $core.int> get device => $_getMap(4);
 }
 
 class ActiveHistory extends $pb.GeneratedMessage {
@@ -1464,7 +1472,6 @@ class ActiveHistory extends $pb.GeneratedMessage {
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'year', $pb.PbFieldType.O3)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..m<$core.int, ActiveHistoryData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', entryClassName: 'ActiveHistory.DataEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: ActiveHistoryData.create, packageName: const $pb.PackageName('BlockUser'))
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespaceId')
     ..hasRequiredFields = false
   ;
 
@@ -1473,7 +1480,6 @@ class ActiveHistory extends $pb.GeneratedMessage {
     $core.int? year,
     $core.String? userId,
     $core.Map<$core.int, ActiveHistoryData>? data,
-    $core.String? namespaceId,
   }) {
     final _result = create();
     if (year != null) {
@@ -1484,9 +1490,6 @@ class ActiveHistory extends $pb.GeneratedMessage {
     }
     if (data != null) {
       _result.data.addAll(data);
-    }
-    if (namespaceId != null) {
-      _result.namespaceId = namespaceId;
     }
     return _result;
   }
@@ -1531,15 +1534,6 @@ class ActiveHistory extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.Map<$core.int, ActiveHistoryData> get data => $_getMap(2);
-
-  @$pb.TagNumber(4)
-  $core.String get namespaceId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set namespaceId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasNamespaceId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearNamespaceId() => clearField(4);
 }
 
 class UserRequest extends $pb.GeneratedMessage {

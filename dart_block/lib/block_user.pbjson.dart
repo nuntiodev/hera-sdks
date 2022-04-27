@@ -223,8 +223,9 @@ const ActiveHistoryData$json = const {
     const {'1': 'points', '3': 2, '4': 1, '5': 5, '10': 'points'},
     const {'1': 'from', '3': 3, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistoryData.FromEntry', '10': 'from'},
     const {'1': 'dau', '3': 4, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistoryData.DauEntry', '10': 'dau'},
+    const {'1': 'device', '3': 5, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistoryData.DeviceEntry', '10': 'device'},
   ],
-  '3': const [ActiveHistoryData_FromEntry$json, ActiveHistoryData_DauEntry$json],
+  '3': const [ActiveHistoryData_FromEntry$json, ActiveHistoryData_DauEntry$json, ActiveHistoryData_DeviceEntry$json],
 };
 
 @$core.Deprecated('Use activeHistoryDataDescriptor instead')
@@ -247,8 +248,18 @@ const ActiveHistoryData_DauEntry$json = const {
   '7': const {'7': true},
 };
 
+@$core.Deprecated('Use activeHistoryDataDescriptor instead')
+const ActiveHistoryData_DeviceEntry$json = const {
+  '1': 'DeviceEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 5, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 5, '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 /// Descriptor for `ActiveHistoryData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeHistoryDataDescriptor = $convert.base64Decode('ChFBY3RpdmVIaXN0b3J5RGF0YRIYCgdzZWNvbmRzGAEgASgFUgdzZWNvbmRzEhYKBnBvaW50cxgCIAEoBVIGcG9pbnRzEjoKBGZyb20YAyADKAsyJi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGEuRnJvbUVudHJ5UgRmcm9tEjcKA2RhdRgEIAMoCzIlLkJsb2NrVXNlci5BY3RpdmVIaXN0b3J5RGF0YS5EYXVFbnRyeVIDZGF1GlIKCUZyb21FbnRyeRIQCgNrZXkYASABKAlSA2tleRIvCgV2YWx1ZRgCIAEoCzIZLkJsb2NrVXNlci5DaXR5SGlzdG9yeU1hcFIFdmFsdWU6AjgBGjYKCERhdUVudHJ5EhAKA2tleRgBIAEoBVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
+final $typed_data.Uint8List activeHistoryDataDescriptor = $convert.base64Decode('ChFBY3RpdmVIaXN0b3J5RGF0YRIYCgdzZWNvbmRzGAEgASgFUgdzZWNvbmRzEhYKBnBvaW50cxgCIAEoBVIGcG9pbnRzEjoKBGZyb20YAyADKAsyJi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGEuRnJvbUVudHJ5UgRmcm9tEjcKA2RhdRgEIAMoCzIlLkJsb2NrVXNlci5BY3RpdmVIaXN0b3J5RGF0YS5EYXVFbnRyeVIDZGF1EkAKBmRldmljZRgFIAMoCzIoLkJsb2NrVXNlci5BY3RpdmVIaXN0b3J5RGF0YS5EZXZpY2VFbnRyeVIGZGV2aWNlGlIKCUZyb21FbnRyeRIQCgNrZXkYASABKAlSA2tleRIvCgV2YWx1ZRgCIAEoCzIZLkJsb2NrVXNlci5DaXR5SGlzdG9yeU1hcFIFdmFsdWU6AjgBGjYKCERhdUVudHJ5EhAKA2tleRgBIAEoBVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAEaOQoLRGV2aWNlRW50cnkSEAoDa2V5GAEgASgFUgNrZXkSFAoFdmFsdWUYAiABKAVSBXZhbHVlOgI4AQ==');
 @$core.Deprecated('Use activeHistoryDescriptor instead')
 const ActiveHistory$json = const {
   '1': 'ActiveHistory',
@@ -256,7 +267,6 @@ const ActiveHistory$json = const {
     const {'1': 'year', '3': 1, '4': 1, '5': 5, '10': 'year'},
     const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
     const {'1': 'data', '3': 3, '4': 3, '5': 11, '6': '.BlockUser.ActiveHistory.DataEntry', '10': 'data'},
-    const {'1': 'namespace_id', '3': 4, '4': 1, '5': 9, '10': 'namespaceId'},
   ],
   '3': const [ActiveHistory_DataEntry$json],
 };
@@ -272,7 +282,7 @@ const ActiveHistory_DataEntry$json = const {
 };
 
 /// Descriptor for `ActiveHistory`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeHistoryDescriptor = $convert.base64Decode('Cg1BY3RpdmVIaXN0b3J5EhIKBHllYXIYASABKAVSBHllYXISFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEjYKBGRhdGEYAyADKAsyIi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeS5EYXRhRW50cnlSBGRhdGESIQoMbmFtZXNwYWNlX2lkGAQgASgJUgtuYW1lc3BhY2VJZBpVCglEYXRhRW50cnkSEAoDa2V5GAEgASgFUgNrZXkSMgoFdmFsdWUYAiABKAsyHC5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeURhdGFSBXZhbHVlOgI4AQ==');
+final $typed_data.Uint8List activeHistoryDescriptor = $convert.base64Decode('Cg1BY3RpdmVIaXN0b3J5EhIKBHllYXIYASABKAVSBHllYXISFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEjYKBGRhdGEYAyADKAsyIi5CbG9ja1VzZXIuQWN0aXZlSGlzdG9yeS5EYXRhRW50cnlSBGRhdGEaVQoJRGF0YUVudHJ5EhAKA2tleRgBIAEoBVIDa2V5EjIKBXZhbHVlGAIgASgLMhwuQmxvY2tVc2VyLkFjdGl2ZUhpc3RvcnlEYXRhUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',
