@@ -171,7 +171,7 @@ message ActiveHistoryData {
     int32 points = 2;
     map<string, CityHistoryMap> from = 3;
     map<int32, string> dau = 4;
-    map<int32, int32> device = 5;
+    map<string, int32> device = 5;
 }
 
 message ActiveHistory {
