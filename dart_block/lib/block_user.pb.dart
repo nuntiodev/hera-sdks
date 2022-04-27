@@ -1388,7 +1388,7 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'points', $pb.PbFieldType.O3)
     ..m<$core.String, CityHistoryMap>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', entryClassName: 'ActiveHistoryData.FromEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: CityHistoryMap.create, packageName: const $pb.PackageName('BlockUser'))
     ..m<$core.int, $core.String>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dau', entryClassName: 'ActiveHistoryData.DauEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('BlockUser'))
-    ..m<$core.int, $core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'device', entryClassName: 'ActiveHistoryData.DeviceEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
+    ..m<$core.String, $core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'device', entryClassName: 'ActiveHistoryData.DeviceEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('BlockUser'))
     ..hasRequiredFields = false
   ;
 
@@ -1398,7 +1398,7 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
     $core.int? points,
     $core.Map<$core.String, CityHistoryMap>? from,
     $core.Map<$core.int, $core.String>? dau,
-    $core.Map<$core.int, $core.int>? device,
+    $core.Map<$core.String, $core.int>? device,
   }) {
     final _result = create();
     if (seconds != null) {
@@ -1464,7 +1464,7 @@ class ActiveHistoryData extends $pb.GeneratedMessage {
   $core.Map<$core.int, $core.String> get dau => $_getMap(3);
 
   @$pb.TagNumber(5)
-  $core.Map<$core.int, $core.int> get device => $_getMap(4);
+  $core.Map<$core.String, $core.int> get device => $_getMap(4);
 }
 
 class ActiveHistory extends $pb.GeneratedMessage {
