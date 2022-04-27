@@ -1213,6 +1213,7 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiresAt', subBuilder: $1.Timestamp.create)
     ..aOM<Location>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', subBuilder: Location.create)
     ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'year', $pb.PbFieldType.O3)
+    ..e<Platform>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'device', $pb.PbFieldType.OE, defaultOrMaker: Platform.INVALID_PLATFORM, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..hasRequiredFields = false
   ;
 
@@ -1225,6 +1226,7 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     $1.Timestamp? expiresAt,
     Location? from,
     $core.int? year,
+    Platform? device,
   }) {
     final _result = create();
     if (id != null) {
@@ -1247,6 +1249,9 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
     }
     if (year != null) {
       _result.year = year;
+    }
+    if (device != null) {
+      _result.device = device;
     }
     return _result;
   }
@@ -1339,6 +1344,15 @@ class ActiveMeasurement extends $pb.GeneratedMessage {
   $core.bool hasYear() => $_has(6);
   @$pb.TagNumber(8)
   void clearYear() => clearField(8);
+
+  @$pb.TagNumber(9)
+  Platform get device => $_getN(7);
+  @$pb.TagNumber(9)
+  set device(Platform v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasDevice() => $_has(7);
+  @$pb.TagNumber(9)
+  void clearDevice() => clearField(9);
 }
 
 class CityHistoryMap extends $pb.GeneratedMessage {

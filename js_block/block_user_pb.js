@@ -3267,7 +3267,8 @@ proto.BlockUser.ActiveMeasurement.toObject = function(includeInstance, msg) {
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     expiresAt: (f = msg.getExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     from: (f = msg.getFrom()) && proto.BlockUser.Location.toObject(includeInstance, f),
-    year: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    year: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    device: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -3334,6 +3335,10 @@ proto.BlockUser.ActiveMeasurement.deserializeBinaryFromReader = function(msg, re
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setYear(value);
+      break;
+    case 9:
+      var value = /** @type {!proto.BlockUser.Platform} */ (reader.readEnum());
+      msg.setDevice(value);
       break;
     default:
       reader.skipField();
@@ -3413,6 +3418,13 @@ proto.BlockUser.ActiveMeasurement.serializeBinaryToWriter = function(message, wr
   if (f !== 0) {
     writer.writeInt32(
       8,
+      f
+    );
+  }
+  f = message.getDevice();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      9,
       f
     );
   }
@@ -3599,6 +3611,24 @@ proto.BlockUser.ActiveMeasurement.prototype.getYear = function() {
  */
 proto.BlockUser.ActiveMeasurement.prototype.setYear = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional Platform device = 9;
+ * @return {!proto.BlockUser.Platform}
+ */
+proto.BlockUser.ActiveMeasurement.prototype.getDevice = function() {
+  return /** @type {!proto.BlockUser.Platform} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {!proto.BlockUser.Platform} value
+ * @return {!proto.BlockUser.ActiveMeasurement} returns this
+ */
+proto.BlockUser.ActiveMeasurement.prototype.setDevice = function(value) {
+  return jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 

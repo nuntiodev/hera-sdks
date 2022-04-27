@@ -189,11 +189,12 @@ const ActiveMeasurement$json = const {
     const {'1': 'expires_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
     const {'1': 'from', '3': 7, '4': 1, '5': 11, '6': '.BlockUser.Location', '10': 'from'},
     const {'1': 'year', '3': 8, '4': 1, '5': 5, '10': 'year'},
+    const {'1': 'device', '3': 9, '4': 1, '5': 14, '6': '.BlockUser.Platform', '10': 'device'},
   ],
 };
 
 /// Descriptor for `ActiveMeasurement`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode('ChFBY3RpdmVNZWFzdXJlbWVudBIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB3NlY29uZHMYAyABKAVSB3NlY29uZHMSOQoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5CgpleHBpcmVzX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0EicKBGZyb20YByABKAsyEy5CbG9ja1VzZXIuTG9jYXRpb25SBGZyb20SEgoEeWVhchgIIAEoBVIEeWVhcg==');
+final $typed_data.Uint8List activeMeasurementDescriptor = $convert.base64Decode('ChFBY3RpdmVNZWFzdXJlbWVudBIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB3NlY29uZHMYAyABKAVSB3NlY29uZHMSOQoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5CgpleHBpcmVzX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0EicKBGZyb20YByABKAsyEy5CbG9ja1VzZXIuTG9jYXRpb25SBGZyb20SEgoEeWVhchgIIAEoBVIEeWVhchIrCgZkZXZpY2UYCSABKA4yEy5CbG9ja1VzZXIuUGxhdGZvcm1SBmRldmljZQ==');
 @$core.Deprecated('Use cityHistoryMapDescriptor instead')
 const CityHistoryMap$json = const {
   '1': 'CityHistoryMap',
