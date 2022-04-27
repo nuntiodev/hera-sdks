@@ -171,13 +171,13 @@ message ActiveHistoryData {
     int32 points = 2;
     map<string, CityHistoryMap> from = 3;
     map<int32, string> dau = 4;
+    map<Platform, int32> device = 5;
 }
 
 message ActiveHistory {
     int32 year = 1;
     string user_id = 2;
     map<int32, ActiveHistoryData> data = 3;
-    string namespace_id = 4;
 }
 
 message UserRequest {
