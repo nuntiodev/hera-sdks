@@ -42,22 +42,21 @@ service UserService {
 }
 
 message AuthConfig {
-    string logo = 1;
-    string welcome_title = 2; 
-    string welcome_details = 3;
-    string login_button = 4;
-    string login_title = 5;
-    string login_details = 6;
-    string register_button = 7;
-    string register_title = 8;
-    string register_details = 9;
-    string missing_password_title = 10;
-    string missing_password_details = 11;
-    string missing_email_title = 12;
-    string missing_email_details = 13;
-    string password_do_not_match_title = 14;
-    string password_do_not_match_details = 15;
-    string created_by = 16;
+    string welcome_title = 1; 
+    string welcome_details = 2;
+    string login_button = 3;
+    string login_title = 4;
+    string login_details = 5;
+    string register_button = 6;
+    string register_title = 7;
+    string register_details = 8;
+    string missing_password_title = 9;
+    string missing_password_details = 10;
+    string missing_email_title = 11;
+    string missing_email_details = 12;
+    string password_do_not_match_title = 13;
+    string password_do_not_match_details = 14;
+    string created_by = 15;
 }
 
 message Config {
