@@ -274,7 +274,8 @@ class RegisterText extends $pb.GeneratedMessage {
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'repeatPasswordHint')
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'containsSpecialChar')
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'containsNumberChar')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'passwordMatch')
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'passwordMustMatch')
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'containsEightChars')
     ..hasRequiredFields = false
   ;
 
@@ -288,7 +289,8 @@ class RegisterText extends $pb.GeneratedMessage {
     $core.String? repeatPasswordHint,
     $core.String? containsSpecialChar,
     $core.String? containsNumberChar,
-    $core.String? passwordMatch,
+    $core.String? passwordMustMatch,
+    $core.String? containsEightChars,
   }) {
     final _result = create();
     if (registerButton != null) {
@@ -315,8 +317,11 @@ class RegisterText extends $pb.GeneratedMessage {
     if (containsNumberChar != null) {
       _result.containsNumberChar = containsNumberChar;
     }
-    if (passwordMatch != null) {
-      _result.passwordMatch = passwordMatch;
+    if (passwordMustMatch != null) {
+      _result.passwordMustMatch = passwordMustMatch;
+    }
+    if (containsEightChars != null) {
+      _result.containsEightChars = containsEightChars;
     }
     return _result;
   }
@@ -414,13 +419,22 @@ class RegisterText extends $pb.GeneratedMessage {
   void clearContainsNumberChar() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get passwordMatch => $_getSZ(8);
+  $core.String get passwordMustMatch => $_getSZ(8);
   @$pb.TagNumber(9)
-  set passwordMatch($core.String v) { $_setString(8, v); }
+  set passwordMustMatch($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasPasswordMatch() => $_has(8);
+  $core.bool hasPasswordMustMatch() => $_has(8);
   @$pb.TagNumber(9)
-  void clearPasswordMatch() => clearField(9);
+  void clearPasswordMustMatch() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get containsEightChars => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set containsEightChars($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasContainsEightChars() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearContainsEightChars() => clearField(10);
 }
 
 class LoginText extends $pb.GeneratedMessage {

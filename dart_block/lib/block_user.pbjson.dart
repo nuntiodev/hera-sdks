@@ -79,12 +79,13 @@ const RegisterText$json = const {
     const {'1': 'repeat_password_hint', '3': 6, '4': 1, '5': 9, '10': 'repeatPasswordHint'},
     const {'1': 'contains_special_char', '3': 7, '4': 1, '5': 9, '10': 'containsSpecialChar'},
     const {'1': 'contains_number_char', '3': 8, '4': 1, '5': 9, '10': 'containsNumberChar'},
-    const {'1': 'password_match', '3': 9, '4': 1, '5': 9, '10': 'passwordMatch'},
+    const {'1': 'password_must_match', '3': 9, '4': 1, '5': 9, '10': 'passwordMustMatch'},
+    const {'1': 'contains_eight_chars', '3': 10, '4': 1, '5': 9, '10': 'containsEightChars'},
   ],
 };
 
 /// Descriptor for `RegisterText`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List registerTextDescriptor = $convert.base64Decode('CgxSZWdpc3RlclRleHQSJwoPcmVnaXN0ZXJfYnV0dG9uGAEgASgJUg5yZWdpc3RlckJ1dHRvbhIlCg5yZWdpc3Rlcl90aXRsZRgCIAEoCVINcmVnaXN0ZXJUaXRsZRIpChByZWdpc3Rlcl9kZXRhaWxzGAMgASgJUg9yZWdpc3RlckRldGFpbHMSPAobcGFzc3dvcmRfZG9fbm90X21hdGNoX3RpdGxlGAQgASgJUhdwYXNzd29yZERvTm90TWF0Y2hUaXRsZRJACh1wYXNzd29yZF9kb19ub3RfbWF0Y2hfZGV0YWlscxgFIAEoCVIZcGFzc3dvcmREb05vdE1hdGNoRGV0YWlscxIwChRyZXBlYXRfcGFzc3dvcmRfaGludBgGIAEoCVIScmVwZWF0UGFzc3dvcmRIaW50EjIKFWNvbnRhaW5zX3NwZWNpYWxfY2hhchgHIAEoCVITY29udGFpbnNTcGVjaWFsQ2hhchIwChRjb250YWluc19udW1iZXJfY2hhchgIIAEoCVISY29udGFpbnNOdW1iZXJDaGFyEiUKDnBhc3N3b3JkX21hdGNoGAkgASgJUg1wYXNzd29yZE1hdGNo');
+final $typed_data.Uint8List registerTextDescriptor = $convert.base64Decode('CgxSZWdpc3RlclRleHQSJwoPcmVnaXN0ZXJfYnV0dG9uGAEgASgJUg5yZWdpc3RlckJ1dHRvbhIlCg5yZWdpc3Rlcl90aXRsZRgCIAEoCVINcmVnaXN0ZXJUaXRsZRIpChByZWdpc3Rlcl9kZXRhaWxzGAMgASgJUg9yZWdpc3RlckRldGFpbHMSPAobcGFzc3dvcmRfZG9fbm90X21hdGNoX3RpdGxlGAQgASgJUhdwYXNzd29yZERvTm90TWF0Y2hUaXRsZRJACh1wYXNzd29yZF9kb19ub3RfbWF0Y2hfZGV0YWlscxgFIAEoCVIZcGFzc3dvcmREb05vdE1hdGNoRGV0YWlscxIwChRyZXBlYXRfcGFzc3dvcmRfaGludBgGIAEoCVIScmVwZWF0UGFzc3dvcmRIaW50EjIKFWNvbnRhaW5zX3NwZWNpYWxfY2hhchgHIAEoCVITY29udGFpbnNTcGVjaWFsQ2hhchIwChRjb250YWluc19udW1iZXJfY2hhchgIIAEoCVISY29udGFpbnNOdW1iZXJDaGFyEi4KE3Bhc3N3b3JkX211c3RfbWF0Y2gYCSABKAlSEXBhc3N3b3JkTXVzdE1hdGNoEjAKFGNvbnRhaW5zX2VpZ2h0X2NoYXJzGAogASgJUhJjb250YWluc0VpZ2h0Q2hhcnM=');
 @$core.Deprecated('Use loginTextDescriptor instead')
 const LoginText$json = const {
   '1': 'LoginText',

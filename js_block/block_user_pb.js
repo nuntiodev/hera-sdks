@@ -987,7 +987,8 @@ proto.BlockUser.RegisterText.toObject = function(includeInstance, msg) {
     repeatPasswordHint: jspb.Message.getFieldWithDefault(msg, 6, ""),
     containsSpecialChar: jspb.Message.getFieldWithDefault(msg, 7, ""),
     containsNumberChar: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    passwordMatch: jspb.Message.getFieldWithDefault(msg, 9, "")
+    passwordMustMatch: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    containsEightChars: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -1058,7 +1059,11 @@ proto.BlockUser.RegisterText.deserializeBinaryFromReader = function(msg, reader)
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPasswordMatch(value);
+      msg.setPasswordMustMatch(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContainsEightChars(value);
       break;
     default:
       reader.skipField();
@@ -1145,10 +1150,17 @@ proto.BlockUser.RegisterText.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
-  f = message.getPasswordMatch();
+  f = message.getPasswordMustMatch();
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getContainsEightChars();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -1300,10 +1312,10 @@ proto.BlockUser.RegisterText.prototype.setContainsNumberChar = function(value) {
 
 
 /**
- * optional string password_match = 9;
+ * optional string password_must_match = 9;
  * @return {string}
  */
-proto.BlockUser.RegisterText.prototype.getPasswordMatch = function() {
+proto.BlockUser.RegisterText.prototype.getPasswordMustMatch = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -1312,8 +1324,26 @@ proto.BlockUser.RegisterText.prototype.getPasswordMatch = function() {
  * @param {string} value
  * @return {!proto.BlockUser.RegisterText} returns this
  */
-proto.BlockUser.RegisterText.prototype.setPasswordMatch = function(value) {
+proto.BlockUser.RegisterText.prototype.setPasswordMustMatch = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string contains_eight_chars = 10;
+ * @return {string}
+ */
+proto.BlockUser.RegisterText.prototype.getContainsEightChars = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.RegisterText} returns this
+ */
+proto.BlockUser.RegisterText.prototype.setContainsEightChars = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
