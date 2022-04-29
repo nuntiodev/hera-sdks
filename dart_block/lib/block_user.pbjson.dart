@@ -36,30 +36,68 @@ const Platform$json = const {
 
 /// Descriptor for `Platform`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List platformDescriptor = $convert.base64Decode('CghQbGF0Zm9ybRIUChBJTlZBTElEX1BMQVRGT1JNEAASBwoDSU9TEAESCwoHQU5EUk9JRBACEgcKA1dFQhADEgkKBU1BQ09TEAQSCQoFTElOVVgQBRILCgdXSU5ET1dTEAY=');
-@$core.Deprecated('Use authConfigDescriptor instead')
-const AuthConfig$json = const {
-  '1': 'AuthConfig',
+@$core.Deprecated('Use generalTextDescriptor instead')
+const GeneralText$json = const {
+  '1': 'GeneralText',
   '2': const [
-    const {'1': 'welcome_title', '3': 1, '4': 1, '5': 9, '10': 'welcomeTitle'},
-    const {'1': 'welcome_details', '3': 2, '4': 1, '5': 9, '10': 'welcomeDetails'},
-    const {'1': 'login_button', '3': 3, '4': 1, '5': 9, '10': 'loginButton'},
-    const {'1': 'login_title', '3': 4, '4': 1, '5': 9, '10': 'loginTitle'},
-    const {'1': 'login_details', '3': 5, '4': 1, '5': 9, '10': 'loginDetails'},
-    const {'1': 'register_button', '3': 6, '4': 1, '5': 9, '10': 'registerButton'},
-    const {'1': 'register_title', '3': 7, '4': 1, '5': 9, '10': 'registerTitle'},
-    const {'1': 'register_details', '3': 8, '4': 1, '5': 9, '10': 'registerDetails'},
-    const {'1': 'missing_password_title', '3': 9, '4': 1, '5': 9, '10': 'missingPasswordTitle'},
-    const {'1': 'missing_password_details', '3': 10, '4': 1, '5': 9, '10': 'missingPasswordDetails'},
-    const {'1': 'missing_email_title', '3': 11, '4': 1, '5': 9, '10': 'missingEmailTitle'},
-    const {'1': 'missing_email_details', '3': 12, '4': 1, '5': 9, '10': 'missingEmailDetails'},
-    const {'1': 'password_do_not_match_title', '3': 13, '4': 1, '5': 9, '10': 'passwordDoNotMatchTitle'},
-    const {'1': 'password_do_not_match_details', '3': 14, '4': 1, '5': 9, '10': 'passwordDoNotMatchDetails'},
-    const {'1': 'created_by', '3': 15, '4': 1, '5': 9, '10': 'createdBy'},
+    const {'1': 'missing_password_title', '3': 1, '4': 1, '5': 9, '10': 'missingPasswordTitle'},
+    const {'1': 'missing_password_details', '3': 2, '4': 1, '5': 9, '10': 'missingPasswordDetails'},
+    const {'1': 'missing_email_title', '3': 3, '4': 1, '5': 9, '10': 'missingEmailTitle'},
+    const {'1': 'missing_email_details', '3': 4, '4': 1, '5': 9, '10': 'missingEmailDetails'},
+    const {'1': 'created_by', '3': 5, '4': 1, '5': 9, '10': 'createdBy'},
+    const {'1': 'password_hint', '3': 6, '4': 1, '5': 9, '10': 'passwordHint'},
+    const {'1': 'email_hint', '3': 7, '4': 1, '5': 9, '10': 'emailHint'},
+    const {'1': 'error_title', '3': 8, '4': 1, '5': 9, '10': 'errorTitle'},
+    const {'1': 'error_description', '3': 9, '4': 1, '5': 9, '10': 'errorDescription'},
+    const {'1': 'no_wifi_title', '3': 10, '4': 1, '5': 9, '10': 'noWifiTitle'},
+    const {'1': 'no_wifi_description', '3': 11, '4': 1, '5': 9, '10': 'noWifiDescription'},
   ],
 };
 
-/// Descriptor for `AuthConfig`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List authConfigDescriptor = $convert.base64Decode('CgpBdXRoQ29uZmlnEiMKDXdlbGNvbWVfdGl0bGUYASABKAlSDHdlbGNvbWVUaXRsZRInCg93ZWxjb21lX2RldGFpbHMYAiABKAlSDndlbGNvbWVEZXRhaWxzEiEKDGxvZ2luX2J1dHRvbhgDIAEoCVILbG9naW5CdXR0b24SHwoLbG9naW5fdGl0bGUYBCABKAlSCmxvZ2luVGl0bGUSIwoNbG9naW5fZGV0YWlscxgFIAEoCVIMbG9naW5EZXRhaWxzEicKD3JlZ2lzdGVyX2J1dHRvbhgGIAEoCVIOcmVnaXN0ZXJCdXR0b24SJQoOcmVnaXN0ZXJfdGl0bGUYByABKAlSDXJlZ2lzdGVyVGl0bGUSKQoQcmVnaXN0ZXJfZGV0YWlscxgIIAEoCVIPcmVnaXN0ZXJEZXRhaWxzEjQKFm1pc3NpbmdfcGFzc3dvcmRfdGl0bGUYCSABKAlSFG1pc3NpbmdQYXNzd29yZFRpdGxlEjgKGG1pc3NpbmdfcGFzc3dvcmRfZGV0YWlscxgKIAEoCVIWbWlzc2luZ1Bhc3N3b3JkRGV0YWlscxIuChNtaXNzaW5nX2VtYWlsX3RpdGxlGAsgASgJUhFtaXNzaW5nRW1haWxUaXRsZRIyChVtaXNzaW5nX2VtYWlsX2RldGFpbHMYDCABKAlSE21pc3NpbmdFbWFpbERldGFpbHMSPAobcGFzc3dvcmRfZG9fbm90X21hdGNoX3RpdGxlGA0gASgJUhdwYXNzd29yZERvTm90TWF0Y2hUaXRsZRJACh1wYXNzd29yZF9kb19ub3RfbWF0Y2hfZGV0YWlscxgOIAEoCVIZcGFzc3dvcmREb05vdE1hdGNoRGV0YWlscxIdCgpjcmVhdGVkX2J5GA8gASgJUgljcmVhdGVkQnk=');
+/// Descriptor for `GeneralText`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generalTextDescriptor = $convert.base64Decode('CgtHZW5lcmFsVGV4dBI0ChZtaXNzaW5nX3Bhc3N3b3JkX3RpdGxlGAEgASgJUhRtaXNzaW5nUGFzc3dvcmRUaXRsZRI4ChhtaXNzaW5nX3Bhc3N3b3JkX2RldGFpbHMYAiABKAlSFm1pc3NpbmdQYXNzd29yZERldGFpbHMSLgoTbWlzc2luZ19lbWFpbF90aXRsZRgDIAEoCVIRbWlzc2luZ0VtYWlsVGl0bGUSMgoVbWlzc2luZ19lbWFpbF9kZXRhaWxzGAQgASgJUhNtaXNzaW5nRW1haWxEZXRhaWxzEh0KCmNyZWF0ZWRfYnkYBSABKAlSCWNyZWF0ZWRCeRIjCg1wYXNzd29yZF9oaW50GAYgASgJUgxwYXNzd29yZEhpbnQSHQoKZW1haWxfaGludBgHIAEoCVIJZW1haWxIaW50Eh8KC2Vycm9yX3RpdGxlGAggASgJUgplcnJvclRpdGxlEisKEWVycm9yX2Rlc2NyaXB0aW9uGAkgASgJUhBlcnJvckRlc2NyaXB0aW9uEiIKDW5vX3dpZmlfdGl0bGUYCiABKAlSC25vV2lmaVRpdGxlEi4KE25vX3dpZmlfZGVzY3JpcHRpb24YCyABKAlSEW5vV2lmaURlc2NyaXB0aW9u');
+@$core.Deprecated('Use welcomeTextDescriptor instead')
+const WelcomeText$json = const {
+  '1': 'WelcomeText',
+  '2': const [
+    const {'1': 'welcome_title', '3': 1, '4': 1, '5': 9, '10': 'welcomeTitle'},
+    const {'1': 'welcome_details', '3': 2, '4': 1, '5': 9, '10': 'welcomeDetails'},
+  ],
+};
+
+/// Descriptor for `WelcomeText`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List welcomeTextDescriptor = $convert.base64Decode('CgtXZWxjb21lVGV4dBIjCg13ZWxjb21lX3RpdGxlGAEgASgJUgx3ZWxjb21lVGl0bGUSJwoPd2VsY29tZV9kZXRhaWxzGAIgASgJUg53ZWxjb21lRGV0YWlscw==');
+@$core.Deprecated('Use registerTextDescriptor instead')
+const RegisterText$json = const {
+  '1': 'RegisterText',
+  '2': const [
+    const {'1': 'register_button', '3': 1, '4': 1, '5': 9, '10': 'registerButton'},
+    const {'1': 'register_title', '3': 2, '4': 1, '5': 9, '10': 'registerTitle'},
+    const {'1': 'register_details', '3': 3, '4': 1, '5': 9, '10': 'registerDetails'},
+    const {'1': 'password_do_not_match_title', '3': 4, '4': 1, '5': 9, '10': 'passwordDoNotMatchTitle'},
+    const {'1': 'password_do_not_match_details', '3': 5, '4': 1, '5': 9, '10': 'passwordDoNotMatchDetails'},
+    const {'1': 'repeat_password_hint', '3': 6, '4': 1, '5': 9, '10': 'repeatPasswordHint'},
+    const {'1': 'contains_special_char', '3': 7, '4': 1, '5': 9, '10': 'containsSpecialChar'},
+    const {'1': 'contains_number_char', '3': 8, '4': 1, '5': 9, '10': 'containsNumberChar'},
+    const {'1': 'password_match', '3': 9, '4': 1, '5': 9, '10': 'passwordMatch'},
+  ],
+};
+
+/// Descriptor for `RegisterText`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerTextDescriptor = $convert.base64Decode('CgxSZWdpc3RlclRleHQSJwoPcmVnaXN0ZXJfYnV0dG9uGAEgASgJUg5yZWdpc3RlckJ1dHRvbhIlCg5yZWdpc3Rlcl90aXRsZRgCIAEoCVINcmVnaXN0ZXJUaXRsZRIpChByZWdpc3Rlcl9kZXRhaWxzGAMgASgJUg9yZWdpc3RlckRldGFpbHMSPAobcGFzc3dvcmRfZG9fbm90X21hdGNoX3RpdGxlGAQgASgJUhdwYXNzd29yZERvTm90TWF0Y2hUaXRsZRJACh1wYXNzd29yZF9kb19ub3RfbWF0Y2hfZGV0YWlscxgFIAEoCVIZcGFzc3dvcmREb05vdE1hdGNoRGV0YWlscxIwChRyZXBlYXRfcGFzc3dvcmRfaGludBgGIAEoCVIScmVwZWF0UGFzc3dvcmRIaW50EjIKFWNvbnRhaW5zX3NwZWNpYWxfY2hhchgHIAEoCVITY29udGFpbnNTcGVjaWFsQ2hhchIwChRjb250YWluc19udW1iZXJfY2hhchgIIAEoCVISY29udGFpbnNOdW1iZXJDaGFyEiUKDnBhc3N3b3JkX21hdGNoGAkgASgJUg1wYXNzd29yZE1hdGNo');
+@$core.Deprecated('Use loginTextDescriptor instead')
+const LoginText$json = const {
+  '1': 'LoginText',
+  '2': const [
+    const {'1': 'login_button', '3': 1, '4': 1, '5': 9, '10': 'loginButton'},
+    const {'1': 'login_title', '3': 2, '4': 1, '5': 9, '10': 'loginTitle'},
+    const {'1': 'login_details', '3': 3, '4': 1, '5': 9, '10': 'loginDetails'},
+    const {'1': 'forgot_password', '3': 4, '4': 1, '5': 9, '10': 'forgotPassword'},
+  ],
+};
+
+/// Descriptor for `LoginText`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loginTextDescriptor = $convert.base64Decode('CglMb2dpblRleHQSIQoMbG9naW5fYnV0dG9uGAEgASgJUgtsb2dpbkJ1dHRvbhIfCgtsb2dpbl90aXRsZRgCIAEoCVIKbG9naW5UaXRsZRIjCg1sb2dpbl9kZXRhaWxzGAMgASgJUgxsb2dpbkRldGFpbHMSJwoPZm9yZ290X3Bhc3N3b3JkGAQgASgJUg5mb3Jnb3RQYXNzd29yZA==');
 @$core.Deprecated('Use configDescriptor instead')
 const Config$json = const {
   '1': 'Config',
@@ -76,14 +114,17 @@ const Config$json = const {
     const {'1': 'disable_default_login', '3': 10, '4': 1, '5': 8, '10': 'disableDefaultLogin'},
     const {'1': 'created_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'updated_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'auth_config', '3': 13, '4': 1, '5': 11, '6': '.BlockUser.AuthConfig', '10': 'authConfig'},
-    const {'1': 'internal_encryption_level', '3': 14, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
-    const {'1': 'validate_password', '3': 15, '4': 1, '5': 8, '10': 'validatePassword'},
+    const {'1': 'general_text', '3': 13, '4': 1, '5': 11, '6': '.BlockUser.GeneralText', '10': 'generalText'},
+    const {'1': 'welcome_text', '3': 14, '4': 1, '5': 11, '6': '.BlockUser.WelcomeText', '10': 'welcomeText'},
+    const {'1': 'login_text', '3': 15, '4': 1, '5': 11, '6': '.BlockUser.LoginText', '10': 'loginText'},
+    const {'1': 'register_text', '3': 16, '4': 1, '5': 11, '6': '.BlockUser.RegisterText', '10': 'registerText'},
+    const {'1': 'internal_encryption_level', '3': 17, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
+    const {'1': 'validate_password', '3': 18, '4': 1, '5': 8, '10': 'validatePassword'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHd2Vic2l0ZRgDIAEoCVIHd2Vic2l0ZRIUCgVhYm91dBgEIAEoCVIFYWJvdXQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhIKBGxvZ28YBiABKAlSBGxvZ28SFAoFdGVybXMYByABKAlSBXRlcm1zEjIKFWVuYWJsZV9udW50aW9fY29ubmVjdBgIIAEoCFITZW5hYmxlTnVudGlvQ29ubmVjdBI0ChZkaXNhYmxlX2RlZmF1bHRfc2lnbnVwGAkgASgIUhRkaXNhYmxlRGVmYXVsdFNpZ251cBIyChVkaXNhYmxlX2RlZmF1bHRfbG9naW4YCiABKAhSE2Rpc2FibGVEZWZhdWx0TG9naW4SOQoKY3JlYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0EjYKC2F1dGhfY29uZmlnGA0gASgLMhUuQmxvY2tVc2VyLkF1dGhDb25maWdSCmF1dGhDb25maWcSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgOIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSKwoRdmFsaWRhdGVfcGFzc3dvcmQYDyABKAhSEHZhbGlkYXRlUGFzc3dvcmQ=');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHd2Vic2l0ZRgDIAEoCVIHd2Vic2l0ZRIUCgVhYm91dBgEIAEoCVIFYWJvdXQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhIKBGxvZ28YBiABKAlSBGxvZ28SFAoFdGVybXMYByABKAlSBXRlcm1zEjIKFWVuYWJsZV9udW50aW9fY29ubmVjdBgIIAEoCFITZW5hYmxlTnVudGlvQ29ubmVjdBI0ChZkaXNhYmxlX2RlZmF1bHRfc2lnbnVwGAkgASgIUhRkaXNhYmxlRGVmYXVsdFNpZ251cBIyChVkaXNhYmxlX2RlZmF1bHRfbG9naW4YCiABKAhSE2Rpc2FibGVEZWZhdWx0TG9naW4SOQoKY3JlYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0EjkKDGdlbmVyYWxfdGV4dBgNIAEoCzIWLkJsb2NrVXNlci5HZW5lcmFsVGV4dFILZ2VuZXJhbFRleHQSOQoMd2VsY29tZV90ZXh0GA4gASgLMhYuQmxvY2tVc2VyLldlbGNvbWVUZXh0Ugt3ZWxjb21lVGV4dBIzCgpsb2dpbl90ZXh0GA8gASgLMhQuQmxvY2tVc2VyLkxvZ2luVGV4dFIJbG9naW5UZXh0EjwKDXJlZ2lzdGVyX3RleHQYECABKAsyFy5CbG9ja1VzZXIuUmVnaXN0ZXJUZXh0UgxyZWdpc3RlclRleHQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgRIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSKwoRdmFsaWRhdGVfcGFzc3dvcmQYEiABKAhSEHZhbGlkYXRlUGFzc3dvcmQ=');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
