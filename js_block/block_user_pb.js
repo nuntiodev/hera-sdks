@@ -323,22 +323,21 @@ proto.BlockUser.AuthConfig.prototype.toObject = function(opt_includeInstance) {
  */
 proto.BlockUser.AuthConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    logo: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    welcomeTitle: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    welcomeDetails: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    loginButton: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    loginTitle: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    loginDetails: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    registerButton: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    registerTitle: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    registerDetails: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    missingPasswordTitle: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    missingPasswordDetails: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    missingEmailTitle: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    missingEmailDetails: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    passwordDoNotMatchTitle: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    passwordDoNotMatchDetails: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 16, "")
+    welcomeTitle: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    welcomeDetails: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    loginButton: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    loginTitle: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    loginDetails: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    registerButton: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    registerTitle: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    registerDetails: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    missingPasswordTitle: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    missingPasswordDetails: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    missingEmailTitle: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    missingEmailDetails: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    passwordDoNotMatchTitle: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    passwordDoNotMatchDetails: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    createdBy: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -377,65 +376,61 @@ proto.BlockUser.AuthConfig.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLogo(value);
+      msg.setWelcomeTitle(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWelcomeTitle(value);
+      msg.setWelcomeDetails(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWelcomeDetails(value);
+      msg.setLoginButton(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLoginButton(value);
+      msg.setLoginTitle(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLoginTitle(value);
+      msg.setLoginDetails(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLoginDetails(value);
+      msg.setRegisterButton(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRegisterButton(value);
+      msg.setRegisterTitle(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRegisterTitle(value);
+      msg.setRegisterDetails(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRegisterDetails(value);
+      msg.setMissingPasswordTitle(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMissingPasswordTitle(value);
+      msg.setMissingPasswordDetails(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMissingPasswordDetails(value);
+      msg.setMissingEmailTitle(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMissingEmailTitle(value);
+      msg.setMissingEmailDetails(value);
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMissingEmailDetails(value);
+      msg.setPasswordDoNotMatchTitle(value);
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPasswordDoNotMatchTitle(value);
-      break;
-    case 15:
-      var value = /** @type {string} */ (reader.readString());
       msg.setPasswordDoNotMatchDetails(value);
       break;
-    case 16:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setCreatedBy(value);
       break;
@@ -468,115 +463,108 @@ proto.BlockUser.AuthConfig.prototype.serializeBinary = function() {
  */
 proto.BlockUser.AuthConfig.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLogo();
+  f = message.getWelcomeTitle();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getWelcomeTitle();
+  f = message.getWelcomeDetails();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getWelcomeDetails();
+  f = message.getLoginButton();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getLoginButton();
+  f = message.getLoginTitle();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getLoginTitle();
+  f = message.getLoginDetails();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getLoginDetails();
+  f = message.getRegisterButton();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getRegisterButton();
+  f = message.getRegisterTitle();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getRegisterTitle();
+  f = message.getRegisterDetails();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
-  f = message.getRegisterDetails();
+  f = message.getMissingPasswordTitle();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
-  f = message.getMissingPasswordTitle();
+  f = message.getMissingPasswordDetails();
   if (f.length > 0) {
     writer.writeString(
       10,
       f
     );
   }
-  f = message.getMissingPasswordDetails();
+  f = message.getMissingEmailTitle();
   if (f.length > 0) {
     writer.writeString(
       11,
       f
     );
   }
-  f = message.getMissingEmailTitle();
+  f = message.getMissingEmailDetails();
   if (f.length > 0) {
     writer.writeString(
       12,
       f
     );
   }
-  f = message.getMissingEmailDetails();
+  f = message.getPasswordDoNotMatchTitle();
   if (f.length > 0) {
     writer.writeString(
       13,
       f
     );
   }
-  f = message.getPasswordDoNotMatchTitle();
+  f = message.getPasswordDoNotMatchDetails();
   if (f.length > 0) {
     writer.writeString(
       14,
       f
     );
   }
-  f = message.getPasswordDoNotMatchDetails();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
   f = message.getCreatedBy();
   if (f.length > 0) {
     writer.writeString(
-      16,
+      15,
       f
     );
   }
@@ -584,10 +572,10 @@ proto.BlockUser.AuthConfig.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string logo = 1;
+ * optional string welcome_title = 1;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getLogo = function() {
+proto.BlockUser.AuthConfig.prototype.getWelcomeTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -596,16 +584,16 @@ proto.BlockUser.AuthConfig.prototype.getLogo = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setLogo = function(value) {
+proto.BlockUser.AuthConfig.prototype.setWelcomeTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string welcome_title = 2;
+ * optional string welcome_details = 2;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getWelcomeTitle = function() {
+proto.BlockUser.AuthConfig.prototype.getWelcomeDetails = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -614,16 +602,16 @@ proto.BlockUser.AuthConfig.prototype.getWelcomeTitle = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setWelcomeTitle = function(value) {
+proto.BlockUser.AuthConfig.prototype.setWelcomeDetails = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string welcome_details = 3;
+ * optional string login_button = 3;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getWelcomeDetails = function() {
+proto.BlockUser.AuthConfig.prototype.getLoginButton = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -632,16 +620,16 @@ proto.BlockUser.AuthConfig.prototype.getWelcomeDetails = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setWelcomeDetails = function(value) {
+proto.BlockUser.AuthConfig.prototype.setLoginButton = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string login_button = 4;
+ * optional string login_title = 4;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getLoginButton = function() {
+proto.BlockUser.AuthConfig.prototype.getLoginTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -650,16 +638,16 @@ proto.BlockUser.AuthConfig.prototype.getLoginButton = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setLoginButton = function(value) {
+proto.BlockUser.AuthConfig.prototype.setLoginTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string login_title = 5;
+ * optional string login_details = 5;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getLoginTitle = function() {
+proto.BlockUser.AuthConfig.prototype.getLoginDetails = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -668,16 +656,16 @@ proto.BlockUser.AuthConfig.prototype.getLoginTitle = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setLoginTitle = function(value) {
+proto.BlockUser.AuthConfig.prototype.setLoginDetails = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string login_details = 6;
+ * optional string register_button = 6;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getLoginDetails = function() {
+proto.BlockUser.AuthConfig.prototype.getRegisterButton = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -686,16 +674,16 @@ proto.BlockUser.AuthConfig.prototype.getLoginDetails = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setLoginDetails = function(value) {
+proto.BlockUser.AuthConfig.prototype.setRegisterButton = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string register_button = 7;
+ * optional string register_title = 7;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getRegisterButton = function() {
+proto.BlockUser.AuthConfig.prototype.getRegisterTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -704,16 +692,16 @@ proto.BlockUser.AuthConfig.prototype.getRegisterButton = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setRegisterButton = function(value) {
+proto.BlockUser.AuthConfig.prototype.setRegisterTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string register_title = 8;
+ * optional string register_details = 8;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getRegisterTitle = function() {
+proto.BlockUser.AuthConfig.prototype.getRegisterDetails = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -722,16 +710,16 @@ proto.BlockUser.AuthConfig.prototype.getRegisterTitle = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setRegisterTitle = function(value) {
+proto.BlockUser.AuthConfig.prototype.setRegisterDetails = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string register_details = 9;
+ * optional string missing_password_title = 9;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getRegisterDetails = function() {
+proto.BlockUser.AuthConfig.prototype.getMissingPasswordTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -740,16 +728,16 @@ proto.BlockUser.AuthConfig.prototype.getRegisterDetails = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setRegisterDetails = function(value) {
+proto.BlockUser.AuthConfig.prototype.setMissingPasswordTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional string missing_password_title = 10;
+ * optional string missing_password_details = 10;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getMissingPasswordTitle = function() {
+proto.BlockUser.AuthConfig.prototype.getMissingPasswordDetails = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
@@ -758,16 +746,16 @@ proto.BlockUser.AuthConfig.prototype.getMissingPasswordTitle = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setMissingPasswordTitle = function(value) {
+proto.BlockUser.AuthConfig.prototype.setMissingPasswordDetails = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional string missing_password_details = 11;
+ * optional string missing_email_title = 11;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getMissingPasswordDetails = function() {
+proto.BlockUser.AuthConfig.prototype.getMissingEmailTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -776,16 +764,16 @@ proto.BlockUser.AuthConfig.prototype.getMissingPasswordDetails = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setMissingPasswordDetails = function(value) {
+proto.BlockUser.AuthConfig.prototype.setMissingEmailTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional string missing_email_title = 12;
+ * optional string missing_email_details = 12;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getMissingEmailTitle = function() {
+proto.BlockUser.AuthConfig.prototype.getMissingEmailDetails = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -794,16 +782,16 @@ proto.BlockUser.AuthConfig.prototype.getMissingEmailTitle = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setMissingEmailTitle = function(value) {
+proto.BlockUser.AuthConfig.prototype.setMissingEmailDetails = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional string missing_email_details = 13;
+ * optional string password_do_not_match_title = 13;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getMissingEmailDetails = function() {
+proto.BlockUser.AuthConfig.prototype.getPasswordDoNotMatchTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -812,16 +800,16 @@ proto.BlockUser.AuthConfig.prototype.getMissingEmailDetails = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setMissingEmailDetails = function(value) {
+proto.BlockUser.AuthConfig.prototype.setPasswordDoNotMatchTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional string password_do_not_match_title = 14;
+ * optional string password_do_not_match_details = 14;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getPasswordDoNotMatchTitle = function() {
+proto.BlockUser.AuthConfig.prototype.getPasswordDoNotMatchDetails = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
@@ -830,16 +818,16 @@ proto.BlockUser.AuthConfig.prototype.getPasswordDoNotMatchTitle = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setPasswordDoNotMatchTitle = function(value) {
+proto.BlockUser.AuthConfig.prototype.setPasswordDoNotMatchDetails = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
 /**
- * optional string password_do_not_match_details = 15;
+ * optional string created_by = 15;
  * @return {string}
  */
-proto.BlockUser.AuthConfig.prototype.getPasswordDoNotMatchDetails = function() {
+proto.BlockUser.AuthConfig.prototype.getCreatedBy = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -848,26 +836,8 @@ proto.BlockUser.AuthConfig.prototype.getPasswordDoNotMatchDetails = function() {
  * @param {string} value
  * @return {!proto.BlockUser.AuthConfig} returns this
  */
-proto.BlockUser.AuthConfig.prototype.setPasswordDoNotMatchDetails = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
-};
-
-
-/**
- * optional string created_by = 16;
- * @return {string}
- */
-proto.BlockUser.AuthConfig.prototype.getCreatedBy = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.AuthConfig} returns this
- */
 proto.BlockUser.AuthConfig.prototype.setCreatedBy = function(value) {
-  return jspb.Message.setProto3StringField(this, 16, value);
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 

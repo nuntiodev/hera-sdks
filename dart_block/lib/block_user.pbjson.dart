@@ -40,27 +40,26 @@ final $typed_data.Uint8List platformDescriptor = $convert.base64Decode('CghQbGF0
 const AuthConfig$json = const {
   '1': 'AuthConfig',
   '2': const [
-    const {'1': 'logo', '3': 1, '4': 1, '5': 9, '10': 'logo'},
-    const {'1': 'welcome_title', '3': 2, '4': 1, '5': 9, '10': 'welcomeTitle'},
-    const {'1': 'welcome_details', '3': 3, '4': 1, '5': 9, '10': 'welcomeDetails'},
-    const {'1': 'login_button', '3': 4, '4': 1, '5': 9, '10': 'loginButton'},
-    const {'1': 'login_title', '3': 5, '4': 1, '5': 9, '10': 'loginTitle'},
-    const {'1': 'login_details', '3': 6, '4': 1, '5': 9, '10': 'loginDetails'},
-    const {'1': 'register_button', '3': 7, '4': 1, '5': 9, '10': 'registerButton'},
-    const {'1': 'register_title', '3': 8, '4': 1, '5': 9, '10': 'registerTitle'},
-    const {'1': 'register_details', '3': 9, '4': 1, '5': 9, '10': 'registerDetails'},
-    const {'1': 'missing_password_title', '3': 10, '4': 1, '5': 9, '10': 'missingPasswordTitle'},
-    const {'1': 'missing_password_details', '3': 11, '4': 1, '5': 9, '10': 'missingPasswordDetails'},
-    const {'1': 'missing_email_title', '3': 12, '4': 1, '5': 9, '10': 'missingEmailTitle'},
-    const {'1': 'missing_email_details', '3': 13, '4': 1, '5': 9, '10': 'missingEmailDetails'},
-    const {'1': 'password_do_not_match_title', '3': 14, '4': 1, '5': 9, '10': 'passwordDoNotMatchTitle'},
-    const {'1': 'password_do_not_match_details', '3': 15, '4': 1, '5': 9, '10': 'passwordDoNotMatchDetails'},
-    const {'1': 'created_by', '3': 16, '4': 1, '5': 9, '10': 'createdBy'},
+    const {'1': 'welcome_title', '3': 1, '4': 1, '5': 9, '10': 'welcomeTitle'},
+    const {'1': 'welcome_details', '3': 2, '4': 1, '5': 9, '10': 'welcomeDetails'},
+    const {'1': 'login_button', '3': 3, '4': 1, '5': 9, '10': 'loginButton'},
+    const {'1': 'login_title', '3': 4, '4': 1, '5': 9, '10': 'loginTitle'},
+    const {'1': 'login_details', '3': 5, '4': 1, '5': 9, '10': 'loginDetails'},
+    const {'1': 'register_button', '3': 6, '4': 1, '5': 9, '10': 'registerButton'},
+    const {'1': 'register_title', '3': 7, '4': 1, '5': 9, '10': 'registerTitle'},
+    const {'1': 'register_details', '3': 8, '4': 1, '5': 9, '10': 'registerDetails'},
+    const {'1': 'missing_password_title', '3': 9, '4': 1, '5': 9, '10': 'missingPasswordTitle'},
+    const {'1': 'missing_password_details', '3': 10, '4': 1, '5': 9, '10': 'missingPasswordDetails'},
+    const {'1': 'missing_email_title', '3': 11, '4': 1, '5': 9, '10': 'missingEmailTitle'},
+    const {'1': 'missing_email_details', '3': 12, '4': 1, '5': 9, '10': 'missingEmailDetails'},
+    const {'1': 'password_do_not_match_title', '3': 13, '4': 1, '5': 9, '10': 'passwordDoNotMatchTitle'},
+    const {'1': 'password_do_not_match_details', '3': 14, '4': 1, '5': 9, '10': 'passwordDoNotMatchDetails'},
+    const {'1': 'created_by', '3': 15, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
 /// Descriptor for `AuthConfig`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List authConfigDescriptor = $convert.base64Decode('CgpBdXRoQ29uZmlnEhIKBGxvZ28YASABKAlSBGxvZ28SIwoNd2VsY29tZV90aXRsZRgCIAEoCVIMd2VsY29tZVRpdGxlEicKD3dlbGNvbWVfZGV0YWlscxgDIAEoCVIOd2VsY29tZURldGFpbHMSIQoMbG9naW5fYnV0dG9uGAQgASgJUgtsb2dpbkJ1dHRvbhIfCgtsb2dpbl90aXRsZRgFIAEoCVIKbG9naW5UaXRsZRIjCg1sb2dpbl9kZXRhaWxzGAYgASgJUgxsb2dpbkRldGFpbHMSJwoPcmVnaXN0ZXJfYnV0dG9uGAcgASgJUg5yZWdpc3RlckJ1dHRvbhIlCg5yZWdpc3Rlcl90aXRsZRgIIAEoCVINcmVnaXN0ZXJUaXRsZRIpChByZWdpc3Rlcl9kZXRhaWxzGAkgASgJUg9yZWdpc3RlckRldGFpbHMSNAoWbWlzc2luZ19wYXNzd29yZF90aXRsZRgKIAEoCVIUbWlzc2luZ1Bhc3N3b3JkVGl0bGUSOAoYbWlzc2luZ19wYXNzd29yZF9kZXRhaWxzGAsgASgJUhZtaXNzaW5nUGFzc3dvcmREZXRhaWxzEi4KE21pc3NpbmdfZW1haWxfdGl0bGUYDCABKAlSEW1pc3NpbmdFbWFpbFRpdGxlEjIKFW1pc3NpbmdfZW1haWxfZGV0YWlscxgNIAEoCVITbWlzc2luZ0VtYWlsRGV0YWlscxI8ChtwYXNzd29yZF9kb19ub3RfbWF0Y2hfdGl0bGUYDiABKAlSF3Bhc3N3b3JkRG9Ob3RNYXRjaFRpdGxlEkAKHXBhc3N3b3JkX2RvX25vdF9tYXRjaF9kZXRhaWxzGA8gASgJUhlwYXNzd29yZERvTm90TWF0Y2hEZXRhaWxzEh0KCmNyZWF0ZWRfYnkYECABKAlSCWNyZWF0ZWRCeQ==');
+final $typed_data.Uint8List authConfigDescriptor = $convert.base64Decode('CgpBdXRoQ29uZmlnEiMKDXdlbGNvbWVfdGl0bGUYASABKAlSDHdlbGNvbWVUaXRsZRInCg93ZWxjb21lX2RldGFpbHMYAiABKAlSDndlbGNvbWVEZXRhaWxzEiEKDGxvZ2luX2J1dHRvbhgDIAEoCVILbG9naW5CdXR0b24SHwoLbG9naW5fdGl0bGUYBCABKAlSCmxvZ2luVGl0bGUSIwoNbG9naW5fZGV0YWlscxgFIAEoCVIMbG9naW5EZXRhaWxzEicKD3JlZ2lzdGVyX2J1dHRvbhgGIAEoCVIOcmVnaXN0ZXJCdXR0b24SJQoOcmVnaXN0ZXJfdGl0bGUYByABKAlSDXJlZ2lzdGVyVGl0bGUSKQoQcmVnaXN0ZXJfZGV0YWlscxgIIAEoCVIPcmVnaXN0ZXJEZXRhaWxzEjQKFm1pc3NpbmdfcGFzc3dvcmRfdGl0bGUYCSABKAlSFG1pc3NpbmdQYXNzd29yZFRpdGxlEjgKGG1pc3NpbmdfcGFzc3dvcmRfZGV0YWlscxgKIAEoCVIWbWlzc2luZ1Bhc3N3b3JkRGV0YWlscxIuChNtaXNzaW5nX2VtYWlsX3RpdGxlGAsgASgJUhFtaXNzaW5nRW1haWxUaXRsZRIyChVtaXNzaW5nX2VtYWlsX2RldGFpbHMYDCABKAlSE21pc3NpbmdFbWFpbERldGFpbHMSPAobcGFzc3dvcmRfZG9fbm90X21hdGNoX3RpdGxlGA0gASgJUhdwYXNzd29yZERvTm90TWF0Y2hUaXRsZRJACh1wYXNzd29yZF9kb19ub3RfbWF0Y2hfZGV0YWlscxgOIAEoCVIZcGFzc3dvcmREb05vdE1hdGNoRGV0YWlscxIdCgpjcmVhdGVkX2J5GA8gASgJUgljcmVhdGVkQnk=');
 @$core.Deprecated('Use configDescriptor instead')
 const Config$json = const {
   '1': 'Config',
