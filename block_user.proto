@@ -71,7 +71,8 @@ message RegisterText {
     string repeat_password_hint = 6;
     string contains_special_char = 7;
     string contains_number_char = 8;
-    string password_match = 9;
+    string password_must_match = 9;
+    string contains_eight_chars = 10;
 }
 
 message LoginText {
