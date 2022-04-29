@@ -41,22 +41,42 @@ service UserService {
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
 }
 
-message AuthConfig {
+message GeneralText {
+    string missing_password_title = 1;
+    string missing_password_details = 2;
+    string missing_email_title = 3;
+    string missing_email_details = 4;
+    string created_by = 5;
+    string password_hint = 6;
+    string email_hint = 7;
+    string error_title = 8;
+    string error_description = 9;
+    string no_wifi_title = 10;
+    string no_wifi_description = 11;
+}
+
+message WelcomeText {
     string welcome_title = 1; 
     string welcome_details = 2;
-    string login_button = 3;
-    string login_title = 4;
-    string login_details = 5;
-    string register_button = 6;
-    string register_title = 7;
-    string register_details = 8;
-    string missing_password_title = 9;
-    string missing_password_details = 10;
-    string missing_email_title = 11;
-    string missing_email_details = 12;
-    string password_do_not_match_title = 13;
-    string password_do_not_match_details = 14;
-    string created_by = 15;
+}
+
+message RegisterText {
+    string register_button = 1;
+    string register_title = 2;
+    string register_details = 3;
+    string password_do_not_match_title = 4;
+    string password_do_not_match_details = 5;
+    string repeat_password_hint = 6;
+    string contains_special_char = 7;
+    string contains_number_char = 7;
+    string password_match = 7;
+}
+
+message LoginText {
+    string login_button = 1;
+    string login_title = 2;
+    string login_details = 3;
+    string forgot_password = 4;
 }
 
 message Config {
@@ -72,9 +92,12 @@ message Config {
     bool disable_default_login = 10;
     google.protobuf.Timestamp created_at = 11;
     google.protobuf.Timestamp updated_at = 12;
-    AuthConfig auth_config = 13;
-    int32 internal_encryption_level = 14;
-    bool validate_password = 15;
+    GeneralText general_text = 13;
+    WelcomeText welcome_text = 14;
+    LoginText login_text = 15;
+    RegisterText register_text = 16;
+    int32 internal_encryption_level = 17;
+    bool validate_password = 18;
 }
 
 message User {
