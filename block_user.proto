@@ -68,8 +68,8 @@ message RegisterText {
     string password_do_not_match_details = 5;
     string repeat_password_hint = 6;
     string contains_special_char = 7;
-    string contains_number_char = 7;
-    string password_match = 7;
+    string contains_number_char = 8;
+    string password_match = 9;
 }
 
 message LoginText {
