@@ -47,6 +47,7 @@ type UserServiceClient interface {
 	CreateNamespaceConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateConfigSettings(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateConfigDetails(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateConfigGeneralText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateConfigWelcomeText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateConfigRegisterText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateConfigLoginText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -323,6 +324,15 @@ func (c *userServiceClient) UpdateConfigDetails(ctx context.Context, in *UserReq
 	return out, nil
 }
 
+func (c *userServiceClient) UpdateConfigGeneralText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateConfigGeneralText", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userServiceClient) UpdateConfigWelcomeText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateConfigWelcomeText", in, out, opts...)
@@ -401,6 +411,7 @@ type UserServiceServer interface {
 	CreateNamespaceConfig(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateConfigSettings(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateConfigDetails(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateConfigGeneralText(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateConfigWelcomeText(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateConfigRegisterText(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateConfigLoginText(context.Context, *UserRequest) (*UserResponse, error)
@@ -498,6 +509,9 @@ func (UnimplementedUserServiceServer) UpdateConfigSettings(context.Context, *Use
 }
 func (UnimplementedUserServiceServer) UpdateConfigDetails(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfigDetails not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateConfigGeneralText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfigGeneralText not implemented")
 }
 func (UnimplementedUserServiceServer) UpdateConfigWelcomeText(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfigWelcomeText not implemented")
@@ -1048,6 +1062,24 @@ func _UserService_UpdateConfigDetails_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_UpdateConfigGeneralText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateConfigGeneralText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateConfigGeneralText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateConfigGeneralText(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _UserService_UpdateConfigWelcomeText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
@@ -1260,6 +1292,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateConfigDetails",
 			Handler:    _UserService_UpdateConfigDetails_Handler,
+		},
+		{
+			MethodName: "UpdateConfigGeneralText",
+			Handler:    _UserService_UpdateConfigGeneralText_Handler,
 		},
 		{
 			MethodName: "UpdateConfigWelcomeText",

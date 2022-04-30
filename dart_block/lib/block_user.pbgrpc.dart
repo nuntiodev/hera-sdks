@@ -154,6 +154,11 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/UpdateConfigDetails',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateConfigGeneralText =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/UpdateConfigGeneralText',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateConfigWelcomeText =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UpdateConfigWelcomeText',
@@ -337,6 +342,13 @@ class UserServiceClient extends $grpc.Client {
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateConfigDetails, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateConfigGeneralText(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateConfigGeneralText, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> updateConfigWelcomeText(
@@ -578,6 +590,13 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateConfigGeneralText',
+        updateConfigGeneralText_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateConfigWelcomeText',
         updateConfigWelcomeText_Pre,
         false,
@@ -759,6 +778,11 @@ abstract class UserServiceBase extends $grpc.Service {
     return updateConfigDetails(call, await request);
   }
 
+  $async.Future<$0.UserResponse> updateConfigGeneralText_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateConfigGeneralText(call, await request);
+  }
+
   $async.Future<$0.UserResponse> updateConfigWelcomeText_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateConfigWelcomeText(call, await request);
@@ -841,6 +865,8 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> updateConfigSettings(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateConfigDetails(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateConfigGeneralText(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateConfigWelcomeText(
       $grpc.ServiceCall call, $0.UserRequest request);
