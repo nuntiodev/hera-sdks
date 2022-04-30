@@ -36,6 +36,7 @@ service UserService {
     rpc CreateNamespaceConfig(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigSettings(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigDetails(UserRequest) returns (UserResponse) {}
+    rpc UpdateConfigGeneralText(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigWelcomeText(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigRegisterText(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigLoginText(UserRequest) returns (UserResponse) {}
