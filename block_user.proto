@@ -103,6 +103,7 @@ message Config {
     RegisterText register_text = 16;
     int32 internal_encryption_level = 17;
     bool validate_password = 18;
+    bool nuntio_connect_id = 19;
 }
 
 message User {
