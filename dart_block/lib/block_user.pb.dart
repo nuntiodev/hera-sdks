@@ -207,6 +207,7 @@ class WelcomeText extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WelcomeText', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeTitle')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeDetails')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'continueWithNuntio')
     ..hasRequiredFields = false
   ;
 
@@ -214,6 +215,7 @@ class WelcomeText extends $pb.GeneratedMessage {
   factory WelcomeText({
     $core.String? welcomeTitle,
     $core.String? welcomeDetails,
+    $core.String? continueWithNuntio,
   }) {
     final _result = create();
     if (welcomeTitle != null) {
@@ -221,6 +223,9 @@ class WelcomeText extends $pb.GeneratedMessage {
     }
     if (welcomeDetails != null) {
       _result.welcomeDetails = welcomeDetails;
+    }
+    if (continueWithNuntio != null) {
+      _result.continueWithNuntio = continueWithNuntio;
     }
     return _result;
   }
@@ -262,6 +267,15 @@ class WelcomeText extends $pb.GeneratedMessage {
   $core.bool hasWelcomeDetails() => $_has(1);
   @$pb.TagNumber(2)
   void clearWelcomeDetails() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get continueWithNuntio => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set continueWithNuntio($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasContinueWithNuntio() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContinueWithNuntio() => clearField(3);
 }
 
 class RegisterText extends $pb.GeneratedMessage {

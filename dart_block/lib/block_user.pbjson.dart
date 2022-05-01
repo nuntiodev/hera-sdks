@@ -62,11 +62,12 @@ const WelcomeText$json = const {
   '2': const [
     const {'1': 'welcome_title', '3': 1, '4': 1, '5': 9, '10': 'welcomeTitle'},
     const {'1': 'welcome_details', '3': 2, '4': 1, '5': 9, '10': 'welcomeDetails'},
+    const {'1': 'continue_with_nuntio', '3': 3, '4': 1, '5': 9, '10': 'continueWithNuntio'},
   ],
 };
 
 /// Descriptor for `WelcomeText`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List welcomeTextDescriptor = $convert.base64Decode('CgtXZWxjb21lVGV4dBIjCg13ZWxjb21lX3RpdGxlGAEgASgJUgx3ZWxjb21lVGl0bGUSJwoPd2VsY29tZV9kZXRhaWxzGAIgASgJUg53ZWxjb21lRGV0YWlscw==');
+final $typed_data.Uint8List welcomeTextDescriptor = $convert.base64Decode('CgtXZWxjb21lVGV4dBIjCg13ZWxjb21lX3RpdGxlGAEgASgJUgx3ZWxjb21lVGl0bGUSJwoPd2VsY29tZV9kZXRhaWxzGAIgASgJUg53ZWxjb21lRGV0YWlscxIwChRjb250aW51ZV93aXRoX251bnRpbxgDIAEoCVISY29udGludWVXaXRoTnVudGlv');
 @$core.Deprecated('Use registerTextDescriptor instead')
 const RegisterText$json = const {
   '1': 'RegisterText',

@@ -820,7 +820,8 @@ proto.BlockUser.WelcomeText.prototype.toObject = function(opt_includeInstance) {
 proto.BlockUser.WelcomeText.toObject = function(includeInstance, msg) {
   var f, obj = {
     welcomeTitle: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    welcomeDetails: jspb.Message.getFieldWithDefault(msg, 2, "")
+    welcomeDetails: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    continueWithNuntio: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -865,6 +866,10 @@ proto.BlockUser.WelcomeText.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {string} */ (reader.readString());
       msg.setWelcomeDetails(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContinueWithNuntio(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -908,6 +913,13 @@ proto.BlockUser.WelcomeText.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = message.getContinueWithNuntio();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -944,6 +956,24 @@ proto.BlockUser.WelcomeText.prototype.getWelcomeDetails = function() {
  */
 proto.BlockUser.WelcomeText.prototype.setWelcomeDetails = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string continue_with_nuntio = 3;
+ * @return {string}
+ */
+proto.BlockUser.WelcomeText.prototype.getContinueWithNuntio = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.WelcomeText} returns this
+ */
+proto.BlockUser.WelcomeText.prototype.setContinueWithNuntio = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
