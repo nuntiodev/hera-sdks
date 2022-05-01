@@ -560,6 +560,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOM<RegisterText>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerText', subBuilder: RegisterText.create)
     ..a<$core.int>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..aOB(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
+    ..aOB(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nuntioConnectId')
     ..hasRequiredFields = false
   ;
 
@@ -583,6 +584,7 @@ class Config extends $pb.GeneratedMessage {
     RegisterText? registerText,
     $core.int? internalEncryptionLevel,
     $core.bool? validatePassword,
+    $core.bool? nuntioConnectId,
   }) {
     final _result = create();
     if (id != null) {
@@ -638,6 +640,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (validatePassword != null) {
       _result.validatePassword = validatePassword;
+    }
+    if (nuntioConnectId != null) {
+      _result.nuntioConnectId = nuntioConnectId;
     }
     return _result;
   }
@@ -835,6 +840,15 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasValidatePassword() => $_has(17);
   @$pb.TagNumber(18)
   void clearValidatePassword() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.bool get nuntioConnectId => $_getBF(18);
+  @$pb.TagNumber(19)
+  set nuntioConnectId($core.bool v) { $_setBool(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasNuntioConnectId() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearNuntioConnectId() => clearField(19);
 }
 
 class User extends $pb.GeneratedMessage {
