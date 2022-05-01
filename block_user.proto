@@ -62,6 +62,7 @@ message WelcomeText {
     string welcome_title = 1; 
     string welcome_details = 2;
     string continue_with_nuntio = 3;
+    string logo = 4;
 }
 
 message RegisterText {
@@ -112,18 +113,16 @@ message User {
     string email = 3;
     string password = 4;
     string image = 5;
-    bool external_encrypted = 6;
-    int32 external_encryption_level = 7;
-    bool internal_encrypted = 8;
-    int32 internal_encryption_level = 9;
-    string metadata = 10;
-	google.protobuf.Timestamp created_at = 11;
-    google.protobuf.Timestamp updated_at = 12;
-    google.protobuf.Timestamp encrypted_at = 13;
-    bool require_email_verification = 14;
-    string first_name = 15;
-    string last_name = 16;
-    google.protobuf.Timestamp birthdate = 17;
+    int32 external_encryption_level = 6;
+    int32 internal_encryption_level = 7;
+    string metadata = 8;
+	google.protobuf.Timestamp created_at = 9;
+    google.protobuf.Timestamp updated_at = 10;
+    google.protobuf.Timestamp encrypted_at = 11;
+    bool require_email_verification = 12;
+    string first_name = 13;
+    string last_name = 14;
+    google.protobuf.Timestamp birthdate = 15;
 }
 
 message UserFilter {
@@ -172,12 +171,11 @@ message Token {
     google.protobuf.Timestamp created_at = 6;
     google.protobuf.Timestamp used_at = 7;
     google.protobuf.Timestamp expires_at = 8;
-    bool encrypted = 9;
-    string access_token = 10;
-    string refresh_token = 11;
-    int32 internal_encryption_level = 12;
-    Location logged_in_from = 13;
-    TokenType type = 14;
+    string access_token = 9;
+    string refresh_token = 10;
+    int32 internal_encryption_level = 11;
+    Location logged_in_from = 12;
+    TokenType type = 13;
 }
 
 message ActiveMeasurement {
