@@ -61,6 +61,7 @@ message GeneralText {
 message WelcomeText {
     string welcome_title = 1; 
     string welcome_details = 2;
+    string continue_with_nuntio = 3;
 }
 
 message RegisterText {
