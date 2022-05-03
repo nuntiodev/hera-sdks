@@ -112,6 +112,7 @@ message Email {
     google.protobuf.Timestamp created_at = 6;
     google.protobuf.Timestamp updated_at = 7;
     google.protobuf.Timestamp encrypted_at = 8;
+    bool trigger_on_create = 9;
 }
 
 message User {
