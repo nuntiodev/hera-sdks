@@ -105,6 +105,7 @@ message Config {
     int32 internal_encryption_level = 17;
     bool validate_password = 18;
     bool nuntio_connect_id = 19;
+    bool require_email_verification = 20;
 }
 
 message User {
@@ -123,6 +124,9 @@ message User {
     string first_name = 13;
     string last_name = 14;
     google.protobuf.Timestamp birthdate = 15;
+    google.protobuf.Timestamp verification_email_sent_at = 16;
+    google.protobuf.Timestamp email_verified_at = 17;
+    bool email_is_verified = 18;
 }
 
 message UserFilter {
