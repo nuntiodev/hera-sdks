@@ -1920,13 +1920,14 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptionKey')
     ..pc<User>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userBatch', $pb.PbFieldType.PM, subBuilder: User.create)
     ..aOM<Token>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword', protoName: 'validatePassword')
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
     ..aOM<ActiveMeasurement>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
     ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalActiveTime', $pb.PbFieldType.O3)
     ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'averageActiveTime', $pb.PbFieldType.O3)
     ..aOM<Config>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
+    ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..hasRequiredFields = false
   ;
 
@@ -1946,6 +1947,7 @@ class UserRequest extends $pb.GeneratedMessage {
     $core.int? totalActiveTime,
     $core.int? averageActiveTime,
     Config? config,
+    $core.bool? requireEmailVerification,
   }) {
     final _result = create();
     if (user != null) {
@@ -1989,6 +1991,9 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (config != null) {
       _result.config = config;
+    }
+    if (requireEmailVerification != null) {
+      _result.requireEmailVerification = requireEmailVerification;
     }
     return _result;
   }
@@ -2144,6 +2149,15 @@ class UserRequest extends $pb.GeneratedMessage {
   void clearConfig() => clearField(14);
   @$pb.TagNumber(14)
   Config ensureConfig() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $core.bool get requireEmailVerification => $_getBF(14);
+  @$pb.TagNumber(15)
+  set requireEmailVerification($core.bool v) { $_setBool(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasRequireEmailVerification() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearRequireEmailVerification() => clearField(15);
 }
 
 class UserResponse extends $pb.GeneratedMessage {

@@ -5275,13 +5275,14 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
     proto.BlockUser.User.toObject, includeInstance),
     token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f),
-    validatepassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     cloudToken: jspb.Message.getFieldWithDefault(msg, 9, ""),
     tokenPointer: jspb.Message.getFieldWithDefault(msg, 10, ""),
     activeMeasurement: (f = msg.getActiveMeasurement()) && proto.BlockUser.ActiveMeasurement.toObject(includeInstance, f),
     totalActiveTime: jspb.Message.getFieldWithDefault(msg, 12, 0),
     averageActiveTime: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f)
+    config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
+    requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 15, false)
   };
 
   if (includeInstance) {
@@ -5353,7 +5354,7 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setValidatepassword(value);
+      msg.setValidatePassword(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -5380,6 +5381,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.BlockUser.Config;
       reader.readMessage(value,proto.BlockUser.Config.deserializeBinaryFromReader);
       msg.setConfig(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRequireEmailVerification(value);
       break;
     default:
       reader.skipField();
@@ -5464,7 +5469,7 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       proto.BlockUser.Token.serializeBinaryToWriter
     );
   }
-  f = message.getValidatepassword();
+  f = message.getValidatePassword();
   if (f) {
     writer.writeBool(
       8,
@@ -5513,6 +5518,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       14,
       f,
       proto.BlockUser.Config.serializeBinaryToWriter
+    );
+  }
+  f = message.getRequireEmailVerification();
+  if (f) {
+    writer.writeBool(
+      15,
+      f
     );
   }
 };
@@ -5741,10 +5753,10 @@ proto.BlockUser.UserRequest.prototype.hasToken = function() {
 
 
 /**
- * optional bool validatePassword = 8;
+ * optional bool validate_password = 8;
  * @return {boolean}
  */
-proto.BlockUser.UserRequest.prototype.getValidatepassword = function() {
+proto.BlockUser.UserRequest.prototype.getValidatePassword = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
@@ -5753,7 +5765,7 @@ proto.BlockUser.UserRequest.prototype.getValidatepassword = function() {
  * @param {boolean} value
  * @return {!proto.BlockUser.UserRequest} returns this
  */
-proto.BlockUser.UserRequest.prototype.setValidatepassword = function(value) {
+proto.BlockUser.UserRequest.prototype.setValidatePassword = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
@@ -5901,6 +5913,24 @@ proto.BlockUser.UserRequest.prototype.clearConfig = function() {
  */
 proto.BlockUser.UserRequest.prototype.hasConfig = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool require_email_verification = 15;
+ * @return {boolean}
+ */
+proto.BlockUser.UserRequest.prototype.getRequireEmailVerification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setRequireEmailVerification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
 };
 
 
