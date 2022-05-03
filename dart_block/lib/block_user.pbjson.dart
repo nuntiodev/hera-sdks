@@ -130,7 +130,7 @@ const Email$json = const {
   '1': 'Email',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    const {'1': 'logo_url', '3': 2, '4': 1, '5': 9, '10': 'logoUrl'},
+    const {'1': 'logo', '3': 2, '4': 1, '5': 9, '10': 'logo'},
     const {'1': 'welcome_message', '3': 3, '4': 1, '5': 9, '10': 'welcomeMessage'},
     const {'1': 'body_message', '3': 4, '4': 1, '5': 9, '10': 'bodyMessage'},
     const {'1': 'footer_message', '3': 5, '4': 1, '5': 9, '10': 'footerMessage'},
@@ -144,7 +144,7 @@ const Email$json = const {
 };
 
 /// Descriptor for `Email`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSGQoIbG9nb191cmwYAiABKAlSB2xvZ29VcmwSJwoPd2VsY29tZV9tZXNzYWdlGAMgASgJUg53ZWxjb21lTWVzc2FnZRIhCgxib2R5X21lc3NhZ2UYBCABKAlSC2JvZHlNZXNzYWdlEiUKDmZvb3Rlcl9tZXNzYWdlGAUgASgJUg1mb290ZXJNZXNzYWdlEjkKCmNyZWF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBIqChF0cmlnZ2VyX29uX2NyZWF0ZRgJIAEoCFIPdHJpZ2dlck9uQ3JlYXRlEjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYCiABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVsEhgKB3N1YmplY3QYCyABKAlSB3N1YmplY3Q=');
+final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSEgoEbG9nbxgCIAEoCVIEbG9nbxInCg93ZWxjb21lX21lc3NhZ2UYAyABKAlSDndlbGNvbWVNZXNzYWdlEiEKDGJvZHlfbWVzc2FnZRgEIAEoCVILYm9keU1lc3NhZ2USJQoOZm9vdGVyX21lc3NhZ2UYBSABKAlSDWZvb3Rlck1lc3NhZ2USOQoKY3JlYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0Ej0KDGVuY3J5cHRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2VuY3J5cHRlZEF0EioKEXRyaWdnZXJfb25fY3JlYXRlGAkgASgIUg90cmlnZ2VyT25DcmVhdGUSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgKIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSGAoHc3ViamVjdBgLIAEoCVIHc3ViamVjdA==');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',

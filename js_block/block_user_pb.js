@@ -2358,7 +2358,7 @@ proto.BlockUser.Email.prototype.toObject = function(opt_includeInstance) {
 proto.BlockUser.Email.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    logoUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    logo: jspb.Message.getFieldWithDefault(msg, 2, ""),
     welcomeMessage: jspb.Message.getFieldWithDefault(msg, 3, ""),
     bodyMessage: jspb.Message.getFieldWithDefault(msg, 4, ""),
     footerMessage: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -2410,7 +2410,7 @@ proto.BlockUser.Email.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLogoUrl(value);
+      msg.setLogo(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -2487,7 +2487,7 @@ proto.BlockUser.Email.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getLogoUrl();
+  f = message.getLogo();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -2582,10 +2582,10 @@ proto.BlockUser.Email.prototype.setId = function(value) {
 
 
 /**
- * optional string logo_url = 2;
+ * optional string logo = 2;
  * @return {string}
  */
-proto.BlockUser.Email.prototype.getLogoUrl = function() {
+proto.BlockUser.Email.prototype.getLogo = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2594,7 +2594,7 @@ proto.BlockUser.Email.prototype.getLogoUrl = function() {
  * @param {string} value
  * @return {!proto.BlockUser.Email} returns this
  */
-proto.BlockUser.Email.prototype.setLogoUrl = function(value) {
+proto.BlockUser.Email.prototype.setLogo = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

@@ -812,7 +812,7 @@ class Config extends $pb.GeneratedMessage {
 class Email extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Email', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logoUrl')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeMessage')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bodyMessage')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'footerMessage')
@@ -828,7 +828,7 @@ class Email extends $pb.GeneratedMessage {
   Email._() : super();
   factory Email({
     $core.String? id,
-    $core.String? logoUrl,
+    $core.String? logo,
     $core.String? welcomeMessage,
     $core.String? bodyMessage,
     $core.String? footerMessage,
@@ -843,8 +843,8 @@ class Email extends $pb.GeneratedMessage {
     if (id != null) {
       _result.id = id;
     }
-    if (logoUrl != null) {
-      _result.logoUrl = logoUrl;
+    if (logo != null) {
+      _result.logo = logo;
     }
     if (welcomeMessage != null) {
       _result.welcomeMessage = welcomeMessage;
@@ -906,13 +906,13 @@ class Email extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get logoUrl => $_getSZ(1);
+  $core.String get logo => $_getSZ(1);
   @$pb.TagNumber(2)
-  set logoUrl($core.String v) { $_setString(1, v); }
+  set logo($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasLogoUrl() => $_has(1);
+  $core.bool hasLogo() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLogoUrl() => clearField(2);
+  void clearLogo() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get welcomeMessage => $_getSZ(2);
