@@ -108,6 +108,17 @@ message Config {
     bool require_email_verification = 20;
 }
 
+message Email {
+    string id = 1;
+    string logo_url = 2;
+    string welcome_message = 3;
+    string body_message = 4;
+    string footer_message = 5;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp updated_at = 7;
+    google.protobuf.Timestamp encrypted_at = 8;
+}
+
 message User {
     string id = 1;
     string optional_id = 2;
@@ -227,6 +238,7 @@ message UserRequest {
     int32 average_active_time = 13;
     Config config = 14;
     bool require_email_verification = 15;
+    Email email = 16;
 }
 
 message UserResponse {
