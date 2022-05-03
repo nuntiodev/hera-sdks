@@ -105,7 +105,7 @@ message Config {
 
 message Email {
     string id = 1;
-    string logo_url = 2;
+    string logo = 2;
     string welcome_message = 3;
     string body_message = 4;
     string footer_message = 5;
