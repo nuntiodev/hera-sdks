@@ -114,6 +114,7 @@ message Email {
     google.protobuf.Timestamp encrypted_at = 8;
     bool trigger_on_create = 9;
     int32 internal_encryption_level = 10;
+    string subject = 11;
 }
 
 message User {
