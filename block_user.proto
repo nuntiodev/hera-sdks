@@ -115,6 +115,7 @@ message Email {
     bool trigger_on_create = 9;
     int32 internal_encryption_level = 10;
     string subject = 11;
+    string template_path = 12;
 }
 
 message User {
