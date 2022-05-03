@@ -2366,7 +2366,8 @@ proto.BlockUser.Email.toObject = function(includeInstance, msg) {
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     encryptedAt: (f = msg.getEncryptedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     triggerOnCreate: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    subject: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -2445,6 +2446,10 @@ proto.BlockUser.Email.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInternalEncryptionLevel(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubject(value);
       break;
     default:
       reader.skipField();
@@ -2545,6 +2550,13 @@ proto.BlockUser.Email.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       10,
+      f
+    );
+  }
+  f = message.getSubject();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -2785,6 +2797,24 @@ proto.BlockUser.Email.prototype.getInternalEncryptionLevel = function() {
  */
 proto.BlockUser.Email.prototype.setInternalEncryptionLevel = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional string subject = 11;
+ * @return {string}
+ */
+proto.BlockUser.Email.prototype.getSubject = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.Email} returns this
+ */
+proto.BlockUser.Email.prototype.setSubject = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
