@@ -820,6 +820,7 @@ class Email extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'triggerOnCreate')
+    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -834,6 +835,7 @@ class Email extends $pb.GeneratedMessage {
     $1.Timestamp? updatedAt,
     $1.Timestamp? encryptedAt,
     $core.bool? triggerOnCreate,
+    $core.int? internalEncryptionLevel,
   }) {
     final _result = create();
     if (id != null) {
@@ -862,6 +864,9 @@ class Email extends $pb.GeneratedMessage {
     }
     if (triggerOnCreate != null) {
       _result.triggerOnCreate = triggerOnCreate;
+    }
+    if (internalEncryptionLevel != null) {
+      _result.internalEncryptionLevel = internalEncryptionLevel;
     }
     return _result;
   }
@@ -972,6 +977,15 @@ class Email extends $pb.GeneratedMessage {
   $core.bool hasTriggerOnCreate() => $_has(8);
   @$pb.TagNumber(9)
   void clearTriggerOnCreate() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get internalEncryptionLevel => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasInternalEncryptionLevel() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearInternalEncryptionLevel() => clearField(10);
 }
 
 class User extends $pb.GeneratedMessage {

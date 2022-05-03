@@ -138,11 +138,12 @@ const Email$json = const {
     const {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
     const {'1': 'encrypted_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'encryptedAt'},
     const {'1': 'trigger_on_create', '3': 9, '4': 1, '5': 8, '10': 'triggerOnCreate'},
+    const {'1': 'internal_encryption_level', '3': 10, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
   ],
 };
 
 /// Descriptor for `Email`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSGQoIbG9nb191cmwYAiABKAlSB2xvZ29VcmwSJwoPd2VsY29tZV9tZXNzYWdlGAMgASgJUg53ZWxjb21lTWVzc2FnZRIhCgxib2R5X21lc3NhZ2UYBCABKAlSC2JvZHlNZXNzYWdlEiUKDmZvb3Rlcl9tZXNzYWdlGAUgASgJUg1mb290ZXJNZXNzYWdlEjkKCmNyZWF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBIqChF0cmlnZ2VyX29uX2NyZWF0ZRgJIAEoCFIPdHJpZ2dlck9uQ3JlYXRl');
+final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSGQoIbG9nb191cmwYAiABKAlSB2xvZ29VcmwSJwoPd2VsY29tZV9tZXNzYWdlGAMgASgJUg53ZWxjb21lTWVzc2FnZRIhCgxib2R5X21lc3NhZ2UYBCABKAlSC2JvZHlNZXNzYWdlEiUKDmZvb3Rlcl9tZXNzYWdlGAUgASgJUg1mb290ZXJNZXNzYWdlEjkKCmNyZWF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBIqChF0cmlnZ2VyX29uX2NyZWF0ZRgJIAEoCFIPdHJpZ2dlck9uQ3JlYXRlEjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYCiABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVs');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',

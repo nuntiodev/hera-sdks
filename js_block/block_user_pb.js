@@ -2365,7 +2365,8 @@ proto.BlockUser.Email.toObject = function(includeInstance, msg) {
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     encryptedAt: (f = msg.getEncryptedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    triggerOnCreate: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
+    triggerOnCreate: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -2440,6 +2441,10 @@ proto.BlockUser.Email.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setTriggerOnCreate(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInternalEncryptionLevel(value);
       break;
     default:
       reader.skipField();
@@ -2533,6 +2538,13 @@ proto.BlockUser.Email.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       9,
+      f
+    );
+  }
+  f = message.getInternalEncryptionLevel();
+  if (f !== 0) {
+    writer.writeInt32(
+      10,
       f
     );
   }
@@ -2755,6 +2767,24 @@ proto.BlockUser.Email.prototype.getTriggerOnCreate = function() {
  */
 proto.BlockUser.Email.prototype.setTriggerOnCreate = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * optional int32 internal_encryption_level = 10;
+ * @return {number}
+ */
+proto.BlockUser.Email.prototype.getInternalEncryptionLevel = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.Email} returns this
+ */
+proto.BlockUser.Email.prototype.setInternalEncryptionLevel = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
