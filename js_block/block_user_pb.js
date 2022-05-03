@@ -1677,7 +1677,8 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     registerText: (f = msg.getRegisterText()) && proto.BlockUser.RegisterText.toObject(includeInstance, f),
     internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 17, 0),
     validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
-    nuntioConnectId: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
+    nuntioConnectId: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
   };
 
   if (includeInstance) {
@@ -1795,6 +1796,10 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setNuntioConnectId(value);
+      break;
+    case 20:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRequireEmailVerification(value);
       break;
     default:
       reader.skipField();
@@ -1961,6 +1966,13 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       19,
+      f
+    );
+  }
+  f = message.getRequireEmailVerification();
+  if (f) {
+    writer.writeBool(
+      20,
       f
     );
   }
@@ -2423,6 +2435,24 @@ proto.BlockUser.Config.prototype.setNuntioConnectId = function(value) {
 };
 
 
+/**
+ * optional bool require_email_verification = 20;
+ * @return {boolean}
+ */
+proto.BlockUser.Config.prototype.getRequireEmailVerification = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setRequireEmailVerification = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 20, value);
+};
+
+
 
 
 
@@ -2469,7 +2499,10 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
     firstName: jspb.Message.getFieldWithDefault(msg, 13, ""),
     lastName: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    verificationEmailSentAt: (f = msg.getVerificationEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    emailVerifiedAt: (f = msg.getEmailVerifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    emailIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 18, false)
   };
 
   if (includeInstance) {
@@ -2569,6 +2602,20 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setBirthdate(value);
+      break;
+    case 16:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setVerificationEmailSentAt(value);
+      break;
+    case 17:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEmailVerifiedAt(value);
+      break;
+    case 18:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailIsVerified(value);
       break;
     default:
       reader.skipField();
@@ -2706,6 +2753,29 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       15,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getVerificationEmailSentAt();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailVerifiedAt();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailIsVerified();
+  if (f) {
+    writer.writeBool(
+      18,
+      f
     );
   }
 };
@@ -3054,6 +3124,98 @@ proto.BlockUser.User.prototype.clearBirthdate = function() {
  */
 proto.BlockUser.User.prototype.hasBirthdate = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp verification_email_sent_at = 16;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.User.prototype.getVerificationEmailSentAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.User} returns this
+*/
+proto.BlockUser.User.prototype.setVerificationEmailSentAt = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearVerificationEmailSentAt = function() {
+  return this.setVerificationEmailSentAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasVerificationEmailSentAt = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp email_verified_at = 17;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.User.prototype.getEmailVerifiedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 17));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.User} returns this
+*/
+proto.BlockUser.User.prototype.setEmailVerifiedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearEmailVerifiedAt = function() {
+  return this.setEmailVerifiedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasEmailVerifiedAt = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional bool email_is_verified = 18;
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.getEmailIsVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setEmailIsVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 18, value);
 };
 
 

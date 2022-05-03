@@ -575,6 +575,7 @@ class Config extends $pb.GeneratedMessage {
     ..a<$core.int>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..aOB(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
     ..aOB(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nuntioConnectId')
+    ..aOB(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..hasRequiredFields = false
   ;
 
@@ -599,6 +600,7 @@ class Config extends $pb.GeneratedMessage {
     $core.int? internalEncryptionLevel,
     $core.bool? validatePassword,
     $core.bool? nuntioConnectId,
+    $core.bool? requireEmailVerification,
   }) {
     final _result = create();
     if (id != null) {
@@ -657,6 +659,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (nuntioConnectId != null) {
       _result.nuntioConnectId = nuntioConnectId;
+    }
+    if (requireEmailVerification != null) {
+      _result.requireEmailVerification = requireEmailVerification;
     }
     return _result;
   }
@@ -863,6 +868,15 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasNuntioConnectId() => $_has(18);
   @$pb.TagNumber(19)
   void clearNuntioConnectId() => clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.bool get requireEmailVerification => $_getBF(19);
+  @$pb.TagNumber(20)
+  set requireEmailVerification($core.bool v) { $_setBool(19, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasRequireEmailVerification() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearRequireEmailVerification() => clearField(20);
 }
 
 class User extends $pb.GeneratedMessage {
@@ -882,6 +896,9 @@ class User extends $pb.GeneratedMessage {
     ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
     ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
     ..aOM<$1.Timestamp>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationEmailSentAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerifiedAt', subBuilder: $1.Timestamp.create)
+    ..aOB(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailIsVerified')
     ..hasRequiredFields = false
   ;
 
@@ -902,6 +919,9 @@ class User extends $pb.GeneratedMessage {
     $core.String? firstName,
     $core.String? lastName,
     $1.Timestamp? birthdate,
+    $1.Timestamp? verificationEmailSentAt,
+    $1.Timestamp? emailVerifiedAt,
+    $core.bool? emailIsVerified,
   }) {
     final _result = create();
     if (id != null) {
@@ -948,6 +968,15 @@ class User extends $pb.GeneratedMessage {
     }
     if (birthdate != null) {
       _result.birthdate = birthdate;
+    }
+    if (verificationEmailSentAt != null) {
+      _result.verificationEmailSentAt = verificationEmailSentAt;
+    }
+    if (emailVerifiedAt != null) {
+      _result.emailVerifiedAt = emailVerifiedAt;
+    }
+    if (emailIsVerified != null) {
+      _result.emailIsVerified = emailIsVerified;
     }
     return _result;
   }
@@ -1114,6 +1143,37 @@ class User extends $pb.GeneratedMessage {
   void clearBirthdate() => clearField(15);
   @$pb.TagNumber(15)
   $1.Timestamp ensureBirthdate() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $1.Timestamp get verificationEmailSentAt => $_getN(15);
+  @$pb.TagNumber(16)
+  set verificationEmailSentAt($1.Timestamp v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasVerificationEmailSentAt() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearVerificationEmailSentAt() => clearField(16);
+  @$pb.TagNumber(16)
+  $1.Timestamp ensureVerificationEmailSentAt() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get emailVerifiedAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set emailVerifiedAt($1.Timestamp v) { setField(17, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasEmailVerifiedAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearEmailVerifiedAt() => clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureEmailVerifiedAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $core.bool get emailIsVerified => $_getBF(17);
+  @$pb.TagNumber(18)
+  set emailIsVerified($core.bool v) { $_setBool(17, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasEmailIsVerified() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearEmailIsVerified() => clearField(18);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
