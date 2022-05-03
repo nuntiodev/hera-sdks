@@ -1699,7 +1699,7 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     registerText: (f = msg.getRegisterText()) && proto.BlockUser.RegisterText.toObject(includeInstance, f),
     internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 17, 0),
     validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
-    nuntioConnectId: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    nuntioConnectId: jspb.Message.getFieldWithDefault(msg, 19, ""),
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
   };
 
@@ -1816,7 +1816,7 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.setValidatePassword(value);
       break;
     case 19:
-      var value = /** @type {boolean} */ (reader.readBool());
+      var value = /** @type {string} */ (reader.readString());
       msg.setNuntioConnectId(value);
       break;
     case 20:
@@ -1985,8 +1985,8 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getNuntioConnectId();
-  if (f) {
-    writer.writeBool(
+  if (f.length > 0) {
+    writer.writeString(
       19,
       f
     );
@@ -2440,20 +2440,20 @@ proto.BlockUser.Config.prototype.setValidatePassword = function(value) {
 
 
 /**
- * optional bool nuntio_connect_id = 19;
- * @return {boolean}
+ * optional string nuntio_connect_id = 19;
+ * @return {string}
  */
 proto.BlockUser.Config.prototype.getNuntioConnectId = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setNuntioConnectId = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 19, value);
+  return jspb.Message.setProto3StringField(this, 19, value);
 };
 
 
