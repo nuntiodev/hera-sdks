@@ -63,12 +63,11 @@ const WelcomeText$json = const {
     const {'1': 'welcome_title', '3': 1, '4': 1, '5': 9, '10': 'welcomeTitle'},
     const {'1': 'welcome_details', '3': 2, '4': 1, '5': 9, '10': 'welcomeDetails'},
     const {'1': 'continue_with_nuntio', '3': 3, '4': 1, '5': 9, '10': 'continueWithNuntio'},
-    const {'1': 'logo', '3': 4, '4': 1, '5': 9, '10': 'logo'},
   ],
 };
 
 /// Descriptor for `WelcomeText`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List welcomeTextDescriptor = $convert.base64Decode('CgtXZWxjb21lVGV4dBIjCg13ZWxjb21lX3RpdGxlGAEgASgJUgx3ZWxjb21lVGl0bGUSJwoPd2VsY29tZV9kZXRhaWxzGAIgASgJUg53ZWxjb21lRGV0YWlscxIwChRjb250aW51ZV93aXRoX251bnRpbxgDIAEoCVISY29udGludWVXaXRoTnVudGlvEhIKBGxvZ28YBCABKAlSBGxvZ28=');
+final $typed_data.Uint8List welcomeTextDescriptor = $convert.base64Decode('CgtXZWxjb21lVGV4dBIjCg13ZWxjb21lX3RpdGxlGAEgASgJUgx3ZWxjb21lVGl0bGUSJwoPd2VsY29tZV9kZXRhaWxzGAIgASgJUg53ZWxjb21lRGV0YWlscxIwChRjb250aW51ZV93aXRoX251bnRpbxgDIAEoCVISY29udGludWVXaXRoTnVudGlv');
 @$core.Deprecated('Use registerTextDescriptor instead')
 const RegisterText$json = const {
   '1': 'RegisterText',
@@ -107,29 +106,25 @@ const Config$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'website', '3': 3, '4': 1, '5': 9, '10': 'website'},
-    const {'1': 'about', '3': 4, '4': 1, '5': 9, '10': 'about'},
-    const {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
-    const {'1': 'logo', '3': 6, '4': 1, '5': 9, '10': 'logo'},
-    const {'1': 'terms', '3': 7, '4': 1, '5': 9, '10': 'terms'},
-    const {'1': 'enable_nuntio_connect', '3': 8, '4': 1, '5': 8, '10': 'enableNuntioConnect'},
-    const {'1': 'disable_default_signup', '3': 9, '4': 1, '5': 8, '10': 'disableDefaultSignup'},
-    const {'1': 'disable_default_login', '3': 10, '4': 1, '5': 8, '10': 'disableDefaultLogin'},
-    const {'1': 'created_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updated_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'general_text', '3': 13, '4': 1, '5': 11, '6': '.BlockUser.GeneralText', '10': 'generalText'},
-    const {'1': 'welcome_text', '3': 14, '4': 1, '5': 11, '6': '.BlockUser.WelcomeText', '10': 'welcomeText'},
-    const {'1': 'login_text', '3': 15, '4': 1, '5': 11, '6': '.BlockUser.LoginText', '10': 'loginText'},
-    const {'1': 'register_text', '3': 16, '4': 1, '5': 11, '6': '.BlockUser.RegisterText', '10': 'registerText'},
-    const {'1': 'internal_encryption_level', '3': 17, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
-    const {'1': 'validate_password', '3': 18, '4': 1, '5': 8, '10': 'validatePassword'},
-    const {'1': 'nuntio_connect_id', '3': 19, '4': 1, '5': 9, '10': 'nuntioConnectId'},
-    const {'1': 'require_email_verification', '3': 20, '4': 1, '5': 8, '10': 'requireEmailVerification'},
+    const {'1': 'logo', '3': 3, '4': 1, '5': 9, '10': 'logo'},
+    const {'1': 'enable_nuntio_connect', '3': 4, '4': 1, '5': 8, '10': 'enableNuntioConnect'},
+    const {'1': 'disable_default_signup', '3': 5, '4': 1, '5': 8, '10': 'disableDefaultSignup'},
+    const {'1': 'disable_default_login', '3': 6, '4': 1, '5': 8, '10': 'disableDefaultLogin'},
+    const {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'general_text', '3': 9, '4': 1, '5': 11, '6': '.BlockUser.GeneralText', '10': 'generalText'},
+    const {'1': 'welcome_text', '3': 10, '4': 1, '5': 11, '6': '.BlockUser.WelcomeText', '10': 'welcomeText'},
+    const {'1': 'login_text', '3': 11, '4': 1, '5': 11, '6': '.BlockUser.LoginText', '10': 'loginText'},
+    const {'1': 'register_text', '3': 12, '4': 1, '5': 11, '6': '.BlockUser.RegisterText', '10': 'registerText'},
+    const {'1': 'internal_encryption_level', '3': 13, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
+    const {'1': 'validate_password', '3': 14, '4': 1, '5': 8, '10': 'validatePassword'},
+    const {'1': 'nuntio_connect_id', '3': 15, '4': 1, '5': 9, '10': 'nuntioConnectId'},
+    const {'1': 'require_email_verification', '3': 16, '4': 1, '5': 8, '10': 'requireEmailVerification'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHd2Vic2l0ZRgDIAEoCVIHd2Vic2l0ZRIUCgVhYm91dBgEIAEoCVIFYWJvdXQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhIKBGxvZ28YBiABKAlSBGxvZ28SFAoFdGVybXMYByABKAlSBXRlcm1zEjIKFWVuYWJsZV9udW50aW9fY29ubmVjdBgIIAEoCFITZW5hYmxlTnVudGlvQ29ubmVjdBI0ChZkaXNhYmxlX2RlZmF1bHRfc2lnbnVwGAkgASgIUhRkaXNhYmxlRGVmYXVsdFNpZ251cBIyChVkaXNhYmxlX2RlZmF1bHRfbG9naW4YCiABKAhSE2Rpc2FibGVEZWZhdWx0TG9naW4SOQoKY3JlYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0EjkKDGdlbmVyYWxfdGV4dBgNIAEoCzIWLkJsb2NrVXNlci5HZW5lcmFsVGV4dFILZ2VuZXJhbFRleHQSOQoMd2VsY29tZV90ZXh0GA4gASgLMhYuQmxvY2tVc2VyLldlbGNvbWVUZXh0Ugt3ZWxjb21lVGV4dBIzCgpsb2dpbl90ZXh0GA8gASgLMhQuQmxvY2tVc2VyLkxvZ2luVGV4dFIJbG9naW5UZXh0EjwKDXJlZ2lzdGVyX3RleHQYECABKAsyFy5CbG9ja1VzZXIuUmVnaXN0ZXJUZXh0UgxyZWdpc3RlclRleHQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgRIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSKwoRdmFsaWRhdGVfcGFzc3dvcmQYEiABKAhSEHZhbGlkYXRlUGFzc3dvcmQSKgoRbnVudGlvX2Nvbm5lY3RfaWQYEyABKAlSD251bnRpb0Nvbm5lY3RJZBI8ChpyZXF1aXJlX2VtYWlsX3ZlcmlmaWNhdGlvbhgUIAEoCFIYcmVxdWlyZUVtYWlsVmVyaWZpY2F0aW9u');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbxgDIAEoCVIEbG9nbxIyChVlbmFibGVfbnVudGlvX2Nvbm5lY3QYBCABKAhSE2VuYWJsZU51bnRpb0Nvbm5lY3QSNAoWZGlzYWJsZV9kZWZhdWx0X3NpZ251cBgFIAEoCFIUZGlzYWJsZURlZmF1bHRTaWdudXASMgoVZGlzYWJsZV9kZWZhdWx0X2xvZ2luGAYgASgIUhNkaXNhYmxlRGVmYXVsdExvZ2luEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI5CgxnZW5lcmFsX3RleHQYCSABKAsyFi5CbG9ja1VzZXIuR2VuZXJhbFRleHRSC2dlbmVyYWxUZXh0EjkKDHdlbGNvbWVfdGV4dBgKIAEoCzIWLkJsb2NrVXNlci5XZWxjb21lVGV4dFILd2VsY29tZVRleHQSMwoKbG9naW5fdGV4dBgLIAEoCzIULkJsb2NrVXNlci5Mb2dpblRleHRSCWxvZ2luVGV4dBI8Cg1yZWdpc3Rlcl90ZXh0GAwgASgLMhcuQmxvY2tVc2VyLlJlZ2lzdGVyVGV4dFIMcmVnaXN0ZXJUZXh0EjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYDSABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVsEisKEXZhbGlkYXRlX3Bhc3N3b3JkGA4gASgIUhB2YWxpZGF0ZVBhc3N3b3JkEioKEW51bnRpb19jb25uZWN0X2lkGA8gASgJUg9udW50aW9Db25uZWN0SWQSPAoacmVxdWlyZV9lbWFpbF92ZXJpZmljYXRpb24YECABKAhSGHJlcXVpcmVFbWFpbFZlcmlmaWNhdGlvbg==');
 @$core.Deprecated('Use emailDescriptor instead')
 const Email$json = const {
   '1': 'Email',

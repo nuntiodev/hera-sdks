@@ -843,8 +843,7 @@ proto.BlockUser.WelcomeText.toObject = function(includeInstance, msg) {
   var f, obj = {
     welcomeTitle: jspb.Message.getFieldWithDefault(msg, 1, ""),
     welcomeDetails: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    continueWithNuntio: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    logo: jspb.Message.getFieldWithDefault(msg, 4, "")
+    continueWithNuntio: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -893,10 +892,6 @@ proto.BlockUser.WelcomeText.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {string} */ (reader.readString());
       msg.setContinueWithNuntio(value);
       break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLogo(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -944,13 +939,6 @@ proto.BlockUser.WelcomeText.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       3,
-      f
-    );
-  }
-  f = message.getLogo();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
       f
     );
   }
@@ -1008,24 +996,6 @@ proto.BlockUser.WelcomeText.prototype.getContinueWithNuntio = function() {
  */
 proto.BlockUser.WelcomeText.prototype.setContinueWithNuntio = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string logo = 4;
- * @return {string}
- */
-proto.BlockUser.WelcomeText.prototype.getLogo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.WelcomeText} returns this
- */
-proto.BlockUser.WelcomeText.prototype.setLogo = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1683,24 +1653,20 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    website: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    about: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    logo: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    terms: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    enableNuntioConnect: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    disableDefaultSignup: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    disableDefaultLogin: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    logo: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    enableNuntioConnect: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    disableDefaultSignup: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    disableDefaultLogin: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     generalText: (f = msg.getGeneralText()) && proto.BlockUser.GeneralText.toObject(includeInstance, f),
     welcomeText: (f = msg.getWelcomeText()) && proto.BlockUser.WelcomeText.toObject(includeInstance, f),
     loginText: (f = msg.getLoginText()) && proto.BlockUser.LoginText.toObject(includeInstance, f),
     registerText: (f = msg.getRegisterText()) && proto.BlockUser.RegisterText.toObject(includeInstance, f),
-    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
-    nuntioConnectId: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 20, false)
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    nuntioConnectId: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 16, false)
   };
 
   if (includeInstance) {
@@ -1747,79 +1713,63 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWebsite(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAbout(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
       msg.setLogo(value);
       break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTerms(value);
-      break;
-    case 8:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableNuntioConnect(value);
       break;
-    case 9:
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDisableDefaultSignup(value);
       break;
-    case 10:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDisableDefaultLogin(value);
       break;
-    case 11:
+    case 7:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedAt(value);
       break;
-    case 12:
+    case 8:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
       break;
-    case 13:
+    case 9:
       var value = new proto.BlockUser.GeneralText;
       reader.readMessage(value,proto.BlockUser.GeneralText.deserializeBinaryFromReader);
       msg.setGeneralText(value);
       break;
-    case 14:
+    case 10:
       var value = new proto.BlockUser.WelcomeText;
       reader.readMessage(value,proto.BlockUser.WelcomeText.deserializeBinaryFromReader);
       msg.setWelcomeText(value);
       break;
-    case 15:
+    case 11:
       var value = new proto.BlockUser.LoginText;
       reader.readMessage(value,proto.BlockUser.LoginText.deserializeBinaryFromReader);
       msg.setLoginText(value);
       break;
-    case 16:
+    case 12:
       var value = new proto.BlockUser.RegisterText;
       reader.readMessage(value,proto.BlockUser.RegisterText.deserializeBinaryFromReader);
       msg.setRegisterText(value);
       break;
-    case 17:
+    case 13:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInternalEncryptionLevel(value);
       break;
-    case 18:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setValidatePassword(value);
       break;
-    case 19:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setNuntioConnectId(value);
       break;
-    case 20:
+    case 16:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRequireEmailVerification(value);
       break;
@@ -1866,66 +1816,38 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getWebsite();
+  f = message.getLogo();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getAbout();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getEmail();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getLogo();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getTerms();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
-    );
-  }
   f = message.getEnableNuntioConnect();
   if (f) {
     writer.writeBool(
-      8,
+      4,
       f
     );
   }
   f = message.getDisableDefaultSignup();
   if (f) {
     writer.writeBool(
-      9,
+      5,
       f
     );
   }
   f = message.getDisableDefaultLogin();
   if (f) {
     writer.writeBool(
-      10,
+      6,
       f
     );
   }
   f = message.getCreatedAt();
   if (f != null) {
     writer.writeMessage(
-      11,
+      7,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1933,7 +1855,7 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getUpdatedAt();
   if (f != null) {
     writer.writeMessage(
-      12,
+      8,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1941,7 +1863,7 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getGeneralText();
   if (f != null) {
     writer.writeMessage(
-      13,
+      9,
       f,
       proto.BlockUser.GeneralText.serializeBinaryToWriter
     );
@@ -1949,7 +1871,7 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getWelcomeText();
   if (f != null) {
     writer.writeMessage(
-      14,
+      10,
       f,
       proto.BlockUser.WelcomeText.serializeBinaryToWriter
     );
@@ -1957,7 +1879,7 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getLoginText();
   if (f != null) {
     writer.writeMessage(
-      15,
+      11,
       f,
       proto.BlockUser.LoginText.serializeBinaryToWriter
     );
@@ -1965,7 +1887,7 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getRegisterText();
   if (f != null) {
     writer.writeMessage(
-      16,
+      12,
       f,
       proto.BlockUser.RegisterText.serializeBinaryToWriter
     );
@@ -1973,28 +1895,28 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getInternalEncryptionLevel();
   if (f !== 0) {
     writer.writeInt32(
-      17,
+      13,
       f
     );
   }
   f = message.getValidatePassword();
   if (f) {
     writer.writeBool(
-      18,
+      14,
       f
     );
   }
   f = message.getNuntioConnectId();
   if (f.length > 0) {
     writer.writeString(
-      19,
+      15,
       f
     );
   }
   f = message.getRequireEmailVerification();
   if (f) {
     writer.writeBool(
-      20,
+      16,
       f
     );
   }
@@ -2038,10 +1960,10 @@ proto.BlockUser.Config.prototype.setName = function(value) {
 
 
 /**
- * optional string website = 3;
+ * optional string logo = 3;
  * @return {string}
  */
-proto.BlockUser.Config.prototype.getWebsite = function() {
+proto.BlockUser.Config.prototype.getLogo = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -2050,89 +1972,17 @@ proto.BlockUser.Config.prototype.getWebsite = function() {
  * @param {string} value
  * @return {!proto.BlockUser.Config} returns this
  */
-proto.BlockUser.Config.prototype.setWebsite = function(value) {
+proto.BlockUser.Config.prototype.setLogo = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string about = 4;
- * @return {string}
- */
-proto.BlockUser.Config.prototype.getAbout = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setAbout = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string email = 5;
- * @return {string}
- */
-proto.BlockUser.Config.prototype.getEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setEmail = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string logo = 6;
- * @return {string}
- */
-proto.BlockUser.Config.prototype.getLogo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setLogo = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string terms = 7;
- * @return {string}
- */
-proto.BlockUser.Config.prototype.getTerms = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setTerms = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional bool enable_nuntio_connect = 8;
+ * optional bool enable_nuntio_connect = 4;
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.getEnableNuntioConnect = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
@@ -2141,16 +1991,16 @@ proto.BlockUser.Config.prototype.getEnableNuntioConnect = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setEnableNuntioConnect = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
 /**
- * optional bool disable_default_signup = 9;
+ * optional bool disable_default_signup = 5;
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.getDisableDefaultSignup = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -2159,16 +2009,16 @@ proto.BlockUser.Config.prototype.getDisableDefaultSignup = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setDisableDefaultSignup = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 9, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
 /**
- * optional bool disable_default_login = 10;
+ * optional bool disable_default_login = 6;
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.getDisableDefaultLogin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -2177,17 +2027,17 @@ proto.BlockUser.Config.prototype.getDisableDefaultLogin = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setDisableDefaultLogin = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp created_at = 11;
+ * optional google.protobuf.Timestamp created_at = 7;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.Config.prototype.getCreatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
 };
 
 
@@ -2196,7 +2046,7 @@ proto.BlockUser.Config.prototype.getCreatedAt = function() {
  * @return {!proto.BlockUser.Config} returns this
 */
 proto.BlockUser.Config.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -2214,17 +2064,17 @@ proto.BlockUser.Config.prototype.clearCreatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.hasCreatedAt = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updated_at = 12;
+ * optional google.protobuf.Timestamp updated_at = 8;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.Config.prototype.getUpdatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
 };
 
 
@@ -2233,7 +2083,7 @@ proto.BlockUser.Config.prototype.getUpdatedAt = function() {
  * @return {!proto.BlockUser.Config} returns this
 */
 proto.BlockUser.Config.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -2251,17 +2101,17 @@ proto.BlockUser.Config.prototype.clearUpdatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.hasUpdatedAt = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional GeneralText general_text = 13;
+ * optional GeneralText general_text = 9;
  * @return {?proto.BlockUser.GeneralText}
  */
 proto.BlockUser.Config.prototype.getGeneralText = function() {
   return /** @type{?proto.BlockUser.GeneralText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.GeneralText, 13));
+    jspb.Message.getWrapperField(this, proto.BlockUser.GeneralText, 9));
 };
 
 
@@ -2270,7 +2120,7 @@ proto.BlockUser.Config.prototype.getGeneralText = function() {
  * @return {!proto.BlockUser.Config} returns this
 */
 proto.BlockUser.Config.prototype.setGeneralText = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -2288,17 +2138,17 @@ proto.BlockUser.Config.prototype.clearGeneralText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.hasGeneralText = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional WelcomeText welcome_text = 14;
+ * optional WelcomeText welcome_text = 10;
  * @return {?proto.BlockUser.WelcomeText}
  */
 proto.BlockUser.Config.prototype.getWelcomeText = function() {
   return /** @type{?proto.BlockUser.WelcomeText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.WelcomeText, 14));
+    jspb.Message.getWrapperField(this, proto.BlockUser.WelcomeText, 10));
 };
 
 
@@ -2307,7 +2157,7 @@ proto.BlockUser.Config.prototype.getWelcomeText = function() {
  * @return {!proto.BlockUser.Config} returns this
 */
 proto.BlockUser.Config.prototype.setWelcomeText = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -2325,17 +2175,17 @@ proto.BlockUser.Config.prototype.clearWelcomeText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.hasWelcomeText = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional LoginText login_text = 15;
+ * optional LoginText login_text = 11;
  * @return {?proto.BlockUser.LoginText}
  */
 proto.BlockUser.Config.prototype.getLoginText = function() {
   return /** @type{?proto.BlockUser.LoginText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.LoginText, 15));
+    jspb.Message.getWrapperField(this, proto.BlockUser.LoginText, 11));
 };
 
 
@@ -2344,7 +2194,7 @@ proto.BlockUser.Config.prototype.getLoginText = function() {
  * @return {!proto.BlockUser.Config} returns this
 */
 proto.BlockUser.Config.prototype.setLoginText = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -2362,17 +2212,17 @@ proto.BlockUser.Config.prototype.clearLoginText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.hasLoginText = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional RegisterText register_text = 16;
+ * optional RegisterText register_text = 12;
  * @return {?proto.BlockUser.RegisterText}
  */
 proto.BlockUser.Config.prototype.getRegisterText = function() {
   return /** @type{?proto.BlockUser.RegisterText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.RegisterText, 16));
+    jspb.Message.getWrapperField(this, proto.BlockUser.RegisterText, 12));
 };
 
 
@@ -2381,7 +2231,7 @@ proto.BlockUser.Config.prototype.getRegisterText = function() {
  * @return {!proto.BlockUser.Config} returns this
 */
 proto.BlockUser.Config.prototype.setRegisterText = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -2399,16 +2249,16 @@ proto.BlockUser.Config.prototype.clearRegisterText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.hasRegisterText = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional int32 internal_encryption_level = 17;
+ * optional int32 internal_encryption_level = 13;
  * @return {number}
  */
 proto.BlockUser.Config.prototype.getInternalEncryptionLevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
@@ -2417,16 +2267,16 @@ proto.BlockUser.Config.prototype.getInternalEncryptionLevel = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setInternalEncryptionLevel = function(value) {
-  return jspb.Message.setProto3IntField(this, 17, value);
+  return jspb.Message.setProto3IntField(this, 13, value);
 };
 
 
 /**
- * optional bool validate_password = 18;
+ * optional bool validate_password = 14;
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.getValidatePassword = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
@@ -2435,16 +2285,16 @@ proto.BlockUser.Config.prototype.getValidatePassword = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setValidatePassword = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 18, value);
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
 /**
- * optional string nuntio_connect_id = 19;
+ * optional string nuntio_connect_id = 15;
  * @return {string}
  */
 proto.BlockUser.Config.prototype.getNuntioConnectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
 
@@ -2453,16 +2303,16 @@ proto.BlockUser.Config.prototype.getNuntioConnectId = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setNuntioConnectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 19, value);
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
 /**
- * optional bool require_email_verification = 20;
+ * optional bool require_email_verification = 16;
  * @return {boolean}
  */
 proto.BlockUser.Config.prototype.getRequireEmailVerification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
 
@@ -2471,7 +2321,7 @@ proto.BlockUser.Config.prototype.getRequireEmailVerification = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setRequireEmailVerification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 20, value);
+  return jspb.Message.setProto3BooleanField(this, 16, value);
 };
 
 

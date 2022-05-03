@@ -208,7 +208,6 @@ class WelcomeText extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeTitle')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeDetails')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'continueWithNuntio')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
     ..hasRequiredFields = false
   ;
 
@@ -217,7 +216,6 @@ class WelcomeText extends $pb.GeneratedMessage {
     $core.String? welcomeTitle,
     $core.String? welcomeDetails,
     $core.String? continueWithNuntio,
-    $core.String? logo,
   }) {
     final _result = create();
     if (welcomeTitle != null) {
@@ -228,9 +226,6 @@ class WelcomeText extends $pb.GeneratedMessage {
     }
     if (continueWithNuntio != null) {
       _result.continueWithNuntio = continueWithNuntio;
-    }
-    if (logo != null) {
-      _result.logo = logo;
     }
     return _result;
   }
@@ -281,15 +276,6 @@ class WelcomeText extends $pb.GeneratedMessage {
   $core.bool hasContinueWithNuntio() => $_has(2);
   @$pb.TagNumber(3)
   void clearContinueWithNuntio() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get logo => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set logo($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasLogo() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearLogo() => clearField(4);
 }
 
 class RegisterText extends $pb.GeneratedMessage {
@@ -558,24 +544,20 @@ class Config extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Config', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'website')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'about')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'terms')
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableNuntioConnect')
-    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultSignup')
-    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultLogin')
-    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
-    ..aOM<GeneralText>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'generalText', subBuilder: GeneralText.create)
-    ..aOM<WelcomeText>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeText', subBuilder: WelcomeText.create)
-    ..aOM<LoginText>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginText', subBuilder: LoginText.create)
-    ..aOM<RegisterText>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerText', subBuilder: RegisterText.create)
-    ..a<$core.int>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
-    ..aOB(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
-    ..aOS(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nuntioConnectId')
-    ..aOB(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableNuntioConnect')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultSignup')
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultLogin')
+    ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<GeneralText>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'generalText', subBuilder: GeneralText.create)
+    ..aOM<WelcomeText>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeText', subBuilder: WelcomeText.create)
+    ..aOM<LoginText>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginText', subBuilder: LoginText.create)
+    ..aOM<RegisterText>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerText', subBuilder: RegisterText.create)
+    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
+    ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
+    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nuntioConnectId')
+    ..aOB(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..hasRequiredFields = false
   ;
 
@@ -583,11 +565,7 @@ class Config extends $pb.GeneratedMessage {
   factory Config({
     $core.String? id,
     $core.String? name,
-    $core.String? website,
-    $core.String? about,
-    $core.String? email,
     $core.String? logo,
-    $core.String? terms,
     $core.bool? enableNuntioConnect,
     $core.bool? disableDefaultSignup,
     $core.bool? disableDefaultLogin,
@@ -609,20 +587,8 @@ class Config extends $pb.GeneratedMessage {
     if (name != null) {
       _result.name = name;
     }
-    if (website != null) {
-      _result.website = website;
-    }
-    if (about != null) {
-      _result.about = about;
-    }
-    if (email != null) {
-      _result.email = email;
-    }
     if (logo != null) {
       _result.logo = logo;
-    }
-    if (terms != null) {
-      _result.terms = terms;
     }
     if (enableNuntioConnect != null) {
       _result.enableNuntioConnect = enableNuntioConnect;
@@ -705,178 +671,142 @@ class Config extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get website => $_getSZ(2);
+  $core.String get logo => $_getSZ(2);
   @$pb.TagNumber(3)
-  set website($core.String v) { $_setString(2, v); }
+  set logo($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasWebsite() => $_has(2);
+  $core.bool hasLogo() => $_has(2);
   @$pb.TagNumber(3)
-  void clearWebsite() => clearField(3);
+  void clearLogo() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get about => $_getSZ(3);
+  $core.bool get enableNuntioConnect => $_getBF(3);
   @$pb.TagNumber(4)
-  set about($core.String v) { $_setString(3, v); }
+  set enableNuntioConnect($core.bool v) { $_setBool(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasAbout() => $_has(3);
+  $core.bool hasEnableNuntioConnect() => $_has(3);
   @$pb.TagNumber(4)
-  void clearAbout() => clearField(4);
+  void clearEnableNuntioConnect() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get email => $_getSZ(4);
+  $core.bool get disableDefaultSignup => $_getBF(4);
   @$pb.TagNumber(5)
-  set email($core.String v) { $_setString(4, v); }
+  set disableDefaultSignup($core.bool v) { $_setBool(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasEmail() => $_has(4);
+  $core.bool hasDisableDefaultSignup() => $_has(4);
   @$pb.TagNumber(5)
-  void clearEmail() => clearField(5);
+  void clearDisableDefaultSignup() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get logo => $_getSZ(5);
+  $core.bool get disableDefaultLogin => $_getBF(5);
   @$pb.TagNumber(6)
-  set logo($core.String v) { $_setString(5, v); }
+  set disableDefaultLogin($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasLogo() => $_has(5);
+  $core.bool hasDisableDefaultLogin() => $_has(5);
   @$pb.TagNumber(6)
-  void clearLogo() => clearField(6);
+  void clearDisableDefaultLogin() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get terms => $_getSZ(6);
+  $1.Timestamp get createdAt => $_getN(6);
   @$pb.TagNumber(7)
-  set terms($core.String v) { $_setString(6, v); }
+  set createdAt($1.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasTerms() => $_has(6);
+  $core.bool hasCreatedAt() => $_has(6);
   @$pb.TagNumber(7)
-  void clearTerms() => clearField(7);
+  void clearCreatedAt() => clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureCreatedAt() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $core.bool get enableNuntioConnect => $_getBF(7);
+  $1.Timestamp get updatedAt => $_getN(7);
   @$pb.TagNumber(8)
-  set enableNuntioConnect($core.bool v) { $_setBool(7, v); }
+  set updatedAt($1.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasEnableNuntioConnect() => $_has(7);
+  $core.bool hasUpdatedAt() => $_has(7);
   @$pb.TagNumber(8)
-  void clearEnableNuntioConnect() => clearField(8);
+  void clearUpdatedAt() => clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $core.bool get disableDefaultSignup => $_getBF(8);
+  GeneralText get generalText => $_getN(8);
   @$pb.TagNumber(9)
-  set disableDefaultSignup($core.bool v) { $_setBool(8, v); }
+  set generalText(GeneralText v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasDisableDefaultSignup() => $_has(8);
+  $core.bool hasGeneralText() => $_has(8);
   @$pb.TagNumber(9)
-  void clearDisableDefaultSignup() => clearField(9);
+  void clearGeneralText() => clearField(9);
+  @$pb.TagNumber(9)
+  GeneralText ensureGeneralText() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $core.bool get disableDefaultLogin => $_getBF(9);
+  WelcomeText get welcomeText => $_getN(9);
   @$pb.TagNumber(10)
-  set disableDefaultLogin($core.bool v) { $_setBool(9, v); }
+  set welcomeText(WelcomeText v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasDisableDefaultLogin() => $_has(9);
+  $core.bool hasWelcomeText() => $_has(9);
   @$pb.TagNumber(10)
-  void clearDisableDefaultLogin() => clearField(10);
+  void clearWelcomeText() => clearField(10);
+  @$pb.TagNumber(10)
+  WelcomeText ensureWelcomeText() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $1.Timestamp get createdAt => $_getN(10);
+  LoginText get loginText => $_getN(10);
   @$pb.TagNumber(11)
-  set createdAt($1.Timestamp v) { setField(11, v); }
+  set loginText(LoginText v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasCreatedAt() => $_has(10);
+  $core.bool hasLoginText() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCreatedAt() => clearField(11);
+  void clearLoginText() => clearField(11);
   @$pb.TagNumber(11)
-  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+  LoginText ensureLoginText() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  $1.Timestamp get updatedAt => $_getN(11);
+  RegisterText get registerText => $_getN(11);
   @$pb.TagNumber(12)
-  set updatedAt($1.Timestamp v) { setField(12, v); }
+  set registerText(RegisterText v) { setField(12, v); }
   @$pb.TagNumber(12)
-  $core.bool hasUpdatedAt() => $_has(11);
+  $core.bool hasRegisterText() => $_has(11);
   @$pb.TagNumber(12)
-  void clearUpdatedAt() => clearField(12);
+  void clearRegisterText() => clearField(12);
   @$pb.TagNumber(12)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
+  RegisterText ensureRegisterText() => $_ensure(11);
 
   @$pb.TagNumber(13)
-  GeneralText get generalText => $_getN(12);
+  $core.int get internalEncryptionLevel => $_getIZ(12);
   @$pb.TagNumber(13)
-  set generalText(GeneralText v) { setField(13, v); }
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasGeneralText() => $_has(12);
+  $core.bool hasInternalEncryptionLevel() => $_has(12);
   @$pb.TagNumber(13)
-  void clearGeneralText() => clearField(13);
-  @$pb.TagNumber(13)
-  GeneralText ensureGeneralText() => $_ensure(12);
+  void clearInternalEncryptionLevel() => clearField(13);
 
   @$pb.TagNumber(14)
-  WelcomeText get welcomeText => $_getN(13);
+  $core.bool get validatePassword => $_getBF(13);
   @$pb.TagNumber(14)
-  set welcomeText(WelcomeText v) { setField(14, v); }
+  set validatePassword($core.bool v) { $_setBool(13, v); }
   @$pb.TagNumber(14)
-  $core.bool hasWelcomeText() => $_has(13);
+  $core.bool hasValidatePassword() => $_has(13);
   @$pb.TagNumber(14)
-  void clearWelcomeText() => clearField(14);
-  @$pb.TagNumber(14)
-  WelcomeText ensureWelcomeText() => $_ensure(13);
+  void clearValidatePassword() => clearField(14);
 
   @$pb.TagNumber(15)
-  LoginText get loginText => $_getN(14);
+  $core.String get nuntioConnectId => $_getSZ(14);
   @$pb.TagNumber(15)
-  set loginText(LoginText v) { setField(15, v); }
+  set nuntioConnectId($core.String v) { $_setString(14, v); }
   @$pb.TagNumber(15)
-  $core.bool hasLoginText() => $_has(14);
+  $core.bool hasNuntioConnectId() => $_has(14);
   @$pb.TagNumber(15)
-  void clearLoginText() => clearField(15);
-  @$pb.TagNumber(15)
-  LoginText ensureLoginText() => $_ensure(14);
+  void clearNuntioConnectId() => clearField(15);
 
   @$pb.TagNumber(16)
-  RegisterText get registerText => $_getN(15);
+  $core.bool get requireEmailVerification => $_getBF(15);
   @$pb.TagNumber(16)
-  set registerText(RegisterText v) { setField(16, v); }
+  set requireEmailVerification($core.bool v) { $_setBool(15, v); }
   @$pb.TagNumber(16)
-  $core.bool hasRegisterText() => $_has(15);
+  $core.bool hasRequireEmailVerification() => $_has(15);
   @$pb.TagNumber(16)
-  void clearRegisterText() => clearField(16);
-  @$pb.TagNumber(16)
-  RegisterText ensureRegisterText() => $_ensure(15);
-
-  @$pb.TagNumber(17)
-  $core.int get internalEncryptionLevel => $_getIZ(16);
-  @$pb.TagNumber(17)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(16, v); }
-  @$pb.TagNumber(17)
-  $core.bool hasInternalEncryptionLevel() => $_has(16);
-  @$pb.TagNumber(17)
-  void clearInternalEncryptionLevel() => clearField(17);
-
-  @$pb.TagNumber(18)
-  $core.bool get validatePassword => $_getBF(17);
-  @$pb.TagNumber(18)
-  set validatePassword($core.bool v) { $_setBool(17, v); }
-  @$pb.TagNumber(18)
-  $core.bool hasValidatePassword() => $_has(17);
-  @$pb.TagNumber(18)
-  void clearValidatePassword() => clearField(18);
-
-  @$pb.TagNumber(19)
-  $core.String get nuntioConnectId => $_getSZ(18);
-  @$pb.TagNumber(19)
-  set nuntioConnectId($core.String v) { $_setString(18, v); }
-  @$pb.TagNumber(19)
-  $core.bool hasNuntioConnectId() => $_has(18);
-  @$pb.TagNumber(19)
-  void clearNuntioConnectId() => clearField(19);
-
-  @$pb.TagNumber(20)
-  $core.bool get requireEmailVerification => $_getBF(19);
-  @$pb.TagNumber(20)
-  set requireEmailVerification($core.bool v) { $_setBool(19, v); }
-  @$pb.TagNumber(20)
-  $core.bool hasRequireEmailVerification() => $_has(19);
-  @$pb.TagNumber(20)
-  void clearRequireEmailVerification() => clearField(20);
+  void clearRequireEmailVerification() => clearField(16);
 }
 
 class Email extends $pb.GeneratedMessage {
