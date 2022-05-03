@@ -62,7 +62,6 @@ message WelcomeText {
     string welcome_title = 1; 
     string welcome_details = 2;
     string continue_with_nuntio = 3;
-    string logo = 4;
 }
 
 message RegisterText {
@@ -88,24 +87,20 @@ message LoginText {
 message Config {
     string id = 1;
     string name = 2;
-    string website = 3;
-    string about = 4;
-    string email = 5;
-    string logo = 6;
-    string terms = 7;
-    bool enable_nuntio_connect = 8;
-    bool disable_default_signup = 9;
-    bool disable_default_login = 10;
-    google.protobuf.Timestamp created_at = 11;
-    google.protobuf.Timestamp updated_at = 12;
-    GeneralText general_text = 13;
-    WelcomeText welcome_text = 14;
-    LoginText login_text = 15;
-    RegisterText register_text = 16;
-    int32 internal_encryption_level = 17;
-    bool validate_password = 18;
-    string nuntio_connect_id = 19;
-    bool require_email_verification = 20;
+    string logo = 3;
+    bool enable_nuntio_connect = 4;
+    bool disable_default_signup = 5;
+    bool disable_default_login = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+    GeneralText general_text = 9;
+    WelcomeText welcome_text = 10;
+    LoginText login_text = 11;
+    RegisterText register_text = 12;
+    int32 internal_encryption_level = 13;
+    bool validate_password = 14;
+    string nuntio_connect_id = 15;
+    bool require_email_verification = 16;
 }
 
 message Email {
