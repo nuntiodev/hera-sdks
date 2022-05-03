@@ -2364,7 +2364,8 @@ proto.BlockUser.Email.toObject = function(includeInstance, msg) {
     footerMessage: jspb.Message.getFieldWithDefault(msg, 5, ""),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    encryptedAt: (f = msg.getEncryptedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    encryptedAt: (f = msg.getEncryptedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    triggerOnCreate: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -2435,6 +2436,10 @@ proto.BlockUser.Email.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEncryptedAt(value);
+      break;
+    case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setTriggerOnCreate(value);
       break;
     default:
       reader.skipField();
@@ -2522,6 +2527,13 @@ proto.BlockUser.Email.serializeBinaryToWriter = function(message, writer) {
       8,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTriggerOnCreate();
+  if (f) {
+    writer.writeBool(
+      9,
+      f
     );
   }
 };
@@ -2725,6 +2737,24 @@ proto.BlockUser.Email.prototype.clearEncryptedAt = function() {
  */
 proto.BlockUser.Email.prototype.hasEncryptedAt = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool trigger_on_create = 9;
+ * @return {boolean}
+ */
+proto.BlockUser.Email.prototype.getTriggerOnCreate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.Email} returns this
+ */
+proto.BlockUser.Email.prototype.setTriggerOnCreate = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 

@@ -819,6 +819,7 @@ class Email extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'triggerOnCreate')
     ..hasRequiredFields = false
   ;
 
@@ -832,6 +833,7 @@ class Email extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
     $1.Timestamp? encryptedAt,
+    $core.bool? triggerOnCreate,
   }) {
     final _result = create();
     if (id != null) {
@@ -857,6 +859,9 @@ class Email extends $pb.GeneratedMessage {
     }
     if (encryptedAt != null) {
       _result.encryptedAt = encryptedAt;
+    }
+    if (triggerOnCreate != null) {
+      _result.triggerOnCreate = triggerOnCreate;
     }
     return _result;
   }
@@ -958,6 +963,15 @@ class Email extends $pb.GeneratedMessage {
   void clearEncryptedAt() => clearField(8);
   @$pb.TagNumber(8)
   $1.Timestamp ensureEncryptedAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.bool get triggerOnCreate => $_getBF(8);
+  @$pb.TagNumber(9)
+  set triggerOnCreate($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasTriggerOnCreate() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTriggerOnCreate() => clearField(9);
 }
 
 class User extends $pb.GeneratedMessage {
