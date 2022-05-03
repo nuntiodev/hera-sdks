@@ -879,6 +879,157 @@ class Config extends $pb.GeneratedMessage {
   void clearRequireEmailVerification() => clearField(20);
 }
 
+class Email extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Email', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logoUrl')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeMessage')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bodyMessage')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'footerMessage')
+    ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  Email._() : super();
+  factory Email({
+    $core.String? id,
+    $core.String? logoUrl,
+    $core.String? welcomeMessage,
+    $core.String? bodyMessage,
+    $core.String? footerMessage,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+    $1.Timestamp? encryptedAt,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (logoUrl != null) {
+      _result.logoUrl = logoUrl;
+    }
+    if (welcomeMessage != null) {
+      _result.welcomeMessage = welcomeMessage;
+    }
+    if (bodyMessage != null) {
+      _result.bodyMessage = bodyMessage;
+    }
+    if (footerMessage != null) {
+      _result.footerMessage = footerMessage;
+    }
+    if (createdAt != null) {
+      _result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      _result.updatedAt = updatedAt;
+    }
+    if (encryptedAt != null) {
+      _result.encryptedAt = encryptedAt;
+    }
+    return _result;
+  }
+  factory Email.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Email.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Email clone() => Email()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Email copyWith(void Function(Email) updates) => super.copyWith((message) => updates(message as Email)) as Email; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Email create() => Email._();
+  Email createEmptyInstance() => create();
+  static $pb.PbList<Email> createRepeated() => $pb.PbList<Email>();
+  @$core.pragma('dart2js:noInline')
+  static Email getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Email>(create);
+  static Email? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get logoUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set logoUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLogoUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLogoUrl() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get welcomeMessage => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set welcomeMessage($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWelcomeMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWelcomeMessage() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get bodyMessage => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set bodyMessage($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBodyMessage() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBodyMessage() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get footerMessage => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set footerMessage($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFooterMessage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFooterMessage() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get createdAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set createdAt($1.Timestamp v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureCreatedAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get updatedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set updatedAt($1.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUpdatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUpdatedAt() => clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get encryptedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set encryptedAt($1.Timestamp v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasEncryptedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEncryptedAt() => clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureEncryptedAt() => $_ensure(7);
+}
+
 class User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
@@ -1928,6 +2079,7 @@ class UserRequest extends $pb.GeneratedMessage {
     ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'averageActiveTime', $pb.PbFieldType.O3)
     ..aOM<Config>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
+    ..aOM<Email>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Email.create)
     ..hasRequiredFields = false
   ;
 
@@ -1948,6 +2100,7 @@ class UserRequest extends $pb.GeneratedMessage {
     $core.int? averageActiveTime,
     Config? config,
     $core.bool? requireEmailVerification,
+    Email? email,
   }) {
     final _result = create();
     if (user != null) {
@@ -1994,6 +2147,9 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (requireEmailVerification != null) {
       _result.requireEmailVerification = requireEmailVerification;
+    }
+    if (email != null) {
+      _result.email = email;
     }
     return _result;
   }
@@ -2158,6 +2314,17 @@ class UserRequest extends $pb.GeneratedMessage {
   $core.bool hasRequireEmailVerification() => $_has(14);
   @$pb.TagNumber(15)
   void clearRequireEmailVerification() => clearField(15);
+
+  @$pb.TagNumber(16)
+  Email get email => $_getN(15);
+  @$pb.TagNumber(16)
+  set email(Email v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasEmail() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearEmail() => clearField(16);
+  @$pb.TagNumber(16)
+  Email ensureEmail() => $_ensure(15);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
