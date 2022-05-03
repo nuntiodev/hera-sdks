@@ -219,13 +219,14 @@ message UserRequest {
     string encryption_key = 5;
     repeated User user_batch = 6;
     Token token = 7;
-    bool validatePassword = 8;
+    bool validate_password = 8;
     string cloud_token = 9;
     string token_pointer = 10;
     ActiveMeasurement active_measurement = 11;
     int32 total_active_time = 12;
     int32 average_active_time = 13;
     Config config = 14;
+    bool require_email_verification = 15;
 }
 
 message UserResponse {
