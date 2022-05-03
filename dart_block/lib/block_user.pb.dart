@@ -208,6 +208,7 @@ class WelcomeText extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeTitle')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeDetails')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'continueWithNuntio')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
     ..hasRequiredFields = false
   ;
 
@@ -216,6 +217,7 @@ class WelcomeText extends $pb.GeneratedMessage {
     $core.String? welcomeTitle,
     $core.String? welcomeDetails,
     $core.String? continueWithNuntio,
+    $core.String? logo,
   }) {
     final _result = create();
     if (welcomeTitle != null) {
@@ -226,6 +228,9 @@ class WelcomeText extends $pb.GeneratedMessage {
     }
     if (continueWithNuntio != null) {
       _result.continueWithNuntio = continueWithNuntio;
+    }
+    if (logo != null) {
+      _result.logo = logo;
     }
     return _result;
   }
@@ -276,6 +281,15 @@ class WelcomeText extends $pb.GeneratedMessage {
   $core.bool hasContinueWithNuntio() => $_has(2);
   @$pb.TagNumber(3)
   void clearContinueWithNuntio() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get logo => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set logo($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLogo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLogo() => clearField(4);
 }
 
 class RegisterText extends $pb.GeneratedMessage {
@@ -858,18 +872,16 @@ class User extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image')
-    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'externalEncrypted')
-    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'externalEncryptionLevel', $pb.PbFieldType.O3)
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncrypted')
-    ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata')
-    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
-    ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
-    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
-    ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
-    ..aOM<$1.Timestamp>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
+    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'externalEncryptionLevel', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata')
+    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
+    ..aOB(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
+    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
+    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
+    ..aOM<$1.Timestamp>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -880,9 +892,7 @@ class User extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? password,
     $core.String? image,
-    $core.bool? externalEncrypted,
     $core.int? externalEncryptionLevel,
-    $core.bool? internalEncrypted,
     $core.int? internalEncryptionLevel,
     $core.String? metadata,
     $1.Timestamp? createdAt,
@@ -909,14 +919,8 @@ class User extends $pb.GeneratedMessage {
     if (image != null) {
       _result.image = image;
     }
-    if (externalEncrypted != null) {
-      _result.externalEncrypted = externalEncrypted;
-    }
     if (externalEncryptionLevel != null) {
       _result.externalEncryptionLevel = externalEncryptionLevel;
-    }
-    if (internalEncrypted != null) {
-      _result.internalEncrypted = internalEncrypted;
     }
     if (internalEncryptionLevel != null) {
       _result.internalEncryptionLevel = internalEncryptionLevel;
@@ -1014,120 +1018,102 @@ class User extends $pb.GeneratedMessage {
   void clearImage() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get externalEncrypted => $_getBF(5);
+  $core.int get externalEncryptionLevel => $_getIZ(5);
   @$pb.TagNumber(6)
-  set externalEncrypted($core.bool v) { $_setBool(5, v); }
+  set externalEncryptionLevel($core.int v) { $_setSignedInt32(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasExternalEncrypted() => $_has(5);
+  $core.bool hasExternalEncryptionLevel() => $_has(5);
   @$pb.TagNumber(6)
-  void clearExternalEncrypted() => clearField(6);
+  void clearExternalEncryptionLevel() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.int get externalEncryptionLevel => $_getIZ(6);
+  $core.int get internalEncryptionLevel => $_getIZ(6);
   @$pb.TagNumber(7)
-  set externalEncryptionLevel($core.int v) { $_setSignedInt32(6, v); }
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasExternalEncryptionLevel() => $_has(6);
+  $core.bool hasInternalEncryptionLevel() => $_has(6);
   @$pb.TagNumber(7)
-  void clearExternalEncryptionLevel() => clearField(7);
+  void clearInternalEncryptionLevel() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get internalEncrypted => $_getBF(7);
+  $core.String get metadata => $_getSZ(7);
   @$pb.TagNumber(8)
-  set internalEncrypted($core.bool v) { $_setBool(7, v); }
+  set metadata($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasInternalEncrypted() => $_has(7);
+  $core.bool hasMetadata() => $_has(7);
   @$pb.TagNumber(8)
-  void clearInternalEncrypted() => clearField(8);
+  void clearMetadata() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.int get internalEncryptionLevel => $_getIZ(8);
+  $1.Timestamp get createdAt => $_getN(8);
   @$pb.TagNumber(9)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(8, v); }
+  set createdAt($1.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasInternalEncryptionLevel() => $_has(8);
+  $core.bool hasCreatedAt() => $_has(8);
   @$pb.TagNumber(9)
-  void clearInternalEncryptionLevel() => clearField(9);
+  void clearCreatedAt() => clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureCreatedAt() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $core.String get metadata => $_getSZ(9);
+  $1.Timestamp get updatedAt => $_getN(9);
   @$pb.TagNumber(10)
-  set metadata($core.String v) { $_setString(9, v); }
+  set updatedAt($1.Timestamp v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasMetadata() => $_has(9);
+  $core.bool hasUpdatedAt() => $_has(9);
   @$pb.TagNumber(10)
-  void clearMetadata() => clearField(10);
+  void clearUpdatedAt() => clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $1.Timestamp get createdAt => $_getN(10);
+  $1.Timestamp get encryptedAt => $_getN(10);
   @$pb.TagNumber(11)
-  set createdAt($1.Timestamp v) { setField(11, v); }
+  set encryptedAt($1.Timestamp v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasCreatedAt() => $_has(10);
+  $core.bool hasEncryptedAt() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCreatedAt() => clearField(11);
+  void clearEncryptedAt() => clearField(11);
   @$pb.TagNumber(11)
-  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+  $1.Timestamp ensureEncryptedAt() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  $1.Timestamp get updatedAt => $_getN(11);
+  $core.bool get requireEmailVerification => $_getBF(11);
   @$pb.TagNumber(12)
-  set updatedAt($1.Timestamp v) { setField(12, v); }
+  set requireEmailVerification($core.bool v) { $_setBool(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasUpdatedAt() => $_has(11);
+  $core.bool hasRequireEmailVerification() => $_has(11);
   @$pb.TagNumber(12)
-  void clearUpdatedAt() => clearField(12);
-  @$pb.TagNumber(12)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
+  void clearRequireEmailVerification() => clearField(12);
 
   @$pb.TagNumber(13)
-  $1.Timestamp get encryptedAt => $_getN(12);
+  $core.String get firstName => $_getSZ(12);
   @$pb.TagNumber(13)
-  set encryptedAt($1.Timestamp v) { setField(13, v); }
+  set firstName($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasEncryptedAt() => $_has(12);
+  $core.bool hasFirstName() => $_has(12);
   @$pb.TagNumber(13)
-  void clearEncryptedAt() => clearField(13);
-  @$pb.TagNumber(13)
-  $1.Timestamp ensureEncryptedAt() => $_ensure(12);
+  void clearFirstName() => clearField(13);
 
   @$pb.TagNumber(14)
-  $core.bool get requireEmailVerification => $_getBF(13);
+  $core.String get lastName => $_getSZ(13);
   @$pb.TagNumber(14)
-  set requireEmailVerification($core.bool v) { $_setBool(13, v); }
+  set lastName($core.String v) { $_setString(13, v); }
   @$pb.TagNumber(14)
-  $core.bool hasRequireEmailVerification() => $_has(13);
+  $core.bool hasLastName() => $_has(13);
   @$pb.TagNumber(14)
-  void clearRequireEmailVerification() => clearField(14);
+  void clearLastName() => clearField(14);
 
   @$pb.TagNumber(15)
-  $core.String get firstName => $_getSZ(14);
+  $1.Timestamp get birthdate => $_getN(14);
   @$pb.TagNumber(15)
-  set firstName($core.String v) { $_setString(14, v); }
+  set birthdate($1.Timestamp v) { setField(15, v); }
   @$pb.TagNumber(15)
-  $core.bool hasFirstName() => $_has(14);
+  $core.bool hasBirthdate() => $_has(14);
   @$pb.TagNumber(15)
-  void clearFirstName() => clearField(15);
-
-  @$pb.TagNumber(16)
-  $core.String get lastName => $_getSZ(15);
-  @$pb.TagNumber(16)
-  set lastName($core.String v) { $_setString(15, v); }
-  @$pb.TagNumber(16)
-  $core.bool hasLastName() => $_has(15);
-  @$pb.TagNumber(16)
-  void clearLastName() => clearField(16);
-
-  @$pb.TagNumber(17)
-  $1.Timestamp get birthdate => $_getN(16);
-  @$pb.TagNumber(17)
-  set birthdate($1.Timestamp v) { setField(17, v); }
-  @$pb.TagNumber(17)
-  $core.bool hasBirthdate() => $_has(16);
-  @$pb.TagNumber(17)
-  void clearBirthdate() => clearField(17);
-  @$pb.TagNumber(17)
-  $1.Timestamp ensureBirthdate() => $_ensure(16);
+  void clearBirthdate() => clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureBirthdate() => $_ensure(14);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
@@ -1304,12 +1290,11 @@ class Token extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usedAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiresAt', subBuilder: $1.Timestamp.create)
-    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encrypted')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accessToken')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refreshToken')
-    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
-    ..aOM<Location>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loggedInFrom', subBuilder: Location.create)
-    ..e<TokenType>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: TokenType.TOKEN_TYPE_INVALID, valueOf: TokenType.valueOf, enumValues: TokenType.values)
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accessToken')
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refreshToken')
+    ..a<$core.int>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
+    ..aOM<Location>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loggedInFrom', subBuilder: Location.create)
+    ..e<TokenType>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: TokenType.TOKEN_TYPE_INVALID, valueOf: TokenType.valueOf, enumValues: TokenType.values)
     ..hasRequiredFields = false
   ;
 
@@ -1323,7 +1308,6 @@ class Token extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $1.Timestamp? usedAt,
     $1.Timestamp? expiresAt,
-    $core.bool? encrypted,
     $core.String? accessToken,
     $core.String? refreshToken,
     $core.int? internalEncryptionLevel,
@@ -1354,9 +1338,6 @@ class Token extends $pb.GeneratedMessage {
     }
     if (expiresAt != null) {
       _result.expiresAt = expiresAt;
-    }
-    if (encrypted != null) {
-      _result.encrypted = encrypted;
     }
     if (accessToken != null) {
       _result.accessToken = accessToken;
@@ -1477,60 +1458,51 @@ class Token extends $pb.GeneratedMessage {
   $1.Timestamp ensureExpiresAt() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $core.bool get encrypted => $_getBF(8);
+  $core.String get accessToken => $_getSZ(8);
   @$pb.TagNumber(9)
-  set encrypted($core.bool v) { $_setBool(8, v); }
+  set accessToken($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasEncrypted() => $_has(8);
+  $core.bool hasAccessToken() => $_has(8);
   @$pb.TagNumber(9)
-  void clearEncrypted() => clearField(9);
+  void clearAccessToken() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get accessToken => $_getSZ(9);
+  $core.String get refreshToken => $_getSZ(9);
   @$pb.TagNumber(10)
-  set accessToken($core.String v) { $_setString(9, v); }
+  set refreshToken($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasAccessToken() => $_has(9);
+  $core.bool hasRefreshToken() => $_has(9);
   @$pb.TagNumber(10)
-  void clearAccessToken() => clearField(10);
+  void clearRefreshToken() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get refreshToken => $_getSZ(10);
+  $core.int get internalEncryptionLevel => $_getIZ(10);
   @$pb.TagNumber(11)
-  set refreshToken($core.String v) { $_setString(10, v); }
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasRefreshToken() => $_has(10);
+  $core.bool hasInternalEncryptionLevel() => $_has(10);
   @$pb.TagNumber(11)
-  void clearRefreshToken() => clearField(11);
+  void clearInternalEncryptionLevel() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.int get internalEncryptionLevel => $_getIZ(11);
+  Location get loggedInFrom => $_getN(11);
   @$pb.TagNumber(12)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(11, v); }
+  set loggedInFrom(Location v) { setField(12, v); }
   @$pb.TagNumber(12)
-  $core.bool hasInternalEncryptionLevel() => $_has(11);
+  $core.bool hasLoggedInFrom() => $_has(11);
   @$pb.TagNumber(12)
-  void clearInternalEncryptionLevel() => clearField(12);
+  void clearLoggedInFrom() => clearField(12);
+  @$pb.TagNumber(12)
+  Location ensureLoggedInFrom() => $_ensure(11);
 
   @$pb.TagNumber(13)
-  Location get loggedInFrom => $_getN(12);
+  TokenType get type => $_getN(12);
   @$pb.TagNumber(13)
-  set loggedInFrom(Location v) { setField(13, v); }
+  set type(TokenType v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasLoggedInFrom() => $_has(12);
+  $core.bool hasType() => $_has(12);
   @$pb.TagNumber(13)
-  void clearLoggedInFrom() => clearField(13);
-  @$pb.TagNumber(13)
-  Location ensureLoggedInFrom() => $_ensure(12);
-
-  @$pb.TagNumber(14)
-  TokenType get type => $_getN(13);
-  @$pb.TagNumber(14)
-  set type(TokenType v) { setField(14, v); }
-  @$pb.TagNumber(14)
-  $core.bool hasType() => $_has(13);
-  @$pb.TagNumber(14)
-  void clearType() => clearField(14);
+  void clearType() => clearField(13);
 }
 
 class ActiveMeasurement extends $pb.GeneratedMessage {

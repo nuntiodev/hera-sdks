@@ -63,11 +63,12 @@ const WelcomeText$json = const {
     const {'1': 'welcome_title', '3': 1, '4': 1, '5': 9, '10': 'welcomeTitle'},
     const {'1': 'welcome_details', '3': 2, '4': 1, '5': 9, '10': 'welcomeDetails'},
     const {'1': 'continue_with_nuntio', '3': 3, '4': 1, '5': 9, '10': 'continueWithNuntio'},
+    const {'1': 'logo', '3': 4, '4': 1, '5': 9, '10': 'logo'},
   ],
 };
 
 /// Descriptor for `WelcomeText`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List welcomeTextDescriptor = $convert.base64Decode('CgtXZWxjb21lVGV4dBIjCg13ZWxjb21lX3RpdGxlGAEgASgJUgx3ZWxjb21lVGl0bGUSJwoPd2VsY29tZV9kZXRhaWxzGAIgASgJUg53ZWxjb21lRGV0YWlscxIwChRjb250aW51ZV93aXRoX251bnRpbxgDIAEoCVISY29udGludWVXaXRoTnVudGlv');
+final $typed_data.Uint8List welcomeTextDescriptor = $convert.base64Decode('CgtXZWxjb21lVGV4dBIjCg13ZWxjb21lX3RpdGxlGAEgASgJUgx3ZWxjb21lVGl0bGUSJwoPd2VsY29tZV9kZXRhaWxzGAIgASgJUg53ZWxjb21lRGV0YWlscxIwChRjb250aW51ZV93aXRoX251bnRpbxgDIAEoCVISY29udGludWVXaXRoTnVudGlvEhIKBGxvZ28YBCABKAlSBGxvZ28=');
 @$core.Deprecated('Use registerTextDescriptor instead')
 const RegisterText$json = const {
   '1': 'RegisterText',
@@ -137,23 +138,21 @@ const User$json = const {
     const {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
     const {'1': 'password', '3': 4, '4': 1, '5': 9, '10': 'password'},
     const {'1': 'image', '3': 5, '4': 1, '5': 9, '10': 'image'},
-    const {'1': 'external_encrypted', '3': 6, '4': 1, '5': 8, '10': 'externalEncrypted'},
-    const {'1': 'external_encryption_level', '3': 7, '4': 1, '5': 5, '10': 'externalEncryptionLevel'},
-    const {'1': 'internal_encrypted', '3': 8, '4': 1, '5': 8, '10': 'internalEncrypted'},
-    const {'1': 'internal_encryption_level', '3': 9, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
-    const {'1': 'metadata', '3': 10, '4': 1, '5': 9, '10': 'metadata'},
-    const {'1': 'created_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updated_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'encrypted_at', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'encryptedAt'},
-    const {'1': 'require_email_verification', '3': 14, '4': 1, '5': 8, '10': 'requireEmailVerification'},
-    const {'1': 'first_name', '3': 15, '4': 1, '5': 9, '10': 'firstName'},
-    const {'1': 'last_name', '3': 16, '4': 1, '5': 9, '10': 'lastName'},
-    const {'1': 'birthdate', '3': 17, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
+    const {'1': 'external_encryption_level', '3': 6, '4': 1, '5': 5, '10': 'externalEncryptionLevel'},
+    const {'1': 'internal_encryption_level', '3': 7, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
+    const {'1': 'metadata', '3': 8, '4': 1, '5': 9, '10': 'metadata'},
+    const {'1': 'created_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updated_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'encrypted_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'encryptedAt'},
+    const {'1': 'require_email_verification', '3': 12, '4': 1, '5': 8, '10': 'requireEmailVerification'},
+    const {'1': 'first_name', '3': 13, '4': 1, '5': 9, '10': 'firstName'},
+    const {'1': 'last_name', '3': 14, '4': 1, '5': 9, '10': 'lastName'},
+    const {'1': 'birthdate', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgtvcHRpb25hbF9pZBgCIAEoCVIKb3B0aW9uYWxJZBIUCgVlbWFpbBgDIAEoCVIFZW1haWwSGgoIcGFzc3dvcmQYBCABKAlSCHBhc3N3b3JkEhQKBWltYWdlGAUgASgJUgVpbWFnZRItChJleHRlcm5hbF9lbmNyeXB0ZWQYBiABKAhSEWV4dGVybmFsRW5jcnlwdGVkEjoKGWV4dGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYByABKAVSF2V4dGVybmFsRW5jcnlwdGlvbkxldmVsEi0KEmludGVybmFsX2VuY3J5cHRlZBgIIAEoCFIRaW50ZXJuYWxFbmNyeXB0ZWQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgJIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSGgoIbWV0YWRhdGEYCiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBI8ChpyZXF1aXJlX2VtYWlsX3ZlcmlmaWNhdGlvbhgOIAEoCFIYcmVxdWlyZUVtYWlsVmVyaWZpY2F0aW9uEh0KCmZpcnN0X25hbWUYDyABKAlSCWZpcnN0TmFtZRIbCglsYXN0X25hbWUYECABKAlSCGxhc3ROYW1lEjgKCWJpcnRoZGF0ZRgRIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWJpcnRoZGF0ZQ==');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgtvcHRpb25hbF9pZBgCIAEoCVIKb3B0aW9uYWxJZBIUCgVlbWFpbBgDIAEoCVIFZW1haWwSGgoIcGFzc3dvcmQYBCABKAlSCHBhc3N3b3JkEhQKBWltYWdlGAUgASgJUgVpbWFnZRI6ChlleHRlcm5hbF9lbmNyeXB0aW9uX2xldmVsGAYgASgFUhdleHRlcm5hbEVuY3J5cHRpb25MZXZlbBI6ChlpbnRlcm5hbF9lbmNyeXB0aW9uX2xldmVsGAcgASgFUhdpbnRlcm5hbEVuY3J5cHRpb25MZXZlbBIaCghtZXRhZGF0YRgIIAEoCVIIbWV0YWRhdGESOQoKY3JlYXRlZF9hdBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0Ej0KDGVuY3J5cHRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2VuY3J5cHRlZEF0EjwKGnJlcXVpcmVfZW1haWxfdmVyaWZpY2F0aW9uGAwgASgIUhhyZXF1aXJlRW1haWxWZXJpZmljYXRpb24SHQoKZmlyc3RfbmFtZRgNIAEoCVIJZmlyc3ROYW1lEhsKCWxhc3RfbmFtZRgOIAEoCVIIbGFzdE5hbWUSOAoJYmlydGhkYXRlGA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJYmlydGhkYXRl');
 @$core.Deprecated('Use userFilterDescriptor instead')
 const UserFilter$json = const {
   '1': 'UserFilter',
@@ -210,17 +209,16 @@ const Token$json = const {
     const {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'used_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'usedAt'},
     const {'1': 'expires_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
-    const {'1': 'encrypted', '3': 9, '4': 1, '5': 8, '10': 'encrypted'},
-    const {'1': 'access_token', '3': 10, '4': 1, '5': 9, '10': 'accessToken'},
-    const {'1': 'refresh_token', '3': 11, '4': 1, '5': 9, '10': 'refreshToken'},
-    const {'1': 'internal_encryption_level', '3': 12, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
-    const {'1': 'logged_in_from', '3': 13, '4': 1, '5': 11, '6': '.BlockUser.Location', '10': 'loggedInFrom'},
-    const {'1': 'type', '3': 14, '4': 1, '5': 14, '6': '.BlockUser.TokenType', '10': 'type'},
+    const {'1': 'access_token', '3': 9, '4': 1, '5': 9, '10': 'accessToken'},
+    const {'1': 'refresh_token', '3': 10, '4': 1, '5': 9, '10': 'refreshToken'},
+    const {'1': 'internal_encryption_level', '3': 11, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
+    const {'1': 'logged_in_from', '3': 12, '4': 1, '5': 11, '6': '.BlockUser.Location', '10': 'loggedInFrom'},
+    const {'1': 'type', '3': 13, '4': 1, '5': 14, '6': '.BlockUser.TokenType', '10': 'type'},
   ],
 };
 
 /// Descriptor for `Token`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List tokenDescriptor = $convert.base64Decode('CgVUb2tlbhIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB2Jsb2NrZWQYAyABKAhSB2Jsb2NrZWQSHwoLZGV2aWNlX2luZm8YBCABKAlSCmRldmljZUluZm8SOQoKYmxvY2tlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWJsb2NrZWRBdBI5CgpjcmVhdGVkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjMKB3VzZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgZ1c2VkQXQSOQoKZXhwaXJlc19hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBIcCgllbmNyeXB0ZWQYCSABKAhSCWVuY3J5cHRlZBIhCgxhY2Nlc3NfdG9rZW4YCiABKAlSC2FjY2Vzc1Rva2VuEiMKDXJlZnJlc2hfdG9rZW4YCyABKAlSDHJlZnJlc2hUb2tlbhI6ChlpbnRlcm5hbF9lbmNyeXB0aW9uX2xldmVsGAwgASgFUhdpbnRlcm5hbEVuY3J5cHRpb25MZXZlbBI5Cg5sb2dnZWRfaW5fZnJvbRgNIAEoCzITLkJsb2NrVXNlci5Mb2NhdGlvblIMbG9nZ2VkSW5Gcm9tEigKBHR5cGUYDiABKA4yFC5CbG9ja1VzZXIuVG9rZW5UeXBlUgR0eXBl');
+final $typed_data.Uint8List tokenDescriptor = $convert.base64Decode('CgVUb2tlbhIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB2Jsb2NrZWQYAyABKAhSB2Jsb2NrZWQSHwoLZGV2aWNlX2luZm8YBCABKAlSCmRldmljZUluZm8SOQoKYmxvY2tlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWJsb2NrZWRBdBI5CgpjcmVhdGVkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjMKB3VzZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgZ1c2VkQXQSOQoKZXhwaXJlc19hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBIhCgxhY2Nlc3NfdG9rZW4YCSABKAlSC2FjY2Vzc1Rva2VuEiMKDXJlZnJlc2hfdG9rZW4YCiABKAlSDHJlZnJlc2hUb2tlbhI6ChlpbnRlcm5hbF9lbmNyeXB0aW9uX2xldmVsGAsgASgFUhdpbnRlcm5hbEVuY3J5cHRpb25MZXZlbBI5Cg5sb2dnZWRfaW5fZnJvbRgMIAEoCzITLkJsb2NrVXNlci5Mb2NhdGlvblIMbG9nZ2VkSW5Gcm9tEigKBHR5cGUYDSABKA4yFC5CbG9ja1VzZXIuVG9rZW5UeXBlUgR0eXBl');
 @$core.Deprecated('Use activeMeasurementDescriptor instead')
 const ActiveMeasurement$json = const {
   '1': 'ActiveMeasurement',
