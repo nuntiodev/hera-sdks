@@ -2367,7 +2367,8 @@ proto.BlockUser.Email.toObject = function(includeInstance, msg) {
     encryptedAt: (f = msg.getEncryptedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     triggerOnCreate: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    subject: jspb.Message.getFieldWithDefault(msg, 11, "")
+    subject: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    templatePath: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -2450,6 +2451,10 @@ proto.BlockUser.Email.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setSubject(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTemplatePath(value);
       break;
     default:
       reader.skipField();
@@ -2557,6 +2562,13 @@ proto.BlockUser.Email.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getTemplatePath();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
       f
     );
   }
@@ -2815,6 +2827,24 @@ proto.BlockUser.Email.prototype.getSubject = function() {
  */
 proto.BlockUser.Email.prototype.setSubject = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string template_path = 12;
+ * @return {string}
+ */
+proto.BlockUser.Email.prototype.getTemplatePath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.Email} returns this
+ */
+proto.BlockUser.Email.prototype.setTemplatePath = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 

@@ -822,6 +822,7 @@ class Email extends $pb.GeneratedMessage {
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'triggerOnCreate')
     ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subject')
+    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'templatePath')
     ..hasRequiredFields = false
   ;
 
@@ -838,6 +839,7 @@ class Email extends $pb.GeneratedMessage {
     $core.bool? triggerOnCreate,
     $core.int? internalEncryptionLevel,
     $core.String? subject,
+    $core.String? templatePath,
   }) {
     final _result = create();
     if (id != null) {
@@ -872,6 +874,9 @@ class Email extends $pb.GeneratedMessage {
     }
     if (subject != null) {
       _result.subject = subject;
+    }
+    if (templatePath != null) {
+      _result.templatePath = templatePath;
     }
     return _result;
   }
@@ -1000,6 +1005,15 @@ class Email extends $pb.GeneratedMessage {
   $core.bool hasSubject() => $_has(10);
   @$pb.TagNumber(11)
   void clearSubject() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get templatePath => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set templatePath($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasTemplatePath() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTemplatePath() => clearField(12);
 }
 
 class User extends $pb.GeneratedMessage {
