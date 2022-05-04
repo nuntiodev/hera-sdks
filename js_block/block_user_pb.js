@@ -2897,7 +2897,8 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     verificationEmailSentAt: (f = msg.getVerificationEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     emailVerifiedAt: (f = msg.getEmailVerifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    emailIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 18, false)
+    emailIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
+    verificationCode: jspb.Message.getFieldWithDefault(msg, 19, "")
   };
 
   if (includeInstance) {
@@ -3011,6 +3012,10 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 18:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailIsVerified(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setVerificationCode(value);
       break;
     default:
       reader.skipField();
@@ -3170,6 +3175,13 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       18,
+      f
+    );
+  }
+  f = message.getVerificationCode();
+  if (f.length > 0) {
+    writer.writeString(
+      19,
       f
     );
   }
@@ -3611,6 +3623,24 @@ proto.BlockUser.User.prototype.getEmailIsVerified = function() {
  */
 proto.BlockUser.User.prototype.setEmailIsVerified = function(value) {
   return jspb.Message.setProto3BooleanField(this, 18, value);
+};
+
+
+/**
+ * optional string verification_code = 19;
+ * @return {string}
+ */
+proto.BlockUser.User.prototype.getVerificationCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setVerificationCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 19, value);
 };
 
 
