@@ -105,6 +105,14 @@ message Config {
     bool require_email_verification = 16;
 }
 
+enum EmailType {
+    EMAIL_TYPE_INVALID = 0;
+    EMAIL_TYPE_VERIFY_EMAIL = 1;
+    EMAIL_TYPE_FORGOT_PASSWORD = 2;
+    EMAIL_TYPE_WELCOME = 3;
+    EMAIL_TYPE_CUSTPM = 4;
+}
+
 message Email {
     string id = 1;
     string logo = 2;
@@ -237,16 +245,14 @@ message UserRequest {
     string encryption_key = 5;
     repeated User user_batch = 6;
     Token token = 7;
-    bool validate_password = 8;
-    string cloud_token = 9;
-    string token_pointer = 10;
-    ActiveMeasurement active_measurement = 11;
-    int32 total_active_time = 12;
-    int32 average_active_time = 13;
-    Config config = 14;
-    bool require_email_verification = 15;
-    Email email = 16;
-    string email_verification_code = 17;
+    string cloud_token = 8;
+    string token_pointer = 9;
+    ActiveMeasurement active_measurement = 10;
+    int32 total_active_time = 11;
+    int32 average_active_time = 12;
+    Config config = 13;
+    Email email = 14;
+    string email_verification_code = 15;
 }
 
 message UserResponse {
