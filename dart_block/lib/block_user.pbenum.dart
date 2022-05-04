@@ -51,6 +51,21 @@ class Platform extends $pb.ProtobufEnum {
   const Platform._($core.int v, $core.String n) : super(v, n);
 }
 
+class ErrorType extends $pb.ProtobufEnum {
+  static const ErrorType NO_ERROR = ErrorType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NO_ERROR');
+  static const ErrorType ERROR_EMAIL_IS_NOT_VERIFIED = ErrorType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ERROR_EMAIL_IS_NOT_VERIFIED');
+
+  static const $core.List<ErrorType> values = <ErrorType> [
+    NO_ERROR,
+    ERROR_EMAIL_IS_NOT_VERIFIED,
+  ];
+
+  static final $core.Map<$core.int, ErrorType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ErrorType? valueOf($core.int value) => _byValue[value];
+
+  const ErrorType._($core.int v, $core.String n) : super(v, n);
+}
+
 class UserFilter_SortBy extends $pb.ProtobufEnum {
   static const UserFilter_SortBy CREATED_AT = UserFilter_SortBy._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'CREATED_AT');
   static const UserFilter_SortBy UPDATE_AT = UserFilter_SortBy._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UPDATE_AT');

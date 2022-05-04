@@ -29,6 +29,7 @@ goog.exportSymbol('proto.BlockUser.ActiveMeasurement', null, global);
 goog.exportSymbol('proto.BlockUser.CityHistoryMap', null, global);
 goog.exportSymbol('proto.BlockUser.Config', null, global);
 goog.exportSymbol('proto.BlockUser.Email', null, global);
+goog.exportSymbol('proto.BlockUser.ErrorType', null, global);
 goog.exportSymbol('proto.BlockUser.GeneralText', null, global);
 goog.exportSymbol('proto.BlockUser.Location', null, global);
 goog.exportSymbol('proto.BlockUser.LoginText', null, global);
@@ -5708,7 +5709,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     averageActiveTime: jspb.Message.getFieldWithDefault(msg, 13, 0),
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
-    email: (f = msg.getEmail()) && proto.BlockUser.Email.toObject(includeInstance, f)
+    email: (f = msg.getEmail()) && proto.BlockUser.Email.toObject(includeInstance, f),
+    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 17, "")
   };
 
   if (includeInstance) {
@@ -5816,6 +5818,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto.BlockUser.Email;
       reader.readMessage(value,proto.BlockUser.Email.deserializeBinaryFromReader);
       msg.setEmail(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmailVerificationCode(value);
       break;
     default:
       reader.skipField();
@@ -5964,6 +5970,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       16,
       f,
       proto.BlockUser.Email.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailVerificationCode();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
+      f
     );
   }
 };
@@ -6410,6 +6423,24 @@ proto.BlockUser.UserRequest.prototype.hasEmail = function() {
 };
 
 
+/**
+ * optional string email_verification_code = 17;
+ * @return {string}
+ */
+proto.BlockUser.UserRequest.prototype.getEmailVerificationCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setEmailVerificationCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -6459,7 +6490,8 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
     publicKeysMap: (f = msg.getPublicKeysMap()) ? f.toObject(includeInstance, undefined) : [],
     activeMeasurement: (f = msg.getActiveMeasurement()) && proto.BlockUser.ActiveMeasurement.toObject(includeInstance, f),
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
-    activeHistory: (f = msg.getActiveHistory()) && proto.BlockUser.ActiveHistory.toObject(includeInstance, f)
+    activeHistory: (f = msg.getActiveHistory()) && proto.BlockUser.ActiveHistory.toObject(includeInstance, f),
+    error: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -6540,6 +6572,10 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.BlockUser.ActiveHistory;
       reader.readMessage(value,proto.BlockUser.ActiveHistory.deserializeBinaryFromReader);
       msg.setActiveHistory(value);
+      break;
+    case 10:
+      var value = /** @type {!proto.BlockUser.ErrorType} */ (reader.readEnum());
+      msg.setError(value);
       break;
     default:
       reader.skipField();
@@ -6635,6 +6671,13 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
       9,
       f,
       proto.BlockUser.ActiveHistory.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      10,
+      f
     );
   }
 };
@@ -6942,6 +6985,24 @@ proto.BlockUser.UserResponse.prototype.hasActiveHistory = function() {
 
 
 /**
+ * optional ErrorType error = 10;
+ * @return {!proto.BlockUser.ErrorType}
+ */
+proto.BlockUser.UserResponse.prototype.getError = function() {
+  return /** @type {!proto.BlockUser.ErrorType} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {!proto.BlockUser.ErrorType} value
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.setError = function(value) {
+  return jspb.Message.setProto3EnumField(this, 10, value);
+};
+
+
+/**
  * @enum {number}
  */
 proto.BlockUser.TokenType = {
@@ -6961,6 +7022,14 @@ proto.BlockUser.Platform = {
   MACOS: 4,
   LINUX: 5,
   WINDOWS: 6
+};
+
+/**
+ * @enum {number}
+ */
+proto.BlockUser.ErrorType = {
+  NO_ERROR: 0,
+  ERROR_EMAIL_IS_NOT_VERIFIED: 1
 };
 
 goog.object.extend(exports, proto.BlockUser);

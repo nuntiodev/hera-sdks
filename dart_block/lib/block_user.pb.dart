@@ -2080,6 +2080,7 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOM<Config>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..aOM<Email>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Email.create)
+    ..aOS(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
     ..hasRequiredFields = false
   ;
 
@@ -2101,6 +2102,7 @@ class UserRequest extends $pb.GeneratedMessage {
     Config? config,
     $core.bool? requireEmailVerification,
     Email? email,
+    $core.String? emailVerificationCode,
   }) {
     final _result = create();
     if (user != null) {
@@ -2150,6 +2152,9 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (email != null) {
       _result.email = email;
+    }
+    if (emailVerificationCode != null) {
+      _result.emailVerificationCode = emailVerificationCode;
     }
     return _result;
   }
@@ -2325,6 +2330,15 @@ class UserRequest extends $pb.GeneratedMessage {
   void clearEmail() => clearField(16);
   @$pb.TagNumber(16)
   Email ensureEmail() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $core.String get emailVerificationCode => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set emailVerificationCode($core.String v) { $_setString(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasEmailVerificationCode() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearEmailVerificationCode() => clearField(17);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
@@ -2338,6 +2352,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..aOM<ActiveMeasurement>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
     ..aOM<Config>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOM<ActiveHistory>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeHistory', subBuilder: ActiveHistory.create)
+    ..e<ErrorType>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: ErrorType.NO_ERROR, valueOf: ErrorType.valueOf, enumValues: ErrorType.values)
     ..hasRequiredFields = false
   ;
 
@@ -2352,6 +2367,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ActiveMeasurement? activeMeasurement,
     Config? config,
     ActiveHistory? activeHistory,
+    ErrorType? error,
   }) {
     final _result = create();
     if (user != null) {
@@ -2380,6 +2396,9 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     if (activeHistory != null) {
       _result.activeHistory = activeHistory;
+    }
+    if (error != null) {
+      _result.error = error;
     }
     return _result;
   }
@@ -2476,5 +2495,14 @@ class UserResponse extends $pb.GeneratedMessage {
   void clearActiveHistory() => clearField(9);
   @$pb.TagNumber(9)
   ActiveHistory ensureActiveHistory() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  ErrorType get error => $_getN(9);
+  @$pb.TagNumber(10)
+  set error(ErrorType v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasError() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearError() => clearField(10);
 }
 

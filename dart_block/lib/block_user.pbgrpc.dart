@@ -125,6 +125,16 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/NamespaceActiveHistory',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$sendVerificationEmail =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/SendVerificationEmail',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$verifyEmail =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/VerifyEmail',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$delete = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
       '/BlockUser.UserService/Delete',
       ($0.UserRequest value) => value.writeToBuffer(),
@@ -309,6 +319,17 @@ class UserServiceClient extends $grpc.Client {
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$namespaceActiveHistory, request,
         options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> sendVerificationEmail(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$sendVerificationEmail, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> verifyEmail($0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$verifyEmail, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> delete($0.UserRequest request,
@@ -548,6 +569,20 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'SendVerificationEmail',
+        sendVerificationEmail_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'VerifyEmail',
+        verifyEmail_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'Delete',
         delete_Pre,
         false,
@@ -748,6 +783,16 @@ abstract class UserServiceBase extends $grpc.Service {
     return namespaceActiveHistory(call, await request);
   }
 
+  $async.Future<$0.UserResponse> sendVerificationEmail_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return sendVerificationEmail(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> verifyEmail_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return verifyEmail(call, await request);
+  }
+
   $async.Future<$0.UserResponse> delete_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return delete(call, await request);
@@ -853,6 +898,10 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> userActiveHistory(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> namespaceActiveHistory(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> sendVerificationEmail(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> verifyEmail(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> delete(
       $grpc.ServiceCall call, $0.UserRequest request);
