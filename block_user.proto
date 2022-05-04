@@ -119,13 +119,14 @@ message Email {
     string welcome_message = 3;
     string body_message = 4;
     string footer_message = 5;
-    google.protobuf.Timestamp created_at = 6;
-    google.protobuf.Timestamp updated_at = 7;
-    google.protobuf.Timestamp encrypted_at = 8;
-    bool trigger_on_create = 9;
-    int32 internal_encryption_level = 10;
-    string subject = 11;
-    string template_path = 12;
+    string title = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+    google.protobuf.Timestamp encrypted_at = 9;
+    bool trigger_on_create = 10;
+    int32 internal_encryption_level = 11;
+    string subject = 12;
+    string template_path = 13;
 }
 
 message User {
