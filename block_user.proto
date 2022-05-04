@@ -137,6 +137,7 @@ message User {
     google.protobuf.Timestamp verification_email_sent_at = 16;
     google.protobuf.Timestamp email_verified_at = 17;
     bool email_is_verified = 18;
+    string verification_code = 19;
 }
 
 message UserFilter {
