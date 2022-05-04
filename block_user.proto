@@ -30,6 +30,8 @@ service UserService {
     rpc RecordActiveMeasurement(UserRequest) returns (UserResponse) {}
     rpc UserActiveHistory(UserRequest) returns (UserResponse) {}
     rpc NamespaceActiveHistory(UserRequest) returns (UserResponse) {}
+    rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
+    rpc VerifyEmail(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
@@ -222,6 +224,11 @@ message ActiveHistory {
     map<int32, ActiveHistoryData> data = 3;
 }
 
+enum ErrorType {
+    NO_ERROR = 0;
+    ERROR_EMAIL_IS_NOT_VERIFIED = 1;
+}
+
 message UserRequest {
     User user = 1;
     User update = 2;
@@ -239,6 +246,7 @@ message UserRequest {
     Config config = 14;
     bool require_email_verification = 15;
     Email email = 16;
+    string email_verification_code = 17;
 }
 
 message UserResponse {
@@ -251,4 +259,5 @@ message UserResponse {
     ActiveMeasurement active_measurement = 7;
     Config config = 8;
     ActiveHistory active_history = 9;
+    ErrorType error = 10;
 }
