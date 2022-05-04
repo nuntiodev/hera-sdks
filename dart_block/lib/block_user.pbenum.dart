@@ -9,6 +9,27 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class EmailType extends $pb.ProtobufEnum {
+  static const EmailType EMAIL_TYPE_INVALID = EmailType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL_TYPE_INVALID');
+  static const EmailType EMAIL_TYPE_VERIFY_EMAIL = EmailType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL_TYPE_VERIFY_EMAIL');
+  static const EmailType EMAIL_TYPE_FORGOT_PASSWORD = EmailType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL_TYPE_FORGOT_PASSWORD');
+  static const EmailType EMAIL_TYPE_WELCOME = EmailType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL_TYPE_WELCOME');
+  static const EmailType EMAIL_TYPE_CUSTPM = EmailType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL_TYPE_CUSTPM');
+
+  static const $core.List<EmailType> values = <EmailType> [
+    EMAIL_TYPE_INVALID,
+    EMAIL_TYPE_VERIFY_EMAIL,
+    EMAIL_TYPE_FORGOT_PASSWORD,
+    EMAIL_TYPE_WELCOME,
+    EMAIL_TYPE_CUSTPM,
+  ];
+
+  static final $core.Map<$core.int, EmailType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static EmailType? valueOf($core.int value) => _byValue[value];
+
+  const EmailType._($core.int v, $core.String n) : super(v, n);
+}
+
 class TokenType extends $pb.ProtobufEnum {
   static const TokenType TOKEN_TYPE_INVALID = TokenType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TOKEN_TYPE_INVALID');
   static const TokenType TOKEN_TYPE_ACCESS = TokenType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TOKEN_TYPE_ACCESS');

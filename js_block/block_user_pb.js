@@ -29,6 +29,7 @@ goog.exportSymbol('proto.BlockUser.ActiveMeasurement', null, global);
 goog.exportSymbol('proto.BlockUser.CityHistoryMap', null, global);
 goog.exportSymbol('proto.BlockUser.Config', null, global);
 goog.exportSymbol('proto.BlockUser.Email', null, global);
+goog.exportSymbol('proto.BlockUser.EmailType', null, global);
 goog.exportSymbol('proto.BlockUser.ErrorType', null, global);
 goog.exportSymbol('proto.BlockUser.GeneralText', null, global);
 goog.exportSymbol('proto.BlockUser.Location', null, global);
@@ -5701,16 +5702,14 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
     proto.BlockUser.User.toObject, includeInstance),
     token: (f = msg.getToken()) && proto.BlockUser.Token.toObject(includeInstance, f),
-    validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    cloudToken: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    tokenPointer: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    cloudToken: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    tokenPointer: jspb.Message.getFieldWithDefault(msg, 9, ""),
     activeMeasurement: (f = msg.getActiveMeasurement()) && proto.BlockUser.ActiveMeasurement.toObject(includeInstance, f),
-    totalActiveTime: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    averageActiveTime: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    totalActiveTime: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    averageActiveTime: jspb.Message.getFieldWithDefault(msg, 12, 0),
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
-    requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
     email: (f = msg.getEmail()) && proto.BlockUser.Email.toObject(includeInstance, f),
-    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 17, "")
+    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -5781,45 +5780,37 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
       msg.setToken(value);
       break;
     case 8:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setValidatePassword(value);
-      break;
-    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setCloudToken(value);
       break;
-    case 10:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setTokenPointer(value);
       break;
-    case 11:
+    case 10:
       var value = new proto.BlockUser.ActiveMeasurement;
       reader.readMessage(value,proto.BlockUser.ActiveMeasurement.deserializeBinaryFromReader);
       msg.setActiveMeasurement(value);
       break;
-    case 12:
+    case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalActiveTime(value);
       break;
-    case 13:
+    case 12:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAverageActiveTime(value);
       break;
-    case 14:
+    case 13:
       var value = new proto.BlockUser.Config;
       reader.readMessage(value,proto.BlockUser.Config.deserializeBinaryFromReader);
       msg.setConfig(value);
       break;
-    case 15:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setRequireEmailVerification(value);
-      break;
-    case 16:
+    case 14:
       var value = new proto.BlockUser.Email;
       reader.readMessage(value,proto.BlockUser.Email.deserializeBinaryFromReader);
       msg.setEmail(value);
       break;
-    case 17:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmailVerificationCode(value);
       break;
@@ -5906,31 +5897,24 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
       proto.BlockUser.Token.serializeBinaryToWriter
     );
   }
-  f = message.getValidatePassword();
-  if (f) {
-    writer.writeBool(
-      8,
-      f
-    );
-  }
   f = message.getCloudToken();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      8,
       f
     );
   }
   f = message.getTokenPointer();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      9,
       f
     );
   }
   f = message.getActiveMeasurement();
   if (f != null) {
     writer.writeMessage(
-      11,
+      10,
       f,
       proto.BlockUser.ActiveMeasurement.serializeBinaryToWriter
     );
@@ -5938,36 +5922,29 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   f = message.getTotalActiveTime();
   if (f !== 0) {
     writer.writeInt32(
-      12,
+      11,
       f
     );
   }
   f = message.getAverageActiveTime();
   if (f !== 0) {
     writer.writeInt32(
-      13,
+      12,
       f
     );
   }
   f = message.getConfig();
   if (f != null) {
     writer.writeMessage(
-      14,
+      13,
       f,
       proto.BlockUser.Config.serializeBinaryToWriter
-    );
-  }
-  f = message.getRequireEmailVerification();
-  if (f) {
-    writer.writeBool(
-      15,
-      f
     );
   }
   f = message.getEmail();
   if (f != null) {
     writer.writeMessage(
-      16,
+      14,
       f,
       proto.BlockUser.Email.serializeBinaryToWriter
     );
@@ -5975,7 +5952,7 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   f = message.getEmailVerificationCode();
   if (f.length > 0) {
     writer.writeString(
-      17,
+      15,
       f
     );
   }
@@ -6205,29 +6182,11 @@ proto.BlockUser.UserRequest.prototype.hasToken = function() {
 
 
 /**
- * optional bool validate_password = 8;
- * @return {boolean}
- */
-proto.BlockUser.UserRequest.prototype.getValidatePassword = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.BlockUser.UserRequest} returns this
- */
-proto.BlockUser.UserRequest.prototype.setValidatePassword = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
-};
-
-
-/**
- * optional string cloud_token = 9;
+ * optional string cloud_token = 8;
  * @return {string}
  */
 proto.BlockUser.UserRequest.prototype.getCloudToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -6236,16 +6195,16 @@ proto.BlockUser.UserRequest.prototype.getCloudToken = function() {
  * @return {!proto.BlockUser.UserRequest} returns this
  */
 proto.BlockUser.UserRequest.prototype.setCloudToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string token_pointer = 10;
+ * optional string token_pointer = 9;
  * @return {string}
  */
 proto.BlockUser.UserRequest.prototype.getTokenPointer = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
@@ -6254,17 +6213,17 @@ proto.BlockUser.UserRequest.prototype.getTokenPointer = function() {
  * @return {!proto.BlockUser.UserRequest} returns this
  */
 proto.BlockUser.UserRequest.prototype.setTokenPointer = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional ActiveMeasurement active_measurement = 11;
+ * optional ActiveMeasurement active_measurement = 10;
  * @return {?proto.BlockUser.ActiveMeasurement}
  */
 proto.BlockUser.UserRequest.prototype.getActiveMeasurement = function() {
   return /** @type{?proto.BlockUser.ActiveMeasurement} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.ActiveMeasurement, 11));
+    jspb.Message.getWrapperField(this, proto.BlockUser.ActiveMeasurement, 10));
 };
 
 
@@ -6273,7 +6232,7 @@ proto.BlockUser.UserRequest.prototype.getActiveMeasurement = function() {
  * @return {!proto.BlockUser.UserRequest} returns this
 */
 proto.BlockUser.UserRequest.prototype.setActiveMeasurement = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -6291,16 +6250,16 @@ proto.BlockUser.UserRequest.prototype.clearActiveMeasurement = function() {
  * @return {boolean}
  */
 proto.BlockUser.UserRequest.prototype.hasActiveMeasurement = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional int32 total_active_time = 12;
+ * optional int32 total_active_time = 11;
  * @return {number}
  */
 proto.BlockUser.UserRequest.prototype.getTotalActiveTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
@@ -6309,16 +6268,16 @@ proto.BlockUser.UserRequest.prototype.getTotalActiveTime = function() {
  * @return {!proto.BlockUser.UserRequest} returns this
  */
 proto.BlockUser.UserRequest.prototype.setTotalActiveTime = function(value) {
-  return jspb.Message.setProto3IntField(this, 12, value);
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional int32 average_active_time = 13;
+ * optional int32 average_active_time = 12;
  * @return {number}
  */
 proto.BlockUser.UserRequest.prototype.getAverageActiveTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
@@ -6327,17 +6286,17 @@ proto.BlockUser.UserRequest.prototype.getAverageActiveTime = function() {
  * @return {!proto.BlockUser.UserRequest} returns this
  */
 proto.BlockUser.UserRequest.prototype.setAverageActiveTime = function(value) {
-  return jspb.Message.setProto3IntField(this, 13, value);
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
 /**
- * optional Config config = 14;
+ * optional Config config = 13;
  * @return {?proto.BlockUser.Config}
  */
 proto.BlockUser.UserRequest.prototype.getConfig = function() {
   return /** @type{?proto.BlockUser.Config} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.Config, 14));
+    jspb.Message.getWrapperField(this, proto.BlockUser.Config, 13));
 };
 
 
@@ -6346,7 +6305,7 @@ proto.BlockUser.UserRequest.prototype.getConfig = function() {
  * @return {!proto.BlockUser.UserRequest} returns this
 */
 proto.BlockUser.UserRequest.prototype.setConfig = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -6364,35 +6323,17 @@ proto.BlockUser.UserRequest.prototype.clearConfig = function() {
  * @return {boolean}
  */
 proto.BlockUser.UserRequest.prototype.hasConfig = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional bool require_email_verification = 15;
- * @return {boolean}
- */
-proto.BlockUser.UserRequest.prototype.getRequireEmailVerification = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.BlockUser.UserRequest} returns this
- */
-proto.BlockUser.UserRequest.prototype.setRequireEmailVerification = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 15, value);
-};
-
-
-/**
- * optional Email email = 16;
+ * optional Email email = 14;
  * @return {?proto.BlockUser.Email}
  */
 proto.BlockUser.UserRequest.prototype.getEmail = function() {
   return /** @type{?proto.BlockUser.Email} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.Email, 16));
+    jspb.Message.getWrapperField(this, proto.BlockUser.Email, 14));
 };
 
 
@@ -6401,7 +6342,7 @@ proto.BlockUser.UserRequest.prototype.getEmail = function() {
  * @return {!proto.BlockUser.UserRequest} returns this
 */
 proto.BlockUser.UserRequest.prototype.setEmail = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -6419,16 +6360,16 @@ proto.BlockUser.UserRequest.prototype.clearEmail = function() {
  * @return {boolean}
  */
 proto.BlockUser.UserRequest.prototype.hasEmail = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional string email_verification_code = 17;
+ * optional string email_verification_code = 15;
  * @return {string}
  */
 proto.BlockUser.UserRequest.prototype.getEmailVerificationCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
 
@@ -6437,7 +6378,7 @@ proto.BlockUser.UserRequest.prototype.getEmailVerificationCode = function() {
  * @return {!proto.BlockUser.UserRequest} returns this
  */
 proto.BlockUser.UserRequest.prototype.setEmailVerificationCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 17, value);
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
@@ -7001,6 +6942,17 @@ proto.BlockUser.UserResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.BlockUser.EmailType = {
+  EMAIL_TYPE_INVALID: 0,
+  EMAIL_TYPE_VERIFY_EMAIL: 1,
+  EMAIL_TYPE_FORGOT_PASSWORD: 2,
+  EMAIL_TYPE_WELCOME: 3,
+  EMAIL_TYPE_CUSTPM: 4
+};
 
 /**
  * @enum {number}

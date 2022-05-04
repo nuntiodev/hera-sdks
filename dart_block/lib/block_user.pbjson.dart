@@ -8,6 +8,20 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use emailTypeDescriptor instead')
+const EmailType$json = const {
+  '1': 'EmailType',
+  '2': const [
+    const {'1': 'EMAIL_TYPE_INVALID', '2': 0},
+    const {'1': 'EMAIL_TYPE_VERIFY_EMAIL', '2': 1},
+    const {'1': 'EMAIL_TYPE_FORGOT_PASSWORD', '2': 2},
+    const {'1': 'EMAIL_TYPE_WELCOME', '2': 3},
+    const {'1': 'EMAIL_TYPE_CUSTPM', '2': 4},
+  ],
+};
+
+/// Descriptor for `EmailType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List emailTypeDescriptor = $convert.base64Decode('CglFbWFpbFR5cGUSFgoSRU1BSUxfVFlQRV9JTlZBTElEEAASGwoXRU1BSUxfVFlQRV9WRVJJRllfRU1BSUwQARIeChpFTUFJTF9UWVBFX0ZPUkdPVF9QQVNTV09SRBACEhYKEkVNQUlMX1RZUEVfV0VMQ09NRRADEhUKEUVNQUlMX1RZUEVfQ1VTVFBNEAQ=');
 @$core.Deprecated('Use tokenTypeDescriptor instead')
 const TokenType$json = const {
   '1': 'TokenType',
@@ -368,21 +382,19 @@ const UserRequest$json = const {
     const {'1': 'encryption_key', '3': 5, '4': 1, '5': 9, '10': 'encryptionKey'},
     const {'1': 'user_batch', '3': 6, '4': 3, '5': 11, '6': '.BlockUser.User', '10': 'userBatch'},
     const {'1': 'token', '3': 7, '4': 1, '5': 11, '6': '.BlockUser.Token', '10': 'token'},
-    const {'1': 'validate_password', '3': 8, '4': 1, '5': 8, '10': 'validatePassword'},
-    const {'1': 'cloud_token', '3': 9, '4': 1, '5': 9, '10': 'cloudToken'},
-    const {'1': 'token_pointer', '3': 10, '4': 1, '5': 9, '10': 'tokenPointer'},
-    const {'1': 'active_measurement', '3': 11, '4': 1, '5': 11, '6': '.BlockUser.ActiveMeasurement', '10': 'activeMeasurement'},
-    const {'1': 'total_active_time', '3': 12, '4': 1, '5': 5, '10': 'totalActiveTime'},
-    const {'1': 'average_active_time', '3': 13, '4': 1, '5': 5, '10': 'averageActiveTime'},
-    const {'1': 'config', '3': 14, '4': 1, '5': 11, '6': '.BlockUser.Config', '10': 'config'},
-    const {'1': 'require_email_verification', '3': 15, '4': 1, '5': 8, '10': 'requireEmailVerification'},
-    const {'1': 'email', '3': 16, '4': 1, '5': 11, '6': '.BlockUser.Email', '10': 'email'},
-    const {'1': 'email_verification_code', '3': 17, '4': 1, '5': 9, '10': 'emailVerificationCode'},
+    const {'1': 'cloud_token', '3': 8, '4': 1, '5': 9, '10': 'cloudToken'},
+    const {'1': 'token_pointer', '3': 9, '4': 1, '5': 9, '10': 'tokenPointer'},
+    const {'1': 'active_measurement', '3': 10, '4': 1, '5': 11, '6': '.BlockUser.ActiveMeasurement', '10': 'activeMeasurement'},
+    const {'1': 'total_active_time', '3': 11, '4': 1, '5': 5, '10': 'totalActiveTime'},
+    const {'1': 'average_active_time', '3': 12, '4': 1, '5': 5, '10': 'averageActiveTime'},
+    const {'1': 'config', '3': 13, '4': 1, '5': 11, '6': '.BlockUser.Config', '10': 'config'},
+    const {'1': 'email', '3': 14, '4': 1, '5': 11, '6': '.BlockUser.Email', '10': 'email'},
+    const {'1': 'email_verification_code', '3': 15, '4': 1, '5': 9, '10': 'emailVerificationCode'},
   ],
 };
 
 /// Descriptor for `UserRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIjCgR1c2VyGAEgASgLMg8uQmxvY2tVc2VyLlVzZXJSBHVzZXISJwoGdXBkYXRlGAIgASgLMg8uQmxvY2tVc2VyLlVzZXJSBnVwZGF0ZRItCgZmaWx0ZXIYAyABKAsyFS5CbG9ja1VzZXIuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5Ei4KCnVzZXJfYmF0Y2gYBiADKAsyDy5CbG9ja1VzZXIuVXNlclIJdXNlckJhdGNoEiYKBXRva2VuGAcgASgLMhAuQmxvY2tVc2VyLlRva2VuUgV0b2tlbhIrChF2YWxpZGF0ZV9wYXNzd29yZBgIIAEoCFIQdmFsaWRhdGVQYXNzd29yZBIfCgtjbG91ZF90b2tlbhgJIAEoCVIKY2xvdWRUb2tlbhIjCg10b2tlbl9wb2ludGVyGAogASgJUgx0b2tlblBvaW50ZXISSwoSYWN0aXZlX21lYXN1cmVtZW50GAsgASgLMhwuQmxvY2tVc2VyLkFjdGl2ZU1lYXN1cmVtZW50UhFhY3RpdmVNZWFzdXJlbWVudBIqChF0b3RhbF9hY3RpdmVfdGltZRgMIAEoBVIPdG90YWxBY3RpdmVUaW1lEi4KE2F2ZXJhZ2VfYWN0aXZlX3RpbWUYDSABKAVSEWF2ZXJhZ2VBY3RpdmVUaW1lEikKBmNvbmZpZxgOIAEoCzIRLkJsb2NrVXNlci5Db25maWdSBmNvbmZpZxI8ChpyZXF1aXJlX2VtYWlsX3ZlcmlmaWNhdGlvbhgPIAEoCFIYcmVxdWlyZUVtYWlsVmVyaWZpY2F0aW9uEiYKBWVtYWlsGBAgASgLMhAuQmxvY2tVc2VyLkVtYWlsUgVlbWFpbBI2ChdlbWFpbF92ZXJpZmljYXRpb25fY29kZRgRIAEoCVIVZW1haWxWZXJpZmljYXRpb25Db2Rl');
+final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIjCgR1c2VyGAEgASgLMg8uQmxvY2tVc2VyLlVzZXJSBHVzZXISJwoGdXBkYXRlGAIgASgLMg8uQmxvY2tVc2VyLlVzZXJSBnVwZGF0ZRItCgZmaWx0ZXIYAyABKAsyFS5CbG9ja1VzZXIuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5Ei4KCnVzZXJfYmF0Y2gYBiADKAsyDy5CbG9ja1VzZXIuVXNlclIJdXNlckJhdGNoEiYKBXRva2VuGAcgASgLMhAuQmxvY2tVc2VyLlRva2VuUgV0b2tlbhIfCgtjbG91ZF90b2tlbhgIIAEoCVIKY2xvdWRUb2tlbhIjCg10b2tlbl9wb2ludGVyGAkgASgJUgx0b2tlblBvaW50ZXISSwoSYWN0aXZlX21lYXN1cmVtZW50GAogASgLMhwuQmxvY2tVc2VyLkFjdGl2ZU1lYXN1cmVtZW50UhFhY3RpdmVNZWFzdXJlbWVudBIqChF0b3RhbF9hY3RpdmVfdGltZRgLIAEoBVIPdG90YWxBY3RpdmVUaW1lEi4KE2F2ZXJhZ2VfYWN0aXZlX3RpbWUYDCABKAVSEWF2ZXJhZ2VBY3RpdmVUaW1lEikKBmNvbmZpZxgNIAEoCzIRLkJsb2NrVXNlci5Db25maWdSBmNvbmZpZxImCgVlbWFpbBgOIAEoCzIQLkJsb2NrVXNlci5FbWFpbFIFZW1haWwSNgoXZW1haWxfdmVyaWZpY2F0aW9uX2NvZGUYDyABKAlSFWVtYWlsVmVyaWZpY2F0aW9uQ29kZQ==');
 @$core.Deprecated('Use userResponseDescriptor instead')
 const UserResponse$json = const {
   '1': 'UserResponse',

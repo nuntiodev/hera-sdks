@@ -2071,16 +2071,14 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptionKey')
     ..pc<User>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userBatch', $pb.PbFieldType.PM, subBuilder: User.create)
     ..aOM<Token>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
-    ..aOM<ActiveMeasurement>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
-    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalActiveTime', $pb.PbFieldType.O3)
-    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'averageActiveTime', $pb.PbFieldType.O3)
-    ..aOM<Config>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
-    ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
-    ..aOM<Email>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Email.create)
-    ..aOS(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
+    ..aOM<ActiveMeasurement>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
+    ..a<$core.int>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalActiveTime', $pb.PbFieldType.O3)
+    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'averageActiveTime', $pb.PbFieldType.O3)
+    ..aOM<Config>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
+    ..aOM<Email>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Email.create)
+    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
     ..hasRequiredFields = false
   ;
 
@@ -2093,14 +2091,12 @@ class UserRequest extends $pb.GeneratedMessage {
     $core.String? encryptionKey,
     $core.Iterable<User>? userBatch,
     Token? token,
-    $core.bool? validatePassword,
     $core.String? cloudToken,
     $core.String? tokenPointer,
     ActiveMeasurement? activeMeasurement,
     $core.int? totalActiveTime,
     $core.int? averageActiveTime,
     Config? config,
-    $core.bool? requireEmailVerification,
     Email? email,
     $core.String? emailVerificationCode,
   }) {
@@ -2126,9 +2122,6 @@ class UserRequest extends $pb.GeneratedMessage {
     if (token != null) {
       _result.token = token;
     }
-    if (validatePassword != null) {
-      _result.validatePassword = validatePassword;
-    }
     if (cloudToken != null) {
       _result.cloudToken = cloudToken;
     }
@@ -2146,9 +2139,6 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (config != null) {
       _result.config = config;
-    }
-    if (requireEmailVerification != null) {
-      _result.requireEmailVerification = requireEmailVerification;
     }
     if (email != null) {
       _result.email = email;
@@ -2245,100 +2235,82 @@ class UserRequest extends $pb.GeneratedMessage {
   Token ensureToken() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $core.bool get validatePassword => $_getBF(7);
+  $core.String get cloudToken => $_getSZ(7);
   @$pb.TagNumber(8)
-  set validatePassword($core.bool v) { $_setBool(7, v); }
+  set cloudToken($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasValidatePassword() => $_has(7);
+  $core.bool hasCloudToken() => $_has(7);
   @$pb.TagNumber(8)
-  void clearValidatePassword() => clearField(8);
+  void clearCloudToken() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get cloudToken => $_getSZ(8);
+  $core.String get tokenPointer => $_getSZ(8);
   @$pb.TagNumber(9)
-  set cloudToken($core.String v) { $_setString(8, v); }
+  set tokenPointer($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCloudToken() => $_has(8);
+  $core.bool hasTokenPointer() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCloudToken() => clearField(9);
+  void clearTokenPointer() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get tokenPointer => $_getSZ(9);
+  ActiveMeasurement get activeMeasurement => $_getN(9);
   @$pb.TagNumber(10)
-  set tokenPointer($core.String v) { $_setString(9, v); }
+  set activeMeasurement(ActiveMeasurement v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasTokenPointer() => $_has(9);
+  $core.bool hasActiveMeasurement() => $_has(9);
   @$pb.TagNumber(10)
-  void clearTokenPointer() => clearField(10);
+  void clearActiveMeasurement() => clearField(10);
+  @$pb.TagNumber(10)
+  ActiveMeasurement ensureActiveMeasurement() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  ActiveMeasurement get activeMeasurement => $_getN(10);
+  $core.int get totalActiveTime => $_getIZ(10);
   @$pb.TagNumber(11)
-  set activeMeasurement(ActiveMeasurement v) { setField(11, v); }
+  set totalActiveTime($core.int v) { $_setSignedInt32(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasActiveMeasurement() => $_has(10);
+  $core.bool hasTotalActiveTime() => $_has(10);
   @$pb.TagNumber(11)
-  void clearActiveMeasurement() => clearField(11);
-  @$pb.TagNumber(11)
-  ActiveMeasurement ensureActiveMeasurement() => $_ensure(10);
+  void clearTotalActiveTime() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.int get totalActiveTime => $_getIZ(11);
+  $core.int get averageActiveTime => $_getIZ(11);
   @$pb.TagNumber(12)
-  set totalActiveTime($core.int v) { $_setSignedInt32(11, v); }
+  set averageActiveTime($core.int v) { $_setSignedInt32(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasTotalActiveTime() => $_has(11);
+  $core.bool hasAverageActiveTime() => $_has(11);
   @$pb.TagNumber(12)
-  void clearTotalActiveTime() => clearField(12);
+  void clearAverageActiveTime() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.int get averageActiveTime => $_getIZ(12);
+  Config get config => $_getN(12);
   @$pb.TagNumber(13)
-  set averageActiveTime($core.int v) { $_setSignedInt32(12, v); }
+  set config(Config v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasAverageActiveTime() => $_has(12);
+  $core.bool hasConfig() => $_has(12);
   @$pb.TagNumber(13)
-  void clearAverageActiveTime() => clearField(13);
+  void clearConfig() => clearField(13);
+  @$pb.TagNumber(13)
+  Config ensureConfig() => $_ensure(12);
 
   @$pb.TagNumber(14)
-  Config get config => $_getN(13);
+  Email get email => $_getN(13);
   @$pb.TagNumber(14)
-  set config(Config v) { setField(14, v); }
+  set email(Email v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasConfig() => $_has(13);
+  $core.bool hasEmail() => $_has(13);
   @$pb.TagNumber(14)
-  void clearConfig() => clearField(14);
+  void clearEmail() => clearField(14);
   @$pb.TagNumber(14)
-  Config ensureConfig() => $_ensure(13);
+  Email ensureEmail() => $_ensure(13);
 
   @$pb.TagNumber(15)
-  $core.bool get requireEmailVerification => $_getBF(14);
+  $core.String get emailVerificationCode => $_getSZ(14);
   @$pb.TagNumber(15)
-  set requireEmailVerification($core.bool v) { $_setBool(14, v); }
+  set emailVerificationCode($core.String v) { $_setString(14, v); }
   @$pb.TagNumber(15)
-  $core.bool hasRequireEmailVerification() => $_has(14);
+  $core.bool hasEmailVerificationCode() => $_has(14);
   @$pb.TagNumber(15)
-  void clearRequireEmailVerification() => clearField(15);
-
-  @$pb.TagNumber(16)
-  Email get email => $_getN(15);
-  @$pb.TagNumber(16)
-  set email(Email v) { setField(16, v); }
-  @$pb.TagNumber(16)
-  $core.bool hasEmail() => $_has(15);
-  @$pb.TagNumber(16)
-  void clearEmail() => clearField(16);
-  @$pb.TagNumber(16)
-  Email ensureEmail() => $_ensure(15);
-
-  @$pb.TagNumber(17)
-  $core.String get emailVerificationCode => $_getSZ(16);
-  @$pb.TagNumber(17)
-  set emailVerificationCode($core.String v) { $_setString(16, v); }
-  @$pb.TagNumber(17)
-  $core.bool hasEmailVerificationCode() => $_has(16);
-  @$pb.TagNumber(17)
-  void clearEmailVerificationCode() => clearField(17);
+  void clearEmailVerificationCode() => clearField(15);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
