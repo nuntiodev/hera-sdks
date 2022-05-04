@@ -159,18 +159,19 @@ const Email$json = const {
     const {'1': 'welcome_message', '3': 3, '4': 1, '5': 9, '10': 'welcomeMessage'},
     const {'1': 'body_message', '3': 4, '4': 1, '5': 9, '10': 'bodyMessage'},
     const {'1': 'footer_message', '3': 5, '4': 1, '5': 9, '10': 'footerMessage'},
-    const {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'encrypted_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'encryptedAt'},
-    const {'1': 'trigger_on_create', '3': 9, '4': 1, '5': 8, '10': 'triggerOnCreate'},
-    const {'1': 'internal_encryption_level', '3': 10, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
-    const {'1': 'subject', '3': 11, '4': 1, '5': 9, '10': 'subject'},
-    const {'1': 'template_path', '3': 12, '4': 1, '5': 9, '10': 'templatePath'},
+    const {'1': 'title', '3': 6, '4': 1, '5': 9, '10': 'title'},
+    const {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'encrypted_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'encryptedAt'},
+    const {'1': 'trigger_on_create', '3': 10, '4': 1, '5': 8, '10': 'triggerOnCreate'},
+    const {'1': 'internal_encryption_level', '3': 11, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
+    const {'1': 'subject', '3': 12, '4': 1, '5': 9, '10': 'subject'},
+    const {'1': 'template_path', '3': 13, '4': 1, '5': 9, '10': 'templatePath'},
   ],
 };
 
 /// Descriptor for `Email`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSEgoEbG9nbxgCIAEoCVIEbG9nbxInCg93ZWxjb21lX21lc3NhZ2UYAyABKAlSDndlbGNvbWVNZXNzYWdlEiEKDGJvZHlfbWVzc2FnZRgEIAEoCVILYm9keU1lc3NhZ2USJQoOZm9vdGVyX21lc3NhZ2UYBSABKAlSDWZvb3Rlck1lc3NhZ2USOQoKY3JlYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0Ej0KDGVuY3J5cHRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2VuY3J5cHRlZEF0EioKEXRyaWdnZXJfb25fY3JlYXRlGAkgASgIUg90cmlnZ2VyT25DcmVhdGUSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgKIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSGAoHc3ViamVjdBgLIAEoCVIHc3ViamVjdBIjCg10ZW1wbGF0ZV9wYXRoGAwgASgJUgx0ZW1wbGF0ZVBhdGg=');
+final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSEgoEbG9nbxgCIAEoCVIEbG9nbxInCg93ZWxjb21lX21lc3NhZ2UYAyABKAlSDndlbGNvbWVNZXNzYWdlEiEKDGJvZHlfbWVzc2FnZRgEIAEoCVILYm9keU1lc3NhZ2USJQoOZm9vdGVyX21lc3NhZ2UYBSABKAlSDWZvb3Rlck1lc3NhZ2USFAoFdGl0bGUYBiABKAlSBXRpdGxlEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBIqChF0cmlnZ2VyX29uX2NyZWF0ZRgKIAEoCFIPdHJpZ2dlck9uQ3JlYXRlEjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYCyABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVsEhgKB3N1YmplY3QYDCABKAlSB3N1YmplY3QSIwoNdGVtcGxhdGVfcGF0aBgNIAEoCVIMdGVtcGxhdGVQYXRo');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',

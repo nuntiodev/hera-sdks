@@ -816,13 +816,14 @@ class Email extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeMessage')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bodyMessage')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'footerMessage')
-    ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
-    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'triggerOnCreate')
-    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subject')
-    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'templatePath')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
+    ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
+    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'triggerOnCreate')
+    ..a<$core.int>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
+    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subject')
+    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'templatePath')
     ..hasRequiredFields = false
   ;
 
@@ -833,6 +834,7 @@ class Email extends $pb.GeneratedMessage {
     $core.String? welcomeMessage,
     $core.String? bodyMessage,
     $core.String? footerMessage,
+    $core.String? title,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
     $1.Timestamp? encryptedAt,
@@ -856,6 +858,9 @@ class Email extends $pb.GeneratedMessage {
     }
     if (footerMessage != null) {
       _result.footerMessage = footerMessage;
+    }
+    if (title != null) {
+      _result.title = title;
     }
     if (createdAt != null) {
       _result.createdAt = createdAt;
@@ -947,73 +952,82 @@ class Email extends $pb.GeneratedMessage {
   void clearFooterMessage() => clearField(5);
 
   @$pb.TagNumber(6)
-  $1.Timestamp get createdAt => $_getN(5);
+  $core.String get title => $_getSZ(5);
   @$pb.TagNumber(6)
-  set createdAt($1.Timestamp v) { setField(6, v); }
+  set title($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasCreatedAt() => $_has(5);
+  $core.bool hasTitle() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCreatedAt() => clearField(6);
-  @$pb.TagNumber(6)
-  $1.Timestamp ensureCreatedAt() => $_ensure(5);
+  void clearTitle() => clearField(6);
 
   @$pb.TagNumber(7)
-  $1.Timestamp get updatedAt => $_getN(6);
+  $1.Timestamp get createdAt => $_getN(6);
   @$pb.TagNumber(7)
-  set updatedAt($1.Timestamp v) { setField(7, v); }
+  set createdAt($1.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasUpdatedAt() => $_has(6);
+  $core.bool hasCreatedAt() => $_has(6);
   @$pb.TagNumber(7)
-  void clearUpdatedAt() => clearField(7);
+  void clearCreatedAt() => clearField(7);
   @$pb.TagNumber(7)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(6);
+  $1.Timestamp ensureCreatedAt() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $1.Timestamp get encryptedAt => $_getN(7);
+  $1.Timestamp get updatedAt => $_getN(7);
   @$pb.TagNumber(8)
-  set encryptedAt($1.Timestamp v) { setField(8, v); }
+  set updatedAt($1.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasEncryptedAt() => $_has(7);
+  $core.bool hasUpdatedAt() => $_has(7);
   @$pb.TagNumber(8)
-  void clearEncryptedAt() => clearField(8);
+  void clearUpdatedAt() => clearField(8);
   @$pb.TagNumber(8)
-  $1.Timestamp ensureEncryptedAt() => $_ensure(7);
+  $1.Timestamp ensureUpdatedAt() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $core.bool get triggerOnCreate => $_getBF(8);
+  $1.Timestamp get encryptedAt => $_getN(8);
   @$pb.TagNumber(9)
-  set triggerOnCreate($core.bool v) { $_setBool(8, v); }
+  set encryptedAt($1.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasTriggerOnCreate() => $_has(8);
+  $core.bool hasEncryptedAt() => $_has(8);
   @$pb.TagNumber(9)
-  void clearTriggerOnCreate() => clearField(9);
+  void clearEncryptedAt() => clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureEncryptedAt() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $core.int get internalEncryptionLevel => $_getIZ(9);
+  $core.bool get triggerOnCreate => $_getBF(9);
   @$pb.TagNumber(10)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(9, v); }
+  set triggerOnCreate($core.bool v) { $_setBool(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasInternalEncryptionLevel() => $_has(9);
+  $core.bool hasTriggerOnCreate() => $_has(9);
   @$pb.TagNumber(10)
-  void clearInternalEncryptionLevel() => clearField(10);
+  void clearTriggerOnCreate() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get subject => $_getSZ(10);
+  $core.int get internalEncryptionLevel => $_getIZ(10);
   @$pb.TagNumber(11)
-  set subject($core.String v) { $_setString(10, v); }
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasSubject() => $_has(10);
+  $core.bool hasInternalEncryptionLevel() => $_has(10);
   @$pb.TagNumber(11)
-  void clearSubject() => clearField(11);
+  void clearInternalEncryptionLevel() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get templatePath => $_getSZ(11);
+  $core.String get subject => $_getSZ(11);
   @$pb.TagNumber(12)
-  set templatePath($core.String v) { $_setString(11, v); }
+  set subject($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasTemplatePath() => $_has(11);
+  $core.bool hasSubject() => $_has(11);
   @$pb.TagNumber(12)
-  void clearTemplatePath() => clearField(12);
+  void clearSubject() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get templatePath => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set templatePath($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasTemplatePath() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearTemplatePath() => clearField(13);
 }
 
 class User extends $pb.GeneratedMessage {
