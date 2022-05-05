@@ -238,6 +238,11 @@ enum LoginStatus {
     EMAIL_IS_NOT_VERIFIED = 1;
 }
 
+message LoginSession {
+    LoginStatus login_status = 1;
+    google.protobuf.Timestamp email_sent_at = 2;
+}
+
 message UserRequest {
     User user = 1;
     User update = 2;
@@ -266,5 +271,5 @@ message UserResponse {
     ActiveMeasurement active_measurement = 7;
     Config config = 8;
     ActiveHistory active_history = 9;
-    LoginStatus login_status = 10;
+    LoginSession login_session = 10;
 }
