@@ -391,11 +391,12 @@ const UserRequest$json = const {
     const {'1': 'config', '3': 13, '4': 1, '5': 11, '6': '.BlockUser.Config', '10': 'config'},
     const {'1': 'email', '3': 14, '4': 1, '5': 11, '6': '.BlockUser.Email', '10': 'email'},
     const {'1': 'email_verification_code', '3': 15, '4': 1, '5': 9, '10': 'emailVerificationCode'},
+    const {'1': 'verification_email_expires_at', '3': 16, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationEmailExpiresAt'},
   ],
 };
 
 /// Descriptor for `UserRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIjCgR1c2VyGAEgASgLMg8uQmxvY2tVc2VyLlVzZXJSBHVzZXISJwoGdXBkYXRlGAIgASgLMg8uQmxvY2tVc2VyLlVzZXJSBnVwZGF0ZRItCgZmaWx0ZXIYAyABKAsyFS5CbG9ja1VzZXIuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5Ei4KCnVzZXJfYmF0Y2gYBiADKAsyDy5CbG9ja1VzZXIuVXNlclIJdXNlckJhdGNoEiYKBXRva2VuGAcgASgLMhAuQmxvY2tVc2VyLlRva2VuUgV0b2tlbhIfCgtjbG91ZF90b2tlbhgIIAEoCVIKY2xvdWRUb2tlbhIjCg10b2tlbl9wb2ludGVyGAkgASgJUgx0b2tlblBvaW50ZXISSwoSYWN0aXZlX21lYXN1cmVtZW50GAogASgLMhwuQmxvY2tVc2VyLkFjdGl2ZU1lYXN1cmVtZW50UhFhY3RpdmVNZWFzdXJlbWVudBIqChF0b3RhbF9hY3RpdmVfdGltZRgLIAEoBVIPdG90YWxBY3RpdmVUaW1lEi4KE2F2ZXJhZ2VfYWN0aXZlX3RpbWUYDCABKAVSEWF2ZXJhZ2VBY3RpdmVUaW1lEikKBmNvbmZpZxgNIAEoCzIRLkJsb2NrVXNlci5Db25maWdSBmNvbmZpZxImCgVlbWFpbBgOIAEoCzIQLkJsb2NrVXNlci5FbWFpbFIFZW1haWwSNgoXZW1haWxfdmVyaWZpY2F0aW9uX2NvZGUYDyABKAlSFWVtYWlsVmVyaWZpY2F0aW9uQ29kZQ==');
+final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIjCgR1c2VyGAEgASgLMg8uQmxvY2tVc2VyLlVzZXJSBHVzZXISJwoGdXBkYXRlGAIgASgLMg8uQmxvY2tVc2VyLlVzZXJSBnVwZGF0ZRItCgZmaWx0ZXIYAyABKAsyFS5CbG9ja1VzZXIuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5Ei4KCnVzZXJfYmF0Y2gYBiADKAsyDy5CbG9ja1VzZXIuVXNlclIJdXNlckJhdGNoEiYKBXRva2VuGAcgASgLMhAuQmxvY2tVc2VyLlRva2VuUgV0b2tlbhIfCgtjbG91ZF90b2tlbhgIIAEoCVIKY2xvdWRUb2tlbhIjCg10b2tlbl9wb2ludGVyGAkgASgJUgx0b2tlblBvaW50ZXISSwoSYWN0aXZlX21lYXN1cmVtZW50GAogASgLMhwuQmxvY2tVc2VyLkFjdGl2ZU1lYXN1cmVtZW50UhFhY3RpdmVNZWFzdXJlbWVudBIqChF0b3RhbF9hY3RpdmVfdGltZRgLIAEoBVIPdG90YWxBY3RpdmVUaW1lEi4KE2F2ZXJhZ2VfYWN0aXZlX3RpbWUYDCABKAVSEWF2ZXJhZ2VBY3RpdmVUaW1lEikKBmNvbmZpZxgNIAEoCzIRLkJsb2NrVXNlci5Db25maWdSBmNvbmZpZxImCgVlbWFpbBgOIAEoCzIQLkJsb2NrVXNlci5FbWFpbFIFZW1haWwSNgoXZW1haWxfdmVyaWZpY2F0aW9uX2NvZGUYDyABKAlSFWVtYWlsVmVyaWZpY2F0aW9uQ29kZRJdCh12ZXJpZmljYXRpb25fZW1haWxfZXhwaXJlc19hdBgQIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGnZlcmlmaWNhdGlvbkVtYWlsRXhwaXJlc0F0');
 @$core.Deprecated('Use userResponseDescriptor instead')
 const UserResponse$json = const {
   '1': 'UserResponse',

@@ -5739,7 +5739,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     averageActiveTime: jspb.Message.getFieldWithDefault(msg, 12, 0),
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
     email: (f = msg.getEmail()) && proto.BlockUser.Email.toObject(includeInstance, f),
-    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 15, "")
+    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    verificationEmailExpiresAt: (f = msg.getVerificationEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5843,6 +5844,11 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmailVerificationCode(value);
+      break;
+    case 16:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setVerificationEmailExpiresAt(value);
       break;
     default:
       reader.skipField();
@@ -5984,6 +5990,14 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
     writer.writeString(
       15,
       f
+    );
+  }
+  f = message.getVerificationEmailExpiresAt();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -6409,6 +6423,43 @@ proto.BlockUser.UserRequest.prototype.getEmailVerificationCode = function() {
  */
 proto.BlockUser.UserRequest.prototype.setEmailVerificationCode = function(value) {
   return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp verification_email_expires_at = 16;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.UserRequest.prototype.getVerificationEmailExpiresAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+*/
+proto.BlockUser.UserRequest.prototype.setVerificationEmailExpiresAt = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.clearVerificationEmailExpiresAt = function() {
+  return this.setVerificationEmailExpiresAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.UserRequest.prototype.hasVerificationEmailExpiresAt = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
