@@ -2093,7 +2093,6 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOM<Config>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOM<Email>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Email.create)
     ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
-    ..aOM<$1.Timestamp>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationEmailExpiresAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -2114,7 +2113,6 @@ class UserRequest extends $pb.GeneratedMessage {
     Config? config,
     Email? email,
     $core.String? emailVerificationCode,
-    $1.Timestamp? verificationEmailExpiresAt,
   }) {
     final _result = create();
     if (user != null) {
@@ -2161,9 +2159,6 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (emailVerificationCode != null) {
       _result.emailVerificationCode = emailVerificationCode;
-    }
-    if (verificationEmailExpiresAt != null) {
-      _result.verificationEmailExpiresAt = verificationEmailExpiresAt;
     }
     return _result;
   }
@@ -2330,17 +2325,6 @@ class UserRequest extends $pb.GeneratedMessage {
   $core.bool hasEmailVerificationCode() => $_has(14);
   @$pb.TagNumber(15)
   void clearEmailVerificationCode() => clearField(15);
-
-  @$pb.TagNumber(16)
-  $1.Timestamp get verificationEmailExpiresAt => $_getN(15);
-  @$pb.TagNumber(16)
-  set verificationEmailExpiresAt($1.Timestamp v) { setField(16, v); }
-  @$pb.TagNumber(16)
-  $core.bool hasVerificationEmailExpiresAt() => $_has(15);
-  @$pb.TagNumber(16)
-  void clearVerificationEmailExpiresAt() => clearField(16);
-  @$pb.TagNumber(16)
-  $1.Timestamp ensureVerificationEmailExpiresAt() => $_ensure(15);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
@@ -2354,7 +2338,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..aOM<ActiveMeasurement>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
     ..aOM<Config>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOM<ActiveHistory>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeHistory', subBuilder: ActiveHistory.create)
-    ..e<ErrorType>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: ErrorType.NO_ERROR, valueOf: ErrorType.valueOf, enumValues: ErrorType.values)
+    ..e<LoginStatus>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginStatus', $pb.PbFieldType.OE, defaultOrMaker: LoginStatus.AUTHENTICATED, valueOf: LoginStatus.valueOf, enumValues: LoginStatus.values)
     ..hasRequiredFields = false
   ;
 
@@ -2369,7 +2353,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ActiveMeasurement? activeMeasurement,
     Config? config,
     ActiveHistory? activeHistory,
-    ErrorType? error,
+    LoginStatus? loginStatus,
   }) {
     final _result = create();
     if (user != null) {
@@ -2399,8 +2383,8 @@ class UserResponse extends $pb.GeneratedMessage {
     if (activeHistory != null) {
       _result.activeHistory = activeHistory;
     }
-    if (error != null) {
-      _result.error = error;
+    if (loginStatus != null) {
+      _result.loginStatus = loginStatus;
     }
     return _result;
   }
@@ -2499,12 +2483,12 @@ class UserResponse extends $pb.GeneratedMessage {
   ActiveHistory ensureActiveHistory() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  ErrorType get error => $_getN(9);
+  LoginStatus get loginStatus => $_getN(9);
   @$pb.TagNumber(10)
-  set error(ErrorType v) { setField(10, v); }
+  set loginStatus(LoginStatus v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasError() => $_has(9);
+  $core.bool hasLoginStatus() => $_has(9);
   @$pb.TagNumber(10)
-  void clearError() => clearField(10);
+  void clearLoginStatus() => clearField(10);
 }
 

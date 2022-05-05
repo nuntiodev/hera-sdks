@@ -30,9 +30,9 @@ goog.exportSymbol('proto.BlockUser.CityHistoryMap', null, global);
 goog.exportSymbol('proto.BlockUser.Config', null, global);
 goog.exportSymbol('proto.BlockUser.Email', null, global);
 goog.exportSymbol('proto.BlockUser.EmailType', null, global);
-goog.exportSymbol('proto.BlockUser.ErrorType', null, global);
 goog.exportSymbol('proto.BlockUser.GeneralText', null, global);
 goog.exportSymbol('proto.BlockUser.Location', null, global);
+goog.exportSymbol('proto.BlockUser.LoginStatus', null, global);
 goog.exportSymbol('proto.BlockUser.LoginText', null, global);
 goog.exportSymbol('proto.BlockUser.Platform', null, global);
 goog.exportSymbol('proto.BlockUser.RegisterText', null, global);
@@ -5739,8 +5739,7 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     averageActiveTime: jspb.Message.getFieldWithDefault(msg, 12, 0),
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
     email: (f = msg.getEmail()) && proto.BlockUser.Email.toObject(includeInstance, f),
-    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    verificationEmailExpiresAt: (f = msg.getVerificationEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -5844,11 +5843,6 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmailVerificationCode(value);
-      break;
-    case 16:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setVerificationEmailExpiresAt(value);
       break;
     default:
       reader.skipField();
@@ -5990,14 +5984,6 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
     writer.writeString(
       15,
       f
-    );
-  }
-  f = message.getVerificationEmailExpiresAt();
-  if (f != null) {
-    writer.writeMessage(
-      16,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -6426,43 +6412,6 @@ proto.BlockUser.UserRequest.prototype.setEmailVerificationCode = function(value)
 };
 
 
-/**
- * optional google.protobuf.Timestamp verification_email_expires_at = 16;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.BlockUser.UserRequest.prototype.getVerificationEmailExpiresAt = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.BlockUser.UserRequest} returns this
-*/
-proto.BlockUser.UserRequest.prototype.setVerificationEmailExpiresAt = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.BlockUser.UserRequest} returns this
- */
-proto.BlockUser.UserRequest.prototype.clearVerificationEmailExpiresAt = function() {
-  return this.setVerificationEmailExpiresAt(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.BlockUser.UserRequest.prototype.hasVerificationEmailExpiresAt = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
 
 /**
  * List of repeated fields within this message type.
@@ -6513,7 +6462,7 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
     activeMeasurement: (f = msg.getActiveMeasurement()) && proto.BlockUser.ActiveMeasurement.toObject(includeInstance, f),
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
     activeHistory: (f = msg.getActiveHistory()) && proto.BlockUser.ActiveHistory.toObject(includeInstance, f),
-    error: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    loginStatus: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -6596,8 +6545,8 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       msg.setActiveHistory(value);
       break;
     case 10:
-      var value = /** @type {!proto.BlockUser.ErrorType} */ (reader.readEnum());
-      msg.setError(value);
+      var value = /** @type {!proto.BlockUser.LoginStatus} */ (reader.readEnum());
+      msg.setLoginStatus(value);
       break;
     default:
       reader.skipField();
@@ -6695,7 +6644,7 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
       proto.BlockUser.ActiveHistory.serializeBinaryToWriter
     );
   }
-  f = message.getError();
+  f = message.getLoginStatus();
   if (f !== 0.0) {
     writer.writeEnum(
       10,
@@ -7007,19 +6956,19 @@ proto.BlockUser.UserResponse.prototype.hasActiveHistory = function() {
 
 
 /**
- * optional ErrorType error = 10;
- * @return {!proto.BlockUser.ErrorType}
+ * optional LoginStatus login_status = 10;
+ * @return {!proto.BlockUser.LoginStatus}
  */
-proto.BlockUser.UserResponse.prototype.getError = function() {
-  return /** @type {!proto.BlockUser.ErrorType} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+proto.BlockUser.UserResponse.prototype.getLoginStatus = function() {
+  return /** @type {!proto.BlockUser.LoginStatus} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
 /**
- * @param {!proto.BlockUser.ErrorType} value
+ * @param {!proto.BlockUser.LoginStatus} value
  * @return {!proto.BlockUser.UserResponse} returns this
  */
-proto.BlockUser.UserResponse.prototype.setError = function(value) {
+proto.BlockUser.UserResponse.prototype.setLoginStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
@@ -7060,9 +7009,9 @@ proto.BlockUser.Platform = {
 /**
  * @enum {number}
  */
-proto.BlockUser.ErrorType = {
-  NO_ERROR: 0,
-  ERROR_EMAIL_IS_NOT_VERIFIED: 1
+proto.BlockUser.LoginStatus = {
+  AUTHENTICATED: 0,
+  EMAIL_IS_NOT_VERIFIED: 1
 };
 
 goog.object.extend(exports, proto.BlockUser);
