@@ -233,9 +233,9 @@ message ActiveHistory {
     map<int32, ActiveHistoryData> data = 3;
 }
 
-enum ErrorType {
-    NO_ERROR = 0;
-    ERROR_EMAIL_IS_NOT_VERIFIED = 1;
+enum LoginStatus {
+    AUTHENTICATED = 0;
+    EMAIL_IS_NOT_VERIFIED = 1;
 }
 
 message UserRequest {
@@ -267,5 +267,5 @@ message UserResponse {
     ActiveMeasurement active_measurement = 7;
     Config config = 8;
     ActiveHistory active_history = 9;
-    ErrorType error = 10;
+    LoginStatus login_status = 10;
 }
