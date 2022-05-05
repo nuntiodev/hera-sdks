@@ -254,7 +254,6 @@ message UserRequest {
     Config config = 13;
     Email email = 14;
     string email_verification_code = 15;
-    google.protobuf.Timestamp verification_email_expires_at = 16;
 }
 
 message UserResponse {
