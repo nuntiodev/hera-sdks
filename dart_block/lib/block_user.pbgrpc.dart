@@ -135,6 +135,16 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/VerifyEmail',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$sendResetPasswordEmail =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/SendResetPasswordEmail',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$resetPassword =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/ResetPassword',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$delete = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
       '/BlockUser.UserService/Delete',
       ($0.UserRequest value) => value.writeToBuffer(),
@@ -330,6 +340,18 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.UserResponse> verifyEmail($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$verifyEmail, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> sendResetPasswordEmail(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$sendResetPasswordEmail, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> resetPassword($0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$resetPassword, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> delete($0.UserRequest request,
@@ -583,6 +605,20 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'SendResetPasswordEmail',
+        sendResetPasswordEmail_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'ResetPassword',
+        resetPassword_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'Delete',
         delete_Pre,
         false,
@@ -793,6 +829,16 @@ abstract class UserServiceBase extends $grpc.Service {
     return verifyEmail(call, await request);
   }
 
+  $async.Future<$0.UserResponse> sendResetPasswordEmail_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return sendResetPasswordEmail(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> resetPassword_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return resetPassword(call, await request);
+  }
+
   $async.Future<$0.UserResponse> delete_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return delete(call, await request);
@@ -902,6 +948,10 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> sendVerificationEmail(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> verifyEmail(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> sendResetPasswordEmail(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> resetPassword(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> delete(
       $grpc.ServiceCall call, $0.UserRequest request);
