@@ -1051,6 +1051,7 @@ class User extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerifiedAt', subBuilder: $1.Timestamp.create)
     ..aOB(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailIsVerified')
     ..aOS(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationCode')
+    ..aOM<$1.Timestamp>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationEmailExpiresAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1075,6 +1076,7 @@ class User extends $pb.GeneratedMessage {
     $1.Timestamp? emailVerifiedAt,
     $core.bool? emailIsVerified,
     $core.String? verificationCode,
+    $1.Timestamp? verificationEmailExpiresAt,
   }) {
     final _result = create();
     if (id != null) {
@@ -1133,6 +1135,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (verificationCode != null) {
       _result.verificationCode = verificationCode;
+    }
+    if (verificationEmailExpiresAt != null) {
+      _result.verificationEmailExpiresAt = verificationEmailExpiresAt;
     }
     return _result;
   }
@@ -1339,6 +1344,17 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasVerificationCode() => $_has(18);
   @$pb.TagNumber(19)
   void clearVerificationCode() => clearField(19);
+
+  @$pb.TagNumber(20)
+  $1.Timestamp get verificationEmailExpiresAt => $_getN(19);
+  @$pb.TagNumber(20)
+  set verificationEmailExpiresAt($1.Timestamp v) { setField(20, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasVerificationEmailExpiresAt() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearVerificationEmailExpiresAt() => clearField(20);
+  @$pb.TagNumber(20)
+  $1.Timestamp ensureVerificationEmailExpiresAt() => $_ensure(19);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
