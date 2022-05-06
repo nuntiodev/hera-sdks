@@ -32,6 +32,8 @@ service UserService {
     rpc NamespaceActiveHistory(UserRequest) returns (UserResponse) {}
     rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
     rpc VerifyEmail(UserRequest) returns (UserResponse) {}
+    rpc SendResetPasswordEmail(UserRequest) returns (UserResponse) {}
+    rpc ResetPassword(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
@@ -148,8 +150,11 @@ message User {
     google.protobuf.Timestamp verification_email_sent_at = 16;
     google.protobuf.Timestamp email_verified_at = 17;
     bool email_is_verified = 18;
-    string verification_code = 19;
+    string email_verification_code = 19;
     google.protobuf.Timestamp verification_email_expires_at = 20;
+    string reset_password_verification_code = 21;
+    google.protobuf.Timestamp reset_password_email_sent_at = 22;
+    google.protobuf.Timestamp reset_password_email_expires_at = 23;
 }
 
 message UserFilter {
