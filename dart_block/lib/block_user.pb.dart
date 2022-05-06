@@ -2076,6 +2076,69 @@ class ActiveHistory extends $pb.GeneratedMessage {
   $core.Map<$core.int, ActiveHistoryData> get data => $_getMap(2);
 }
 
+class LoginSession extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LoginSession', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
+    ..e<LoginStatus>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginStatus', $pb.PbFieldType.OE, defaultOrMaker: LoginStatus.AUTHENTICATED, valueOf: LoginStatus.valueOf, enumValues: LoginStatus.values)
+    ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailSentAt', subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  LoginSession._() : super();
+  factory LoginSession({
+    LoginStatus? loginStatus,
+    $1.Timestamp? emailSentAt,
+  }) {
+    final _result = create();
+    if (loginStatus != null) {
+      _result.loginStatus = loginStatus;
+    }
+    if (emailSentAt != null) {
+      _result.emailSentAt = emailSentAt;
+    }
+    return _result;
+  }
+  factory LoginSession.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LoginSession.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LoginSession clone() => LoginSession()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LoginSession copyWith(void Function(LoginSession) updates) => super.copyWith((message) => updates(message as LoginSession)) as LoginSession; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static LoginSession create() => LoginSession._();
+  LoginSession createEmptyInstance() => create();
+  static $pb.PbList<LoginSession> createRepeated() => $pb.PbList<LoginSession>();
+  @$core.pragma('dart2js:noInline')
+  static LoginSession getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginSession>(create);
+  static LoginSession? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LoginStatus get loginStatus => $_getN(0);
+  @$pb.TagNumber(1)
+  set loginStatus(LoginStatus v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLoginStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLoginStatus() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.Timestamp get emailSentAt => $_getN(1);
+  @$pb.TagNumber(2)
+  set emailSentAt($1.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEmailSentAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEmailSentAt() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.Timestamp ensureEmailSentAt() => $_ensure(1);
+}
+
 class UserRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOM<User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: User.create)
@@ -2338,7 +2401,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..aOM<ActiveMeasurement>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeMeasurement', subBuilder: ActiveMeasurement.create)
     ..aOM<Config>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOM<ActiveHistory>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeHistory', subBuilder: ActiveHistory.create)
-    ..e<LoginStatus>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginStatus', $pb.PbFieldType.OE, defaultOrMaker: LoginStatus.AUTHENTICATED, valueOf: LoginStatus.valueOf, enumValues: LoginStatus.values)
+    ..aOM<LoginSession>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginSession', subBuilder: LoginSession.create)
     ..hasRequiredFields = false
   ;
 
@@ -2353,7 +2416,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ActiveMeasurement? activeMeasurement,
     Config? config,
     ActiveHistory? activeHistory,
-    LoginStatus? loginStatus,
+    LoginSession? loginSession,
   }) {
     final _result = create();
     if (user != null) {
@@ -2383,8 +2446,8 @@ class UserResponse extends $pb.GeneratedMessage {
     if (activeHistory != null) {
       _result.activeHistory = activeHistory;
     }
-    if (loginStatus != null) {
-      _result.loginStatus = loginStatus;
+    if (loginSession != null) {
+      _result.loginSession = loginSession;
     }
     return _result;
   }
@@ -2483,12 +2546,14 @@ class UserResponse extends $pb.GeneratedMessage {
   ActiveHistory ensureActiveHistory() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  LoginStatus get loginStatus => $_getN(9);
+  LoginSession get loginSession => $_getN(9);
   @$pb.TagNumber(10)
-  set loginStatus(LoginStatus v) { setField(10, v); }
+  set loginSession(LoginSession v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasLoginStatus() => $_has(9);
+  $core.bool hasLoginSession() => $_has(9);
   @$pb.TagNumber(10)
-  void clearLoginStatus() => clearField(10);
+  void clearLoginSession() => clearField(10);
+  @$pb.TagNumber(10)
+  LoginSession ensureLoginSession() => $_ensure(9);
 }
 
