@@ -5984,7 +5984,8 @@ proto.BlockUser.LoginSession.toObject = function(includeInstance, msg) {
   var f, obj = {
     loginStatus: jspb.Message.getFieldWithDefault(msg, 1, 0),
     emailSentAt: (f = msg.getEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    backoff: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -6034,6 +6035,10 @@ proto.BlockUser.LoginSession.deserializeBinaryFromReader = function(msg, reader)
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEmailExpiresAt(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setBackoff(value);
       break;
     default:
       reader.skipField();
@@ -6085,6 +6090,13 @@ proto.BlockUser.LoginSession.serializeBinaryToWriter = function(message, writer)
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getBackoff();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
     );
   }
 };
@@ -6179,6 +6191,24 @@ proto.BlockUser.LoginSession.prototype.clearEmailExpiresAt = function() {
  */
 proto.BlockUser.LoginSession.prototype.hasEmailExpiresAt = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 backoff = 4;
+ * @return {number}
+ */
+proto.BlockUser.LoginSession.prototype.getBackoff = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.LoginSession} returns this
+ */
+proto.BlockUser.LoginSession.prototype.setBackoff = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
