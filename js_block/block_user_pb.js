@@ -2949,14 +2949,16 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     firstName: jspb.Message.getFieldWithDefault(msg, 13, ""),
     lastName: jspb.Message.getFieldWithDefault(msg, 14, ""),
     birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    verificationEmailSentAt: (f = msg.getVerificationEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     emailVerifiedAt: (f = msg.getEmailVerifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    emailIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
+    emailIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    verificationEmailSentAt: (f = msg.getVerificationEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 19, ""),
     verificationEmailExpiresAt: (f = msg.getVerificationEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    emailResetPasswordCode: jspb.Message.getFieldWithDefault(msg, 21, ""),
+    verifyEmailAttempts: jspb.Message.getFieldWithDefault(msg, 21, 0),
+    resetPasswordCode: jspb.Message.getFieldWithDefault(msg, 22, ""),
     resetPasswordEmailSentAt: (f = msg.getResetPasswordEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    resetPasswordEmailExpiresAt: (f = msg.getResetPasswordEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    resetPasswordEmailExpiresAt: (f = msg.getResetPasswordEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    resetPasswordAttempts: jspb.Message.getFieldWithDefault(msg, 25, 0)
   };
 
   if (includeInstance) {
@@ -3060,16 +3062,16 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 16:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setVerificationEmailSentAt(value);
-      break;
-    case 17:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEmailVerifiedAt(value);
       break;
-    case 18:
+    case 17:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailIsVerified(value);
+      break;
+    case 18:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setVerificationEmailSentAt(value);
       break;
     case 19:
       var value = /** @type {string} */ (reader.readString());
@@ -3081,18 +3083,26 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setVerificationEmailExpiresAt(value);
       break;
     case 21:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmailResetPasswordCode(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setVerifyEmailAttempts(value);
       break;
     case 22:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setResetPasswordEmailSentAt(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setResetPasswordCode(value);
       break;
     case 23:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setResetPasswordEmailSentAt(value);
+      break;
+    case 24:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setResetPasswordEmailExpiresAt(value);
+      break;
+    case 25:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setResetPasswordAttempts(value);
       break;
     default:
       reader.skipField();
@@ -3232,7 +3242,7 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getVerificationEmailSentAt();
+  f = message.getEmailVerifiedAt();
   if (f != null) {
     writer.writeMessage(
       16,
@@ -3240,19 +3250,19 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getEmailVerifiedAt();
-  if (f != null) {
-    writer.writeMessage(
-      17,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
   f = message.getEmailIsVerified();
   if (f) {
     writer.writeBool(
-      18,
+      17,
       f
+    );
+  }
+  f = message.getVerificationEmailSentAt();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = message.getEmailVerificationCode();
@@ -3270,17 +3280,24 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getEmailResetPasswordCode();
+  f = message.getVerifyEmailAttempts();
+  if (f !== 0) {
+    writer.writeInt32(
+      21,
+      f
+    );
+  }
+  f = message.getResetPasswordCode();
   if (f.length > 0) {
     writer.writeString(
-      21,
+      22,
       f
     );
   }
   f = message.getResetPasswordEmailSentAt();
   if (f != null) {
     writer.writeMessage(
-      22,
+      23,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -3288,9 +3305,16 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
   f = message.getResetPasswordEmailExpiresAt();
   if (f != null) {
     writer.writeMessage(
-      23,
+      24,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getResetPasswordAttempts();
+  if (f !== 0) {
+    writer.writeInt32(
+      25,
+      f
     );
   }
 };
@@ -3643,10 +3667,10 @@ proto.BlockUser.User.prototype.hasBirthdate = function() {
 
 
 /**
- * optional google.protobuf.Timestamp verification_email_sent_at = 16;
+ * optional google.protobuf.Timestamp email_verified_at = 16;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.BlockUser.User.prototype.getVerificationEmailSentAt = function() {
+proto.BlockUser.User.prototype.getEmailVerifiedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
 };
@@ -3656,45 +3680,8 @@ proto.BlockUser.User.prototype.getVerificationEmailSentAt = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.BlockUser.User} returns this
 */
-proto.BlockUser.User.prototype.setVerificationEmailSentAt = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.BlockUser.User} returns this
- */
-proto.BlockUser.User.prototype.clearVerificationEmailSentAt = function() {
-  return this.setVerificationEmailSentAt(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.BlockUser.User.prototype.hasVerificationEmailSentAt = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional google.protobuf.Timestamp email_verified_at = 17;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.BlockUser.User.prototype.getEmailVerifiedAt = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 17));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.BlockUser.User} returns this
-*/
 proto.BlockUser.User.prototype.setEmailVerifiedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -3712,16 +3699,16 @@ proto.BlockUser.User.prototype.clearEmailVerifiedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasEmailVerifiedAt = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional bool email_is_verified = 18;
+ * optional bool email_is_verified = 17;
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.getEmailIsVerified = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
 
@@ -3730,7 +3717,44 @@ proto.BlockUser.User.prototype.getEmailIsVerified = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setEmailIsVerified = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 18, value);
+  return jspb.Message.setProto3BooleanField(this, 17, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp verification_email_sent_at = 18;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.User.prototype.getVerificationEmailSentAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 18));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.User} returns this
+*/
+proto.BlockUser.User.prototype.setVerificationEmailSentAt = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearVerificationEmailSentAt = function() {
+  return this.setVerificationEmailSentAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasVerificationEmailSentAt = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
@@ -3790,11 +3814,29 @@ proto.BlockUser.User.prototype.hasVerificationEmailExpiresAt = function() {
 
 
 /**
- * optional string email_reset_password_code = 21;
+ * optional int32 verify_email_attempts = 21;
+ * @return {number}
+ */
+proto.BlockUser.User.prototype.getVerifyEmailAttempts = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setVerifyEmailAttempts = function(value) {
+  return jspb.Message.setProto3IntField(this, 21, value);
+};
+
+
+/**
+ * optional string reset_password_code = 22;
  * @return {string}
  */
-proto.BlockUser.User.prototype.getEmailResetPasswordCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+proto.BlockUser.User.prototype.getResetPasswordCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
 };
 
 
@@ -3802,18 +3844,18 @@ proto.BlockUser.User.prototype.getEmailResetPasswordCode = function() {
  * @param {string} value
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.setEmailResetPasswordCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 21, value);
+proto.BlockUser.User.prototype.setResetPasswordCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 22, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp reset_password_email_sent_at = 22;
+ * optional google.protobuf.Timestamp reset_password_email_sent_at = 23;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.User.prototype.getResetPasswordEmailSentAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 22));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 23));
 };
 
 
@@ -3822,7 +3864,7 @@ proto.BlockUser.User.prototype.getResetPasswordEmailSentAt = function() {
  * @return {!proto.BlockUser.User} returns this
 */
 proto.BlockUser.User.prototype.setResetPasswordEmailSentAt = function(value) {
-  return jspb.Message.setWrapperField(this, 22, value);
+  return jspb.Message.setWrapperField(this, 23, value);
 };
 
 
@@ -3840,17 +3882,17 @@ proto.BlockUser.User.prototype.clearResetPasswordEmailSentAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasResetPasswordEmailSentAt = function() {
-  return jspb.Message.getField(this, 22) != null;
+  return jspb.Message.getField(this, 23) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp reset_password_email_expires_at = 23;
+ * optional google.protobuf.Timestamp reset_password_email_expires_at = 24;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.User.prototype.getResetPasswordEmailExpiresAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 23));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 24));
 };
 
 
@@ -3859,7 +3901,7 @@ proto.BlockUser.User.prototype.getResetPasswordEmailExpiresAt = function() {
  * @return {!proto.BlockUser.User} returns this
 */
 proto.BlockUser.User.prototype.setResetPasswordEmailExpiresAt = function(value) {
-  return jspb.Message.setWrapperField(this, 23, value);
+  return jspb.Message.setWrapperField(this, 24, value);
 };
 
 
@@ -3877,7 +3919,25 @@ proto.BlockUser.User.prototype.clearResetPasswordEmailExpiresAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.User.prototype.hasResetPasswordEmailExpiresAt = function() {
-  return jspb.Message.getField(this, 23) != null;
+  return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional int32 reset_password_attempts = 25;
+ * @return {number}
+ */
+proto.BlockUser.User.prototype.getResetPasswordAttempts = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 25, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setResetPasswordAttempts = function(value) {
+  return jspb.Message.setProto3IntField(this, 25, value);
 };
 
 
