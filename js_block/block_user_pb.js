@@ -2954,7 +2954,7 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     emailIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
     emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 19, ""),
     verificationEmailExpiresAt: (f = msg.getVerificationEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    resetPasswordVerificationCode: jspb.Message.getFieldWithDefault(msg, 21, ""),
+    emailResetPasswordCode: jspb.Message.getFieldWithDefault(msg, 21, ""),
     resetPasswordEmailSentAt: (f = msg.getResetPasswordEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordEmailExpiresAt: (f = msg.getResetPasswordEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -3082,7 +3082,7 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 21:
       var value = /** @type {string} */ (reader.readString());
-      msg.setResetPasswordVerificationCode(value);
+      msg.setEmailResetPasswordCode(value);
       break;
     case 22:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -3270,7 +3270,7 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getResetPasswordVerificationCode();
+  f = message.getEmailResetPasswordCode();
   if (f.length > 0) {
     writer.writeString(
       21,
@@ -3790,10 +3790,10 @@ proto.BlockUser.User.prototype.hasVerificationEmailExpiresAt = function() {
 
 
 /**
- * optional string reset_password_verification_code = 21;
+ * optional string email_reset_password_code = 21;
  * @return {string}
  */
-proto.BlockUser.User.prototype.getResetPasswordVerificationCode = function() {
+proto.BlockUser.User.prototype.getEmailResetPasswordCode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
 };
 
@@ -3802,7 +3802,7 @@ proto.BlockUser.User.prototype.getResetPasswordVerificationCode = function() {
  * @param {string} value
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.setResetPasswordVerificationCode = function(value) {
+proto.BlockUser.User.prototype.setEmailResetPasswordCode = function(value) {
   return jspb.Message.setProto3StringField(this, 21, value);
 };
 
