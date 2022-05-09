@@ -147,14 +147,16 @@ message User {
     string first_name = 13;
     string last_name = 14;
     google.protobuf.Timestamp birthdate = 15;
-    google.protobuf.Timestamp verification_email_sent_at = 16;
-    google.protobuf.Timestamp email_verified_at = 17;
-    bool email_is_verified = 18;
+    google.protobuf.Timestamp email_verified_at = 16;
+    bool email_is_verified = 17;
+    google.protobuf.Timestamp verification_email_sent_at = 18;
     string email_verification_code = 19;
     google.protobuf.Timestamp verification_email_expires_at = 20;
-    string email_reset_password_code = 21;
-    google.protobuf.Timestamp reset_password_email_sent_at = 22;
-    google.protobuf.Timestamp reset_password_email_expires_at = 23;
+    int32 verify_email_attempts = 21;
+    string reset_password_code = 22;
+    google.protobuf.Timestamp reset_password_email_sent_at = 23;
+    google.protobuf.Timestamp reset_password_email_expires_at = 24;
+    int32 reset_password_attempts = 25;
 }
 
 message UserFilter {
