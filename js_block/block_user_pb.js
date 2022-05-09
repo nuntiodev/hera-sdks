@@ -5923,7 +5923,8 @@ proto.BlockUser.LoginSession.prototype.toObject = function(opt_includeInstance) 
 proto.BlockUser.LoginSession.toObject = function(includeInstance, msg) {
   var f, obj = {
     loginStatus: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    emailSentAt: (f = msg.getEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    emailSentAt: (f = msg.getEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5969,6 +5970,11 @@ proto.BlockUser.LoginSession.deserializeBinaryFromReader = function(msg, reader)
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEmailSentAt(value);
       break;
+    case 3:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEmailExpiresAt(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -6009,6 +6015,14 @@ proto.BlockUser.LoginSession.serializeBinaryToWriter = function(message, writer)
   if (f != null) {
     writer.writeMessage(
       2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEmailExpiresAt();
+  if (f != null) {
+    writer.writeMessage(
+      3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -6068,6 +6082,43 @@ proto.BlockUser.LoginSession.prototype.clearEmailSentAt = function() {
  */
 proto.BlockUser.LoginSession.prototype.hasEmailSentAt = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp email_expires_at = 3;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.LoginSession.prototype.getEmailExpiresAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.LoginSession} returns this
+*/
+proto.BlockUser.LoginSession.prototype.setEmailExpiresAt = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.LoginSession} returns this
+ */
+proto.BlockUser.LoginSession.prototype.clearEmailExpiresAt = function() {
+  return this.setEmailExpiresAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.LoginSession.prototype.hasEmailExpiresAt = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

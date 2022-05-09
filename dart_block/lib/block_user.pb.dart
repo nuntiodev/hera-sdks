@@ -2142,6 +2142,7 @@ class LoginSession extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LoginSession', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..e<LoginStatus>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginStatus', $pb.PbFieldType.OE, defaultOrMaker: LoginStatus.AUTHENTICATED, valueOf: LoginStatus.valueOf, enumValues: LoginStatus.values)
     ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailSentAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailExpiresAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -2149,6 +2150,7 @@ class LoginSession extends $pb.GeneratedMessage {
   factory LoginSession({
     LoginStatus? loginStatus,
     $1.Timestamp? emailSentAt,
+    $1.Timestamp? emailExpiresAt,
   }) {
     final _result = create();
     if (loginStatus != null) {
@@ -2156,6 +2158,9 @@ class LoginSession extends $pb.GeneratedMessage {
     }
     if (emailSentAt != null) {
       _result.emailSentAt = emailSentAt;
+    }
+    if (emailExpiresAt != null) {
+      _result.emailExpiresAt = emailExpiresAt;
     }
     return _result;
   }
@@ -2199,6 +2204,17 @@ class LoginSession extends $pb.GeneratedMessage {
   void clearEmailSentAt() => clearField(2);
   @$pb.TagNumber(2)
   $1.Timestamp ensureEmailSentAt() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get emailExpiresAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set emailExpiresAt($1.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEmailExpiresAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEmailExpiresAt() => clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureEmailExpiresAt() => $_ensure(2);
 }
 
 class UserRequest extends $pb.GeneratedMessage {
