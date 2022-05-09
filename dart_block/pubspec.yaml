@@ -1,6 +1,6 @@
 name: nuntio_blocks
 description: gRPC files for nuntio blocks
-version: 0.0.13
+version: 0.0.14
 homepage: https://github.com/nuntiodev
 
 environment:
