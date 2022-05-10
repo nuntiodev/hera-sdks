@@ -1058,6 +1058,7 @@ class User extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordEmailExpiresAt', subBuilder: $1.Timestamp.create)
     ..a<$core.int>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordAttempts', $pb.PbFieldType.O3)
     ..pPS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedEmails')
+    ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailHash')
     ..hasRequiredFields = false
   ;
 
@@ -1089,6 +1090,7 @@ class User extends $pb.GeneratedMessage {
     $1.Timestamp? resetPasswordEmailExpiresAt,
     $core.int? resetPasswordAttempts,
     $core.Iterable<$core.String>? verifiedEmails,
+    $core.String? emailHash,
   }) {
     final _result = create();
     if (id != null) {
@@ -1168,6 +1170,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (verifiedEmails != null) {
       _result.verifiedEmails.addAll(verifiedEmails);
+    }
+    if (emailHash != null) {
+      _result.emailHash = emailHash;
     }
     return _result;
   }
@@ -1437,6 +1442,15 @@ class User extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(26)
   $core.List<$core.String> get verifiedEmails => $_getList(25);
+
+  @$pb.TagNumber(27)
+  $core.String get emailHash => $_getSZ(26);
+  @$pb.TagNumber(27)
+  set emailHash($core.String v) { $_setString(26, v); }
+  @$pb.TagNumber(27)
+  $core.bool hasEmailHash() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearEmailHash() => clearField(27);
 }
 
 class UserFilter extends $pb.GeneratedMessage {

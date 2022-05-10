@@ -2966,7 +2966,8 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     resetPasswordEmailSentAt: (f = msg.getResetPasswordEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordEmailExpiresAt: (f = msg.getResetPasswordEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordAttempts: jspb.Message.getFieldWithDefault(msg, 25, 0),
-    verifiedEmailsList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f
+    verifiedEmailsList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f,
+    emailHash: jspb.Message.getFieldWithDefault(msg, 27, "")
   };
 
   if (includeInstance) {
@@ -3115,6 +3116,10 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 26:
       var value = /** @type {string} */ (reader.readString());
       msg.addVerifiedEmails(value);
+      break;
+    case 27:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmailHash(value);
       break;
     default:
       reader.skipField();
@@ -3333,6 +3338,13 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeRepeatedString(
       26,
+      f
+    );
+  }
+  f = message.getEmailHash();
+  if (f.length > 0) {
+    writer.writeString(
+      27,
       f
     );
   }
@@ -3994,6 +4006,24 @@ proto.BlockUser.User.prototype.addVerifiedEmails = function(value, opt_index) {
  */
 proto.BlockUser.User.prototype.clearVerifiedEmailsList = function() {
   return this.setVerifiedEmailsList([]);
+};
+
+
+/**
+ * optional string email_hash = 27;
+ * @return {string}
+ */
+proto.BlockUser.User.prototype.getEmailHash = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 27, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setEmailHash = function(value) {
+  return jspb.Message.setProto3StringField(this, 27, value);
 };
 
 
