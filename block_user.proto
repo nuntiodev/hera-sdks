@@ -158,6 +158,7 @@ message User {
     google.protobuf.Timestamp reset_password_email_expires_at = 24;
     int32 reset_password_attempts = 25;
     repeated string verified_emails = 26;
+    string email_hash = 27;
 }
 
 message UserFilter {
