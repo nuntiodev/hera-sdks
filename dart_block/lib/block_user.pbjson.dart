@@ -385,11 +385,12 @@ const LoginSession$json = const {
     const {'1': 'login_status', '3': 1, '4': 1, '5': 14, '6': '.BlockUser.LoginStatus', '10': 'loginStatus'},
     const {'1': 'email_sent_at', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'emailSentAt'},
     const {'1': 'email_expires_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'emailExpiresAt'},
+    const {'1': 'backoff', '3': 4, '4': 1, '5': 5, '10': 'backoff'},
   ],
 };
 
 /// Descriptor for `LoginSession`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List loginSessionDescriptor = $convert.base64Decode('CgxMb2dpblNlc3Npb24SOQoMbG9naW5fc3RhdHVzGAEgASgOMhYuQmxvY2tVc2VyLkxvZ2luU3RhdHVzUgtsb2dpblN0YXR1cxI+Cg1lbWFpbF9zZW50X2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILZW1haWxTZW50QXQSRAoQZW1haWxfZXhwaXJlc19hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDmVtYWlsRXhwaXJlc0F0');
+final $typed_data.Uint8List loginSessionDescriptor = $convert.base64Decode('CgxMb2dpblNlc3Npb24SOQoMbG9naW5fc3RhdHVzGAEgASgOMhYuQmxvY2tVc2VyLkxvZ2luU3RhdHVzUgtsb2dpblN0YXR1cxI+Cg1lbWFpbF9zZW50X2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILZW1haWxTZW50QXQSRAoQZW1haWxfZXhwaXJlc19hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDmVtYWlsRXhwaXJlc0F0EhgKB2JhY2tvZmYYBCABKAVSB2JhY2tvZmY=');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',
