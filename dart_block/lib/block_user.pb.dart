@@ -1057,6 +1057,7 @@ class User extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordEmailSentAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordEmailExpiresAt', subBuilder: $1.Timestamp.create)
     ..a<$core.int>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordAttempts', $pb.PbFieldType.O3)
+    ..pPS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedEmails')
     ..hasRequiredFields = false
   ;
 
@@ -1087,6 +1088,7 @@ class User extends $pb.GeneratedMessage {
     $1.Timestamp? resetPasswordEmailSentAt,
     $1.Timestamp? resetPasswordEmailExpiresAt,
     $core.int? resetPasswordAttempts,
+    $core.Iterable<$core.String>? verifiedEmails,
   }) {
     final _result = create();
     if (id != null) {
@@ -1163,6 +1165,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (resetPasswordAttempts != null) {
       _result.resetPasswordAttempts = resetPasswordAttempts;
+    }
+    if (verifiedEmails != null) {
+      _result.verifiedEmails.addAll(verifiedEmails);
     }
     return _result;
   }
@@ -1429,6 +1434,9 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasResetPasswordAttempts() => $_has(24);
   @$pb.TagNumber(25)
   void clearResetPasswordAttempts() => clearField(25);
+
+  @$pb.TagNumber(26)
+  $core.List<$core.String> get verifiedEmails => $_getList(25);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
@@ -2171,7 +2179,6 @@ class LoginSession extends $pb.GeneratedMessage {
     ..e<LoginStatus>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginStatus', $pb.PbFieldType.OE, defaultOrMaker: LoginStatus.AUTHENTICATED, valueOf: LoginStatus.valueOf, enumValues: LoginStatus.values)
     ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailSentAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailExpiresAt', subBuilder: $1.Timestamp.create)
-    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'backoff', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -2180,7 +2187,6 @@ class LoginSession extends $pb.GeneratedMessage {
     LoginStatus? loginStatus,
     $1.Timestamp? emailSentAt,
     $1.Timestamp? emailExpiresAt,
-    $core.int? backoff,
   }) {
     final _result = create();
     if (loginStatus != null) {
@@ -2191,9 +2197,6 @@ class LoginSession extends $pb.GeneratedMessage {
     }
     if (emailExpiresAt != null) {
       _result.emailExpiresAt = emailExpiresAt;
-    }
-    if (backoff != null) {
-      _result.backoff = backoff;
     }
     return _result;
   }
@@ -2248,15 +2251,6 @@ class LoginSession extends $pb.GeneratedMessage {
   void clearEmailExpiresAt() => clearField(3);
   @$pb.TagNumber(3)
   $1.Timestamp ensureEmailExpiresAt() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  $core.int get backoff => $_getIZ(3);
-  @$pb.TagNumber(4)
-  set backoff($core.int v) { $_setSignedInt32(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasBackoff() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearBackoff() => clearField(4);
 }
 
 class UserRequest extends $pb.GeneratedMessage {

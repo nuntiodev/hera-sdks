@@ -183,7 +183,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.BlockUser.User = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.BlockUser.User.repeatedFields_, null);
 };
 goog.inherits(proto.BlockUser.User, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2903,6 +2903,13 @@ proto.BlockUser.Email.prototype.setTemplatePath = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.BlockUser.User.repeatedFields_ = [26];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2958,7 +2965,8 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     resetPasswordCode: jspb.Message.getFieldWithDefault(msg, 22, ""),
     resetPasswordEmailSentAt: (f = msg.getResetPasswordEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordEmailExpiresAt: (f = msg.getResetPasswordEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    resetPasswordAttempts: jspb.Message.getFieldWithDefault(msg, 25, 0)
+    resetPasswordAttempts: jspb.Message.getFieldWithDefault(msg, 25, 0),
+    verifiedEmailsList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3103,6 +3111,10 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 25:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setResetPasswordAttempts(value);
+      break;
+    case 26:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addVerifiedEmails(value);
       break;
     default:
       reader.skipField();
@@ -3314,6 +3326,13 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       25,
+      f
+    );
+  }
+  f = message.getVerifiedEmailsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      26,
       f
     );
   }
@@ -3938,6 +3957,43 @@ proto.BlockUser.User.prototype.getResetPasswordAttempts = function() {
  */
 proto.BlockUser.User.prototype.setResetPasswordAttempts = function(value) {
   return jspb.Message.setProto3IntField(this, 25, value);
+};
+
+
+/**
+ * repeated string verified_emails = 26;
+ * @return {!Array<string>}
+ */
+proto.BlockUser.User.prototype.getVerifiedEmailsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 26));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setVerifiedEmailsList = function(value) {
+  return jspb.Message.setField(this, 26, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.addVerifiedEmails = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 26, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearVerifiedEmailsList = function() {
+  return this.setVerifiedEmailsList([]);
 };
 
 
@@ -5984,8 +6040,7 @@ proto.BlockUser.LoginSession.toObject = function(includeInstance, msg) {
   var f, obj = {
     loginStatus: jspb.Message.getFieldWithDefault(msg, 1, 0),
     emailSentAt: (f = msg.getEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    backoff: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6035,10 +6090,6 @@ proto.BlockUser.LoginSession.deserializeBinaryFromReader = function(msg, reader)
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEmailExpiresAt(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setBackoff(value);
       break;
     default:
       reader.skipField();
@@ -6090,13 +6141,6 @@ proto.BlockUser.LoginSession.serializeBinaryToWriter = function(message, writer)
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getBackoff();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
     );
   }
 };
@@ -6191,24 +6235,6 @@ proto.BlockUser.LoginSession.prototype.clearEmailExpiresAt = function() {
  */
 proto.BlockUser.LoginSession.prototype.hasEmailExpiresAt = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional int32 backoff = 4;
- * @return {number}
- */
-proto.BlockUser.LoginSession.prototype.getBackoff = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.BlockUser.LoginSession} returns this
- */
-proto.BlockUser.LoginSession.prototype.setBackoff = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
