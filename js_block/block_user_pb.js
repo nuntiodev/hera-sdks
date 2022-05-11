@@ -2967,7 +2967,8 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     resetPasswordEmailExpiresAt: (f = msg.getResetPasswordEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordAttempts: jspb.Message.getFieldWithDefault(msg, 25, 0),
     verifiedEmailsList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f,
-    emailHash: jspb.Message.getFieldWithDefault(msg, 27, "")
+    emailHash: jspb.Message.getFieldWithDefault(msg, 27, ""),
+    enableBiometrics: jspb.Message.getBooleanFieldWithDefault(msg, 28, false)
   };
 
   if (includeInstance) {
@@ -3120,6 +3121,10 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 27:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmailHash(value);
+      break;
+    case 28:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnableBiometrics(value);
       break;
     default:
       reader.skipField();
@@ -3345,6 +3350,13 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       27,
+      f
+    );
+  }
+  f = message.getEnableBiometrics();
+  if (f) {
+    writer.writeBool(
+      28,
       f
     );
   }
@@ -4024,6 +4036,24 @@ proto.BlockUser.User.prototype.getEmailHash = function() {
  */
 proto.BlockUser.User.prototype.setEmailHash = function(value) {
   return jspb.Message.setProto3StringField(this, 27, value);
+};
+
+
+/**
+ * optional bool enable_biometrics = 28;
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.getEnableBiometrics = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setEnableBiometrics = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 28, value);
 };
 
 
