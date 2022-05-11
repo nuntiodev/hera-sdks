@@ -112,8 +112,7 @@ enum EmailType {
     EMAIL_TYPE_INVALID = 0;
     EMAIL_TYPE_VERIFY_EMAIL = 1;
     EMAIL_TYPE_FORGOT_PASSWORD = 2;
-    EMAIL_TYPE_WELCOME = 3;
-    EMAIL_TYPE_CUSTPM = 4;
+    EMAIL_TYPE_CUSTOM = 3;
 }
 
 message Email {
@@ -248,6 +247,14 @@ message ActiveHistory {
 enum LoginStatus {
     AUTHENTICATED = 0;
     EMAIL_IS_NOT_VERIFIED = 1;
+}
+
+enum LoginType {
+    LOGIN_TYPE_INVALID = 0;
+    LOGIN_TYPE_EMAIL_PASSWORD = 1;
+    LOGIN_TYPE_EMAIL = 2;
+    LOGIN_TYPE_PHONE = 3;
+    LOGIN_TYPE_PHONE_PASSWORD = 4;
 }
 
 message LoginSession {
