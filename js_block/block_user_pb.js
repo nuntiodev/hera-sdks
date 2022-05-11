@@ -35,6 +35,7 @@ goog.exportSymbol('proto.BlockUser.Location', null, global);
 goog.exportSymbol('proto.BlockUser.LoginSession', null, global);
 goog.exportSymbol('proto.BlockUser.LoginStatus', null, global);
 goog.exportSymbol('proto.BlockUser.LoginText', null, global);
+goog.exportSymbol('proto.BlockUser.LoginType', null, global);
 goog.exportSymbol('proto.BlockUser.Platform', null, global);
 goog.exportSymbol('proto.BlockUser.RegisterText', null, global);
 goog.exportSymbol('proto.BlockUser.Token', null, global);
@@ -6100,7 +6101,8 @@ proto.BlockUser.LoginSession.toObject = function(includeInstance, msg) {
   var f, obj = {
     loginStatus: jspb.Message.getFieldWithDefault(msg, 1, 0),
     emailSentAt: (f = msg.getEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    loginType: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -6150,6 +6152,10 @@ proto.BlockUser.LoginSession.deserializeBinaryFromReader = function(msg, reader)
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEmailExpiresAt(value);
+      break;
+    case 4:
+      var value = /** @type {!proto.BlockUser.LoginType} */ (reader.readEnum());
+      msg.setLoginType(value);
       break;
     default:
       reader.skipField();
@@ -6201,6 +6207,13 @@ proto.BlockUser.LoginSession.serializeBinaryToWriter = function(message, writer)
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getLoginType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
     );
   }
 };
@@ -6295,6 +6308,24 @@ proto.BlockUser.LoginSession.prototype.clearEmailExpiresAt = function() {
  */
 proto.BlockUser.LoginSession.prototype.hasEmailExpiresAt = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional LoginType login_type = 4;
+ * @return {!proto.BlockUser.LoginType}
+ */
+proto.BlockUser.LoginSession.prototype.getLoginType = function() {
+  return /** @type {!proto.BlockUser.LoginType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.BlockUser.LoginType} value
+ * @return {!proto.BlockUser.LoginSession} returns this
+ */
+proto.BlockUser.LoginSession.prototype.setLoginType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
@@ -7644,8 +7675,7 @@ proto.BlockUser.EmailType = {
   EMAIL_TYPE_INVALID: 0,
   EMAIL_TYPE_VERIFY_EMAIL: 1,
   EMAIL_TYPE_FORGOT_PASSWORD: 2,
-  EMAIL_TYPE_WELCOME: 3,
-  EMAIL_TYPE_CUSTPM: 4
+  EMAIL_TYPE_CUSTOM: 3
 };
 
 /**
@@ -7676,6 +7706,17 @@ proto.BlockUser.Platform = {
 proto.BlockUser.LoginStatus = {
   AUTHENTICATED: 0,
   EMAIL_IS_NOT_VERIFIED: 1
+};
+
+/**
+ * @enum {number}
+ */
+proto.BlockUser.LoginType = {
+  LOGIN_TYPE_INVALID: 0,
+  LOGIN_TYPE_EMAIL_PASSWORD: 1,
+  LOGIN_TYPE_EMAIL: 2,
+  LOGIN_TYPE_PHONE: 3,
+  LOGIN_TYPE_PHONE_PASSWORD: 4
 };
 
 goog.object.extend(exports, proto.BlockUser);

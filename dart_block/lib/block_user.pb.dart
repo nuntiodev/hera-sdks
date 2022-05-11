@@ -2207,6 +2207,7 @@ class LoginSession extends $pb.GeneratedMessage {
     ..e<LoginStatus>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginStatus', $pb.PbFieldType.OE, defaultOrMaker: LoginStatus.AUTHENTICATED, valueOf: LoginStatus.valueOf, enumValues: LoginStatus.values)
     ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailSentAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailExpiresAt', subBuilder: $1.Timestamp.create)
+    ..e<LoginType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
     ..hasRequiredFields = false
   ;
 
@@ -2215,6 +2216,7 @@ class LoginSession extends $pb.GeneratedMessage {
     LoginStatus? loginStatus,
     $1.Timestamp? emailSentAt,
     $1.Timestamp? emailExpiresAt,
+    LoginType? loginType,
   }) {
     final _result = create();
     if (loginStatus != null) {
@@ -2225,6 +2227,9 @@ class LoginSession extends $pb.GeneratedMessage {
     }
     if (emailExpiresAt != null) {
       _result.emailExpiresAt = emailExpiresAt;
+    }
+    if (loginType != null) {
+      _result.loginType = loginType;
     }
     return _result;
   }
@@ -2279,6 +2284,15 @@ class LoginSession extends $pb.GeneratedMessage {
   void clearEmailExpiresAt() => clearField(3);
   @$pb.TagNumber(3)
   $1.Timestamp ensureEmailExpiresAt() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  LoginType get loginType => $_getN(3);
+  @$pb.TagNumber(4)
+  set loginType(LoginType v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLoginType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLoginType() => clearField(4);
 }
 
 class UserRequest extends $pb.GeneratedMessage {

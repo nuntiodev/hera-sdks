@@ -15,13 +15,12 @@ const EmailType$json = const {
     const {'1': 'EMAIL_TYPE_INVALID', '2': 0},
     const {'1': 'EMAIL_TYPE_VERIFY_EMAIL', '2': 1},
     const {'1': 'EMAIL_TYPE_FORGOT_PASSWORD', '2': 2},
-    const {'1': 'EMAIL_TYPE_WELCOME', '2': 3},
-    const {'1': 'EMAIL_TYPE_CUSTPM', '2': 4},
+    const {'1': 'EMAIL_TYPE_CUSTOM', '2': 3},
   ],
 };
 
 /// Descriptor for `EmailType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List emailTypeDescriptor = $convert.base64Decode('CglFbWFpbFR5cGUSFgoSRU1BSUxfVFlQRV9JTlZBTElEEAASGwoXRU1BSUxfVFlQRV9WRVJJRllfRU1BSUwQARIeChpFTUFJTF9UWVBFX0ZPUkdPVF9QQVNTV09SRBACEhYKEkVNQUlMX1RZUEVfV0VMQ09NRRADEhUKEUVNQUlMX1RZUEVfQ1VTVFBNEAQ=');
+final $typed_data.Uint8List emailTypeDescriptor = $convert.base64Decode('CglFbWFpbFR5cGUSFgoSRU1BSUxfVFlQRV9JTlZBTElEEAASGwoXRU1BSUxfVFlQRV9WRVJJRllfRU1BSUwQARIeChpFTUFJTF9UWVBFX0ZPUkdPVF9QQVNTV09SRBACEhUKEUVNQUlMX1RZUEVfQ1VTVE9NEAM=');
 @$core.Deprecated('Use tokenTypeDescriptor instead')
 const TokenType$json = const {
   '1': 'TokenType',
@@ -61,6 +60,20 @@ const LoginStatus$json = const {
 
 /// Descriptor for `LoginStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List loginStatusDescriptor = $convert.base64Decode('CgtMb2dpblN0YXR1cxIRCg1BVVRIRU5USUNBVEVEEAASGQoVRU1BSUxfSVNfTk9UX1ZFUklGSUVEEAE=');
+@$core.Deprecated('Use loginTypeDescriptor instead')
+const LoginType$json = const {
+  '1': 'LoginType',
+  '2': const [
+    const {'1': 'LOGIN_TYPE_INVALID', '2': 0},
+    const {'1': 'LOGIN_TYPE_EMAIL_PASSWORD', '2': 1},
+    const {'1': 'LOGIN_TYPE_EMAIL', '2': 2},
+    const {'1': 'LOGIN_TYPE_PHONE', '2': 3},
+    const {'1': 'LOGIN_TYPE_PHONE_PASSWORD', '2': 4},
+  ],
+};
+
+/// Descriptor for `LoginType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List loginTypeDescriptor = $convert.base64Decode('CglMb2dpblR5cGUSFgoSTE9HSU5fVFlQRV9JTlZBTElEEAASHQoZTE9HSU5fVFlQRV9FTUFJTF9QQVNTV09SRBABEhQKEExPR0lOX1RZUEVfRU1BSUwQAhIUChBMT0dJTl9UWVBFX1BIT05FEAMSHQoZTE9HSU5fVFlQRV9QSE9ORV9QQVNTV09SRBAE');
 @$core.Deprecated('Use generalTextDescriptor instead')
 const GeneralText$json = const {
   '1': 'GeneralText',
@@ -388,11 +401,12 @@ const LoginSession$json = const {
     const {'1': 'login_status', '3': 1, '4': 1, '5': 14, '6': '.BlockUser.LoginStatus', '10': 'loginStatus'},
     const {'1': 'email_sent_at', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'emailSentAt'},
     const {'1': 'email_expires_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'emailExpiresAt'},
+    const {'1': 'login_type', '3': 4, '4': 1, '5': 14, '6': '.BlockUser.LoginType', '10': 'loginType'},
   ],
 };
 
 /// Descriptor for `LoginSession`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List loginSessionDescriptor = $convert.base64Decode('CgxMb2dpblNlc3Npb24SOQoMbG9naW5fc3RhdHVzGAEgASgOMhYuQmxvY2tVc2VyLkxvZ2luU3RhdHVzUgtsb2dpblN0YXR1cxI+Cg1lbWFpbF9zZW50X2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILZW1haWxTZW50QXQSRAoQZW1haWxfZXhwaXJlc19hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDmVtYWlsRXhwaXJlc0F0');
+final $typed_data.Uint8List loginSessionDescriptor = $convert.base64Decode('CgxMb2dpblNlc3Npb24SOQoMbG9naW5fc3RhdHVzGAEgASgOMhYuQmxvY2tVc2VyLkxvZ2luU3RhdHVzUgtsb2dpblN0YXR1cxI+Cg1lbWFpbF9zZW50X2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILZW1haWxTZW50QXQSRAoQZW1haWxfZXhwaXJlc19hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDmVtYWlsRXhwaXJlc0F0EjMKCmxvZ2luX3R5cGUYBCABKA4yFC5CbG9ja1VzZXIuTG9naW5UeXBlUglsb2dpblR5cGU=');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',
