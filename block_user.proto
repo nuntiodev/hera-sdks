@@ -261,6 +261,7 @@ message LoginSession {
     LoginStatus login_status = 1;
     google.protobuf.Timestamp email_sent_at = 2;
     google.protobuf.Timestamp email_expires_at = 3;
+    LoginType login_type = 4;
 }
 
 message UserRequest {
