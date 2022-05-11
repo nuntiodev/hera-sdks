@@ -17,6 +17,7 @@ service UserService {
     rpc UpdateEmail(UserRequest) returns (UserResponse) {}
     rpc UpdateOptionalId(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
+    rpc UpdateEnableBiometrics(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
@@ -159,6 +160,7 @@ message User {
     int32 reset_password_attempts = 25;
     repeated string verified_emails = 26;
     string email_hash = 27;
+    bool enable_biometrics = 28;
 }
 
 message UserFilter {
