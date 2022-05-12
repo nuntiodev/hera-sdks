@@ -327,7 +327,7 @@ func (x UserFilter_SortBy) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use UserFilter_SortBy.Descriptor instead.
 func (UserFilter_SortBy) EnumDescriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{7, 0}
+	return file_block_user_proto_rawDescGZIP(), []int{8, 0}
 }
 
 type UserFilter_Order int32
@@ -373,7 +373,7 @@ func (x UserFilter_Order) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use UserFilter_Order.Descriptor instead.
 func (UserFilter_Order) EnumDescriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{7, 1}
+	return file_block_user_proto_rawDescGZIP(), []int{8, 1}
 }
 
 type GeneralText struct {
@@ -685,6 +685,109 @@ func (x *RegisterText) GetContainsEightChars() string {
 	return ""
 }
 
+type ProfileText struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ProfileTitle              string `protobuf:"bytes,1,opt,name=profile_title,json=profileTitle,proto3" json:"profile_title,omitempty"`
+	ChangePassword            string `protobuf:"bytes,2,opt,name=change_password,json=changePassword,proto3" json:"change_password,omitempty"`
+	ChangeEmail               string `protobuf:"bytes,3,opt,name=change_email,json=changeEmail,proto3" json:"change_email,omitempty"`
+	Logout                    string `protobuf:"bytes,4,opt,name=logout,proto3" json:"logout,omitempty"`
+	ChangeEmailTitle          string `protobuf:"bytes,5,opt,name=change_email_title,json=changeEmailTitle,proto3" json:"change_email_title,omitempty"`
+	ChangeEmailDescription    string `protobuf:"bytes,6,opt,name=change_email_description,json=changeEmailDescription,proto3" json:"change_email_description,omitempty"`
+	ChangePasswordTitle       string `protobuf:"bytes,7,opt,name=change_password_title,json=changePasswordTitle,proto3" json:"change_password_title,omitempty"`
+	ChangePasswordDescription string `protobuf:"bytes,8,opt,name=change_password_description,json=changePasswordDescription,proto3" json:"change_password_description,omitempty"`
+}
+
+func (x *ProfileText) Reset() {
+	*x = ProfileText{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_block_user_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ProfileText) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProfileText) ProtoMessage() {}
+
+func (x *ProfileText) ProtoReflect() protoreflect.Message {
+	mi := &file_block_user_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProfileText.ProtoReflect.Descriptor instead.
+func (*ProfileText) Descriptor() ([]byte, []int) {
+	return file_block_user_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ProfileText) GetProfileTitle() string {
+	if x != nil {
+		return x.ProfileTitle
+	}
+	return ""
+}
+
+func (x *ProfileText) GetChangePassword() string {
+	if x != nil {
+		return x.ChangePassword
+	}
+	return ""
+}
+
+func (x *ProfileText) GetChangeEmail() string {
+	if x != nil {
+		return x.ChangeEmail
+	}
+	return ""
+}
+
+func (x *ProfileText) GetLogout() string {
+	if x != nil {
+		return x.Logout
+	}
+	return ""
+}
+
+func (x *ProfileText) GetChangeEmailTitle() string {
+	if x != nil {
+		return x.ChangeEmailTitle
+	}
+	return ""
+}
+
+func (x *ProfileText) GetChangeEmailDescription() string {
+	if x != nil {
+		return x.ChangeEmailDescription
+	}
+	return ""
+}
+
+func (x *ProfileText) GetChangePasswordTitle() string {
+	if x != nil {
+		return x.ChangePasswordTitle
+	}
+	return ""
+}
+
+func (x *ProfileText) GetChangePasswordDescription() string {
+	if x != nil {
+		return x.ChangePasswordDescription
+	}
+	return ""
+}
+
 type LoginText struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -699,7 +802,7 @@ type LoginText struct {
 func (x *LoginText) Reset() {
 	*x = LoginText{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[3]
+		mi := &file_block_user_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -712,7 +815,7 @@ func (x *LoginText) String() string {
 func (*LoginText) ProtoMessage() {}
 
 func (x *LoginText) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[3]
+	mi := &file_block_user_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -725,7 +828,7 @@ func (x *LoginText) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginText.ProtoReflect.Descriptor instead.
 func (*LoginText) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{3}
+	return file_block_user_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *LoginText) GetLoginButton() string {
@@ -777,12 +880,13 @@ type Config struct {
 	ValidatePassword         bool                   `protobuf:"varint,14,opt,name=validate_password,json=validatePassword,proto3" json:"validate_password,omitempty"`
 	NuntioConnectId          string                 `protobuf:"bytes,15,opt,name=nuntio_connect_id,json=nuntioConnectId,proto3" json:"nuntio_connect_id,omitempty"`
 	RequireEmailVerification bool                   `protobuf:"varint,16,opt,name=require_email_verification,json=requireEmailVerification,proto3" json:"require_email_verification,omitempty"`
+	ProfileText              *ProfileText           `protobuf:"bytes,17,opt,name=profile_text,json=profileText,proto3" json:"profile_text,omitempty"`
 }
 
 func (x *Config) Reset() {
 	*x = Config{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[4]
+		mi := &file_block_user_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -795,7 +899,7 @@ func (x *Config) String() string {
 func (*Config) ProtoMessage() {}
 
 func (x *Config) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[4]
+	mi := &file_block_user_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -808,7 +912,7 @@ func (x *Config) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Config.ProtoReflect.Descriptor instead.
 func (*Config) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{4}
+	return file_block_user_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Config) GetId() string {
@@ -923,6 +1027,13 @@ func (x *Config) GetRequireEmailVerification() bool {
 	return false
 }
 
+func (x *Config) GetProfileText() *ProfileText {
+	if x != nil {
+		return x.ProfileText
+	}
+	return nil
+}
+
 type Email struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -946,7 +1057,7 @@ type Email struct {
 func (x *Email) Reset() {
 	*x = Email{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[5]
+		mi := &file_block_user_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -959,7 +1070,7 @@ func (x *Email) String() string {
 func (*Email) ProtoMessage() {}
 
 func (x *Email) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[5]
+	mi := &file_block_user_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -972,7 +1083,7 @@ func (x *Email) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Email.ProtoReflect.Descriptor instead.
 func (*Email) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{5}
+	return file_block_user_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *Email) GetId() string {
@@ -1103,7 +1214,7 @@ type User struct {
 func (x *User) Reset() {
 	*x = User{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[6]
+		mi := &file_block_user_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1116,7 +1227,7 @@ func (x *User) String() string {
 func (*User) ProtoMessage() {}
 
 func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[6]
+	mi := &file_block_user_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1129,7 +1240,7 @@ func (x *User) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use User.ProtoReflect.Descriptor instead.
 func (*User) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{6}
+	return file_block_user_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *User) GetId() string {
@@ -1335,7 +1446,7 @@ type UserFilter struct {
 func (x *UserFilter) Reset() {
 	*x = UserFilter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[7]
+		mi := &file_block_user_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1348,7 +1459,7 @@ func (x *UserFilter) String() string {
 func (*UserFilter) ProtoMessage() {}
 
 func (x *UserFilter) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[7]
+	mi := &file_block_user_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1361,7 +1472,7 @@ func (x *UserFilter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserFilter.ProtoReflect.Descriptor instead.
 func (*UserFilter) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{7}
+	return file_block_user_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *UserFilter) GetFrom() int32 {
@@ -1405,7 +1516,7 @@ type Location struct {
 func (x *Location) Reset() {
 	*x = Location{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[8]
+		mi := &file_block_user_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1418,7 +1529,7 @@ func (x *Location) String() string {
 func (*Location) ProtoMessage() {}
 
 func (x *Location) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[8]
+	mi := &file_block_user_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1431,7 +1542,7 @@ func (x *Location) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Location.ProtoReflect.Descriptor instead.
 func (*Location) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{8}
+	return file_block_user_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *Location) GetCountry() string {
@@ -1478,7 +1589,7 @@ type Token struct {
 func (x *Token) Reset() {
 	*x = Token{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[9]
+		mi := &file_block_user_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1491,7 +1602,7 @@ func (x *Token) String() string {
 func (*Token) ProtoMessage() {}
 
 func (x *Token) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[9]
+	mi := &file_block_user_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1504,7 +1615,7 @@ func (x *Token) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Token.ProtoReflect.Descriptor instead.
 func (*Token) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{9}
+	return file_block_user_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *Token) GetId() string {
@@ -1616,7 +1727,7 @@ type ActiveMeasurement struct {
 func (x *ActiveMeasurement) Reset() {
 	*x = ActiveMeasurement{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[10]
+		mi := &file_block_user_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1629,7 +1740,7 @@ func (x *ActiveMeasurement) String() string {
 func (*ActiveMeasurement) ProtoMessage() {}
 
 func (x *ActiveMeasurement) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[10]
+	mi := &file_block_user_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1642,7 +1753,7 @@ func (x *ActiveMeasurement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActiveMeasurement.ProtoReflect.Descriptor instead.
 func (*ActiveMeasurement) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{10}
+	return file_block_user_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ActiveMeasurement) GetId() string {
@@ -1712,7 +1823,7 @@ type CityHistoryMap struct {
 func (x *CityHistoryMap) Reset() {
 	*x = CityHistoryMap{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[11]
+		mi := &file_block_user_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1725,7 +1836,7 @@ func (x *CityHistoryMap) String() string {
 func (*CityHistoryMap) ProtoMessage() {}
 
 func (x *CityHistoryMap) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[11]
+	mi := &file_block_user_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1738,7 +1849,7 @@ func (x *CityHistoryMap) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CityHistoryMap.ProtoReflect.Descriptor instead.
 func (*CityHistoryMap) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{11}
+	return file_block_user_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *CityHistoryMap) GetCityAmount() map[string]int32 {
@@ -1763,7 +1874,7 @@ type ActiveHistoryData struct {
 func (x *ActiveHistoryData) Reset() {
 	*x = ActiveHistoryData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[12]
+		mi := &file_block_user_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1776,7 +1887,7 @@ func (x *ActiveHistoryData) String() string {
 func (*ActiveHistoryData) ProtoMessage() {}
 
 func (x *ActiveHistoryData) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[12]
+	mi := &file_block_user_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1789,7 +1900,7 @@ func (x *ActiveHistoryData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActiveHistoryData.ProtoReflect.Descriptor instead.
 func (*ActiveHistoryData) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{12}
+	return file_block_user_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ActiveHistoryData) GetSeconds() int32 {
@@ -1840,7 +1951,7 @@ type ActiveHistory struct {
 func (x *ActiveHistory) Reset() {
 	*x = ActiveHistory{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[13]
+		mi := &file_block_user_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1853,7 +1964,7 @@ func (x *ActiveHistory) String() string {
 func (*ActiveHistory) ProtoMessage() {}
 
 func (x *ActiveHistory) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[13]
+	mi := &file_block_user_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1866,7 +1977,7 @@ func (x *ActiveHistory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActiveHistory.ProtoReflect.Descriptor instead.
 func (*ActiveHistory) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{13}
+	return file_block_user_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ActiveHistory) GetYear() int32 {
@@ -1904,7 +2015,7 @@ type LoginSession struct {
 func (x *LoginSession) Reset() {
 	*x = LoginSession{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[14]
+		mi := &file_block_user_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1917,7 +2028,7 @@ func (x *LoginSession) String() string {
 func (*LoginSession) ProtoMessage() {}
 
 func (x *LoginSession) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[14]
+	mi := &file_block_user_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1930,7 +2041,7 @@ func (x *LoginSession) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginSession.ProtoReflect.Descriptor instead.
 func (*LoginSession) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{14}
+	return file_block_user_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *LoginSession) GetLoginStatus() LoginStatus {
@@ -1987,7 +2098,7 @@ type UserRequest struct {
 func (x *UserRequest) Reset() {
 	*x = UserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[15]
+		mi := &file_block_user_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2000,7 +2111,7 @@ func (x *UserRequest) String() string {
 func (*UserRequest) ProtoMessage() {}
 
 func (x *UserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[15]
+	mi := &file_block_user_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2013,7 +2124,7 @@ func (x *UserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserRequest.ProtoReflect.Descriptor instead.
 func (*UserRequest) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{15}
+	return file_block_user_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *UserRequest) GetUser() *User {
@@ -2148,7 +2259,7 @@ type UserResponse struct {
 func (x *UserResponse) Reset() {
 	*x = UserResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_block_user_proto_msgTypes[16]
+		mi := &file_block_user_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2161,7 +2272,7 @@ func (x *UserResponse) String() string {
 func (*UserResponse) ProtoMessage() {}
 
 func (x *UserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_block_user_proto_msgTypes[16]
+	mi := &file_block_user_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2174,7 +2285,7 @@ func (x *UserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserResponse.ProtoReflect.Descriptor instead.
 func (*UserResponse) Descriptor() ([]byte, []int) {
-	return file_block_user_proto_rawDescGZIP(), []int{16}
+	return file_block_user_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *UserResponse) GetUser() *User {
@@ -2325,66 +2436,93 @@ var file_block_user_proto_rawDesc = []byte{
 	0x72, 0x64, 0x4d, 0x75, 0x73, 0x74, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x12, 0x30, 0x0a, 0x14, 0x63,
 	0x6f, 0x6e, 0x74, 0x61, 0x69, 0x6e, 0x73, 0x5f, 0x65, 0x69, 0x67, 0x68, 0x74, 0x5f, 0x63, 0x68,
 	0x61, 0x72, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x12, 0x63, 0x6f, 0x6e, 0x74, 0x61,
-	0x69, 0x6e, 0x73, 0x45, 0x69, 0x67, 0x68, 0x74, 0x43, 0x68, 0x61, 0x72, 0x73, 0x22, 0x9d, 0x01,
-	0x0a, 0x09, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x65, 0x78, 0x74, 0x12, 0x21, 0x0a, 0x0c, 0x6c,
-	0x6f, 0x67, 0x69, 0x6e, 0x5f, 0x62, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0b, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x12, 0x1f,
-	0x0a, 0x0b, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x5f, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x0a, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12,
-	0x23, 0x0a, 0x0d, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x5f, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73,
-	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x44, 0x65, 0x74,
-	0x61, 0x69, 0x6c, 0x73, 0x12, 0x27, 0x0a, 0x0f, 0x66, 0x6f, 0x72, 0x67, 0x6f, 0x74, 0x5f, 0x70,
-	0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x66,
-	0x6f, 0x72, 0x67, 0x6f, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x22, 0x90, 0x06,
-	0x0a, 0x06, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04,
-	0x6c, 0x6f, 0x67, 0x6f, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6c, 0x6f, 0x67, 0x6f,
-	0x12, 0x32, 0x0a, 0x15, 0x65, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x6e, 0x75, 0x6e, 0x74, 0x69,
-	0x6f, 0x5f, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x13, 0x65, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4e, 0x75, 0x6e, 0x74, 0x69, 0x6f, 0x43, 0x6f, 0x6e,
-	0x6e, 0x65, 0x63, 0x74, 0x12, 0x34, 0x0a, 0x16, 0x64, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x5f,
-	0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x5f, 0x73, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x18, 0x05,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x14, 0x64, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x44, 0x65, 0x66,
-	0x61, 0x75, 0x6c, 0x74, 0x53, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x12, 0x32, 0x0a, 0x15, 0x64, 0x69,
-	0x73, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x5f, 0x6c, 0x6f,
-	0x67, 0x69, 0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x08, 0x52, 0x13, 0x64, 0x69, 0x73, 0x61, 0x62,
-	0x6c, 0x65, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12, 0x39,
-	0x0a, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x5f, 0x61, 0x74, 0x18, 0x07, 0x20, 0x01,
+	0x69, 0x6e, 0x73, 0x45, 0x69, 0x67, 0x68, 0x74, 0x43, 0x68, 0x61, 0x72, 0x73, 0x22, 0xf2, 0x02,
+	0x0a, 0x0b, 0x50, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x54, 0x65, 0x78, 0x74, 0x12, 0x23, 0x0a,
+	0x0d, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x54, 0x69, 0x74,
+	0x6c, 0x65, 0x12, 0x27, 0x0a, 0x0f, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x70, 0x61, 0x73,
+	0x73, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x63, 0x68, 0x61,
+	0x6e, 0x67, 0x65, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x63,
+	0x68, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0b, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x16,
+	0x0a, 0x06, 0x6c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x6c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x12, 0x2c, 0x0a, 0x12, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
+	0x5f, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x5f, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x10, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x54,
+	0x69, 0x74, 0x6c, 0x65, 0x12, 0x38, 0x0a, 0x18, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x65,
+	0x6d, 0x61, 0x69, 0x6c, 0x5f, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
+	0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x16, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x45, 0x6d,
+	0x61, 0x69, 0x6c, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x32,
+	0x0a, 0x15, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72,
+	0x64, 0x5f, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x13, 0x63,
+	0x68, 0x61, 0x6e, 0x67, 0x65, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x69, 0x74,
+	0x6c, 0x65, 0x12, 0x3e, 0x0a, 0x1b, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x70, 0x61, 0x73,
+	0x73, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
+	0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x19, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x50,
+	0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x22, 0x9d, 0x01, 0x0a, 0x09, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x65, 0x78, 0x74,
+	0x12, 0x21, 0x0a, 0x0c, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x5f, 0x62, 0x75, 0x74, 0x74, 0x6f, 0x6e,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x42, 0x75, 0x74,
+	0x74, 0x6f, 0x6e, 0x12, 0x1f, 0x0a, 0x0b, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x5f, 0x74, 0x69, 0x74,
+	0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x54,
+	0x69, 0x74, 0x6c, 0x65, 0x12, 0x23, 0x0a, 0x0d, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x5f, 0x64, 0x65,
+	0x74, 0x61, 0x69, 0x6c, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x6c, 0x6f, 0x67,
+	0x69, 0x6e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x27, 0x0a, 0x0f, 0x66, 0x6f, 0x72,
+	0x67, 0x6f, 0x74, 0x5f, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0e, 0x66, 0x6f, 0x72, 0x67, 0x6f, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f,
+	0x72, 0x64, 0x22, 0xcb, 0x06, 0x0a, 0x06, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x0e, 0x0a,
+	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x12, 0x12, 0x0a, 0x04, 0x6c, 0x6f, 0x67, 0x6f, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x6c, 0x6f, 0x67, 0x6f, 0x12, 0x32, 0x0a, 0x15, 0x65, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x5f,
+	0x6e, 0x75, 0x6e, 0x74, 0x69, 0x6f, 0x5f, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x08, 0x52, 0x13, 0x65, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4e, 0x75, 0x6e, 0x74,
+	0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x12, 0x34, 0x0a, 0x16, 0x64, 0x69, 0x73,
+	0x61, 0x62, 0x6c, 0x65, 0x5f, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x5f, 0x73, 0x69, 0x67,
+	0x6e, 0x75, 0x70, 0x18, 0x05, 0x20, 0x01, 0x28, 0x08, 0x52, 0x14, 0x64, 0x69, 0x73, 0x61, 0x62,
+	0x6c, 0x65, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x53, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x12,
+	0x32, 0x0a, 0x15, 0x64, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x64, 0x65, 0x66, 0x61, 0x75,
+	0x6c, 0x74, 0x5f, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x08, 0x52, 0x13,
+	0x64, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x4c, 0x6f,
+	0x67, 0x69, 0x6e, 0x12, 0x39, 0x0a, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x5f, 0x61,
+	0x74, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74,
+	0x61, 0x6d, 0x70, 0x52, 0x09, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x39,
+	0x0a, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x5f, 0x61, 0x74, 0x18, 0x08, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x52, 0x09,
-	0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x39, 0x0a, 0x0a, 0x75, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x64, 0x5f, 0x61, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
-	0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x52, 0x09, 0x75, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x64, 0x41, 0x74, 0x12, 0x39, 0x0a, 0x0c, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x6c, 0x5f,
-	0x74, 0x65, 0x78, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x42, 0x6c, 0x6f,
-	0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x6c, 0x54, 0x65,
-	0x78, 0x74, 0x52, 0x0b, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x6c, 0x54, 0x65, 0x78, 0x74, 0x12,
-	0x39, 0x0a, 0x0c, 0x77, 0x65, 0x6c, 0x63, 0x6f, 0x6d, 0x65, 0x5f, 0x74, 0x65, 0x78, 0x74, 0x18,
-	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x55, 0x73, 0x65,
-	0x72, 0x2e, 0x57, 0x65, 0x6c, 0x63, 0x6f, 0x6d, 0x65, 0x54, 0x65, 0x78, 0x74, 0x52, 0x0b, 0x77,
-	0x65, 0x6c, 0x63, 0x6f, 0x6d, 0x65, 0x54, 0x65, 0x78, 0x74, 0x12, 0x33, 0x0a, 0x0a, 0x6c, 0x6f,
-	0x67, 0x69, 0x6e, 0x5f, 0x74, 0x65, 0x78, 0x74, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14,
-	0x2e, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
-	0x54, 0x65, 0x78, 0x74, 0x52, 0x09, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x65, 0x78, 0x74, 0x12,
-	0x3c, 0x0a, 0x0d, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x74, 0x65, 0x78, 0x74,
-	0x18, 0x0c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x55, 0x73,
-	0x65, 0x72, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x54, 0x65, 0x78, 0x74, 0x52,
-	0x0c, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x54, 0x65, 0x78, 0x74, 0x12, 0x3a, 0x0a,
-	0x19, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x5f, 0x65, 0x6e, 0x63, 0x72, 0x79, 0x70,
-	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x05,
-	0x52, 0x17, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x45, 0x6e, 0x63, 0x72, 0x79, 0x70,
-	0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x65, 0x76, 0x65, 0x6c, 0x12, 0x2b, 0x0a, 0x11, 0x76, 0x61, 0x6c,
-	0x69, 0x64, 0x61, 0x74, 0x65, 0x5f, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x0e,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x10, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61,
-	0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x12, 0x2a, 0x0a, 0x11, 0x6e, 0x75, 0x6e, 0x74, 0x69, 0x6f,
-	0x5f, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x0f, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0f, 0x6e, 0x75, 0x6e, 0x74, 0x69, 0x6f, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74,
-	0x49, 0x64, 0x12, 0x3c, 0x0a, 0x1a, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x5f, 0x65, 0x6d,
-	0x61, 0x69, 0x6c, 0x5f, 0x76, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x18, 0x10, 0x20, 0x01, 0x28, 0x08, 0x52, 0x18, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x45,
-	0x6d, 0x61, 0x69, 0x6c, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x12, 0x39, 0x0a, 0x0c, 0x67, 0x65, 0x6e,
+	0x65, 0x72, 0x61, 0x6c, 0x5f, 0x74, 0x65, 0x78, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x16, 0x2e, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e, 0x47, 0x65, 0x6e, 0x65,
+	0x72, 0x61, 0x6c, 0x54, 0x65, 0x78, 0x74, 0x52, 0x0b, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x6c,
+	0x54, 0x65, 0x78, 0x74, 0x12, 0x39, 0x0a, 0x0c, 0x77, 0x65, 0x6c, 0x63, 0x6f, 0x6d, 0x65, 0x5f,
+	0x74, 0x65, 0x78, 0x74, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x42, 0x6c, 0x6f,
+	0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e, 0x57, 0x65, 0x6c, 0x63, 0x6f, 0x6d, 0x65, 0x54, 0x65,
+	0x78, 0x74, 0x52, 0x0b, 0x77, 0x65, 0x6c, 0x63, 0x6f, 0x6d, 0x65, 0x54, 0x65, 0x78, 0x74, 0x12,
+	0x33, 0x0a, 0x0a, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x5f, 0x74, 0x65, 0x78, 0x74, 0x18, 0x0b, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e,
+	0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x65, 0x78, 0x74, 0x52, 0x09, 0x6c, 0x6f, 0x67, 0x69, 0x6e,
+	0x54, 0x65, 0x78, 0x74, 0x12, 0x3c, 0x0a, 0x0d, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72,
+	0x5f, 0x74, 0x65, 0x78, 0x74, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x42, 0x6c,
+	0x6f, 0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72,
+	0x54, 0x65, 0x78, 0x74, 0x52, 0x0c, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x54, 0x65,
+	0x78, 0x74, 0x12, 0x3a, 0x0a, 0x19, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x5f, 0x65,
+	0x6e, 0x63, 0x72, 0x79, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x18,
+	0x0d, 0x20, 0x01, 0x28, 0x05, 0x52, 0x17, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x45,
+	0x6e, 0x63, 0x72, 0x79, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x65, 0x76, 0x65, 0x6c, 0x12, 0x2b,
+	0x0a, 0x11, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x65, 0x5f, 0x70, 0x61, 0x73, 0x73, 0x77,
+	0x6f, 0x72, 0x64, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x08, 0x52, 0x10, 0x76, 0x61, 0x6c, 0x69, 0x64,
+	0x61, 0x74, 0x65, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x12, 0x2a, 0x0a, 0x11, 0x6e,
+	0x75, 0x6e, 0x74, 0x69, 0x6f, 0x5f, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x5f, 0x69, 0x64,
+	0x18, 0x0f, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x6e, 0x75, 0x6e, 0x74, 0x69, 0x6f, 0x43, 0x6f,
+	0x6e, 0x6e, 0x65, 0x63, 0x74, 0x49, 0x64, 0x12, 0x3c, 0x0a, 0x1a, 0x72, 0x65, 0x71, 0x75, 0x69,
+	0x72, 0x65, 0x5f, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x5f, 0x76, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x10, 0x20, 0x01, 0x28, 0x08, 0x52, 0x18, 0x72, 0x65, 0x71,
+	0x75, 0x69, 0x72, 0x65, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x39, 0x0a, 0x0c, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65,
+	0x5f, 0x74, 0x65, 0x78, 0x74, 0x18, 0x11, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x42, 0x6c,
+	0x6f, 0x63, 0x6b, 0x55, 0x73, 0x65, 0x72, 0x2e, 0x50, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x54,
+	0x65, 0x78, 0x74, 0x52, 0x0b, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x54, 0x65, 0x78, 0x74,
 	0x22, 0x90, 0x04, 0x0a, 0x05, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6c, 0x6f,
 	0x67, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6c, 0x6f, 0x67, 0x6f, 0x12, 0x27,
@@ -2955,7 +3093,7 @@ func file_block_user_proto_rawDescGZIP() []byte {
 }
 
 var file_block_user_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
-var file_block_user_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_block_user_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_block_user_proto_goTypes = []interface{}{
 	(EmailType)(0),                // 0: BlockUser.EmailType
 	(TokenType)(0),                // 1: BlockUser.TokenType
@@ -2967,172 +3105,174 @@ var file_block_user_proto_goTypes = []interface{}{
 	(*GeneralText)(nil),           // 7: BlockUser.GeneralText
 	(*WelcomeText)(nil),           // 8: BlockUser.WelcomeText
 	(*RegisterText)(nil),          // 9: BlockUser.RegisterText
-	(*LoginText)(nil),             // 10: BlockUser.LoginText
-	(*Config)(nil),                // 11: BlockUser.Config
-	(*Email)(nil),                 // 12: BlockUser.Email
-	(*User)(nil),                  // 13: BlockUser.User
-	(*UserFilter)(nil),            // 14: BlockUser.UserFilter
-	(*Location)(nil),              // 15: BlockUser.Location
-	(*Token)(nil),                 // 16: BlockUser.Token
-	(*ActiveMeasurement)(nil),     // 17: BlockUser.ActiveMeasurement
-	(*CityHistoryMap)(nil),        // 18: BlockUser.CityHistoryMap
-	(*ActiveHistoryData)(nil),     // 19: BlockUser.ActiveHistoryData
-	(*ActiveHistory)(nil),         // 20: BlockUser.ActiveHistory
-	(*LoginSession)(nil),          // 21: BlockUser.LoginSession
-	(*UserRequest)(nil),           // 22: BlockUser.UserRequest
-	(*UserResponse)(nil),          // 23: BlockUser.UserResponse
-	nil,                           // 24: BlockUser.CityHistoryMap.CityAmountEntry
-	nil,                           // 25: BlockUser.ActiveHistoryData.FromEntry
-	nil,                           // 26: BlockUser.ActiveHistoryData.DauEntry
-	nil,                           // 27: BlockUser.ActiveHistoryData.DeviceEntry
-	nil,                           // 28: BlockUser.ActiveHistory.DataEntry
-	nil,                           // 29: BlockUser.UserResponse.PublicKeysEntry
-	(*timestamppb.Timestamp)(nil), // 30: google.protobuf.Timestamp
+	(*ProfileText)(nil),           // 10: BlockUser.ProfileText
+	(*LoginText)(nil),             // 11: BlockUser.LoginText
+	(*Config)(nil),                // 12: BlockUser.Config
+	(*Email)(nil),                 // 13: BlockUser.Email
+	(*User)(nil),                  // 14: BlockUser.User
+	(*UserFilter)(nil),            // 15: BlockUser.UserFilter
+	(*Location)(nil),              // 16: BlockUser.Location
+	(*Token)(nil),                 // 17: BlockUser.Token
+	(*ActiveMeasurement)(nil),     // 18: BlockUser.ActiveMeasurement
+	(*CityHistoryMap)(nil),        // 19: BlockUser.CityHistoryMap
+	(*ActiveHistoryData)(nil),     // 20: BlockUser.ActiveHistoryData
+	(*ActiveHistory)(nil),         // 21: BlockUser.ActiveHistory
+	(*LoginSession)(nil),          // 22: BlockUser.LoginSession
+	(*UserRequest)(nil),           // 23: BlockUser.UserRequest
+	(*UserResponse)(nil),          // 24: BlockUser.UserResponse
+	nil,                           // 25: BlockUser.CityHistoryMap.CityAmountEntry
+	nil,                           // 26: BlockUser.ActiveHistoryData.FromEntry
+	nil,                           // 27: BlockUser.ActiveHistoryData.DauEntry
+	nil,                           // 28: BlockUser.ActiveHistoryData.DeviceEntry
+	nil,                           // 29: BlockUser.ActiveHistory.DataEntry
+	nil,                           // 30: BlockUser.UserResponse.PublicKeysEntry
+	(*timestamppb.Timestamp)(nil), // 31: google.protobuf.Timestamp
 }
 var file_block_user_proto_depIdxs = []int32{
-	30, // 0: BlockUser.Config.created_at:type_name -> google.protobuf.Timestamp
-	30, // 1: BlockUser.Config.updated_at:type_name -> google.protobuf.Timestamp
+	31, // 0: BlockUser.Config.created_at:type_name -> google.protobuf.Timestamp
+	31, // 1: BlockUser.Config.updated_at:type_name -> google.protobuf.Timestamp
 	7,  // 2: BlockUser.Config.general_text:type_name -> BlockUser.GeneralText
 	8,  // 3: BlockUser.Config.welcome_text:type_name -> BlockUser.WelcomeText
-	10, // 4: BlockUser.Config.login_text:type_name -> BlockUser.LoginText
+	11, // 4: BlockUser.Config.login_text:type_name -> BlockUser.LoginText
 	9,  // 5: BlockUser.Config.register_text:type_name -> BlockUser.RegisterText
-	30, // 6: BlockUser.Email.created_at:type_name -> google.protobuf.Timestamp
-	30, // 7: BlockUser.Email.updated_at:type_name -> google.protobuf.Timestamp
-	30, // 8: BlockUser.Email.encrypted_at:type_name -> google.protobuf.Timestamp
-	30, // 9: BlockUser.User.created_at:type_name -> google.protobuf.Timestamp
-	30, // 10: BlockUser.User.updated_at:type_name -> google.protobuf.Timestamp
-	30, // 11: BlockUser.User.encrypted_at:type_name -> google.protobuf.Timestamp
-	30, // 12: BlockUser.User.birthdate:type_name -> google.protobuf.Timestamp
-	30, // 13: BlockUser.User.email_verified_at:type_name -> google.protobuf.Timestamp
-	30, // 14: BlockUser.User.verification_email_sent_at:type_name -> google.protobuf.Timestamp
-	30, // 15: BlockUser.User.verification_email_expires_at:type_name -> google.protobuf.Timestamp
-	30, // 16: BlockUser.User.reset_password_email_sent_at:type_name -> google.protobuf.Timestamp
-	30, // 17: BlockUser.User.reset_password_email_expires_at:type_name -> google.protobuf.Timestamp
-	5,  // 18: BlockUser.UserFilter.sort:type_name -> BlockUser.UserFilter.SortBy
-	6,  // 19: BlockUser.UserFilter.order:type_name -> BlockUser.UserFilter.Order
-	30, // 20: BlockUser.Token.blocked_at:type_name -> google.protobuf.Timestamp
-	30, // 21: BlockUser.Token.created_at:type_name -> google.protobuf.Timestamp
-	30, // 22: BlockUser.Token.used_at:type_name -> google.protobuf.Timestamp
-	30, // 23: BlockUser.Token.expires_at:type_name -> google.protobuf.Timestamp
-	15, // 24: BlockUser.Token.logged_in_from:type_name -> BlockUser.Location
-	1,  // 25: BlockUser.Token.type:type_name -> BlockUser.TokenType
-	30, // 26: BlockUser.ActiveMeasurement.created_at:type_name -> google.protobuf.Timestamp
-	30, // 27: BlockUser.ActiveMeasurement.expires_at:type_name -> google.protobuf.Timestamp
-	15, // 28: BlockUser.ActiveMeasurement.from:type_name -> BlockUser.Location
-	2,  // 29: BlockUser.ActiveMeasurement.device:type_name -> BlockUser.Platform
-	24, // 30: BlockUser.CityHistoryMap.city_amount:type_name -> BlockUser.CityHistoryMap.CityAmountEntry
-	25, // 31: BlockUser.ActiveHistoryData.from:type_name -> BlockUser.ActiveHistoryData.FromEntry
-	26, // 32: BlockUser.ActiveHistoryData.dau:type_name -> BlockUser.ActiveHistoryData.DauEntry
-	27, // 33: BlockUser.ActiveHistoryData.device:type_name -> BlockUser.ActiveHistoryData.DeviceEntry
-	28, // 34: BlockUser.ActiveHistory.data:type_name -> BlockUser.ActiveHistory.DataEntry
-	3,  // 35: BlockUser.LoginSession.login_status:type_name -> BlockUser.LoginStatus
-	30, // 36: BlockUser.LoginSession.email_sent_at:type_name -> google.protobuf.Timestamp
-	30, // 37: BlockUser.LoginSession.email_expires_at:type_name -> google.protobuf.Timestamp
-	4,  // 38: BlockUser.LoginSession.login_type:type_name -> BlockUser.LoginType
-	13, // 39: BlockUser.UserRequest.user:type_name -> BlockUser.User
-	13, // 40: BlockUser.UserRequest.update:type_name -> BlockUser.User
-	14, // 41: BlockUser.UserRequest.filter:type_name -> BlockUser.UserFilter
-	13, // 42: BlockUser.UserRequest.user_batch:type_name -> BlockUser.User
-	16, // 43: BlockUser.UserRequest.token:type_name -> BlockUser.Token
-	17, // 44: BlockUser.UserRequest.active_measurement:type_name -> BlockUser.ActiveMeasurement
-	11, // 45: BlockUser.UserRequest.config:type_name -> BlockUser.Config
-	12, // 46: BlockUser.UserRequest.email:type_name -> BlockUser.Email
-	13, // 47: BlockUser.UserResponse.user:type_name -> BlockUser.User
-	13, // 48: BlockUser.UserResponse.users:type_name -> BlockUser.User
-	16, // 49: BlockUser.UserResponse.token:type_name -> BlockUser.Token
-	16, // 50: BlockUser.UserResponse.tokens:type_name -> BlockUser.Token
-	29, // 51: BlockUser.UserResponse.public_keys:type_name -> BlockUser.UserResponse.PublicKeysEntry
-	17, // 52: BlockUser.UserResponse.active_measurement:type_name -> BlockUser.ActiveMeasurement
-	11, // 53: BlockUser.UserResponse.config:type_name -> BlockUser.Config
-	20, // 54: BlockUser.UserResponse.active_history:type_name -> BlockUser.ActiveHistory
-	21, // 55: BlockUser.UserResponse.login_session:type_name -> BlockUser.LoginSession
-	18, // 56: BlockUser.ActiveHistoryData.FromEntry.value:type_name -> BlockUser.CityHistoryMap
-	19, // 57: BlockUser.ActiveHistory.DataEntry.value:type_name -> BlockUser.ActiveHistoryData
-	22, // 58: BlockUser.UserService.Heartbeat:input_type -> BlockUser.UserRequest
-	22, // 59: BlockUser.UserService.Create:input_type -> BlockUser.UserRequest
-	22, // 60: BlockUser.UserService.UpdatePassword:input_type -> BlockUser.UserRequest
-	22, // 61: BlockUser.UserService.UpdateMetadata:input_type -> BlockUser.UserRequest
-	22, // 62: BlockUser.UserService.UpdateImage:input_type -> BlockUser.UserRequest
-	22, // 63: BlockUser.UserService.UpdateName:input_type -> BlockUser.UserRequest
-	22, // 64: BlockUser.UserService.UpdateBirthdate:input_type -> BlockUser.UserRequest
-	22, // 65: BlockUser.UserService.UpdateEmail:input_type -> BlockUser.UserRequest
-	22, // 66: BlockUser.UserService.UpdateOptionalId:input_type -> BlockUser.UserRequest
-	22, // 67: BlockUser.UserService.UpdateSecurity:input_type -> BlockUser.UserRequest
-	22, // 68: BlockUser.UserService.UpdateEnableBiometrics:input_type -> BlockUser.UserRequest
-	22, // 69: BlockUser.UserService.Get:input_type -> BlockUser.UserRequest
-	22, // 70: BlockUser.UserService.GetAll:input_type -> BlockUser.UserRequest
-	22, // 71: BlockUser.UserService.ValidateCredentials:input_type -> BlockUser.UserRequest
-	22, // 72: BlockUser.UserService.Login:input_type -> BlockUser.UserRequest
-	22, // 73: BlockUser.UserService.ValidateToken:input_type -> BlockUser.UserRequest
-	22, // 74: BlockUser.UserService.BlockToken:input_type -> BlockUser.UserRequest
-	22, // 75: BlockUser.UserService.BlockTokenById:input_type -> BlockUser.UserRequest
-	22, // 76: BlockUser.UserService.RefreshToken:input_type -> BlockUser.UserRequest
-	22, // 77: BlockUser.UserService.GetTokens:input_type -> BlockUser.UserRequest
-	22, // 78: BlockUser.UserService.PublicKeys:input_type -> BlockUser.UserRequest
-	22, // 79: BlockUser.UserService.RecordActiveMeasurement:input_type -> BlockUser.UserRequest
-	22, // 80: BlockUser.UserService.UserActiveHistory:input_type -> BlockUser.UserRequest
-	22, // 81: BlockUser.UserService.NamespaceActiveHistory:input_type -> BlockUser.UserRequest
-	22, // 82: BlockUser.UserService.SendVerificationEmail:input_type -> BlockUser.UserRequest
-	22, // 83: BlockUser.UserService.VerifyEmail:input_type -> BlockUser.UserRequest
-	22, // 84: BlockUser.UserService.SendResetPasswordEmail:input_type -> BlockUser.UserRequest
-	22, // 85: BlockUser.UserService.ResetPassword:input_type -> BlockUser.UserRequest
-	22, // 86: BlockUser.UserService.Delete:input_type -> BlockUser.UserRequest
-	22, // 87: BlockUser.UserService.DeleteBatch:input_type -> BlockUser.UserRequest
-	22, // 88: BlockUser.UserService.DeleteNamespace:input_type -> BlockUser.UserRequest
-	22, // 89: BlockUser.UserService.CreateNamespaceConfig:input_type -> BlockUser.UserRequest
-	22, // 90: BlockUser.UserService.UpdateConfigSettings:input_type -> BlockUser.UserRequest
-	22, // 91: BlockUser.UserService.UpdateConfigDetails:input_type -> BlockUser.UserRequest
-	22, // 92: BlockUser.UserService.UpdateConfigGeneralText:input_type -> BlockUser.UserRequest
-	22, // 93: BlockUser.UserService.UpdateConfigWelcomeText:input_type -> BlockUser.UserRequest
-	22, // 94: BlockUser.UserService.UpdateConfigRegisterText:input_type -> BlockUser.UserRequest
-	22, // 95: BlockUser.UserService.UpdateConfigLoginText:input_type -> BlockUser.UserRequest
-	22, // 96: BlockUser.UserService.GetConfig:input_type -> BlockUser.UserRequest
-	22, // 97: BlockUser.UserService.DeleteConfig:input_type -> BlockUser.UserRequest
-	23, // 98: BlockUser.UserService.Heartbeat:output_type -> BlockUser.UserResponse
-	23, // 99: BlockUser.UserService.Create:output_type -> BlockUser.UserResponse
-	23, // 100: BlockUser.UserService.UpdatePassword:output_type -> BlockUser.UserResponse
-	23, // 101: BlockUser.UserService.UpdateMetadata:output_type -> BlockUser.UserResponse
-	23, // 102: BlockUser.UserService.UpdateImage:output_type -> BlockUser.UserResponse
-	23, // 103: BlockUser.UserService.UpdateName:output_type -> BlockUser.UserResponse
-	23, // 104: BlockUser.UserService.UpdateBirthdate:output_type -> BlockUser.UserResponse
-	23, // 105: BlockUser.UserService.UpdateEmail:output_type -> BlockUser.UserResponse
-	23, // 106: BlockUser.UserService.UpdateOptionalId:output_type -> BlockUser.UserResponse
-	23, // 107: BlockUser.UserService.UpdateSecurity:output_type -> BlockUser.UserResponse
-	23, // 108: BlockUser.UserService.UpdateEnableBiometrics:output_type -> BlockUser.UserResponse
-	23, // 109: BlockUser.UserService.Get:output_type -> BlockUser.UserResponse
-	23, // 110: BlockUser.UserService.GetAll:output_type -> BlockUser.UserResponse
-	23, // 111: BlockUser.UserService.ValidateCredentials:output_type -> BlockUser.UserResponse
-	23, // 112: BlockUser.UserService.Login:output_type -> BlockUser.UserResponse
-	23, // 113: BlockUser.UserService.ValidateToken:output_type -> BlockUser.UserResponse
-	23, // 114: BlockUser.UserService.BlockToken:output_type -> BlockUser.UserResponse
-	23, // 115: BlockUser.UserService.BlockTokenById:output_type -> BlockUser.UserResponse
-	23, // 116: BlockUser.UserService.RefreshToken:output_type -> BlockUser.UserResponse
-	23, // 117: BlockUser.UserService.GetTokens:output_type -> BlockUser.UserResponse
-	23, // 118: BlockUser.UserService.PublicKeys:output_type -> BlockUser.UserResponse
-	23, // 119: BlockUser.UserService.RecordActiveMeasurement:output_type -> BlockUser.UserResponse
-	23, // 120: BlockUser.UserService.UserActiveHistory:output_type -> BlockUser.UserResponse
-	23, // 121: BlockUser.UserService.NamespaceActiveHistory:output_type -> BlockUser.UserResponse
-	23, // 122: BlockUser.UserService.SendVerificationEmail:output_type -> BlockUser.UserResponse
-	23, // 123: BlockUser.UserService.VerifyEmail:output_type -> BlockUser.UserResponse
-	23, // 124: BlockUser.UserService.SendResetPasswordEmail:output_type -> BlockUser.UserResponse
-	23, // 125: BlockUser.UserService.ResetPassword:output_type -> BlockUser.UserResponse
-	23, // 126: BlockUser.UserService.Delete:output_type -> BlockUser.UserResponse
-	23, // 127: BlockUser.UserService.DeleteBatch:output_type -> BlockUser.UserResponse
-	23, // 128: BlockUser.UserService.DeleteNamespace:output_type -> BlockUser.UserResponse
-	23, // 129: BlockUser.UserService.CreateNamespaceConfig:output_type -> BlockUser.UserResponse
-	23, // 130: BlockUser.UserService.UpdateConfigSettings:output_type -> BlockUser.UserResponse
-	23, // 131: BlockUser.UserService.UpdateConfigDetails:output_type -> BlockUser.UserResponse
-	23, // 132: BlockUser.UserService.UpdateConfigGeneralText:output_type -> BlockUser.UserResponse
-	23, // 133: BlockUser.UserService.UpdateConfigWelcomeText:output_type -> BlockUser.UserResponse
-	23, // 134: BlockUser.UserService.UpdateConfigRegisterText:output_type -> BlockUser.UserResponse
-	23, // 135: BlockUser.UserService.UpdateConfigLoginText:output_type -> BlockUser.UserResponse
-	23, // 136: BlockUser.UserService.GetConfig:output_type -> BlockUser.UserResponse
-	23, // 137: BlockUser.UserService.DeleteConfig:output_type -> BlockUser.UserResponse
-	98, // [98:138] is the sub-list for method output_type
-	58, // [58:98] is the sub-list for method input_type
-	58, // [58:58] is the sub-list for extension type_name
-	58, // [58:58] is the sub-list for extension extendee
-	0,  // [0:58] is the sub-list for field type_name
+	10, // 6: BlockUser.Config.profile_text:type_name -> BlockUser.ProfileText
+	31, // 7: BlockUser.Email.created_at:type_name -> google.protobuf.Timestamp
+	31, // 8: BlockUser.Email.updated_at:type_name -> google.protobuf.Timestamp
+	31, // 9: BlockUser.Email.encrypted_at:type_name -> google.protobuf.Timestamp
+	31, // 10: BlockUser.User.created_at:type_name -> google.protobuf.Timestamp
+	31, // 11: BlockUser.User.updated_at:type_name -> google.protobuf.Timestamp
+	31, // 12: BlockUser.User.encrypted_at:type_name -> google.protobuf.Timestamp
+	31, // 13: BlockUser.User.birthdate:type_name -> google.protobuf.Timestamp
+	31, // 14: BlockUser.User.email_verified_at:type_name -> google.protobuf.Timestamp
+	31, // 15: BlockUser.User.verification_email_sent_at:type_name -> google.protobuf.Timestamp
+	31, // 16: BlockUser.User.verification_email_expires_at:type_name -> google.protobuf.Timestamp
+	31, // 17: BlockUser.User.reset_password_email_sent_at:type_name -> google.protobuf.Timestamp
+	31, // 18: BlockUser.User.reset_password_email_expires_at:type_name -> google.protobuf.Timestamp
+	5,  // 19: BlockUser.UserFilter.sort:type_name -> BlockUser.UserFilter.SortBy
+	6,  // 20: BlockUser.UserFilter.order:type_name -> BlockUser.UserFilter.Order
+	31, // 21: BlockUser.Token.blocked_at:type_name -> google.protobuf.Timestamp
+	31, // 22: BlockUser.Token.created_at:type_name -> google.protobuf.Timestamp
+	31, // 23: BlockUser.Token.used_at:type_name -> google.protobuf.Timestamp
+	31, // 24: BlockUser.Token.expires_at:type_name -> google.protobuf.Timestamp
+	16, // 25: BlockUser.Token.logged_in_from:type_name -> BlockUser.Location
+	1,  // 26: BlockUser.Token.type:type_name -> BlockUser.TokenType
+	31, // 27: BlockUser.ActiveMeasurement.created_at:type_name -> google.protobuf.Timestamp
+	31, // 28: BlockUser.ActiveMeasurement.expires_at:type_name -> google.protobuf.Timestamp
+	16, // 29: BlockUser.ActiveMeasurement.from:type_name -> BlockUser.Location
+	2,  // 30: BlockUser.ActiveMeasurement.device:type_name -> BlockUser.Platform
+	25, // 31: BlockUser.CityHistoryMap.city_amount:type_name -> BlockUser.CityHistoryMap.CityAmountEntry
+	26, // 32: BlockUser.ActiveHistoryData.from:type_name -> BlockUser.ActiveHistoryData.FromEntry
+	27, // 33: BlockUser.ActiveHistoryData.dau:type_name -> BlockUser.ActiveHistoryData.DauEntry
+	28, // 34: BlockUser.ActiveHistoryData.device:type_name -> BlockUser.ActiveHistoryData.DeviceEntry
+	29, // 35: BlockUser.ActiveHistory.data:type_name -> BlockUser.ActiveHistory.DataEntry
+	3,  // 36: BlockUser.LoginSession.login_status:type_name -> BlockUser.LoginStatus
+	31, // 37: BlockUser.LoginSession.email_sent_at:type_name -> google.protobuf.Timestamp
+	31, // 38: BlockUser.LoginSession.email_expires_at:type_name -> google.protobuf.Timestamp
+	4,  // 39: BlockUser.LoginSession.login_type:type_name -> BlockUser.LoginType
+	14, // 40: BlockUser.UserRequest.user:type_name -> BlockUser.User
+	14, // 41: BlockUser.UserRequest.update:type_name -> BlockUser.User
+	15, // 42: BlockUser.UserRequest.filter:type_name -> BlockUser.UserFilter
+	14, // 43: BlockUser.UserRequest.user_batch:type_name -> BlockUser.User
+	17, // 44: BlockUser.UserRequest.token:type_name -> BlockUser.Token
+	18, // 45: BlockUser.UserRequest.active_measurement:type_name -> BlockUser.ActiveMeasurement
+	12, // 46: BlockUser.UserRequest.config:type_name -> BlockUser.Config
+	13, // 47: BlockUser.UserRequest.email:type_name -> BlockUser.Email
+	14, // 48: BlockUser.UserResponse.user:type_name -> BlockUser.User
+	14, // 49: BlockUser.UserResponse.users:type_name -> BlockUser.User
+	17, // 50: BlockUser.UserResponse.token:type_name -> BlockUser.Token
+	17, // 51: BlockUser.UserResponse.tokens:type_name -> BlockUser.Token
+	30, // 52: BlockUser.UserResponse.public_keys:type_name -> BlockUser.UserResponse.PublicKeysEntry
+	18, // 53: BlockUser.UserResponse.active_measurement:type_name -> BlockUser.ActiveMeasurement
+	12, // 54: BlockUser.UserResponse.config:type_name -> BlockUser.Config
+	21, // 55: BlockUser.UserResponse.active_history:type_name -> BlockUser.ActiveHistory
+	22, // 56: BlockUser.UserResponse.login_session:type_name -> BlockUser.LoginSession
+	19, // 57: BlockUser.ActiveHistoryData.FromEntry.value:type_name -> BlockUser.CityHistoryMap
+	20, // 58: BlockUser.ActiveHistory.DataEntry.value:type_name -> BlockUser.ActiveHistoryData
+	23, // 59: BlockUser.UserService.Heartbeat:input_type -> BlockUser.UserRequest
+	23, // 60: BlockUser.UserService.Create:input_type -> BlockUser.UserRequest
+	23, // 61: BlockUser.UserService.UpdatePassword:input_type -> BlockUser.UserRequest
+	23, // 62: BlockUser.UserService.UpdateMetadata:input_type -> BlockUser.UserRequest
+	23, // 63: BlockUser.UserService.UpdateImage:input_type -> BlockUser.UserRequest
+	23, // 64: BlockUser.UserService.UpdateName:input_type -> BlockUser.UserRequest
+	23, // 65: BlockUser.UserService.UpdateBirthdate:input_type -> BlockUser.UserRequest
+	23, // 66: BlockUser.UserService.UpdateEmail:input_type -> BlockUser.UserRequest
+	23, // 67: BlockUser.UserService.UpdateOptionalId:input_type -> BlockUser.UserRequest
+	23, // 68: BlockUser.UserService.UpdateSecurity:input_type -> BlockUser.UserRequest
+	23, // 69: BlockUser.UserService.UpdateEnableBiometrics:input_type -> BlockUser.UserRequest
+	23, // 70: BlockUser.UserService.Get:input_type -> BlockUser.UserRequest
+	23, // 71: BlockUser.UserService.GetAll:input_type -> BlockUser.UserRequest
+	23, // 72: BlockUser.UserService.ValidateCredentials:input_type -> BlockUser.UserRequest
+	23, // 73: BlockUser.UserService.Login:input_type -> BlockUser.UserRequest
+	23, // 74: BlockUser.UserService.ValidateToken:input_type -> BlockUser.UserRequest
+	23, // 75: BlockUser.UserService.BlockToken:input_type -> BlockUser.UserRequest
+	23, // 76: BlockUser.UserService.BlockTokenById:input_type -> BlockUser.UserRequest
+	23, // 77: BlockUser.UserService.RefreshToken:input_type -> BlockUser.UserRequest
+	23, // 78: BlockUser.UserService.GetTokens:input_type -> BlockUser.UserRequest
+	23, // 79: BlockUser.UserService.PublicKeys:input_type -> BlockUser.UserRequest
+	23, // 80: BlockUser.UserService.RecordActiveMeasurement:input_type -> BlockUser.UserRequest
+	23, // 81: BlockUser.UserService.UserActiveHistory:input_type -> BlockUser.UserRequest
+	23, // 82: BlockUser.UserService.NamespaceActiveHistory:input_type -> BlockUser.UserRequest
+	23, // 83: BlockUser.UserService.SendVerificationEmail:input_type -> BlockUser.UserRequest
+	23, // 84: BlockUser.UserService.VerifyEmail:input_type -> BlockUser.UserRequest
+	23, // 85: BlockUser.UserService.SendResetPasswordEmail:input_type -> BlockUser.UserRequest
+	23, // 86: BlockUser.UserService.ResetPassword:input_type -> BlockUser.UserRequest
+	23, // 87: BlockUser.UserService.Delete:input_type -> BlockUser.UserRequest
+	23, // 88: BlockUser.UserService.DeleteBatch:input_type -> BlockUser.UserRequest
+	23, // 89: BlockUser.UserService.DeleteNamespace:input_type -> BlockUser.UserRequest
+	23, // 90: BlockUser.UserService.CreateNamespaceConfig:input_type -> BlockUser.UserRequest
+	23, // 91: BlockUser.UserService.UpdateConfigSettings:input_type -> BlockUser.UserRequest
+	23, // 92: BlockUser.UserService.UpdateConfigDetails:input_type -> BlockUser.UserRequest
+	23, // 93: BlockUser.UserService.UpdateConfigGeneralText:input_type -> BlockUser.UserRequest
+	23, // 94: BlockUser.UserService.UpdateConfigWelcomeText:input_type -> BlockUser.UserRequest
+	23, // 95: BlockUser.UserService.UpdateConfigRegisterText:input_type -> BlockUser.UserRequest
+	23, // 96: BlockUser.UserService.UpdateConfigLoginText:input_type -> BlockUser.UserRequest
+	23, // 97: BlockUser.UserService.GetConfig:input_type -> BlockUser.UserRequest
+	23, // 98: BlockUser.UserService.DeleteConfig:input_type -> BlockUser.UserRequest
+	24, // 99: BlockUser.UserService.Heartbeat:output_type -> BlockUser.UserResponse
+	24, // 100: BlockUser.UserService.Create:output_type -> BlockUser.UserResponse
+	24, // 101: BlockUser.UserService.UpdatePassword:output_type -> BlockUser.UserResponse
+	24, // 102: BlockUser.UserService.UpdateMetadata:output_type -> BlockUser.UserResponse
+	24, // 103: BlockUser.UserService.UpdateImage:output_type -> BlockUser.UserResponse
+	24, // 104: BlockUser.UserService.UpdateName:output_type -> BlockUser.UserResponse
+	24, // 105: BlockUser.UserService.UpdateBirthdate:output_type -> BlockUser.UserResponse
+	24, // 106: BlockUser.UserService.UpdateEmail:output_type -> BlockUser.UserResponse
+	24, // 107: BlockUser.UserService.UpdateOptionalId:output_type -> BlockUser.UserResponse
+	24, // 108: BlockUser.UserService.UpdateSecurity:output_type -> BlockUser.UserResponse
+	24, // 109: BlockUser.UserService.UpdateEnableBiometrics:output_type -> BlockUser.UserResponse
+	24, // 110: BlockUser.UserService.Get:output_type -> BlockUser.UserResponse
+	24, // 111: BlockUser.UserService.GetAll:output_type -> BlockUser.UserResponse
+	24, // 112: BlockUser.UserService.ValidateCredentials:output_type -> BlockUser.UserResponse
+	24, // 113: BlockUser.UserService.Login:output_type -> BlockUser.UserResponse
+	24, // 114: BlockUser.UserService.ValidateToken:output_type -> BlockUser.UserResponse
+	24, // 115: BlockUser.UserService.BlockToken:output_type -> BlockUser.UserResponse
+	24, // 116: BlockUser.UserService.BlockTokenById:output_type -> BlockUser.UserResponse
+	24, // 117: BlockUser.UserService.RefreshToken:output_type -> BlockUser.UserResponse
+	24, // 118: BlockUser.UserService.GetTokens:output_type -> BlockUser.UserResponse
+	24, // 119: BlockUser.UserService.PublicKeys:output_type -> BlockUser.UserResponse
+	24, // 120: BlockUser.UserService.RecordActiveMeasurement:output_type -> BlockUser.UserResponse
+	24, // 121: BlockUser.UserService.UserActiveHistory:output_type -> BlockUser.UserResponse
+	24, // 122: BlockUser.UserService.NamespaceActiveHistory:output_type -> BlockUser.UserResponse
+	24, // 123: BlockUser.UserService.SendVerificationEmail:output_type -> BlockUser.UserResponse
+	24, // 124: BlockUser.UserService.VerifyEmail:output_type -> BlockUser.UserResponse
+	24, // 125: BlockUser.UserService.SendResetPasswordEmail:output_type -> BlockUser.UserResponse
+	24, // 126: BlockUser.UserService.ResetPassword:output_type -> BlockUser.UserResponse
+	24, // 127: BlockUser.UserService.Delete:output_type -> BlockUser.UserResponse
+	24, // 128: BlockUser.UserService.DeleteBatch:output_type -> BlockUser.UserResponse
+	24, // 129: BlockUser.UserService.DeleteNamespace:output_type -> BlockUser.UserResponse
+	24, // 130: BlockUser.UserService.CreateNamespaceConfig:output_type -> BlockUser.UserResponse
+	24, // 131: BlockUser.UserService.UpdateConfigSettings:output_type -> BlockUser.UserResponse
+	24, // 132: BlockUser.UserService.UpdateConfigDetails:output_type -> BlockUser.UserResponse
+	24, // 133: BlockUser.UserService.UpdateConfigGeneralText:output_type -> BlockUser.UserResponse
+	24, // 134: BlockUser.UserService.UpdateConfigWelcomeText:output_type -> BlockUser.UserResponse
+	24, // 135: BlockUser.UserService.UpdateConfigRegisterText:output_type -> BlockUser.UserResponse
+	24, // 136: BlockUser.UserService.UpdateConfigLoginText:output_type -> BlockUser.UserResponse
+	24, // 137: BlockUser.UserService.GetConfig:output_type -> BlockUser.UserResponse
+	24, // 138: BlockUser.UserService.DeleteConfig:output_type -> BlockUser.UserResponse
+	99, // [99:139] is the sub-list for method output_type
+	59, // [59:99] is the sub-list for method input_type
+	59, // [59:59] is the sub-list for extension type_name
+	59, // [59:59] is the sub-list for extension extendee
+	0,  // [0:59] is the sub-list for field type_name
 }
 
 func init() { file_block_user_proto_init() }
@@ -3178,7 +3318,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LoginText); i {
+			switch v := v.(*ProfileText); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3190,7 +3330,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Config); i {
+			switch v := v.(*LoginText); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3202,7 +3342,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Email); i {
+			switch v := v.(*Config); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3214,7 +3354,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*User); i {
+			switch v := v.(*Email); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3226,7 +3366,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserFilter); i {
+			switch v := v.(*User); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3238,7 +3378,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Location); i {
+			switch v := v.(*UserFilter); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3250,7 +3390,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Token); i {
+			switch v := v.(*Location); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3262,7 +3402,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ActiveMeasurement); i {
+			switch v := v.(*Token); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3274,7 +3414,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CityHistoryMap); i {
+			switch v := v.(*ActiveMeasurement); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3286,7 +3426,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ActiveHistoryData); i {
+			switch v := v.(*CityHistoryMap); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3298,7 +3438,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ActiveHistory); i {
+			switch v := v.(*ActiveHistoryData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3310,7 +3450,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LoginSession); i {
+			switch v := v.(*ActiveHistory); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3322,7 +3462,7 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserRequest); i {
+			switch v := v.(*LoginSession); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3334,6 +3474,18 @@ func file_block_user_proto_init() {
 			}
 		}
 		file_block_user_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_block_user_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserResponse); i {
 			case 0:
 				return &v.state
@@ -3352,7 +3504,7 @@ func file_block_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_block_user_proto_rawDesc,
 			NumEnums:      7,
-			NumMessages:   23,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
