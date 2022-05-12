@@ -1059,7 +1059,6 @@ class User extends $pb.GeneratedMessage {
     ..a<$core.int>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordAttempts', $pb.PbFieldType.O3)
     ..pPS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedEmails')
     ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailHash')
-    ..aOB(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableBiometrics')
     ..hasRequiredFields = false
   ;
 
@@ -1092,7 +1091,6 @@ class User extends $pb.GeneratedMessage {
     $core.int? resetPasswordAttempts,
     $core.Iterable<$core.String>? verifiedEmails,
     $core.String? emailHash,
-    $core.bool? enableBiometrics,
   }) {
     final _result = create();
     if (id != null) {
@@ -1175,9 +1173,6 @@ class User extends $pb.GeneratedMessage {
     }
     if (emailHash != null) {
       _result.emailHash = emailHash;
-    }
-    if (enableBiometrics != null) {
-      _result.enableBiometrics = enableBiometrics;
     }
     return _result;
   }
@@ -1456,15 +1451,6 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasEmailHash() => $_has(26);
   @$pb.TagNumber(27)
   void clearEmailHash() => clearField(27);
-
-  @$pb.TagNumber(28)
-  $core.bool get enableBiometrics => $_getBF(27);
-  @$pb.TagNumber(28)
-  set enableBiometrics($core.bool v) { $_setBool(27, v); }
-  @$pb.TagNumber(28)
-  $core.bool hasEnableBiometrics() => $_has(27);
-  @$pb.TagNumber(28)
-  void clearEnableBiometrics() => clearField(28);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
