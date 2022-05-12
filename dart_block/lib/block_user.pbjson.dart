@@ -125,6 +125,23 @@ const RegisterText$json = const {
 
 /// Descriptor for `RegisterText`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List registerTextDescriptor = $convert.base64Decode('CgxSZWdpc3RlclRleHQSJwoPcmVnaXN0ZXJfYnV0dG9uGAEgASgJUg5yZWdpc3RlckJ1dHRvbhIlCg5yZWdpc3Rlcl90aXRsZRgCIAEoCVINcmVnaXN0ZXJUaXRsZRIpChByZWdpc3Rlcl9kZXRhaWxzGAMgASgJUg9yZWdpc3RlckRldGFpbHMSPAobcGFzc3dvcmRfZG9fbm90X21hdGNoX3RpdGxlGAQgASgJUhdwYXNzd29yZERvTm90TWF0Y2hUaXRsZRJACh1wYXNzd29yZF9kb19ub3RfbWF0Y2hfZGV0YWlscxgFIAEoCVIZcGFzc3dvcmREb05vdE1hdGNoRGV0YWlscxIwChRyZXBlYXRfcGFzc3dvcmRfaGludBgGIAEoCVIScmVwZWF0UGFzc3dvcmRIaW50EjIKFWNvbnRhaW5zX3NwZWNpYWxfY2hhchgHIAEoCVITY29udGFpbnNTcGVjaWFsQ2hhchIwChRjb250YWluc19udW1iZXJfY2hhchgIIAEoCVISY29udGFpbnNOdW1iZXJDaGFyEi4KE3Bhc3N3b3JkX211c3RfbWF0Y2gYCSABKAlSEXBhc3N3b3JkTXVzdE1hdGNoEjAKFGNvbnRhaW5zX2VpZ2h0X2NoYXJzGAogASgJUhJjb250YWluc0VpZ2h0Q2hhcnM=');
+@$core.Deprecated('Use profileTextDescriptor instead')
+const ProfileText$json = const {
+  '1': 'ProfileText',
+  '2': const [
+    const {'1': 'profile_title', '3': 1, '4': 1, '5': 9, '10': 'profileTitle'},
+    const {'1': 'change_password', '3': 2, '4': 1, '5': 9, '10': 'changePassword'},
+    const {'1': 'change_email', '3': 3, '4': 1, '5': 9, '10': 'changeEmail'},
+    const {'1': 'logout', '3': 4, '4': 1, '5': 9, '10': 'logout'},
+    const {'1': 'change_email_title', '3': 5, '4': 1, '5': 9, '10': 'changeEmailTitle'},
+    const {'1': 'change_email_description', '3': 6, '4': 1, '5': 9, '10': 'changeEmailDescription'},
+    const {'1': 'change_password_title', '3': 7, '4': 1, '5': 9, '10': 'changePasswordTitle'},
+    const {'1': 'change_password_description', '3': 8, '4': 1, '5': 9, '10': 'changePasswordDescription'},
+  ],
+};
+
+/// Descriptor for `ProfileText`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List profileTextDescriptor = $convert.base64Decode('CgtQcm9maWxlVGV4dBIjCg1wcm9maWxlX3RpdGxlGAEgASgJUgxwcm9maWxlVGl0bGUSJwoPY2hhbmdlX3Bhc3N3b3JkGAIgASgJUg5jaGFuZ2VQYXNzd29yZBIhCgxjaGFuZ2VfZW1haWwYAyABKAlSC2NoYW5nZUVtYWlsEhYKBmxvZ291dBgEIAEoCVIGbG9nb3V0EiwKEmNoYW5nZV9lbWFpbF90aXRsZRgFIAEoCVIQY2hhbmdlRW1haWxUaXRsZRI4ChhjaGFuZ2VfZW1haWxfZGVzY3JpcHRpb24YBiABKAlSFmNoYW5nZUVtYWlsRGVzY3JpcHRpb24SMgoVY2hhbmdlX3Bhc3N3b3JkX3RpdGxlGAcgASgJUhNjaGFuZ2VQYXNzd29yZFRpdGxlEj4KG2NoYW5nZV9wYXNzd29yZF9kZXNjcmlwdGlvbhgIIAEoCVIZY2hhbmdlUGFzc3dvcmREZXNjcmlwdGlvbg==');
 @$core.Deprecated('Use loginTextDescriptor instead')
 const LoginText$json = const {
   '1': 'LoginText',
@@ -158,11 +175,12 @@ const Config$json = const {
     const {'1': 'validate_password', '3': 14, '4': 1, '5': 8, '10': 'validatePassword'},
     const {'1': 'nuntio_connect_id', '3': 15, '4': 1, '5': 9, '10': 'nuntioConnectId'},
     const {'1': 'require_email_verification', '3': 16, '4': 1, '5': 8, '10': 'requireEmailVerification'},
+    const {'1': 'profile_text', '3': 17, '4': 1, '5': 11, '6': '.BlockUser.ProfileText', '10': 'profileText'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbxgDIAEoCVIEbG9nbxIyChVlbmFibGVfbnVudGlvX2Nvbm5lY3QYBCABKAhSE2VuYWJsZU51bnRpb0Nvbm5lY3QSNAoWZGlzYWJsZV9kZWZhdWx0X3NpZ251cBgFIAEoCFIUZGlzYWJsZURlZmF1bHRTaWdudXASMgoVZGlzYWJsZV9kZWZhdWx0X2xvZ2luGAYgASgIUhNkaXNhYmxlRGVmYXVsdExvZ2luEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI5CgxnZW5lcmFsX3RleHQYCSABKAsyFi5CbG9ja1VzZXIuR2VuZXJhbFRleHRSC2dlbmVyYWxUZXh0EjkKDHdlbGNvbWVfdGV4dBgKIAEoCzIWLkJsb2NrVXNlci5XZWxjb21lVGV4dFILd2VsY29tZVRleHQSMwoKbG9naW5fdGV4dBgLIAEoCzIULkJsb2NrVXNlci5Mb2dpblRleHRSCWxvZ2luVGV4dBI8Cg1yZWdpc3Rlcl90ZXh0GAwgASgLMhcuQmxvY2tVc2VyLlJlZ2lzdGVyVGV4dFIMcmVnaXN0ZXJUZXh0EjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYDSABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVsEisKEXZhbGlkYXRlX3Bhc3N3b3JkGA4gASgIUhB2YWxpZGF0ZVBhc3N3b3JkEioKEW51bnRpb19jb25uZWN0X2lkGA8gASgJUg9udW50aW9Db25uZWN0SWQSPAoacmVxdWlyZV9lbWFpbF92ZXJpZmljYXRpb24YECABKAhSGHJlcXVpcmVFbWFpbFZlcmlmaWNhdGlvbg==');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbxgDIAEoCVIEbG9nbxIyChVlbmFibGVfbnVudGlvX2Nvbm5lY3QYBCABKAhSE2VuYWJsZU51bnRpb0Nvbm5lY3QSNAoWZGlzYWJsZV9kZWZhdWx0X3NpZ251cBgFIAEoCFIUZGlzYWJsZURlZmF1bHRTaWdudXASMgoVZGlzYWJsZV9kZWZhdWx0X2xvZ2luGAYgASgIUhNkaXNhYmxlRGVmYXVsdExvZ2luEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI5CgxnZW5lcmFsX3RleHQYCSABKAsyFi5CbG9ja1VzZXIuR2VuZXJhbFRleHRSC2dlbmVyYWxUZXh0EjkKDHdlbGNvbWVfdGV4dBgKIAEoCzIWLkJsb2NrVXNlci5XZWxjb21lVGV4dFILd2VsY29tZVRleHQSMwoKbG9naW5fdGV4dBgLIAEoCzIULkJsb2NrVXNlci5Mb2dpblRleHRSCWxvZ2luVGV4dBI8Cg1yZWdpc3Rlcl90ZXh0GAwgASgLMhcuQmxvY2tVc2VyLlJlZ2lzdGVyVGV4dFIMcmVnaXN0ZXJUZXh0EjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYDSABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVsEisKEXZhbGlkYXRlX3Bhc3N3b3JkGA4gASgIUhB2YWxpZGF0ZVBhc3N3b3JkEioKEW51bnRpb19jb25uZWN0X2lkGA8gASgJUg9udW50aW9Db25uZWN0SWQSPAoacmVxdWlyZV9lbWFpbF92ZXJpZmljYXRpb24YECABKAhSGHJlcXVpcmVFbWFpbFZlcmlmaWNhdGlvbhI5Cgxwcm9maWxlX3RleHQYESABKAsyFi5CbG9ja1VzZXIuUHJvZmlsZVRleHRSC3Byb2ZpbGVUZXh0');
 @$core.Deprecated('Use emailDescriptor instead')
 const Email$json = const {
   '1': 'Email',
