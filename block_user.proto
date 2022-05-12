@@ -82,6 +82,17 @@ message RegisterText {
     string contains_eight_chars = 10;
 }
 
+message ProfileText {
+    string profile_title = 1;
+    string change_password = 2;
+    string change_email = 3;
+    string logout = 4;
+    string change_email_title = 5;
+    string change_email_description = 6;
+    string change_password_title = 7;
+    string change_password_description = 8;
+}
+
 message LoginText {
     string login_button = 1;
     string login_title = 2;
@@ -106,6 +117,7 @@ message Config {
     bool validate_password = 14;
     string nuntio_connect_id = 15;
     bool require_email_verification = 16;
+    ProfileText profile_text = 17;
 }
 
 enum EmailType {
