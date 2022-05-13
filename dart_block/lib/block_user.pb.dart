@@ -862,6 +862,7 @@ class Config extends $pb.GeneratedMessage {
     ..e<LoginType>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
     ..aOB(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requirePhoneNumberVerification')
     ..e<LanguageCode>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'defaultLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..a<$core.int>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -881,6 +882,7 @@ class Config extends $pb.GeneratedMessage {
     LoginType? loginType,
     $core.bool? requirePhoneNumberVerification,
     LanguageCode? defaultLanguage,
+    $core.int? internalEncryptionLevel,
   }) {
     final _result = create();
     if (id != null) {
@@ -924,6 +926,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (defaultLanguage != null) {
       _result.defaultLanguage = defaultLanguage;
+    }
+    if (internalEncryptionLevel != null) {
+      _result.internalEncryptionLevel = internalEncryptionLevel;
     }
     return _result;
   }
@@ -1077,6 +1082,15 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasDefaultLanguage() => $_has(13);
   @$pb.TagNumber(14)
   void clearDefaultLanguage() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.int get internalEncryptionLevel => $_getIZ(14);
+  @$pb.TagNumber(15)
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasInternalEncryptionLevel() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearInternalEncryptionLevel() => clearField(15);
 }
 
 class Email extends $pb.GeneratedMessage {

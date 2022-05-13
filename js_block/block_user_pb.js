@@ -2640,7 +2640,8 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     loginType: jspb.Message.getFieldWithDefault(msg, 12, 0),
     requirePhoneNumberVerification: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    defaultLanguage: jspb.Message.getFieldWithDefault(msg, 14, 0)
+    defaultLanguage: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 15, 0)
   };
 
   if (includeInstance) {
@@ -2734,6 +2735,10 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 14:
       var value = /** @type {!proto.BlockUser.LanguageCode} */ (reader.readEnum());
       msg.setDefaultLanguage(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInternalEncryptionLevel(value);
       break;
     default:
       reader.skipField();
@@ -2861,6 +2866,13 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       14,
+      f
+    );
+  }
+  f = message.getInternalEncryptionLevel();
+  if (f !== 0) {
+    writer.writeInt32(
+      15,
       f
     );
   }
@@ -3154,6 +3166,24 @@ proto.BlockUser.Config.prototype.getDefaultLanguage = function() {
  */
 proto.BlockUser.Config.prototype.setDefaultLanguage = function(value) {
   return jspb.Message.setProto3EnumField(this, 14, value);
+};
+
+
+/**
+ * optional int32 internal_encryption_level = 15;
+ * @return {number}
+ */
+proto.BlockUser.Config.prototype.getInternalEncryptionLevel = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setInternalEncryptionLevel = function(value) {
+  return jspb.Message.setProto3IntField(this, 15, value);
 };
 
 
