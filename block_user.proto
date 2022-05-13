@@ -124,7 +124,7 @@ message Config {
     bool require_email_verification = 16;
     ProfileText profile_text = 17;
     LoginType login_type = 18;
-    bool require_text_verification = 17;
+    bool require_phone_number_verification = 19;
 }
 
 enum EmailType {
