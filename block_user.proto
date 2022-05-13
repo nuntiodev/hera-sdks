@@ -120,6 +120,7 @@ message Text {
     ProfileText profile_text = 9;
     google.protobuf.Timestamp created_at = 10;
     google.protobuf.Timestamp updated_at = 11;
+    int32 internal_encryption_level = 12;
 }
 
 message Config {
