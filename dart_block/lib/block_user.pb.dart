@@ -454,21 +454,17 @@ class RegisterText extends $pb.GeneratedMessage {
 class ProfileText extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProfileText', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileTitle')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changePassword')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changeEmail')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logout')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changeEmailTitle')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changeEmailDescription')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changePasswordTitle')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changePasswordDescription')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logout')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changeEmailTitle')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changeEmailDescription')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changePasswordTitle')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changePasswordDescription')
     ..hasRequiredFields = false
   ;
 
   ProfileText._() : super();
   factory ProfileText({
     $core.String? profileTitle,
-    $core.String? changePassword,
-    $core.String? changeEmail,
     $core.String? logout,
     $core.String? changeEmailTitle,
     $core.String? changeEmailDescription,
@@ -478,12 +474,6 @@ class ProfileText extends $pb.GeneratedMessage {
     final _result = create();
     if (profileTitle != null) {
       _result.profileTitle = profileTitle;
-    }
-    if (changePassword != null) {
-      _result.changePassword = changePassword;
-    }
-    if (changeEmail != null) {
-      _result.changeEmail = changeEmail;
     }
     if (logout != null) {
       _result.logout = logout;
@@ -533,67 +523,49 @@ class ProfileText extends $pb.GeneratedMessage {
   void clearProfileTitle() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get changePassword => $_getSZ(1);
+  $core.String get logout => $_getSZ(1);
   @$pb.TagNumber(2)
-  set changePassword($core.String v) { $_setString(1, v); }
+  set logout($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasChangePassword() => $_has(1);
+  $core.bool hasLogout() => $_has(1);
   @$pb.TagNumber(2)
-  void clearChangePassword() => clearField(2);
+  void clearLogout() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get changeEmail => $_getSZ(2);
+  $core.String get changeEmailTitle => $_getSZ(2);
   @$pb.TagNumber(3)
-  set changeEmail($core.String v) { $_setString(2, v); }
+  set changeEmailTitle($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasChangeEmail() => $_has(2);
+  $core.bool hasChangeEmailTitle() => $_has(2);
   @$pb.TagNumber(3)
-  void clearChangeEmail() => clearField(3);
+  void clearChangeEmailTitle() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get logout => $_getSZ(3);
+  $core.String get changeEmailDescription => $_getSZ(3);
   @$pb.TagNumber(4)
-  set logout($core.String v) { $_setString(3, v); }
+  set changeEmailDescription($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasLogout() => $_has(3);
+  $core.bool hasChangeEmailDescription() => $_has(3);
   @$pb.TagNumber(4)
-  void clearLogout() => clearField(4);
+  void clearChangeEmailDescription() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get changeEmailTitle => $_getSZ(4);
+  $core.String get changePasswordTitle => $_getSZ(4);
   @$pb.TagNumber(5)
-  set changeEmailTitle($core.String v) { $_setString(4, v); }
+  set changePasswordTitle($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasChangeEmailTitle() => $_has(4);
+  $core.bool hasChangePasswordTitle() => $_has(4);
   @$pb.TagNumber(5)
-  void clearChangeEmailTitle() => clearField(5);
+  void clearChangePasswordTitle() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get changeEmailDescription => $_getSZ(5);
+  $core.String get changePasswordDescription => $_getSZ(5);
   @$pb.TagNumber(6)
-  set changeEmailDescription($core.String v) { $_setString(5, v); }
+  set changePasswordDescription($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasChangeEmailDescription() => $_has(5);
+  $core.bool hasChangePasswordDescription() => $_has(5);
   @$pb.TagNumber(6)
-  void clearChangeEmailDescription() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.String get changePasswordTitle => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set changePasswordTitle($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasChangePasswordTitle() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearChangePasswordTitle() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $core.String get changePasswordDescription => $_getSZ(7);
-  @$pb.TagNumber(8)
-  set changePasswordDescription($core.String v) { $_setString(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasChangePasswordDescription() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearChangePasswordDescription() => clearField(8);
+  void clearChangePasswordDescription() => clearField(6);
 }
 
 class LoginText extends $pb.GeneratedMessage {

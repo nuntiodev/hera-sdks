@@ -142,18 +142,16 @@ const ProfileText$json = const {
   '1': 'ProfileText',
   '2': const [
     const {'1': 'profile_title', '3': 1, '4': 1, '5': 9, '10': 'profileTitle'},
-    const {'1': 'change_password', '3': 2, '4': 1, '5': 9, '10': 'changePassword'},
-    const {'1': 'change_email', '3': 3, '4': 1, '5': 9, '10': 'changeEmail'},
-    const {'1': 'logout', '3': 4, '4': 1, '5': 9, '10': 'logout'},
-    const {'1': 'change_email_title', '3': 5, '4': 1, '5': 9, '10': 'changeEmailTitle'},
-    const {'1': 'change_email_description', '3': 6, '4': 1, '5': 9, '10': 'changeEmailDescription'},
-    const {'1': 'change_password_title', '3': 7, '4': 1, '5': 9, '10': 'changePasswordTitle'},
-    const {'1': 'change_password_description', '3': 8, '4': 1, '5': 9, '10': 'changePasswordDescription'},
+    const {'1': 'logout', '3': 2, '4': 1, '5': 9, '10': 'logout'},
+    const {'1': 'change_email_title', '3': 3, '4': 1, '5': 9, '10': 'changeEmailTitle'},
+    const {'1': 'change_email_description', '3': 4, '4': 1, '5': 9, '10': 'changeEmailDescription'},
+    const {'1': 'change_password_title', '3': 5, '4': 1, '5': 9, '10': 'changePasswordTitle'},
+    const {'1': 'change_password_description', '3': 6, '4': 1, '5': 9, '10': 'changePasswordDescription'},
   ],
 };
 
 /// Descriptor for `ProfileText`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List profileTextDescriptor = $convert.base64Decode('CgtQcm9maWxlVGV4dBIjCg1wcm9maWxlX3RpdGxlGAEgASgJUgxwcm9maWxlVGl0bGUSJwoPY2hhbmdlX3Bhc3N3b3JkGAIgASgJUg5jaGFuZ2VQYXNzd29yZBIhCgxjaGFuZ2VfZW1haWwYAyABKAlSC2NoYW5nZUVtYWlsEhYKBmxvZ291dBgEIAEoCVIGbG9nb3V0EiwKEmNoYW5nZV9lbWFpbF90aXRsZRgFIAEoCVIQY2hhbmdlRW1haWxUaXRsZRI4ChhjaGFuZ2VfZW1haWxfZGVzY3JpcHRpb24YBiABKAlSFmNoYW5nZUVtYWlsRGVzY3JpcHRpb24SMgoVY2hhbmdlX3Bhc3N3b3JkX3RpdGxlGAcgASgJUhNjaGFuZ2VQYXNzd29yZFRpdGxlEj4KG2NoYW5nZV9wYXNzd29yZF9kZXNjcmlwdGlvbhgIIAEoCVIZY2hhbmdlUGFzc3dvcmREZXNjcmlwdGlvbg==');
+final $typed_data.Uint8List profileTextDescriptor = $convert.base64Decode('CgtQcm9maWxlVGV4dBIjCg1wcm9maWxlX3RpdGxlGAEgASgJUgxwcm9maWxlVGl0bGUSFgoGbG9nb3V0GAIgASgJUgZsb2dvdXQSLAoSY2hhbmdlX2VtYWlsX3RpdGxlGAMgASgJUhBjaGFuZ2VFbWFpbFRpdGxlEjgKGGNoYW5nZV9lbWFpbF9kZXNjcmlwdGlvbhgEIAEoCVIWY2hhbmdlRW1haWxEZXNjcmlwdGlvbhIyChVjaGFuZ2VfcGFzc3dvcmRfdGl0bGUYBSABKAlSE2NoYW5nZVBhc3N3b3JkVGl0bGUSPgobY2hhbmdlX3Bhc3N3b3JkX2Rlc2NyaXB0aW9uGAYgASgJUhljaGFuZ2VQYXNzd29yZERlc2NyaXB0aW9u');
 @$core.Deprecated('Use loginTextDescriptor instead')
 const LoginText$json = const {
   '1': 'LoginText',

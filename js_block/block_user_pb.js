@@ -1502,13 +1502,11 @@ proto.BlockUser.ProfileText.prototype.toObject = function(opt_includeInstance) {
 proto.BlockUser.ProfileText.toObject = function(includeInstance, msg) {
   var f, obj = {
     profileTitle: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    changePassword: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    changeEmail: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    logout: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    changeEmailTitle: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    changeEmailDescription: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    changePasswordTitle: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    changePasswordDescription: jspb.Message.getFieldWithDefault(msg, 8, "")
+    logout: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    changeEmailTitle: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    changeEmailDescription: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    changePasswordTitle: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    changePasswordDescription: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1551,29 +1549,21 @@ proto.BlockUser.ProfileText.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setChangePassword(value);
+      msg.setLogout(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setChangeEmail(value);
+      msg.setChangeEmailTitle(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLogout(value);
+      msg.setChangeEmailDescription(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setChangeEmailTitle(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setChangeEmailDescription(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
       msg.setChangePasswordTitle(value);
       break;
-    case 8:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setChangePasswordDescription(value);
       break;
@@ -1613,52 +1603,38 @@ proto.BlockUser.ProfileText.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getChangePassword();
+  f = message.getLogout();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getChangeEmail();
+  f = message.getChangeEmailTitle();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getLogout();
+  f = message.getChangeEmailDescription();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getChangeEmailTitle();
+  f = message.getChangePasswordTitle();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getChangeEmailDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getChangePasswordTitle();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
-    );
-  }
   f = message.getChangePasswordDescription();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      6,
       f
     );
   }
@@ -1684,10 +1660,10 @@ proto.BlockUser.ProfileText.prototype.setProfileTitle = function(value) {
 
 
 /**
- * optional string change_password = 2;
+ * optional string logout = 2;
  * @return {string}
  */
-proto.BlockUser.ProfileText.prototype.getChangePassword = function() {
+proto.BlockUser.ProfileText.prototype.getLogout = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1696,16 +1672,16 @@ proto.BlockUser.ProfileText.prototype.getChangePassword = function() {
  * @param {string} value
  * @return {!proto.BlockUser.ProfileText} returns this
  */
-proto.BlockUser.ProfileText.prototype.setChangePassword = function(value) {
+proto.BlockUser.ProfileText.prototype.setLogout = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string change_email = 3;
+ * optional string change_email_title = 3;
  * @return {string}
  */
-proto.BlockUser.ProfileText.prototype.getChangeEmail = function() {
+proto.BlockUser.ProfileText.prototype.getChangeEmailTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1714,16 +1690,16 @@ proto.BlockUser.ProfileText.prototype.getChangeEmail = function() {
  * @param {string} value
  * @return {!proto.BlockUser.ProfileText} returns this
  */
-proto.BlockUser.ProfileText.prototype.setChangeEmail = function(value) {
+proto.BlockUser.ProfileText.prototype.setChangeEmailTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string logout = 4;
+ * optional string change_email_description = 4;
  * @return {string}
  */
-proto.BlockUser.ProfileText.prototype.getLogout = function() {
+proto.BlockUser.ProfileText.prototype.getChangeEmailDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -1732,16 +1708,16 @@ proto.BlockUser.ProfileText.prototype.getLogout = function() {
  * @param {string} value
  * @return {!proto.BlockUser.ProfileText} returns this
  */
-proto.BlockUser.ProfileText.prototype.setLogout = function(value) {
+proto.BlockUser.ProfileText.prototype.setChangeEmailDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string change_email_title = 5;
+ * optional string change_password_title = 5;
  * @return {string}
  */
-proto.BlockUser.ProfileText.prototype.getChangeEmailTitle = function() {
+proto.BlockUser.ProfileText.prototype.getChangePasswordTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1750,16 +1726,16 @@ proto.BlockUser.ProfileText.prototype.getChangeEmailTitle = function() {
  * @param {string} value
  * @return {!proto.BlockUser.ProfileText} returns this
  */
-proto.BlockUser.ProfileText.prototype.setChangeEmailTitle = function(value) {
+proto.BlockUser.ProfileText.prototype.setChangePasswordTitle = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string change_email_description = 6;
+ * optional string change_password_description = 6;
  * @return {string}
  */
-proto.BlockUser.ProfileText.prototype.getChangeEmailDescription = function() {
+proto.BlockUser.ProfileText.prototype.getChangePasswordDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -1768,44 +1744,8 @@ proto.BlockUser.ProfileText.prototype.getChangeEmailDescription = function() {
  * @param {string} value
  * @return {!proto.BlockUser.ProfileText} returns this
  */
-proto.BlockUser.ProfileText.prototype.setChangeEmailDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string change_password_title = 7;
- * @return {string}
- */
-proto.BlockUser.ProfileText.prototype.getChangePasswordTitle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.ProfileText} returns this
- */
-proto.BlockUser.ProfileText.prototype.setChangePasswordTitle = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional string change_password_description = 8;
- * @return {string}
- */
-proto.BlockUser.ProfileText.prototype.getChangePasswordDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.BlockUser.ProfileText} returns this
- */
 proto.BlockUser.ProfileText.prototype.setChangePasswordDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
