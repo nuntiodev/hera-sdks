@@ -627,8 +627,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.updatePhoneNumber =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_UpdateOptionalId = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/UpdateOptionalId',
+const methodDescriptor_UserService_UpdateUsername = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UpdateUsername',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -653,13 +653,13 @@ const methodDescriptor_UserService_UpdateOptionalId = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.updateOptionalId =
+proto.BlockUser.UserServiceClient.prototype.updateUsername =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateOptionalId',
+      '/BlockUser.UserService/UpdateUsername',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateOptionalId,
+      methodDescriptor_UserService_UpdateUsername,
       callback);
 };
 
@@ -672,13 +672,13 @@ proto.BlockUser.UserServiceClient.prototype.updateOptionalId =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.updateOptionalId =
+proto.BlockUser.UserServicePromiseClient.prototype.updateUsername =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateOptionalId',
+      '/BlockUser.UserService/UpdateUsername',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateOptionalId);
+      methodDescriptor_UserService_UpdateUsername);
 };
 
 
