@@ -106,6 +106,18 @@ enum LanguageCode {
     DK = 2;
 }
 
+message Texts {
+    LanguageCode id = 1;
+    int32 internal_encryption_level = 2;
+    repeated LanguageCode available_languages = 3;
+    repeated LanguageCode supported_languages = 4;
+    GeneralText general_text = 5;
+    WelcomeText welcome_text = 6;
+    LoginText login_text = 7;
+    RegisterText register_text = 8;
+    ProfileText profile_text = 9;
+}
+
 message Config {
     string id = 1;
     string name = 2;
@@ -115,18 +127,12 @@ message Config {
     bool disable_default_login = 6;
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
-    GeneralText general_text = 9;
-    WelcomeText welcome_text = 10;
-    LoginText login_text = 11;
-    RegisterText register_text = 12;
-    int32 internal_encryption_level = 13;
-    bool validate_password = 14;
-    string nuntio_connect_id = 15;
-    bool require_email_verification = 16;
-    ProfileText profile_text = 17;
-    LoginType login_type = 18;
-    bool require_phone_number_verification = 19;
-    repeated LanguageCode available_languages = 20;
+    bool validate_password = 9;
+    string nuntio_connect_id = 10;
+    bool require_email_verification = 11;
+    LoginType login_type = 12;
+    bool require_phone_number_verification = 13;
+    LanguageCode default_language = 14;
 }
 
 enum EmailType {
@@ -184,6 +190,7 @@ message User {
     bool phone_number_is_verified = 29;
     google.protobuf.Timestamp verification_text_sent_at = 30;
     repeated string verified_phone_numbers = 31;
+    LanguageCode preffered_language = 32;
 }
 
 message UserFilter {
