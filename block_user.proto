@@ -41,12 +41,15 @@ service UserService {
     rpc CreateNamespaceConfig(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigSettings(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigDetails(UserRequest) returns (UserResponse) {}
-    rpc UpdateConfigGeneralText(UserRequest) returns (UserResponse) {}
-    rpc UpdateConfigWelcomeText(UserRequest) returns (UserResponse) {}
-    rpc UpdateConfigRegisterText(UserRequest) returns (UserResponse) {}
-    rpc UpdateConfigLoginText(UserRequest) returns (UserResponse) {}
     rpc GetConfig(UserRequest) returns (UserResponse) {}
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
+    rpc CreateText(UserRequest) returns (UserResponse) {}
+    rpc GetText(UserRequest) returns (UserResponse) {}
+    rpc UpdateGeneralText(UserRequest) returns (UserResponse) {}
+    rpc UpdateWelcomeText(UserRequest) returns (UserResponse) {}
+    rpc UpdateRegisterText(UserRequest) returns (UserResponse) {}
+    rpc UpdateLoginText(UserRequest) returns (UserResponse) {}
+    rpc DeleteText(UserRequest) returns (UserResponse) {}
 }
 
 message GeneralText {
@@ -106,7 +109,7 @@ enum LanguageCode {
     DK = 2;
 }
 
-message Texts {
+message Text {
     LanguageCode id = 1;
     int32 internal_encryption_level = 2;
     repeated LanguageCode available_languages = 3;
@@ -311,6 +314,7 @@ message UserRequest {
     Email email = 14;
     string email_verification_code = 15;
     string reset_password_code = 16;
+    Text text = 17;
 }
 
 message UserResponse {
