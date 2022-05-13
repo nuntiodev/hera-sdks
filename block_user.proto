@@ -137,6 +137,7 @@ message Config {
     LoginType login_type = 12;
     bool require_phone_number_verification = 13;
     LanguageCode default_language = 14;
+    int32 internal_encryption_level = 15;
 }
 
 enum EmailType {
