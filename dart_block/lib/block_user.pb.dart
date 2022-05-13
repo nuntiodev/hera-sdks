@@ -1236,6 +1236,9 @@ class User extends $pb.GeneratedMessage {
     ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailHash')
     ..aOS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumber')
     ..aOS(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberHash')
+    ..aOB(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberIsVerified')
+    ..aOM<$1.Timestamp>(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationTextSentAt', subBuilder: $1.Timestamp.create)
+    ..pPS(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
     ..hasRequiredFields = false
   ;
 
@@ -1270,6 +1273,9 @@ class User extends $pb.GeneratedMessage {
     $core.String? emailHash,
     $core.String? phoneNumber,
     $core.String? phoneNumberHash,
+    $core.bool? phoneNumberIsVerified,
+    $1.Timestamp? verificationTextSentAt,
+    $core.Iterable<$core.String>? verifiedPhoneNumbers,
   }) {
     final _result = create();
     if (id != null) {
@@ -1358,6 +1364,15 @@ class User extends $pb.GeneratedMessage {
     }
     if (phoneNumberHash != null) {
       _result.phoneNumberHash = phoneNumberHash;
+    }
+    if (phoneNumberIsVerified != null) {
+      _result.phoneNumberIsVerified = phoneNumberIsVerified;
+    }
+    if (verificationTextSentAt != null) {
+      _result.verificationTextSentAt = verificationTextSentAt;
+    }
+    if (verifiedPhoneNumbers != null) {
+      _result.verifiedPhoneNumbers.addAll(verifiedPhoneNumbers);
     }
     return _result;
   }
@@ -1654,6 +1669,29 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasPhoneNumberHash() => $_has(28);
   @$pb.TagNumber(29)
   void clearPhoneNumberHash() => clearField(29);
+
+  @$pb.TagNumber(30)
+  $core.bool get phoneNumberIsVerified => $_getBF(29);
+  @$pb.TagNumber(30)
+  set phoneNumberIsVerified($core.bool v) { $_setBool(29, v); }
+  @$pb.TagNumber(30)
+  $core.bool hasPhoneNumberIsVerified() => $_has(29);
+  @$pb.TagNumber(30)
+  void clearPhoneNumberIsVerified() => clearField(30);
+
+  @$pb.TagNumber(31)
+  $1.Timestamp get verificationTextSentAt => $_getN(30);
+  @$pb.TagNumber(31)
+  set verificationTextSentAt($1.Timestamp v) { setField(31, v); }
+  @$pb.TagNumber(31)
+  $core.bool hasVerificationTextSentAt() => $_has(30);
+  @$pb.TagNumber(31)
+  void clearVerificationTextSentAt() => clearField(31);
+  @$pb.TagNumber(31)
+  $1.Timestamp ensureVerificationTextSentAt() => $_ensure(30);
+
+  @$pb.TagNumber(32)
+  $core.List<$core.String> get verifiedPhoneNumbers => $_getList(31);
 }
 
 class UserFilter extends $pb.GeneratedMessage {

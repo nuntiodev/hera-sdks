@@ -3353,7 +3353,7 @@ proto.BlockUser.Email.prototype.setTemplatePath = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.BlockUser.User.repeatedFields_ = [26];
+proto.BlockUser.User.repeatedFields_ = [26,32];
 
 
 
@@ -3414,7 +3414,10 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     verifiedEmailsList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f,
     emailHash: jspb.Message.getFieldWithDefault(msg, 27, ""),
     phoneNumber: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    phoneNumberHash: jspb.Message.getFieldWithDefault(msg, 29, "")
+    phoneNumberHash: jspb.Message.getFieldWithDefault(msg, 29, ""),
+    phoneNumberIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 30, false),
+    verificationTextSentAt: (f = msg.getVerificationTextSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    verifiedPhoneNumbersList: (f = jspb.Message.getRepeatedField(msg, 32)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3575,6 +3578,19 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 29:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhoneNumberHash(value);
+      break;
+    case 30:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPhoneNumberIsVerified(value);
+      break;
+    case 31:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setVerificationTextSentAt(value);
+      break;
+    case 32:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addVerifiedPhoneNumbers(value);
       break;
     default:
       reader.skipField();
@@ -3814,6 +3830,28 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       29,
+      f
+    );
+  }
+  f = message.getPhoneNumberIsVerified();
+  if (f) {
+    writer.writeBool(
+      30,
+      f
+    );
+  }
+  f = message.getVerificationTextSentAt();
+  if (f != null) {
+    writer.writeMessage(
+      31,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getVerifiedPhoneNumbersList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      32,
       f
     );
   }
@@ -4529,6 +4567,98 @@ proto.BlockUser.User.prototype.getPhoneNumberHash = function() {
  */
 proto.BlockUser.User.prototype.setPhoneNumberHash = function(value) {
   return jspb.Message.setProto3StringField(this, 29, value);
+};
+
+
+/**
+ * optional bool phone_number_is_verified = 30;
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.getPhoneNumberIsVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setPhoneNumberIsVerified = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 30, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp verification_text_sent_at = 31;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.User.prototype.getVerificationTextSentAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 31));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.User} returns this
+*/
+proto.BlockUser.User.prototype.setVerificationTextSentAt = function(value) {
+  return jspb.Message.setWrapperField(this, 31, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearVerificationTextSentAt = function() {
+  return this.setVerificationTextSentAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasVerificationTextSentAt = function() {
+  return jspb.Message.getField(this, 31) != null;
+};
+
+
+/**
+ * repeated string verified_phone_numbers = 32;
+ * @return {!Array<string>}
+ */
+proto.BlockUser.User.prototype.getVerifiedPhoneNumbersList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 32));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setVerifiedPhoneNumbersList = function(value) {
+  return jspb.Message.setField(this, 32, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.addVerifiedPhoneNumbers = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 32, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearVerifiedPhoneNumbersList = function() {
+  return this.setVerifiedPhoneNumbersList([]);
 };
 
 
