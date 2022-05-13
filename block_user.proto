@@ -101,8 +101,9 @@ message LoginText {
 }
 
 enum LanguageCode {
-    EN = 0;
-    DK = 1;
+    INVALID_LANGUAGE_CODE = 0;
+    EN = 1;
+    DK = 2;
 }
 
 message Config {
