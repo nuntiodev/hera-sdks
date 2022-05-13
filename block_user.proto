@@ -125,6 +125,7 @@ message Config {
     ProfileText profile_text = 17;
     LoginType login_type = 18;
     bool require_phone_number_verification = 19;
+    available_languages = 20;
 }
 
 enum EmailType {
