@@ -180,6 +180,7 @@ message User {
     string phone_number = 28;
     string phone_number_hash = 29;
     bool phone_number_is_verified = 30;
+    google.protobuf.Timestamp verification_text_sent_at = 31;
 }
 
 message UserFilter {
