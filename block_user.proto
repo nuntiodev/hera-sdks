@@ -107,7 +107,7 @@ enum LanguageCode {
 }
 
 message Config {
-    LanguageCode id = 1;
+    string id = 1;
     string name = 2;
     string logo = 3;
     bool enable_nuntio_connect = 4;
