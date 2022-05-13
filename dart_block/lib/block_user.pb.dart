@@ -687,7 +687,7 @@ class LoginText extends $pb.GeneratedMessage {
 
 class Config extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Config', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..e<LanguageCode>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.EN, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..e<LanguageCode>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableNuntioConnect')
@@ -706,6 +706,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOM<ProfileText>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileText', subBuilder: ProfileText.create)
     ..e<LoginType>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
     ..aOB(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requirePhoneNumberVerification')
+    ..pc<LanguageCode>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'availableLanguages', $pb.PbFieldType.PE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..hasRequiredFields = false
   ;
 
@@ -730,6 +731,7 @@ class Config extends $pb.GeneratedMessage {
     ProfileText? profileText,
     LoginType? loginType,
     $core.bool? requirePhoneNumberVerification,
+    $core.Iterable<LanguageCode>? availableLanguages,
   }) {
     final _result = create();
     if (id != null) {
@@ -788,6 +790,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (requirePhoneNumberVerification != null) {
       _result.requirePhoneNumberVerification = requirePhoneNumberVerification;
+    }
+    if (availableLanguages != null) {
+      _result.availableLanguages.addAll(availableLanguages);
     }
     return _result;
   }
@@ -996,6 +1001,9 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasRequirePhoneNumberVerification() => $_has(18);
   @$pb.TagNumber(19)
   void clearRequirePhoneNumberVerification() => clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.List<LanguageCode> get availableLanguages => $_getList(19);
 }
 
 class Email extends $pb.GeneratedMessage {

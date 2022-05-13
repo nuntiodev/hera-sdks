@@ -10,10 +10,12 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class LanguageCode extends $pb.ProtobufEnum {
-  static const LanguageCode EN = LanguageCode._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EN');
-  static const LanguageCode DK = LanguageCode._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DK');
+  static const LanguageCode INVALID_LANGUAGE_CODE = LanguageCode._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INVALID_LANGUAGE_CODE');
+  static const LanguageCode EN = LanguageCode._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EN');
+  static const LanguageCode DK = LanguageCode._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DK');
 
   static const $core.List<LanguageCode> values = <LanguageCode> [
+    INVALID_LANGUAGE_CODE,
     EN,
     DK,
   ];

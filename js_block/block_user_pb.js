@@ -165,7 +165,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.BlockUser.Config = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.BlockUser.Config.repeatedFields_, null);
 };
 goog.inherits(proto.BlockUser.Config, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2008,6 +2008,13 @@ proto.BlockUser.LoginText.prototype.setForgotPassword = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.BlockUser.Config.repeatedFields_ = [20];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2057,7 +2064,8 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     profileText: (f = msg.getProfileText()) && proto.BlockUser.ProfileText.toObject(includeInstance, f),
     loginType: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    requirePhoneNumberVerification: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
+    requirePhoneNumberVerification: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    availableLanguagesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2176,6 +2184,12 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRequirePhoneNumberVerification(value);
+      break;
+    case 20:
+      var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addAvailableLanguages(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -2343,6 +2357,13 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       19,
+      f
+    );
+  }
+  f = message.getAvailableLanguagesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      20,
       f
     );
   }
@@ -2821,6 +2842,43 @@ proto.BlockUser.Config.prototype.getRequirePhoneNumberVerification = function() 
  */
 proto.BlockUser.Config.prototype.setRequirePhoneNumberVerification = function(value) {
   return jspb.Message.setProto3BooleanField(this, 19, value);
+};
+
+
+/**
+ * repeated LanguageCode available_languages = 20;
+ * @return {!Array<!proto.BlockUser.LanguageCode>}
+ */
+proto.BlockUser.Config.prototype.getAvailableLanguagesList = function() {
+  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 20));
+};
+
+
+/**
+ * @param {!Array<!proto.BlockUser.LanguageCode>} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setAvailableLanguagesList = function(value) {
+  return jspb.Message.setField(this, 20, value || []);
+};
+
+
+/**
+ * @param {!proto.BlockUser.LanguageCode} value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.addAvailableLanguages = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.clearAvailableLanguagesList = function() {
+  return this.setAvailableLanguagesList([]);
 };
 
 
@@ -8246,8 +8304,9 @@ proto.BlockUser.UserResponse.prototype.hasLoginSession = function() {
  * @enum {number}
  */
 proto.BlockUser.LanguageCode = {
-  EN: 0,
-  DK: 1
+  INVALID_LANGUAGE_CODE: 0,
+  EN: 1,
+  DK: 2
 };
 
 /**

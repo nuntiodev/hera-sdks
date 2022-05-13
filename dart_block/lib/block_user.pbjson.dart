@@ -12,13 +12,14 @@ import 'dart:typed_data' as $typed_data;
 const LanguageCode$json = const {
   '1': 'LanguageCode',
   '2': const [
-    const {'1': 'EN', '2': 0},
-    const {'1': 'DK', '2': 1},
+    const {'1': 'INVALID_LANGUAGE_CODE', '2': 0},
+    const {'1': 'EN', '2': 1},
+    const {'1': 'DK', '2': 2},
   ],
 };
 
 /// Descriptor for `LanguageCode`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List languageCodeDescriptor = $convert.base64Decode('CgxMYW5ndWFnZUNvZGUSBgoCRU4QABIGCgJESxAB');
+final $typed_data.Uint8List languageCodeDescriptor = $convert.base64Decode('CgxMYW5ndWFnZUNvZGUSGQoVSU5WQUxJRF9MQU5HVUFHRV9DT0RFEAASBgoCRU4QARIGCgJESxAC');
 @$core.Deprecated('Use emailTypeDescriptor instead')
 const EmailType$json = const {
   '1': 'EmailType',
@@ -189,11 +190,12 @@ const Config$json = const {
     const {'1': 'profile_text', '3': 17, '4': 1, '5': 11, '6': '.BlockUser.ProfileText', '10': 'profileText'},
     const {'1': 'login_type', '3': 18, '4': 1, '5': 14, '6': '.BlockUser.LoginType', '10': 'loginType'},
     const {'1': 'require_phone_number_verification', '3': 19, '4': 1, '5': 8, '10': 'requirePhoneNumberVerification'},
+    const {'1': 'available_languages', '3': 20, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'availableLanguages'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSJwoCaWQYASABKA4yFy5CbG9ja1VzZXIuTGFuZ3VhZ2VDb2RlUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGxvZ28YAyABKAlSBGxvZ28SMgoVZW5hYmxlX251bnRpb19jb25uZWN0GAQgASgIUhNlbmFibGVOdW50aW9Db25uZWN0EjQKFmRpc2FibGVfZGVmYXVsdF9zaWdudXAYBSABKAhSFGRpc2FibGVEZWZhdWx0U2lnbnVwEjIKFWRpc2FibGVfZGVmYXVsdF9sb2dpbhgGIAEoCFITZGlzYWJsZURlZmF1bHRMb2dpbhI5CgpjcmVhdGVkX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSOQoMZ2VuZXJhbF90ZXh0GAkgASgLMhYuQmxvY2tVc2VyLkdlbmVyYWxUZXh0UgtnZW5lcmFsVGV4dBI5Cgx3ZWxjb21lX3RleHQYCiABKAsyFi5CbG9ja1VzZXIuV2VsY29tZVRleHRSC3dlbGNvbWVUZXh0EjMKCmxvZ2luX3RleHQYCyABKAsyFC5CbG9ja1VzZXIuTG9naW5UZXh0Uglsb2dpblRleHQSPAoNcmVnaXN0ZXJfdGV4dBgMIAEoCzIXLkJsb2NrVXNlci5SZWdpc3RlclRleHRSDHJlZ2lzdGVyVGV4dBI6ChlpbnRlcm5hbF9lbmNyeXB0aW9uX2xldmVsGA0gASgFUhdpbnRlcm5hbEVuY3J5cHRpb25MZXZlbBIrChF2YWxpZGF0ZV9wYXNzd29yZBgOIAEoCFIQdmFsaWRhdGVQYXNzd29yZBIqChFudW50aW9fY29ubmVjdF9pZBgPIAEoCVIPbnVudGlvQ29ubmVjdElkEjwKGnJlcXVpcmVfZW1haWxfdmVyaWZpY2F0aW9uGBAgASgIUhhyZXF1aXJlRW1haWxWZXJpZmljYXRpb24SOQoMcHJvZmlsZV90ZXh0GBEgASgLMhYuQmxvY2tVc2VyLlByb2ZpbGVUZXh0Ugtwcm9maWxlVGV4dBIzCgpsb2dpbl90eXBlGBIgASgOMhQuQmxvY2tVc2VyLkxvZ2luVHlwZVIJbG9naW5UeXBlEkkKIXJlcXVpcmVfcGhvbmVfbnVtYmVyX3ZlcmlmaWNhdGlvbhgTIAEoCFIecmVxdWlyZVBob25lTnVtYmVyVmVyaWZpY2F0aW9u');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSJwoCaWQYASABKA4yFy5CbG9ja1VzZXIuTGFuZ3VhZ2VDb2RlUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGxvZ28YAyABKAlSBGxvZ28SMgoVZW5hYmxlX251bnRpb19jb25uZWN0GAQgASgIUhNlbmFibGVOdW50aW9Db25uZWN0EjQKFmRpc2FibGVfZGVmYXVsdF9zaWdudXAYBSABKAhSFGRpc2FibGVEZWZhdWx0U2lnbnVwEjIKFWRpc2FibGVfZGVmYXVsdF9sb2dpbhgGIAEoCFITZGlzYWJsZURlZmF1bHRMb2dpbhI5CgpjcmVhdGVkX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSOQoMZ2VuZXJhbF90ZXh0GAkgASgLMhYuQmxvY2tVc2VyLkdlbmVyYWxUZXh0UgtnZW5lcmFsVGV4dBI5Cgx3ZWxjb21lX3RleHQYCiABKAsyFi5CbG9ja1VzZXIuV2VsY29tZVRleHRSC3dlbGNvbWVUZXh0EjMKCmxvZ2luX3RleHQYCyABKAsyFC5CbG9ja1VzZXIuTG9naW5UZXh0Uglsb2dpblRleHQSPAoNcmVnaXN0ZXJfdGV4dBgMIAEoCzIXLkJsb2NrVXNlci5SZWdpc3RlclRleHRSDHJlZ2lzdGVyVGV4dBI6ChlpbnRlcm5hbF9lbmNyeXB0aW9uX2xldmVsGA0gASgFUhdpbnRlcm5hbEVuY3J5cHRpb25MZXZlbBIrChF2YWxpZGF0ZV9wYXNzd29yZBgOIAEoCFIQdmFsaWRhdGVQYXNzd29yZBIqChFudW50aW9fY29ubmVjdF9pZBgPIAEoCVIPbnVudGlvQ29ubmVjdElkEjwKGnJlcXVpcmVfZW1haWxfdmVyaWZpY2F0aW9uGBAgASgIUhhyZXF1aXJlRW1haWxWZXJpZmljYXRpb24SOQoMcHJvZmlsZV90ZXh0GBEgASgLMhYuQmxvY2tVc2VyLlByb2ZpbGVUZXh0Ugtwcm9maWxlVGV4dBIzCgpsb2dpbl90eXBlGBIgASgOMhQuQmxvY2tVc2VyLkxvZ2luVHlwZVIJbG9naW5UeXBlEkkKIXJlcXVpcmVfcGhvbmVfbnVtYmVyX3ZlcmlmaWNhdGlvbhgTIAEoCFIecmVxdWlyZVBob25lTnVtYmVyVmVyaWZpY2F0aW9uEkgKE2F2YWlsYWJsZV9sYW5ndWFnZXMYFCADKA4yFy5CbG9ja1VzZXIuTGFuZ3VhZ2VDb2RlUhJhdmFpbGFibGVMYW5ndWFnZXM=');
 @$core.Deprecated('Use emailDescriptor instead')
 const Email$json = const {
   '1': 'Email',
