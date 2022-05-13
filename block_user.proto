@@ -49,6 +49,7 @@ service UserService {
     rpc UpdateWelcomeText(UserRequest) returns (UserResponse) {}
     rpc UpdateRegisterText(UserRequest) returns (UserResponse) {}
     rpc UpdateLoginText(UserRequest) returns (UserResponse) {}
+    rpc UpdateProfileText(UserRequest) returns (UserResponse) {}
     rpc DeleteText(UserRequest) returns (UserResponse) {}
 }
 
