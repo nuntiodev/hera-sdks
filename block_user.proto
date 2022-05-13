@@ -328,4 +328,5 @@ message UserResponse {
     Config config = 8;
     ActiveHistory active_history = 9;
     LoginSession login_session = 10;
+    Text text = 11;
 }
