@@ -685,6 +685,163 @@ class LoginText extends $pb.GeneratedMessage {
   void clearForgotPassword() => clearField(4);
 }
 
+class Text extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Text', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
+    ..e<LanguageCode>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
+    ..pc<LanguageCode>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'availableLanguages', $pb.PbFieldType.PE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..pc<LanguageCode>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportedLanguages', $pb.PbFieldType.PE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..aOM<GeneralText>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'generalText', subBuilder: GeneralText.create)
+    ..aOM<WelcomeText>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeText', subBuilder: WelcomeText.create)
+    ..aOM<LoginText>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginText', subBuilder: LoginText.create)
+    ..aOM<RegisterText>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerText', subBuilder: RegisterText.create)
+    ..aOM<ProfileText>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileText', subBuilder: ProfileText.create)
+    ..hasRequiredFields = false
+  ;
+
+  Text._() : super();
+  factory Text({
+    LanguageCode? id,
+    $core.int? internalEncryptionLevel,
+    $core.Iterable<LanguageCode>? availableLanguages,
+    $core.Iterable<LanguageCode>? supportedLanguages,
+    GeneralText? generalText,
+    WelcomeText? welcomeText,
+    LoginText? loginText,
+    RegisterText? registerText,
+    ProfileText? profileText,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (internalEncryptionLevel != null) {
+      _result.internalEncryptionLevel = internalEncryptionLevel;
+    }
+    if (availableLanguages != null) {
+      _result.availableLanguages.addAll(availableLanguages);
+    }
+    if (supportedLanguages != null) {
+      _result.supportedLanguages.addAll(supportedLanguages);
+    }
+    if (generalText != null) {
+      _result.generalText = generalText;
+    }
+    if (welcomeText != null) {
+      _result.welcomeText = welcomeText;
+    }
+    if (loginText != null) {
+      _result.loginText = loginText;
+    }
+    if (registerText != null) {
+      _result.registerText = registerText;
+    }
+    if (profileText != null) {
+      _result.profileText = profileText;
+    }
+    return _result;
+  }
+  factory Text.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Text.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Text clone() => Text()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Text copyWith(void Function(Text) updates) => super.copyWith((message) => updates(message as Text)) as Text; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Text create() => Text._();
+  Text createEmptyInstance() => create();
+  static $pb.PbList<Text> createRepeated() => $pb.PbList<Text>();
+  @$core.pragma('dart2js:noInline')
+  static Text getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Text>(create);
+  static Text? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LanguageCode get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id(LanguageCode v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get internalEncryptionLevel => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set internalEncryptionLevel($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasInternalEncryptionLevel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInternalEncryptionLevel() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<LanguageCode> get availableLanguages => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<LanguageCode> get supportedLanguages => $_getList(3);
+
+  @$pb.TagNumber(5)
+  GeneralText get generalText => $_getN(4);
+  @$pb.TagNumber(5)
+  set generalText(GeneralText v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasGeneralText() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGeneralText() => clearField(5);
+  @$pb.TagNumber(5)
+  GeneralText ensureGeneralText() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  WelcomeText get welcomeText => $_getN(5);
+  @$pb.TagNumber(6)
+  set welcomeText(WelcomeText v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasWelcomeText() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWelcomeText() => clearField(6);
+  @$pb.TagNumber(6)
+  WelcomeText ensureWelcomeText() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  LoginText get loginText => $_getN(6);
+  @$pb.TagNumber(7)
+  set loginText(LoginText v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLoginText() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLoginText() => clearField(7);
+  @$pb.TagNumber(7)
+  LoginText ensureLoginText() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  RegisterText get registerText => $_getN(7);
+  @$pb.TagNumber(8)
+  set registerText(RegisterText v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasRegisterText() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRegisterText() => clearField(8);
+  @$pb.TagNumber(8)
+  RegisterText ensureRegisterText() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  ProfileText get profileText => $_getN(8);
+  @$pb.TagNumber(9)
+  set profileText(ProfileText v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasProfileText() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearProfileText() => clearField(9);
+  @$pb.TagNumber(9)
+  ProfileText ensureProfileText() => $_ensure(8);
+}
+
 class Config extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Config', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
@@ -695,18 +852,12 @@ class Config extends $pb.GeneratedMessage {
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultLogin')
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
-    ..aOM<GeneralText>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'generalText', subBuilder: GeneralText.create)
-    ..aOM<WelcomeText>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeText', subBuilder: WelcomeText.create)
-    ..aOM<LoginText>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginText', subBuilder: LoginText.create)
-    ..aOM<RegisterText>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerText', subBuilder: RegisterText.create)
-    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
-    ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
-    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nuntioConnectId')
-    ..aOB(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
-    ..aOM<ProfileText>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileText', subBuilder: ProfileText.create)
-    ..e<LoginType>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
-    ..aOB(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requirePhoneNumberVerification')
-    ..pc<LanguageCode>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'availableLanguages', $pb.PbFieldType.PE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatePassword')
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nuntioConnectId')
+    ..aOB(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
+    ..e<LoginType>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
+    ..aOB(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requirePhoneNumberVerification')
+    ..e<LanguageCode>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'defaultLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..hasRequiredFields = false
   ;
 
@@ -720,18 +871,12 @@ class Config extends $pb.GeneratedMessage {
     $core.bool? disableDefaultLogin,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
-    GeneralText? generalText,
-    WelcomeText? welcomeText,
-    LoginText? loginText,
-    RegisterText? registerText,
-    $core.int? internalEncryptionLevel,
     $core.bool? validatePassword,
     $core.String? nuntioConnectId,
     $core.bool? requireEmailVerification,
-    ProfileText? profileText,
     LoginType? loginType,
     $core.bool? requirePhoneNumberVerification,
-    $core.Iterable<LanguageCode>? availableLanguages,
+    LanguageCode? defaultLanguage,
   }) {
     final _result = create();
     if (id != null) {
@@ -758,21 +903,6 @@ class Config extends $pb.GeneratedMessage {
     if (updatedAt != null) {
       _result.updatedAt = updatedAt;
     }
-    if (generalText != null) {
-      _result.generalText = generalText;
-    }
-    if (welcomeText != null) {
-      _result.welcomeText = welcomeText;
-    }
-    if (loginText != null) {
-      _result.loginText = loginText;
-    }
-    if (registerText != null) {
-      _result.registerText = registerText;
-    }
-    if (internalEncryptionLevel != null) {
-      _result.internalEncryptionLevel = internalEncryptionLevel;
-    }
     if (validatePassword != null) {
       _result.validatePassword = validatePassword;
     }
@@ -782,17 +912,14 @@ class Config extends $pb.GeneratedMessage {
     if (requireEmailVerification != null) {
       _result.requireEmailVerification = requireEmailVerification;
     }
-    if (profileText != null) {
-      _result.profileText = profileText;
-    }
     if (loginType != null) {
       _result.loginType = loginType;
     }
     if (requirePhoneNumberVerification != null) {
       _result.requirePhoneNumberVerification = requirePhoneNumberVerification;
     }
-    if (availableLanguages != null) {
-      _result.availableLanguages.addAll(availableLanguages);
+    if (defaultLanguage != null) {
+      _result.defaultLanguage = defaultLanguage;
     }
     return _result;
   }
@@ -894,116 +1021,58 @@ class Config extends $pb.GeneratedMessage {
   $1.Timestamp ensureUpdatedAt() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  GeneralText get generalText => $_getN(8);
+  $core.bool get validatePassword => $_getBF(8);
   @$pb.TagNumber(9)
-  set generalText(GeneralText v) { setField(9, v); }
+  set validatePassword($core.bool v) { $_setBool(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasGeneralText() => $_has(8);
+  $core.bool hasValidatePassword() => $_has(8);
   @$pb.TagNumber(9)
-  void clearGeneralText() => clearField(9);
-  @$pb.TagNumber(9)
-  GeneralText ensureGeneralText() => $_ensure(8);
+  void clearValidatePassword() => clearField(9);
 
   @$pb.TagNumber(10)
-  WelcomeText get welcomeText => $_getN(9);
+  $core.String get nuntioConnectId => $_getSZ(9);
   @$pb.TagNumber(10)
-  set welcomeText(WelcomeText v) { setField(10, v); }
+  set nuntioConnectId($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasWelcomeText() => $_has(9);
+  $core.bool hasNuntioConnectId() => $_has(9);
   @$pb.TagNumber(10)
-  void clearWelcomeText() => clearField(10);
-  @$pb.TagNumber(10)
-  WelcomeText ensureWelcomeText() => $_ensure(9);
+  void clearNuntioConnectId() => clearField(10);
 
   @$pb.TagNumber(11)
-  LoginText get loginText => $_getN(10);
+  $core.bool get requireEmailVerification => $_getBF(10);
   @$pb.TagNumber(11)
-  set loginText(LoginText v) { setField(11, v); }
+  set requireEmailVerification($core.bool v) { $_setBool(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasLoginText() => $_has(10);
+  $core.bool hasRequireEmailVerification() => $_has(10);
   @$pb.TagNumber(11)
-  void clearLoginText() => clearField(11);
-  @$pb.TagNumber(11)
-  LoginText ensureLoginText() => $_ensure(10);
+  void clearRequireEmailVerification() => clearField(11);
 
   @$pb.TagNumber(12)
-  RegisterText get registerText => $_getN(11);
+  LoginType get loginType => $_getN(11);
   @$pb.TagNumber(12)
-  set registerText(RegisterText v) { setField(12, v); }
+  set loginType(LoginType v) { setField(12, v); }
   @$pb.TagNumber(12)
-  $core.bool hasRegisterText() => $_has(11);
+  $core.bool hasLoginType() => $_has(11);
   @$pb.TagNumber(12)
-  void clearRegisterText() => clearField(12);
-  @$pb.TagNumber(12)
-  RegisterText ensureRegisterText() => $_ensure(11);
+  void clearLoginType() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.int get internalEncryptionLevel => $_getIZ(12);
+  $core.bool get requirePhoneNumberVerification => $_getBF(12);
   @$pb.TagNumber(13)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(12, v); }
+  set requirePhoneNumberVerification($core.bool v) { $_setBool(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasInternalEncryptionLevel() => $_has(12);
+  $core.bool hasRequirePhoneNumberVerification() => $_has(12);
   @$pb.TagNumber(13)
-  void clearInternalEncryptionLevel() => clearField(13);
+  void clearRequirePhoneNumberVerification() => clearField(13);
 
   @$pb.TagNumber(14)
-  $core.bool get validatePassword => $_getBF(13);
+  LanguageCode get defaultLanguage => $_getN(13);
   @$pb.TagNumber(14)
-  set validatePassword($core.bool v) { $_setBool(13, v); }
+  set defaultLanguage(LanguageCode v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasValidatePassword() => $_has(13);
+  $core.bool hasDefaultLanguage() => $_has(13);
   @$pb.TagNumber(14)
-  void clearValidatePassword() => clearField(14);
-
-  @$pb.TagNumber(15)
-  $core.String get nuntioConnectId => $_getSZ(14);
-  @$pb.TagNumber(15)
-  set nuntioConnectId($core.String v) { $_setString(14, v); }
-  @$pb.TagNumber(15)
-  $core.bool hasNuntioConnectId() => $_has(14);
-  @$pb.TagNumber(15)
-  void clearNuntioConnectId() => clearField(15);
-
-  @$pb.TagNumber(16)
-  $core.bool get requireEmailVerification => $_getBF(15);
-  @$pb.TagNumber(16)
-  set requireEmailVerification($core.bool v) { $_setBool(15, v); }
-  @$pb.TagNumber(16)
-  $core.bool hasRequireEmailVerification() => $_has(15);
-  @$pb.TagNumber(16)
-  void clearRequireEmailVerification() => clearField(16);
-
-  @$pb.TagNumber(17)
-  ProfileText get profileText => $_getN(16);
-  @$pb.TagNumber(17)
-  set profileText(ProfileText v) { setField(17, v); }
-  @$pb.TagNumber(17)
-  $core.bool hasProfileText() => $_has(16);
-  @$pb.TagNumber(17)
-  void clearProfileText() => clearField(17);
-  @$pb.TagNumber(17)
-  ProfileText ensureProfileText() => $_ensure(16);
-
-  @$pb.TagNumber(18)
-  LoginType get loginType => $_getN(17);
-  @$pb.TagNumber(18)
-  set loginType(LoginType v) { setField(18, v); }
-  @$pb.TagNumber(18)
-  $core.bool hasLoginType() => $_has(17);
-  @$pb.TagNumber(18)
-  void clearLoginType() => clearField(18);
-
-  @$pb.TagNumber(19)
-  $core.bool get requirePhoneNumberVerification => $_getBF(18);
-  @$pb.TagNumber(19)
-  set requirePhoneNumberVerification($core.bool v) { $_setBool(18, v); }
-  @$pb.TagNumber(19)
-  $core.bool hasRequirePhoneNumberVerification() => $_has(18);
-  @$pb.TagNumber(19)
-  void clearRequirePhoneNumberVerification() => clearField(19);
-
-  @$pb.TagNumber(20)
-  $core.List<LanguageCode> get availableLanguages => $_getList(19);
+  void clearDefaultLanguage() => clearField(14);
 }
 
 class Email extends $pb.GeneratedMessage {
@@ -1260,6 +1329,7 @@ class User extends $pb.GeneratedMessage {
     ..aOB(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberIsVerified')
     ..aOM<$1.Timestamp>(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationTextSentAt', subBuilder: $1.Timestamp.create)
     ..pPS(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
+    ..e<LanguageCode>(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'prefferedLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..hasRequiredFields = false
   ;
 
@@ -1296,6 +1366,7 @@ class User extends $pb.GeneratedMessage {
     $core.bool? phoneNumberIsVerified,
     $1.Timestamp? verificationTextSentAt,
     $core.Iterable<$core.String>? verifiedPhoneNumbers,
+    LanguageCode? prefferedLanguage,
   }) {
     final _result = create();
     if (id != null) {
@@ -1390,6 +1461,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (verifiedPhoneNumbers != null) {
       _result.verifiedPhoneNumbers.addAll(verifiedPhoneNumbers);
+    }
+    if (prefferedLanguage != null) {
+      _result.prefferedLanguage = prefferedLanguage;
     }
     return _result;
   }
@@ -1700,6 +1774,15 @@ class User extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(31)
   $core.List<$core.String> get verifiedPhoneNumbers => $_getList(30);
+
+  @$pb.TagNumber(32)
+  LanguageCode get prefferedLanguage => $_getN(31);
+  @$pb.TagNumber(32)
+  set prefferedLanguage(LanguageCode v) { setField(32, v); }
+  @$pb.TagNumber(32)
+  $core.bool hasPrefferedLanguage() => $_has(31);
+  @$pb.TagNumber(32)
+  void clearPrefferedLanguage() => clearField(32);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
@@ -2534,6 +2617,7 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOM<Email>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Email.create)
     ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
     ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordCode')
+    ..aOM<Text>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text', subBuilder: Text.create)
     ..hasRequiredFields = false
   ;
 
@@ -2555,6 +2639,7 @@ class UserRequest extends $pb.GeneratedMessage {
     Email? email,
     $core.String? emailVerificationCode,
     $core.String? resetPasswordCode,
+    Text? text,
   }) {
     final _result = create();
     if (user != null) {
@@ -2604,6 +2689,9 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (resetPasswordCode != null) {
       _result.resetPasswordCode = resetPasswordCode;
+    }
+    if (text != null) {
+      _result.text = text;
     }
     return _result;
   }
@@ -2779,6 +2867,17 @@ class UserRequest extends $pb.GeneratedMessage {
   $core.bool hasResetPasswordCode() => $_has(15);
   @$pb.TagNumber(16)
   void clearResetPasswordCode() => clearField(16);
+
+  @$pb.TagNumber(17)
+  Text get text => $_getN(16);
+  @$pb.TagNumber(17)
+  set text(Text v) { setField(17, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasText() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearText() => clearField(17);
+  @$pb.TagNumber(17)
+  Text ensureText() => $_ensure(16);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
@@ -2793,6 +2892,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..aOM<Config>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOM<ActiveHistory>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeHistory', subBuilder: ActiveHistory.create)
     ..aOM<LoginSession>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginSession', subBuilder: LoginSession.create)
+    ..aOM<Text>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text', subBuilder: Text.create)
     ..hasRequiredFields = false
   ;
 
@@ -2808,6 +2908,7 @@ class UserResponse extends $pb.GeneratedMessage {
     Config? config,
     ActiveHistory? activeHistory,
     LoginSession? loginSession,
+    Text? text,
   }) {
     final _result = create();
     if (user != null) {
@@ -2839,6 +2940,9 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     if (loginSession != null) {
       _result.loginSession = loginSession;
+    }
+    if (text != null) {
+      _result.text = text;
     }
     return _result;
   }
@@ -2946,5 +3050,16 @@ class UserResponse extends $pb.GeneratedMessage {
   void clearLoginSession() => clearField(10);
   @$pb.TagNumber(10)
   LoginSession ensureLoginSession() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  Text get text => $_getN(10);
+  @$pb.TagNumber(11)
+  set text(Text v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasText() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearText() => clearField(11);
+  @$pb.TagNumber(11)
+  Text ensureText() => $_ensure(10);
 }
 

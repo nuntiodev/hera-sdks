@@ -52,12 +52,15 @@ type UserServiceClient interface {
 	CreateNamespaceConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateConfigSettings(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateConfigDetails(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateConfigGeneralText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateConfigWelcomeText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateConfigRegisterText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateConfigLoginText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	CreateText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateGeneralText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateWelcomeText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateRegisterText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateLoginText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	DeleteText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 }
 
 type userServiceClient struct {
@@ -374,42 +377,6 @@ func (c *userServiceClient) UpdateConfigDetails(ctx context.Context, in *UserReq
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateConfigGeneralText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateConfigGeneralText", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UpdateConfigWelcomeText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateConfigWelcomeText", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UpdateConfigRegisterText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateConfigRegisterText", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UpdateConfigLoginText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateConfigLoginText", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *userServiceClient) GetConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetConfig", in, out, opts...)
@@ -422,6 +389,69 @@ func (c *userServiceClient) GetConfig(ctx context.Context, in *UserRequest, opts
 func (c *userServiceClient) DeleteConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/DeleteConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) CreateText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/CreateText", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) GetText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetText", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateGeneralText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateGeneralText", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateWelcomeText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateWelcomeText", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateRegisterText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateRegisterText", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateLoginText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateLoginText", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) DeleteText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/DeleteText", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -466,12 +496,15 @@ type UserServiceServer interface {
 	CreateNamespaceConfig(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateConfigSettings(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateConfigDetails(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateConfigGeneralText(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateConfigWelcomeText(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateConfigRegisterText(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateConfigLoginText(context.Context, *UserRequest) (*UserResponse, error)
 	GetConfig(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteConfig(context.Context, *UserRequest) (*UserResponse, error)
+	CreateText(context.Context, *UserRequest) (*UserResponse, error)
+	GetText(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateGeneralText(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateWelcomeText(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateRegisterText(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateLoginText(context.Context, *UserRequest) (*UserResponse, error)
+	DeleteText(context.Context, *UserRequest) (*UserResponse, error)
 }
 
 // UnimplementedUserServiceServer should be embedded to have forward compatible implementations.
@@ -580,23 +613,32 @@ func (UnimplementedUserServiceServer) UpdateConfigSettings(context.Context, *Use
 func (UnimplementedUserServiceServer) UpdateConfigDetails(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfigDetails not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateConfigGeneralText(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfigGeneralText not implemented")
-}
-func (UnimplementedUserServiceServer) UpdateConfigWelcomeText(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfigWelcomeText not implemented")
-}
-func (UnimplementedUserServiceServer) UpdateConfigRegisterText(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfigRegisterText not implemented")
-}
-func (UnimplementedUserServiceServer) UpdateConfigLoginText(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfigLoginText not implemented")
-}
 func (UnimplementedUserServiceServer) GetConfig(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConfig not implemented")
 }
 func (UnimplementedUserServiceServer) DeleteConfig(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteConfig not implemented")
+}
+func (UnimplementedUserServiceServer) CreateText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateText not implemented")
+}
+func (UnimplementedUserServiceServer) GetText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetText not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateGeneralText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateGeneralText not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateWelcomeText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateWelcomeText not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateRegisterText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateRegisterText not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateLoginText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateLoginText not implemented")
+}
+func (UnimplementedUserServiceServer) DeleteText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteText not implemented")
 }
 
 // UnsafeUserServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -1222,78 +1264,6 @@ func _UserService_UpdateConfigDetails_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateConfigGeneralText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateConfigGeneralText(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateConfigGeneralText",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateConfigGeneralText(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_UpdateConfigWelcomeText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateConfigWelcomeText(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateConfigWelcomeText",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateConfigWelcomeText(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_UpdateConfigRegisterText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateConfigRegisterText(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateConfigRegisterText",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateConfigRegisterText(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_UpdateConfigLoginText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateConfigLoginText(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateConfigLoginText",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateConfigLoginText(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _UserService_GetConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
@@ -1326,6 +1296,132 @@ func _UserService_DeleteConfig_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserServiceServer).DeleteConfig(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_CreateText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).CreateText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/CreateText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).CreateText(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_GetText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).GetText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/GetText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).GetText(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateGeneralText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateGeneralText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateGeneralText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateGeneralText(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateWelcomeText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateWelcomeText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateWelcomeText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateWelcomeText(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateRegisterText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateRegisterText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateRegisterText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateRegisterText(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateLoginText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateLoginText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateLoginText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateLoginText(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_DeleteText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).DeleteText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/DeleteText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).DeleteText(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1474,28 +1570,40 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_UpdateConfigDetails_Handler,
 		},
 		{
-			MethodName: "UpdateConfigGeneralText",
-			Handler:    _UserService_UpdateConfigGeneralText_Handler,
-		},
-		{
-			MethodName: "UpdateConfigWelcomeText",
-			Handler:    _UserService_UpdateConfigWelcomeText_Handler,
-		},
-		{
-			MethodName: "UpdateConfigRegisterText",
-			Handler:    _UserService_UpdateConfigRegisterText_Handler,
-		},
-		{
-			MethodName: "UpdateConfigLoginText",
-			Handler:    _UserService_UpdateConfigLoginText_Handler,
-		},
-		{
 			MethodName: "GetConfig",
 			Handler:    _UserService_GetConfig_Handler,
 		},
 		{
 			MethodName: "DeleteConfig",
 			Handler:    _UserService_DeleteConfig_Handler,
+		},
+		{
+			MethodName: "CreateText",
+			Handler:    _UserService_CreateText_Handler,
+		},
+		{
+			MethodName: "GetText",
+			Handler:    _UserService_GetText_Handler,
+		},
+		{
+			MethodName: "UpdateGeneralText",
+			Handler:    _UserService_UpdateGeneralText_Handler,
+		},
+		{
+			MethodName: "UpdateWelcomeText",
+			Handler:    _UserService_UpdateWelcomeText_Handler,
+		},
+		{
+			MethodName: "UpdateRegisterText",
+			Handler:    _UserService_UpdateRegisterText_Handler,
+		},
+		{
+			MethodName: "UpdateLoginText",
+			Handler:    _UserService_UpdateLoginText_Handler,
+		},
+		{
+			MethodName: "DeleteText",
+			Handler:    _UserService_DeleteText_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
