@@ -2046,7 +2046,7 @@ proto.BlockUser.Config.prototype.toObject = function(opt_includeInstance) {
  */
 proto.BlockUser.Config.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     logo: jspb.Message.getFieldWithDefault(msg, 3, ""),
     enableNuntioConnect: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
@@ -2103,7 +2103,7 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.BlockUser.LanguageCode} */ (reader.readEnum());
+      var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
     case 2:
@@ -2221,8 +2221,8 @@ proto.BlockUser.Config.prototype.serializeBinary = function() {
 proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -2371,20 +2371,20 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional LanguageCode id = 1;
- * @return {!proto.BlockUser.LanguageCode}
+ * optional string id = 1;
+ * @return {string}
  */
 proto.BlockUser.Config.prototype.getId = function() {
-  return /** @type {!proto.BlockUser.LanguageCode} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {!proto.BlockUser.LanguageCode} value
+ * @param {string} value
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setId = function(value) {
-  return jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
