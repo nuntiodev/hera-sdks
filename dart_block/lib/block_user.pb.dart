@@ -705,6 +705,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOB(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..aOM<ProfileText>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileText', subBuilder: ProfileText.create)
     ..e<LoginType>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
+    ..aOB(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requirePhoneNumberVerification')
     ..hasRequiredFields = false
   ;
 
@@ -728,6 +729,7 @@ class Config extends $pb.GeneratedMessage {
     $core.bool? requireEmailVerification,
     ProfileText? profileText,
     LoginType? loginType,
+    $core.bool? requirePhoneNumberVerification,
   }) {
     final _result = create();
     if (id != null) {
@@ -783,6 +785,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (loginType != null) {
       _result.loginType = loginType;
+    }
+    if (requirePhoneNumberVerification != null) {
+      _result.requirePhoneNumberVerification = requirePhoneNumberVerification;
     }
     return _result;
   }
@@ -982,6 +987,15 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasLoginType() => $_has(17);
   @$pb.TagNumber(18)
   void clearLoginType() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.bool get requirePhoneNumberVerification => $_getBF(18);
+  @$pb.TagNumber(19)
+  set requirePhoneNumberVerification($core.bool v) { $_setBool(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasRequirePhoneNumberVerification() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearRequirePhoneNumberVerification() => clearField(19);
 }
 
 class Email extends $pb.GeneratedMessage {
@@ -1208,7 +1222,7 @@ class Email extends $pb.GeneratedMessage {
 class User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'optionalId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'username')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image')
@@ -1218,34 +1232,33 @@ class User extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
-    ..aOB(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
-    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
-    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
-    ..aOM<$1.Timestamp>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerifiedAt', subBuilder: $1.Timestamp.create)
-    ..aOB(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailIsVerified')
-    ..aOM<$1.Timestamp>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationEmailSentAt', subBuilder: $1.Timestamp.create)
-    ..aOS(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
-    ..aOM<$1.Timestamp>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationEmailExpiresAt', subBuilder: $1.Timestamp.create)
-    ..a<$core.int>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyEmailAttempts', $pb.PbFieldType.O3)
-    ..aOS(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordCode')
-    ..aOM<$1.Timestamp>(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordEmailSentAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordEmailExpiresAt', subBuilder: $1.Timestamp.create)
-    ..a<$core.int>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordAttempts', $pb.PbFieldType.O3)
-    ..pPS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedEmails')
-    ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailHash')
-    ..aOS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumber')
-    ..aOS(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberHash')
-    ..aOB(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberIsVerified')
-    ..aOM<$1.Timestamp>(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationTextSentAt', subBuilder: $1.Timestamp.create)
-    ..pPS(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
+    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
+    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
+    ..aOM<$1.Timestamp>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerifiedAt', subBuilder: $1.Timestamp.create)
+    ..aOB(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailIsVerified')
+    ..aOM<$1.Timestamp>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationEmailSentAt', subBuilder: $1.Timestamp.create)
+    ..aOS(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
+    ..aOM<$1.Timestamp>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationEmailExpiresAt', subBuilder: $1.Timestamp.create)
+    ..a<$core.int>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyEmailAttempts', $pb.PbFieldType.O3)
+    ..aOS(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordCode')
+    ..aOM<$1.Timestamp>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordEmailSentAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordEmailExpiresAt', subBuilder: $1.Timestamp.create)
+    ..a<$core.int>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordAttempts', $pb.PbFieldType.O3)
+    ..pPS(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedEmails')
+    ..aOS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailHash')
+    ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumber')
+    ..aOS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberHash')
+    ..aOB(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberIsVerified')
+    ..aOM<$1.Timestamp>(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationTextSentAt', subBuilder: $1.Timestamp.create)
+    ..pPS(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
     ..hasRequiredFields = false
   ;
 
   User._() : super();
   factory User({
     $core.String? id,
-    $core.String? optionalId,
+    $core.String? username,
     $core.String? email,
     $core.String? password,
     $core.String? image,
@@ -1255,7 +1268,6 @@ class User extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
     $1.Timestamp? encryptedAt,
-    $core.bool? requireEmailVerification,
     $core.String? firstName,
     $core.String? lastName,
     $1.Timestamp? birthdate,
@@ -1281,8 +1293,8 @@ class User extends $pb.GeneratedMessage {
     if (id != null) {
       _result.id = id;
     }
-    if (optionalId != null) {
-      _result.optionalId = optionalId;
+    if (username != null) {
+      _result.username = username;
     }
     if (email != null) {
       _result.email = email;
@@ -1310,9 +1322,6 @@ class User extends $pb.GeneratedMessage {
     }
     if (encryptedAt != null) {
       _result.encryptedAt = encryptedAt;
-    }
-    if (requireEmailVerification != null) {
-      _result.requireEmailVerification = requireEmailVerification;
     }
     if (firstName != null) {
       _result.firstName = firstName;
@@ -1407,13 +1416,13 @@ class User extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get optionalId => $_getSZ(1);
+  $core.String get username => $_getSZ(1);
   @$pb.TagNumber(2)
-  set optionalId($core.String v) { $_setString(1, v); }
+  set username($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasOptionalId() => $_has(1);
+  $core.bool hasUsername() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOptionalId() => clearField(2);
+  void clearUsername() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get email => $_getSZ(2);
@@ -1503,195 +1512,186 @@ class User extends $pb.GeneratedMessage {
   $1.Timestamp ensureEncryptedAt() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  $core.bool get requireEmailVerification => $_getBF(11);
+  $core.String get firstName => $_getSZ(11);
   @$pb.TagNumber(12)
-  set requireEmailVerification($core.bool v) { $_setBool(11, v); }
+  set firstName($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasRequireEmailVerification() => $_has(11);
+  $core.bool hasFirstName() => $_has(11);
   @$pb.TagNumber(12)
-  void clearRequireEmailVerification() => clearField(12);
+  void clearFirstName() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.String get firstName => $_getSZ(12);
+  $core.String get lastName => $_getSZ(12);
   @$pb.TagNumber(13)
-  set firstName($core.String v) { $_setString(12, v); }
+  set lastName($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasFirstName() => $_has(12);
+  $core.bool hasLastName() => $_has(12);
   @$pb.TagNumber(13)
-  void clearFirstName() => clearField(13);
+  void clearLastName() => clearField(13);
 
   @$pb.TagNumber(14)
-  $core.String get lastName => $_getSZ(13);
+  $1.Timestamp get birthdate => $_getN(13);
   @$pb.TagNumber(14)
-  set lastName($core.String v) { $_setString(13, v); }
+  set birthdate($1.Timestamp v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasLastName() => $_has(13);
+  $core.bool hasBirthdate() => $_has(13);
   @$pb.TagNumber(14)
-  void clearLastName() => clearField(14);
+  void clearBirthdate() => clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureBirthdate() => $_ensure(13);
 
   @$pb.TagNumber(15)
-  $1.Timestamp get birthdate => $_getN(14);
+  $1.Timestamp get emailVerifiedAt => $_getN(14);
   @$pb.TagNumber(15)
-  set birthdate($1.Timestamp v) { setField(15, v); }
+  set emailVerifiedAt($1.Timestamp v) { setField(15, v); }
   @$pb.TagNumber(15)
-  $core.bool hasBirthdate() => $_has(14);
+  $core.bool hasEmailVerifiedAt() => $_has(14);
   @$pb.TagNumber(15)
-  void clearBirthdate() => clearField(15);
+  void clearEmailVerifiedAt() => clearField(15);
   @$pb.TagNumber(15)
-  $1.Timestamp ensureBirthdate() => $_ensure(14);
+  $1.Timestamp ensureEmailVerifiedAt() => $_ensure(14);
 
   @$pb.TagNumber(16)
-  $1.Timestamp get emailVerifiedAt => $_getN(15);
+  $core.bool get emailIsVerified => $_getBF(15);
   @$pb.TagNumber(16)
-  set emailVerifiedAt($1.Timestamp v) { setField(16, v); }
+  set emailIsVerified($core.bool v) { $_setBool(15, v); }
   @$pb.TagNumber(16)
-  $core.bool hasEmailVerifiedAt() => $_has(15);
+  $core.bool hasEmailIsVerified() => $_has(15);
   @$pb.TagNumber(16)
-  void clearEmailVerifiedAt() => clearField(16);
-  @$pb.TagNumber(16)
-  $1.Timestamp ensureEmailVerifiedAt() => $_ensure(15);
+  void clearEmailIsVerified() => clearField(16);
 
   @$pb.TagNumber(17)
-  $core.bool get emailIsVerified => $_getBF(16);
+  $1.Timestamp get verificationEmailSentAt => $_getN(16);
   @$pb.TagNumber(17)
-  set emailIsVerified($core.bool v) { $_setBool(16, v); }
+  set verificationEmailSentAt($1.Timestamp v) { setField(17, v); }
   @$pb.TagNumber(17)
-  $core.bool hasEmailIsVerified() => $_has(16);
+  $core.bool hasVerificationEmailSentAt() => $_has(16);
   @$pb.TagNumber(17)
-  void clearEmailIsVerified() => clearField(17);
+  void clearVerificationEmailSentAt() => clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureVerificationEmailSentAt() => $_ensure(16);
 
   @$pb.TagNumber(18)
-  $1.Timestamp get verificationEmailSentAt => $_getN(17);
+  $core.String get emailVerificationCode => $_getSZ(17);
   @$pb.TagNumber(18)
-  set verificationEmailSentAt($1.Timestamp v) { setField(18, v); }
+  set emailVerificationCode($core.String v) { $_setString(17, v); }
   @$pb.TagNumber(18)
-  $core.bool hasVerificationEmailSentAt() => $_has(17);
+  $core.bool hasEmailVerificationCode() => $_has(17);
   @$pb.TagNumber(18)
-  void clearVerificationEmailSentAt() => clearField(18);
-  @$pb.TagNumber(18)
-  $1.Timestamp ensureVerificationEmailSentAt() => $_ensure(17);
+  void clearEmailVerificationCode() => clearField(18);
 
   @$pb.TagNumber(19)
-  $core.String get emailVerificationCode => $_getSZ(18);
+  $1.Timestamp get verificationEmailExpiresAt => $_getN(18);
   @$pb.TagNumber(19)
-  set emailVerificationCode($core.String v) { $_setString(18, v); }
+  set verificationEmailExpiresAt($1.Timestamp v) { setField(19, v); }
   @$pb.TagNumber(19)
-  $core.bool hasEmailVerificationCode() => $_has(18);
+  $core.bool hasVerificationEmailExpiresAt() => $_has(18);
   @$pb.TagNumber(19)
-  void clearEmailVerificationCode() => clearField(19);
+  void clearVerificationEmailExpiresAt() => clearField(19);
+  @$pb.TagNumber(19)
+  $1.Timestamp ensureVerificationEmailExpiresAt() => $_ensure(18);
 
   @$pb.TagNumber(20)
-  $1.Timestamp get verificationEmailExpiresAt => $_getN(19);
+  $core.int get verifyEmailAttempts => $_getIZ(19);
   @$pb.TagNumber(20)
-  set verificationEmailExpiresAt($1.Timestamp v) { setField(20, v); }
+  set verifyEmailAttempts($core.int v) { $_setSignedInt32(19, v); }
   @$pb.TagNumber(20)
-  $core.bool hasVerificationEmailExpiresAt() => $_has(19);
+  $core.bool hasVerifyEmailAttempts() => $_has(19);
   @$pb.TagNumber(20)
-  void clearVerificationEmailExpiresAt() => clearField(20);
-  @$pb.TagNumber(20)
-  $1.Timestamp ensureVerificationEmailExpiresAt() => $_ensure(19);
+  void clearVerifyEmailAttempts() => clearField(20);
 
   @$pb.TagNumber(21)
-  $core.int get verifyEmailAttempts => $_getIZ(20);
+  $core.String get resetPasswordCode => $_getSZ(20);
   @$pb.TagNumber(21)
-  set verifyEmailAttempts($core.int v) { $_setSignedInt32(20, v); }
+  set resetPasswordCode($core.String v) { $_setString(20, v); }
   @$pb.TagNumber(21)
-  $core.bool hasVerifyEmailAttempts() => $_has(20);
+  $core.bool hasResetPasswordCode() => $_has(20);
   @$pb.TagNumber(21)
-  void clearVerifyEmailAttempts() => clearField(21);
+  void clearResetPasswordCode() => clearField(21);
 
   @$pb.TagNumber(22)
-  $core.String get resetPasswordCode => $_getSZ(21);
+  $1.Timestamp get resetPasswordEmailSentAt => $_getN(21);
   @$pb.TagNumber(22)
-  set resetPasswordCode($core.String v) { $_setString(21, v); }
+  set resetPasswordEmailSentAt($1.Timestamp v) { setField(22, v); }
   @$pb.TagNumber(22)
-  $core.bool hasResetPasswordCode() => $_has(21);
+  $core.bool hasResetPasswordEmailSentAt() => $_has(21);
   @$pb.TagNumber(22)
-  void clearResetPasswordCode() => clearField(22);
+  void clearResetPasswordEmailSentAt() => clearField(22);
+  @$pb.TagNumber(22)
+  $1.Timestamp ensureResetPasswordEmailSentAt() => $_ensure(21);
 
   @$pb.TagNumber(23)
-  $1.Timestamp get resetPasswordEmailSentAt => $_getN(22);
+  $1.Timestamp get resetPasswordEmailExpiresAt => $_getN(22);
   @$pb.TagNumber(23)
-  set resetPasswordEmailSentAt($1.Timestamp v) { setField(23, v); }
+  set resetPasswordEmailExpiresAt($1.Timestamp v) { setField(23, v); }
   @$pb.TagNumber(23)
-  $core.bool hasResetPasswordEmailSentAt() => $_has(22);
+  $core.bool hasResetPasswordEmailExpiresAt() => $_has(22);
   @$pb.TagNumber(23)
-  void clearResetPasswordEmailSentAt() => clearField(23);
+  void clearResetPasswordEmailExpiresAt() => clearField(23);
   @$pb.TagNumber(23)
-  $1.Timestamp ensureResetPasswordEmailSentAt() => $_ensure(22);
+  $1.Timestamp ensureResetPasswordEmailExpiresAt() => $_ensure(22);
 
   @$pb.TagNumber(24)
-  $1.Timestamp get resetPasswordEmailExpiresAt => $_getN(23);
+  $core.int get resetPasswordAttempts => $_getIZ(23);
   @$pb.TagNumber(24)
-  set resetPasswordEmailExpiresAt($1.Timestamp v) { setField(24, v); }
+  set resetPasswordAttempts($core.int v) { $_setSignedInt32(23, v); }
   @$pb.TagNumber(24)
-  $core.bool hasResetPasswordEmailExpiresAt() => $_has(23);
+  $core.bool hasResetPasswordAttempts() => $_has(23);
   @$pb.TagNumber(24)
-  void clearResetPasswordEmailExpiresAt() => clearField(24);
-  @$pb.TagNumber(24)
-  $1.Timestamp ensureResetPasswordEmailExpiresAt() => $_ensure(23);
+  void clearResetPasswordAttempts() => clearField(24);
 
   @$pb.TagNumber(25)
-  $core.int get resetPasswordAttempts => $_getIZ(24);
-  @$pb.TagNumber(25)
-  set resetPasswordAttempts($core.int v) { $_setSignedInt32(24, v); }
-  @$pb.TagNumber(25)
-  $core.bool hasResetPasswordAttempts() => $_has(24);
-  @$pb.TagNumber(25)
-  void clearResetPasswordAttempts() => clearField(25);
+  $core.List<$core.String> get verifiedEmails => $_getList(24);
 
   @$pb.TagNumber(26)
-  $core.List<$core.String> get verifiedEmails => $_getList(25);
+  $core.String get emailHash => $_getSZ(25);
+  @$pb.TagNumber(26)
+  set emailHash($core.String v) { $_setString(25, v); }
+  @$pb.TagNumber(26)
+  $core.bool hasEmailHash() => $_has(25);
+  @$pb.TagNumber(26)
+  void clearEmailHash() => clearField(26);
 
   @$pb.TagNumber(27)
-  $core.String get emailHash => $_getSZ(26);
+  $core.String get phoneNumber => $_getSZ(26);
   @$pb.TagNumber(27)
-  set emailHash($core.String v) { $_setString(26, v); }
+  set phoneNumber($core.String v) { $_setString(26, v); }
   @$pb.TagNumber(27)
-  $core.bool hasEmailHash() => $_has(26);
+  $core.bool hasPhoneNumber() => $_has(26);
   @$pb.TagNumber(27)
-  void clearEmailHash() => clearField(27);
+  void clearPhoneNumber() => clearField(27);
 
   @$pb.TagNumber(28)
-  $core.String get phoneNumber => $_getSZ(27);
+  $core.String get phoneNumberHash => $_getSZ(27);
   @$pb.TagNumber(28)
-  set phoneNumber($core.String v) { $_setString(27, v); }
+  set phoneNumberHash($core.String v) { $_setString(27, v); }
   @$pb.TagNumber(28)
-  $core.bool hasPhoneNumber() => $_has(27);
+  $core.bool hasPhoneNumberHash() => $_has(27);
   @$pb.TagNumber(28)
-  void clearPhoneNumber() => clearField(28);
+  void clearPhoneNumberHash() => clearField(28);
 
   @$pb.TagNumber(29)
-  $core.String get phoneNumberHash => $_getSZ(28);
+  $core.bool get phoneNumberIsVerified => $_getBF(28);
   @$pb.TagNumber(29)
-  set phoneNumberHash($core.String v) { $_setString(28, v); }
+  set phoneNumberIsVerified($core.bool v) { $_setBool(28, v); }
   @$pb.TagNumber(29)
-  $core.bool hasPhoneNumberHash() => $_has(28);
+  $core.bool hasPhoneNumberIsVerified() => $_has(28);
   @$pb.TagNumber(29)
-  void clearPhoneNumberHash() => clearField(29);
+  void clearPhoneNumberIsVerified() => clearField(29);
 
   @$pb.TagNumber(30)
-  $core.bool get phoneNumberIsVerified => $_getBF(29);
+  $1.Timestamp get verificationTextSentAt => $_getN(29);
   @$pb.TagNumber(30)
-  set phoneNumberIsVerified($core.bool v) { $_setBool(29, v); }
+  set verificationTextSentAt($1.Timestamp v) { setField(30, v); }
   @$pb.TagNumber(30)
-  $core.bool hasPhoneNumberIsVerified() => $_has(29);
+  $core.bool hasVerificationTextSentAt() => $_has(29);
   @$pb.TagNumber(30)
-  void clearPhoneNumberIsVerified() => clearField(30);
+  void clearVerificationTextSentAt() => clearField(30);
+  @$pb.TagNumber(30)
+  $1.Timestamp ensureVerificationTextSentAt() => $_ensure(29);
 
   @$pb.TagNumber(31)
-  $1.Timestamp get verificationTextSentAt => $_getN(30);
-  @$pb.TagNumber(31)
-  set verificationTextSentAt($1.Timestamp v) { setField(31, v); }
-  @$pb.TagNumber(31)
-  $core.bool hasVerificationTextSentAt() => $_has(30);
-  @$pb.TagNumber(31)
-  void clearVerificationTextSentAt() => clearField(31);
-  @$pb.TagNumber(31)
-  $1.Timestamp ensureVerificationTextSentAt() => $_ensure(30);
-
-  @$pb.TagNumber(32)
-  $core.List<$core.String> get verifiedPhoneNumbers => $_getList(31);
+  $core.List<$core.String> get verifiedPhoneNumbers => $_getList(30);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
