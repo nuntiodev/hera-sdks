@@ -100,7 +100,7 @@ message LoginText {
     string forgot_password = 4;
 }
 
-emum LanguageCode {
+enum LanguageCode {
     EN = 0;
     DK = 1;
 }
