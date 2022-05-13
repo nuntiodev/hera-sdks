@@ -118,6 +118,8 @@ message Text {
     LoginText login_text = 7;
     RegisterText register_text = 8;
     ProfileText profile_text = 9;
+    google.protobuf.Timestamp created_at = 10;
+    google.protobuf.Timestamp updated_at = 11;
 }
 
 message Config {
