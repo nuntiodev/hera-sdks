@@ -687,7 +687,7 @@ class LoginText extends $pb.GeneratedMessage {
 
 class Config extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Config', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..e<LanguageCode>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.EN, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableNuntioConnect')
@@ -704,12 +704,13 @@ class Config extends $pb.GeneratedMessage {
     ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nuntioConnectId')
     ..aOB(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..aOM<ProfileText>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileText', subBuilder: ProfileText.create)
+    ..e<LoginType>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
     ..hasRequiredFields = false
   ;
 
   Config._() : super();
   factory Config({
-    $core.String? id,
+    LanguageCode? id,
     $core.String? name,
     $core.String? logo,
     $core.bool? enableNuntioConnect,
@@ -726,6 +727,7 @@ class Config extends $pb.GeneratedMessage {
     $core.String? nuntioConnectId,
     $core.bool? requireEmailVerification,
     ProfileText? profileText,
+    LoginType? loginType,
   }) {
     final _result = create();
     if (id != null) {
@@ -779,6 +781,9 @@ class Config extends $pb.GeneratedMessage {
     if (profileText != null) {
       _result.profileText = profileText;
     }
+    if (loginType != null) {
+      _result.loginType = loginType;
+    }
     return _result;
   }
   factory Config.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
@@ -803,9 +808,9 @@ class Config extends $pb.GeneratedMessage {
   static Config? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
+  LanguageCode get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
+  set id(LanguageCode v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -968,6 +973,15 @@ class Config extends $pb.GeneratedMessage {
   void clearProfileText() => clearField(17);
   @$pb.TagNumber(17)
   ProfileText ensureProfileText() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  LoginType get loginType => $_getN(17);
+  @$pb.TagNumber(18)
+  set loginType(LoginType v) { setField(18, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasLoginType() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearLoginType() => clearField(18);
 }
 
 class Email extends $pb.GeneratedMessage {
@@ -1220,6 +1234,8 @@ class User extends $pb.GeneratedMessage {
     ..a<$core.int>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordAttempts', $pb.PbFieldType.O3)
     ..pPS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedEmails')
     ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailHash')
+    ..aOS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumber')
+    ..aOS(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberHash')
     ..hasRequiredFields = false
   ;
 
@@ -1252,6 +1268,8 @@ class User extends $pb.GeneratedMessage {
     $core.int? resetPasswordAttempts,
     $core.Iterable<$core.String>? verifiedEmails,
     $core.String? emailHash,
+    $core.String? phoneNumber,
+    $core.String? phoneNumberHash,
   }) {
     final _result = create();
     if (id != null) {
@@ -1334,6 +1352,12 @@ class User extends $pb.GeneratedMessage {
     }
     if (emailHash != null) {
       _result.emailHash = emailHash;
+    }
+    if (phoneNumber != null) {
+      _result.phoneNumber = phoneNumber;
+    }
+    if (phoneNumberHash != null) {
+      _result.phoneNumberHash = phoneNumberHash;
     }
     return _result;
   }
@@ -1612,6 +1636,24 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasEmailHash() => $_has(26);
   @$pb.TagNumber(27)
   void clearEmailHash() => clearField(27);
+
+  @$pb.TagNumber(28)
+  $core.String get phoneNumber => $_getSZ(27);
+  @$pb.TagNumber(28)
+  set phoneNumber($core.String v) { $_setString(27, v); }
+  @$pb.TagNumber(28)
+  $core.bool hasPhoneNumber() => $_has(27);
+  @$pb.TagNumber(28)
+  void clearPhoneNumber() => clearField(28);
+
+  @$pb.TagNumber(29)
+  $core.String get phoneNumberHash => $_getSZ(28);
+  @$pb.TagNumber(29)
+  set phoneNumberHash($core.String v) { $_setString(28, v); }
+  @$pb.TagNumber(29)
+  $core.bool hasPhoneNumberHash() => $_has(28);
+  @$pb.TagNumber(29)
+  void clearPhoneNumberHash() => clearField(29);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
@@ -2354,7 +2396,6 @@ class LoginSession extends $pb.GeneratedMessage {
     ..e<LoginStatus>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginStatus', $pb.PbFieldType.OE, defaultOrMaker: LoginStatus.AUTHENTICATED, valueOf: LoginStatus.valueOf, enumValues: LoginStatus.values)
     ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailSentAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailExpiresAt', subBuilder: $1.Timestamp.create)
-    ..e<LoginType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
     ..hasRequiredFields = false
   ;
 
@@ -2363,7 +2404,6 @@ class LoginSession extends $pb.GeneratedMessage {
     LoginStatus? loginStatus,
     $1.Timestamp? emailSentAt,
     $1.Timestamp? emailExpiresAt,
-    LoginType? loginType,
   }) {
     final _result = create();
     if (loginStatus != null) {
@@ -2374,9 +2414,6 @@ class LoginSession extends $pb.GeneratedMessage {
     }
     if (emailExpiresAt != null) {
       _result.emailExpiresAt = emailExpiresAt;
-    }
-    if (loginType != null) {
-      _result.loginType = loginType;
     }
     return _result;
   }
@@ -2431,15 +2468,6 @@ class LoginSession extends $pb.GeneratedMessage {
   void clearEmailExpiresAt() => clearField(3);
   @$pb.TagNumber(3)
   $1.Timestamp ensureEmailExpiresAt() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  LoginType get loginType => $_getN(3);
-  @$pb.TagNumber(4)
-  set loginType(LoginType v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasLoginType() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearLoginType() => clearField(4);
 }
 
 class UserRequest extends $pb.GeneratedMessage {

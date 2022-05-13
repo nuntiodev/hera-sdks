@@ -31,6 +31,7 @@ goog.exportSymbol('proto.BlockUser.Config', null, global);
 goog.exportSymbol('proto.BlockUser.Email', null, global);
 goog.exportSymbol('proto.BlockUser.EmailType', null, global);
 goog.exportSymbol('proto.BlockUser.GeneralText', null, global);
+goog.exportSymbol('proto.BlockUser.LanguageCode', null, global);
 goog.exportSymbol('proto.BlockUser.Location', null, global);
 goog.exportSymbol('proto.BlockUser.LoginSession', null, global);
 goog.exportSymbol('proto.BlockUser.LoginStatus', null, global);
@@ -2038,7 +2039,7 @@ proto.BlockUser.Config.prototype.toObject = function(opt_includeInstance) {
  */
 proto.BlockUser.Config.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     logo: jspb.Message.getFieldWithDefault(msg, 3, ""),
     enableNuntioConnect: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
@@ -2054,7 +2055,8 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     nuntioConnectId: jspb.Message.getFieldWithDefault(msg, 15, ""),
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    profileText: (f = msg.getProfileText()) && proto.BlockUser.ProfileText.toObject(includeInstance, f)
+    profileText: (f = msg.getProfileText()) && proto.BlockUser.ProfileText.toObject(includeInstance, f),
+    loginType: jspb.Message.getFieldWithDefault(msg, 18, 0)
   };
 
   if (includeInstance) {
@@ -2092,7 +2094,7 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {!proto.BlockUser.LanguageCode} */ (reader.readEnum());
       msg.setId(value);
       break;
     case 2:
@@ -2166,6 +2168,10 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.BlockUser.ProfileText.deserializeBinaryFromReader);
       msg.setProfileText(value);
       break;
+    case 18:
+      var value = /** @type {!proto.BlockUser.LoginType} */ (reader.readEnum());
+      msg.setLoginType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2196,8 +2202,8 @@ proto.BlockUser.Config.prototype.serializeBinary = function() {
 proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0.0) {
+    writer.writeEnum(
       1,
       f
     );
@@ -2321,24 +2327,31 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
       proto.BlockUser.ProfileText.serializeBinaryToWriter
     );
   }
+  f = message.getLoginType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      18,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string id = 1;
- * @return {string}
+ * optional LanguageCode id = 1;
+ * @return {!proto.BlockUser.LanguageCode}
  */
 proto.BlockUser.Config.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!proto.BlockUser.LanguageCode} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.BlockUser.LanguageCode} value
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -2760,6 +2773,24 @@ proto.BlockUser.Config.prototype.clearProfileText = function() {
  */
 proto.BlockUser.Config.prototype.hasProfileText = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional LoginType login_type = 18;
+ * @return {!proto.BlockUser.LoginType}
+ */
+proto.BlockUser.Config.prototype.getLoginType = function() {
+  return /** @type {!proto.BlockUser.LoginType} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+};
+
+
+/**
+ * @param {!proto.BlockUser.LoginType} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setLoginType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 18, value);
 };
 
 
@@ -3381,7 +3412,9 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     resetPasswordEmailExpiresAt: (f = msg.getResetPasswordEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordAttempts: jspb.Message.getFieldWithDefault(msg, 25, 0),
     verifiedEmailsList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f,
-    emailHash: jspb.Message.getFieldWithDefault(msg, 27, "")
+    emailHash: jspb.Message.getFieldWithDefault(msg, 27, ""),
+    phoneNumber: jspb.Message.getFieldWithDefault(msg, 28, ""),
+    phoneNumberHash: jspb.Message.getFieldWithDefault(msg, 29, "")
   };
 
   if (includeInstance) {
@@ -3534,6 +3567,14 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
     case 27:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmailHash(value);
+      break;
+    case 28:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhoneNumber(value);
+      break;
+    case 29:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhoneNumberHash(value);
       break;
     default:
       reader.skipField();
@@ -3759,6 +3800,20 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       27,
+      f
+    );
+  }
+  f = message.getPhoneNumber();
+  if (f.length > 0) {
+    writer.writeString(
+      28,
+      f
+    );
+  }
+  f = message.getPhoneNumberHash();
+  if (f.length > 0) {
+    writer.writeString(
+      29,
       f
     );
   }
@@ -4438,6 +4493,42 @@ proto.BlockUser.User.prototype.getEmailHash = function() {
  */
 proto.BlockUser.User.prototype.setEmailHash = function(value) {
   return jspb.Message.setProto3StringField(this, 27, value);
+};
+
+
+/**
+ * optional string phone_number = 28;
+ * @return {string}
+ */
+proto.BlockUser.User.prototype.getPhoneNumber = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 28, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setPhoneNumber = function(value) {
+  return jspb.Message.setProto3StringField(this, 28, value);
+};
+
+
+/**
+ * optional string phone_number_hash = 29;
+ * @return {string}
+ */
+proto.BlockUser.User.prototype.getPhoneNumberHash = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 29, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setPhoneNumberHash = function(value) {
+  return jspb.Message.setProto3StringField(this, 29, value);
 };
 
 
@@ -6484,8 +6575,7 @@ proto.BlockUser.LoginSession.toObject = function(includeInstance, msg) {
   var f, obj = {
     loginStatus: jspb.Message.getFieldWithDefault(msg, 1, 0),
     emailSentAt: (f = msg.getEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    loginType: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    emailExpiresAt: (f = msg.getEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6535,10 +6625,6 @@ proto.BlockUser.LoginSession.deserializeBinaryFromReader = function(msg, reader)
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setEmailExpiresAt(value);
-      break;
-    case 4:
-      var value = /** @type {!proto.BlockUser.LoginType} */ (reader.readEnum());
-      msg.setLoginType(value);
       break;
     default:
       reader.skipField();
@@ -6590,13 +6676,6 @@ proto.BlockUser.LoginSession.serializeBinaryToWriter = function(message, writer)
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getLoginType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      4,
-      f
     );
   }
 };
@@ -6691,24 +6770,6 @@ proto.BlockUser.LoginSession.prototype.clearEmailExpiresAt = function() {
  */
 proto.BlockUser.LoginSession.prototype.hasEmailExpiresAt = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional LoginType login_type = 4;
- * @return {!proto.BlockUser.LoginType}
- */
-proto.BlockUser.LoginSession.prototype.getLoginType = function() {
-  return /** @type {!proto.BlockUser.LoginType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {!proto.BlockUser.LoginType} value
- * @return {!proto.BlockUser.LoginSession} returns this
- */
-proto.BlockUser.LoginSession.prototype.setLoginType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
@@ -8054,6 +8115,14 @@ proto.BlockUser.UserResponse.prototype.hasLoginSession = function() {
 /**
  * @enum {number}
  */
+proto.BlockUser.LanguageCode = {
+  EN: 0,
+  DK: 1
+};
+
+/**
+ * @enum {number}
+ */
 proto.BlockUser.EmailType = {
   EMAIL_TYPE_INVALID: 0,
   EMAIL_TYPE_VERIFY_EMAIL: 1,
@@ -8097,9 +8166,9 @@ proto.BlockUser.LoginStatus = {
 proto.BlockUser.LoginType = {
   LOGIN_TYPE_INVALID: 0,
   LOGIN_TYPE_EMAIL_PASSWORD: 1,
-  LOGIN_TYPE_EMAIL: 2,
-  LOGIN_TYPE_PHONE: 3,
-  LOGIN_TYPE_PHONE_PASSWORD: 4
+  LOGIN_TYPE_PHONE_PASSWORD: 2,
+  LOGIN_TYPE_EMAIL_VERIFICATION_CODE: 3,
+  LOGIN_TYPE_PHONE_VERIFICATION_CODE: 4
 };
 
 goog.object.extend(exports, proto.BlockUser);

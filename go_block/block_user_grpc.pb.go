@@ -26,9 +26,9 @@ type UserServiceClient interface {
 	UpdateName(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateBirthdate(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdatePhoneNumber(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateOptionalId(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateEnableBiometrics(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	ValidateCredentials(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -140,6 +140,15 @@ func (c *userServiceClient) UpdateEmail(ctx context.Context, in *UserRequest, op
 	return out, nil
 }
 
+func (c *userServiceClient) UpdatePhoneNumber(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdatePhoneNumber", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userServiceClient) UpdateOptionalId(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateOptionalId", in, out, opts...)
@@ -152,15 +161,6 @@ func (c *userServiceClient) UpdateOptionalId(ctx context.Context, in *UserReques
 func (c *userServiceClient) UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateSecurity", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UpdateEnableBiometrics(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateEnableBiometrics", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -440,9 +440,9 @@ type UserServiceServer interface {
 	UpdateName(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateBirthdate(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateEmail(context.Context, *UserRequest) (*UserResponse, error)
+	UpdatePhoneNumber(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateOptionalId(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateEnableBiometrics(context.Context, *UserRequest) (*UserResponse, error)
 	Get(context.Context, *UserRequest) (*UserResponse, error)
 	GetAll(context.Context, *UserRequest) (*UserResponse, error)
 	ValidateCredentials(context.Context, *UserRequest) (*UserResponse, error)
@@ -502,14 +502,14 @@ func (UnimplementedUserServiceServer) UpdateBirthdate(context.Context, *UserRequ
 func (UnimplementedUserServiceServer) UpdateEmail(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateEmail not implemented")
 }
+func (UnimplementedUserServiceServer) UpdatePhoneNumber(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePhoneNumber not implemented")
+}
 func (UnimplementedUserServiceServer) UpdateOptionalId(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOptionalId not implemented")
 }
 func (UnimplementedUserServiceServer) UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSecurity not implemented")
-}
-func (UnimplementedUserServiceServer) UpdateEnableBiometrics(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateEnableBiometrics not implemented")
 }
 func (UnimplementedUserServiceServer) Get(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
@@ -754,6 +754,24 @@ func _UserService_UpdateEmail_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_UpdatePhoneNumber_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdatePhoneNumber(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdatePhoneNumber",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdatePhoneNumber(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _UserService_UpdateOptionalId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
@@ -786,24 +804,6 @@ func _UserService_UpdateSecurity_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserServiceServer).UpdateSecurity(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_UpdateEnableBiometrics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateEnableBiometrics(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateEnableBiometrics",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateEnableBiometrics(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1370,16 +1370,16 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_UpdateEmail_Handler,
 		},
 		{
+			MethodName: "UpdatePhoneNumber",
+			Handler:    _UserService_UpdatePhoneNumber_Handler,
+		},
+		{
 			MethodName: "UpdateOptionalId",
 			Handler:    _UserService_UpdateOptionalId_Handler,
 		},
 		{
 			MethodName: "UpdateSecurity",
 			Handler:    _UserService_UpdateSecurity_Handler,
-		},
-		{
-			MethodName: "UpdateEnableBiometrics",
-			Handler:    _UserService_UpdateEnableBiometrics_Handler,
 		},
 		{
 			MethodName: "Get",

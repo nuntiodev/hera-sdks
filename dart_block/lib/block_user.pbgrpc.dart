@@ -53,6 +53,11 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/UpdateEmail',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updatePhoneNumber =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/UpdatePhoneNumber',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateOptionalId =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UpdateOptionalId',
@@ -61,11 +66,6 @@ class UserServiceClient extends $grpc.Client {
   static final _$updateSecurity =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UpdateSecurity',
-          ($0.UserRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updateEnableBiometrics =
-      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UpdateEnableBiometrics',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$get = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
@@ -255,6 +255,12 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateEmail, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.UserResponse> updatePhoneNumber(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updatePhoneNumber, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.UserResponse> updateOptionalId($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateOptionalId, request, options: options);
@@ -263,13 +269,6 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.UserResponse> updateSecurity($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateSecurity, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UserResponse> updateEnableBiometrics(
-      $0.UserRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateEnableBiometrics, request,
-        options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> get($0.UserRequest request,
@@ -498,6 +497,13 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdatePhoneNumber',
+        updatePhoneNumber_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateOptionalId',
         updateOptionalId_Pre,
         false,
@@ -507,13 +513,6 @@ abstract class UserServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateSecurity',
         updateSecurity_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
-        ($0.UserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdateEnableBiometrics',
-        updateEnableBiometrics_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -763,6 +762,11 @@ abstract class UserServiceBase extends $grpc.Service {
     return updateEmail(call, await request);
   }
 
+  $async.Future<$0.UserResponse> updatePhoneNumber_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updatePhoneNumber(call, await request);
+  }
+
   $async.Future<$0.UserResponse> updateOptionalId_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateOptionalId(call, await request);
@@ -771,11 +775,6 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> updateSecurity_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateSecurity(call, await request);
-  }
-
-  $async.Future<$0.UserResponse> updateEnableBiometrics_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updateEnableBiometrics(call, await request);
   }
 
   $async.Future<$0.UserResponse> get_Pre(
@@ -939,11 +938,11 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateEmail(
       $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updatePhoneNumber(
+      $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateOptionalId(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateSecurity(
-      $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updateEnableBiometrics(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> get(
       $grpc.ServiceCall call, $0.UserRequest request);

@@ -9,6 +9,21 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class LanguageCode extends $pb.ProtobufEnum {
+  static const LanguageCode EN = LanguageCode._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EN');
+  static const LanguageCode DK = LanguageCode._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DK');
+
+  static const $core.List<LanguageCode> values = <LanguageCode> [
+    EN,
+    DK,
+  ];
+
+  static final $core.Map<$core.int, LanguageCode> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static LanguageCode? valueOf($core.int value) => _byValue[value];
+
+  const LanguageCode._($core.int v, $core.String n) : super(v, n);
+}
+
 class EmailType extends $pb.ProtobufEnum {
   static const EmailType EMAIL_TYPE_INVALID = EmailType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL_TYPE_INVALID');
   static const EmailType EMAIL_TYPE_VERIFY_EMAIL = EmailType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL_TYPE_VERIFY_EMAIL');
@@ -88,16 +103,16 @@ class LoginStatus extends $pb.ProtobufEnum {
 class LoginType extends $pb.ProtobufEnum {
   static const LoginType LOGIN_TYPE_INVALID = LoginType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_INVALID');
   static const LoginType LOGIN_TYPE_EMAIL_PASSWORD = LoginType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_EMAIL_PASSWORD');
-  static const LoginType LOGIN_TYPE_EMAIL = LoginType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_EMAIL');
-  static const LoginType LOGIN_TYPE_PHONE = LoginType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_PHONE');
-  static const LoginType LOGIN_TYPE_PHONE_PASSWORD = LoginType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_PHONE_PASSWORD');
+  static const LoginType LOGIN_TYPE_PHONE_PASSWORD = LoginType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_PHONE_PASSWORD');
+  static const LoginType LOGIN_TYPE_EMAIL_VERIFICATION_CODE = LoginType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_EMAIL_VERIFICATION_CODE');
+  static const LoginType LOGIN_TYPE_PHONE_VERIFICATION_CODE = LoginType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_PHONE_VERIFICATION_CODE');
 
   static const $core.List<LoginType> values = <LoginType> [
     LOGIN_TYPE_INVALID,
     LOGIN_TYPE_EMAIL_PASSWORD,
-    LOGIN_TYPE_EMAIL,
-    LOGIN_TYPE_PHONE,
     LOGIN_TYPE_PHONE_PASSWORD,
+    LOGIN_TYPE_EMAIL_VERIFICATION_CODE,
+    LOGIN_TYPE_PHONE_VERIFICATION_CODE,
   ];
 
   static final $core.Map<$core.int, LoginType> _byValue = $pb.ProtobufEnum.initByValue(values);
