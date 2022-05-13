@@ -15,6 +15,7 @@ service UserService {
     rpc UpdateName(UserRequest) returns (UserResponse) {}
     rpc UpdateBirthdate(UserRequest) returns (UserResponse) {}
     rpc UpdateEmail(UserRequest) returns (UserResponse) {}
+    rpc UpdatePhoneNumber(UserRequest) returns (UserResponse) {}
     rpc UpdateOptionalId(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
