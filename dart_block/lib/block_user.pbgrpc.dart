@@ -218,6 +218,11 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/UpdateLoginText',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateProfileText =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/UpdateProfileText',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$deleteText =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/DeleteText',
@@ -453,6 +458,12 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.UserResponse> updateLoginText($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateLoginText, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateProfileText(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateProfileText, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> deleteText($0.UserRequest request,
@@ -760,6 +771,13 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateProfileText',
+        updateProfileText_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'DeleteText',
         deleteText_Pre,
         false,
@@ -978,6 +996,11 @@ abstract class UserServiceBase extends $grpc.Service {
     return updateLoginText(call, await request);
   }
 
+  $async.Future<$0.UserResponse> updateProfileText_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateProfileText(call, await request);
+  }
+
   $async.Future<$0.UserResponse> deleteText_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return deleteText(call, await request);
@@ -1066,6 +1089,8 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> updateRegisterText(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateLoginText(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateProfileText(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> deleteText(
       $grpc.ServiceCall call, $0.UserRequest request);

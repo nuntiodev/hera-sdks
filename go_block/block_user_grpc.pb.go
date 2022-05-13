@@ -60,6 +60,7 @@ type UserServiceClient interface {
 	UpdateWelcomeText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateRegisterText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateLoginText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateProfileText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 }
 
@@ -449,6 +450,15 @@ func (c *userServiceClient) UpdateLoginText(ctx context.Context, in *UserRequest
 	return out, nil
 }
 
+func (c *userServiceClient) UpdateProfileText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateProfileText", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userServiceClient) DeleteText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/DeleteText", in, out, opts...)
@@ -504,6 +514,7 @@ type UserServiceServer interface {
 	UpdateWelcomeText(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateRegisterText(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateLoginText(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateProfileText(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteText(context.Context, *UserRequest) (*UserResponse, error)
 }
 
@@ -636,6 +647,9 @@ func (UnimplementedUserServiceServer) UpdateRegisterText(context.Context, *UserR
 }
 func (UnimplementedUserServiceServer) UpdateLoginText(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateLoginText not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateProfileText(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfileText not implemented")
 }
 func (UnimplementedUserServiceServer) DeleteText(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteText not implemented")
@@ -1408,6 +1422,24 @@ func _UserService_UpdateLoginText_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_UpdateProfileText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateProfileText(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateProfileText",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateProfileText(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _UserService_DeleteText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
@@ -1600,6 +1632,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateLoginText",
 			Handler:    _UserService_UpdateLoginText_Handler,
+		},
+		{
+			MethodName: "UpdateProfileText",
+			Handler:    _UserService_UpdateProfileText_Handler,
 		},
 		{
 			MethodName: "DeleteText",

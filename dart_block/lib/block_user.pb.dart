@@ -668,6 +668,8 @@ class Text extends $pb.GeneratedMessage {
     ..aOM<LoginText>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginText', subBuilder: LoginText.create)
     ..aOM<RegisterText>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registerText', subBuilder: RegisterText.create)
     ..aOM<ProfileText>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileText', subBuilder: ProfileText.create)
+    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -682,6 +684,8 @@ class Text extends $pb.GeneratedMessage {
     LoginText? loginText,
     RegisterText? registerText,
     ProfileText? profileText,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
   }) {
     final _result = create();
     if (id != null) {
@@ -710,6 +714,12 @@ class Text extends $pb.GeneratedMessage {
     }
     if (profileText != null) {
       _result.profileText = profileText;
+    }
+    if (createdAt != null) {
+      _result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      _result.updatedAt = updatedAt;
     }
     return _result;
   }
@@ -812,6 +822,28 @@ class Text extends $pb.GeneratedMessage {
   void clearProfileText() => clearField(9);
   @$pb.TagNumber(9)
   ProfileText ensureProfileText() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get createdAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set createdAt($1.Timestamp v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureCreatedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get updatedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set updatedAt($1.Timestamp v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(10);
 }
 
 class Config extends $pb.GeneratedMessage {

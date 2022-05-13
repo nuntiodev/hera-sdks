@@ -2016,7 +2016,9 @@ proto.BlockUser.Text.toObject = function(includeInstance, msg) {
     welcomeText: (f = msg.getWelcomeText()) && proto.BlockUser.WelcomeText.toObject(includeInstance, f),
     loginText: (f = msg.getLoginText()) && proto.BlockUser.LoginText.toObject(includeInstance, f),
     registerText: (f = msg.getRegisterText()) && proto.BlockUser.RegisterText.toObject(includeInstance, f),
-    profileText: (f = msg.getProfileText()) && proto.BlockUser.ProfileText.toObject(includeInstance, f)
+    profileText: (f = msg.getProfileText()) && proto.BlockUser.ProfileText.toObject(includeInstance, f),
+    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2097,6 +2099,16 @@ proto.BlockUser.Text.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.BlockUser.ProfileText;
       reader.readMessage(value,proto.BlockUser.ProfileText.deserializeBinaryFromReader);
       msg.setProfileText(value);
+      break;
+    case 10:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedAt(value);
+      break;
+    case 11:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdatedAt(value);
       break;
     default:
       reader.skipField();
@@ -2193,6 +2205,22 @@ proto.BlockUser.Text.serializeBinaryToWriter = function(message, writer) {
       9,
       f,
       proto.BlockUser.ProfileText.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -2490,6 +2518,80 @@ proto.BlockUser.Text.prototype.clearProfileText = function() {
  */
 proto.BlockUser.Text.prototype.hasProfileText = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp created_at = 10;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.Text.prototype.getCreatedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.Text} returns this
+*/
+proto.BlockUser.Text.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.Text} returns this
+ */
+proto.BlockUser.Text.prototype.clearCreatedAt = function() {
+  return this.setCreatedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Text.prototype.hasCreatedAt = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp updated_at = 11;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.BlockUser.Text.prototype.getUpdatedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.BlockUser.Text} returns this
+*/
+proto.BlockUser.Text.prototype.setUpdatedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.BlockUser.Text} returns this
+ */
+proto.BlockUser.Text.prototype.clearUpdatedAt = function() {
+  return this.setUpdatedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Text.prototype.hasUpdatedAt = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

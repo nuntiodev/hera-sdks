@@ -178,11 +178,13 @@ const Text$json = const {
     const {'1': 'login_text', '3': 7, '4': 1, '5': 11, '6': '.BlockUser.LoginText', '10': 'loginText'},
     const {'1': 'register_text', '3': 8, '4': 1, '5': 11, '6': '.BlockUser.RegisterText', '10': 'registerText'},
     const {'1': 'profile_text', '3': 9, '4': 1, '5': 11, '6': '.BlockUser.ProfileText', '10': 'profileText'},
+    const {'1': 'created_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updated_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `Text`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List textDescriptor = $convert.base64Decode('CgRUZXh0EicKAmlkGAEgASgOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVICaWQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgCIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSSAoTYXZhaWxhYmxlX2xhbmd1YWdlcxgDIAMoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEmF2YWlsYWJsZUxhbmd1YWdlcxJIChNzdXBwb3J0ZWRfbGFuZ3VhZ2VzGAQgAygOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVISc3VwcG9ydGVkTGFuZ3VhZ2VzEjkKDGdlbmVyYWxfdGV4dBgFIAEoCzIWLkJsb2NrVXNlci5HZW5lcmFsVGV4dFILZ2VuZXJhbFRleHQSOQoMd2VsY29tZV90ZXh0GAYgASgLMhYuQmxvY2tVc2VyLldlbGNvbWVUZXh0Ugt3ZWxjb21lVGV4dBIzCgpsb2dpbl90ZXh0GAcgASgLMhQuQmxvY2tVc2VyLkxvZ2luVGV4dFIJbG9naW5UZXh0EjwKDXJlZ2lzdGVyX3RleHQYCCABKAsyFy5CbG9ja1VzZXIuUmVnaXN0ZXJUZXh0UgxyZWdpc3RlclRleHQSOQoMcHJvZmlsZV90ZXh0GAkgASgLMhYuQmxvY2tVc2VyLlByb2ZpbGVUZXh0Ugtwcm9maWxlVGV4dA==');
+final $typed_data.Uint8List textDescriptor = $convert.base64Decode('CgRUZXh0EicKAmlkGAEgASgOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVICaWQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgCIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSSAoTYXZhaWxhYmxlX2xhbmd1YWdlcxgDIAMoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEmF2YWlsYWJsZUxhbmd1YWdlcxJIChNzdXBwb3J0ZWRfbGFuZ3VhZ2VzGAQgAygOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVISc3VwcG9ydGVkTGFuZ3VhZ2VzEjkKDGdlbmVyYWxfdGV4dBgFIAEoCzIWLkJsb2NrVXNlci5HZW5lcmFsVGV4dFILZ2VuZXJhbFRleHQSOQoMd2VsY29tZV90ZXh0GAYgASgLMhYuQmxvY2tVc2VyLldlbGNvbWVUZXh0Ugt3ZWxjb21lVGV4dBIzCgpsb2dpbl90ZXh0GAcgASgLMhQuQmxvY2tVc2VyLkxvZ2luVGV4dFIJbG9naW5UZXh0EjwKDXJlZ2lzdGVyX3RleHQYCCABKAsyFy5CbG9ja1VzZXIuUmVnaXN0ZXJUZXh0UgxyZWdpc3RlclRleHQSOQoMcHJvZmlsZV90ZXh0GAkgASgLMhYuQmxvY2tVc2VyLlByb2ZpbGVUZXh0Ugtwcm9maWxlVGV4dBI5CgpjcmVhdGVkX2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
 @$core.Deprecated('Use configDescriptor instead')
 const Config$json = const {
   '1': 'Config',
