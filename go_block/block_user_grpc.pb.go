@@ -27,7 +27,7 @@ type UserServiceClient interface {
 	UpdateBirthdate(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdatePhoneNumber(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateOptionalId(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateUsername(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -149,9 +149,9 @@ func (c *userServiceClient) UpdatePhoneNumber(ctx context.Context, in *UserReque
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateOptionalId(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) UpdateUsername(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateOptionalId", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateUsername", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -441,7 +441,7 @@ type UserServiceServer interface {
 	UpdateBirthdate(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateEmail(context.Context, *UserRequest) (*UserResponse, error)
 	UpdatePhoneNumber(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateOptionalId(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateUsername(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error)
 	Get(context.Context, *UserRequest) (*UserResponse, error)
 	GetAll(context.Context, *UserRequest) (*UserResponse, error)
@@ -505,8 +505,8 @@ func (UnimplementedUserServiceServer) UpdateEmail(context.Context, *UserRequest)
 func (UnimplementedUserServiceServer) UpdatePhoneNumber(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePhoneNumber not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateOptionalId(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOptionalId not implemented")
+func (UnimplementedUserServiceServer) UpdateUsername(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUsername not implemented")
 }
 func (UnimplementedUserServiceServer) UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSecurity not implemented")
@@ -772,20 +772,20 @@ func _UserService_UpdatePhoneNumber_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateOptionalId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_UpdateUsername_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateOptionalId(ctx, in)
+		return srv.(UserServiceServer).UpdateUsername(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateOptionalId",
+		FullMethod: "/BlockUser.UserService/UpdateUsername",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateOptionalId(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).UpdateUsername(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1374,8 +1374,8 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_UpdatePhoneNumber_Handler,
 		},
 		{
-			MethodName: "UpdateOptionalId",
-			Handler:    _UserService_UpdateOptionalId_Handler,
+			MethodName: "UpdateUsername",
+			Handler:    _UserService_UpdateUsername_Handler,
 		},
 		{
 			MethodName: "UpdateSecurity",

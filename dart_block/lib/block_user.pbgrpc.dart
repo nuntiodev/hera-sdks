@@ -58,9 +58,9 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/UpdatePhoneNumber',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updateOptionalId =
+  static final _$updateUsername =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UpdateOptionalId',
+          '/BlockUser.UserService/UpdateUsername',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateSecurity =
@@ -261,9 +261,9 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updatePhoneNumber, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> updateOptionalId($0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> updateUsername($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateOptionalId, request, options: options);
+    return $createUnaryCall(_$updateUsername, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> updateSecurity($0.UserRequest request,
@@ -504,8 +504,8 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdateOptionalId',
-        updateOptionalId_Pre,
+        'UpdateUsername',
+        updateUsername_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -767,9 +767,9 @@ abstract class UserServiceBase extends $grpc.Service {
     return updatePhoneNumber(call, await request);
   }
 
-  $async.Future<$0.UserResponse> updateOptionalId_Pre(
+  $async.Future<$0.UserResponse> updateUsername_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updateOptionalId(call, await request);
+    return updateUsername(call, await request);
   }
 
   $async.Future<$0.UserResponse> updateSecurity_Pre(
@@ -940,7 +940,7 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updatePhoneNumber(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updateOptionalId(
+  $async.Future<$0.UserResponse> updateUsername(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateSecurity(
       $grpc.ServiceCall call, $0.UserRequest request);
