@@ -1108,6 +1108,7 @@ class Email extends $pb.GeneratedMessage {
     ..a<$core.int>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
     ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subject')
     ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'templatePath')
+    ..e<LanguageCode>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'languageCode', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..hasRequiredFields = false
   ;
 
@@ -1126,6 +1127,7 @@ class Email extends $pb.GeneratedMessage {
     $core.int? internalEncryptionLevel,
     $core.String? subject,
     $core.String? templatePath,
+    LanguageCode? languageCode,
   }) {
     final _result = create();
     if (id != null) {
@@ -1166,6 +1168,9 @@ class Email extends $pb.GeneratedMessage {
     }
     if (templatePath != null) {
       _result.templatePath = templatePath;
+    }
+    if (languageCode != null) {
+      _result.languageCode = languageCode;
     }
     return _result;
   }
@@ -1312,6 +1317,15 @@ class Email extends $pb.GeneratedMessage {
   $core.bool hasTemplatePath() => $_has(12);
   @$pb.TagNumber(13)
   void clearTemplatePath() => clearField(13);
+
+  @$pb.TagNumber(14)
+  LanguageCode get languageCode => $_getN(13);
+  @$pb.TagNumber(14)
+  set languageCode(LanguageCode v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasLanguageCode() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLanguageCode() => clearField(14);
 }
 
 class User extends $pb.GeneratedMessage {

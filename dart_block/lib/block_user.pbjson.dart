@@ -226,11 +226,12 @@ const Email$json = const {
     const {'1': 'internal_encryption_level', '3': 11, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
     const {'1': 'subject', '3': 12, '4': 1, '5': 9, '10': 'subject'},
     const {'1': 'template_path', '3': 13, '4': 1, '5': 9, '10': 'templatePath'},
+    const {'1': 'language_code', '3': 14, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'languageCode'},
   ],
 };
 
 /// Descriptor for `Email`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSEgoEbG9nbxgCIAEoCVIEbG9nbxInCg93ZWxjb21lX21lc3NhZ2UYAyABKAlSDndlbGNvbWVNZXNzYWdlEiEKDGJvZHlfbWVzc2FnZRgEIAEoCVILYm9keU1lc3NhZ2USJQoOZm9vdGVyX21lc3NhZ2UYBSABKAlSDWZvb3Rlck1lc3NhZ2USFAoFdGl0bGUYBiABKAlSBXRpdGxlEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBIqChF0cmlnZ2VyX29uX2NyZWF0ZRgKIAEoCFIPdHJpZ2dlck9uQ3JlYXRlEjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYCyABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVsEhgKB3N1YmplY3QYDCABKAlSB3N1YmplY3QSIwoNdGVtcGxhdGVfcGF0aBgNIAEoCVIMdGVtcGxhdGVQYXRo');
+final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSEgoEbG9nbxgCIAEoCVIEbG9nbxInCg93ZWxjb21lX21lc3NhZ2UYAyABKAlSDndlbGNvbWVNZXNzYWdlEiEKDGJvZHlfbWVzc2FnZRgEIAEoCVILYm9keU1lc3NhZ2USJQoOZm9vdGVyX21lc3NhZ2UYBSABKAlSDWZvb3Rlck1lc3NhZ2USFAoFdGl0bGUYBiABKAlSBXRpdGxlEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBIqChF0cmlnZ2VyX29uX2NyZWF0ZRgKIAEoCFIPdHJpZ2dlck9uQ3JlYXRlEjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYCyABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVsEhgKB3N1YmplY3QYDCABKAlSB3N1YmplY3QSIwoNdGVtcGxhdGVfcGF0aBgNIAEoCVIMdGVtcGxhdGVQYXRoEjwKDWxhbmd1YWdlX2NvZGUYDiABKA4yFy5CbG9ja1VzZXIuTGFuZ3VhZ2VDb2RlUgxsYW5ndWFnZUNvZGU=');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
