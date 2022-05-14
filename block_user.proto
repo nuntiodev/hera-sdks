@@ -55,6 +55,8 @@ service UserService {
     rpc UpdateLoginText(UserRequest) returns (UserResponse) {}
     rpc UpdateProfileText(UserRequest) returns (UserResponse) {}
     rpc DeleteText(UserRequest) returns (UserResponse) {}
+
+    rpc InitializeApplication(UserRequest) returns (UserResponse) {}
 }
 
 message GeneralText {
