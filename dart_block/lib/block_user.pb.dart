@@ -1361,7 +1361,7 @@ class User extends $pb.GeneratedMessage {
     ..aOB(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberIsVerified')
     ..aOM<$1.Timestamp>(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationTextSentAt', subBuilder: $1.Timestamp.create)
     ..pPS(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
-    ..e<LanguageCode>(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'prefferedLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..e<LanguageCode>(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'preferredLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..hasRequiredFields = false
   ;
 
@@ -1398,7 +1398,7 @@ class User extends $pb.GeneratedMessage {
     $core.bool? phoneNumberIsVerified,
     $1.Timestamp? verificationTextSentAt,
     $core.Iterable<$core.String>? verifiedPhoneNumbers,
-    LanguageCode? prefferedLanguage,
+    LanguageCode? preferredLanguage,
   }) {
     final _result = create();
     if (id != null) {
@@ -1494,8 +1494,8 @@ class User extends $pb.GeneratedMessage {
     if (verifiedPhoneNumbers != null) {
       _result.verifiedPhoneNumbers.addAll(verifiedPhoneNumbers);
     }
-    if (prefferedLanguage != null) {
-      _result.prefferedLanguage = prefferedLanguage;
+    if (preferredLanguage != null) {
+      _result.preferredLanguage = preferredLanguage;
     }
     return _result;
   }
@@ -1808,13 +1808,13 @@ class User extends $pb.GeneratedMessage {
   $core.List<$core.String> get verifiedPhoneNumbers => $_getList(30);
 
   @$pb.TagNumber(32)
-  LanguageCode get prefferedLanguage => $_getN(31);
+  LanguageCode get preferredLanguage => $_getN(31);
   @$pb.TagNumber(32)
-  set prefferedLanguage(LanguageCode v) { setField(32, v); }
+  set preferredLanguage(LanguageCode v) { setField(32, v); }
   @$pb.TagNumber(32)
-  $core.bool hasPrefferedLanguage() => $_has(31);
+  $core.bool hasPreferredLanguage() => $_has(31);
   @$pb.TagNumber(32)
-  void clearPrefferedLanguage() => clearField(32);
+  void clearPreferredLanguage() => clearField(32);
 }
 
 class UserFilter extends $pb.GeneratedMessage {

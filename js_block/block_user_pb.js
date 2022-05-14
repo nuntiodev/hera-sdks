@@ -3840,7 +3840,7 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     phoneNumberIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
     verificationTextSentAt: (f = msg.getVerificationTextSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     verifiedPhoneNumbersList: (f = jspb.Message.getRepeatedField(msg, 31)) == null ? undefined : f,
-    prefferedLanguage: jspb.Message.getFieldWithDefault(msg, 32, 0)
+    preferredLanguage: jspb.Message.getFieldWithDefault(msg, 32, 0)
   };
 
   if (includeInstance) {
@@ -4013,7 +4013,7 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 32:
       var value = /** @type {!proto.BlockUser.LanguageCode} */ (reader.readEnum());
-      msg.setPrefferedLanguage(value);
+      msg.setPreferredLanguage(value);
       break;
     default:
       reader.skipField();
@@ -4271,7 +4271,7 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPrefferedLanguage();
+  f = message.getPreferredLanguage();
   if (f !== 0.0) {
     writer.writeEnum(
       32,
@@ -5068,10 +5068,10 @@ proto.BlockUser.User.prototype.clearVerifiedPhoneNumbersList = function() {
 
 
 /**
- * optional LanguageCode preffered_language = 32;
+ * optional LanguageCode preferred_language = 32;
  * @return {!proto.BlockUser.LanguageCode}
  */
-proto.BlockUser.User.prototype.getPrefferedLanguage = function() {
+proto.BlockUser.User.prototype.getPreferredLanguage = function() {
   return /** @type {!proto.BlockUser.LanguageCode} */ (jspb.Message.getFieldWithDefault(this, 32, 0));
 };
 
@@ -5080,7 +5080,7 @@ proto.BlockUser.User.prototype.getPrefferedLanguage = function() {
  * @param {!proto.BlockUser.LanguageCode} value
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.setPrefferedLanguage = function(value) {
+proto.BlockUser.User.prototype.setPreferredLanguage = function(value) {
   return jspb.Message.setProto3EnumField(this, 32, value);
 };
 
