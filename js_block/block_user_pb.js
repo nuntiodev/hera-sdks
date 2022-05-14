@@ -3231,7 +3231,8 @@ proto.BlockUser.Email.toObject = function(includeInstance, msg) {
     triggerOnCreate: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 11, 0),
     subject: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    templatePath: jspb.Message.getFieldWithDefault(msg, 13, "")
+    templatePath: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    languageCode: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
   if (includeInstance) {
@@ -3322,6 +3323,10 @@ proto.BlockUser.Email.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setTemplatePath(value);
+      break;
+    case 14:
+      var value = /** @type {!proto.BlockUser.LanguageCode} */ (reader.readEnum());
+      msg.setLanguageCode(value);
       break;
     default:
       reader.skipField();
@@ -3443,6 +3448,13 @@ proto.BlockUser.Email.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       13,
+      f
+    );
+  }
+  f = message.getLanguageCode();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      14,
       f
     );
   }
@@ -3737,6 +3749,24 @@ proto.BlockUser.Email.prototype.getTemplatePath = function() {
  */
 proto.BlockUser.Email.prototype.setTemplatePath = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional LanguageCode language_code = 14;
+ * @return {!proto.BlockUser.LanguageCode}
+ */
+proto.BlockUser.Email.prototype.getLanguageCode = function() {
+  return /** @type {!proto.BlockUser.LanguageCode} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {!proto.BlockUser.LanguageCode} value
+ * @return {!proto.BlockUser.Email} returns this
+ */
+proto.BlockUser.Email.prototype.setLanguageCode = function(value) {
+  return jspb.Message.setProto3EnumField(this, 14, value);
 };
 
 
