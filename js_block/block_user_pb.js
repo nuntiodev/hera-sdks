@@ -8140,7 +8140,7 @@ proto.BlockUser.UserRequest.prototype.hasText = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.BlockUser.UserResponse.repeatedFields_ = [2,5];
+proto.BlockUser.UserResponse.repeatedFields_ = [2,5,12];
 
 
 
@@ -8185,7 +8185,9 @@ proto.BlockUser.UserResponse.toObject = function(includeInstance, msg) {
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
     activeHistory: (f = msg.getActiveHistory()) && proto.BlockUser.ActiveHistory.toObject(includeInstance, f),
     loginSession: (f = msg.getLoginSession()) && proto.BlockUser.LoginSession.toObject(includeInstance, f),
-    text: (f = msg.getText()) && proto.BlockUser.Text.toObject(includeInstance, f)
+    text: (f = msg.getText()) && proto.BlockUser.Text.toObject(includeInstance, f),
+    textsList: jspb.Message.toObjectList(msg.getTextsList(),
+    proto.BlockUser.Text.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -8276,6 +8278,11 @@ proto.BlockUser.UserResponse.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.BlockUser.Text;
       reader.readMessage(value,proto.BlockUser.Text.deserializeBinaryFromReader);
       msg.setText(value);
+      break;
+    case 12:
+      var value = new proto.BlockUser.Text;
+      reader.readMessage(value,proto.BlockUser.Text.deserializeBinaryFromReader);
+      msg.addTexts(value);
       break;
     default:
       reader.skipField();
@@ -8385,6 +8392,14 @@ proto.BlockUser.UserResponse.serializeBinaryToWriter = function(message, writer)
   if (f != null) {
     writer.writeMessage(
       11,
+      f,
+      proto.BlockUser.Text.serializeBinaryToWriter
+    );
+  }
+  f = message.getTextsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
       f,
       proto.BlockUser.Text.serializeBinaryToWriter
     );
@@ -8764,6 +8779,44 @@ proto.BlockUser.UserResponse.prototype.clearText = function() {
  */
 proto.BlockUser.UserResponse.prototype.hasText = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * repeated Text texts = 12;
+ * @return {!Array<!proto.BlockUser.Text>}
+ */
+proto.BlockUser.UserResponse.prototype.getTextsList = function() {
+  return /** @type{!Array<!proto.BlockUser.Text>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.BlockUser.Text, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.BlockUser.Text>} value
+ * @return {!proto.BlockUser.UserResponse} returns this
+*/
+proto.BlockUser.UserResponse.prototype.setTextsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.BlockUser.Text=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.Text}
+ */
+proto.BlockUser.UserResponse.prototype.addTexts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.BlockUser.Text, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.UserResponse} returns this
+ */
+proto.BlockUser.UserResponse.prototype.clearTextsList = function() {
+  return this.setTextsList([]);
 };
 
 

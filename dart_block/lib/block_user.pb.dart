@@ -2925,6 +2925,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..aOM<ActiveHistory>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeHistory', subBuilder: ActiveHistory.create)
     ..aOM<LoginSession>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginSession', subBuilder: LoginSession.create)
     ..aOM<Text>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text', subBuilder: Text.create)
+    ..pc<Text>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'texts', $pb.PbFieldType.PM, subBuilder: Text.create)
     ..hasRequiredFields = false
   ;
 
@@ -2941,6 +2942,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ActiveHistory? activeHistory,
     LoginSession? loginSession,
     Text? text,
+    $core.Iterable<Text>? texts,
   }) {
     final _result = create();
     if (user != null) {
@@ -2975,6 +2977,9 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     if (text != null) {
       _result.text = text;
+    }
+    if (texts != null) {
+      _result.texts.addAll(texts);
     }
     return _result;
   }
@@ -3093,5 +3098,8 @@ class UserResponse extends $pb.GeneratedMessage {
   void clearText() => clearField(11);
   @$pb.TagNumber(11)
   Text ensureText() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $core.List<Text> get texts => $_getList(11);
 }
 

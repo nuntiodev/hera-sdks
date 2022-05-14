@@ -62,6 +62,7 @@ type UserServiceClient interface {
 	UpdateLoginText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateProfileText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteText(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	InitializeApplication(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 }
 
 type userServiceClient struct {
@@ -468,6 +469,15 @@ func (c *userServiceClient) DeleteText(ctx context.Context, in *UserRequest, opt
 	return out, nil
 }
 
+func (c *userServiceClient) InitializeApplication(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/InitializeApplication", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations should embed UnimplementedUserServiceServer
 // for forward compatibility
@@ -516,6 +526,7 @@ type UserServiceServer interface {
 	UpdateLoginText(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateProfileText(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteText(context.Context, *UserRequest) (*UserResponse, error)
+	InitializeApplication(context.Context, *UserRequest) (*UserResponse, error)
 }
 
 // UnimplementedUserServiceServer should be embedded to have forward compatible implementations.
@@ -653,6 +664,9 @@ func (UnimplementedUserServiceServer) UpdateProfileText(context.Context, *UserRe
 }
 func (UnimplementedUserServiceServer) DeleteText(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteText not implemented")
+}
+func (UnimplementedUserServiceServer) InitializeApplication(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InitializeApplication not implemented")
 }
 
 // UnsafeUserServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -1458,6 +1472,24 @@ func _UserService_DeleteText_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_InitializeApplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).InitializeApplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/InitializeApplication",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).InitializeApplication(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1640,6 +1672,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteText",
 			Handler:    _UserService_DeleteText_Handler,
+		},
+		{
+			MethodName: "InitializeApplication",
+			Handler:    _UserService_InitializeApplication_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -228,6 +228,11 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/DeleteText',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$initializeApplication =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/InitializeApplication',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
 
   UserServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -469,6 +474,12 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.UserResponse> deleteText($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteText, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> initializeApplication(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$initializeApplication, request, options: options);
   }
 }
 
@@ -784,6 +795,13 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'InitializeApplication',
+        initializeApplication_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.UserResponse> heartbeat_Pre(
@@ -1006,6 +1024,11 @@ abstract class UserServiceBase extends $grpc.Service {
     return deleteText(call, await request);
   }
 
+  $async.Future<$0.UserResponse> initializeApplication_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return initializeApplication(call, await request);
+  }
+
   $async.Future<$0.UserResponse> heartbeat(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> create(
@@ -1093,5 +1116,7 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> updateProfileText(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> deleteText(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> initializeApplication(
       $grpc.ServiceCall call, $0.UserRequest request);
 }
