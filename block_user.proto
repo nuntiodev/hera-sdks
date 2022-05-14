@@ -202,7 +202,7 @@ message User {
     bool phone_number_is_verified = 29;
     google.protobuf.Timestamp verification_text_sent_at = 30;
     repeated string verified_phone_numbers = 31;
-    LanguageCode preffered_language = 32;
+    LanguageCode preferred_language = 32;
 }
 
 message UserFilter {
