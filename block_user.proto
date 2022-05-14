@@ -336,4 +336,5 @@ message UserResponse {
     ActiveHistory active_history = 9;
     LoginSession login_session = 10;
     Text text = 11;
+    repeated Text texts = 12;
 }
