@@ -8,6 +8,7 @@ import "google/protobuf/timestamp.proto";
 
 service UserService {
     rpc Heartbeat(UserRequest) returns (UserResponse) {}
+
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
     rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
@@ -37,12 +38,15 @@ service UserService {
     rpc ResetPassword(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
+    
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
+    
     rpc CreateNamespaceConfig(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigSettings(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigDetails(UserRequest) returns (UserResponse) {}
     rpc GetConfig(UserRequest) returns (UserResponse) {}
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
+    
     rpc CreateText(UserRequest) returns (UserResponse) {}
     rpc GetText(UserRequest) returns (UserResponse) {}
     rpc UpdateGeneralText(UserRequest) returns (UserResponse) {}
@@ -161,6 +165,7 @@ message Email {
     int32 internal_encryption_level = 11;
     string subject = 12;
     string template_path = 13;
+    LanguageCode language_code = 14;
 }
 
 message User {
