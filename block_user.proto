@@ -12,13 +12,8 @@ service UserService {
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
     rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
-    rpc UpdateImage(UserRequest) returns (UserResponse) {}
-    rpc UpdateName(UserRequest) returns (UserResponse) {}
-    rpc UpdateBirthdate(UserRequest) returns (UserResponse) {}
-    rpc UpdateEmail(UserRequest) returns (UserResponse) {}
-    rpc UpdatePhoneNumber(UserRequest) returns (UserResponse) {}
-    rpc UpdateUsername(UserRequest) returns (UserResponse) {}
-    rpc UpdatePreferredLanguage(UserRequest) returns (UserResponse) {}
+    rpc UpdateProfileInformation(UserRequest) returns (UserResponse) {}
+    rpc UpdateContactInformation(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
@@ -29,14 +24,18 @@ service UserService {
     rpc BlockTokenById(UserRequest) returns (UserResponse) {}
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
     rpc GetTokens(UserRequest) returns (UserResponse) {}
+    
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
+    
     rpc RecordActiveMeasurement(UserRequest) returns (UserResponse) {}
     rpc UserActiveHistory(UserRequest) returns (UserResponse) {}
     rpc NamespaceActiveHistory(UserRequest) returns (UserResponse) {}
+    
     rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
     rpc VerifyEmail(UserRequest) returns (UserResponse) {}
     rpc SendResetPasswordEmail(UserRequest) returns (UserResponse) {}
     rpc ResetPassword(UserRequest) returns (UserResponse) {}
+    
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
     
@@ -118,15 +117,13 @@ enum LanguageCode {
 message Text {
     LanguageCode id = 1;
     int32 internal_encryption_level = 2;
-    repeated LanguageCode available_languages = 3;
-    repeated LanguageCode supported_languages = 4;
-    GeneralText general_text = 5;
-    WelcomeText welcome_text = 6;
-    LoginText login_text = 7;
-    RegisterText register_text = 8;
-    ProfileText profile_text = 9;
-    google.protobuf.Timestamp created_at = 10;
-    google.protobuf.Timestamp updated_at = 11;
+    GeneralText general_text = 3;
+    WelcomeText welcome_text = 4;
+    LoginText login_text = 5;
+    RegisterText register_text = 6;
+    ProfileText profile_text = 7;
+    google.protobuf.Timestamp created_at = 8;
+    google.protobuf.Timestamp updated_at = 9;
 }
 
 message Config {
@@ -145,6 +142,8 @@ message Config {
     bool require_phone_number_verification = 13;
     LanguageCode default_language = 14;
     int32 internal_encryption_level = 15;
+    repeated LanguageCode available_languages = 16;
+    repeated LanguageCode supported_languages = 17;
 }
 
 enum EmailType {
