@@ -87,10 +87,12 @@ message RegisterText {
 message ProfileText {
     string profile_title = 1;
     string logout = 2;
-    string change_email_title = 3;
-    string change_email_description = 4;
-    string change_password_title = 5;
-    string change_password_description = 6;
+    string change_profile_details_title = 3;
+    string change_profile_details_description = 4;
+    string change_profile_contact_title = 5;
+    string change_profile_contact_description = 6;
+    string change_password_title = 7;
+    string change_password_description = 8;
 }
 
 message LoginText {
