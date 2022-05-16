@@ -8,12 +8,18 @@ import "google/protobuf/timestamp.proto";
 
 service UserService {
     rpc Heartbeat(UserRequest) returns (UserResponse) {}
-
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
     rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
+    rpc UpdateImage(UserRequest) returns (UserResponse) {}
+    rpc UpdateName(UserRequest) returns (UserResponse) {}
+    rpc UpdateBirthdate(UserRequest) returns (UserResponse) {}
+    rpc UpdateEmail(UserRequest) returns (UserResponse) {}
+    rpc UpdatePhoneNumber(UserRequest) returns (UserResponse) {}
+    rpc UpdateUsername(UserRequest) returns (UserResponse) {}
+    rpc UpdatePreferredLanguage(UserRequest) returns (UserResponse) {}
     rpc UpdateProfileInformation(UserRequest) returns (UserResponse) {}
-    rpc UpdateContactInformation(UserRequest) returns (UserResponse) {}
+    rpc UpdateContactInformation(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
@@ -87,12 +93,10 @@ message RegisterText {
 message ProfileText {
     string profile_title = 1;
     string logout = 2;
-    string change_profile_details_title = 3;
-    string change_profile_details_description = 4;
-    string change_profile_contact_title = 5;
-    string change_profile_contact_description = 6;
-    string change_password_title = 7;
-    string change_password_description = 8;
+    string change_email_title = 3;
+    string change_email_description = 4;
+    string change_password_title = 5;
+    string change_password_description = 6;
 }
 
 message LoginText {
