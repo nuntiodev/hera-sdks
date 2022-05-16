@@ -24,29 +24,22 @@ service UserService {
     rpc BlockTokenById(UserRequest) returns (UserResponse) {}
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
     rpc GetTokens(UserRequest) returns (UserResponse) {}
-    
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
-    
     rpc RecordActiveMeasurement(UserRequest) returns (UserResponse) {}
     rpc UserActiveHistory(UserRequest) returns (UserResponse) {}
     rpc NamespaceActiveHistory(UserRequest) returns (UserResponse) {}
-    
     rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
     rpc VerifyEmail(UserRequest) returns (UserResponse) {}
     rpc SendResetPasswordEmail(UserRequest) returns (UserResponse) {}
     rpc ResetPassword(UserRequest) returns (UserResponse) {}
-    
     rpc Delete(UserRequest) returns (UserResponse) {}
     rpc DeleteBatch(UserRequest) returns (UserResponse) {}
-    
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
-    
     rpc CreateNamespaceConfig(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigSettings(UserRequest) returns (UserResponse) {}
     rpc UpdateConfigDetails(UserRequest) returns (UserResponse) {}
     rpc GetConfig(UserRequest) returns (UserResponse) {}
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
-    
     rpc CreateText(UserRequest) returns (UserResponse) {}
     rpc GetText(UserRequest) returns (UserResponse) {}
     rpc UpdateGeneralText(UserRequest) returns (UserResponse) {}
@@ -55,7 +48,6 @@ service UserService {
     rpc UpdateLoginText(UserRequest) returns (UserResponse) {}
     rpc UpdateProfileText(UserRequest) returns (UserResponse) {}
     rpc DeleteText(UserRequest) returns (UserResponse) {}
-
     rpc InitializeApplication(UserRequest) returns (UserResponse) {}
 }
 
