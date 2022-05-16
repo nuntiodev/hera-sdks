@@ -749,6 +749,128 @@ proto.BlockUser.UserServicePromiseClient.prototype.updatePreferredLanguage =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
+const methodDescriptor_UserService_UpdateProfileInformation = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UpdateProfileInformation',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.updateProfileInformation =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateProfileInformation',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateProfileInformation,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.updateProfileInformation =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateProfileInformation',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateProfileInformation);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
+const methodDescriptor_UserService_UpdateContactInformation = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UpdateContactInformation',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.updateContactInformation =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateContactInformation',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateContactInformation,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.updateContactInformation =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/UpdateContactInformation',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateContactInformation);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
 const methodDescriptor_UserService_UpdateSecurity = new grpc.web.MethodDescriptor(
   '/BlockUser.UserService/UpdateSecurity',
   grpc.web.MethodType.UNARY,

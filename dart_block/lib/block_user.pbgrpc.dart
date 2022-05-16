@@ -68,6 +68,16 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/UpdatePreferredLanguage',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateProfileInformation =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/UpdateProfileInformation',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateContactInformation =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/UpdateContactInformation',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateSecurity =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/UpdateSecurity',
@@ -299,6 +309,20 @@ class UserServiceClient extends $grpc.Client {
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updatePreferredLanguage, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateProfileInformation(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateProfileInformation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateContactInformation(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateContactInformation, request,
         options: options);
   }
 
@@ -572,6 +596,20 @@ abstract class UserServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdatePreferredLanguage',
         updatePreferredLanguage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateProfileInformation',
+        updateProfileInformation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateContactInformation',
+        updateContactInformation_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -878,6 +916,16 @@ abstract class UserServiceBase extends $grpc.Service {
     return updatePreferredLanguage(call, await request);
   }
 
+  $async.Future<$0.UserResponse> updateProfileInformation_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateProfileInformation(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> updateContactInformation_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateContactInformation(call, await request);
+  }
+
   $async.Future<$0.UserResponse> updateSecurity_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateSecurity(call, await request);
@@ -1074,6 +1122,10 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> updateUsername(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updatePreferredLanguage(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateProfileInformation(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateContactInformation(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateSecurity(
       $grpc.ServiceCall call, $0.UserRequest request);

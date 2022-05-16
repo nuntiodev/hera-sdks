@@ -29,6 +29,8 @@ type UserServiceClient interface {
 	UpdatePhoneNumber(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateUsername(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdatePreferredLanguage(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateProfileInformation(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateContactInformation(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -167,6 +169,24 @@ func (c *userServiceClient) UpdateUsername(ctx context.Context, in *UserRequest,
 func (c *userServiceClient) UpdatePreferredLanguage(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdatePreferredLanguage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateProfileInformation(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateProfileInformation", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateContactInformation(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateContactInformation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -503,6 +523,8 @@ type UserServiceServer interface {
 	UpdatePhoneNumber(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateUsername(context.Context, *UserRequest) (*UserResponse, error)
 	UpdatePreferredLanguage(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateProfileInformation(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateContactInformation(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error)
 	Get(context.Context, *UserRequest) (*UserResponse, error)
 	GetAll(context.Context, *UserRequest) (*UserResponse, error)
@@ -576,6 +598,12 @@ func (UnimplementedUserServiceServer) UpdateUsername(context.Context, *UserReque
 }
 func (UnimplementedUserServiceServer) UpdatePreferredLanguage(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePreferredLanguage not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateProfileInformation(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfileInformation not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateContactInformation(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateContactInformation not implemented")
 }
 func (UnimplementedUserServiceServer) UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSecurity not implemented")
@@ -888,6 +916,42 @@ func _UserService_UpdatePreferredLanguage_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserServiceServer).UpdatePreferredLanguage(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateProfileInformation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateProfileInformation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateProfileInformation",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateProfileInformation(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateContactInformation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateContactInformation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/UpdateContactInformation",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateContactInformation(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1572,6 +1636,14 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePreferredLanguage",
 			Handler:    _UserService_UpdatePreferredLanguage_Handler,
+		},
+		{
+			MethodName: "UpdateProfileInformation",
+			Handler:    _UserService_UpdateProfileInformation_Handler,
+		},
+		{
+			MethodName: "UpdateContactInformation",
+			Handler:    _UserService_UpdateContactInformation_Handler,
 		},
 		{
 			MethodName: "UpdateSecurity",
