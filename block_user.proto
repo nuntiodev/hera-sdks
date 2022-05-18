@@ -18,8 +18,6 @@ service UserService {
     rpc UpdatePhoneNumber(UserRequest) returns (UserResponse) {}
     rpc UpdateUsername(UserRequest) returns (UserResponse) {}
     rpc UpdatePreferredLanguage(UserRequest) returns (UserResponse) {}
-    rpc UpdateProfileInformation(UserRequest) returns (UserResponse) {}
-    rpc UpdateContactInformation(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
@@ -122,6 +120,7 @@ message Text {
     ProfileText profile_text = 7;
     google.protobuf.Timestamp created_at = 8;
     google.protobuf.Timestamp updated_at = 9;
+    repeated LanguageCode created_languages = 10;
 }
 
 message Config {
