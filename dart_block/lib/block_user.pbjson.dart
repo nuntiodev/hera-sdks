@@ -171,20 +171,18 @@ const Text$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'id'},
     const {'1': 'internal_encryption_level', '3': 2, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
-    const {'1': 'available_languages', '3': 3, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'availableLanguages'},
-    const {'1': 'supported_languages', '3': 4, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'supportedLanguages'},
-    const {'1': 'general_text', '3': 5, '4': 1, '5': 11, '6': '.BlockUser.GeneralText', '10': 'generalText'},
-    const {'1': 'welcome_text', '3': 6, '4': 1, '5': 11, '6': '.BlockUser.WelcomeText', '10': 'welcomeText'},
-    const {'1': 'login_text', '3': 7, '4': 1, '5': 11, '6': '.BlockUser.LoginText', '10': 'loginText'},
-    const {'1': 'register_text', '3': 8, '4': 1, '5': 11, '6': '.BlockUser.RegisterText', '10': 'registerText'},
-    const {'1': 'profile_text', '3': 9, '4': 1, '5': 11, '6': '.BlockUser.ProfileText', '10': 'profileText'},
-    const {'1': 'created_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updated_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'general_text', '3': 3, '4': 1, '5': 11, '6': '.BlockUser.GeneralText', '10': 'generalText'},
+    const {'1': 'welcome_text', '3': 4, '4': 1, '5': 11, '6': '.BlockUser.WelcomeText', '10': 'welcomeText'},
+    const {'1': 'login_text', '3': 5, '4': 1, '5': 11, '6': '.BlockUser.LoginText', '10': 'loginText'},
+    const {'1': 'register_text', '3': 6, '4': 1, '5': 11, '6': '.BlockUser.RegisterText', '10': 'registerText'},
+    const {'1': 'profile_text', '3': 7, '4': 1, '5': 11, '6': '.BlockUser.ProfileText', '10': 'profileText'},
+    const {'1': 'created_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `Text`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List textDescriptor = $convert.base64Decode('CgRUZXh0EicKAmlkGAEgASgOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVICaWQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgCIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSSAoTYXZhaWxhYmxlX2xhbmd1YWdlcxgDIAMoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEmF2YWlsYWJsZUxhbmd1YWdlcxJIChNzdXBwb3J0ZWRfbGFuZ3VhZ2VzGAQgAygOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVISc3VwcG9ydGVkTGFuZ3VhZ2VzEjkKDGdlbmVyYWxfdGV4dBgFIAEoCzIWLkJsb2NrVXNlci5HZW5lcmFsVGV4dFILZ2VuZXJhbFRleHQSOQoMd2VsY29tZV90ZXh0GAYgASgLMhYuQmxvY2tVc2VyLldlbGNvbWVUZXh0Ugt3ZWxjb21lVGV4dBIzCgpsb2dpbl90ZXh0GAcgASgLMhQuQmxvY2tVc2VyLkxvZ2luVGV4dFIJbG9naW5UZXh0EjwKDXJlZ2lzdGVyX3RleHQYCCABKAsyFy5CbG9ja1VzZXIuUmVnaXN0ZXJUZXh0UgxyZWdpc3RlclRleHQSOQoMcHJvZmlsZV90ZXh0GAkgASgLMhYuQmxvY2tVc2VyLlByb2ZpbGVUZXh0Ugtwcm9maWxlVGV4dBI5CgpjcmVhdGVkX2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+final $typed_data.Uint8List textDescriptor = $convert.base64Decode('CgRUZXh0EicKAmlkGAEgASgOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVICaWQSOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgCIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSOQoMZ2VuZXJhbF90ZXh0GAMgASgLMhYuQmxvY2tVc2VyLkdlbmVyYWxUZXh0UgtnZW5lcmFsVGV4dBI5Cgx3ZWxjb21lX3RleHQYBCABKAsyFi5CbG9ja1VzZXIuV2VsY29tZVRleHRSC3dlbGNvbWVUZXh0EjMKCmxvZ2luX3RleHQYBSABKAsyFC5CbG9ja1VzZXIuTG9naW5UZXh0Uglsb2dpblRleHQSPAoNcmVnaXN0ZXJfdGV4dBgGIAEoCzIXLkJsb2NrVXNlci5SZWdpc3RlclRleHRSDHJlZ2lzdGVyVGV4dBI5Cgxwcm9maWxlX3RleHQYByABKAsyFi5CbG9ja1VzZXIuUHJvZmlsZVRleHRSC3Byb2ZpbGVUZXh0EjkKCmNyZWF0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
 @$core.Deprecated('Use configDescriptor instead')
 const Config$json = const {
   '1': 'Config',
@@ -204,11 +202,13 @@ const Config$json = const {
     const {'1': 'require_phone_number_verification', '3': 13, '4': 1, '5': 8, '10': 'requirePhoneNumberVerification'},
     const {'1': 'default_language', '3': 14, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'defaultLanguage'},
     const {'1': 'internal_encryption_level', '3': 15, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
+    const {'1': 'available_languages', '3': 16, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'availableLanguages'},
+    const {'1': 'supported_languages', '3': 17, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'supportedLanguages'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbxgDIAEoCVIEbG9nbxIyChVlbmFibGVfbnVudGlvX2Nvbm5lY3QYBCABKAhSE2VuYWJsZU51bnRpb0Nvbm5lY3QSNAoWZGlzYWJsZV9kZWZhdWx0X3NpZ251cBgFIAEoCFIUZGlzYWJsZURlZmF1bHRTaWdudXASMgoVZGlzYWJsZV9kZWZhdWx0X2xvZ2luGAYgASgIUhNkaXNhYmxlRGVmYXVsdExvZ2luEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIrChF2YWxpZGF0ZV9wYXNzd29yZBgJIAEoCFIQdmFsaWRhdGVQYXNzd29yZBIqChFudW50aW9fY29ubmVjdF9pZBgKIAEoCVIPbnVudGlvQ29ubmVjdElkEjwKGnJlcXVpcmVfZW1haWxfdmVyaWZpY2F0aW9uGAsgASgIUhhyZXF1aXJlRW1haWxWZXJpZmljYXRpb24SMwoKbG9naW5fdHlwZRgMIAEoDjIULkJsb2NrVXNlci5Mb2dpblR5cGVSCWxvZ2luVHlwZRJJCiFyZXF1aXJlX3Bob25lX251bWJlcl92ZXJpZmljYXRpb24YDSABKAhSHnJlcXVpcmVQaG9uZU51bWJlclZlcmlmaWNhdGlvbhJCChBkZWZhdWx0X2xhbmd1YWdlGA4gASgOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVIPZGVmYXVsdExhbmd1YWdlEjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYDyABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVs');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbxgDIAEoCVIEbG9nbxIyChVlbmFibGVfbnVudGlvX2Nvbm5lY3QYBCABKAhSE2VuYWJsZU51bnRpb0Nvbm5lY3QSNAoWZGlzYWJsZV9kZWZhdWx0X3NpZ251cBgFIAEoCFIUZGlzYWJsZURlZmF1bHRTaWdudXASMgoVZGlzYWJsZV9kZWZhdWx0X2xvZ2luGAYgASgIUhNkaXNhYmxlRGVmYXVsdExvZ2luEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIrChF2YWxpZGF0ZV9wYXNzd29yZBgJIAEoCFIQdmFsaWRhdGVQYXNzd29yZBIqChFudW50aW9fY29ubmVjdF9pZBgKIAEoCVIPbnVudGlvQ29ubmVjdElkEjwKGnJlcXVpcmVfZW1haWxfdmVyaWZpY2F0aW9uGAsgASgIUhhyZXF1aXJlRW1haWxWZXJpZmljYXRpb24SMwoKbG9naW5fdHlwZRgMIAEoDjIULkJsb2NrVXNlci5Mb2dpblR5cGVSCWxvZ2luVHlwZRJJCiFyZXF1aXJlX3Bob25lX251bWJlcl92ZXJpZmljYXRpb24YDSABKAhSHnJlcXVpcmVQaG9uZU51bWJlclZlcmlmaWNhdGlvbhJCChBkZWZhdWx0X2xhbmd1YWdlGA4gASgOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVIPZGVmYXVsdExhbmd1YWdlEjoKGWludGVybmFsX2VuY3J5cHRpb25fbGV2ZWwYDyABKAVSF2ludGVybmFsRW5jcnlwdGlvbkxldmVsEkgKE2F2YWlsYWJsZV9sYW5ndWFnZXMYECADKA4yFy5CbG9ja1VzZXIuTGFuZ3VhZ2VDb2RlUhJhdmFpbGFibGVMYW5ndWFnZXMSSAoTc3VwcG9ydGVkX2xhbmd1YWdlcxgRIAMoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEnN1cHBvcnRlZExhbmd1YWdlcw==');
 @$core.Deprecated('Use emailDescriptor instead')
 const Email$json = const {
   '1': 'Email',

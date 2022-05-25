@@ -166,7 +166,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.BlockUser.Text = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.BlockUser.Text.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.BlockUser.Text, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -187,7 +187,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.BlockUser.Config = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.BlockUser.Config.repeatedFields_, null);
 };
 goog.inherits(proto.BlockUser.Config, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1970,13 +1970,6 @@ proto.BlockUser.LoginText.prototype.setForgotPassword = function(value) {
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.BlockUser.Text.repeatedFields_ = [3,4];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2010,8 +2003,6 @@ proto.BlockUser.Text.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    availableLanguagesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    supportedLanguagesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     generalText: (f = msg.getGeneralText()) && proto.BlockUser.GeneralText.toObject(includeInstance, f),
     welcomeText: (f = msg.getWelcomeText()) && proto.BlockUser.WelcomeText.toObject(includeInstance, f),
     loginText: (f = msg.getLoginText()) && proto.BlockUser.LoginText.toObject(includeInstance, f),
@@ -2064,48 +2055,36 @@ proto.BlockUser.Text.deserializeBinaryFromReader = function(msg, reader) {
       msg.setInternalEncryptionLevel(value);
       break;
     case 3:
-      var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addAvailableLanguages(values[i]);
-      }
-      break;
-    case 4:
-      var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addSupportedLanguages(values[i]);
-      }
-      break;
-    case 5:
       var value = new proto.BlockUser.GeneralText;
       reader.readMessage(value,proto.BlockUser.GeneralText.deserializeBinaryFromReader);
       msg.setGeneralText(value);
       break;
-    case 6:
+    case 4:
       var value = new proto.BlockUser.WelcomeText;
       reader.readMessage(value,proto.BlockUser.WelcomeText.deserializeBinaryFromReader);
       msg.setWelcomeText(value);
       break;
-    case 7:
+    case 5:
       var value = new proto.BlockUser.LoginText;
       reader.readMessage(value,proto.BlockUser.LoginText.deserializeBinaryFromReader);
       msg.setLoginText(value);
       break;
-    case 8:
+    case 6:
       var value = new proto.BlockUser.RegisterText;
       reader.readMessage(value,proto.BlockUser.RegisterText.deserializeBinaryFromReader);
       msg.setRegisterText(value);
       break;
-    case 9:
+    case 7:
       var value = new proto.BlockUser.ProfileText;
       reader.readMessage(value,proto.BlockUser.ProfileText.deserializeBinaryFromReader);
       msg.setProfileText(value);
       break;
-    case 10:
+    case 8:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedAt(value);
       break;
-    case 11:
+    case 9:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
@@ -2153,24 +2132,10 @@ proto.BlockUser.Text.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAvailableLanguagesList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      3,
-      f
-    );
-  }
-  f = message.getSupportedLanguagesList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      4,
-      f
-    );
-  }
   f = message.getGeneralText();
   if (f != null) {
     writer.writeMessage(
-      5,
+      3,
       f,
       proto.BlockUser.GeneralText.serializeBinaryToWriter
     );
@@ -2178,7 +2143,7 @@ proto.BlockUser.Text.serializeBinaryToWriter = function(message, writer) {
   f = message.getWelcomeText();
   if (f != null) {
     writer.writeMessage(
-      6,
+      4,
       f,
       proto.BlockUser.WelcomeText.serializeBinaryToWriter
     );
@@ -2186,7 +2151,7 @@ proto.BlockUser.Text.serializeBinaryToWriter = function(message, writer) {
   f = message.getLoginText();
   if (f != null) {
     writer.writeMessage(
-      7,
+      5,
       f,
       proto.BlockUser.LoginText.serializeBinaryToWriter
     );
@@ -2194,7 +2159,7 @@ proto.BlockUser.Text.serializeBinaryToWriter = function(message, writer) {
   f = message.getRegisterText();
   if (f != null) {
     writer.writeMessage(
-      8,
+      6,
       f,
       proto.BlockUser.RegisterText.serializeBinaryToWriter
     );
@@ -2202,7 +2167,7 @@ proto.BlockUser.Text.serializeBinaryToWriter = function(message, writer) {
   f = message.getProfileText();
   if (f != null) {
     writer.writeMessage(
-      9,
+      7,
       f,
       proto.BlockUser.ProfileText.serializeBinaryToWriter
     );
@@ -2210,7 +2175,7 @@ proto.BlockUser.Text.serializeBinaryToWriter = function(message, writer) {
   f = message.getCreatedAt();
   if (f != null) {
     writer.writeMessage(
-      10,
+      8,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -2218,7 +2183,7 @@ proto.BlockUser.Text.serializeBinaryToWriter = function(message, writer) {
   f = message.getUpdatedAt();
   if (f != null) {
     writer.writeMessage(
-      11,
+      9,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -2263,86 +2228,12 @@ proto.BlockUser.Text.prototype.setInternalEncryptionLevel = function(value) {
 
 
 /**
- * repeated LanguageCode available_languages = 3;
- * @return {!Array<!proto.BlockUser.LanguageCode>}
- */
-proto.BlockUser.Text.prototype.getAvailableLanguagesList = function() {
-  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 3));
-};
-
-
-/**
- * @param {!Array<!proto.BlockUser.LanguageCode>} value
- * @return {!proto.BlockUser.Text} returns this
- */
-proto.BlockUser.Text.prototype.setAvailableLanguagesList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
-};
-
-
-/**
- * @param {!proto.BlockUser.LanguageCode} value
- * @param {number=} opt_index
- * @return {!proto.BlockUser.Text} returns this
- */
-proto.BlockUser.Text.prototype.addAvailableLanguages = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.BlockUser.Text} returns this
- */
-proto.BlockUser.Text.prototype.clearAvailableLanguagesList = function() {
-  return this.setAvailableLanguagesList([]);
-};
-
-
-/**
- * repeated LanguageCode supported_languages = 4;
- * @return {!Array<!proto.BlockUser.LanguageCode>}
- */
-proto.BlockUser.Text.prototype.getSupportedLanguagesList = function() {
-  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/**
- * @param {!Array<!proto.BlockUser.LanguageCode>} value
- * @return {!proto.BlockUser.Text} returns this
- */
-proto.BlockUser.Text.prototype.setSupportedLanguagesList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {!proto.BlockUser.LanguageCode} value
- * @param {number=} opt_index
- * @return {!proto.BlockUser.Text} returns this
- */
-proto.BlockUser.Text.prototype.addSupportedLanguages = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.BlockUser.Text} returns this
- */
-proto.BlockUser.Text.prototype.clearSupportedLanguagesList = function() {
-  return this.setSupportedLanguagesList([]);
-};
-
-
-/**
- * optional GeneralText general_text = 5;
+ * optional GeneralText general_text = 3;
  * @return {?proto.BlockUser.GeneralText}
  */
 proto.BlockUser.Text.prototype.getGeneralText = function() {
   return /** @type{?proto.BlockUser.GeneralText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.GeneralText, 5));
+    jspb.Message.getWrapperField(this, proto.BlockUser.GeneralText, 3));
 };
 
 
@@ -2351,7 +2242,7 @@ proto.BlockUser.Text.prototype.getGeneralText = function() {
  * @return {!proto.BlockUser.Text} returns this
 */
 proto.BlockUser.Text.prototype.setGeneralText = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -2369,17 +2260,17 @@ proto.BlockUser.Text.prototype.clearGeneralText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Text.prototype.hasGeneralText = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional WelcomeText welcome_text = 6;
+ * optional WelcomeText welcome_text = 4;
  * @return {?proto.BlockUser.WelcomeText}
  */
 proto.BlockUser.Text.prototype.getWelcomeText = function() {
   return /** @type{?proto.BlockUser.WelcomeText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.WelcomeText, 6));
+    jspb.Message.getWrapperField(this, proto.BlockUser.WelcomeText, 4));
 };
 
 
@@ -2388,7 +2279,7 @@ proto.BlockUser.Text.prototype.getWelcomeText = function() {
  * @return {!proto.BlockUser.Text} returns this
 */
 proto.BlockUser.Text.prototype.setWelcomeText = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -2406,17 +2297,17 @@ proto.BlockUser.Text.prototype.clearWelcomeText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Text.prototype.hasWelcomeText = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional LoginText login_text = 7;
+ * optional LoginText login_text = 5;
  * @return {?proto.BlockUser.LoginText}
  */
 proto.BlockUser.Text.prototype.getLoginText = function() {
   return /** @type{?proto.BlockUser.LoginText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.LoginText, 7));
+    jspb.Message.getWrapperField(this, proto.BlockUser.LoginText, 5));
 };
 
 
@@ -2425,7 +2316,7 @@ proto.BlockUser.Text.prototype.getLoginText = function() {
  * @return {!proto.BlockUser.Text} returns this
 */
 proto.BlockUser.Text.prototype.setLoginText = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -2443,17 +2334,17 @@ proto.BlockUser.Text.prototype.clearLoginText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Text.prototype.hasLoginText = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional RegisterText register_text = 8;
+ * optional RegisterText register_text = 6;
  * @return {?proto.BlockUser.RegisterText}
  */
 proto.BlockUser.Text.prototype.getRegisterText = function() {
   return /** @type{?proto.BlockUser.RegisterText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.RegisterText, 8));
+    jspb.Message.getWrapperField(this, proto.BlockUser.RegisterText, 6));
 };
 
 
@@ -2462,7 +2353,7 @@ proto.BlockUser.Text.prototype.getRegisterText = function() {
  * @return {!proto.BlockUser.Text} returns this
 */
 proto.BlockUser.Text.prototype.setRegisterText = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -2480,17 +2371,17 @@ proto.BlockUser.Text.prototype.clearRegisterText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Text.prototype.hasRegisterText = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional ProfileText profile_text = 9;
+ * optional ProfileText profile_text = 7;
  * @return {?proto.BlockUser.ProfileText}
  */
 proto.BlockUser.Text.prototype.getProfileText = function() {
   return /** @type{?proto.BlockUser.ProfileText} */ (
-    jspb.Message.getWrapperField(this, proto.BlockUser.ProfileText, 9));
+    jspb.Message.getWrapperField(this, proto.BlockUser.ProfileText, 7));
 };
 
 
@@ -2499,7 +2390,7 @@ proto.BlockUser.Text.prototype.getProfileText = function() {
  * @return {!proto.BlockUser.Text} returns this
 */
 proto.BlockUser.Text.prototype.setProfileText = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -2517,17 +2408,17 @@ proto.BlockUser.Text.prototype.clearProfileText = function() {
  * @return {boolean}
  */
 proto.BlockUser.Text.prototype.hasProfileText = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp created_at = 10;
+ * optional google.protobuf.Timestamp created_at = 8;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.Text.prototype.getCreatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
 };
 
 
@@ -2536,7 +2427,7 @@ proto.BlockUser.Text.prototype.getCreatedAt = function() {
  * @return {!proto.BlockUser.Text} returns this
 */
 proto.BlockUser.Text.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -2554,17 +2445,17 @@ proto.BlockUser.Text.prototype.clearCreatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.Text.prototype.hasCreatedAt = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updated_at = 11;
+ * optional google.protobuf.Timestamp updated_at = 9;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.BlockUser.Text.prototype.getUpdatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
 };
 
 
@@ -2573,7 +2464,7 @@ proto.BlockUser.Text.prototype.getUpdatedAt = function() {
  * @return {!proto.BlockUser.Text} returns this
 */
 proto.BlockUser.Text.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -2591,10 +2482,17 @@ proto.BlockUser.Text.prototype.clearUpdatedAt = function() {
  * @return {boolean}
  */
 proto.BlockUser.Text.prototype.hasUpdatedAt = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.BlockUser.Config.repeatedFields_ = [16,17];
 
 
 
@@ -2641,7 +2539,9 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     loginType: jspb.Message.getFieldWithDefault(msg, 12, 0),
     requirePhoneNumberVerification: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
     defaultLanguage: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 15, 0)
+    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    availableLanguagesList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
+    supportedLanguagesList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2739,6 +2639,18 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 15:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInternalEncryptionLevel(value);
+      break;
+    case 16:
+      var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addAvailableLanguages(values[i]);
+      }
+      break;
+    case 17:
+      var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addSupportedLanguages(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -2873,6 +2785,20 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       15,
+      f
+    );
+  }
+  f = message.getAvailableLanguagesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      16,
+      f
+    );
+  }
+  f = message.getSupportedLanguagesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      17,
       f
     );
   }
@@ -3184,6 +3110,80 @@ proto.BlockUser.Config.prototype.getInternalEncryptionLevel = function() {
  */
 proto.BlockUser.Config.prototype.setInternalEncryptionLevel = function(value) {
   return jspb.Message.setProto3IntField(this, 15, value);
+};
+
+
+/**
+ * repeated LanguageCode available_languages = 16;
+ * @return {!Array<!proto.BlockUser.LanguageCode>}
+ */
+proto.BlockUser.Config.prototype.getAvailableLanguagesList = function() {
+  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 16));
+};
+
+
+/**
+ * @param {!Array<!proto.BlockUser.LanguageCode>} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setAvailableLanguagesList = function(value) {
+  return jspb.Message.setField(this, 16, value || []);
+};
+
+
+/**
+ * @param {!proto.BlockUser.LanguageCode} value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.addAvailableLanguages = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 16, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.clearAvailableLanguagesList = function() {
+  return this.setAvailableLanguagesList([]);
+};
+
+
+/**
+ * repeated LanguageCode supported_languages = 17;
+ * @return {!Array<!proto.BlockUser.LanguageCode>}
+ */
+proto.BlockUser.Config.prototype.getSupportedLanguagesList = function() {
+  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 17));
+};
+
+
+/**
+ * @param {!Array<!proto.BlockUser.LanguageCode>} value
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.setSupportedLanguagesList = function(value) {
+  return jspb.Message.setField(this, 17, value || []);
+};
+
+
+/**
+ * @param {!proto.BlockUser.LanguageCode} value
+ * @param {number=} opt_index
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.addSupportedLanguages = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 17, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.BlockUser.Config} returns this
+ */
+proto.BlockUser.Config.prototype.clearSupportedLanguagesList = function() {
+  return this.setSupportedLanguagesList([]);
 };
 
 
