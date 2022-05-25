@@ -44,83 +44,13 @@ service UserService {
     rpc UpdateConfigDetails(UserRequest) returns (UserResponse) {}
     rpc GetConfig(UserRequest) returns (UserResponse) {}
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
-    rpc CreateText(UserRequest) returns (UserResponse) {}
-    rpc GetText(UserRequest) returns (UserResponse) {}
-    rpc UpdateGeneralText(UserRequest) returns (UserResponse) {}
-    rpc UpdateWelcomeText(UserRequest) returns (UserResponse) {}
-    rpc UpdateRegisterText(UserRequest) returns (UserResponse) {}
-    rpc UpdateLoginText(UserRequest) returns (UserResponse) {}
-    rpc UpdateProfileText(UserRequest) returns (UserResponse) {}
-    rpc DeleteText(UserRequest) returns (UserResponse) {}
     rpc InitializeApplication(UserRequest) returns (UserResponse) {}
-}
-
-message GeneralText {
-    string missing_password_title = 1;
-    string missing_password_details = 2;
-    string missing_email_title = 3;
-    string missing_email_details = 4;
-    string created_by = 5;
-    string password_hint = 6;
-    string email_hint = 7;
-    string error_title = 8;
-    string error_description = 9;
-    string no_wifi_title = 10;
-    string no_wifi_description = 11;
-}
-
-message WelcomeText {
-    string welcome_title = 1; 
-    string welcome_details = 2;
-    string continue_with_nuntio = 3;
-}
-
-message RegisterText {
-    string register_button = 1;
-    string register_title = 2;
-    string register_details = 3;
-    string password_do_not_match_title = 4;
-    string password_do_not_match_details = 5;
-    string repeat_password_hint = 6;
-    string contains_special_char = 7;
-    string contains_number_char = 8;
-    string password_must_match = 9;
-    string contains_eight_chars = 10;
-}
-
-message ProfileText {
-    string profile_title = 1;
-    string logout = 2;
-    string change_email_title = 3;
-    string change_email_description = 4;
-    string change_password_title = 5;
-    string change_password_description = 6;
-}
-
-message LoginText {
-    string login_button = 1;
-    string login_title = 2;
-    string login_details = 3;
-    string forgot_password = 4;
 }
 
 enum LanguageCode {
     INVALID_LANGUAGE_CODE = 0;
     EN = 1;
     DK = 2;
-}
-
-message Text {
-    LanguageCode id = 1;
-    int32 internal_encryption_level = 2;
-    GeneralText general_text = 3;
-    WelcomeText welcome_text = 4;
-    LoginText login_text = 5;
-    RegisterText register_text = 6;
-    ProfileText profile_text = 7;
-    google.protobuf.Timestamp created_at = 8;
-    google.protobuf.Timestamp updated_at = 9;
-    repeated LanguageCode created_languages = 10;
 }
 
 message Config {
@@ -320,7 +250,6 @@ message UserRequest {
     Email email = 14;
     string email_verification_code = 15;
     string reset_password_code = 16;
-    Text text = 17;
 }
 
 message UserResponse {
@@ -334,6 +263,4 @@ message UserResponse {
     Config config = 8;
     ActiveHistory active_history = 9;
     LoginSession login_session = 10;
-    Text text = 11;
-    repeated Text texts = 12;
 }
