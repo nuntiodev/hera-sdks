@@ -345,7 +345,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.BlockUser.Config.repeatedFields_ = [16,17];
+proto.BlockUser.Config.repeatedFields_ = [14,15];
 
 
 
@@ -391,10 +391,8 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     loginType: jspb.Message.getFieldWithDefault(msg, 12, 0),
     requirePhoneNumberVerification: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    defaultLanguage: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    availableLanguagesList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
-    supportedLanguagesList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f
+    availableLanguagesList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
+    supportedLanguagesList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -488,20 +486,12 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.setRequirePhoneNumberVerification(value);
       break;
     case 14:
-      var value = /** @type {!proto.BlockUser.LanguageCode} */ (reader.readEnum());
-      msg.setDefaultLanguage(value);
-      break;
-    case 15:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setInternalEncryptionLevel(value);
-      break;
-    case 16:
       var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addAvailableLanguages(values[i]);
       }
       break;
-    case 17:
+    case 15:
       var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addSupportedLanguages(values[i]);
@@ -631,31 +621,17 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getDefaultLanguage();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      14,
-      f
-    );
-  }
-  f = message.getInternalEncryptionLevel();
-  if (f !== 0) {
-    writer.writeInt32(
-      15,
-      f
-    );
-  }
   f = message.getAvailableLanguagesList();
   if (f.length > 0) {
     writer.writePackedEnum(
-      16,
+      14,
       f
     );
   }
   f = message.getSupportedLanguagesList();
   if (f.length > 0) {
     writer.writePackedEnum(
-      17,
+      15,
       f
     );
   }
@@ -973,47 +949,11 @@ proto.BlockUser.Config.prototype.setRequirePhoneNumberVerification = function(va
 
 
 /**
- * optional LanguageCode default_language = 14;
- * @return {!proto.BlockUser.LanguageCode}
- */
-proto.BlockUser.Config.prototype.getDefaultLanguage = function() {
-  return /** @type {!proto.BlockUser.LanguageCode} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
-};
-
-
-/**
- * @param {!proto.BlockUser.LanguageCode} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setDefaultLanguage = function(value) {
-  return jspb.Message.setProto3EnumField(this, 14, value);
-};
-
-
-/**
- * optional int32 internal_encryption_level = 15;
- * @return {number}
- */
-proto.BlockUser.Config.prototype.getInternalEncryptionLevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setInternalEncryptionLevel = function(value) {
-  return jspb.Message.setProto3IntField(this, 15, value);
-};
-
-
-/**
- * repeated LanguageCode available_languages = 16;
+ * repeated LanguageCode available_languages = 14;
  * @return {!Array<!proto.BlockUser.LanguageCode>}
  */
 proto.BlockUser.Config.prototype.getAvailableLanguagesList = function() {
-  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 16));
+  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 14));
 };
 
 
@@ -1022,7 +962,7 @@ proto.BlockUser.Config.prototype.getAvailableLanguagesList = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setAvailableLanguagesList = function(value) {
-  return jspb.Message.setField(this, 16, value || []);
+  return jspb.Message.setField(this, 14, value || []);
 };
 
 
@@ -1032,7 +972,7 @@ proto.BlockUser.Config.prototype.setAvailableLanguagesList = function(value) {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.addAvailableLanguages = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 16, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
 };
 
 
@@ -1046,11 +986,11 @@ proto.BlockUser.Config.prototype.clearAvailableLanguagesList = function() {
 
 
 /**
- * repeated LanguageCode supported_languages = 17;
+ * repeated LanguageCode supported_languages = 15;
  * @return {!Array<!proto.BlockUser.LanguageCode>}
  */
 proto.BlockUser.Config.prototype.getSupportedLanguagesList = function() {
-  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 17));
+  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 15));
 };
 
 
@@ -1059,7 +999,7 @@ proto.BlockUser.Config.prototype.getSupportedLanguagesList = function() {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.setSupportedLanguagesList = function(value) {
-  return jspb.Message.setField(this, 17, value || []);
+  return jspb.Message.setField(this, 15, value || []);
 };
 
 
@@ -1069,7 +1009,7 @@ proto.BlockUser.Config.prototype.setSupportedLanguagesList = function(value) {
  * @return {!proto.BlockUser.Config} returns this
  */
 proto.BlockUser.Config.prototype.addSupportedLanguages = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 17, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 15, value, opt_index);
 };
 
 

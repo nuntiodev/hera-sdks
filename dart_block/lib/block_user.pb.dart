@@ -31,10 +31,8 @@ class Config extends $pb.GeneratedMessage {
     ..aOB(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..e<LoginType>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
     ..aOB(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requirePhoneNumberVerification')
-    ..e<LanguageCode>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'defaultLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
-    ..a<$core.int>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
-    ..pc<LanguageCode>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'availableLanguages', $pb.PbFieldType.PE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
-    ..pc<LanguageCode>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportedLanguages', $pb.PbFieldType.PE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..pc<LanguageCode>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'availableLanguages', $pb.PbFieldType.PE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..pc<LanguageCode>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportedLanguages', $pb.PbFieldType.PE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..hasRequiredFields = false
   ;
 
@@ -53,9 +51,6 @@ class Config extends $pb.GeneratedMessage {
     $core.bool? requireEmailVerification,
     LoginType? loginType,
     $core.bool? requirePhoneNumberVerification,
-  @$core.Deprecated('This field is deprecated.')
-    LanguageCode? defaultLanguage,
-    $core.int? internalEncryptionLevel,
     $core.Iterable<LanguageCode>? availableLanguages,
     $core.Iterable<LanguageCode>? supportedLanguages,
   }) {
@@ -98,13 +93,6 @@ class Config extends $pb.GeneratedMessage {
     }
     if (requirePhoneNumberVerification != null) {
       _result.requirePhoneNumberVerification = requirePhoneNumberVerification;
-    }
-    if (defaultLanguage != null) {
-      // ignore: deprecated_member_use_from_same_package
-      _result.defaultLanguage = defaultLanguage;
-    }
-    if (internalEncryptionLevel != null) {
-      _result.internalEncryptionLevel = internalEncryptionLevel;
     }
     if (availableLanguages != null) {
       _result.availableLanguages.addAll(availableLanguages);
@@ -260,33 +248,11 @@ class Config extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   void clearRequirePhoneNumberVerification() => clearField(13);
 
-  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(14)
-  LanguageCode get defaultLanguage => $_getN(13);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(14)
-  set defaultLanguage(LanguageCode v) { setField(14, v); }
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(14)
-  $core.bool hasDefaultLanguage() => $_has(13);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(14)
-  void clearDefaultLanguage() => clearField(14);
+  $core.List<LanguageCode> get availableLanguages => $_getList(13);
 
   @$pb.TagNumber(15)
-  $core.int get internalEncryptionLevel => $_getIZ(14);
-  @$pb.TagNumber(15)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(14, v); }
-  @$pb.TagNumber(15)
-  $core.bool hasInternalEncryptionLevel() => $_has(14);
-  @$pb.TagNumber(15)
-  void clearInternalEncryptionLevel() => clearField(15);
-
-  @$pb.TagNumber(16)
-  $core.List<LanguageCode> get availableLanguages => $_getList(15);
-
-  @$pb.TagNumber(17)
-  $core.List<LanguageCode> get supportedLanguages => $_getList(16);
+  $core.List<LanguageCode> get supportedLanguages => $_getList(14);
 }
 
 class Email extends $pb.GeneratedMessage {
