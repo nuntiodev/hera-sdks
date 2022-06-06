@@ -1145,17 +1145,17 @@ class UserFilter extends $pb.GeneratedMessage {
 
 class Location extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Location', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'countryCode')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'city')
+    ..aOM<Stringx>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country', subBuilder: Stringx.create)
+    ..aOM<Stringx>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'countryCode', subBuilder: Stringx.create)
+    ..aOM<Stringx>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'city', subBuilder: Stringx.create)
     ..hasRequiredFields = false
   ;
 
   Location._() : super();
   factory Location({
-    $core.String? country,
-    $core.String? countryCode,
-    $core.String? city,
+    Stringx? country,
+    Stringx? countryCode,
+    Stringx? city,
   }) {
     final _result = create();
     if (country != null) {
@@ -1191,31 +1191,37 @@ class Location extends $pb.GeneratedMessage {
   static Location? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get country => $_getSZ(0);
+  Stringx get country => $_getN(0);
   @$pb.TagNumber(1)
-  set country($core.String v) { $_setString(0, v); }
+  set country(Stringx v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCountry() => $_has(0);
   @$pb.TagNumber(1)
   void clearCountry() => clearField(1);
+  @$pb.TagNumber(1)
+  Stringx ensureCountry() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get countryCode => $_getSZ(1);
+  Stringx get countryCode => $_getN(1);
   @$pb.TagNumber(2)
-  set countryCode($core.String v) { $_setString(1, v); }
+  set countryCode(Stringx v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCountryCode() => $_has(1);
   @$pb.TagNumber(2)
   void clearCountryCode() => clearField(2);
+  @$pb.TagNumber(2)
+  Stringx ensureCountryCode() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.String get city => $_getSZ(2);
+  Stringx get city => $_getN(2);
   @$pb.TagNumber(3)
-  set city($core.String v) { $_setString(2, v); }
+  set city(Stringx v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCity() => $_has(2);
   @$pb.TagNumber(3)
   void clearCity() => clearField(3);
+  @$pb.TagNumber(3)
+  Stringx ensureCity() => $_ensure(2);
 }
 
 class Token extends $pb.GeneratedMessage {
@@ -1223,7 +1229,7 @@ class Token extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceInfo')
+    ..aOM<Stringx>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceInfo', subBuilder: Stringx.create)
     ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blockedAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usedAt', subBuilder: $1.Timestamp.create)
@@ -1240,7 +1246,7 @@ class Token extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? userId,
     $core.bool? blocked,
-    $core.String? deviceInfo,
+    Stringx? deviceInfo,
     $1.Timestamp? blockedAt,
     $1.Timestamp? createdAt,
     $1.Timestamp? usedAt,
@@ -1338,13 +1344,15 @@ class Token extends $pb.GeneratedMessage {
   void clearBlocked() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get deviceInfo => $_getSZ(3);
+  Stringx get deviceInfo => $_getN(3);
   @$pb.TagNumber(4)
-  set deviceInfo($core.String v) { $_setString(3, v); }
+  set deviceInfo(Stringx v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDeviceInfo() => $_has(3);
   @$pb.TagNumber(4)
   void clearDeviceInfo() => clearField(4);
+  @$pb.TagNumber(4)
+  Stringx ensureDeviceInfo() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $1.Timestamp get blockedAt => $_getN(4);

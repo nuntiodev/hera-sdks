@@ -3612,9 +3612,9 @@ proto.BlockUser.Location.prototype.toObject = function(opt_includeInstance) {
  */
 proto.BlockUser.Location.toObject = function(includeInstance, msg) {
   var f, obj = {
-    country: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    countryCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    city: jspb.Message.getFieldWithDefault(msg, 3, "")
+    country: (f = msg.getCountry()) && proto.BlockUser.Stringx.toObject(includeInstance, f),
+    countryCode: (f = msg.getCountryCode()) && proto.BlockUser.Stringx.toObject(includeInstance, f),
+    city: (f = msg.getCity()) && proto.BlockUser.Stringx.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3652,15 +3652,18 @@ proto.BlockUser.Location.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.BlockUser.Stringx;
+      reader.readMessage(value,proto.BlockUser.Stringx.deserializeBinaryFromReader);
       msg.setCountry(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.BlockUser.Stringx;
+      reader.readMessage(value,proto.BlockUser.Stringx.deserializeBinaryFromReader);
       msg.setCountryCode(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.BlockUser.Stringx;
+      reader.readMessage(value,proto.BlockUser.Stringx.deserializeBinaryFromReader);
       msg.setCity(value);
       break;
     default:
@@ -3693,80 +3696,140 @@ proto.BlockUser.Location.prototype.serializeBinary = function() {
 proto.BlockUser.Location.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCountry();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      proto.BlockUser.Stringx.serializeBinaryToWriter
     );
   }
   f = message.getCountryCode();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      proto.BlockUser.Stringx.serializeBinaryToWriter
     );
   }
   f = message.getCity();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       3,
-      f
+      f,
+      proto.BlockUser.Stringx.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string country = 1;
- * @return {string}
+ * optional Stringx country = 1;
+ * @return {?proto.BlockUser.Stringx}
  */
 proto.BlockUser.Location.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type{?proto.BlockUser.Stringx} */ (
+    jspb.Message.getWrapperField(this, proto.BlockUser.Stringx, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.BlockUser.Stringx|undefined} value
+ * @return {!proto.BlockUser.Location} returns this
+*/
+proto.BlockUser.Location.prototype.setCountry = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.BlockUser.Location} returns this
  */
-proto.BlockUser.Location.prototype.setCountry = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.BlockUser.Location.prototype.clearCountry = function() {
+  return this.setCountry(undefined);
 };
 
 
 /**
- * optional string country_code = 2;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Location.prototype.hasCountry = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Stringx country_code = 2;
+ * @return {?proto.BlockUser.Stringx}
  */
 proto.BlockUser.Location.prototype.getCountryCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type{?proto.BlockUser.Stringx} */ (
+    jspb.Message.getWrapperField(this, proto.BlockUser.Stringx, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.BlockUser.Stringx|undefined} value
+ * @return {!proto.BlockUser.Location} returns this
+*/
+proto.BlockUser.Location.prototype.setCountryCode = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.BlockUser.Location} returns this
  */
-proto.BlockUser.Location.prototype.setCountryCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.BlockUser.Location.prototype.clearCountryCode = function() {
+  return this.setCountryCode(undefined);
 };
 
 
 /**
- * optional string city = 3;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Location.prototype.hasCountryCode = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Stringx city = 3;
+ * @return {?proto.BlockUser.Stringx}
  */
 proto.BlockUser.Location.prototype.getCity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type{?proto.BlockUser.Stringx} */ (
+    jspb.Message.getWrapperField(this, proto.BlockUser.Stringx, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.BlockUser.Stringx|undefined} value
+ * @return {!proto.BlockUser.Location} returns this
+*/
+proto.BlockUser.Location.prototype.setCity = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.BlockUser.Location} returns this
  */
-proto.BlockUser.Location.prototype.setCity = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.BlockUser.Location.prototype.clearCity = function() {
+  return this.setCity(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Location.prototype.hasCity = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -3805,7 +3868,7 @@ proto.BlockUser.Token.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     blocked: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    deviceInfo: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    deviceInfo: (f = msg.getDeviceInfo()) && proto.BlockUser.Stringx.toObject(includeInstance, f),
     blockedAt: (f = msg.getBlockedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     usedAt: (f = msg.getUsedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -3863,7 +3926,8 @@ proto.BlockUser.Token.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBlocked(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.BlockUser.Stringx;
+      reader.readMessage(value,proto.BlockUser.Stringx.deserializeBinaryFromReader);
       msg.setDeviceInfo(value);
       break;
     case 5:
@@ -3954,10 +4018,11 @@ proto.BlockUser.Token.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getDeviceInfo();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      proto.BlockUser.Stringx.serializeBinaryToWriter
     );
   }
   f = message.getBlockedAt();
@@ -4079,20 +4144,39 @@ proto.BlockUser.Token.prototype.setBlocked = function(value) {
 
 
 /**
- * optional string device_info = 4;
- * @return {string}
+ * optional Stringx device_info = 4;
+ * @return {?proto.BlockUser.Stringx}
  */
 proto.BlockUser.Token.prototype.getDeviceInfo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type{?proto.BlockUser.Stringx} */ (
+    jspb.Message.getWrapperField(this, proto.BlockUser.Stringx, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.BlockUser.Stringx|undefined} value
+ * @return {!proto.BlockUser.Token} returns this
+*/
+proto.BlockUser.Token.prototype.setDeviceInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.BlockUser.Token} returns this
  */
-proto.BlockUser.Token.prototype.setDeviceInfo = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.BlockUser.Token.prototype.clearDeviceInfo = function() {
+  return this.setDeviceInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.Token.prototype.hasDeviceInfo = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

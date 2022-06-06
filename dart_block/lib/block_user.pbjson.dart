@@ -220,14 +220,14 @@ final $typed_data.Uint8List userFilterDescriptor = $convert.base64Decode('CgpVc2
 const Location$json = const {
   '1': 'Location',
   '2': const [
-    const {'1': 'country', '3': 1, '4': 1, '5': 9, '10': 'country'},
-    const {'1': 'country_code', '3': 2, '4': 1, '5': 9, '10': 'countryCode'},
-    const {'1': 'city', '3': 3, '4': 1, '5': 9, '10': 'city'},
+    const {'1': 'country', '3': 1, '4': 1, '5': 11, '6': '.BlockUser.Stringx', '10': 'country'},
+    const {'1': 'country_code', '3': 2, '4': 1, '5': 11, '6': '.BlockUser.Stringx', '10': 'countryCode'},
+    const {'1': 'city', '3': 3, '4': 1, '5': 11, '6': '.BlockUser.Stringx', '10': 'city'},
   ],
 };
 
 /// Descriptor for `Location`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List locationDescriptor = $convert.base64Decode('CghMb2NhdGlvbhIYCgdjb3VudHJ5GAEgASgJUgdjb3VudHJ5EiEKDGNvdW50cnlfY29kZRgCIAEoCVILY291bnRyeUNvZGUSEgoEY2l0eRgDIAEoCVIEY2l0eQ==');
+final $typed_data.Uint8List locationDescriptor = $convert.base64Decode('CghMb2NhdGlvbhIsCgdjb3VudHJ5GAEgASgLMhIuQmxvY2tVc2VyLlN0cmluZ3hSB2NvdW50cnkSNQoMY291bnRyeV9jb2RlGAIgASgLMhIuQmxvY2tVc2VyLlN0cmluZ3hSC2NvdW50cnlDb2RlEiYKBGNpdHkYAyABKAsyEi5CbG9ja1VzZXIuU3RyaW5neFIEY2l0eQ==');
 @$core.Deprecated('Use tokenDescriptor instead')
 const Token$json = const {
   '1': 'Token',
@@ -235,7 +235,7 @@ const Token$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
     const {'1': 'blocked', '3': 3, '4': 1, '5': 8, '10': 'blocked'},
-    const {'1': 'device_info', '3': 4, '4': 1, '5': 9, '10': 'deviceInfo'},
+    const {'1': 'device_info', '3': 4, '4': 1, '5': 11, '6': '.BlockUser.Stringx', '10': 'deviceInfo'},
     const {'1': 'blocked_at', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'blockedAt'},
     const {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'used_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'usedAt'},
@@ -248,7 +248,7 @@ const Token$json = const {
 };
 
 /// Descriptor for `Token`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List tokenDescriptor = $convert.base64Decode('CgVUb2tlbhIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB2Jsb2NrZWQYAyABKAhSB2Jsb2NrZWQSHwoLZGV2aWNlX2luZm8YBCABKAlSCmRldmljZUluZm8SOQoKYmxvY2tlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWJsb2NrZWRBdBI5CgpjcmVhdGVkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjMKB3VzZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgZ1c2VkQXQSOQoKZXhwaXJlc19hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBIhCgxhY2Nlc3NfdG9rZW4YCSABKAlSC2FjY2Vzc1Rva2VuEiMKDXJlZnJlc2hfdG9rZW4YCiABKAlSDHJlZnJlc2hUb2tlbhI5Cg5sb2dnZWRfaW5fZnJvbRgLIAEoCzITLkJsb2NrVXNlci5Mb2NhdGlvblIMbG9nZ2VkSW5Gcm9tEigKBHR5cGUYDCABKA4yFC5CbG9ja1VzZXIuVG9rZW5UeXBlUgR0eXBl');
+final $typed_data.Uint8List tokenDescriptor = $convert.base64Decode('CgVUb2tlbhIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhgKB2Jsb2NrZWQYAyABKAhSB2Jsb2NrZWQSMwoLZGV2aWNlX2luZm8YBCABKAsyEi5CbG9ja1VzZXIuU3RyaW5neFIKZGV2aWNlSW5mbxI5CgpibG9ja2VkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJYmxvY2tlZEF0EjkKCmNyZWF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSMwoHdXNlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBnVzZWRBdBI5CgpleHBpcmVzX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0EiEKDGFjY2Vzc190b2tlbhgJIAEoCVILYWNjZXNzVG9rZW4SIwoNcmVmcmVzaF90b2tlbhgKIAEoCVIMcmVmcmVzaFRva2VuEjkKDmxvZ2dlZF9pbl9mcm9tGAsgASgLMhMuQmxvY2tVc2VyLkxvY2F0aW9uUgxsb2dnZWRJbkZyb20SKAoEdHlwZRgMIAEoDjIULkJsb2NrVXNlci5Ub2tlblR5cGVSBHR5cGU=');
 @$core.Deprecated('Use activeMeasurementDescriptor instead')
 const ActiveMeasurement$json = const {
   '1': 'ActiveMeasurement',
