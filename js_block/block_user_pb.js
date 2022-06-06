@@ -2042,7 +2042,7 @@ proto.BlockUser.User.prototype.toObject = function(opt_includeInstance) {
 proto.BlockUser.User.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    username: (f = msg.getUsername()) && proto.BlockUser.Stringx.toObject(includeInstance, f),
     email: (f = msg.getEmail()) && proto.BlockUser.Stringx.toObject(includeInstance, f),
     password: jspb.Message.getFieldWithDefault(msg, 4, ""),
     image: (f = msg.getImage()) && proto.BlockUser.Stringx.toObject(includeInstance, f),
@@ -2072,7 +2072,8 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     phoneNumberIsVerified: jspb.Message.getBooleanFieldWithDefault(msg, 29, false),
     verificationTextSentAt: (f = msg.getVerificationTextSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     verifiedPhoneNumbersList: (f = jspb.Message.getRepeatedField(msg, 31)) == null ? undefined : f,
-    preferredLanguage: jspb.Message.getFieldWithDefault(msg, 32, 0)
+    preferredLanguage: jspb.Message.getFieldWithDefault(msg, 32, 0),
+    usernameHash: jspb.Message.getFieldWithDefault(msg, 33, "")
   };
 
   if (includeInstance) {
@@ -2114,7 +2115,8 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.BlockUser.Stringx;
+      reader.readMessage(value,proto.BlockUser.Stringx.deserializeBinaryFromReader);
       msg.setUsername(value);
       break;
     case 3:
@@ -2253,6 +2255,10 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {!proto.BlockUser.LanguageCode} */ (reader.readEnum());
       msg.setPreferredLanguage(value);
       break;
+    case 33:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsernameHash(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2290,10 +2296,11 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getUsername();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      proto.BlockUser.Stringx.serializeBinaryToWriter
     );
   }
   f = message.getEmail();
@@ -2522,6 +2529,13 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getUsernameHash();
+  if (f.length > 0) {
+    writer.writeString(
+      33,
+      f
+    );
+  }
 };
 
 
@@ -2544,20 +2558,39 @@ proto.BlockUser.User.prototype.setId = function(value) {
 
 
 /**
- * optional string username = 2;
- * @return {string}
+ * optional Stringx username = 2;
+ * @return {?proto.BlockUser.Stringx}
  */
 proto.BlockUser.User.prototype.getUsername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type{?proto.BlockUser.Stringx} */ (
+    jspb.Message.getWrapperField(this, proto.BlockUser.Stringx, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.BlockUser.Stringx|undefined} value
+ * @return {!proto.BlockUser.User} returns this
+*/
+proto.BlockUser.User.prototype.setUsername = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.setUsername = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.BlockUser.User.prototype.clearUsername = function() {
+  return this.setUsername(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -3440,6 +3473,24 @@ proto.BlockUser.User.prototype.getPreferredLanguage = function() {
  */
 proto.BlockUser.User.prototype.setPreferredLanguage = function(value) {
   return jspb.Message.setProto3EnumField(this, 32, value);
+};
+
+
+/**
+ * optional string username_hash = 33;
+ * @return {string}
+ */
+proto.BlockUser.User.prototype.getUsernameHash = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 33, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.setUsernameHash = function(value) {
+  return jspb.Message.setProto3StringField(this, 33, value);
 };
 
 

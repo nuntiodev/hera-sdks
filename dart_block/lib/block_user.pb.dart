@@ -616,7 +616,7 @@ class Stringx extends $pb.GeneratedMessage {
 class User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'username')
+    ..aOM<Stringx>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'username', subBuilder: Stringx.create)
     ..aOM<Stringx>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Stringx.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..aOM<Stringx>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: Stringx.create)
@@ -647,13 +647,14 @@ class User extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationTextSentAt', subBuilder: $1.Timestamp.create)
     ..pPS(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
     ..e<LanguageCode>(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'preferredLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..aOS(33, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usernameHash')
     ..hasRequiredFields = false
   ;
 
   User._() : super();
   factory User({
     $core.String? id,
-    $core.String? username,
+    Stringx? username,
     Stringx? email,
     $core.String? password,
     Stringx? image,
@@ -684,6 +685,7 @@ class User extends $pb.GeneratedMessage {
     $1.Timestamp? verificationTextSentAt,
     $core.Iterable<$core.String>? verifiedPhoneNumbers,
     LanguageCode? preferredLanguage,
+    $core.String? usernameHash,
   }) {
     final _result = create();
     if (id != null) {
@@ -782,6 +784,9 @@ class User extends $pb.GeneratedMessage {
     if (preferredLanguage != null) {
       _result.preferredLanguage = preferredLanguage;
     }
+    if (usernameHash != null) {
+      _result.usernameHash = usernameHash;
+    }
     return _result;
   }
   factory User.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
@@ -815,13 +820,15 @@ class User extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get username => $_getSZ(1);
+  Stringx get username => $_getN(1);
   @$pb.TagNumber(2)
-  set username($core.String v) { $_setString(1, v); }
+  set username(Stringx v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasUsername() => $_has(1);
   @$pb.TagNumber(2)
   void clearUsername() => clearField(2);
+  @$pb.TagNumber(2)
+  Stringx ensureUsername() => $_ensure(1);
 
   @$pb.TagNumber(3)
   Stringx get email => $_getN(2);
@@ -1112,6 +1119,15 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasPreferredLanguage() => $_has(31);
   @$pb.TagNumber(32)
   void clearPreferredLanguage() => clearField(32);
+
+  @$pb.TagNumber(33)
+  $core.String get usernameHash => $_getSZ(32);
+  @$pb.TagNumber(33)
+  set usernameHash($core.String v) { $_setString(32, v); }
+  @$pb.TagNumber(33)
+  $core.bool hasUsernameHash() => $_has(32);
+  @$pb.TagNumber(33)
+  void clearUsernameHash() => clearField(33);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
