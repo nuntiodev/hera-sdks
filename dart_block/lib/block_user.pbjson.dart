@@ -103,23 +103,13 @@ const Config$json = const {
     const {'1': 'require_email_verification', '3': 11, '4': 1, '5': 8, '10': 'requireEmailVerification'},
     const {'1': 'login_type', '3': 12, '4': 1, '5': 14, '6': '.BlockUser.LoginType', '10': 'loginType'},
     const {'1': 'require_phone_number_verification', '3': 13, '4': 1, '5': 8, '10': 'requirePhoneNumberVerification'},
-    const {
-      '1': 'default_language',
-      '3': 14,
-      '4': 1,
-      '5': 14,
-      '6': '.BlockUser.LanguageCode',
-      '8': const {'3': true},
-      '10': 'defaultLanguage',
-    },
-    const {'1': 'internal_encryption_level', '3': 15, '4': 1, '5': 5, '10': 'internalEncryptionLevel'},
-    const {'1': 'available_languages', '3': 16, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'availableLanguages'},
-    const {'1': 'supported_languages', '3': 17, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'supportedLanguages'},
+    const {'1': 'available_languages', '3': 14, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'availableLanguages'},
+    const {'1': 'supported_languages', '3': 15, '4': 3, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'supportedLanguages'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEiYKBG5hbWUYAiABKAsyEi5CbG9ja1VzZXIuU3RyaW5neFIEbmFtZRImCgRsb2dvGAMgASgLMhIuQmxvY2tVc2VyLlN0cmluZ3hSBGxvZ28SMgoVZW5hYmxlX251bnRpb19jb25uZWN0GAQgASgIUhNlbmFibGVOdW50aW9Db25uZWN0EjQKFmRpc2FibGVfZGVmYXVsdF9zaWdudXAYBSABKAhSFGRpc2FibGVEZWZhdWx0U2lnbnVwEjIKFWRpc2FibGVfZGVmYXVsdF9sb2dpbhgGIAEoCFITZGlzYWJsZURlZmF1bHRMb2dpbhI5CgpjcmVhdGVkX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYCSABKAhSEHZhbGlkYXRlUGFzc3dvcmQSKgoRbnVudGlvX2Nvbm5lY3RfaWQYCiABKAlSD251bnRpb0Nvbm5lY3RJZBI8ChpyZXF1aXJlX2VtYWlsX3ZlcmlmaWNhdGlvbhgLIAEoCFIYcmVxdWlyZUVtYWlsVmVyaWZpY2F0aW9uEjMKCmxvZ2luX3R5cGUYDCABKA4yFC5CbG9ja1VzZXIuTG9naW5UeXBlUglsb2dpblR5cGUSSQohcmVxdWlyZV9waG9uZV9udW1iZXJfdmVyaWZpY2F0aW9uGA0gASgIUh5yZXF1aXJlUGhvbmVOdW1iZXJWZXJpZmljYXRpb24SRgoQZGVmYXVsdF9sYW5ndWFnZRgOIAEoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVCAhgBUg9kZWZhdWx0TGFuZ3VhZ2USOgoZaW50ZXJuYWxfZW5jcnlwdGlvbl9sZXZlbBgPIAEoBVIXaW50ZXJuYWxFbmNyeXB0aW9uTGV2ZWwSSAoTYXZhaWxhYmxlX2xhbmd1YWdlcxgQIAMoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEmF2YWlsYWJsZUxhbmd1YWdlcxJIChNzdXBwb3J0ZWRfbGFuZ3VhZ2VzGBEgAygOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVISc3VwcG9ydGVkTGFuZ3VhZ2Vz');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSDgoCaWQYASABKAlSAmlkEiYKBG5hbWUYAiABKAsyEi5CbG9ja1VzZXIuU3RyaW5neFIEbmFtZRImCgRsb2dvGAMgASgLMhIuQmxvY2tVc2VyLlN0cmluZ3hSBGxvZ28SMgoVZW5hYmxlX251bnRpb19jb25uZWN0GAQgASgIUhNlbmFibGVOdW50aW9Db25uZWN0EjQKFmRpc2FibGVfZGVmYXVsdF9zaWdudXAYBSABKAhSFGRpc2FibGVEZWZhdWx0U2lnbnVwEjIKFWRpc2FibGVfZGVmYXVsdF9sb2dpbhgGIAEoCFITZGlzYWJsZURlZmF1bHRMb2dpbhI5CgpjcmVhdGVkX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYCSABKAhSEHZhbGlkYXRlUGFzc3dvcmQSKgoRbnVudGlvX2Nvbm5lY3RfaWQYCiABKAlSD251bnRpb0Nvbm5lY3RJZBI8ChpyZXF1aXJlX2VtYWlsX3ZlcmlmaWNhdGlvbhgLIAEoCFIYcmVxdWlyZUVtYWlsVmVyaWZpY2F0aW9uEjMKCmxvZ2luX3R5cGUYDCABKA4yFC5CbG9ja1VzZXIuTG9naW5UeXBlUglsb2dpblR5cGUSSQohcmVxdWlyZV9waG9uZV9udW1iZXJfdmVyaWZpY2F0aW9uGA0gASgIUh5yZXF1aXJlUGhvbmVOdW1iZXJWZXJpZmljYXRpb24SSAoTYXZhaWxhYmxlX2xhbmd1YWdlcxgOIAMoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEmF2YWlsYWJsZUxhbmd1YWdlcxJIChNzdXBwb3J0ZWRfbGFuZ3VhZ2VzGA8gAygOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZVISc3VwcG9ydGVkTGFuZ3VhZ2Vz');
 @$core.Deprecated('Use emailDescriptor instead')
 const Email$json = const {
   '1': 'Email',
