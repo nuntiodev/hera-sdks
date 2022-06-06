@@ -55,8 +55,8 @@ enum LanguageCode {
 
 message Config {
     string id = 1;
-    string name = 2;
-    string logo = 3;
+    Stringx name = 2;
+    Stringx logo = 3;
     bool enable_nuntio_connect = 4;
     bool disable_default_signup = 5;
     bool disable_default_login = 6;
@@ -82,18 +82,18 @@ enum EmailType {
 
 message Email {
     string id = 1;
-    string logo = 2;
-    string welcome_message = 3;
-    string body_message = 4;
-    string footer_message = 5;
-    string title = 6;
+    Stringx logo = 2;
+    Stringx welcome_message = 3;
+    Stringx body_message = 4;
+    Stringx footer_message = 5;
+    Stringx title = 6;
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
     google.protobuf.Timestamp encrypted_at = 9;
     bool trigger_on_create = 10;
     int32 internal_encryption_level = 11;
-    string subject = 12;
-    string template_path = 13;
+    Stringx subject = 12;
+    Stringx template_path = 13;
     LanguageCode language_code = 14;
 }
 
