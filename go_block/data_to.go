@@ -10,11 +10,12 @@ func (x *User) DataTo(to interface{}) error {
 	if to == nil {
 		return errors.New("cannot unpack value to nil")
 	}
-	if strings.TrimSpace(x.Metadata) == "" {
+	if x.Metadata == nil && strings.TrimSpace(x.Metadata.Body) == "" {
 		return nil
-	}
-	if err := json.Unmarshal([]byte(x.Metadata), to); err != nil {
-		return err
+	} else {
+		if err := json.Unmarshal([]byte(x.Metadata), to); err != nil {
+			return err
+		}
 	}
 	return nil
 }
