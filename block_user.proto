@@ -67,7 +67,7 @@ message Config {
     bool require_email_verification = 11;
     LoginType login_type = 12;
     bool require_phone_number_verification = 13;
-    LanguageCode default_language = 14;
+    LanguageCode default_language = 14 [deprecated = true];
     int32 internal_encryption_level = 15;
     repeated LanguageCode available_languages = 16;
     repeated LanguageCode supported_languages = 17;
@@ -97,13 +97,19 @@ message Email {
     LanguageCode language_code = 14;
 }
 
+message Stringx {
+    int32 external_encryption_level = 1;
+    int32 internal_encryption_level = 2;
+    string body = 3;
+}
+
 message User {
     string id = 1;
     string username = 2;
     string email = 3;
     string password = 4;
     string image = 5;
-    int32 external_encryption_level = 6;
+    bool external_encryption_level = 6;
     int32 internal_encryption_level = 7;
     string metadata = 8;
 	google.protobuf.Timestamp created_at = 9;
