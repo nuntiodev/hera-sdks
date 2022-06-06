@@ -53,6 +53,7 @@ class Config extends $pb.GeneratedMessage {
     $core.bool? requireEmailVerification,
     LoginType? loginType,
     $core.bool? requirePhoneNumberVerification,
+  @$core.Deprecated('This field is deprecated.')
     LanguageCode? defaultLanguage,
     $core.int? internalEncryptionLevel,
     $core.Iterable<LanguageCode>? availableLanguages,
@@ -99,6 +100,7 @@ class Config extends $pb.GeneratedMessage {
       _result.requirePhoneNumberVerification = requirePhoneNumberVerification;
     }
     if (defaultLanguage != null) {
+      // ignore: deprecated_member_use_from_same_package
       _result.defaultLanguage = defaultLanguage;
     }
     if (internalEncryptionLevel != null) {
@@ -254,12 +256,16 @@ class Config extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   void clearRequirePhoneNumberVerification() => clearField(13);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(14)
   LanguageCode get defaultLanguage => $_getN(13);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(14)
   set defaultLanguage(LanguageCode v) { setField(14, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(14)
   $core.bool hasDefaultLanguage() => $_has(13);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(14)
   void clearDefaultLanguage() => clearField(14);
 
@@ -521,8 +527,8 @@ class User extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image')
-    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'externalEncryptionLevel', $pb.PbFieldType.O3)
-    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'externalEncrypted')
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncrypted')
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata')
     ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
@@ -558,8 +564,8 @@ class User extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? password,
     $core.String? image,
-    $core.int? externalEncryptionLevel,
-    $core.int? internalEncryptionLevel,
+    $core.bool? externalEncrypted,
+    $core.bool? internalEncrypted,
     $core.String? metadata,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
@@ -602,11 +608,11 @@ class User extends $pb.GeneratedMessage {
     if (image != null) {
       _result.image = image;
     }
-    if (externalEncryptionLevel != null) {
-      _result.externalEncryptionLevel = externalEncryptionLevel;
+    if (externalEncrypted != null) {
+      _result.externalEncrypted = externalEncrypted;
     }
-    if (internalEncryptionLevel != null) {
-      _result.internalEncryptionLevel = internalEncryptionLevel;
+    if (internalEncrypted != null) {
+      _result.internalEncrypted = internalEncrypted;
     }
     if (metadata != null) {
       _result.metadata = metadata;
@@ -752,22 +758,22 @@ class User extends $pb.GeneratedMessage {
   void clearImage() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.int get externalEncryptionLevel => $_getIZ(5);
+  $core.bool get externalEncrypted => $_getBF(5);
   @$pb.TagNumber(6)
-  set externalEncryptionLevel($core.int v) { $_setSignedInt32(5, v); }
+  set externalEncrypted($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasExternalEncryptionLevel() => $_has(5);
+  $core.bool hasExternalEncrypted() => $_has(5);
   @$pb.TagNumber(6)
-  void clearExternalEncryptionLevel() => clearField(6);
+  void clearExternalEncrypted() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.int get internalEncryptionLevel => $_getIZ(6);
+  $core.bool get internalEncrypted => $_getBF(6);
   @$pb.TagNumber(7)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(6, v); }
+  set internalEncrypted($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasInternalEncryptionLevel() => $_has(6);
+  $core.bool hasInternalEncrypted() => $_has(6);
   @$pb.TagNumber(7)
-  void clearInternalEncryptionLevel() => clearField(7);
+  void clearInternalEncrypted() => clearField(7);
 
   @$pb.TagNumber(8)
   $core.String get metadata => $_getSZ(7);

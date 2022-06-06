@@ -1645,8 +1645,8 @@ proto.BlockUser.User.toObject = function(includeInstance, msg) {
     email: jspb.Message.getFieldWithDefault(msg, 3, ""),
     password: jspb.Message.getFieldWithDefault(msg, 4, ""),
     image: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    externalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    internalEncryptionLevel: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    externalEncrypted: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    internalEncrypted: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     metadata: jspb.Message.getFieldWithDefault(msg, 8, ""),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1729,12 +1729,12 @@ proto.BlockUser.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setImage(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setExternalEncryptionLevel(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setExternalEncrypted(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setInternalEncryptionLevel(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setInternalEncrypted(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -1910,16 +1910,16 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getExternalEncryptionLevel();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getExternalEncrypted();
+  if (f) {
+    writer.writeBool(
       6,
       f
     );
   }
-  f = message.getInternalEncryptionLevel();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getInternalEncrypted();
+  if (f) {
+    writer.writeBool(
       7,
       f
     );
@@ -2203,38 +2203,38 @@ proto.BlockUser.User.prototype.setImage = function(value) {
 
 
 /**
- * optional int32 external_encryption_level = 6;
- * @return {number}
+ * optional bool external_encrypted = 6;
+ * @return {boolean}
  */
-proto.BlockUser.User.prototype.getExternalEncryptionLevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+proto.BlockUser.User.prototype.getExternalEncrypted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.setExternalEncryptionLevel = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+proto.BlockUser.User.prototype.setExternalEncrypted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
 /**
- * optional int32 internal_encryption_level = 7;
- * @return {number}
+ * optional bool internal_encrypted = 7;
+ * @return {boolean}
  */
-proto.BlockUser.User.prototype.getInternalEncryptionLevel = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+proto.BlockUser.User.prototype.getInternalEncrypted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.BlockUser.User} returns this
  */
-proto.BlockUser.User.prototype.setInternalEncryptionLevel = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+proto.BlockUser.User.prototype.setInternalEncrypted = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
