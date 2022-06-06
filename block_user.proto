@@ -98,7 +98,7 @@ message Email {
 }
 
 message Stringx {
-    in32 external_encryption_level = 1;
+    int32 external_encryption_level = 1;
     int32 internal_encryption_level = 2;
     string body = 3;
 }
