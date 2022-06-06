@@ -89,10 +89,9 @@ message Email {
     google.protobuf.Timestamp updated_at = 8;
     google.protobuf.Timestamp encrypted_at = 9;
     bool trigger_on_create = 10;
-    int32 internal_encryption_level = 11;
-    Stringx subject = 12;
-    Stringx template_path = 13;
-    LanguageCode language_code = 14;
+    Stringx subject = 11;
+    Stringx template_path = 12;
+    LanguageCode language_code = 13;
 }
 
 message Stringx {
@@ -107,34 +106,32 @@ message User {
     Stringx email = 3;
     string password = 4;
     Stringx image = 5;
-    bool external_encrypted = 6;
-    bool internal_encrypted = 7;
-    Stringx metadata = 8;
-	google.protobuf.Timestamp created_at = 9;
-    google.protobuf.Timestamp updated_at = 10;
-    google.protobuf.Timestamp encrypted_at = 11;
-    Stringx first_name = 12;
-    Stringx last_name = 13;
-    google.protobuf.Timestamp birthdate = 14;
-    google.protobuf.Timestamp email_verified_at = 15;
-    bool email_is_verified = 16;
-    google.protobuf.Timestamp verification_email_sent_at = 17;
-    string email_verification_code = 18;
-    google.protobuf.Timestamp verification_email_expires_at = 19;
-    int32 verify_email_attempts = 20;
-    string reset_password_code = 21;
-    google.protobuf.Timestamp reset_password_email_sent_at = 22;
-    google.protobuf.Timestamp reset_password_email_expires_at = 23;
-    int32 reset_password_attempts = 24;
-    repeated string verified_emails = 25;
-    string email_hash = 26;
-    Stringx phone_number = 27;
-    string phone_number_hash = 28;
-    bool phone_number_is_verified = 29;
-    google.protobuf.Timestamp verification_text_sent_at = 30;
-    repeated string verified_phone_numbers = 31;
-    LanguageCode preferred_language = 32;
-    string username_hash = 33;
+    Stringx metadata = 6;
+	google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+    google.protobuf.Timestamp encrypted_at = 9;
+    Stringx first_name = 10;
+    Stringx last_name = 11;
+    google.protobuf.Timestamp birthdate = 12;
+    google.protobuf.Timestamp email_verified_at = 13;
+    bool email_is_verified = 14;
+    google.protobuf.Timestamp verification_email_sent_at = 15;
+    string email_verification_code = 16;
+    google.protobuf.Timestamp verification_email_expires_at = 17;
+    int32 verify_email_attempts = 18;
+    string reset_password_code = 19;
+    google.protobuf.Timestamp reset_password_email_sent_at = 20;
+    google.protobuf.Timestamp reset_password_email_expires_at = 21;
+    int32 reset_password_attempts = 22;
+    repeated string verified_emails = 23;
+    string email_hash = 24;
+    Stringx phone_number = 25;
+    string phone_number_hash = 26;
+    bool phone_number_is_verified = 27;
+    google.protobuf.Timestamp verification_text_sent_at = 28;
+    repeated string verified_phone_numbers = 29;
+    LanguageCode preferred_language = 30;
+    string username_hash = 31;
 }
 
 message UserFilter {
@@ -185,9 +182,8 @@ message Token {
     google.protobuf.Timestamp expires_at = 8;
     string access_token = 9;
     string refresh_token = 10;
-    int32 internal_encryption_level = 11;
-    Location logged_in_from = 12;
-    TokenType type = 13;
+    Location logged_in_from = 11;
+    TokenType type = 12;
 }
 
 message ActiveMeasurement {
