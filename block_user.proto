@@ -105,7 +105,7 @@ message Stringx {
 
 message User {
     string id = 1;
-    string username = 2;
+    Stringx username = 2;
     Stringx email = 3;
     string password = 4;
     Stringx image = 5;
@@ -136,6 +136,7 @@ message User {
     google.protobuf.Timestamp verification_text_sent_at = 30;
     repeated string verified_phone_numbers = 31;
     LanguageCode preferred_language = 32;
+    string username_hash = 33;
 }
 
 message UserFilter {
