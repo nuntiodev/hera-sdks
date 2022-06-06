@@ -67,10 +67,8 @@ message Config {
     bool require_email_verification = 11;
     LoginType login_type = 12;
     bool require_phone_number_verification = 13;
-    LanguageCode default_language = 14 [deprecated = true];
-    int32 internal_encryption_level = 15;
-    repeated LanguageCode available_languages = 16;
-    repeated LanguageCode supported_languages = 17;
+    repeated LanguageCode available_languages = 14;
+    repeated LanguageCode supported_languages = 15;
 }
 
 enum EmailType {
