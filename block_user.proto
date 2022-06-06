@@ -166,16 +166,16 @@ enum Platform {
 }
 
 message Location {
-    string country = 1;
-    string country_code = 2;
-    string city = 3;
+    Stringx country = 1;
+    Stringx country_code = 2;
+    Stringx city = 3;
 }
 
 message Token {
     string id = 1;
     string user_id = 2;
     bool blocked = 3;
-    string device_info = 4;
+    Stringx device_info = 4;
     google.protobuf.Timestamp blocked_at = 5;
     google.protobuf.Timestamp created_at = 6;
     google.protobuf.Timestamp used_at = 7;
