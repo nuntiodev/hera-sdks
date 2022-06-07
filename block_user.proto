@@ -87,11 +87,10 @@ message Email {
     string title = 6;
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
-    google.protobuf.Timestamp encrypted_at = 9;
-    bool trigger_on_create = 10;
-    string subject = 11;
-    string template_path = 12;
-    LanguageCode language_code = 13;
+    bool trigger_on_create = 9;
+    string subject = 10;
+    string template_path = 11;
+    LanguageCode language_code = 12;
 }
 
 message User {
@@ -103,29 +102,28 @@ message User {
     string metadata = 6;
 	google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
-    google.protobuf.Timestamp encrypted_at = 9;
-    string first_name = 10;
-    string last_name = 11;
-    google.protobuf.Timestamp birthdate = 12;
-    google.protobuf.Timestamp email_verified_at = 13;
-    bool email_is_verified = 14;
-    google.protobuf.Timestamp verification_email_sent_at = 15;
-    string email_verification_code = 16;
-    google.protobuf.Timestamp verification_email_expires_at = 17;
-    int32 verify_email_attempts = 18;
-    string reset_password_code = 19;
-    google.protobuf.Timestamp reset_password_email_sent_at = 20;
-    google.protobuf.Timestamp reset_password_email_expires_at = 21;
-    int32 reset_password_attempts = 22;
-    repeated string verified_emails = 23;
-    string email_hash = 24;
-    string phone_number = 25;
-    string phone_number_hash = 26;
-    bool phone_number_is_verified = 27;
-    google.protobuf.Timestamp verification_text_sent_at = 28;
-    repeated string verified_phone_numbers = 29;
-    LanguageCode preferred_language = 30;
-    string username_hash = 31;
+    string first_name = 9;
+    string last_name = 10;
+    google.protobuf.Timestamp birthdate = 11;
+    google.protobuf.Timestamp email_verified_at = 12;
+    bool email_is_verified = 13;
+    google.protobuf.Timestamp verification_email_sent_at = 14;
+    string email_verification_code = 15;
+    google.protobuf.Timestamp verification_email_expires_at = 16;
+    int32 verify_email_attempts = 17;
+    string reset_password_code = 18;
+    google.protobuf.Timestamp reset_password_email_sent_at = 19;
+    google.protobuf.Timestamp reset_password_email_expires_at = 20;
+    int32 reset_password_attempts = 21;
+    repeated string verified_emails = 22;
+    string email_hash = 23;
+    string phone_number = 24;
+    string phone_number_hash = 25;
+    bool phone_number_is_verified = 26;
+    google.protobuf.Timestamp verification_text_sent_at = 27;
+    repeated string verified_phone_numbers = 28;
+    LanguageCode preferred_language = 29;
+    string username_hash = 30;
 }
 
 message UserFilter {
