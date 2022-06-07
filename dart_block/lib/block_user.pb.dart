@@ -19,8 +19,8 @@ export 'block_user.pbenum.dart';
 class Config extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Config', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOM<Stringx>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name', subBuilder: Stringx.create)
-    ..aOM<Stringx>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo', subBuilder: Stringx.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableNuntioConnect')
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultSignup')
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disableDefaultLogin')
@@ -39,8 +39,8 @@ class Config extends $pb.GeneratedMessage {
   Config._() : super();
   factory Config({
     $core.String? id,
-    Stringx? name,
-    Stringx? logo,
+    $core.String? name,
+    $core.String? logo,
     $core.bool? enableNuntioConnect,
     $core.bool? disableDefaultSignup,
     $core.bool? disableDefaultLogin,
@@ -133,26 +133,22 @@ class Config extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  Stringx get name => $_getN(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set name(Stringx v) { setField(2, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
-  @$pb.TagNumber(2)
-  Stringx ensureName() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  Stringx get logo => $_getN(2);
+  $core.String get logo => $_getSZ(2);
   @$pb.TagNumber(3)
-  set logo(Stringx v) { setField(3, v); }
+  set logo($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasLogo() => $_has(2);
   @$pb.TagNumber(3)
   void clearLogo() => clearField(3);
-  @$pb.TagNumber(3)
-  Stringx ensureLogo() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.bool get enableNuntioConnect => $_getBF(3);
@@ -258,17 +254,17 @@ class Config extends $pb.GeneratedMessage {
 class Email extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Email', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOM<Stringx>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo', subBuilder: Stringx.create)
-    ..aOM<Stringx>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeMessage', subBuilder: Stringx.create)
-    ..aOM<Stringx>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bodyMessage', subBuilder: Stringx.create)
-    ..aOM<Stringx>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'footerMessage', subBuilder: Stringx.create)
-    ..aOM<Stringx>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title', subBuilder: Stringx.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logo')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'welcomeMessage')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bodyMessage')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'footerMessage')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
     ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'triggerOnCreate')
-    ..aOM<Stringx>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subject', subBuilder: Stringx.create)
-    ..aOM<Stringx>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'templatePath', subBuilder: Stringx.create)
+    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subject')
+    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'templatePath')
     ..e<LanguageCode>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'languageCode', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..hasRequiredFields = false
   ;
@@ -276,17 +272,17 @@ class Email extends $pb.GeneratedMessage {
   Email._() : super();
   factory Email({
     $core.String? id,
-    Stringx? logo,
-    Stringx? welcomeMessage,
-    Stringx? bodyMessage,
-    Stringx? footerMessage,
-    Stringx? title,
+    $core.String? logo,
+    $core.String? welcomeMessage,
+    $core.String? bodyMessage,
+    $core.String? footerMessage,
+    $core.String? title,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
     $1.Timestamp? encryptedAt,
     $core.bool? triggerOnCreate,
-    Stringx? subject,
-    Stringx? templatePath,
+    $core.String? subject,
+    $core.String? templatePath,
     LanguageCode? languageCode,
   }) {
     final _result = create();
@@ -362,59 +358,49 @@ class Email extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  Stringx get logo => $_getN(1);
+  $core.String get logo => $_getSZ(1);
   @$pb.TagNumber(2)
-  set logo(Stringx v) { setField(2, v); }
+  set logo($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasLogo() => $_has(1);
   @$pb.TagNumber(2)
   void clearLogo() => clearField(2);
-  @$pb.TagNumber(2)
-  Stringx ensureLogo() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  Stringx get welcomeMessage => $_getN(2);
+  $core.String get welcomeMessage => $_getSZ(2);
   @$pb.TagNumber(3)
-  set welcomeMessage(Stringx v) { setField(3, v); }
+  set welcomeMessage($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasWelcomeMessage() => $_has(2);
   @$pb.TagNumber(3)
   void clearWelcomeMessage() => clearField(3);
-  @$pb.TagNumber(3)
-  Stringx ensureWelcomeMessage() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  Stringx get bodyMessage => $_getN(3);
+  $core.String get bodyMessage => $_getSZ(3);
   @$pb.TagNumber(4)
-  set bodyMessage(Stringx v) { setField(4, v); }
+  set bodyMessage($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasBodyMessage() => $_has(3);
   @$pb.TagNumber(4)
   void clearBodyMessage() => clearField(4);
-  @$pb.TagNumber(4)
-  Stringx ensureBodyMessage() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  Stringx get footerMessage => $_getN(4);
+  $core.String get footerMessage => $_getSZ(4);
   @$pb.TagNumber(5)
-  set footerMessage(Stringx v) { setField(5, v); }
+  set footerMessage($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasFooterMessage() => $_has(4);
   @$pb.TagNumber(5)
   void clearFooterMessage() => clearField(5);
-  @$pb.TagNumber(5)
-  Stringx ensureFooterMessage() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  Stringx get title => $_getN(5);
+  $core.String get title => $_getSZ(5);
   @$pb.TagNumber(6)
-  set title(Stringx v) { setField(6, v); }
+  set title($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
   $core.bool hasTitle() => $_has(5);
   @$pb.TagNumber(6)
   void clearTitle() => clearField(6);
-  @$pb.TagNumber(6)
-  Stringx ensureTitle() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $1.Timestamp get createdAt => $_getN(6);
@@ -459,26 +445,22 @@ class Email extends $pb.GeneratedMessage {
   void clearTriggerOnCreate() => clearField(10);
 
   @$pb.TagNumber(11)
-  Stringx get subject => $_getN(10);
+  $core.String get subject => $_getSZ(10);
   @$pb.TagNumber(11)
-  set subject(Stringx v) { setField(11, v); }
+  set subject($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
   $core.bool hasSubject() => $_has(10);
   @$pb.TagNumber(11)
   void clearSubject() => clearField(11);
-  @$pb.TagNumber(11)
-  Stringx ensureSubject() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  Stringx get templatePath => $_getN(11);
+  $core.String get templatePath => $_getSZ(11);
   @$pb.TagNumber(12)
-  set templatePath(Stringx v) { setField(12, v); }
+  set templatePath($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
   $core.bool hasTemplatePath() => $_has(11);
   @$pb.TagNumber(12)
   void clearTemplatePath() => clearField(12);
-  @$pb.TagNumber(12)
-  Stringx ensureTemplatePath() => $_ensure(11);
 
   @$pb.TagNumber(13)
   LanguageCode get languageCode => $_getN(12);
@@ -490,94 +472,19 @@ class Email extends $pb.GeneratedMessage {
   void clearLanguageCode() => clearField(13);
 }
 
-class Stringx extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Stringx', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'externalEncryptionLevel', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'internalEncryptionLevel', $pb.PbFieldType.O3)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body')
-    ..hasRequiredFields = false
-  ;
-
-  Stringx._() : super();
-  factory Stringx({
-    $core.int? externalEncryptionLevel,
-    $core.int? internalEncryptionLevel,
-    $core.String? body,
-  }) {
-    final _result = create();
-    if (externalEncryptionLevel != null) {
-      _result.externalEncryptionLevel = externalEncryptionLevel;
-    }
-    if (internalEncryptionLevel != null) {
-      _result.internalEncryptionLevel = internalEncryptionLevel;
-    }
-    if (body != null) {
-      _result.body = body;
-    }
-    return _result;
-  }
-  factory Stringx.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Stringx.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Stringx clone() => Stringx()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Stringx copyWith(void Function(Stringx) updates) => super.copyWith((message) => updates(message as Stringx)) as Stringx; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Stringx create() => Stringx._();
-  Stringx createEmptyInstance() => create();
-  static $pb.PbList<Stringx> createRepeated() => $pb.PbList<Stringx>();
-  @$core.pragma('dart2js:noInline')
-  static Stringx getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Stringx>(create);
-  static Stringx? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get externalEncryptionLevel => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set externalEncryptionLevel($core.int v) { $_setSignedInt32(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasExternalEncryptionLevel() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearExternalEncryptionLevel() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.int get internalEncryptionLevel => $_getIZ(1);
-  @$pb.TagNumber(2)
-  set internalEncryptionLevel($core.int v) { $_setSignedInt32(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasInternalEncryptionLevel() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearInternalEncryptionLevel() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get body => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set body($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasBody() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearBody() => clearField(3);
-}
-
 class User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOM<Stringx>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'username', subBuilder: Stringx.create)
-    ..aOM<Stringx>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Stringx.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'username')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
-    ..aOM<Stringx>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: Stringx.create)
-    ..aOM<Stringx>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: Stringx.create)
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata')
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptedAt', subBuilder: $1.Timestamp.create)
-    ..aOM<Stringx>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName', subBuilder: Stringx.create)
-    ..aOM<Stringx>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName', subBuilder: Stringx.create)
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
+    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
     ..aOM<$1.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerifiedAt', subBuilder: $1.Timestamp.create)
     ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailIsVerified')
@@ -591,7 +498,7 @@ class User extends $pb.GeneratedMessage {
     ..a<$core.int>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordAttempts', $pb.PbFieldType.O3)
     ..pPS(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedEmails')
     ..aOS(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailHash')
-    ..aOM<Stringx>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumber', subBuilder: Stringx.create)
+    ..aOS(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumber')
     ..aOS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberHash')
     ..aOB(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneNumberIsVerified')
     ..aOM<$1.Timestamp>(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationTextSentAt', subBuilder: $1.Timestamp.create)
@@ -604,16 +511,16 @@ class User extends $pb.GeneratedMessage {
   User._() : super();
   factory User({
     $core.String? id,
-    Stringx? username,
-    Stringx? email,
+    $core.String? username,
+    $core.String? email,
     $core.String? password,
-    Stringx? image,
-    Stringx? metadata,
+    $core.String? image,
+    $core.String? metadata,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
     $1.Timestamp? encryptedAt,
-    Stringx? firstName,
-    Stringx? lastName,
+    $core.String? firstName,
+    $core.String? lastName,
     $1.Timestamp? birthdate,
     $1.Timestamp? emailVerifiedAt,
     $core.bool? emailIsVerified,
@@ -627,7 +534,7 @@ class User extends $pb.GeneratedMessage {
     $core.int? resetPasswordAttempts,
     $core.Iterable<$core.String>? verifiedEmails,
     $core.String? emailHash,
-    Stringx? phoneNumber,
+    $core.String? phoneNumber,
     $core.String? phoneNumberHash,
     $core.bool? phoneNumberIsVerified,
     $1.Timestamp? verificationTextSentAt,
@@ -762,26 +669,22 @@ class User extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  Stringx get username => $_getN(1);
+  $core.String get username => $_getSZ(1);
   @$pb.TagNumber(2)
-  set username(Stringx v) { setField(2, v); }
+  set username($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasUsername() => $_has(1);
   @$pb.TagNumber(2)
   void clearUsername() => clearField(2);
-  @$pb.TagNumber(2)
-  Stringx ensureUsername() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  Stringx get email => $_getN(2);
+  $core.String get email => $_getSZ(2);
   @$pb.TagNumber(3)
-  set email(Stringx v) { setField(3, v); }
+  set email($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasEmail() => $_has(2);
   @$pb.TagNumber(3)
   void clearEmail() => clearField(3);
-  @$pb.TagNumber(3)
-  Stringx ensureEmail() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get password => $_getSZ(3);
@@ -793,26 +696,22 @@ class User extends $pb.GeneratedMessage {
   void clearPassword() => clearField(4);
 
   @$pb.TagNumber(5)
-  Stringx get image => $_getN(4);
+  $core.String get image => $_getSZ(4);
   @$pb.TagNumber(5)
-  set image(Stringx v) { setField(5, v); }
+  set image($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasImage() => $_has(4);
   @$pb.TagNumber(5)
   void clearImage() => clearField(5);
-  @$pb.TagNumber(5)
-  Stringx ensureImage() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  Stringx get metadata => $_getN(5);
+  $core.String get metadata => $_getSZ(5);
   @$pb.TagNumber(6)
-  set metadata(Stringx v) { setField(6, v); }
+  set metadata($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
   $core.bool hasMetadata() => $_has(5);
   @$pb.TagNumber(6)
   void clearMetadata() => clearField(6);
-  @$pb.TagNumber(6)
-  Stringx ensureMetadata() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $1.Timestamp get createdAt => $_getN(6);
@@ -848,26 +747,22 @@ class User extends $pb.GeneratedMessage {
   $1.Timestamp ensureEncryptedAt() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  Stringx get firstName => $_getN(9);
+  $core.String get firstName => $_getSZ(9);
   @$pb.TagNumber(10)
-  set firstName(Stringx v) { setField(10, v); }
+  set firstName($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
   $core.bool hasFirstName() => $_has(9);
   @$pb.TagNumber(10)
   void clearFirstName() => clearField(10);
-  @$pb.TagNumber(10)
-  Stringx ensureFirstName() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  Stringx get lastName => $_getN(10);
+  $core.String get lastName => $_getSZ(10);
   @$pb.TagNumber(11)
-  set lastName(Stringx v) { setField(11, v); }
+  set lastName($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
   $core.bool hasLastName() => $_has(10);
   @$pb.TagNumber(11)
   void clearLastName() => clearField(11);
-  @$pb.TagNumber(11)
-  Stringx ensureLastName() => $_ensure(10);
 
   @$pb.TagNumber(12)
   $1.Timestamp get birthdate => $_getN(11);
@@ -993,15 +888,13 @@ class User extends $pb.GeneratedMessage {
   void clearEmailHash() => clearField(24);
 
   @$pb.TagNumber(25)
-  Stringx get phoneNumber => $_getN(24);
+  $core.String get phoneNumber => $_getSZ(24);
   @$pb.TagNumber(25)
-  set phoneNumber(Stringx v) { setField(25, v); }
+  set phoneNumber($core.String v) { $_setString(24, v); }
   @$pb.TagNumber(25)
   $core.bool hasPhoneNumber() => $_has(24);
   @$pb.TagNumber(25)
   void clearPhoneNumber() => clearField(25);
-  @$pb.TagNumber(25)
-  Stringx ensurePhoneNumber() => $_ensure(24);
 
   @$pb.TagNumber(26)
   $core.String get phoneNumberHash => $_getSZ(25);
@@ -1145,17 +1038,17 @@ class UserFilter extends $pb.GeneratedMessage {
 
 class Location extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Location', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BlockUser'), createEmptyInstance: create)
-    ..aOM<Stringx>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country', subBuilder: Stringx.create)
-    ..aOM<Stringx>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'countryCode', subBuilder: Stringx.create)
-    ..aOM<Stringx>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'city', subBuilder: Stringx.create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'countryCode')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'city')
     ..hasRequiredFields = false
   ;
 
   Location._() : super();
   factory Location({
-    Stringx? country,
-    Stringx? countryCode,
-    Stringx? city,
+    $core.String? country,
+    $core.String? countryCode,
+    $core.String? city,
   }) {
     final _result = create();
     if (country != null) {
@@ -1191,37 +1084,31 @@ class Location extends $pb.GeneratedMessage {
   static Location? _defaultInstance;
 
   @$pb.TagNumber(1)
-  Stringx get country => $_getN(0);
+  $core.String get country => $_getSZ(0);
   @$pb.TagNumber(1)
-  set country(Stringx v) { setField(1, v); }
+  set country($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasCountry() => $_has(0);
   @$pb.TagNumber(1)
   void clearCountry() => clearField(1);
-  @$pb.TagNumber(1)
-  Stringx ensureCountry() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  Stringx get countryCode => $_getN(1);
+  $core.String get countryCode => $_getSZ(1);
   @$pb.TagNumber(2)
-  set countryCode(Stringx v) { setField(2, v); }
+  set countryCode($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasCountryCode() => $_has(1);
   @$pb.TagNumber(2)
   void clearCountryCode() => clearField(2);
-  @$pb.TagNumber(2)
-  Stringx ensureCountryCode() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  Stringx get city => $_getN(2);
+  $core.String get city => $_getSZ(2);
   @$pb.TagNumber(3)
-  set city(Stringx v) { setField(3, v); }
+  set city($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasCity() => $_has(2);
   @$pb.TagNumber(3)
   void clearCity() => clearField(3);
-  @$pb.TagNumber(3)
-  Stringx ensureCity() => $_ensure(2);
 }
 
 class Token extends $pb.GeneratedMessage {
@@ -1229,7 +1116,7 @@ class Token extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
-    ..aOM<Stringx>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceInfo', subBuilder: Stringx.create)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceInfo')
     ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blockedAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usedAt', subBuilder: $1.Timestamp.create)
@@ -1246,7 +1133,7 @@ class Token extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? userId,
     $core.bool? blocked,
-    Stringx? deviceInfo,
+    $core.String? deviceInfo,
     $1.Timestamp? blockedAt,
     $1.Timestamp? createdAt,
     $1.Timestamp? usedAt,
@@ -1344,15 +1231,13 @@ class Token extends $pb.GeneratedMessage {
   void clearBlocked() => clearField(3);
 
   @$pb.TagNumber(4)
-  Stringx get deviceInfo => $_getN(3);
+  $core.String get deviceInfo => $_getSZ(3);
   @$pb.TagNumber(4)
-  set deviceInfo(Stringx v) { setField(4, v); }
+  set deviceInfo($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasDeviceInfo() => $_has(3);
   @$pb.TagNumber(4)
   void clearDeviceInfo() => clearField(4);
-  @$pb.TagNumber(4)
-  Stringx ensureDeviceInfo() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $1.Timestamp get blockedAt => $_getN(4);
