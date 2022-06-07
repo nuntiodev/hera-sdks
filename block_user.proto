@@ -55,8 +55,8 @@ enum LanguageCode {
 
 message Config {
     string id = 1;
-    Stringx name = 2;
-    Stringx logo = 3;
+    string name = 2;
+    string logo = 3;
     bool enable_nuntio_connect = 4;
     bool disable_default_signup = 5;
     bool disable_default_login = 6;
@@ -80,38 +80,32 @@ enum EmailType {
 
 message Email {
     string id = 1;
-    Stringx logo = 2;
-    Stringx welcome_message = 3;
-    Stringx body_message = 4;
-    Stringx footer_message = 5;
-    Stringx title = 6;
+    string logo = 2;
+    string welcome_message = 3;
+    string body_message = 4;
+    string footer_message = 5;
+    string title = 6;
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
     google.protobuf.Timestamp encrypted_at = 9;
     bool trigger_on_create = 10;
-    Stringx subject = 11;
-    Stringx template_path = 12;
+    string subject = 11;
+    string template_path = 12;
     LanguageCode language_code = 13;
-}
-
-message Stringx {
-    int32 external_encryption_level = 1;
-    int32 internal_encryption_level = 2;
-    string body = 3;
 }
 
 message User {
     string id = 1;
-    Stringx username = 2;
-    Stringx email = 3;
+    string username = 2;
+    string email = 3;
     string password = 4;
-    Stringx image = 5;
-    Stringx metadata = 6;
+    string image = 5;
+    string metadata = 6;
 	google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
     google.protobuf.Timestamp encrypted_at = 9;
-    Stringx first_name = 10;
-    Stringx last_name = 11;
+    string first_name = 10;
+    string last_name = 11;
     google.protobuf.Timestamp birthdate = 12;
     google.protobuf.Timestamp email_verified_at = 13;
     bool email_is_verified = 14;
@@ -125,7 +119,7 @@ message User {
     int32 reset_password_attempts = 22;
     repeated string verified_emails = 23;
     string email_hash = 24;
-    Stringx phone_number = 25;
+    string phone_number = 25;
     string phone_number_hash = 26;
     bool phone_number_is_verified = 27;
     google.protobuf.Timestamp verification_text_sent_at = 28;
@@ -166,16 +160,16 @@ enum Platform {
 }
 
 message Location {
-    Stringx country = 1;
-    Stringx country_code = 2;
-    Stringx city = 3;
+    string country = 1;
+    string country_code = 2;
+    string city = 3;
 }
 
 message Token {
     string id = 1;
     string user_id = 2;
     bool blocked = 3;
-    Stringx device_info = 4;
+    string device_info = 4;
     google.protobuf.Timestamp blocked_at = 5;
     google.protobuf.Timestamp created_at = 6;
     google.protobuf.Timestamp used_at = 7;
