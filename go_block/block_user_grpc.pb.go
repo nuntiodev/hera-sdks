@@ -32,6 +32,7 @@ type UserServiceClient interface {
 	UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	Search(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	ValidateCredentials(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Login(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	ValidateToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -186,6 +187,15 @@ func (c *userServiceClient) Get(ctx context.Context, in *UserRequest, opts ...gr
 func (c *userServiceClient) GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
 	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetAll", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) Search(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+	out := new(UserResponse)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/Search", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -426,6 +436,7 @@ type UserServiceServer interface {
 	UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error)
 	Get(context.Context, *UserRequest) (*UserResponse, error)
 	GetAll(context.Context, *UserRequest) (*UserResponse, error)
+	Search(context.Context, *UserRequest) (*UserResponse, error)
 	ValidateCredentials(context.Context, *UserRequest) (*UserResponse, error)
 	Login(context.Context, *UserRequest) (*UserResponse, error)
 	ValidateToken(context.Context, *UserRequest) (*UserResponse, error)
@@ -497,6 +508,9 @@ func (UnimplementedUserServiceServer) Get(context.Context, *UserRequest) (*UserR
 }
 func (UnimplementedUserServiceServer) GetAll(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
+}
+func (UnimplementedUserServiceServer) Search(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Search not implemented")
 }
 func (UnimplementedUserServiceServer) ValidateCredentials(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateCredentials not implemented")
@@ -830,6 +844,24 @@ func _UserService_GetAll_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserServiceServer).GetAll(ctx, req.(*UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_Search_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).Search(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/BlockUser.UserService/Search",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).Search(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1328,6 +1360,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAll",
 			Handler:    _UserService_GetAll_Handler,
+		},
+		{
+			MethodName: "Search",
+			Handler:    _UserService_Search_Handler,
 		},
 		{
 			MethodName: "ValidateCredentials",

@@ -81,6 +81,10 @@ class UserServiceClient extends $grpc.Client {
       '/BlockUser.UserService/GetAll',
       ($0.UserRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$search = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+      '/BlockUser.UserService/Search',
+      ($0.UserRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$validateCredentials =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/BlockUser.UserService/ValidateCredentials',
@@ -276,6 +280,11 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.UserResponse> getAll($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAll, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> search($0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$search, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> validateCredentials(
@@ -510,6 +519,13 @@ abstract class UserServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'GetAll',
         getAll_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'Search',
+        search_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -754,6 +770,11 @@ abstract class UserServiceBase extends $grpc.Service {
     return getAll(call, await request);
   }
 
+  $async.Future<$0.UserResponse> search_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return search(call, await request);
+  }
+
   $async.Future<$0.UserResponse> validateCredentials_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return validateCredentials(call, await request);
@@ -901,6 +922,8 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> get(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> getAll(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> search(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> validateCredentials(
       $grpc.ServiceCall call, $0.UserRequest request);

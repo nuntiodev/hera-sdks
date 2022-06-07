@@ -1733,6 +1733,7 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOM<Email>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email', subBuilder: Email.create)
     ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
     ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordCode')
+    ..aOS(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'search')
     ..hasRequiredFields = false
   ;
 
@@ -1754,6 +1755,7 @@ class UserRequest extends $pb.GeneratedMessage {
     Email? email,
     $core.String? emailVerificationCode,
     $core.String? resetPasswordCode,
+    $core.String? search,
   }) {
     final _result = create();
     if (user != null) {
@@ -1803,6 +1805,9 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (resetPasswordCode != null) {
       _result.resetPasswordCode = resetPasswordCode;
+    }
+    if (search != null) {
+      _result.search = search;
     }
     return _result;
   }
@@ -1978,6 +1983,15 @@ class UserRequest extends $pb.GeneratedMessage {
   $core.bool hasResetPasswordCode() => $_has(15);
   @$pb.TagNumber(16)
   void clearResetPasswordCode() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get search => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set search($core.String v) { $_setString(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasSearch() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearSearch() => clearField(17);
 }
 
 class UserResponse extends $pb.GeneratedMessage {

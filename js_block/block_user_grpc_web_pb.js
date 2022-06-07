@@ -932,6 +932,67 @@ proto.BlockUser.UserServicePromiseClient.prototype.getAll =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
+const methodDescriptor_UserService_Search = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/Search',
+  grpc.web.MethodType.UNARY,
+  proto.BlockUser.UserRequest,
+  proto.BlockUser.UserResponse,
+  /**
+   * @param {!proto.BlockUser.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.BlockUser.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.BlockUser.UserServiceClient.prototype.search =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/BlockUser.UserService/Search',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_Search,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BlockUser.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BlockUser.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.BlockUser.UserServicePromiseClient.prototype.search =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/BlockUser.UserService/Search',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_Search);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BlockUser.UserRequest,
+ *   !proto.BlockUser.UserResponse>}
+ */
 const methodDescriptor_UserService_ValidateCredentials = new grpc.web.MethodDescriptor(
   '/BlockUser.UserService/ValidateCredentials',
   grpc.web.MethodType.UNARY,

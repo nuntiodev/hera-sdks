@@ -4960,7 +4960,8 @@ proto.BlockUser.UserRequest.toObject = function(includeInstance, msg) {
     config: (f = msg.getConfig()) && proto.BlockUser.Config.toObject(includeInstance, f),
     email: (f = msg.getEmail()) && proto.BlockUser.Email.toObject(includeInstance, f),
     emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    resetPasswordCode: jspb.Message.getFieldWithDefault(msg, 16, "")
+    resetPasswordCode: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    search: jspb.Message.getFieldWithDefault(msg, 17, "")
   };
 
   if (includeInstance) {
@@ -5068,6 +5069,10 @@ proto.BlockUser.UserRequest.deserializeBinaryFromReader = function(msg, reader) 
     case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.setResetPasswordCode(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSearch(value);
       break;
     default:
       reader.skipField();
@@ -5215,6 +5220,13 @@ proto.BlockUser.UserRequest.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       16,
+      f
+    );
+  }
+  f = message.getSearch();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
       f
     );
   }
@@ -5659,6 +5671,24 @@ proto.BlockUser.UserRequest.prototype.getResetPasswordCode = function() {
  */
 proto.BlockUser.UserRequest.prototype.setResetPasswordCode = function(value) {
   return jspb.Message.setProto3StringField(this, 16, value);
+};
+
+
+/**
+ * optional string search = 17;
+ * @return {string}
+ */
+proto.BlockUser.UserRequest.prototype.getSearch = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.BlockUser.UserRequest} returns this
+ */
+proto.BlockUser.UserRequest.prototype.setSearch = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
 };
 
 
