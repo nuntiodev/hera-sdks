@@ -21,6 +21,7 @@ service UserService {
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
+    rpc Search(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Login(UserRequest) returns (UserResponse) {}
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
@@ -243,6 +244,7 @@ message UserRequest {
     Email email = 14;
     string email_verification_code = 15;
     string reset_password_code = 16;
+    string search = 17;
 }
 
 message UserResponse {
