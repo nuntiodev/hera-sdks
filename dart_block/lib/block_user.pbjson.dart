@@ -122,16 +122,15 @@ const Email$json = const {
     const {'1': 'title', '3': 6, '4': 1, '5': 9, '10': 'title'},
     const {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'encrypted_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'encryptedAt'},
-    const {'1': 'trigger_on_create', '3': 10, '4': 1, '5': 8, '10': 'triggerOnCreate'},
-    const {'1': 'subject', '3': 11, '4': 1, '5': 9, '10': 'subject'},
-    const {'1': 'template_path', '3': 12, '4': 1, '5': 9, '10': 'templatePath'},
-    const {'1': 'language_code', '3': 13, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'languageCode'},
+    const {'1': 'trigger_on_create', '3': 9, '4': 1, '5': 8, '10': 'triggerOnCreate'},
+    const {'1': 'subject', '3': 10, '4': 1, '5': 9, '10': 'subject'},
+    const {'1': 'template_path', '3': 11, '4': 1, '5': 9, '10': 'templatePath'},
+    const {'1': 'language_code', '3': 12, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'languageCode'},
   ],
 };
 
 /// Descriptor for `Email`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSEgoEbG9nbxgCIAEoCVIEbG9nbxInCg93ZWxjb21lX21lc3NhZ2UYAyABKAlSDndlbGNvbWVNZXNzYWdlEiEKDGJvZHlfbWVzc2FnZRgEIAEoCVILYm9keU1lc3NhZ2USJQoOZm9vdGVyX21lc3NhZ2UYBSABKAlSDWZvb3Rlck1lc3NhZ2USFAoFdGl0bGUYBiABKAlSBXRpdGxlEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBIqChF0cmlnZ2VyX29uX2NyZWF0ZRgKIAEoCFIPdHJpZ2dlck9uQ3JlYXRlEhgKB3N1YmplY3QYCyABKAlSB3N1YmplY3QSIwoNdGVtcGxhdGVfcGF0aBgMIAEoCVIMdGVtcGxhdGVQYXRoEjwKDWxhbmd1YWdlX2NvZGUYDSABKA4yFy5CbG9ja1VzZXIuTGFuZ3VhZ2VDb2RlUgxsYW5ndWFnZUNvZGU=');
+final $typed_data.Uint8List emailDescriptor = $convert.base64Decode('CgVFbWFpbBIOCgJpZBgBIAEoCVICaWQSEgoEbG9nbxgCIAEoCVIEbG9nbxInCg93ZWxjb21lX21lc3NhZ2UYAyABKAlSDndlbGNvbWVNZXNzYWdlEiEKDGJvZHlfbWVzc2FnZRgEIAEoCVILYm9keU1lc3NhZ2USJQoOZm9vdGVyX21lc3NhZ2UYBSABKAlSDWZvb3Rlck1lc3NhZ2USFAoFdGl0bGUYBiABKAlSBXRpdGxlEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIqChF0cmlnZ2VyX29uX2NyZWF0ZRgJIAEoCFIPdHJpZ2dlck9uQ3JlYXRlEhgKB3N1YmplY3QYCiABKAlSB3N1YmplY3QSIwoNdGVtcGxhdGVfcGF0aBgLIAEoCVIMdGVtcGxhdGVQYXRoEjwKDWxhbmd1YWdlX2NvZGUYDCABKA4yFy5CbG9ja1VzZXIuTGFuZ3VhZ2VDb2RlUgxsYW5ndWFnZUNvZGU=');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
@@ -144,34 +143,33 @@ const User$json = const {
     const {'1': 'metadata', '3': 6, '4': 1, '5': 9, '10': 'metadata'},
     const {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'encrypted_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'encryptedAt'},
-    const {'1': 'first_name', '3': 10, '4': 1, '5': 9, '10': 'firstName'},
-    const {'1': 'last_name', '3': 11, '4': 1, '5': 9, '10': 'lastName'},
-    const {'1': 'birthdate', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
-    const {'1': 'email_verified_at', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'emailVerifiedAt'},
-    const {'1': 'email_is_verified', '3': 14, '4': 1, '5': 8, '10': 'emailIsVerified'},
-    const {'1': 'verification_email_sent_at', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationEmailSentAt'},
-    const {'1': 'email_verification_code', '3': 16, '4': 1, '5': 9, '10': 'emailVerificationCode'},
-    const {'1': 'verification_email_expires_at', '3': 17, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationEmailExpiresAt'},
-    const {'1': 'verify_email_attempts', '3': 18, '4': 1, '5': 5, '10': 'verifyEmailAttempts'},
-    const {'1': 'reset_password_code', '3': 19, '4': 1, '5': 9, '10': 'resetPasswordCode'},
-    const {'1': 'reset_password_email_sent_at', '3': 20, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'resetPasswordEmailSentAt'},
-    const {'1': 'reset_password_email_expires_at', '3': 21, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'resetPasswordEmailExpiresAt'},
-    const {'1': 'reset_password_attempts', '3': 22, '4': 1, '5': 5, '10': 'resetPasswordAttempts'},
-    const {'1': 'verified_emails', '3': 23, '4': 3, '5': 9, '10': 'verifiedEmails'},
-    const {'1': 'email_hash', '3': 24, '4': 1, '5': 9, '10': 'emailHash'},
-    const {'1': 'phone_number', '3': 25, '4': 1, '5': 9, '10': 'phoneNumber'},
-    const {'1': 'phone_number_hash', '3': 26, '4': 1, '5': 9, '10': 'phoneNumberHash'},
-    const {'1': 'phone_number_is_verified', '3': 27, '4': 1, '5': 8, '10': 'phoneNumberIsVerified'},
-    const {'1': 'verification_text_sent_at', '3': 28, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationTextSentAt'},
-    const {'1': 'verified_phone_numbers', '3': 29, '4': 3, '5': 9, '10': 'verifiedPhoneNumbers'},
-    const {'1': 'preferred_language', '3': 30, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'preferredLanguage'},
-    const {'1': 'username_hash', '3': 31, '4': 1, '5': 9, '10': 'usernameHash'},
+    const {'1': 'first_name', '3': 9, '4': 1, '5': 9, '10': 'firstName'},
+    const {'1': 'last_name', '3': 10, '4': 1, '5': 9, '10': 'lastName'},
+    const {'1': 'birthdate', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
+    const {'1': 'email_verified_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'emailVerifiedAt'},
+    const {'1': 'email_is_verified', '3': 13, '4': 1, '5': 8, '10': 'emailIsVerified'},
+    const {'1': 'verification_email_sent_at', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationEmailSentAt'},
+    const {'1': 'email_verification_code', '3': 15, '4': 1, '5': 9, '10': 'emailVerificationCode'},
+    const {'1': 'verification_email_expires_at', '3': 16, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationEmailExpiresAt'},
+    const {'1': 'verify_email_attempts', '3': 17, '4': 1, '5': 5, '10': 'verifyEmailAttempts'},
+    const {'1': 'reset_password_code', '3': 18, '4': 1, '5': 9, '10': 'resetPasswordCode'},
+    const {'1': 'reset_password_email_sent_at', '3': 19, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'resetPasswordEmailSentAt'},
+    const {'1': 'reset_password_email_expires_at', '3': 20, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'resetPasswordEmailExpiresAt'},
+    const {'1': 'reset_password_attempts', '3': 21, '4': 1, '5': 5, '10': 'resetPasswordAttempts'},
+    const {'1': 'verified_emails', '3': 22, '4': 3, '5': 9, '10': 'verifiedEmails'},
+    const {'1': 'email_hash', '3': 23, '4': 1, '5': 9, '10': 'emailHash'},
+    const {'1': 'phone_number', '3': 24, '4': 1, '5': 9, '10': 'phoneNumber'},
+    const {'1': 'phone_number_hash', '3': 25, '4': 1, '5': 9, '10': 'phoneNumberHash'},
+    const {'1': 'phone_number_is_verified', '3': 26, '4': 1, '5': 8, '10': 'phoneNumberIsVerified'},
+    const {'1': 'verification_text_sent_at', '3': 27, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationTextSentAt'},
+    const {'1': 'verified_phone_numbers', '3': 28, '4': 3, '5': 9, '10': 'verifiedPhoneNumbers'},
+    const {'1': 'preferred_language', '3': 29, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'preferredLanguage'},
+    const {'1': 'username_hash', '3': 30, '4': 1, '5': 9, '10': 'usernameHash'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIaCgh1c2VybmFtZRgCIAEoCVIIdXNlcm5hbWUSFAoFZW1haWwYAyABKAlSBWVtYWlsEhoKCHBhc3N3b3JkGAQgASgJUghwYXNzd29yZBIUCgVpbWFnZRgFIAEoCVIFaW1hZ2USGgoIbWV0YWRhdGEYBiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBI9CgxlbmNyeXB0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtlbmNyeXB0ZWRBdBIdCgpmaXJzdF9uYW1lGAogASgJUglmaXJzdE5hbWUSGwoJbGFzdF9uYW1lGAsgASgJUghsYXN0TmFtZRI4CgliaXJ0aGRhdGUYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgliaXJ0aGRhdGUSRgoRZW1haWxfdmVyaWZpZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg9lbWFpbFZlcmlmaWVkQXQSKgoRZW1haWxfaXNfdmVyaWZpZWQYDiABKAhSD2VtYWlsSXNWZXJpZmllZBJXChp2ZXJpZmljYXRpb25fZW1haWxfc2VudF9hdBgPIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSF3ZlcmlmaWNhdGlvbkVtYWlsU2VudEF0EjYKF2VtYWlsX3ZlcmlmaWNhdGlvbl9jb2RlGBAgASgJUhVlbWFpbFZlcmlmaWNhdGlvbkNvZGUSXQoddmVyaWZpY2F0aW9uX2VtYWlsX2V4cGlyZXNfYXQYESABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhp2ZXJpZmljYXRpb25FbWFpbEV4cGlyZXNBdBIyChV2ZXJpZnlfZW1haWxfYXR0ZW1wdHMYEiABKAVSE3ZlcmlmeUVtYWlsQXR0ZW1wdHMSLgoTcmVzZXRfcGFzc3dvcmRfY29kZRgTIAEoCVIRcmVzZXRQYXNzd29yZENvZGUSWgoccmVzZXRfcGFzc3dvcmRfZW1haWxfc2VudF9hdBgUIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGHJlc2V0UGFzc3dvcmRFbWFpbFNlbnRBdBJgCh9yZXNldF9wYXNzd29yZF9lbWFpbF9leHBpcmVzX2F0GBUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIbcmVzZXRQYXNzd29yZEVtYWlsRXhwaXJlc0F0EjYKF3Jlc2V0X3Bhc3N3b3JkX2F0dGVtcHRzGBYgASgFUhVyZXNldFBhc3N3b3JkQXR0ZW1wdHMSJwoPdmVyaWZpZWRfZW1haWxzGBcgAygJUg52ZXJpZmllZEVtYWlscxIdCgplbWFpbF9oYXNoGBggASgJUgllbWFpbEhhc2gSIQoMcGhvbmVfbnVtYmVyGBkgASgJUgtwaG9uZU51bWJlchIqChFwaG9uZV9udW1iZXJfaGFzaBgaIAEoCVIPcGhvbmVOdW1iZXJIYXNoEjcKGHBob25lX251bWJlcl9pc192ZXJpZmllZBgbIAEoCFIVcGhvbmVOdW1iZXJJc1ZlcmlmaWVkElUKGXZlcmlmaWNhdGlvbl90ZXh0X3NlbnRfYXQYHCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhZ2ZXJpZmljYXRpb25UZXh0U2VudEF0EjQKFnZlcmlmaWVkX3Bob25lX251bWJlcnMYHSADKAlSFHZlcmlmaWVkUGhvbmVOdW1iZXJzEkYKEnByZWZlcnJlZF9sYW5ndWFnZRgeIAEoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEXByZWZlcnJlZExhbmd1YWdlEiMKDXVzZXJuYW1lX2hhc2gYHyABKAlSDHVzZXJuYW1lSGFzaA==');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIaCgh1c2VybmFtZRgCIAEoCVIIdXNlcm5hbWUSFAoFZW1haWwYAyABKAlSBWVtYWlsEhoKCHBhc3N3b3JkGAQgASgJUghwYXNzd29yZBIUCgVpbWFnZRgFIAEoCVIFaW1hZ2USGgoIbWV0YWRhdGEYBiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIdCgpmaXJzdF9uYW1lGAkgASgJUglmaXJzdE5hbWUSGwoJbGFzdF9uYW1lGAogASgJUghsYXN0TmFtZRI4CgliaXJ0aGRhdGUYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgliaXJ0aGRhdGUSRgoRZW1haWxfdmVyaWZpZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg9lbWFpbFZlcmlmaWVkQXQSKgoRZW1haWxfaXNfdmVyaWZpZWQYDSABKAhSD2VtYWlsSXNWZXJpZmllZBJXChp2ZXJpZmljYXRpb25fZW1haWxfc2VudF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSF3ZlcmlmaWNhdGlvbkVtYWlsU2VudEF0EjYKF2VtYWlsX3ZlcmlmaWNhdGlvbl9jb2RlGA8gASgJUhVlbWFpbFZlcmlmaWNhdGlvbkNvZGUSXQoddmVyaWZpY2F0aW9uX2VtYWlsX2V4cGlyZXNfYXQYECABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhp2ZXJpZmljYXRpb25FbWFpbEV4cGlyZXNBdBIyChV2ZXJpZnlfZW1haWxfYXR0ZW1wdHMYESABKAVSE3ZlcmlmeUVtYWlsQXR0ZW1wdHMSLgoTcmVzZXRfcGFzc3dvcmRfY29kZRgSIAEoCVIRcmVzZXRQYXNzd29yZENvZGUSWgoccmVzZXRfcGFzc3dvcmRfZW1haWxfc2VudF9hdBgTIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGHJlc2V0UGFzc3dvcmRFbWFpbFNlbnRBdBJgCh9yZXNldF9wYXNzd29yZF9lbWFpbF9leHBpcmVzX2F0GBQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIbcmVzZXRQYXNzd29yZEVtYWlsRXhwaXJlc0F0EjYKF3Jlc2V0X3Bhc3N3b3JkX2F0dGVtcHRzGBUgASgFUhVyZXNldFBhc3N3b3JkQXR0ZW1wdHMSJwoPdmVyaWZpZWRfZW1haWxzGBYgAygJUg52ZXJpZmllZEVtYWlscxIdCgplbWFpbF9oYXNoGBcgASgJUgllbWFpbEhhc2gSIQoMcGhvbmVfbnVtYmVyGBggASgJUgtwaG9uZU51bWJlchIqChFwaG9uZV9udW1iZXJfaGFzaBgZIAEoCVIPcGhvbmVOdW1iZXJIYXNoEjcKGHBob25lX251bWJlcl9pc192ZXJpZmllZBgaIAEoCFIVcGhvbmVOdW1iZXJJc1ZlcmlmaWVkElUKGXZlcmlmaWNhdGlvbl90ZXh0X3NlbnRfYXQYGyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhZ2ZXJpZmljYXRpb25UZXh0U2VudEF0EjQKFnZlcmlmaWVkX3Bob25lX251bWJlcnMYHCADKAlSFHZlcmlmaWVkUGhvbmVOdW1iZXJzEkYKEnByZWZlcnJlZF9sYW5ndWFnZRgdIAEoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEXByZWZlcnJlZExhbmd1YWdlEiMKDXVzZXJuYW1lX2hhc2gYHiABKAlSDHVzZXJuYW1lSGFzaA==');
 @$core.Deprecated('Use userFilterDescriptor instead')
 const UserFilter$json = const {
   '1': 'UserFilter',
