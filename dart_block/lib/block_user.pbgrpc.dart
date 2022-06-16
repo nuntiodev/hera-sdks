@@ -3,7 +3,7 @@
 //  source: block_user.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:async' as $async;
 
@@ -178,14 +178,9 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/CreateNamespaceConfig',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updateConfigSettings =
+  static final _$updateConfig =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UpdateConfigSettings',
-          ($0.UserRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updateConfigDetails =
-      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UpdateConfigDetails',
+          '/BlockUser.UserService/UpdateConfig',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$getConfig =
@@ -392,16 +387,9 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createNamespaceConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> updateConfigSettings(
-      $0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> updateConfig($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateConfigSettings, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UserResponse> updateConfigDetails(
-      $0.UserRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateConfigDetails, request, options: options);
+    return $createUnaryCall(_$updateConfig, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> getConfig($0.UserRequest request,
@@ -664,15 +652,8 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdateConfigSettings',
-        updateConfigSettings_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
-        ($0.UserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdateConfigDetails',
-        updateConfigDetails_Pre,
+        'UpdateConfig',
+        updateConfig_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -870,14 +851,9 @@ abstract class UserServiceBase extends $grpc.Service {
     return createNamespaceConfig(call, await request);
   }
 
-  $async.Future<$0.UserResponse> updateConfigSettings_Pre(
+  $async.Future<$0.UserResponse> updateConfig_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updateConfigSettings(call, await request);
-  }
-
-  $async.Future<$0.UserResponse> updateConfigDetails_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updateConfigDetails(call, await request);
+    return updateConfig(call, await request);
   }
 
   $async.Future<$0.UserResponse> getConfig_Pre(
@@ -963,9 +939,7 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> createNamespaceConfig(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updateConfigSettings(
-      $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updateConfigDetails(
+  $async.Future<$0.UserResponse> updateConfig(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> getConfig(
       $grpc.ServiceCall call, $0.UserRequest request);
