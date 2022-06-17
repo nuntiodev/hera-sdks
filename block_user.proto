@@ -11,13 +11,8 @@ service UserService {
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
     rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
-    rpc UpdateImage(UserRequest) returns (UserResponse) {}
-    rpc UpdateName(UserRequest) returns (UserResponse) {}
-    rpc UpdateBirthdate(UserRequest) returns (UserResponse) {}
-    rpc UpdateEmail(UserRequest) returns (UserResponse) {}
-    rpc UpdatePhoneNumber(UserRequest) returns (UserResponse) {}
-    rpc UpdateUsername(UserRequest) returns (UserResponse) {}
-    rpc UpdatePreferredLanguage(UserRequest) returns (UserResponse) {}
+    rpc UpdateContact(UserRequest) returns (UserResponse) {}
+    rpc UpdateProfile(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
@@ -67,8 +62,6 @@ message Config {
     bool require_email_verification = 11;
     LoginType login_type = 12;
     bool require_phone_number_verification = 13;
-    repeated LanguageCode available_languages = 14;
-    repeated LanguageCode supported_languages = 15;
 }
 
 enum EmailType {
@@ -90,7 +83,6 @@ message Email {
     bool trigger_on_create = 9;
     string subject = 10;
     string template_path = 11;
-    LanguageCode language_code = 12;
 }
 
 message User {
