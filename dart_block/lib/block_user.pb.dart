@@ -31,8 +31,6 @@ class Config extends $pb.GeneratedMessage {
     ..aOB(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requireEmailVerification')
     ..e<LoginType>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginType', $pb.PbFieldType.OE, defaultOrMaker: LoginType.LOGIN_TYPE_INVALID, valueOf: LoginType.valueOf, enumValues: LoginType.values)
     ..aOB(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requirePhoneNumberVerification')
-    ..pc<LanguageCode>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'availableLanguages', $pb.PbFieldType.KE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values, defaultEnumValue: LanguageCode.INVALID_LANGUAGE_CODE)
-    ..pc<LanguageCode>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportedLanguages', $pb.PbFieldType.KE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values, defaultEnumValue: LanguageCode.INVALID_LANGUAGE_CODE)
     ..hasRequiredFields = false
   ;
 
@@ -51,8 +49,6 @@ class Config extends $pb.GeneratedMessage {
     $core.bool? requireEmailVerification,
     LoginType? loginType,
     $core.bool? requirePhoneNumberVerification,
-    $core.Iterable<LanguageCode>? availableLanguages,
-    $core.Iterable<LanguageCode>? supportedLanguages,
   }) {
     final _result = create();
     if (id != null) {
@@ -93,12 +89,6 @@ class Config extends $pb.GeneratedMessage {
     }
     if (requirePhoneNumberVerification != null) {
       _result.requirePhoneNumberVerification = requirePhoneNumberVerification;
-    }
-    if (availableLanguages != null) {
-      _result.availableLanguages.addAll(availableLanguages);
-    }
-    if (supportedLanguages != null) {
-      _result.supportedLanguages.addAll(supportedLanguages);
     }
     return _result;
   }
@@ -243,12 +233,6 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasRequirePhoneNumberVerification() => $_has(12);
   @$pb.TagNumber(13)
   void clearRequirePhoneNumberVerification() => clearField(13);
-
-  @$pb.TagNumber(14)
-  $core.List<LanguageCode> get availableLanguages => $_getList(13);
-
-  @$pb.TagNumber(15)
-  $core.List<LanguageCode> get supportedLanguages => $_getList(14);
 }
 
 class Email extends $pb.GeneratedMessage {
@@ -264,7 +248,6 @@ class Email extends $pb.GeneratedMessage {
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'triggerOnCreate')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subject')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'templatePath')
-    ..e<LanguageCode>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'languageCode', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..hasRequiredFields = false
   ;
 
@@ -281,7 +264,6 @@ class Email extends $pb.GeneratedMessage {
     $core.bool? triggerOnCreate,
     $core.String? subject,
     $core.String? templatePath,
-    LanguageCode? languageCode,
   }) {
     final _result = create();
     if (id != null) {
@@ -316,9 +298,6 @@ class Email extends $pb.GeneratedMessage {
     }
     if (templatePath != null) {
       _result.templatePath = templatePath;
-    }
-    if (languageCode != null) {
-      _result.languageCode = languageCode;
     }
     return _result;
   }
@@ -445,15 +424,6 @@ class Email extends $pb.GeneratedMessage {
   $core.bool hasTemplatePath() => $_has(10);
   @$pb.TagNumber(11)
   void clearTemplatePath() => clearField(11);
-
-  @$pb.TagNumber(12)
-  LanguageCode get languageCode => $_getN(11);
-  @$pb.TagNumber(12)
-  set languageCode(LanguageCode v) { setField(12, v); }
-  @$pb.TagNumber(12)
-  $core.bool hasLanguageCode() => $_has(11);
-  @$pb.TagNumber(12)
-  void clearLanguageCode() => clearField(12);
 }
 
 class User extends $pb.GeneratedMessage {
