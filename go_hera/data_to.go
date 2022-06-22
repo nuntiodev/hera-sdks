@@ -1,4 +1,4 @@
-package go_block
+package go_hera
 
 import (
 	"encoding/json"
