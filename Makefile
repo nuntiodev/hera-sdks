@@ -14,4 +14,4 @@ hera-dart-proto:
 build-proto:
 	make hera-go-proto && \
 	make hera-js-proto && \
-	make hera-proto 
+	make hera-dart-proto 
