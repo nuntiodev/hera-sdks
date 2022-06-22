@@ -15,17 +15,14 @@ service UserService {
     rpc ListUsers(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Login(UserRequest) returns (UserResponse) {}
-    rpc DeleteOneUser(UserRequest) returns (UserResponse) {}
-    rpc DeleteManyUsers(UserRequest) returns (UserResponse) {}
-
+    rpc DeleteUser(UserRequest) returns (UserResponse) {}
+    rpc DeleteUsers(UserRequest) returns (UserResponse) {}
     rpc CreateToken(UserRequest) returns (UserResponse) {}
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
     rpc BlockToken(UserRequest) returns (UserResponse) {}
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
     rpc GetTokens(UserRequest) returns (UserResponse) {}
-
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
-
     rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
     rpc VerifyEmail(UserRequest) returns (UserResponse) {}
     rpc SendVerificationText(UserRequest) returns (UserResponse) {}
@@ -33,13 +30,11 @@ service UserService {
     rpc SendResetPasswordEmail(UserRequest) returns (UserResponse) {}
     rpc SendResetPasswordText(UserRequest) returns (UserResponse) {}
     rpc ResetPassword(UserRequest) returns (UserResponse) {}
-    
-    
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
     rpc CreateNamespace(UserRequest) returns (UserResponse) {}
-    rpc RegisterConfigPublicKey(UserRequest) returns (UserResponse) {}
-    rpc UpdateConfig(UserRequest) returns (UserResponse) {}
+    rpc RegisterPublicKey(UserRequest) returns (UserResponse) {}
     rpc GetConfig(UserRequest) returns (UserResponse) {}
+    rpc UpdateConfig(UserRequest) returns (UserResponse) {}
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
 }
 
