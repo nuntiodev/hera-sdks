@@ -1,40 +1,37 @@
 syntax = "proto3";
 
-package BlockUser;
+package Hera;
 
-option go_package = "./go_block";
+option go_package = "./go_hera";
 
 import "google/protobuf/timestamp.proto";
 
 service UserService {
     rpc Heartbeat(UserRequest) returns (UserResponse) {}
+
     rpc CreateUser(UserRequest) returns (UserResponse) {}
     rpc UpdateUser(UserRequest) returns (UserResponse) {}
-
     rpc GetUser(UserRequest) returns (UserResponse) {}
     rpc ListUsers(UserRequest) returns (UserResponse) {}
-    rpc UserSearch(UserRequest) returns (UserResponse) {}
-    rpc ValidateUserCredentials(UserRequest) returns (UserResponse) {}
+    rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Login(UserRequest) returns (UserResponse) {}
-    rpc DeleteUser(UserRequest) returns (UserResponse) {}
-    rpc DeleteUserBatch(UserRequest) returns (UserResponse) {}
+    rpc DeleteOneUser(UserRequest) returns (UserResponse) {}
+    rpc DeleteManyUsers(UserRequest) returns (UserResponse) {}
 
     rpc CreateToken(UserRequest) returns (UserResponse) {}
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
     rpc BlockToken(UserRequest) returns (UserResponse) {}
-    rpc BlockTokenById(UserRequest) returns (UserResponse) {}
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
     rpc GetTokens(UserRequest) returns (UserResponse) {}
 
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
-    
-    rpc RecordActiveMeasurement(UserRequest) returns (UserResponse) {}
-    rpc GetUserActiveHistory(UserRequest) returns (UserResponse) {}
-    rpc GetNamespaceActiveHistory(UserRequest) returns (UserResponse) {}
 
     rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
     rpc VerifyEmail(UserRequest) returns (UserResponse) {}
+    rpc SendVerificationText(UserRequest) returns (UserResponse) {}
+    rpc VerifyPhone(UserRequest) returns (UserResponse) {}
     rpc SendResetPasswordEmail(UserRequest) returns (UserResponse) {}
+    rpc SendResetPasswordText(UserRequest) returns (UserResponse) {}
     rpc ResetPassword(UserRequest) returns (UserResponse) {}
     
     
@@ -44,8 +41,6 @@ service UserService {
     rpc UpdateConfig(UserRequest) returns (UserResponse) {}
     rpc GetConfig(UserRequest) returns (UserResponse) {}
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
-    
-    rpc InitializeApplication(UserRequest) returns (UserResponse) {}
 }
 
 enum LanguageCode {
@@ -55,20 +50,18 @@ enum LanguageCode {
 }
 
 message Config {
-    string id = 1;
-    string name = 2;
-    string logo = 3;
-    bool enable_nuntio_connect = 4;
-    bool disable_default_signup = 5;
-    bool disable_default_login = 6;
-    google.protobuf.Timestamp created_at = 7;
-    google.protobuf.Timestamp updated_at = 8;
-    bool validate_password = 9;
-    string nuntio_connect_id = 10;
-    bool require_email_verification = 11;
-    LoginType login_type = 12;
-    bool require_phone_number_verification = 13;
-    string public_key = 14;
+    string name = 1;
+    string logo = 2;
+    string nuntio_verify_id = 3;
+    bool disable_signup = 4;
+    bool disable_login = 5;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp updated_at = 7;
+    bool validate_password = 8;
+    bool verify_email = 9;
+    repeated LoginType supported_login_mechanisms = 10;
+    bool verify_phone = 11;
+    string public_key = 12;
 }
 
 message User {
@@ -98,7 +91,7 @@ message User {
     repeated string verified_emails = 21;
     string email_hash = 22;
     optional string phone = 23;
-    string phone_number_hash = 24;
+    string phone_hash = 24;
     
     bool phone_is_verified = 25;
     google.protobuf.Timestamp verification_text_sent_at = 26;
@@ -138,12 +131,6 @@ enum Platform {
     WINDOWS = 6;
 }
 
-message Location {
-    string country = 1;
-    string country_code = 2;
-    string city = 3;
-}
-
 message Token {
     string id = 1;
     string user_id = 2;
@@ -155,7 +142,7 @@ message Token {
     google.protobuf.Timestamp expires_at = 8;
     string access_token = 9;
     string refresh_token = 10;
-    Location logged_in_from = 11;
+    string logged_in_from = 11;
     TokenType type = 12;
 }
 
