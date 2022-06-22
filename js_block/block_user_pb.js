@@ -55,7 +55,7 @@ goog.exportSymbol('proto.BlockUser.UserResponse', null, global);
  * @constructor
  */
 proto.BlockUser.Config = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.BlockUser.Config.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.BlockUser.Config, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -318,13 +318,6 @@ if (goog.DEBUG && !COMPILED) {
   proto.BlockUser.UserResponse.displayName = 'proto.BlockUser.UserResponse';
 }
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.BlockUser.Config.repeatedFields_ = [14,15];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -368,9 +361,7 @@ proto.BlockUser.Config.toObject = function(includeInstance, msg) {
     nuntioConnectId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     loginType: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    requirePhoneNumberVerification: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    availableLanguagesList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
-    supportedLanguagesList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f
+    requirePhoneNumberVerification: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
   };
 
   if (includeInstance) {
@@ -460,18 +451,6 @@ proto.BlockUser.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRequirePhoneNumberVerification(value);
-      break;
-    case 14:
-      var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addAvailableLanguages(values[i]);
-      }
-      break;
-    case 15:
-      var values = /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addSupportedLanguages(values[i]);
-      }
       break;
     default:
       reader.skipField();
@@ -592,20 +571,6 @@ proto.BlockUser.Config.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       13,
-      f
-    );
-  }
-  f = message.getAvailableLanguagesList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      14,
-      f
-    );
-  }
-  f = message.getSupportedLanguagesList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      15,
       f
     );
   }
@@ -884,80 +849,6 @@ proto.BlockUser.Config.prototype.setRequirePhoneNumberVerification = function(va
 };
 
 
-/**
- * repeated LanguageCode available_languages = 14;
- * @return {!Array<!proto.BlockUser.LanguageCode>}
- */
-proto.BlockUser.Config.prototype.getAvailableLanguagesList = function() {
-  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 14));
-};
-
-
-/**
- * @param {!Array<!proto.BlockUser.LanguageCode>} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setAvailableLanguagesList = function(value) {
-  return jspb.Message.setField(this, 14, value || []);
-};
-
-
-/**
- * @param {!proto.BlockUser.LanguageCode} value
- * @param {number=} opt_index
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.addAvailableLanguages = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.clearAvailableLanguagesList = function() {
-  return this.setAvailableLanguagesList([]);
-};
-
-
-/**
- * repeated LanguageCode supported_languages = 15;
- * @return {!Array<!proto.BlockUser.LanguageCode>}
- */
-proto.BlockUser.Config.prototype.getSupportedLanguagesList = function() {
-  return /** @type {!Array<!proto.BlockUser.LanguageCode>} */ (jspb.Message.getRepeatedField(this, 15));
-};
-
-
-/**
- * @param {!Array<!proto.BlockUser.LanguageCode>} value
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.setSupportedLanguagesList = function(value) {
-  return jspb.Message.setField(this, 15, value || []);
-};
-
-
-/**
- * @param {!proto.BlockUser.LanguageCode} value
- * @param {number=} opt_index
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.addSupportedLanguages = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 15, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.BlockUser.Config} returns this
- */
-proto.BlockUser.Config.prototype.clearSupportedLanguagesList = function() {
-  return this.setSupportedLanguagesList([]);
-};
-
-
 
 
 
@@ -1000,8 +891,7 @@ proto.BlockUser.Email.toObject = function(includeInstance, msg) {
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     triggerOnCreate: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     subject: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    templatePath: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    templatePath: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -1083,10 +973,6 @@ proto.BlockUser.Email.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setTemplatePath(value);
-      break;
-    case 12:
-      var value = /** @type {!proto.BlockUser.LanguageCode} */ (reader.readEnum());
-      msg.setLanguageCode(value);
       break;
     default:
       reader.skipField();
@@ -1193,13 +1079,6 @@ proto.BlockUser.Email.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       11,
-      f
-    );
-  }
-  f = message.getLanguageCode();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      12,
       f
     );
   }
@@ -1439,24 +1318,6 @@ proto.BlockUser.Email.prototype.getTemplatePath = function() {
  */
 proto.BlockUser.Email.prototype.setTemplatePath = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
-};
-
-
-/**
- * optional LanguageCode language_code = 12;
- * @return {!proto.BlockUser.LanguageCode}
- */
-proto.BlockUser.Email.prototype.getLanguageCode = function() {
-  return /** @type {!proto.BlockUser.LanguageCode} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
-};
-
-
-/**
- * @param {!proto.BlockUser.LanguageCode} value
- * @return {!proto.BlockUser.Email} returns this
- */
-proto.BlockUser.Email.prototype.setLanguageCode = function(value) {
-  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
