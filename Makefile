@@ -4,7 +4,7 @@ hera-go-proto:
 	
 .PHONY: hera-js-proto
 hera-js-proto:
-	protoc -I. hera.proto --js_out=import_style=commonjs:./js_block --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js_block
+	protoc -I. hera.proto --js_out=import_style=commonjs:./js_hera --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js_hera
 
 .PHONY: hera-dart-proto
 hera-dart-proto:
