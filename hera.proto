@@ -168,10 +168,9 @@ message UserRequest {
     string cloud_token = 8;
     string token_pointer = 9;
     Config config = 10;
-    Email email = 11;
-    string email_verification_code = 12;
-    string reset_password_code = 13;
-    string search = 14;
+    string email_verification_code = 11;
+    string reset_password_code = 12;
+    string search = 13;
 }
 
 message UserResponse {
