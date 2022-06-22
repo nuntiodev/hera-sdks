@@ -19,28 +19,14 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/Heartbeat',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$create = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-      '/BlockUser.UserService/Create',
-      ($0.UserRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updatePassword =
+  static final _$createUser =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UpdatePassword',
+          '/BlockUser.UserService/CreateUser',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updateMetadata =
+  static final _$updateUser =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UpdateMetadata',
-          ($0.UserRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updateContact =
-      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UpdateContact',
-          ($0.UserRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updateProfile =
-      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UpdateProfile',
+          '/BlockUser.UserService/UpdateUser',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateSecurity =
@@ -48,21 +34,21 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/UpdateSecurity',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$get = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-      '/BlockUser.UserService/Get',
+  static final _$getUser = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+      '/BlockUser.UserService/GetUser',
       ($0.UserRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$getAll = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-      '/BlockUser.UserService/GetAll',
+  static final _$getUsers = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+      '/BlockUser.UserService/GetUsers',
       ($0.UserRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$search = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
       '/BlockUser.UserService/Search',
       ($0.UserRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$validateCredentials =
+  static final _$validateUserCredentials =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/ValidateCredentials',
+          '/BlockUser.UserService/ValidateUserCredentials',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$login = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
@@ -104,14 +90,14 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/RecordActiveMeasurement',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$userActiveHistory =
+  static final _$getUserActiveHistory =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/UserActiveHistory',
+          '/BlockUser.UserService/GetUserActiveHistory',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$namespaceActiveHistory =
+  static final _$getNamespaceActiveHistory =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/NamespaceActiveHistory',
+          '/BlockUser.UserService/GetNamespaceActiveHistory',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$sendVerificationEmail =
@@ -134,13 +120,14 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/ResetPassword',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$delete = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-      '/BlockUser.UserService/Delete',
-      ($0.UserRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$deleteBatch =
+  static final _$deleteUser =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/DeleteBatch',
+          '/BlockUser.UserService/DeleteUser',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$deleteUserBatch =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/BlockUser.UserService/DeleteUserBatch',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$deleteNamespace =
@@ -148,9 +135,9 @@ class UserServiceClient extends $grpc.Client {
           '/BlockUser.UserService/DeleteNamespace',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$createNamespaceConfig =
+  static final _$createNamespace =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/BlockUser.UserService/CreateNamespaceConfig',
+          '/BlockUser.UserService/CreateNamespace',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateConfig =
@@ -184,29 +171,14 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$heartbeat, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> create($0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> createUser($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$create, request, options: options);
+    return $createUnaryCall(_$createUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> updatePassword($0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> updateUser($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updatePassword, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UserResponse> updateMetadata($0.UserRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateMetadata, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UserResponse> updateContact($0.UserRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateContact, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UserResponse> updateProfile($0.UserRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateProfile, request, options: options);
+    return $createUnaryCall(_$updateUser, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> updateSecurity($0.UserRequest request,
@@ -214,14 +186,14 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateSecurity, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> get($0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> getUser($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$get, request, options: options);
+    return $createUnaryCall(_$getUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> getAll($0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> getUsers($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getAll, request, options: options);
+    return $createUnaryCall(_$getUsers, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> search($0.UserRequest request,
@@ -229,10 +201,11 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$search, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> validateCredentials(
+  $grpc.ResponseFuture<$0.UserResponse> validateUserCredentials(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$validateCredentials, request, options: options);
+    return $createUnaryCall(_$validateUserCredentials, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> login($0.UserRequest request,
@@ -277,16 +250,16 @@ class UserServiceClient extends $grpc.Client {
         options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> userActiveHistory(
+  $grpc.ResponseFuture<$0.UserResponse> getUserActiveHistory(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$userActiveHistory, request, options: options);
+    return $createUnaryCall(_$getUserActiveHistory, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> namespaceActiveHistory(
+  $grpc.ResponseFuture<$0.UserResponse> getNamespaceActiveHistory(
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$namespaceActiveHistory, request,
+    return $createUnaryCall(_$getNamespaceActiveHistory, request,
         options: options);
   }
 
@@ -313,14 +286,14 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$resetPassword, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> delete($0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> deleteUser($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$delete, request, options: options);
+    return $createUnaryCall(_$deleteUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> deleteBatch($0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> deleteUserBatch($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$deleteBatch, request, options: options);
+    return $createUnaryCall(_$deleteUserBatch, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> deleteNamespace($0.UserRequest request,
@@ -328,10 +301,9 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteNamespace, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> createNamespaceConfig(
-      $0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> createNamespace($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createNamespaceConfig, request, options: options);
+    return $createUnaryCall(_$createNamespace, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> updateConfig($0.UserRequest request,
@@ -368,36 +340,15 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'Create',
-        create_Pre,
+        'CreateUser',
+        createUser_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdatePassword',
-        updatePassword_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
-        ($0.UserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdateMetadata',
-        updateMetadata_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
-        ($0.UserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdateContact',
-        updateContact_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
-        ($0.UserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdateProfile',
-        updateProfile_Pre,
+        'UpdateUser',
+        updateUser_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -410,15 +361,15 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'Get',
-        get_Pre,
+        'GetUser',
+        getUser_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'GetAll',
-        getAll_Pre,
+        'GetUsers',
+        getUsers_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -431,8 +382,8 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'ValidateCredentials',
-        validateCredentials_Pre,
+        'ValidateUserCredentials',
+        validateUserCredentials_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -494,15 +445,15 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UserActiveHistory',
-        userActiveHistory_Pre,
+        'GetUserActiveHistory',
+        getUserActiveHistory_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'NamespaceActiveHistory',
-        namespaceActiveHistory_Pre,
+        'GetNamespaceActiveHistory',
+        getNamespaceActiveHistory_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -536,15 +487,15 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'Delete',
-        delete_Pre,
+        'DeleteUser',
+        deleteUser_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'DeleteBatch',
-        deleteBatch_Pre,
+        'DeleteUserBatch',
+        deleteUserBatch_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -557,8 +508,8 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'CreateNamespaceConfig',
-        createNamespaceConfig_Pre,
+        'CreateNamespace',
+        createNamespace_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -598,29 +549,14 @@ abstract class UserServiceBase extends $grpc.Service {
     return heartbeat(call, await request);
   }
 
-  $async.Future<$0.UserResponse> create_Pre(
+  $async.Future<$0.UserResponse> createUser_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return create(call, await request);
+    return createUser(call, await request);
   }
 
-  $async.Future<$0.UserResponse> updatePassword_Pre(
+  $async.Future<$0.UserResponse> updateUser_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updatePassword(call, await request);
-  }
-
-  $async.Future<$0.UserResponse> updateMetadata_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updateMetadata(call, await request);
-  }
-
-  $async.Future<$0.UserResponse> updateContact_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updateContact(call, await request);
-  }
-
-  $async.Future<$0.UserResponse> updateProfile_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updateProfile(call, await request);
+    return updateUser(call, await request);
   }
 
   $async.Future<$0.UserResponse> updateSecurity_Pre(
@@ -628,14 +564,14 @@ abstract class UserServiceBase extends $grpc.Service {
     return updateSecurity(call, await request);
   }
 
-  $async.Future<$0.UserResponse> get_Pre(
+  $async.Future<$0.UserResponse> getUser_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return get(call, await request);
+    return getUser(call, await request);
   }
 
-  $async.Future<$0.UserResponse> getAll_Pre(
+  $async.Future<$0.UserResponse> getUsers_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return getAll(call, await request);
+    return getUsers(call, await request);
   }
 
   $async.Future<$0.UserResponse> search_Pre(
@@ -643,9 +579,9 @@ abstract class UserServiceBase extends $grpc.Service {
     return search(call, await request);
   }
 
-  $async.Future<$0.UserResponse> validateCredentials_Pre(
+  $async.Future<$0.UserResponse> validateUserCredentials_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return validateCredentials(call, await request);
+    return validateUserCredentials(call, await request);
   }
 
   $async.Future<$0.UserResponse> login_Pre(
@@ -688,14 +624,14 @@ abstract class UserServiceBase extends $grpc.Service {
     return recordActiveMeasurement(call, await request);
   }
 
-  $async.Future<$0.UserResponse> userActiveHistory_Pre(
+  $async.Future<$0.UserResponse> getUserActiveHistory_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return userActiveHistory(call, await request);
+    return getUserActiveHistory(call, await request);
   }
 
-  $async.Future<$0.UserResponse> namespaceActiveHistory_Pre(
+  $async.Future<$0.UserResponse> getNamespaceActiveHistory_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return namespaceActiveHistory(call, await request);
+    return getNamespaceActiveHistory(call, await request);
   }
 
   $async.Future<$0.UserResponse> sendVerificationEmail_Pre(
@@ -718,14 +654,14 @@ abstract class UserServiceBase extends $grpc.Service {
     return resetPassword(call, await request);
   }
 
-  $async.Future<$0.UserResponse> delete_Pre(
+  $async.Future<$0.UserResponse> deleteUser_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return delete(call, await request);
+    return deleteUser(call, await request);
   }
 
-  $async.Future<$0.UserResponse> deleteBatch_Pre(
+  $async.Future<$0.UserResponse> deleteUserBatch_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return deleteBatch(call, await request);
+    return deleteUserBatch(call, await request);
   }
 
   $async.Future<$0.UserResponse> deleteNamespace_Pre(
@@ -733,9 +669,9 @@ abstract class UserServiceBase extends $grpc.Service {
     return deleteNamespace(call, await request);
   }
 
-  $async.Future<$0.UserResponse> createNamespaceConfig_Pre(
+  $async.Future<$0.UserResponse> createNamespace_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return createNamespaceConfig(call, await request);
+    return createNamespace(call, await request);
   }
 
   $async.Future<$0.UserResponse> updateConfig_Pre(
@@ -760,25 +696,19 @@ abstract class UserServiceBase extends $grpc.Service {
 
   $async.Future<$0.UserResponse> heartbeat(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> create(
+  $async.Future<$0.UserResponse> createUser(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updatePassword(
-      $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updateMetadata(
-      $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updateContact(
-      $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updateProfile(
+  $async.Future<$0.UserResponse> updateUser(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateSecurity(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> get(
+  $async.Future<$0.UserResponse> getUser(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> getAll(
+  $async.Future<$0.UserResponse> getUsers(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> search(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> validateCredentials(
+  $async.Future<$0.UserResponse> validateUserCredentials(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> login(
       $grpc.ServiceCall call, $0.UserRequest request);
@@ -796,9 +726,9 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> recordActiveMeasurement(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> userActiveHistory(
+  $async.Future<$0.UserResponse> getUserActiveHistory(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> namespaceActiveHistory(
+  $async.Future<$0.UserResponse> getNamespaceActiveHistory(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> sendVerificationEmail(
       $grpc.ServiceCall call, $0.UserRequest request);
@@ -808,13 +738,13 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> resetPassword(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> delete(
+  $async.Future<$0.UserResponse> deleteUser(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> deleteBatch(
+  $async.Future<$0.UserResponse> deleteUserBatch(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> deleteNamespace(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> createNamespaceConfig(
+  $async.Future<$0.UserResponse> createNamespace(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateConfig(
       $grpc.ServiceCall call, $0.UserRequest request);

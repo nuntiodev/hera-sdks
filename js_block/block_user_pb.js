@@ -1591,15 +1591,15 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getUsername();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getEmail();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
     writer.writeString(
       3,
       f
@@ -1612,8 +1612,8 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getImage();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
     writer.writeString(
       5,
       f
@@ -1642,15 +1642,15 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getFirstName();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
     writer.writeString(
       9,
       f
     );
   }
-  f = message.getLastName();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
     writer.writeString(
       10,
       f
@@ -1753,8 +1753,8 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPhoneNumber();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 24));
+  if (f != null) {
     writer.writeString(
       24,
       f
@@ -1789,8 +1789,8 @@ proto.BlockUser.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPreferredLanguage();
-  if (f !== 0.0) {
+  f = /** @type {!proto.BlockUser.LanguageCode} */ (jspb.Message.getField(message, 29));
+  if (f != null) {
     writer.writeEnum(
       29,
       f
@@ -1838,7 +1838,25 @@ proto.BlockUser.User.prototype.getUsername = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setUsername = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1856,7 +1874,25 @@ proto.BlockUser.User.prototype.getEmail = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setEmail = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearEmail = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasEmail = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -1892,7 +1928,25 @@ proto.BlockUser.User.prototype.getImage = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setImage = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearImage = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasImage = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -2002,7 +2056,25 @@ proto.BlockUser.User.prototype.getFirstName = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setFirstName = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearFirstName = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasFirstName = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -2020,7 +2092,25 @@ proto.BlockUser.User.prototype.getLastName = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setLastName = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearLastName = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasLastName = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -2405,7 +2495,25 @@ proto.BlockUser.User.prototype.getPhoneNumber = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setPhoneNumber = function(value) {
-  return jspb.Message.setProto3StringField(this, 24, value);
+  return jspb.Message.setField(this, 24, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearPhoneNumber = function() {
+  return jspb.Message.setField(this, 24, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasPhoneNumber = function() {
+  return jspb.Message.getField(this, 24) != null;
 };
 
 
@@ -2533,7 +2641,25 @@ proto.BlockUser.User.prototype.getPreferredLanguage = function() {
  * @return {!proto.BlockUser.User} returns this
  */
 proto.BlockUser.User.prototype.setPreferredLanguage = function(value) {
-  return jspb.Message.setProto3EnumField(this, 29, value);
+  return jspb.Message.setField(this, 29, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.BlockUser.User} returns this
+ */
+proto.BlockUser.User.prototype.clearPreferredLanguage = function() {
+  return jspb.Message.setField(this, 29, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.BlockUser.User.prototype.hasPreferredLanguage = function() {
+  return jspb.Message.getField(this, 29) != null;
 };
 
 

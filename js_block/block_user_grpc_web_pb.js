@@ -139,8 +139,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.heartbeat =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_Create = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/Create',
+const methodDescriptor_UserService_CreateUser = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/CreateUser',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -165,13 +165,13 @@ const methodDescriptor_UserService_Create = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.create =
+proto.BlockUser.UserServiceClient.prototype.createUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/Create',
+      '/BlockUser.UserService/CreateUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_Create,
+      methodDescriptor_UserService_CreateUser,
       callback);
 };
 
@@ -184,13 +184,13 @@ proto.BlockUser.UserServiceClient.prototype.create =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.create =
+proto.BlockUser.UserServicePromiseClient.prototype.createUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/Create',
+      '/BlockUser.UserService/CreateUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_Create);
+      methodDescriptor_UserService_CreateUser);
 };
 
 
@@ -200,8 +200,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.create =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_UpdatePassword = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/UpdatePassword',
+const methodDescriptor_UserService_UpdateUser = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/UpdateUser',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -226,13 +226,13 @@ const methodDescriptor_UserService_UpdatePassword = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.updatePassword =
+proto.BlockUser.UserServiceClient.prototype.updateUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/UpdatePassword',
+      '/BlockUser.UserService/UpdateUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdatePassword,
+      methodDescriptor_UserService_UpdateUser,
       callback);
 };
 
@@ -245,196 +245,13 @@ proto.BlockUser.UserServiceClient.prototype.updatePassword =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.updatePassword =
+proto.BlockUser.UserServicePromiseClient.prototype.updateUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/UpdatePassword',
+      '/BlockUser.UserService/UpdateUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdatePassword);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.BlockUser.UserRequest,
- *   !proto.BlockUser.UserResponse>}
- */
-const methodDescriptor_UserService_UpdateMetadata = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/UpdateMetadata',
-  grpc.web.MethodType.UNARY,
-  proto.BlockUser.UserRequest,
-  proto.BlockUser.UserResponse,
-  /**
-   * @param {!proto.BlockUser.UserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.BlockUser.UserResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.BlockUser.UserServiceClient.prototype.updateMetadata =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateMetadata',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_UpdateMetadata,
-      callback);
-};
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.BlockUser.UserResponse>}
- *     Promise that resolves to the response
- */
-proto.BlockUser.UserServicePromiseClient.prototype.updateMetadata =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateMetadata',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_UpdateMetadata);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.BlockUser.UserRequest,
- *   !proto.BlockUser.UserResponse>}
- */
-const methodDescriptor_UserService_UpdateContact = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/UpdateContact',
-  grpc.web.MethodType.UNARY,
-  proto.BlockUser.UserRequest,
-  proto.BlockUser.UserResponse,
-  /**
-   * @param {!proto.BlockUser.UserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.BlockUser.UserResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.BlockUser.UserServiceClient.prototype.updateContact =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateContact',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_UpdateContact,
-      callback);
-};
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.BlockUser.UserResponse>}
- *     Promise that resolves to the response
- */
-proto.BlockUser.UserServicePromiseClient.prototype.updateContact =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateContact',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_UpdateContact);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.BlockUser.UserRequest,
- *   !proto.BlockUser.UserResponse>}
- */
-const methodDescriptor_UserService_UpdateProfile = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/UpdateProfile',
-  grpc.web.MethodType.UNARY,
-  proto.BlockUser.UserRequest,
-  proto.BlockUser.UserResponse,
-  /**
-   * @param {!proto.BlockUser.UserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.BlockUser.UserResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.BlockUser.UserResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.BlockUser.UserServiceClient.prototype.updateProfile =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateProfile',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_UpdateProfile,
-      callback);
-};
-
-
-/**
- * @param {!proto.BlockUser.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.BlockUser.UserResponse>}
- *     Promise that resolves to the response
- */
-proto.BlockUser.UserServicePromiseClient.prototype.updateProfile =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/UpdateProfile',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_UpdateProfile);
+      methodDescriptor_UserService_UpdateUser);
 };
 
 
@@ -505,8 +322,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.updateSecurity =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_Get = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/Get',
+const methodDescriptor_UserService_GetUser = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetUser',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -531,13 +348,13 @@ const methodDescriptor_UserService_Get = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.get =
+proto.BlockUser.UserServiceClient.prototype.getUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/Get',
+      '/BlockUser.UserService/GetUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_Get,
+      methodDescriptor_UserService_GetUser,
       callback);
 };
 
@@ -550,13 +367,13 @@ proto.BlockUser.UserServiceClient.prototype.get =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.get =
+proto.BlockUser.UserServicePromiseClient.prototype.getUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/Get',
+      '/BlockUser.UserService/GetUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_Get);
+      methodDescriptor_UserService_GetUser);
 };
 
 
@@ -566,8 +383,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.get =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_GetAll = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/GetAll',
+const methodDescriptor_UserService_GetUsers = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetUsers',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -592,13 +409,13 @@ const methodDescriptor_UserService_GetAll = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.getAll =
+proto.BlockUser.UserServiceClient.prototype.getUsers =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/GetAll',
+      '/BlockUser.UserService/GetUsers',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetAll,
+      methodDescriptor_UserService_GetUsers,
       callback);
 };
 
@@ -611,13 +428,13 @@ proto.BlockUser.UserServiceClient.prototype.getAll =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.getAll =
+proto.BlockUser.UserServicePromiseClient.prototype.getUsers =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/GetAll',
+      '/BlockUser.UserService/GetUsers',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetAll);
+      methodDescriptor_UserService_GetUsers);
 };
 
 
@@ -688,8 +505,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.search =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_ValidateCredentials = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/ValidateCredentials',
+const methodDescriptor_UserService_ValidateUserCredentials = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/ValidateUserCredentials',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -714,13 +531,13 @@ const methodDescriptor_UserService_ValidateCredentials = new grpc.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.validateCredentials =
+proto.BlockUser.UserServiceClient.prototype.validateUserCredentials =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/ValidateCredentials',
+      '/BlockUser.UserService/ValidateUserCredentials',
       request,
       metadata || {},
-      methodDescriptor_UserService_ValidateCredentials,
+      methodDescriptor_UserService_ValidateUserCredentials,
       callback);
 };
 
@@ -733,13 +550,13 @@ proto.BlockUser.UserServiceClient.prototype.validateCredentials =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.validateCredentials =
+proto.BlockUser.UserServicePromiseClient.prototype.validateUserCredentials =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/ValidateCredentials',
+      '/BlockUser.UserService/ValidateUserCredentials',
       request,
       metadata || {},
-      methodDescriptor_UserService_ValidateCredentials);
+      methodDescriptor_UserService_ValidateUserCredentials);
 };
 
 
@@ -1237,8 +1054,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.recordActiveMeasurement =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_UserActiveHistory = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/UserActiveHistory',
+const methodDescriptor_UserService_GetUserActiveHistory = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetUserActiveHistory',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1263,13 +1080,13 @@ const methodDescriptor_UserService_UserActiveHistory = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.userActiveHistory =
+proto.BlockUser.UserServiceClient.prototype.getUserActiveHistory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/UserActiveHistory',
+      '/BlockUser.UserService/GetUserActiveHistory',
       request,
       metadata || {},
-      methodDescriptor_UserService_UserActiveHistory,
+      methodDescriptor_UserService_GetUserActiveHistory,
       callback);
 };
 
@@ -1282,13 +1099,13 @@ proto.BlockUser.UserServiceClient.prototype.userActiveHistory =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.userActiveHistory =
+proto.BlockUser.UserServicePromiseClient.prototype.getUserActiveHistory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/UserActiveHistory',
+      '/BlockUser.UserService/GetUserActiveHistory',
       request,
       metadata || {},
-      methodDescriptor_UserService_UserActiveHistory);
+      methodDescriptor_UserService_GetUserActiveHistory);
 };
 
 
@@ -1298,8 +1115,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.userActiveHistory =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_NamespaceActiveHistory = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/NamespaceActiveHistory',
+const methodDescriptor_UserService_GetNamespaceActiveHistory = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/GetNamespaceActiveHistory',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1324,13 +1141,13 @@ const methodDescriptor_UserService_NamespaceActiveHistory = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.namespaceActiveHistory =
+proto.BlockUser.UserServiceClient.prototype.getNamespaceActiveHistory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/NamespaceActiveHistory',
+      '/BlockUser.UserService/GetNamespaceActiveHistory',
       request,
       metadata || {},
-      methodDescriptor_UserService_NamespaceActiveHistory,
+      methodDescriptor_UserService_GetNamespaceActiveHistory,
       callback);
 };
 
@@ -1343,13 +1160,13 @@ proto.BlockUser.UserServiceClient.prototype.namespaceActiveHistory =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.namespaceActiveHistory =
+proto.BlockUser.UserServicePromiseClient.prototype.getNamespaceActiveHistory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/NamespaceActiveHistory',
+      '/BlockUser.UserService/GetNamespaceActiveHistory',
       request,
       metadata || {},
-      methodDescriptor_UserService_NamespaceActiveHistory);
+      methodDescriptor_UserService_GetNamespaceActiveHistory);
 };
 
 
@@ -1603,8 +1420,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.resetPassword =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_Delete = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/Delete',
+const methodDescriptor_UserService_DeleteUser = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/DeleteUser',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1629,13 +1446,13 @@ const methodDescriptor_UserService_Delete = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.delete =
+proto.BlockUser.UserServiceClient.prototype.deleteUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/Delete',
+      '/BlockUser.UserService/DeleteUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_Delete,
+      methodDescriptor_UserService_DeleteUser,
       callback);
 };
 
@@ -1648,13 +1465,13 @@ proto.BlockUser.UserServiceClient.prototype.delete =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.delete =
+proto.BlockUser.UserServicePromiseClient.prototype.deleteUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/Delete',
+      '/BlockUser.UserService/DeleteUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_Delete);
+      methodDescriptor_UserService_DeleteUser);
 };
 
 
@@ -1664,8 +1481,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.delete =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_DeleteBatch = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/DeleteBatch',
+const methodDescriptor_UserService_DeleteUserBatch = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/DeleteUserBatch',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1690,13 +1507,13 @@ const methodDescriptor_UserService_DeleteBatch = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.deleteBatch =
+proto.BlockUser.UserServiceClient.prototype.deleteUserBatch =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/DeleteBatch',
+      '/BlockUser.UserService/DeleteUserBatch',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteBatch,
+      methodDescriptor_UserService_DeleteUserBatch,
       callback);
 };
 
@@ -1709,13 +1526,13 @@ proto.BlockUser.UserServiceClient.prototype.deleteBatch =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.deleteBatch =
+proto.BlockUser.UserServicePromiseClient.prototype.deleteUserBatch =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/DeleteBatch',
+      '/BlockUser.UserService/DeleteUserBatch',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteBatch);
+      methodDescriptor_UserService_DeleteUserBatch);
 };
 
 
@@ -1786,8 +1603,8 @@ proto.BlockUser.UserServicePromiseClient.prototype.deleteNamespace =
  *   !proto.BlockUser.UserRequest,
  *   !proto.BlockUser.UserResponse>}
  */
-const methodDescriptor_UserService_CreateNamespaceConfig = new grpc.web.MethodDescriptor(
-  '/BlockUser.UserService/CreateNamespaceConfig',
+const methodDescriptor_UserService_CreateNamespace = new grpc.web.MethodDescriptor(
+  '/BlockUser.UserService/CreateNamespace',
   grpc.web.MethodType.UNARY,
   proto.BlockUser.UserRequest,
   proto.BlockUser.UserResponse,
@@ -1812,13 +1629,13 @@ const methodDescriptor_UserService_CreateNamespaceConfig = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.BlockUser.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.BlockUser.UserServiceClient.prototype.createNamespaceConfig =
+proto.BlockUser.UserServiceClient.prototype.createNamespace =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/BlockUser.UserService/CreateNamespaceConfig',
+      '/BlockUser.UserService/CreateNamespace',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateNamespaceConfig,
+      methodDescriptor_UserService_CreateNamespace,
       callback);
 };
 
@@ -1831,13 +1648,13 @@ proto.BlockUser.UserServiceClient.prototype.createNamespaceConfig =
  * @return {!Promise<!proto.BlockUser.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.BlockUser.UserServicePromiseClient.prototype.createNamespaceConfig =
+proto.BlockUser.UserServicePromiseClient.prototype.createNamespace =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/BlockUser.UserService/CreateNamespaceConfig',
+      '/BlockUser.UserService/CreateNamespace',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateNamespaceConfig);
+      methodDescriptor_UserService_CreateNamespace);
 };
 
 

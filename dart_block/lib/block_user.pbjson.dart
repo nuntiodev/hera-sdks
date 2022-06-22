@@ -133,16 +133,16 @@ const User$json = const {
   '1': 'User',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    const {'1': 'username', '3': 2, '4': 1, '5': 9, '10': 'username'},
-    const {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
+    const {'1': 'username', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'username', '17': true},
+    const {'1': 'email', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'email', '17': true},
     const {'1': 'password', '3': 4, '4': 1, '5': 9, '10': 'password'},
-    const {'1': 'image', '3': 5, '4': 1, '5': 9, '10': 'image'},
+    const {'1': 'image', '3': 5, '4': 1, '5': 9, '9': 2, '10': 'image', '17': true},
     const {'1': 'metadata', '3': 6, '4': 1, '5': 9, '10': 'metadata'},
     const {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'first_name', '3': 9, '4': 1, '5': 9, '10': 'firstName'},
-    const {'1': 'last_name', '3': 10, '4': 1, '5': 9, '10': 'lastName'},
-    const {'1': 'birthdate', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
+    const {'1': 'first_name', '3': 9, '4': 1, '5': 9, '9': 3, '10': 'firstName', '17': true},
+    const {'1': 'last_name', '3': 10, '4': 1, '5': 9, '9': 4, '10': 'lastName', '17': true},
+    const {'1': 'birthdate', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 5, '10': 'birthdate', '17': true},
     const {'1': 'email_verified_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'emailVerifiedAt'},
     const {'1': 'email_is_verified', '3': 13, '4': 1, '5': 8, '10': 'emailIsVerified'},
     const {'1': 'verification_email_sent_at', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationEmailSentAt'},
@@ -155,18 +155,28 @@ const User$json = const {
     const {'1': 'reset_password_attempts', '3': 21, '4': 1, '5': 5, '10': 'resetPasswordAttempts'},
     const {'1': 'verified_emails', '3': 22, '4': 3, '5': 9, '10': 'verifiedEmails'},
     const {'1': 'email_hash', '3': 23, '4': 1, '5': 9, '10': 'emailHash'},
-    const {'1': 'phone_number', '3': 24, '4': 1, '5': 9, '10': 'phoneNumber'},
+    const {'1': 'phone_number', '3': 24, '4': 1, '5': 9, '9': 6, '10': 'phoneNumber', '17': true},
     const {'1': 'phone_number_hash', '3': 25, '4': 1, '5': 9, '10': 'phoneNumberHash'},
     const {'1': 'phone_number_is_verified', '3': 26, '4': 1, '5': 8, '10': 'phoneNumberIsVerified'},
     const {'1': 'verification_text_sent_at', '3': 27, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationTextSentAt'},
     const {'1': 'verified_phone_numbers', '3': 28, '4': 3, '5': 9, '10': 'verifiedPhoneNumbers'},
-    const {'1': 'preferred_language', '3': 29, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '10': 'preferredLanguage'},
+    const {'1': 'preferred_language', '3': 29, '4': 1, '5': 14, '6': '.BlockUser.LanguageCode', '9': 7, '10': 'preferredLanguage', '17': true},
     const {'1': 'username_hash', '3': 30, '4': 1, '5': 9, '10': 'usernameHash'},
+  ],
+  '8': const [
+    const {'1': '_username'},
+    const {'1': '_email'},
+    const {'1': '_image'},
+    const {'1': '_first_name'},
+    const {'1': '_last_name'},
+    const {'1': '_birthdate'},
+    const {'1': '_phone_number'},
+    const {'1': '_preferred_language'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIaCgh1c2VybmFtZRgCIAEoCVIIdXNlcm5hbWUSFAoFZW1haWwYAyABKAlSBWVtYWlsEhoKCHBhc3N3b3JkGAQgASgJUghwYXNzd29yZBIUCgVpbWFnZRgFIAEoCVIFaW1hZ2USGgoIbWV0YWRhdGEYBiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIdCgpmaXJzdF9uYW1lGAkgASgJUglmaXJzdE5hbWUSGwoJbGFzdF9uYW1lGAogASgJUghsYXN0TmFtZRI4CgliaXJ0aGRhdGUYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgliaXJ0aGRhdGUSRgoRZW1haWxfdmVyaWZpZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg9lbWFpbFZlcmlmaWVkQXQSKgoRZW1haWxfaXNfdmVyaWZpZWQYDSABKAhSD2VtYWlsSXNWZXJpZmllZBJXChp2ZXJpZmljYXRpb25fZW1haWxfc2VudF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSF3ZlcmlmaWNhdGlvbkVtYWlsU2VudEF0EjYKF2VtYWlsX3ZlcmlmaWNhdGlvbl9jb2RlGA8gASgJUhVlbWFpbFZlcmlmaWNhdGlvbkNvZGUSXQoddmVyaWZpY2F0aW9uX2VtYWlsX2V4cGlyZXNfYXQYECABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhp2ZXJpZmljYXRpb25FbWFpbEV4cGlyZXNBdBIyChV2ZXJpZnlfZW1haWxfYXR0ZW1wdHMYESABKAVSE3ZlcmlmeUVtYWlsQXR0ZW1wdHMSLgoTcmVzZXRfcGFzc3dvcmRfY29kZRgSIAEoCVIRcmVzZXRQYXNzd29yZENvZGUSWgoccmVzZXRfcGFzc3dvcmRfZW1haWxfc2VudF9hdBgTIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGHJlc2V0UGFzc3dvcmRFbWFpbFNlbnRBdBJgCh9yZXNldF9wYXNzd29yZF9lbWFpbF9leHBpcmVzX2F0GBQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIbcmVzZXRQYXNzd29yZEVtYWlsRXhwaXJlc0F0EjYKF3Jlc2V0X3Bhc3N3b3JkX2F0dGVtcHRzGBUgASgFUhVyZXNldFBhc3N3b3JkQXR0ZW1wdHMSJwoPdmVyaWZpZWRfZW1haWxzGBYgAygJUg52ZXJpZmllZEVtYWlscxIdCgplbWFpbF9oYXNoGBcgASgJUgllbWFpbEhhc2gSIQoMcGhvbmVfbnVtYmVyGBggASgJUgtwaG9uZU51bWJlchIqChFwaG9uZV9udW1iZXJfaGFzaBgZIAEoCVIPcGhvbmVOdW1iZXJIYXNoEjcKGHBob25lX251bWJlcl9pc192ZXJpZmllZBgaIAEoCFIVcGhvbmVOdW1iZXJJc1ZlcmlmaWVkElUKGXZlcmlmaWNhdGlvbl90ZXh0X3NlbnRfYXQYGyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhZ2ZXJpZmljYXRpb25UZXh0U2VudEF0EjQKFnZlcmlmaWVkX3Bob25lX251bWJlcnMYHCADKAlSFHZlcmlmaWVkUGhvbmVOdW1iZXJzEkYKEnByZWZlcnJlZF9sYW5ndWFnZRgdIAEoDjIXLkJsb2NrVXNlci5MYW5ndWFnZUNvZGVSEXByZWZlcnJlZExhbmd1YWdlEiMKDXVzZXJuYW1lX2hhc2gYHiABKAlSDHVzZXJuYW1lSGFzaA==');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgh1c2VybmFtZRgCIAEoCUgAUgh1c2VybmFtZYgBARIZCgVlbWFpbBgDIAEoCUgBUgVlbWFpbIgBARIaCghwYXNzd29yZBgEIAEoCVIIcGFzc3dvcmQSGQoFaW1hZ2UYBSABKAlIAlIFaW1hZ2WIAQESGgoIbWV0YWRhdGEYBiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIiCgpmaXJzdF9uYW1lGAkgASgJSANSCWZpcnN0TmFtZYgBARIgCglsYXN0X25hbWUYCiABKAlIBFIIbGFzdE5hbWWIAQESPQoJYmlydGhkYXRlGAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgFUgliaXJ0aGRhdGWIAQESRgoRZW1haWxfdmVyaWZpZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg9lbWFpbFZlcmlmaWVkQXQSKgoRZW1haWxfaXNfdmVyaWZpZWQYDSABKAhSD2VtYWlsSXNWZXJpZmllZBJXChp2ZXJpZmljYXRpb25fZW1haWxfc2VudF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSF3ZlcmlmaWNhdGlvbkVtYWlsU2VudEF0EjYKF2VtYWlsX3ZlcmlmaWNhdGlvbl9jb2RlGA8gASgJUhVlbWFpbFZlcmlmaWNhdGlvbkNvZGUSXQoddmVyaWZpY2F0aW9uX2VtYWlsX2V4cGlyZXNfYXQYECABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhp2ZXJpZmljYXRpb25FbWFpbEV4cGlyZXNBdBIyChV2ZXJpZnlfZW1haWxfYXR0ZW1wdHMYESABKAVSE3ZlcmlmeUVtYWlsQXR0ZW1wdHMSLgoTcmVzZXRfcGFzc3dvcmRfY29kZRgSIAEoCVIRcmVzZXRQYXNzd29yZENvZGUSWgoccmVzZXRfcGFzc3dvcmRfZW1haWxfc2VudF9hdBgTIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGHJlc2V0UGFzc3dvcmRFbWFpbFNlbnRBdBJgCh9yZXNldF9wYXNzd29yZF9lbWFpbF9leHBpcmVzX2F0GBQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIbcmVzZXRQYXNzd29yZEVtYWlsRXhwaXJlc0F0EjYKF3Jlc2V0X3Bhc3N3b3JkX2F0dGVtcHRzGBUgASgFUhVyZXNldFBhc3N3b3JkQXR0ZW1wdHMSJwoPdmVyaWZpZWRfZW1haWxzGBYgAygJUg52ZXJpZmllZEVtYWlscxIdCgplbWFpbF9oYXNoGBcgASgJUgllbWFpbEhhc2gSJgoMcGhvbmVfbnVtYmVyGBggASgJSAZSC3Bob25lTnVtYmVyiAEBEioKEXBob25lX251bWJlcl9oYXNoGBkgASgJUg9waG9uZU51bWJlckhhc2gSNwoYcGhvbmVfbnVtYmVyX2lzX3ZlcmlmaWVkGBogASgIUhVwaG9uZU51bWJlcklzVmVyaWZpZWQSVQoZdmVyaWZpY2F0aW9uX3RleHRfc2VudF9hdBgbIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSFnZlcmlmaWNhdGlvblRleHRTZW50QXQSNAoWdmVyaWZpZWRfcGhvbmVfbnVtYmVycxgcIAMoCVIUdmVyaWZpZWRQaG9uZU51bWJlcnMSSwoScHJlZmVycmVkX2xhbmd1YWdlGB0gASgOMhcuQmxvY2tVc2VyLkxhbmd1YWdlQ29kZUgHUhFwcmVmZXJyZWRMYW5ndWFnZYgBARIjCg11c2VybmFtZV9oYXNoGB4gASgJUgx1c2VybmFtZUhhc2hCCwoJX3VzZXJuYW1lQggKBl9lbWFpbEIICgZfaW1hZ2VCDQoLX2ZpcnN0X25hbWVCDAoKX2xhc3RfbmFtZUIMCgpfYmlydGhkYXRlQg8KDV9waG9uZV9udW1iZXJCFQoTX3ByZWZlcnJlZF9sYW5ndWFnZQ==');
 @$core.Deprecated('Use userFilterDescriptor instead')
 const UserFilter$json = const {
   '1': 'UserFilter',

@@ -19,16 +19,13 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserServiceClient interface {
 	Heartbeat(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	Create(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdatePassword(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateMetadata(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateContact(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UpdateProfile(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	CreateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	UpdateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateSecurity(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetUsers(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Search(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	ValidateCredentials(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	ValidateUserCredentials(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	Login(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	ValidateToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	BlockToken(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -37,16 +34,16 @@ type UserServiceClient interface {
 	GetTokens(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	PublicKeys(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	RecordActiveMeasurement(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	UserActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	NamespaceActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetUserActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	GetNamespaceActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	SendVerificationEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	VerifyEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	SendResetPasswordEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	ResetPassword(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	DeleteUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	DeleteUserBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
-	CreateNamespaceConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
+	CreateNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	GetConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	DeleteConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -70,45 +67,18 @@ func (c *userServiceClient) Heartbeat(ctx context.Context, in *UserRequest, opts
 	return out, nil
 }
 
-func (c *userServiceClient) Create(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) CreateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/Create", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdatePassword(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) UpdateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdatePassword", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UpdateMetadata(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateMetadata", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UpdateContact(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateContact", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UpdateProfile(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
-	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UpdateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -124,18 +94,18 @@ func (c *userServiceClient) UpdateSecurity(ctx context.Context, in *UserRequest,
 	return out, nil
 }
 
-func (c *userServiceClient) Get(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) GetUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/Get", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) GetAll(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) GetUsers(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetAll", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -151,9 +121,9 @@ func (c *userServiceClient) Search(ctx context.Context, in *UserRequest, opts ..
 	return out, nil
 }
 
-func (c *userServiceClient) ValidateCredentials(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) ValidateUserCredentials(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/ValidateCredentials", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/ValidateUserCredentials", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -232,18 +202,18 @@ func (c *userServiceClient) RecordActiveMeasurement(ctx context.Context, in *Use
 	return out, nil
 }
 
-func (c *userServiceClient) UserActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) GetUserActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/UserActiveHistory", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetUserActiveHistory", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) NamespaceActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) GetNamespaceActiveHistory(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/NamespaceActiveHistory", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/GetNamespaceActiveHistory", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -286,18 +256,18 @@ func (c *userServiceClient) ResetPassword(ctx context.Context, in *UserRequest, 
 	return out, nil
 }
 
-func (c *userServiceClient) Delete(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) DeleteUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/Delete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/DeleteUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DeleteBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) DeleteUserBatch(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/DeleteBatch", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/DeleteUserBatch", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -313,9 +283,9 @@ func (c *userServiceClient) DeleteNamespace(ctx context.Context, in *UserRequest
 	return out, nil
 }
 
-func (c *userServiceClient) CreateNamespaceConfig(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
+func (c *userServiceClient) CreateNamespace(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error) {
 	out := new(UserResponse)
-	err := c.cc.Invoke(ctx, "/BlockUser.UserService/CreateNamespaceConfig", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/BlockUser.UserService/CreateNamespace", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -363,16 +333,13 @@ func (c *userServiceClient) InitializeApplication(ctx context.Context, in *UserR
 // for forward compatibility
 type UserServiceServer interface {
 	Heartbeat(context.Context, *UserRequest) (*UserResponse, error)
-	Create(context.Context, *UserRequest) (*UserResponse, error)
-	UpdatePassword(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateMetadata(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateContact(context.Context, *UserRequest) (*UserResponse, error)
-	UpdateProfile(context.Context, *UserRequest) (*UserResponse, error)
+	CreateUser(context.Context, *UserRequest) (*UserResponse, error)
+	UpdateUser(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error)
-	Get(context.Context, *UserRequest) (*UserResponse, error)
-	GetAll(context.Context, *UserRequest) (*UserResponse, error)
+	GetUser(context.Context, *UserRequest) (*UserResponse, error)
+	GetUsers(context.Context, *UserRequest) (*UserResponse, error)
 	Search(context.Context, *UserRequest) (*UserResponse, error)
-	ValidateCredentials(context.Context, *UserRequest) (*UserResponse, error)
+	ValidateUserCredentials(context.Context, *UserRequest) (*UserResponse, error)
 	Login(context.Context, *UserRequest) (*UserResponse, error)
 	ValidateToken(context.Context, *UserRequest) (*UserResponse, error)
 	BlockToken(context.Context, *UserRequest) (*UserResponse, error)
@@ -381,16 +348,16 @@ type UserServiceServer interface {
 	GetTokens(context.Context, *UserRequest) (*UserResponse, error)
 	PublicKeys(context.Context, *UserRequest) (*UserResponse, error)
 	RecordActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error)
-	UserActiveHistory(context.Context, *UserRequest) (*UserResponse, error)
-	NamespaceActiveHistory(context.Context, *UserRequest) (*UserResponse, error)
+	GetUserActiveHistory(context.Context, *UserRequest) (*UserResponse, error)
+	GetNamespaceActiveHistory(context.Context, *UserRequest) (*UserResponse, error)
 	SendVerificationEmail(context.Context, *UserRequest) (*UserResponse, error)
 	VerifyEmail(context.Context, *UserRequest) (*UserResponse, error)
 	SendResetPasswordEmail(context.Context, *UserRequest) (*UserResponse, error)
 	ResetPassword(context.Context, *UserRequest) (*UserResponse, error)
-	Delete(context.Context, *UserRequest) (*UserResponse, error)
-	DeleteBatch(context.Context, *UserRequest) (*UserResponse, error)
+	DeleteUser(context.Context, *UserRequest) (*UserResponse, error)
+	DeleteUserBatch(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteNamespace(context.Context, *UserRequest) (*UserResponse, error)
-	CreateNamespaceConfig(context.Context, *UserRequest) (*UserResponse, error)
+	CreateNamespace(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateConfig(context.Context, *UserRequest) (*UserResponse, error)
 	GetConfig(context.Context, *UserRequest) (*UserResponse, error)
 	DeleteConfig(context.Context, *UserRequest) (*UserResponse, error)
@@ -404,35 +371,26 @@ type UnimplementedUserServiceServer struct {
 func (UnimplementedUserServiceServer) Heartbeat(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Heartbeat not implemented")
 }
-func (UnimplementedUserServiceServer) Create(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+func (UnimplementedUserServiceServer) CreateUser(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedUserServiceServer) UpdatePassword(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdatePassword not implemented")
-}
-func (UnimplementedUserServiceServer) UpdateMetadata(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateMetadata not implemented")
-}
-func (UnimplementedUserServiceServer) UpdateContact(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateContact not implemented")
-}
-func (UnimplementedUserServiceServer) UpdateProfile(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfile not implemented")
+func (UnimplementedUserServiceServer) UpdateUser(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
 }
 func (UnimplementedUserServiceServer) UpdateSecurity(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSecurity not implemented")
 }
-func (UnimplementedUserServiceServer) Get(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+func (UnimplementedUserServiceServer) GetUser(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
 }
-func (UnimplementedUserServiceServer) GetAll(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
+func (UnimplementedUserServiceServer) GetUsers(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUsers not implemented")
 }
 func (UnimplementedUserServiceServer) Search(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Search not implemented")
 }
-func (UnimplementedUserServiceServer) ValidateCredentials(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ValidateCredentials not implemented")
+func (UnimplementedUserServiceServer) ValidateUserCredentials(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ValidateUserCredentials not implemented")
 }
 func (UnimplementedUserServiceServer) Login(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
@@ -458,11 +416,11 @@ func (UnimplementedUserServiceServer) PublicKeys(context.Context, *UserRequest) 
 func (UnimplementedUserServiceServer) RecordActiveMeasurement(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RecordActiveMeasurement not implemented")
 }
-func (UnimplementedUserServiceServer) UserActiveHistory(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UserActiveHistory not implemented")
+func (UnimplementedUserServiceServer) GetUserActiveHistory(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserActiveHistory not implemented")
 }
-func (UnimplementedUserServiceServer) NamespaceActiveHistory(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method NamespaceActiveHistory not implemented")
+func (UnimplementedUserServiceServer) GetNamespaceActiveHistory(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNamespaceActiveHistory not implemented")
 }
 func (UnimplementedUserServiceServer) SendVerificationEmail(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendVerificationEmail not implemented")
@@ -476,17 +434,17 @@ func (UnimplementedUserServiceServer) SendResetPasswordEmail(context.Context, *U
 func (UnimplementedUserServiceServer) ResetPassword(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResetPassword not implemented")
 }
-func (UnimplementedUserServiceServer) Delete(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
+func (UnimplementedUserServiceServer) DeleteUser(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
 }
-func (UnimplementedUserServiceServer) DeleteBatch(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteBatch not implemented")
+func (UnimplementedUserServiceServer) DeleteUserBatch(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserBatch not implemented")
 }
 func (UnimplementedUserServiceServer) DeleteNamespace(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNamespace not implemented")
 }
-func (UnimplementedUserServiceServer) CreateNamespaceConfig(context.Context, *UserRequest) (*UserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNamespaceConfig not implemented")
+func (UnimplementedUserServiceServer) CreateNamespace(context.Context, *UserRequest) (*UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNamespace not implemented")
 }
 func (UnimplementedUserServiceServer) UpdateConfig(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfig not implemented")
@@ -530,92 +488,38 @@ func _UserService_Heartbeat_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).Create(ctx, in)
+		return srv.(UserServiceServer).CreateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/Create",
+		FullMethod: "/BlockUser.UserService/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).Create(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).CreateUser(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdatePassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdatePassword(ctx, in)
+		return srv.(UserServiceServer).UpdateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdatePassword",
+		FullMethod: "/BlockUser.UserService/UpdateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdatePassword(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_UpdateMetadata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateMetadata(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateMetadata",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateMetadata(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_UpdateContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateContact(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateContact",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateContact(ctx, req.(*UserRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _UserService_UpdateProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateProfile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UpdateProfile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateProfile(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).UpdateUser(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -638,38 +542,38 @@ func _UserService_UpdateSecurity_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).Get(ctx, in)
+		return srv.(UserServiceServer).GetUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/Get",
+		FullMethod: "/BlockUser.UserService/GetUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).Get(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).GetUser(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetAll(ctx, in)
+		return srv.(UserServiceServer).GetUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/GetAll",
+		FullMethod: "/BlockUser.UserService/GetUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetAll(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).GetUsers(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -692,20 +596,20 @@ func _UserService_Search_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_ValidateCredentials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_ValidateUserCredentials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).ValidateCredentials(ctx, in)
+		return srv.(UserServiceServer).ValidateUserCredentials(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/ValidateCredentials",
+		FullMethod: "/BlockUser.UserService/ValidateUserCredentials",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).ValidateCredentials(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).ValidateUserCredentials(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -854,38 +758,38 @@ func _UserService_RecordActiveMeasurement_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UserActiveHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetUserActiveHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UserActiveHistory(ctx, in)
+		return srv.(UserServiceServer).GetUserActiveHistory(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/UserActiveHistory",
+		FullMethod: "/BlockUser.UserService/GetUserActiveHistory",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UserActiveHistory(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).GetUserActiveHistory(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_NamespaceActiveHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetNamespaceActiveHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).NamespaceActiveHistory(ctx, in)
+		return srv.(UserServiceServer).GetNamespaceActiveHistory(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/NamespaceActiveHistory",
+		FullMethod: "/BlockUser.UserService/GetNamespaceActiveHistory",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).NamespaceActiveHistory(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).GetNamespaceActiveHistory(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -962,38 +866,38 @@ func _UserService_ResetPassword_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).Delete(ctx, in)
+		return srv.(UserServiceServer).DeleteUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/Delete",
+		FullMethod: "/BlockUser.UserService/DeleteUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).Delete(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).DeleteUser(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DeleteBatch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_DeleteUserBatch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DeleteBatch(ctx, in)
+		return srv.(UserServiceServer).DeleteUserBatch(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/DeleteBatch",
+		FullMethod: "/BlockUser.UserService/DeleteUserBatch",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeleteBatch(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).DeleteUserBatch(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1016,20 +920,20 @@ func _UserService_DeleteNamespace_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_CreateNamespaceConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_CreateNamespace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreateNamespaceConfig(ctx, in)
+		return srv.(UserServiceServer).CreateNamespace(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/BlockUser.UserService/CreateNamespaceConfig",
+		FullMethod: "/BlockUser.UserService/CreateNamespace",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateNamespaceConfig(ctx, req.(*UserRequest))
+		return srv.(UserServiceServer).CreateNamespace(ctx, req.(*UserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1118,44 +1022,32 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_Heartbeat_Handler,
 		},
 		{
-			MethodName: "Create",
-			Handler:    _UserService_Create_Handler,
+			MethodName: "CreateUser",
+			Handler:    _UserService_CreateUser_Handler,
 		},
 		{
-			MethodName: "UpdatePassword",
-			Handler:    _UserService_UpdatePassword_Handler,
-		},
-		{
-			MethodName: "UpdateMetadata",
-			Handler:    _UserService_UpdateMetadata_Handler,
-		},
-		{
-			MethodName: "UpdateContact",
-			Handler:    _UserService_UpdateContact_Handler,
-		},
-		{
-			MethodName: "UpdateProfile",
-			Handler:    _UserService_UpdateProfile_Handler,
+			MethodName: "UpdateUser",
+			Handler:    _UserService_UpdateUser_Handler,
 		},
 		{
 			MethodName: "UpdateSecurity",
 			Handler:    _UserService_UpdateSecurity_Handler,
 		},
 		{
-			MethodName: "Get",
-			Handler:    _UserService_Get_Handler,
+			MethodName: "GetUser",
+			Handler:    _UserService_GetUser_Handler,
 		},
 		{
-			MethodName: "GetAll",
-			Handler:    _UserService_GetAll_Handler,
+			MethodName: "GetUsers",
+			Handler:    _UserService_GetUsers_Handler,
 		},
 		{
 			MethodName: "Search",
 			Handler:    _UserService_Search_Handler,
 		},
 		{
-			MethodName: "ValidateCredentials",
-			Handler:    _UserService_ValidateCredentials_Handler,
+			MethodName: "ValidateUserCredentials",
+			Handler:    _UserService_ValidateUserCredentials_Handler,
 		},
 		{
 			MethodName: "Login",
@@ -1190,12 +1082,12 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_RecordActiveMeasurement_Handler,
 		},
 		{
-			MethodName: "UserActiveHistory",
-			Handler:    _UserService_UserActiveHistory_Handler,
+			MethodName: "GetUserActiveHistory",
+			Handler:    _UserService_GetUserActiveHistory_Handler,
 		},
 		{
-			MethodName: "NamespaceActiveHistory",
-			Handler:    _UserService_NamespaceActiveHistory_Handler,
+			MethodName: "GetNamespaceActiveHistory",
+			Handler:    _UserService_GetNamespaceActiveHistory_Handler,
 		},
 		{
 			MethodName: "SendVerificationEmail",
@@ -1214,20 +1106,20 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_ResetPassword_Handler,
 		},
 		{
-			MethodName: "Delete",
-			Handler:    _UserService_Delete_Handler,
+			MethodName: "DeleteUser",
+			Handler:    _UserService_DeleteUser_Handler,
 		},
 		{
-			MethodName: "DeleteBatch",
-			Handler:    _UserService_DeleteBatch_Handler,
+			MethodName: "DeleteUserBatch",
+			Handler:    _UserService_DeleteUserBatch_Handler,
 		},
 		{
 			MethodName: "DeleteNamespace",
 			Handler:    _UserService_DeleteNamespace_Handler,
 		},
 		{
-			MethodName: "CreateNamespaceConfig",
-			Handler:    _UserService_CreateNamespaceConfig_Handler,
+			MethodName: "CreateNamespace",
+			Handler:    _UserService_CreateNamespace_Handler,
 		},
 		{
 			MethodName: "UpdateConfig",
