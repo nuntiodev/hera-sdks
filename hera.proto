@@ -6,6 +6,7 @@ option go_package = "./go_hera";
 
 import "google/protobuf/timestamp.proto";
 
+
 service UserService {
     rpc Heartbeat(UserRequest) returns (UserResponse) {}
     rpc CreateUser(UserRequest) returns (UserResponse) {}
