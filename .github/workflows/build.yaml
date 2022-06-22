@@ -104,7 +104,7 @@ jobs:
         run: git config --global user.email "dev@nuntio.io" && git config --global user.name "Nuntio Automation"
 
       - name: Add git credentials
-        run: git remote set-url --push origin https://sinbad-io:$GITHUB_TOKEN@github.com/nuntiodev/hera
+        run: git remote set-url --push origin https://sinbad-io:$GITHUB_TOKEN@github.com/nuntiodev/hera-proto
 
       - name: Git commit
         run: git commit -am "updated protobuf files"
