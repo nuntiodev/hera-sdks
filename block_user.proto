@@ -10,32 +10,41 @@ service UserService {
     rpc Heartbeat(UserRequest) returns (UserResponse) {}
     rpc CreateUser(UserRequest) returns (UserResponse) {}
     rpc UpdateUser(UserRequest) returns (UserResponse) {}
-    rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
+
     rpc GetUser(UserRequest) returns (UserResponse) {}
-    rpc GetUsers(UserRequest) returns (UserResponse) {}
-    rpc Search(UserRequest) returns (UserResponse) {}
+    rpc ListUsers(UserRequest) returns (UserResponse) {}
+    rpc UserSearch(UserRequest) returns (UserResponse) {}
     rpc ValidateUserCredentials(UserRequest) returns (UserResponse) {}
     rpc Login(UserRequest) returns (UserResponse) {}
+    rpc DeleteUser(UserRequest) returns (UserResponse) {}
+    rpc DeleteUserBatch(UserRequest) returns (UserResponse) {}
+
+    rpc CreateToken(UserRequest) returns (UserResponse) {}
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
     rpc BlockToken(UserRequest) returns (UserResponse) {}
     rpc BlockTokenById(UserRequest) returns (UserResponse) {}
     rpc RefreshToken(UserRequest) returns (UserResponse) {}
     rpc GetTokens(UserRequest) returns (UserResponse) {}
+
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
+    
     rpc RecordActiveMeasurement(UserRequest) returns (UserResponse) {}
     rpc GetUserActiveHistory(UserRequest) returns (UserResponse) {}
     rpc GetNamespaceActiveHistory(UserRequest) returns (UserResponse) {}
+
     rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
     rpc VerifyEmail(UserRequest) returns (UserResponse) {}
     rpc SendResetPasswordEmail(UserRequest) returns (UserResponse) {}
     rpc ResetPassword(UserRequest) returns (UserResponse) {}
-    rpc DeleteUser(UserRequest) returns (UserResponse) {}
-    rpc DeleteUserBatch(UserRequest) returns (UserResponse) {}
+    
+    
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
     rpc CreateNamespace(UserRequest) returns (UserResponse) {}
+    rpc RegisterConfigPublicKey(UserRequest) returns (UserResponse) {}
     rpc UpdateConfig(UserRequest) returns (UserResponse) {}
     rpc GetConfig(UserRequest) returns (UserResponse) {}
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
+    
     rpc InitializeApplication(UserRequest) returns (UserResponse) {}
 }
 
@@ -59,27 +68,7 @@ message Config {
     bool require_email_verification = 11;
     LoginType login_type = 12;
     bool require_phone_number_verification = 13;
-}
-
-enum EmailType {
-    EMAIL_TYPE_INVALID = 0;
-    EMAIL_TYPE_VERIFY_EMAIL = 1;
-    EMAIL_TYPE_FORGOT_PASSWORD = 2;
-    EMAIL_TYPE_CUSTOM = 3;
-}
-
-message Email {
-    string id = 1;
-    string logo = 2;
-    string welcome_message = 3;
-    string body_message = 4;
-    string footer_message = 5;
-    string title = 6;
-    google.protobuf.Timestamp created_at = 7;
-    google.protobuf.Timestamp updated_at = 8;
-    bool trigger_on_create = 9;
-    string subject = 10;
-    string template_path = 11;
+    string public_key = 14;
 }
 
 message User {
@@ -94,25 +83,28 @@ message User {
     optional string first_name = 9;
     optional string last_name = 10;
     optional google.protobuf.Timestamp birthdate = 11;
-    google.protobuf.Timestamp email_verified_at = 12;
-    bool email_is_verified = 13;
-    google.protobuf.Timestamp verification_email_sent_at = 14;
-    string email_verification_code = 15;
-    google.protobuf.Timestamp verification_email_expires_at = 16;
-    int32 verify_email_attempts = 17;
-    string reset_password_code = 18;
-    google.protobuf.Timestamp reset_password_email_sent_at = 19;
-    google.protobuf.Timestamp reset_password_email_expires_at = 20;
-    int32 reset_password_attempts = 21;
-    repeated string verified_emails = 22;
-    string email_hash = 23;
-    optional string phone_number = 24;
-    string phone_number_hash = 25;
-    bool phone_number_is_verified = 26;
-    google.protobuf.Timestamp verification_text_sent_at = 27;
-    repeated string verified_phone_numbers = 28;
-    optional LanguageCode preferred_language = 29;
-    string username_hash = 30;
+    
+    bool email_is_verified = 12;
+    google.protobuf.Timestamp verification_email_sent_at = 13;
+    string email_verification_code = 14;
+    google.protobuf.Timestamp verification_email_expires_at = 15;
+    int32 verify_email_attempts = 16;
+
+    string reset_password_code = 17;
+    google.protobuf.Timestamp reset_password_email_sent_at = 18;
+    google.protobuf.Timestamp reset_password_email_expires_at = 19;
+    int32 reset_password_attempts = 20;
+
+    repeated string verified_emails = 21;
+    string email_hash = 22;
+    optional string phone = 23;
+    string phone_number_hash = 24;
+    
+    bool phone_is_verified = 25;
+    google.protobuf.Timestamp verification_text_sent_at = 26;
+    repeated string verified_phone_numbers = 27;
+    optional LanguageCode preferred_language = 28;
+    string username_hash = 29;
 }
 
 message UserFilter {
@@ -167,46 +159,19 @@ message Token {
     TokenType type = 12;
 }
 
-message ActiveMeasurement {
-    string id = 1;
-    string user_id = 2;
-    int32 seconds = 3;
-    google.protobuf.Timestamp created_at = 5;
-    google.protobuf.Timestamp expires_at = 6;
-    Location from = 7;
-    int32 year = 8;
-    Platform device = 9;
-}
-
-message CityHistoryMap {
-    map<string, int32> city_amount = 1;
-}
-
-message ActiveHistoryData {
-    int32 seconds = 1;   
-    int32 points = 2;
-    map<string, CityHistoryMap> from = 3;
-    map<int32, string> dau = 4;
-    map<string, int32> device = 5;
-}
-
-message ActiveHistory {
-    int32 year = 1;
-    string user_id = 2;
-    map<int32, ActiveHistoryData> data = 3;
-}
-
 enum LoginStatus {
     AUTHENTICATED = 0;
-    EMAIL_IS_NOT_VERIFIED = 1;
+    NOT_AUTHENTICATED = 1;
+    EMAIL_IS_NOT_VERIFIED = 2;
 }
 
 enum LoginType {
     LOGIN_TYPE_INVALID = 0;
-    LOGIN_TYPE_EMAIL_PASSWORD = 1;
-    LOGIN_TYPE_PHONE_PASSWORD = 2;
-    LOGIN_TYPE_EMAIL_VERIFICATION_CODE = 3;
-    LOGIN_TYPE_PHONE_VERIFICATION_CODE = 4;
+    EMAIL_PASSWORD = 1;
+    PHONE_PASSWORD = 2;
+    USERNAME_PASSWORD = 3;
+    EMAIL_VERIFICATION_CODE = 4;
+    PHONE_VERIFICATION_CODE = 5;
 }
 
 message LoginSession {
@@ -225,14 +190,11 @@ message UserRequest {
     Token token = 7;
     string cloud_token = 8;
     string token_pointer = 9;
-    ActiveMeasurement active_measurement = 10;
-    int32 total_active_time = 11;
-    int32 average_active_time = 12;
-    Config config = 13;
-    Email email = 14;
-    string email_verification_code = 15;
-    string reset_password_code = 16;
-    string search = 17;
+    Config config = 10;
+    Email email = 11;
+    string email_verification_code = 12;
+    string reset_password_code = 13;
+    string search = 14;
 }
 
 message UserResponse {
@@ -242,8 +204,6 @@ message UserResponse {
     Token token = 4;
     repeated Token tokens = 5;
     map<string, string> public_keys = 6;
-    ActiveMeasurement active_measurement = 7;
-    Config config = 8;
-    ActiveHistory active_history = 9;
-    LoginSession login_session = 10;
+    Config config = 7;
+    LoginSession login_session = 8;
 }
