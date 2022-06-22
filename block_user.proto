@@ -8,16 +8,13 @@ import "google/protobuf/timestamp.proto";
 
 service UserService {
     rpc Heartbeat(UserRequest) returns (UserResponse) {}
-    rpc Create(UserRequest) returns (UserResponse) {}
-    rpc UpdatePassword(UserRequest) returns (UserResponse) {}
-    rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
-    rpc UpdateContact(UserRequest) returns (UserResponse) {}
-    rpc UpdateProfile(UserRequest) returns (UserResponse) {}
+    rpc CreateUser(UserRequest) returns (UserResponse) {}
+    rpc UpdateUser(UserRequest) returns (UserResponse) {}
     rpc UpdateSecurity(UserRequest) returns (UserResponse) {}
-    rpc Get(UserRequest) returns (UserResponse) {}
-    rpc GetAll(UserRequest) returns (UserResponse) {}
+    rpc GetUser(UserRequest) returns (UserResponse) {}
+    rpc GetUsers(UserRequest) returns (UserResponse) {}
     rpc Search(UserRequest) returns (UserResponse) {}
-    rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
+    rpc ValidateUserCredentials(UserRequest) returns (UserResponse) {}
     rpc Login(UserRequest) returns (UserResponse) {}
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
     rpc BlockToken(UserRequest) returns (UserResponse) {}
@@ -26,16 +23,16 @@ service UserService {
     rpc GetTokens(UserRequest) returns (UserResponse) {}
     rpc PublicKeys(UserRequest) returns (UserResponse) {}
     rpc RecordActiveMeasurement(UserRequest) returns (UserResponse) {}
-    rpc UserActiveHistory(UserRequest) returns (UserResponse) {}
-    rpc NamespaceActiveHistory(UserRequest) returns (UserResponse) {}
+    rpc GetUserActiveHistory(UserRequest) returns (UserResponse) {}
+    rpc GetNamespaceActiveHistory(UserRequest) returns (UserResponse) {}
     rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
     rpc VerifyEmail(UserRequest) returns (UserResponse) {}
     rpc SendResetPasswordEmail(UserRequest) returns (UserResponse) {}
     rpc ResetPassword(UserRequest) returns (UserResponse) {}
-    rpc Delete(UserRequest) returns (UserResponse) {}
-    rpc DeleteBatch(UserRequest) returns (UserResponse) {}
+    rpc DeleteUser(UserRequest) returns (UserResponse) {}
+    rpc DeleteUserBatch(UserRequest) returns (UserResponse) {}
     rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
-    rpc CreateNamespaceConfig(UserRequest) returns (UserResponse) {}
+    rpc CreateNamespace(UserRequest) returns (UserResponse) {}
     rpc UpdateConfig(UserRequest) returns (UserResponse) {}
     rpc GetConfig(UserRequest) returns (UserResponse) {}
     rpc DeleteConfig(UserRequest) returns (UserResponse) {}
@@ -87,16 +84,16 @@ message Email {
 
 message User {
     string id = 1;
-    string username = 2;
-    string email = 3;
+    optional string username = 2;
+    optional string email = 3;
     string password = 4;
-    string image = 5;
+    optional string image = 5;
     string metadata = 6;
 	google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
-    string first_name = 9;
-    string last_name = 10;
-    google.protobuf.Timestamp birthdate = 11;
+    optional string first_name = 9;
+    optional string last_name = 10;
+    optional google.protobuf.Timestamp birthdate = 11;
     google.protobuf.Timestamp email_verified_at = 12;
     bool email_is_verified = 13;
     google.protobuf.Timestamp verification_email_sent_at = 14;
@@ -109,12 +106,12 @@ message User {
     int32 reset_password_attempts = 21;
     repeated string verified_emails = 22;
     string email_hash = 23;
-    string phone_number = 24;
+    optional string phone_number = 24;
     string phone_number_hash = 25;
     bool phone_number_is_verified = 26;
     google.protobuf.Timestamp verification_text_sent_at = 27;
     repeated string verified_phone_numbers = 28;
-    LanguageCode preferred_language = 29;
+    optional LanguageCode preferred_language = 29;
     string username_hash = 30;
 }
 
