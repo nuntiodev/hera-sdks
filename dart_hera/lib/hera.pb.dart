@@ -243,9 +243,10 @@ class User extends $pb.GeneratedMessage {
     ..aOS(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneHash')
     ..aOB(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneIsVerified')
     ..aOM<$1.Timestamp>(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationTextSentAt', subBuilder: $1.Timestamp.create)
-    ..pPS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
-    ..e<LanguageCode>(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'preferredLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
-    ..aOS(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usernameHash')
+    ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phoneVerificationCode')
+    ..pPS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
+    ..e<LanguageCode>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'preferredLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
+    ..aOS(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usernameHash')
     ..hasRequiredFields = false
   ;
 
@@ -277,6 +278,7 @@ class User extends $pb.GeneratedMessage {
     $core.String? phoneHash,
     $core.bool? phoneIsVerified,
     $1.Timestamp? verificationTextSentAt,
+    $core.String? phoneVerificationCode,
     $core.Iterable<$core.String>? verifiedPhoneNumbers,
     LanguageCode? preferredLanguage,
     $core.String? usernameHash,
@@ -359,6 +361,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (verificationTextSentAt != null) {
       _result.verificationTextSentAt = verificationTextSentAt;
+    }
+    if (phoneVerificationCode != null) {
+      _result.phoneVerificationCode = phoneVerificationCode;
     }
     if (verifiedPhoneNumbers != null) {
       _result.verifiedPhoneNumbers.addAll(verifiedPhoneNumbers);
@@ -637,25 +642,34 @@ class User extends $pb.GeneratedMessage {
   $1.Timestamp ensureVerificationTextSentAt() => $_ensure(25);
 
   @$pb.TagNumber(27)
-  $core.List<$core.String> get verifiedPhoneNumbers => $_getList(26);
+  $core.String get phoneVerificationCode => $_getSZ(26);
+  @$pb.TagNumber(27)
+  set phoneVerificationCode($core.String v) { $_setString(26, v); }
+  @$pb.TagNumber(27)
+  $core.bool hasPhoneVerificationCode() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearPhoneVerificationCode() => clearField(27);
 
   @$pb.TagNumber(28)
-  LanguageCode get preferredLanguage => $_getN(27);
-  @$pb.TagNumber(28)
-  set preferredLanguage(LanguageCode v) { setField(28, v); }
-  @$pb.TagNumber(28)
-  $core.bool hasPreferredLanguage() => $_has(27);
-  @$pb.TagNumber(28)
-  void clearPreferredLanguage() => clearField(28);
+  $core.List<$core.String> get verifiedPhoneNumbers => $_getList(27);
 
   @$pb.TagNumber(29)
-  $core.String get usernameHash => $_getSZ(28);
+  LanguageCode get preferredLanguage => $_getN(28);
   @$pb.TagNumber(29)
-  set usernameHash($core.String v) { $_setString(28, v); }
+  set preferredLanguage(LanguageCode v) { setField(29, v); }
   @$pb.TagNumber(29)
-  $core.bool hasUsernameHash() => $_has(28);
+  $core.bool hasPreferredLanguage() => $_has(28);
   @$pb.TagNumber(29)
-  void clearUsernameHash() => clearField(29);
+  void clearPreferredLanguage() => clearField(29);
+
+  @$pb.TagNumber(30)
+  $core.String get usernameHash => $_getSZ(29);
+  @$pb.TagNumber(30)
+  set usernameHash($core.String v) { $_setString(29, v); }
+  @$pb.TagNumber(30)
+  $core.bool hasUsernameHash() => $_has(29);
+  @$pb.TagNumber(30)
+  void clearUsernameHash() => clearField(30);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
@@ -1048,7 +1062,6 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOM<Config>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordCode')
-    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'search')
     ..hasRequiredFields = false
   ;
 
@@ -1065,7 +1078,6 @@ class UserRequest extends $pb.GeneratedMessage {
     Config? config,
     $core.String? emailVerificationCode,
     $core.String? resetPasswordCode,
-    $core.String? search,
   }) {
     final _result = create();
     if (user != null) {
@@ -1100,9 +1112,6 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (resetPasswordCode != null) {
       _result.resetPasswordCode = resetPasswordCode;
-    }
-    if (search != null) {
-      _result.search = search;
     }
     return _result;
   }
@@ -1229,15 +1238,6 @@ class UserRequest extends $pb.GeneratedMessage {
   $core.bool hasResetPasswordCode() => $_has(10);
   @$pb.TagNumber(11)
   void clearResetPasswordCode() => clearField(11);
-
-  @$pb.TagNumber(12)
-  $core.String get search => $_getSZ(11);
-  @$pb.TagNumber(12)
-  set search($core.String v) { $_setString(11, v); }
-  @$pb.TagNumber(12)
-  $core.bool hasSearch() => $_has(11);
-  @$pb.TagNumber(12)
-  void clearSearch() => clearField(12);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
