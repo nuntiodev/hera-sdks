@@ -10,7 +10,10 @@ import "google/protobuf/timestamp.proto";
 service UserService {
     rpc Heartbeat(UserRequest) returns (UserResponse) {}
     rpc CreateUser(UserRequest) returns (UserResponse) {}
-    rpc UpdateUser(UserRequest) returns (UserResponse) {}
+    rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
+    rpc UpdateUserProfileInformation(UserRequest) returns (UserResponse) {}
+    rpc UpdateUserContactInformation(UserRequest) returns (UserResponse) {}
+    rpc UpdateUserPassword(UserRequest) returns (UserResponse) {}
     rpc GetUser(UserRequest) returns (UserResponse) {}
     rpc ListUsers(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
