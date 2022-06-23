@@ -31,7 +31,7 @@ type UserServiceClient interface {
 	Login(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	DeleteUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	DeleteUsers(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
-	CreateToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
+	CreateTokenPair(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	ValidateToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	BlockToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	RefreshToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
@@ -177,9 +177,9 @@ func (c *userServiceClient) DeleteUsers(ctx context.Context, in *HeraRequest, op
 	return out, nil
 }
 
-func (c *userServiceClient) CreateToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *userServiceClient) CreateTokenPair(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/CreateToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.UserService/CreateTokenPair", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -365,7 +365,7 @@ type UserServiceServer interface {
 	Login(context.Context, *HeraRequest) (*HeraResponse, error)
 	DeleteUser(context.Context, *HeraRequest) (*HeraResponse, error)
 	DeleteUsers(context.Context, *HeraRequest) (*HeraResponse, error)
-	CreateToken(context.Context, *HeraRequest) (*HeraResponse, error)
+	CreateTokenPair(context.Context, *HeraRequest) (*HeraResponse, error)
 	ValidateToken(context.Context, *HeraRequest) (*HeraResponse, error)
 	BlockToken(context.Context, *HeraRequest) (*HeraResponse, error)
 	RefreshToken(context.Context, *HeraRequest) (*HeraResponse, error)
@@ -429,8 +429,8 @@ func (UnimplementedUserServiceServer) DeleteUser(context.Context, *HeraRequest) 
 func (UnimplementedUserServiceServer) DeleteUsers(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUsers not implemented")
 }
-func (UnimplementedUserServiceServer) CreateToken(context.Context, *HeraRequest) (*HeraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateToken not implemented")
+func (UnimplementedUserServiceServer) CreateTokenPair(context.Context, *HeraRequest) (*HeraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTokenPair not implemented")
 }
 func (UnimplementedUserServiceServer) ValidateToken(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateToken not implemented")
@@ -732,20 +732,20 @@ func _UserService_DeleteUsers_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_CreateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_CreateTokenPair_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreateToken(ctx, in)
+		return srv.(UserServiceServer).CreateTokenPair(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/CreateToken",
+		FullMethod: "/Hera.UserService/CreateTokenPair",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateToken(ctx, req.(*HeraRequest))
+		return srv.(UserServiceServer).CreateTokenPair(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1134,8 +1134,8 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_DeleteUsers_Handler,
 		},
 		{
-			MethodName: "CreateToken",
-			Handler:    _UserService_CreateToken_Handler,
+			MethodName: "CreateTokenPair",
+			Handler:    _UserService_CreateTokenPair_Handler,
 		},
 		{
 			MethodName: "ValidateToken",

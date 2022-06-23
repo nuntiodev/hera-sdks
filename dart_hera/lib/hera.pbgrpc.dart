@@ -77,9 +77,9 @@ class UserServiceClient extends $grpc.Client {
           '/Hera.UserService/DeleteUsers',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
-  static final _$createToken =
+  static final _$createTokenPair =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/CreateToken',
+          '/Hera.UserService/CreateTokenPair',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$validateToken =
@@ -247,9 +247,9 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteUsers, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.HeraResponse> createToken($0.HeraRequest request,
+  $grpc.ResponseFuture<$0.HeraResponse> createTokenPair($0.HeraRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createToken, request, options: options);
+    return $createUnaryCall(_$createTokenPair, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.HeraResponse> validateToken($0.HeraRequest request,
@@ -445,8 +445,8 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.HeraRequest.fromBuffer(value),
         ($0.HeraResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.HeraRequest, $0.HeraResponse>(
-        'CreateToken',
-        createToken_Pre,
+        'CreateTokenPair',
+        createTokenPair_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.HeraRequest.fromBuffer(value),
@@ -644,9 +644,9 @@ abstract class UserServiceBase extends $grpc.Service {
     return deleteUsers(call, await request);
   }
 
-  $async.Future<$0.HeraResponse> createToken_Pre(
+  $async.Future<$0.HeraResponse> createTokenPair_Pre(
       $grpc.ServiceCall call, $async.Future<$0.HeraRequest> request) async {
-    return createToken(call, await request);
+    return createTokenPair(call, await request);
   }
 
   $async.Future<$0.HeraResponse> validateToken_Pre(
@@ -765,7 +765,7 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.HeraRequest request);
   $async.Future<$0.HeraResponse> deleteUsers(
       $grpc.ServiceCall call, $0.HeraRequest request);
-  $async.Future<$0.HeraResponse> createToken(
+  $async.Future<$0.HeraResponse> createTokenPair(
       $grpc.ServiceCall call, $0.HeraRequest request);
   $async.Future<$0.HeraResponse> validateToken(
       $grpc.ServiceCall call, $0.HeraRequest request);
