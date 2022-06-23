@@ -1060,6 +1060,7 @@ class HeraRequest extends $pb.GeneratedMessage {
     ..aOM<Config>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey')
     ..hasRequiredFields = false
   ;
 
@@ -1074,6 +1075,7 @@ class HeraRequest extends $pb.GeneratedMessage {
     Config? config,
     $core.String? cloudToken,
     $core.String? tokenPointer,
+    $core.String? privateKey,
   }) {
     final _result = create();
     if (user != null) {
@@ -1102,6 +1104,9 @@ class HeraRequest extends $pb.GeneratedMessage {
     }
     if (tokenPointer != null) {
       _result.tokenPointer = tokenPointer;
+    }
+    if (privateKey != null) {
+      _result.privateKey = privateKey;
     }
     return _result;
   }
@@ -1210,6 +1215,15 @@ class HeraRequest extends $pb.GeneratedMessage {
   $core.bool hasTokenPointer() => $_has(8);
   @$pb.TagNumber(9)
   void clearTokenPointer() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get privateKey => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set privateKey($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasPrivateKey() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPrivateKey() => clearField(10);
 }
 
 class HeraResponse extends $pb.GeneratedMessage {

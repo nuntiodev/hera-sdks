@@ -207,11 +207,12 @@ const HeraRequest$json = const {
     const {'1': 'config', '3': 7, '4': 1, '5': 11, '6': '.Hera.Config', '10': 'config'},
     const {'1': 'cloud_token', '3': 8, '4': 1, '5': 9, '10': 'cloudToken'},
     const {'1': 'token_pointer', '3': 9, '4': 1, '5': 9, '10': 'tokenPointer'},
+    const {'1': 'private_key', '3': 10, '4': 1, '5': 9, '10': 'privateKey'},
   ],
 };
 
 /// Descriptor for `HeraRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List heraRequestDescriptor = $convert.base64Decode('CgtIZXJhUmVxdWVzdBIeCgR1c2VyGAEgASgLMgouSGVyYS5Vc2VyUgR1c2VyEisKC3VzZXJfdXBkYXRlGAIgASgLMgouSGVyYS5Vc2VyUgp1c2VyVXBkYXRlEiEKBXF1ZXJ5GAMgASgLMgsuSGVyYS5RdWVyeVIFcXVlcnkSHAoJbmFtZXNwYWNlGAQgASgJUgluYW1lc3BhY2USIAoFdXNlcnMYBSADKAsyCi5IZXJhLlVzZXJSBXVzZXJzEiEKBXRva2VuGAYgASgLMgsuSGVyYS5Ub2tlblIFdG9rZW4SJAoGY29uZmlnGAcgASgLMgwuSGVyYS5Db25maWdSBmNvbmZpZxIfCgtjbG91ZF90b2tlbhgIIAEoCVIKY2xvdWRUb2tlbhIjCg10b2tlbl9wb2ludGVyGAkgASgJUgx0b2tlblBvaW50ZXI=');
+final $typed_data.Uint8List heraRequestDescriptor = $convert.base64Decode('CgtIZXJhUmVxdWVzdBIeCgR1c2VyGAEgASgLMgouSGVyYS5Vc2VyUgR1c2VyEisKC3VzZXJfdXBkYXRlGAIgASgLMgouSGVyYS5Vc2VyUgp1c2VyVXBkYXRlEiEKBXF1ZXJ5GAMgASgLMgsuSGVyYS5RdWVyeVIFcXVlcnkSHAoJbmFtZXNwYWNlGAQgASgJUgluYW1lc3BhY2USIAoFdXNlcnMYBSADKAsyCi5IZXJhLlVzZXJSBXVzZXJzEiEKBXRva2VuGAYgASgLMgsuSGVyYS5Ub2tlblIFdG9rZW4SJAoGY29uZmlnGAcgASgLMgwuSGVyYS5Db25maWdSBmNvbmZpZxIfCgtjbG91ZF90b2tlbhgIIAEoCVIKY2xvdWRUb2tlbhIjCg10b2tlbl9wb2ludGVyGAkgASgJUgx0b2tlblBvaW50ZXISHwoLcHJpdmF0ZV9rZXkYCiABKAlSCnByaXZhdGVLZXk=');
 @$core.Deprecated('Use heraResponseDescriptor instead')
 const HeraResponse$json = const {
   '1': 'HeraResponse',

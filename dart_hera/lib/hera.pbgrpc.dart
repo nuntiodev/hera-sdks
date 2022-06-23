@@ -152,9 +152,9 @@ class ServiceClient extends $grpc.Client {
           '/Hera.Service/CreateNamespace',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
-  static final _$registerPublicKey =
+  static final _$registerRsaKey =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.Service/RegisterPublicKey',
+          '/Hera.Service/RegisterRsaKey',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$removePublicKey =
@@ -332,10 +332,9 @@ class ServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createNamespace, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.HeraResponse> registerPublicKey(
-      $0.HeraRequest request,
+  $grpc.ResponseFuture<$0.HeraResponse> registerRsaKey($0.HeraRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$registerPublicKey, request, options: options);
+    return $createUnaryCall(_$registerRsaKey, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.HeraResponse> removePublicKey($0.HeraRequest request,
@@ -560,8 +559,8 @@ abstract class ServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.HeraRequest.fromBuffer(value),
         ($0.HeraResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.HeraRequest, $0.HeraResponse>(
-        'RegisterPublicKey',
-        registerPublicKey_Pre,
+        'RegisterRsaKey',
+        registerRsaKey_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.HeraRequest.fromBuffer(value),
@@ -736,9 +735,9 @@ abstract class ServiceBase extends $grpc.Service {
     return createNamespace(call, await request);
   }
 
-  $async.Future<$0.HeraResponse> registerPublicKey_Pre(
+  $async.Future<$0.HeraResponse> registerRsaKey_Pre(
       $grpc.ServiceCall call, $async.Future<$0.HeraRequest> request) async {
-    return registerPublicKey(call, await request);
+    return registerRsaKey(call, await request);
   }
 
   $async.Future<$0.HeraResponse> removePublicKey_Pre(
@@ -817,7 +816,7 @@ abstract class ServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.HeraRequest request);
   $async.Future<$0.HeraResponse> createNamespace(
       $grpc.ServiceCall call, $0.HeraRequest request);
-  $async.Future<$0.HeraResponse> registerPublicKey(
+  $async.Future<$0.HeraResponse> registerRsaKey(
       $grpc.ServiceCall call, $0.HeraRequest request);
   $async.Future<$0.HeraResponse> removePublicKey(
       $grpc.ServiceCall call, $0.HeraRequest request);

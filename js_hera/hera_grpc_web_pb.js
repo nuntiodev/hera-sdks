@@ -1786,8 +1786,8 @@ proto.Hera.ServicePromiseClient.prototype.createNamespace =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_Service_RegisterPublicKey = new grpc.web.MethodDescriptor(
-  '/Hera.Service/RegisterPublicKey',
+const methodDescriptor_Service_RegisterRsaKey = new grpc.web.MethodDescriptor(
+  '/Hera.Service/RegisterRsaKey',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1812,13 +1812,13 @@ const methodDescriptor_Service_RegisterPublicKey = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.ServiceClient.prototype.registerPublicKey =
+proto.Hera.ServiceClient.prototype.registerRsaKey =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.Service/RegisterPublicKey',
+      '/Hera.Service/RegisterRsaKey',
       request,
       metadata || {},
-      methodDescriptor_Service_RegisterPublicKey,
+      methodDescriptor_Service_RegisterRsaKey,
       callback);
 };
 
@@ -1831,13 +1831,13 @@ proto.Hera.ServiceClient.prototype.registerPublicKey =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.ServicePromiseClient.prototype.registerPublicKey =
+proto.Hera.ServicePromiseClient.prototype.registerRsaKey =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.Service/RegisterPublicKey',
+      '/Hera.Service/RegisterRsaKey',
       request,
       metadata || {},
-      methodDescriptor_Service_RegisterPublicKey);
+      methodDescriptor_Service_RegisterRsaKey);
 };
 
 

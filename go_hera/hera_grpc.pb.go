@@ -46,7 +46,7 @@ type ServiceClient interface {
 	ResetPassword(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	DeleteNamespace(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	CreateNamespace(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
-	RegisterPublicKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
+	RegisterRsaKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	RemovePublicKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	GetConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	UpdateConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
@@ -313,9 +313,9 @@ func (c *serviceClient) CreateNamespace(ctx context.Context, in *HeraRequest, op
 	return out, nil
 }
 
-func (c *serviceClient) RegisterPublicKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) RegisterRsaKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.Service/RegisterPublicKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/RegisterRsaKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -390,7 +390,7 @@ type ServiceServer interface {
 	ResetPassword(context.Context, *HeraRequest) (*HeraResponse, error)
 	DeleteNamespace(context.Context, *HeraRequest) (*HeraResponse, error)
 	CreateNamespace(context.Context, *HeraRequest) (*HeraResponse, error)
-	RegisterPublicKey(context.Context, *HeraRequest) (*HeraResponse, error)
+	RegisterRsaKey(context.Context, *HeraRequest) (*HeraResponse, error)
 	RemovePublicKey(context.Context, *HeraRequest) (*HeraResponse, error)
 	GetConfig(context.Context, *HeraRequest) (*HeraResponse, error)
 	UpdateConfig(context.Context, *HeraRequest) (*HeraResponse, error)
@@ -485,8 +485,8 @@ func (UnimplementedServiceServer) DeleteNamespace(context.Context, *HeraRequest)
 func (UnimplementedServiceServer) CreateNamespace(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNamespace not implemented")
 }
-func (UnimplementedServiceServer) RegisterPublicKey(context.Context, *HeraRequest) (*HeraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RegisterPublicKey not implemented")
+func (UnimplementedServiceServer) RegisterRsaKey(context.Context, *HeraRequest) (*HeraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterRsaKey not implemented")
 }
 func (UnimplementedServiceServer) RemovePublicKey(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemovePublicKey not implemented")
@@ -1016,20 +1016,20 @@ func _Service_CreateNamespace_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Service_RegisterPublicKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_RegisterRsaKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ServiceServer).RegisterPublicKey(ctx, in)
+		return srv.(ServiceServer).RegisterRsaKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.Service/RegisterPublicKey",
+		FullMethod: "/Hera.Service/RegisterRsaKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceServer).RegisterPublicKey(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).RegisterRsaKey(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1226,8 +1226,8 @@ var Service_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Service_CreateNamespace_Handler,
 		},
 		{
-			MethodName: "RegisterPublicKey",
-			Handler:    _Service_RegisterPublicKey_Handler,
+			MethodName: "RegisterRsaKey",
+			Handler:    _Service_RegisterRsaKey_Handler,
 		},
 		{
 			MethodName: "RemovePublicKey",

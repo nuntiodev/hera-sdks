@@ -3112,7 +3112,8 @@ proto.Hera.HeraRequest.toObject = function(includeInstance, msg) {
     token: (f = msg.getToken()) && proto.Hera.Token.toObject(includeInstance, f),
     config: (f = msg.getConfig()) && proto.Hera.Config.toObject(includeInstance, f),
     cloudToken: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    tokenPointer: jspb.Message.getFieldWithDefault(msg, 9, "")
+    tokenPointer: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    privateKey: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -3190,6 +3191,10 @@ proto.Hera.HeraRequest.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setTokenPointer(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrivateKey(value);
       break;
     default:
       reader.skipField();
@@ -3286,6 +3291,13 @@ proto.Hera.HeraRequest.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getPrivateKey();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -3566,6 +3578,24 @@ proto.Hera.HeraRequest.prototype.getTokenPointer = function() {
  */
 proto.Hera.HeraRequest.prototype.setTokenPointer = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string private_key = 10;
+ * @return {string}
+ */
+proto.Hera.HeraRequest.prototype.getPrivateKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Hera.HeraRequest} returns this
+ */
+proto.Hera.HeraRequest.prototype.setPrivateKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
