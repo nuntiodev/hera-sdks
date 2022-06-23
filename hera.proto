@@ -23,7 +23,7 @@ service UserService {
     rpc DeleteUser(HeraRequest) returns (HeraResponse) {}
     rpc DeleteUsers(HeraRequest) returns (HeraResponse) {}
 
-    rpc CreateToken(HeraRequest) returns (HeraResponse) {}
+    rpc CreateTokenPair(HeraRequest) returns (HeraResponse) {}
     rpc ValidateToken(HeraRequest) returns (HeraResponse) {}
 
     rpc BlockToken(HeraRequest) returns (HeraResponse) {}
