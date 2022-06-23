@@ -185,4 +185,5 @@ message UserResponse {
     map<string, string> public_keys = 6;
     Config config = 7;
     LoginSession login_session = 8;
+    string private_key = 9;
 }
