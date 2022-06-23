@@ -7,7 +7,7 @@ option go_package = "./go_hera";
 import "google/protobuf/timestamp.proto";
 
 
-service UserService {
+service Service {
     rpc Heartbeat(HeraRequest) returns (HeraResponse) {}
     rpc CreateUser(HeraRequest) returns (HeraResponse) {}
     rpc UpdateMetadata(HeraRequest) returns (HeraResponse) {}
@@ -19,13 +19,10 @@ service UserService {
     rpc ListUsers(HeraRequest) returns (HeraResponse) {}
     rpc ValidateCredentials(HeraRequest) returns (HeraResponse) {}
     rpc Login(HeraRequest) returns (HeraResponse) {}
-
     rpc DeleteUser(HeraRequest) returns (HeraResponse) {}
     rpc DeleteUsers(HeraRequest) returns (HeraResponse) {}
-
     rpc CreateTokenPair(HeraRequest) returns (HeraResponse) {}
     rpc ValidateToken(HeraRequest) returns (HeraResponse) {}
-
     rpc BlockToken(HeraRequest) returns (HeraResponse) {}
     rpc RefreshToken(HeraRequest) returns (HeraResponse) {}
     rpc GetTokens(HeraRequest) returns (HeraResponse) {}
