@@ -10,7 +10,7 @@ import "google/protobuf/timestamp.proto";
 service Service {
     rpc Heartbeat(HeraRequest) returns (HeraResponse) {}
     rpc CreateUser(HeraRequest) returns (HeraResponse) {}
-    rpc UpdateMetadata(HeraRequest) returns (HeraResponse) {}
+    rpc UpdateUserMetadata(HeraRequest) returns (HeraResponse) {}
     rpc UpdateUserProfile(HeraRequest) returns (HeraResponse) {}
     rpc UpdateUserContact(HeraRequest) returns (HeraResponse) {}
     rpc UpdateUserPassword(HeraRequest) returns (HeraResponse) {}
