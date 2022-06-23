@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 type ServiceClient interface {
 	Heartbeat(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	CreateUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
-	UpdateMetadata(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
+	UpdateUserMetadata(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	UpdateUserProfile(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	UpdateUserContact(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	UpdateUserPassword(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
@@ -79,9 +79,9 @@ func (c *serviceClient) CreateUser(ctx context.Context, in *HeraRequest, opts ..
 	return out, nil
 }
 
-func (c *serviceClient) UpdateMetadata(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) UpdateUserMetadata(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateUserMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -364,7 +364,7 @@ func (c *serviceClient) DeleteConfig(ctx context.Context, in *HeraRequest, opts 
 type ServiceServer interface {
 	Heartbeat(context.Context, *HeraRequest) (*HeraResponse, error)
 	CreateUser(context.Context, *HeraRequest) (*HeraResponse, error)
-	UpdateMetadata(context.Context, *HeraRequest) (*HeraResponse, error)
+	UpdateUserMetadata(context.Context, *HeraRequest) (*HeraResponse, error)
 	UpdateUserProfile(context.Context, *HeraRequest) (*HeraResponse, error)
 	UpdateUserContact(context.Context, *HeraRequest) (*HeraResponse, error)
 	UpdateUserPassword(context.Context, *HeraRequest) (*HeraResponse, error)
@@ -407,8 +407,8 @@ func (UnimplementedServiceServer) Heartbeat(context.Context, *HeraRequest) (*Her
 func (UnimplementedServiceServer) CreateUser(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedServiceServer) UpdateMetadata(context.Context, *HeraRequest) (*HeraResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateMetadata not implemented")
+func (UnimplementedServiceServer) UpdateUserMetadata(context.Context, *HeraRequest) (*HeraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserMetadata not implemented")
 }
 func (UnimplementedServiceServer) UpdateUserProfile(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserProfile not implemented")
@@ -548,20 +548,20 @@ func _Service_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Service_UpdateMetadata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_UpdateUserMetadata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ServiceServer).UpdateMetadata(ctx, in)
+		return srv.(ServiceServer).UpdateUserMetadata(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.Service/UpdateMetadata",
+		FullMethod: "/Hera.Service/UpdateUserMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceServer).UpdateMetadata(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).UpdateUserMetadata(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1122,8 +1122,8 @@ var Service_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Service_CreateUser_Handler,
 		},
 		{
-			MethodName: "UpdateMetadata",
-			Handler:    _Service_UpdateMetadata_Handler,
+			MethodName: "UpdateUserMetadata",
+			Handler:    _Service_UpdateUserMetadata_Handler,
 		},
 		{
 			MethodName: "UpdateUserProfile",

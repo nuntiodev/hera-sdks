@@ -200,8 +200,8 @@ proto.Hera.ServicePromiseClient.prototype.createUser =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_Service_UpdateMetadata = new grpc.web.MethodDescriptor(
-  '/Hera.Service/UpdateMetadata',
+const methodDescriptor_Service_UpdateUserMetadata = new grpc.web.MethodDescriptor(
+  '/Hera.Service/UpdateUserMetadata',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -226,13 +226,13 @@ const methodDescriptor_Service_UpdateMetadata = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.ServiceClient.prototype.updateMetadata =
+proto.Hera.ServiceClient.prototype.updateUserMetadata =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.Service/UpdateMetadata',
+      '/Hera.Service/UpdateUserMetadata',
       request,
       metadata || {},
-      methodDescriptor_Service_UpdateMetadata,
+      methodDescriptor_Service_UpdateUserMetadata,
       callback);
 };
 
@@ -245,13 +245,13 @@ proto.Hera.ServiceClient.prototype.updateMetadata =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.ServicePromiseClient.prototype.updateMetadata =
+proto.Hera.ServicePromiseClient.prototype.updateUserMetadata =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.Service/UpdateMetadata',
+      '/Hera.Service/UpdateUserMetadata',
       request,
       metadata || {},
-      methodDescriptor_Service_UpdateMetadata);
+      methodDescriptor_Service_UpdateUserMetadata);
 };
 
 

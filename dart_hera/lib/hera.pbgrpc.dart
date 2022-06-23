@@ -24,9 +24,9 @@ class ServiceClient extends $grpc.Client {
           '/Hera.Service/CreateUser',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
-  static final _$updateMetadata =
+  static final _$updateUserMetadata =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.Service/UpdateMetadata',
+          '/Hera.Service/UpdateUserMetadata',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$updateUserProfile =
@@ -193,9 +193,10 @@ class ServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.HeraResponse> updateMetadata($0.HeraRequest request,
+  $grpc.ResponseFuture<$0.HeraResponse> updateUserMetadata(
+      $0.HeraRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateMetadata, request, options: options);
+    return $createUnaryCall(_$updateUserMetadata, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.HeraResponse> updateUserProfile(
@@ -377,8 +378,8 @@ abstract class ServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.HeraRequest.fromBuffer(value),
         ($0.HeraResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.HeraRequest, $0.HeraResponse>(
-        'UpdateMetadata',
-        updateMetadata_Pre,
+        'UpdateUserMetadata',
+        updateUserMetadata_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.HeraRequest.fromBuffer(value),
@@ -605,9 +606,9 @@ abstract class ServiceBase extends $grpc.Service {
     return createUser(call, await request);
   }
 
-  $async.Future<$0.HeraResponse> updateMetadata_Pre(
+  $async.Future<$0.HeraResponse> updateUserMetadata_Pre(
       $grpc.ServiceCall call, $async.Future<$0.HeraRequest> request) async {
-    return updateMetadata(call, await request);
+    return updateUserMetadata(call, await request);
   }
 
   $async.Future<$0.HeraResponse> updateUserProfile_Pre(
@@ -764,7 +765,7 @@ abstract class ServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.HeraRequest request);
   $async.Future<$0.HeraResponse> createUser(
       $grpc.ServiceCall call, $0.HeraRequest request);
-  $async.Future<$0.HeraResponse> updateMetadata(
+  $async.Future<$0.HeraResponse> updateUserMetadata(
       $grpc.ServiceCall call, $0.HeraRequest request);
   $async.Future<$0.HeraResponse> updateUserProfile(
       $grpc.ServiceCall call, $0.HeraRequest request);
