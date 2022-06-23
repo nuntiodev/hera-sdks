@@ -19,8 +19,10 @@ service UserService {
     rpc ListUsers(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Login(UserRequest) returns (UserResponse) {}
+
     rpc DeleteUser(UserRequest) returns (UserResponse) {}
     rpc DeleteUsers(UserRequest) returns (UserResponse) {}
+
     rpc CreateToken(UserRequest) returns (UserResponse) {}
     rpc ValidateToken(UserRequest) returns (UserResponse) {}
     rpc BlockToken(UserRequest) returns (UserResponse) {}
@@ -118,16 +120,6 @@ enum TokenType {
     TOKEN_TYPE_REFRESH = 2;
 }
 
-enum Platform {
-    INVALID_PLATFORM = 0;
-    IOS = 1;
-    ANDROID = 2;
-    WEB = 3;
-    MACOS = 4;
-    LINUX = 5;
-    WINDOWS = 6;
-}
-
 message Token {
     string id = 1;
     string user_id = 2;
@@ -164,7 +156,7 @@ message LoginSession {
     google.protobuf.Timestamp email_expires_at = 3;
 }
 
-message UserRequest {
+message HeraRequest {
     User user = 1;
     User user_update = 2;
     Query query = 3;
@@ -176,7 +168,7 @@ message UserRequest {
     string token_pointer = 9;
 }
 
-message UserResponse {
+message HeraResponse {
     User user = 1;
     repeated User users = 2;
     int64 amount = 3;
