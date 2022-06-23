@@ -97,6 +97,7 @@ message User {
     repeated string verified_phone_numbers = 26;
     optional LanguageCode preferred_language = 27;
     string username_hash = 28;
+    int32 verify_phone_attempts = 29;
 }
 
 message Query {
