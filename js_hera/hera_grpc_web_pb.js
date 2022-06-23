@@ -200,8 +200,8 @@ proto.Hera.UserServicePromiseClient.prototype.createUser =
  *   !proto.Hera.UserRequest,
  *   !proto.Hera.UserResponse>}
  */
-const methodDescriptor_UserService_UpdateUser = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/UpdateUser',
+const methodDescriptor_UserService_UpdateMetadata = new grpc.web.MethodDescriptor(
+  '/Hera.UserService/UpdateMetadata',
   grpc.web.MethodType.UNARY,
   proto.Hera.UserRequest,
   proto.Hera.UserResponse,
@@ -226,13 +226,13 @@ const methodDescriptor_UserService_UpdateUser = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.updateUser =
+proto.Hera.UserServiceClient.prototype.updateMetadata =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/UpdateUser',
+      '/Hera.UserService/UpdateMetadata',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateUser,
+      methodDescriptor_UserService_UpdateMetadata,
       callback);
 };
 
@@ -245,13 +245,196 @@ proto.Hera.UserServiceClient.prototype.updateUser =
  * @return {!Promise<!proto.Hera.UserResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.updateUser =
+proto.Hera.UserServicePromiseClient.prototype.updateMetadata =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/UpdateUser',
+      '/Hera.UserService/UpdateMetadata',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateUser);
+      methodDescriptor_UserService_UpdateMetadata);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Hera.UserRequest,
+ *   !proto.Hera.UserResponse>}
+ */
+const methodDescriptor_UserService_UpdateUserProfile = new grpc.web.MethodDescriptor(
+  '/Hera.UserService/UpdateUserProfile',
+  grpc.web.MethodType.UNARY,
+  proto.Hera.UserRequest,
+  proto.Hera.UserResponse,
+  /**
+   * @param {!proto.Hera.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Hera.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Hera.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Hera.UserServiceClient.prototype.updateUserProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Hera.UserService/UpdateUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateUserProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Hera.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Hera.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Hera.UserServicePromiseClient.prototype.updateUserProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Hera.UserService/UpdateUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateUserProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Hera.UserRequest,
+ *   !proto.Hera.UserResponse>}
+ */
+const methodDescriptor_UserService_UpdateUserContact = new grpc.web.MethodDescriptor(
+  '/Hera.UserService/UpdateUserContact',
+  grpc.web.MethodType.UNARY,
+  proto.Hera.UserRequest,
+  proto.Hera.UserResponse,
+  /**
+   * @param {!proto.Hera.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Hera.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Hera.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Hera.UserServiceClient.prototype.updateUserContact =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Hera.UserService/UpdateUserContact',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateUserContact,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Hera.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Hera.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Hera.UserServicePromiseClient.prototype.updateUserContact =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Hera.UserService/UpdateUserContact',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateUserContact);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Hera.UserRequest,
+ *   !proto.Hera.UserResponse>}
+ */
+const methodDescriptor_UserService_UpdateUserPassword = new grpc.web.MethodDescriptor(
+  '/Hera.UserService/UpdateUserPassword',
+  grpc.web.MethodType.UNARY,
+  proto.Hera.UserRequest,
+  proto.Hera.UserResponse,
+  /**
+   * @param {!proto.Hera.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Hera.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Hera.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Hera.UserServiceClient.prototype.updateUserPassword =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Hera.UserService/UpdateUserPassword',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateUserPassword,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Hera.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Hera.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Hera.UserServicePromiseClient.prototype.updateUserPassword =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Hera.UserService/UpdateUserPassword',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateUserPassword);
 };
 
 

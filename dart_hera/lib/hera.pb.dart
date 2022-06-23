@@ -1038,28 +1038,26 @@ class LoginSession extends $pb.GeneratedMessage {
 class UserRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
     ..aOM<User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: User.create)
-    ..aOM<User>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'update', subBuilder: User.create)
+    ..aOM<User>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userUpdate', subBuilder: User.create)
     ..aOM<UserFilter>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: UserFilter.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptionKey')
-    ..pc<User>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userBatch', $pb.PbFieldType.PM, subBuilder: User.create)
-    ..aOM<Token>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
-    ..aOM<Config>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
-    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordCode')
-    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'search')
+    ..pc<User>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userBatch', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..aOM<Token>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
+    ..aOM<Config>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
+    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordCode')
+    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'search')
     ..hasRequiredFields = false
   ;
 
   UserRequest._() : super();
   factory UserRequest({
     User? user,
-    User? update,
+    User? userUpdate,
     UserFilter? filter,
     $core.String? namespace,
-    $core.String? encryptionKey,
     $core.Iterable<User>? userBatch,
     Token? token,
     $core.String? cloudToken,
@@ -1073,17 +1071,14 @@ class UserRequest extends $pb.GeneratedMessage {
     if (user != null) {
       _result.user = user;
     }
-    if (update != null) {
-      _result.update = update;
+    if (userUpdate != null) {
+      _result.userUpdate = userUpdate;
     }
     if (filter != null) {
       _result.filter = filter;
     }
     if (namespace != null) {
       _result.namespace = namespace;
-    }
-    if (encryptionKey != null) {
-      _result.encryptionKey = encryptionKey;
     }
     if (userBatch != null) {
       _result.userBatch.addAll(userBatch);
@@ -1144,15 +1139,15 @@ class UserRequest extends $pb.GeneratedMessage {
   User ensureUser() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  User get update => $_getN(1);
+  User get userUpdate => $_getN(1);
   @$pb.TagNumber(2)
-  set update(User v) { setField(2, v); }
+  set userUpdate(User v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasUpdate() => $_has(1);
+  $core.bool hasUserUpdate() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUpdate() => clearField(2);
+  void clearUserUpdate() => clearField(2);
   @$pb.TagNumber(2)
-  User ensureUpdate() => $_ensure(1);
+  User ensureUserUpdate() => $_ensure(1);
 
   @$pb.TagNumber(3)
   UserFilter get filter => $_getN(2);
@@ -1175,83 +1170,74 @@ class UserRequest extends $pb.GeneratedMessage {
   void clearNamespace() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get encryptionKey => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set encryptionKey($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasEncryptionKey() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearEncryptionKey() => clearField(5);
+  $core.List<User> get userBatch => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.List<User> get userBatch => $_getList(5);
+  Token get token => $_getN(5);
+  @$pb.TagNumber(6)
+  set token(Token v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasToken() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearToken() => clearField(6);
+  @$pb.TagNumber(6)
+  Token ensureToken() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  Token get token => $_getN(6);
+  $core.String get cloudToken => $_getSZ(6);
   @$pb.TagNumber(7)
-  set token(Token v) { setField(7, v); }
+  set cloudToken($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasToken() => $_has(6);
+  $core.bool hasCloudToken() => $_has(6);
   @$pb.TagNumber(7)
-  void clearToken() => clearField(7);
-  @$pb.TagNumber(7)
-  Token ensureToken() => $_ensure(6);
+  void clearCloudToken() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get cloudToken => $_getSZ(7);
+  $core.String get tokenPointer => $_getSZ(7);
   @$pb.TagNumber(8)
-  set cloudToken($core.String v) { $_setString(7, v); }
+  set tokenPointer($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasCloudToken() => $_has(7);
+  $core.bool hasTokenPointer() => $_has(7);
   @$pb.TagNumber(8)
-  void clearCloudToken() => clearField(8);
+  void clearTokenPointer() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get tokenPointer => $_getSZ(8);
+  Config get config => $_getN(8);
   @$pb.TagNumber(9)
-  set tokenPointer($core.String v) { $_setString(8, v); }
+  set config(Config v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasTokenPointer() => $_has(8);
+  $core.bool hasConfig() => $_has(8);
   @$pb.TagNumber(9)
-  void clearTokenPointer() => clearField(9);
+  void clearConfig() => clearField(9);
+  @$pb.TagNumber(9)
+  Config ensureConfig() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  Config get config => $_getN(9);
+  $core.String get emailVerificationCode => $_getSZ(9);
   @$pb.TagNumber(10)
-  set config(Config v) { setField(10, v); }
+  set emailVerificationCode($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasConfig() => $_has(9);
+  $core.bool hasEmailVerificationCode() => $_has(9);
   @$pb.TagNumber(10)
-  void clearConfig() => clearField(10);
-  @$pb.TagNumber(10)
-  Config ensureConfig() => $_ensure(9);
+  void clearEmailVerificationCode() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get emailVerificationCode => $_getSZ(10);
+  $core.String get resetPasswordCode => $_getSZ(10);
   @$pb.TagNumber(11)
-  set emailVerificationCode($core.String v) { $_setString(10, v); }
+  set resetPasswordCode($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasEmailVerificationCode() => $_has(10);
+  $core.bool hasResetPasswordCode() => $_has(10);
   @$pb.TagNumber(11)
-  void clearEmailVerificationCode() => clearField(11);
+  void clearResetPasswordCode() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get resetPasswordCode => $_getSZ(11);
+  $core.String get search => $_getSZ(11);
   @$pb.TagNumber(12)
-  set resetPasswordCode($core.String v) { $_setString(11, v); }
+  set search($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasResetPasswordCode() => $_has(11);
+  $core.bool hasSearch() => $_has(11);
   @$pb.TagNumber(12)
-  void clearResetPasswordCode() => clearField(12);
-
-  @$pb.TagNumber(13)
-  $core.String get search => $_getSZ(12);
-  @$pb.TagNumber(13)
-  set search($core.String v) { $_setString(12, v); }
-  @$pb.TagNumber(13)
-  $core.bool hasSearch() => $_has(12);
-  @$pb.TagNumber(13)
-  void clearSearch() => clearField(13);
+  void clearSearch() => clearField(12);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
@@ -1264,6 +1250,7 @@ class UserResponse extends $pb.GeneratedMessage {
     ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeys', entryClassName: 'UserResponse.PublicKeysEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('Hera'))
     ..aOM<Config>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOM<LoginSession>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginSession', subBuilder: LoginSession.create)
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey')
     ..hasRequiredFields = false
   ;
 
@@ -1277,6 +1264,7 @@ class UserResponse extends $pb.GeneratedMessage {
     $core.Map<$core.String, $core.String>? publicKeys,
     Config? config,
     LoginSession? loginSession,
+    $core.String? privateKey,
   }) {
     final _result = create();
     if (user != null) {
@@ -1302,6 +1290,9 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     if (loginSession != null) {
       _result.loginSession = loginSession;
+    }
+    if (privateKey != null) {
+      _result.privateKey = privateKey;
     }
     return _result;
   }
@@ -1387,5 +1378,14 @@ class UserResponse extends $pb.GeneratedMessage {
   void clearLoginSession() => clearField(8);
   @$pb.TagNumber(8)
   LoginSession ensureLoginSession() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.String get privateKey => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set privateKey($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPrivateKey() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPrivateKey() => clearField(9);
 }
 

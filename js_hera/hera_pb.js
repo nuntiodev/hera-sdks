@@ -3041,7 +3041,7 @@ proto.Hera.LoginSession.prototype.hasEmailExpiresAt = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.Hera.UserRequest.repeatedFields_ = [6];
+proto.Hera.UserRequest.repeatedFields_ = [5];
 
 
 
@@ -3075,19 +3075,18 @@ proto.Hera.UserRequest.prototype.toObject = function(opt_includeInstance) {
 proto.Hera.UserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     user: (f = msg.getUser()) && proto.Hera.User.toObject(includeInstance, f),
-    update: (f = msg.getUpdate()) && proto.Hera.User.toObject(includeInstance, f),
+    userUpdate: (f = msg.getUserUpdate()) && proto.Hera.User.toObject(includeInstance, f),
     filter: (f = msg.getFilter()) && proto.Hera.UserFilter.toObject(includeInstance, f),
     namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    encryptionKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
     userBatchList: jspb.Message.toObjectList(msg.getUserBatchList(),
     proto.Hera.User.toObject, includeInstance),
     token: (f = msg.getToken()) && proto.Hera.Token.toObject(includeInstance, f),
-    cloudToken: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    tokenPointer: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    cloudToken: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    tokenPointer: jspb.Message.getFieldWithDefault(msg, 8, ""),
     config: (f = msg.getConfig()) && proto.Hera.Config.toObject(includeInstance, f),
-    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    resetPasswordCode: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    search: jspb.Message.getFieldWithDefault(msg, 13, "")
+    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    resetPasswordCode: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    search: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -3132,7 +3131,7 @@ proto.Hera.UserRequest.deserializeBinaryFromReader = function(msg, reader) {
     case 2:
       var value = new proto.Hera.User;
       reader.readMessage(value,proto.Hera.User.deserializeBinaryFromReader);
-      msg.setUpdate(value);
+      msg.setUserUpdate(value);
       break;
     case 3:
       var value = new proto.Hera.UserFilter;
@@ -3144,41 +3143,37 @@ proto.Hera.UserRequest.deserializeBinaryFromReader = function(msg, reader) {
       msg.setNamespace(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEncryptionKey(value);
-      break;
-    case 6:
       var value = new proto.Hera.User;
       reader.readMessage(value,proto.Hera.User.deserializeBinaryFromReader);
       msg.addUserBatch(value);
       break;
-    case 7:
+    case 6:
       var value = new proto.Hera.Token;
       reader.readMessage(value,proto.Hera.Token.deserializeBinaryFromReader);
       msg.setToken(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setCloudToken(value);
       break;
-    case 9:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setTokenPointer(value);
       break;
-    case 10:
+    case 9:
       var value = new proto.Hera.Config;
       reader.readMessage(value,proto.Hera.Config.deserializeBinaryFromReader);
       msg.setConfig(value);
       break;
-    case 11:
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmailVerificationCode(value);
       break;
-    case 12:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setResetPasswordCode(value);
       break;
-    case 13:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setSearch(value);
       break;
@@ -3219,7 +3214,7 @@ proto.Hera.UserRequest.serializeBinaryToWriter = function(message, writer) {
       proto.Hera.User.serializeBinaryToWriter
     );
   }
-  f = message.getUpdate();
+  f = message.getUserUpdate();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -3242,17 +3237,10 @@ proto.Hera.UserRequest.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getEncryptionKey();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
   f = message.getUserBatchList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      5,
       f,
       proto.Hera.User.serializeBinaryToWriter
     );
@@ -3260,7 +3248,7 @@ proto.Hera.UserRequest.serializeBinaryToWriter = function(message, writer) {
   f = message.getToken();
   if (f != null) {
     writer.writeMessage(
-      7,
+      6,
       f,
       proto.Hera.Token.serializeBinaryToWriter
     );
@@ -3268,21 +3256,21 @@ proto.Hera.UserRequest.serializeBinaryToWriter = function(message, writer) {
   f = message.getCloudToken();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      7,
       f
     );
   }
   f = message.getTokenPointer();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      8,
       f
     );
   }
   f = message.getConfig();
   if (f != null) {
     writer.writeMessage(
-      10,
+      9,
       f,
       proto.Hera.Config.serializeBinaryToWriter
     );
@@ -3290,21 +3278,21 @@ proto.Hera.UserRequest.serializeBinaryToWriter = function(message, writer) {
   f = message.getEmailVerificationCode();
   if (f.length > 0) {
     writer.writeString(
-      11,
+      10,
       f
     );
   }
   f = message.getResetPasswordCode();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      11,
       f
     );
   }
   f = message.getSearch();
   if (f.length > 0) {
     writer.writeString(
-      13,
+      12,
       f
     );
   }
@@ -3349,10 +3337,10 @@ proto.Hera.UserRequest.prototype.hasUser = function() {
 
 
 /**
- * optional User update = 2;
+ * optional User user_update = 2;
  * @return {?proto.Hera.User}
  */
-proto.Hera.UserRequest.prototype.getUpdate = function() {
+proto.Hera.UserRequest.prototype.getUserUpdate = function() {
   return /** @type{?proto.Hera.User} */ (
     jspb.Message.getWrapperField(this, proto.Hera.User, 2));
 };
@@ -3362,7 +3350,7 @@ proto.Hera.UserRequest.prototype.getUpdate = function() {
  * @param {?proto.Hera.User|undefined} value
  * @return {!proto.Hera.UserRequest} returns this
 */
-proto.Hera.UserRequest.prototype.setUpdate = function(value) {
+proto.Hera.UserRequest.prototype.setUserUpdate = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -3371,8 +3359,8 @@ proto.Hera.UserRequest.prototype.setUpdate = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.Hera.UserRequest} returns this
  */
-proto.Hera.UserRequest.prototype.clearUpdate = function() {
-  return this.setUpdate(undefined);
+proto.Hera.UserRequest.prototype.clearUserUpdate = function() {
+  return this.setUserUpdate(undefined);
 };
 
 
@@ -3380,7 +3368,7 @@ proto.Hera.UserRequest.prototype.clearUpdate = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.Hera.UserRequest.prototype.hasUpdate = function() {
+proto.Hera.UserRequest.prototype.hasUserUpdate = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -3441,30 +3429,12 @@ proto.Hera.UserRequest.prototype.setNamespace = function(value) {
 
 
 /**
- * optional string encryption_key = 5;
- * @return {string}
- */
-proto.Hera.UserRequest.prototype.getEncryptionKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.Hera.UserRequest} returns this
- */
-proto.Hera.UserRequest.prototype.setEncryptionKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * repeated User user_batch = 6;
+ * repeated User user_batch = 5;
  * @return {!Array<!proto.Hera.User>}
  */
 proto.Hera.UserRequest.prototype.getUserBatchList = function() {
   return /** @type{!Array<!proto.Hera.User>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.Hera.User, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.Hera.User, 5));
 };
 
 
@@ -3473,7 +3443,7 @@ proto.Hera.UserRequest.prototype.getUserBatchList = function() {
  * @return {!proto.Hera.UserRequest} returns this
 */
 proto.Hera.UserRequest.prototype.setUserBatchList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -3483,7 +3453,7 @@ proto.Hera.UserRequest.prototype.setUserBatchList = function(value) {
  * @return {!proto.Hera.User}
  */
 proto.Hera.UserRequest.prototype.addUserBatch = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.Hera.User, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.Hera.User, opt_index);
 };
 
 
@@ -3497,12 +3467,12 @@ proto.Hera.UserRequest.prototype.clearUserBatchList = function() {
 
 
 /**
- * optional Token token = 7;
+ * optional Token token = 6;
  * @return {?proto.Hera.Token}
  */
 proto.Hera.UserRequest.prototype.getToken = function() {
   return /** @type{?proto.Hera.Token} */ (
-    jspb.Message.getWrapperField(this, proto.Hera.Token, 7));
+    jspb.Message.getWrapperField(this, proto.Hera.Token, 6));
 };
 
 
@@ -3511,7 +3481,7 @@ proto.Hera.UserRequest.prototype.getToken = function() {
  * @return {!proto.Hera.UserRequest} returns this
 */
 proto.Hera.UserRequest.prototype.setToken = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -3529,16 +3499,16 @@ proto.Hera.UserRequest.prototype.clearToken = function() {
  * @return {boolean}
  */
 proto.Hera.UserRequest.prototype.hasToken = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string cloud_token = 8;
+ * optional string cloud_token = 7;
  * @return {string}
  */
 proto.Hera.UserRequest.prototype.getCloudToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -3547,16 +3517,16 @@ proto.Hera.UserRequest.prototype.getCloudToken = function() {
  * @return {!proto.Hera.UserRequest} returns this
  */
 proto.Hera.UserRequest.prototype.setCloudToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string token_pointer = 9;
+ * optional string token_pointer = 8;
  * @return {string}
  */
 proto.Hera.UserRequest.prototype.getTokenPointer = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -3565,17 +3535,17 @@ proto.Hera.UserRequest.prototype.getTokenPointer = function() {
  * @return {!proto.Hera.UserRequest} returns this
  */
 proto.Hera.UserRequest.prototype.setTokenPointer = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional Config config = 10;
+ * optional Config config = 9;
  * @return {?proto.Hera.Config}
  */
 proto.Hera.UserRequest.prototype.getConfig = function() {
   return /** @type{?proto.Hera.Config} */ (
-    jspb.Message.getWrapperField(this, proto.Hera.Config, 10));
+    jspb.Message.getWrapperField(this, proto.Hera.Config, 9));
 };
 
 
@@ -3584,7 +3554,7 @@ proto.Hera.UserRequest.prototype.getConfig = function() {
  * @return {!proto.Hera.UserRequest} returns this
 */
 proto.Hera.UserRequest.prototype.setConfig = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -3602,16 +3572,16 @@ proto.Hera.UserRequest.prototype.clearConfig = function() {
  * @return {boolean}
  */
 proto.Hera.UserRequest.prototype.hasConfig = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional string email_verification_code = 11;
+ * optional string email_verification_code = 10;
  * @return {string}
  */
 proto.Hera.UserRequest.prototype.getEmailVerificationCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -3620,16 +3590,16 @@ proto.Hera.UserRequest.prototype.getEmailVerificationCode = function() {
  * @return {!proto.Hera.UserRequest} returns this
  */
 proto.Hera.UserRequest.prototype.setEmailVerificationCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional string reset_password_code = 12;
+ * optional string reset_password_code = 11;
  * @return {string}
  */
 proto.Hera.UserRequest.prototype.getResetPasswordCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -3638,16 +3608,16 @@ proto.Hera.UserRequest.prototype.getResetPasswordCode = function() {
  * @return {!proto.Hera.UserRequest} returns this
  */
 proto.Hera.UserRequest.prototype.setResetPasswordCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional string search = 13;
+ * optional string search = 12;
  * @return {string}
  */
 proto.Hera.UserRequest.prototype.getSearch = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
@@ -3656,7 +3626,7 @@ proto.Hera.UserRequest.prototype.getSearch = function() {
  * @return {!proto.Hera.UserRequest} returns this
  */
 proto.Hera.UserRequest.prototype.setSearch = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
@@ -3708,7 +3678,8 @@ proto.Hera.UserResponse.toObject = function(includeInstance, msg) {
     proto.Hera.Token.toObject, includeInstance),
     publicKeysMap: (f = msg.getPublicKeysMap()) ? f.toObject(includeInstance, undefined) : [],
     config: (f = msg.getConfig()) && proto.Hera.Config.toObject(includeInstance, f),
-    loginSession: (f = msg.getLoginSession()) && proto.Hera.LoginSession.toObject(includeInstance, f)
+    loginSession: (f = msg.getLoginSession()) && proto.Hera.LoginSession.toObject(includeInstance, f),
+    privateKey: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -3784,6 +3755,10 @@ proto.Hera.UserResponse.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.Hera.LoginSession;
       reader.readMessage(value,proto.Hera.LoginSession.deserializeBinaryFromReader);
       msg.setLoginSession(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrivateKey(value);
       break;
     default:
       reader.skipField();
@@ -3871,6 +3846,13 @@ proto.Hera.UserResponse.serializeBinaryToWriter = function(message, writer) {
       8,
       f,
       proto.Hera.LoginSession.serializeBinaryToWriter
+    );
+  }
+  f = message.getPrivateKey();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
     );
   }
 };
@@ -4137,6 +4119,24 @@ proto.Hera.UserResponse.prototype.clearLoginSession = function() {
  */
 proto.Hera.UserResponse.prototype.hasLoginSession = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string private_key = 9;
+ * @return {string}
+ */
+proto.Hera.UserResponse.prototype.getPrivateKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Hera.UserResponse} returns this
+ */
+proto.Hera.UserResponse.prototype.setPrivateKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

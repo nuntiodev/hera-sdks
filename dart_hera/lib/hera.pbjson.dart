@@ -214,23 +214,22 @@ const UserRequest$json = const {
   '1': 'UserRequest',
   '2': const [
     const {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.Hera.User', '10': 'user'},
-    const {'1': 'update', '3': 2, '4': 1, '5': 11, '6': '.Hera.User', '10': 'update'},
+    const {'1': 'user_update', '3': 2, '4': 1, '5': 11, '6': '.Hera.User', '10': 'userUpdate'},
     const {'1': 'filter', '3': 3, '4': 1, '5': 11, '6': '.Hera.UserFilter', '10': 'filter'},
     const {'1': 'namespace', '3': 4, '4': 1, '5': 9, '10': 'namespace'},
-    const {'1': 'encryption_key', '3': 5, '4': 1, '5': 9, '10': 'encryptionKey'},
-    const {'1': 'user_batch', '3': 6, '4': 3, '5': 11, '6': '.Hera.User', '10': 'userBatch'},
-    const {'1': 'token', '3': 7, '4': 1, '5': 11, '6': '.Hera.Token', '10': 'token'},
-    const {'1': 'cloud_token', '3': 8, '4': 1, '5': 9, '10': 'cloudToken'},
-    const {'1': 'token_pointer', '3': 9, '4': 1, '5': 9, '10': 'tokenPointer'},
-    const {'1': 'config', '3': 10, '4': 1, '5': 11, '6': '.Hera.Config', '10': 'config'},
-    const {'1': 'email_verification_code', '3': 11, '4': 1, '5': 9, '10': 'emailVerificationCode'},
-    const {'1': 'reset_password_code', '3': 12, '4': 1, '5': 9, '10': 'resetPasswordCode'},
-    const {'1': 'search', '3': 13, '4': 1, '5': 9, '10': 'search'},
+    const {'1': 'user_batch', '3': 5, '4': 3, '5': 11, '6': '.Hera.User', '10': 'userBatch'},
+    const {'1': 'token', '3': 6, '4': 1, '5': 11, '6': '.Hera.Token', '10': 'token'},
+    const {'1': 'cloud_token', '3': 7, '4': 1, '5': 9, '10': 'cloudToken'},
+    const {'1': 'token_pointer', '3': 8, '4': 1, '5': 9, '10': 'tokenPointer'},
+    const {'1': 'config', '3': 9, '4': 1, '5': 11, '6': '.Hera.Config', '10': 'config'},
+    const {'1': 'email_verification_code', '3': 10, '4': 1, '5': 9, '10': 'emailVerificationCode'},
+    const {'1': 'reset_password_code', '3': 11, '4': 1, '5': 9, '10': 'resetPasswordCode'},
+    const {'1': 'search', '3': 12, '4': 1, '5': 9, '10': 'search'},
   ],
 };
 
 /// Descriptor for `UserRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIeCgR1c2VyGAEgASgLMgouSGVyYS5Vc2VyUgR1c2VyEiIKBnVwZGF0ZRgCIAEoCzIKLkhlcmEuVXNlclIGdXBkYXRlEigKBmZpbHRlchgDIAEoCzIQLkhlcmEuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEiUKDmVuY3J5cHRpb25fa2V5GAUgASgJUg1lbmNyeXB0aW9uS2V5EikKCnVzZXJfYmF0Y2gYBiADKAsyCi5IZXJhLlVzZXJSCXVzZXJCYXRjaBIhCgV0b2tlbhgHIAEoCzILLkhlcmEuVG9rZW5SBXRva2VuEh8KC2Nsb3VkX3Rva2VuGAggASgJUgpjbG91ZFRva2VuEiMKDXRva2VuX3BvaW50ZXIYCSABKAlSDHRva2VuUG9pbnRlchIkCgZjb25maWcYCiABKAsyDC5IZXJhLkNvbmZpZ1IGY29uZmlnEjYKF2VtYWlsX3ZlcmlmaWNhdGlvbl9jb2RlGAsgASgJUhVlbWFpbFZlcmlmaWNhdGlvbkNvZGUSLgoTcmVzZXRfcGFzc3dvcmRfY29kZRgMIAEoCVIRcmVzZXRQYXNzd29yZENvZGUSFgoGc2VhcmNoGA0gASgJUgZzZWFyY2g=');
+final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIeCgR1c2VyGAEgASgLMgouSGVyYS5Vc2VyUgR1c2VyEisKC3VzZXJfdXBkYXRlGAIgASgLMgouSGVyYS5Vc2VyUgp1c2VyVXBkYXRlEigKBmZpbHRlchgDIAEoCzIQLkhlcmEuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNlEikKCnVzZXJfYmF0Y2gYBSADKAsyCi5IZXJhLlVzZXJSCXVzZXJCYXRjaBIhCgV0b2tlbhgGIAEoCzILLkhlcmEuVG9rZW5SBXRva2VuEh8KC2Nsb3VkX3Rva2VuGAcgASgJUgpjbG91ZFRva2VuEiMKDXRva2VuX3BvaW50ZXIYCCABKAlSDHRva2VuUG9pbnRlchIkCgZjb25maWcYCSABKAsyDC5IZXJhLkNvbmZpZ1IGY29uZmlnEjYKF2VtYWlsX3ZlcmlmaWNhdGlvbl9jb2RlGAogASgJUhVlbWFpbFZlcmlmaWNhdGlvbkNvZGUSLgoTcmVzZXRfcGFzc3dvcmRfY29kZRgLIAEoCVIRcmVzZXRQYXNzd29yZENvZGUSFgoGc2VhcmNoGAwgASgJUgZzZWFyY2g=');
 @$core.Deprecated('Use userResponseDescriptor instead')
 const UserResponse$json = const {
   '1': 'UserResponse',
@@ -243,6 +242,7 @@ const UserResponse$json = const {
     const {'1': 'public_keys', '3': 6, '4': 3, '5': 11, '6': '.Hera.UserResponse.PublicKeysEntry', '10': 'publicKeys'},
     const {'1': 'config', '3': 7, '4': 1, '5': 11, '6': '.Hera.Config', '10': 'config'},
     const {'1': 'login_session', '3': 8, '4': 1, '5': 11, '6': '.Hera.LoginSession', '10': 'loginSession'},
+    const {'1': 'private_key', '3': 9, '4': 1, '5': 9, '10': 'privateKey'},
   ],
   '3': const [UserResponse_PublicKeysEntry$json],
 };
@@ -258,4 +258,4 @@ const UserResponse_PublicKeysEntry$json = const {
 };
 
 /// Descriptor for `UserResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxVc2VyUmVzcG9uc2USHgoEdXNlchgBIAEoCzIKLkhlcmEuVXNlclIEdXNlchIgCgV1c2VycxgCIAMoCzIKLkhlcmEuVXNlclIFdXNlcnMSIQoMdXNlcnNfYW1vdW50GAMgASgDUgt1c2Vyc0Ftb3VudBIhCgV0b2tlbhgEIAEoCzILLkhlcmEuVG9rZW5SBXRva2VuEiMKBnRva2VucxgFIAMoCzILLkhlcmEuVG9rZW5SBnRva2VucxJDCgtwdWJsaWNfa2V5cxgGIAMoCzIiLkhlcmEuVXNlclJlc3BvbnNlLlB1YmxpY0tleXNFbnRyeVIKcHVibGljS2V5cxIkCgZjb25maWcYByABKAsyDC5IZXJhLkNvbmZpZ1IGY29uZmlnEjcKDWxvZ2luX3Nlc3Npb24YCCABKAsyEi5IZXJhLkxvZ2luU2Vzc2lvblIMbG9naW5TZXNzaW9uGj0KD1B1YmxpY0tleXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
+final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxVc2VyUmVzcG9uc2USHgoEdXNlchgBIAEoCzIKLkhlcmEuVXNlclIEdXNlchIgCgV1c2VycxgCIAMoCzIKLkhlcmEuVXNlclIFdXNlcnMSIQoMdXNlcnNfYW1vdW50GAMgASgDUgt1c2Vyc0Ftb3VudBIhCgV0b2tlbhgEIAEoCzILLkhlcmEuVG9rZW5SBXRva2VuEiMKBnRva2VucxgFIAMoCzILLkhlcmEuVG9rZW5SBnRva2VucxJDCgtwdWJsaWNfa2V5cxgGIAMoCzIiLkhlcmEuVXNlclJlc3BvbnNlLlB1YmxpY0tleXNFbnRyeVIKcHVibGljS2V5cxIkCgZjb25maWcYByABKAsyDC5IZXJhLkNvbmZpZ1IGY29uZmlnEjcKDWxvZ2luX3Nlc3Npb24YCCABKAsyEi5IZXJhLkxvZ2luU2Vzc2lvblIMbG9naW5TZXNzaW9uEh8KC3ByaXZhdGVfa2V5GAkgASgJUgpwcml2YXRlS2V5Gj0KD1B1YmxpY0tleXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');

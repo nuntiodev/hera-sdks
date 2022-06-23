@@ -24,9 +24,24 @@ class UserServiceClient extends $grpc.Client {
           '/Hera.UserService/CreateUser',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
-  static final _$updateUser =
+  static final _$updateMetadata =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
-          '/Hera.UserService/UpdateUser',
+          '/Hera.UserService/UpdateMetadata',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateUserProfile =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/Hera.UserService/UpdateUserProfile',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateUserContact =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/Hera.UserService/UpdateUserContact',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateUserPassword =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/Hera.UserService/UpdateUserPassword',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$getUser = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
@@ -168,9 +183,27 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UserResponse> updateUser($0.UserRequest request,
+  $grpc.ResponseFuture<$0.UserResponse> updateMetadata($0.UserRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateUser, request, options: options);
+    return $createUnaryCall(_$updateMetadata, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateUserProfile(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateUserProfile, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateUserContact(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateUserContact, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateUserPassword(
+      $0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateUserPassword, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> getUser($0.UserRequest request,
@@ -325,8 +358,29 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
-        'UpdateUser',
-        updateUser_Pre,
+        'UpdateMetadata',
+        updateMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateUserProfile',
+        updateUserProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateUserContact',
+        updateUserContact_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateUserPassword',
+        updateUserPassword_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -518,9 +572,24 @@ abstract class UserServiceBase extends $grpc.Service {
     return createUser(call, await request);
   }
 
-  $async.Future<$0.UserResponse> updateUser_Pre(
+  $async.Future<$0.UserResponse> updateMetadata_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
-    return updateUser(call, await request);
+    return updateMetadata(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> updateUserProfile_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateUserProfile(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> updateUserContact_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateUserContact(call, await request);
+  }
+
+  $async.Future<$0.UserResponse> updateUserPassword_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateUserPassword(call, await request);
   }
 
   $async.Future<$0.UserResponse> getUser_Pre(
@@ -652,7 +721,13 @@ abstract class UserServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> createUser(
       $grpc.ServiceCall call, $0.UserRequest request);
-  $async.Future<$0.UserResponse> updateUser(
+  $async.Future<$0.UserResponse> updateMetadata(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateUserProfile(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateUserContact(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateUserPassword(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> getUser(
       $grpc.ServiceCall call, $0.UserRequest request);
