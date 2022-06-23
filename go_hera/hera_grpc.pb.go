@@ -14,10 +14,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// UserServiceClient is the client API for UserService service.
+// ServiceClient is the client API for Service service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type UserServiceClient interface {
+type ServiceClient interface {
 	Heartbeat(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	CreateUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	UpdateMetadata(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
@@ -52,306 +52,306 @@ type UserServiceClient interface {
 	DeleteConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 }
 
-type userServiceClient struct {
+type serviceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
-	return &userServiceClient{cc}
+func NewServiceClient(cc grpc.ClientConnInterface) ServiceClient {
+	return &serviceClient{cc}
 }
 
-func (c *userServiceClient) Heartbeat(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) Heartbeat(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/Heartbeat", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/Heartbeat", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) CreateUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) CreateUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/CreateUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateMetadata(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) UpdateMetadata(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/UpdateMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateUserProfile(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) UpdateUserProfile(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/UpdateUserProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateUserProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateUserContact(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) UpdateUserContact(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/UpdateUserContact", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateUserContact", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateUserPassword(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) UpdateUserPassword(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/UpdateUserPassword", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateUserPassword", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) SearchForUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) SearchForUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/SearchForUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/SearchForUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) GetUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) GetUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/GetUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/GetUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) ListUsers(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) ListUsers(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/ListUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/ListUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) ValidateCredentials(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) ValidateCredentials(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/ValidateCredentials", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/ValidateCredentials", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) Login(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) Login(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/Login", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DeleteUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) DeleteUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/DeleteUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/DeleteUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DeleteUsers(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) DeleteUsers(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/DeleteUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/DeleteUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) CreateTokenPair(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) CreateTokenPair(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/CreateTokenPair", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/CreateTokenPair", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) ValidateToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) ValidateToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/ValidateToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/ValidateToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) BlockToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) BlockToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/BlockToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/BlockToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) RefreshToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) RefreshToken(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/RefreshToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/RefreshToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) GetTokens(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) GetTokens(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/GetTokens", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/GetTokens", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) PublicKeys(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) PublicKeys(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/PublicKeys", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/PublicKeys", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) SendVerificationEmail(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) SendVerificationEmail(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/SendVerificationEmail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/SendVerificationEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) VerifyEmail(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) VerifyEmail(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/VerifyEmail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/VerifyEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) SendVerificationText(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) SendVerificationText(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/SendVerificationText", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/SendVerificationText", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) VerifyPhone(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) VerifyPhone(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/VerifyPhone", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/VerifyPhone", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) SendResetPasswordEmail(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) SendResetPasswordEmail(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/SendResetPasswordEmail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/SendResetPasswordEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) SendResetPasswordText(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) SendResetPasswordText(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/SendResetPasswordText", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/SendResetPasswordText", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) ResetPassword(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) ResetPassword(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/ResetPassword", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/ResetPassword", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DeleteNamespace(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) DeleteNamespace(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/DeleteNamespace", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/DeleteNamespace", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) CreateNamespace(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) CreateNamespace(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/CreateNamespace", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/CreateNamespace", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) RegisterPublicKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) RegisterPublicKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/RegisterPublicKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/RegisterPublicKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) GetConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) GetConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/GetConfig", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/GetConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) UpdateConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/UpdateConfig", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DeleteConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+func (c *serviceClient) DeleteConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
-	err := c.cc.Invoke(ctx, "/Hera.UserService/DeleteConfig", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Hera.Service/DeleteConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UserServiceServer is the server API for UserService service.
-// All implementations should embed UnimplementedUserServiceServer
+// ServiceServer is the server API for Service service.
+// All implementations should embed UnimplementedServiceServer
 // for forward compatibility
-type UserServiceServer interface {
+type ServiceServer interface {
 	Heartbeat(context.Context, *HeraRequest) (*HeraResponse, error)
 	CreateUser(context.Context, *HeraRequest) (*HeraResponse, error)
 	UpdateMetadata(context.Context, *HeraRequest) (*HeraResponse, error)
@@ -386,828 +386,828 @@ type UserServiceServer interface {
 	DeleteConfig(context.Context, *HeraRequest) (*HeraResponse, error)
 }
 
-// UnimplementedUserServiceServer should be embedded to have forward compatible implementations.
-type UnimplementedUserServiceServer struct {
+// UnimplementedServiceServer should be embedded to have forward compatible implementations.
+type UnimplementedServiceServer struct {
 }
 
-func (UnimplementedUserServiceServer) Heartbeat(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) Heartbeat(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Heartbeat not implemented")
 }
-func (UnimplementedUserServiceServer) CreateUser(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) CreateUser(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateMetadata(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) UpdateMetadata(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMetadata not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateUserProfile(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) UpdateUserProfile(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserProfile not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateUserContact(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) UpdateUserContact(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserContact not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateUserPassword(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) UpdateUserPassword(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserPassword not implemented")
 }
-func (UnimplementedUserServiceServer) SearchForUser(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) SearchForUser(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchForUser not implemented")
 }
-func (UnimplementedUserServiceServer) GetUser(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) GetUser(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
 }
-func (UnimplementedUserServiceServer) ListUsers(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) ListUsers(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListUsers not implemented")
 }
-func (UnimplementedUserServiceServer) ValidateCredentials(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) ValidateCredentials(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateCredentials not implemented")
 }
-func (UnimplementedUserServiceServer) Login(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) Login(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
 }
-func (UnimplementedUserServiceServer) DeleteUser(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) DeleteUser(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
 }
-func (UnimplementedUserServiceServer) DeleteUsers(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) DeleteUsers(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUsers not implemented")
 }
-func (UnimplementedUserServiceServer) CreateTokenPair(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) CreateTokenPair(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTokenPair not implemented")
 }
-func (UnimplementedUserServiceServer) ValidateToken(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) ValidateToken(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateToken not implemented")
 }
-func (UnimplementedUserServiceServer) BlockToken(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) BlockToken(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BlockToken not implemented")
 }
-func (UnimplementedUserServiceServer) RefreshToken(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) RefreshToken(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
 }
-func (UnimplementedUserServiceServer) GetTokens(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) GetTokens(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTokens not implemented")
 }
-func (UnimplementedUserServiceServer) PublicKeys(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) PublicKeys(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PublicKeys not implemented")
 }
-func (UnimplementedUserServiceServer) SendVerificationEmail(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) SendVerificationEmail(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendVerificationEmail not implemented")
 }
-func (UnimplementedUserServiceServer) VerifyEmail(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) VerifyEmail(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyEmail not implemented")
 }
-func (UnimplementedUserServiceServer) SendVerificationText(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) SendVerificationText(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendVerificationText not implemented")
 }
-func (UnimplementedUserServiceServer) VerifyPhone(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) VerifyPhone(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method VerifyPhone not implemented")
 }
-func (UnimplementedUserServiceServer) SendResetPasswordEmail(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) SendResetPasswordEmail(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendResetPasswordEmail not implemented")
 }
-func (UnimplementedUserServiceServer) SendResetPasswordText(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) SendResetPasswordText(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendResetPasswordText not implemented")
 }
-func (UnimplementedUserServiceServer) ResetPassword(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) ResetPassword(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResetPassword not implemented")
 }
-func (UnimplementedUserServiceServer) DeleteNamespace(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) DeleteNamespace(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNamespace not implemented")
 }
-func (UnimplementedUserServiceServer) CreateNamespace(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) CreateNamespace(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNamespace not implemented")
 }
-func (UnimplementedUserServiceServer) RegisterPublicKey(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) RegisterPublicKey(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterPublicKey not implemented")
 }
-func (UnimplementedUserServiceServer) GetConfig(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) GetConfig(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConfig not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateConfig(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) UpdateConfig(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfig not implemented")
 }
-func (UnimplementedUserServiceServer) DeleteConfig(context.Context, *HeraRequest) (*HeraResponse, error) {
+func (UnimplementedServiceServer) DeleteConfig(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteConfig not implemented")
 }
 
-// UnsafeUserServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UserServiceServer will
+// UnsafeServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ServiceServer will
 // result in compilation errors.
-type UnsafeUserServiceServer interface {
-	mustEmbedUnimplementedUserServiceServer()
+type UnsafeServiceServer interface {
+	mustEmbedUnimplementedServiceServer()
 }
 
-func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
-	s.RegisterService(&UserService_ServiceDesc, srv)
+func RegisterServiceServer(s grpc.ServiceRegistrar, srv ServiceServer) {
+	s.RegisterService(&Service_ServiceDesc, srv)
 }
 
-func _UserService_Heartbeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_Heartbeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).Heartbeat(ctx, in)
+		return srv.(ServiceServer).Heartbeat(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/Heartbeat",
+		FullMethod: "/Hera.Service/Heartbeat",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).Heartbeat(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).Heartbeat(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreateUser(ctx, in)
+		return srv.(ServiceServer).CreateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/CreateUser",
+		FullMethod: "/Hera.Service/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateUser(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).CreateUser(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateMetadata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_UpdateMetadata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateMetadata(ctx, in)
+		return srv.(ServiceServer).UpdateMetadata(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/UpdateMetadata",
+		FullMethod: "/Hera.Service/UpdateMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateMetadata(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).UpdateMetadata(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateUserProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_UpdateUserProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateUserProfile(ctx, in)
+		return srv.(ServiceServer).UpdateUserProfile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/UpdateUserProfile",
+		FullMethod: "/Hera.Service/UpdateUserProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateUserProfile(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).UpdateUserProfile(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateUserContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_UpdateUserContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateUserContact(ctx, in)
+		return srv.(ServiceServer).UpdateUserContact(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/UpdateUserContact",
+		FullMethod: "/Hera.Service/UpdateUserContact",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateUserContact(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).UpdateUserContact(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateUserPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_UpdateUserPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateUserPassword(ctx, in)
+		return srv.(ServiceServer).UpdateUserPassword(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/UpdateUserPassword",
+		FullMethod: "/Hera.Service/UpdateUserPassword",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateUserPassword(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).UpdateUserPassword(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_SearchForUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_SearchForUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).SearchForUser(ctx, in)
+		return srv.(ServiceServer).SearchForUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/SearchForUser",
+		FullMethod: "/Hera.Service/SearchForUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).SearchForUser(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).SearchForUser(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetUser(ctx, in)
+		return srv.(ServiceServer).GetUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/GetUser",
+		FullMethod: "/Hera.Service/GetUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetUser(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).GetUser(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_ListUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_ListUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).ListUsers(ctx, in)
+		return srv.(ServiceServer).ListUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/ListUsers",
+		FullMethod: "/Hera.Service/ListUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).ListUsers(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).ListUsers(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_ValidateCredentials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_ValidateCredentials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).ValidateCredentials(ctx, in)
+		return srv.(ServiceServer).ValidateCredentials(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/ValidateCredentials",
+		FullMethod: "/Hera.Service/ValidateCredentials",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).ValidateCredentials(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).ValidateCredentials(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).Login(ctx, in)
+		return srv.(ServiceServer).Login(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/Login",
+		FullMethod: "/Hera.Service/Login",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).Login(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).Login(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DeleteUser(ctx, in)
+		return srv.(ServiceServer).DeleteUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/DeleteUser",
+		FullMethod: "/Hera.Service/DeleteUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeleteUser(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).DeleteUser(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DeleteUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_DeleteUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DeleteUsers(ctx, in)
+		return srv.(ServiceServer).DeleteUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/DeleteUsers",
+		FullMethod: "/Hera.Service/DeleteUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeleteUsers(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).DeleteUsers(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_CreateTokenPair_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_CreateTokenPair_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreateTokenPair(ctx, in)
+		return srv.(ServiceServer).CreateTokenPair(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/CreateTokenPair",
+		FullMethod: "/Hera.Service/CreateTokenPair",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateTokenPair(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).CreateTokenPair(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_ValidateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_ValidateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).ValidateToken(ctx, in)
+		return srv.(ServiceServer).ValidateToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/ValidateToken",
+		FullMethod: "/Hera.Service/ValidateToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).ValidateToken(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).ValidateToken(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_BlockToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_BlockToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).BlockToken(ctx, in)
+		return srv.(ServiceServer).BlockToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/BlockToken",
+		FullMethod: "/Hera.Service/BlockToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).BlockToken(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).BlockToken(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_RefreshToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_RefreshToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).RefreshToken(ctx, in)
+		return srv.(ServiceServer).RefreshToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/RefreshToken",
+		FullMethod: "/Hera.Service/RefreshToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).RefreshToken(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).RefreshToken(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetTokens_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_GetTokens_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetTokens(ctx, in)
+		return srv.(ServiceServer).GetTokens(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/GetTokens",
+		FullMethod: "/Hera.Service/GetTokens",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetTokens(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).GetTokens(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_PublicKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_PublicKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).PublicKeys(ctx, in)
+		return srv.(ServiceServer).PublicKeys(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/PublicKeys",
+		FullMethod: "/Hera.Service/PublicKeys",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).PublicKeys(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).PublicKeys(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_SendVerificationEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_SendVerificationEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).SendVerificationEmail(ctx, in)
+		return srv.(ServiceServer).SendVerificationEmail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/SendVerificationEmail",
+		FullMethod: "/Hera.Service/SendVerificationEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).SendVerificationEmail(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).SendVerificationEmail(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_VerifyEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_VerifyEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).VerifyEmail(ctx, in)
+		return srv.(ServiceServer).VerifyEmail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/VerifyEmail",
+		FullMethod: "/Hera.Service/VerifyEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).VerifyEmail(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).VerifyEmail(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_SendVerificationText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_SendVerificationText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).SendVerificationText(ctx, in)
+		return srv.(ServiceServer).SendVerificationText(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/SendVerificationText",
+		FullMethod: "/Hera.Service/SendVerificationText",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).SendVerificationText(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).SendVerificationText(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_VerifyPhone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_VerifyPhone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).VerifyPhone(ctx, in)
+		return srv.(ServiceServer).VerifyPhone(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/VerifyPhone",
+		FullMethod: "/Hera.Service/VerifyPhone",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).VerifyPhone(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).VerifyPhone(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_SendResetPasswordEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_SendResetPasswordEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).SendResetPasswordEmail(ctx, in)
+		return srv.(ServiceServer).SendResetPasswordEmail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/SendResetPasswordEmail",
+		FullMethod: "/Hera.Service/SendResetPasswordEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).SendResetPasswordEmail(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).SendResetPasswordEmail(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_SendResetPasswordText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_SendResetPasswordText_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).SendResetPasswordText(ctx, in)
+		return srv.(ServiceServer).SendResetPasswordText(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/SendResetPasswordText",
+		FullMethod: "/Hera.Service/SendResetPasswordText",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).SendResetPasswordText(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).SendResetPasswordText(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_ResetPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_ResetPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).ResetPassword(ctx, in)
+		return srv.(ServiceServer).ResetPassword(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/ResetPassword",
+		FullMethod: "/Hera.Service/ResetPassword",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).ResetPassword(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).ResetPassword(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DeleteNamespace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_DeleteNamespace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DeleteNamespace(ctx, in)
+		return srv.(ServiceServer).DeleteNamespace(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/DeleteNamespace",
+		FullMethod: "/Hera.Service/DeleteNamespace",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeleteNamespace(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).DeleteNamespace(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_CreateNamespace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_CreateNamespace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreateNamespace(ctx, in)
+		return srv.(ServiceServer).CreateNamespace(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/CreateNamespace",
+		FullMethod: "/Hera.Service/CreateNamespace",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateNamespace(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).CreateNamespace(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_RegisterPublicKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_RegisterPublicKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).RegisterPublicKey(ctx, in)
+		return srv.(ServiceServer).RegisterPublicKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/RegisterPublicKey",
+		FullMethod: "/Hera.Service/RegisterPublicKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).RegisterPublicKey(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).RegisterPublicKey(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_GetConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetConfig(ctx, in)
+		return srv.(ServiceServer).GetConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/GetConfig",
+		FullMethod: "/Hera.Service/GetConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetConfig(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).GetConfig(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_UpdateConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateConfig(ctx, in)
+		return srv.(ServiceServer).UpdateConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/UpdateConfig",
+		FullMethod: "/Hera.Service/UpdateConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateConfig(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).UpdateConfig(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DeleteConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Service_DeleteConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DeleteConfig(ctx, in)
+		return srv.(ServiceServer).DeleteConfig(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Hera.UserService/DeleteConfig",
+		FullMethod: "/Hera.Service/DeleteConfig",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeleteConfig(ctx, req.(*HeraRequest))
+		return srv.(ServiceServer).DeleteConfig(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
+// Service_ServiceDesc is the grpc.ServiceDesc for Service service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var UserService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "Hera.UserService",
-	HandlerType: (*UserServiceServer)(nil),
+var Service_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "Hera.Service",
+	HandlerType: (*ServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Heartbeat",
-			Handler:    _UserService_Heartbeat_Handler,
+			Handler:    _Service_Heartbeat_Handler,
 		},
 		{
 			MethodName: "CreateUser",
-			Handler:    _UserService_CreateUser_Handler,
+			Handler:    _Service_CreateUser_Handler,
 		},
 		{
 			MethodName: "UpdateMetadata",
-			Handler:    _UserService_UpdateMetadata_Handler,
+			Handler:    _Service_UpdateMetadata_Handler,
 		},
 		{
 			MethodName: "UpdateUserProfile",
-			Handler:    _UserService_UpdateUserProfile_Handler,
+			Handler:    _Service_UpdateUserProfile_Handler,
 		},
 		{
 			MethodName: "UpdateUserContact",
-			Handler:    _UserService_UpdateUserContact_Handler,
+			Handler:    _Service_UpdateUserContact_Handler,
 		},
 		{
 			MethodName: "UpdateUserPassword",
-			Handler:    _UserService_UpdateUserPassword_Handler,
+			Handler:    _Service_UpdateUserPassword_Handler,
 		},
 		{
 			MethodName: "SearchForUser",
-			Handler:    _UserService_SearchForUser_Handler,
+			Handler:    _Service_SearchForUser_Handler,
 		},
 		{
 			MethodName: "GetUser",
-			Handler:    _UserService_GetUser_Handler,
+			Handler:    _Service_GetUser_Handler,
 		},
 		{
 			MethodName: "ListUsers",
-			Handler:    _UserService_ListUsers_Handler,
+			Handler:    _Service_ListUsers_Handler,
 		},
 		{
 			MethodName: "ValidateCredentials",
-			Handler:    _UserService_ValidateCredentials_Handler,
+			Handler:    _Service_ValidateCredentials_Handler,
 		},
 		{
 			MethodName: "Login",
-			Handler:    _UserService_Login_Handler,
+			Handler:    _Service_Login_Handler,
 		},
 		{
 			MethodName: "DeleteUser",
-			Handler:    _UserService_DeleteUser_Handler,
+			Handler:    _Service_DeleteUser_Handler,
 		},
 		{
 			MethodName: "DeleteUsers",
-			Handler:    _UserService_DeleteUsers_Handler,
+			Handler:    _Service_DeleteUsers_Handler,
 		},
 		{
 			MethodName: "CreateTokenPair",
-			Handler:    _UserService_CreateTokenPair_Handler,
+			Handler:    _Service_CreateTokenPair_Handler,
 		},
 		{
 			MethodName: "ValidateToken",
-			Handler:    _UserService_ValidateToken_Handler,
+			Handler:    _Service_ValidateToken_Handler,
 		},
 		{
 			MethodName: "BlockToken",
-			Handler:    _UserService_BlockToken_Handler,
+			Handler:    _Service_BlockToken_Handler,
 		},
 		{
 			MethodName: "RefreshToken",
-			Handler:    _UserService_RefreshToken_Handler,
+			Handler:    _Service_RefreshToken_Handler,
 		},
 		{
 			MethodName: "GetTokens",
-			Handler:    _UserService_GetTokens_Handler,
+			Handler:    _Service_GetTokens_Handler,
 		},
 		{
 			MethodName: "PublicKeys",
-			Handler:    _UserService_PublicKeys_Handler,
+			Handler:    _Service_PublicKeys_Handler,
 		},
 		{
 			MethodName: "SendVerificationEmail",
-			Handler:    _UserService_SendVerificationEmail_Handler,
+			Handler:    _Service_SendVerificationEmail_Handler,
 		},
 		{
 			MethodName: "VerifyEmail",
-			Handler:    _UserService_VerifyEmail_Handler,
+			Handler:    _Service_VerifyEmail_Handler,
 		},
 		{
 			MethodName: "SendVerificationText",
-			Handler:    _UserService_SendVerificationText_Handler,
+			Handler:    _Service_SendVerificationText_Handler,
 		},
 		{
 			MethodName: "VerifyPhone",
-			Handler:    _UserService_VerifyPhone_Handler,
+			Handler:    _Service_VerifyPhone_Handler,
 		},
 		{
 			MethodName: "SendResetPasswordEmail",
-			Handler:    _UserService_SendResetPasswordEmail_Handler,
+			Handler:    _Service_SendResetPasswordEmail_Handler,
 		},
 		{
 			MethodName: "SendResetPasswordText",
-			Handler:    _UserService_SendResetPasswordText_Handler,
+			Handler:    _Service_SendResetPasswordText_Handler,
 		},
 		{
 			MethodName: "ResetPassword",
-			Handler:    _UserService_ResetPassword_Handler,
+			Handler:    _Service_ResetPassword_Handler,
 		},
 		{
 			MethodName: "DeleteNamespace",
-			Handler:    _UserService_DeleteNamespace_Handler,
+			Handler:    _Service_DeleteNamespace_Handler,
 		},
 		{
 			MethodName: "CreateNamespace",
-			Handler:    _UserService_CreateNamespace_Handler,
+			Handler:    _Service_CreateNamespace_Handler,
 		},
 		{
 			MethodName: "RegisterPublicKey",
-			Handler:    _UserService_RegisterPublicKey_Handler,
+			Handler:    _Service_RegisterPublicKey_Handler,
 		},
 		{
 			MethodName: "GetConfig",
-			Handler:    _UserService_GetConfig_Handler,
+			Handler:    _Service_GetConfig_Handler,
 		},
 		{
 			MethodName: "UpdateConfig",
-			Handler:    _UserService_UpdateConfig_Handler,
+			Handler:    _Service_UpdateConfig_Handler,
 		},
 		{
 			MethodName: "DeleteConfig",
-			Handler:    _UserService_DeleteConfig_Handler,
+			Handler:    _Service_DeleteConfig_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -13,167 +13,167 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'hera.pb.dart' as $0;
 export 'hera.pb.dart';
 
-class UserServiceClient extends $grpc.Client {
+class ServiceClient extends $grpc.Client {
   static final _$heartbeat =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/Heartbeat',
+          '/Hera.Service/Heartbeat',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$createUser =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/CreateUser',
+          '/Hera.Service/CreateUser',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$updateMetadata =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/UpdateMetadata',
+          '/Hera.Service/UpdateMetadata',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$updateUserProfile =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/UpdateUserProfile',
+          '/Hera.Service/UpdateUserProfile',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$updateUserContact =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/UpdateUserContact',
+          '/Hera.Service/UpdateUserContact',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$updateUserPassword =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/UpdateUserPassword',
+          '/Hera.Service/UpdateUserPassword',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$searchForUser =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/SearchForUser',
+          '/Hera.Service/SearchForUser',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$getUser = $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-      '/Hera.UserService/GetUser',
+      '/Hera.Service/GetUser',
       ($0.HeraRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$listUsers =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/ListUsers',
+          '/Hera.Service/ListUsers',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$validateCredentials =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/ValidateCredentials',
+          '/Hera.Service/ValidateCredentials',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$login = $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-      '/Hera.UserService/Login',
+      '/Hera.Service/Login',
       ($0.HeraRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$deleteUser =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/DeleteUser',
+          '/Hera.Service/DeleteUser',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$deleteUsers =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/DeleteUsers',
+          '/Hera.Service/DeleteUsers',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$createTokenPair =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/CreateTokenPair',
+          '/Hera.Service/CreateTokenPair',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$validateToken =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/ValidateToken',
+          '/Hera.Service/ValidateToken',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$blockToken =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/BlockToken',
+          '/Hera.Service/BlockToken',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$refreshToken =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/RefreshToken',
+          '/Hera.Service/RefreshToken',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$getTokens =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/GetTokens',
+          '/Hera.Service/GetTokens',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$publicKeys =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/PublicKeys',
+          '/Hera.Service/PublicKeys',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$sendVerificationEmail =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/SendVerificationEmail',
+          '/Hera.Service/SendVerificationEmail',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$verifyEmail =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/VerifyEmail',
+          '/Hera.Service/VerifyEmail',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$sendVerificationText =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/SendVerificationText',
+          '/Hera.Service/SendVerificationText',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$verifyPhone =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/VerifyPhone',
+          '/Hera.Service/VerifyPhone',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$sendResetPasswordEmail =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/SendResetPasswordEmail',
+          '/Hera.Service/SendResetPasswordEmail',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$sendResetPasswordText =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/SendResetPasswordText',
+          '/Hera.Service/SendResetPasswordText',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$resetPassword =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/ResetPassword',
+          '/Hera.Service/ResetPassword',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$deleteNamespace =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/DeleteNamespace',
+          '/Hera.Service/DeleteNamespace',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$createNamespace =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/CreateNamespace',
+          '/Hera.Service/CreateNamespace',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$registerPublicKey =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/RegisterPublicKey',
+          '/Hera.Service/RegisterPublicKey',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$getConfig =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/GetConfig',
+          '/Hera.Service/GetConfig',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$updateConfig =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/UpdateConfig',
+          '/Hera.Service/UpdateConfig',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$deleteConfig =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
-          '/Hera.UserService/DeleteConfig',
+          '/Hera.Service/DeleteConfig',
           ($0.HeraRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
 
-  UserServiceClient($grpc.ClientChannel channel,
+  ServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
@@ -349,10 +349,10 @@ class UserServiceClient extends $grpc.Client {
   }
 }
 
-abstract class UserServiceBase extends $grpc.Service {
-  $core.String get $name => 'Hera.UserService';
+abstract class ServiceBase extends $grpc.Service {
+  $core.String get $name => 'Hera.Service';
 
-  UserServiceBase() {
+  ServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.HeraRequest, $0.HeraResponse>(
         'Heartbeat',
         heartbeat_Pre,

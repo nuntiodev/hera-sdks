@@ -28,7 +28,7 @@ proto.Hera = require('./hera_pb.js');
  * @struct
  * @final
  */
-proto.Hera.UserServiceClient =
+proto.Hera.ServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -54,7 +54,7 @@ proto.Hera.UserServiceClient =
  * @struct
  * @final
  */
-proto.Hera.UserServicePromiseClient =
+proto.Hera.ServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -78,8 +78,8 @@ proto.Hera.UserServicePromiseClient =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_Heartbeat = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/Heartbeat',
+const methodDescriptor_Service_Heartbeat = new grpc.web.MethodDescriptor(
+  '/Hera.Service/Heartbeat',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -104,13 +104,13 @@ const methodDescriptor_UserService_Heartbeat = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.heartbeat =
+proto.Hera.ServiceClient.prototype.heartbeat =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/Heartbeat',
+      '/Hera.Service/Heartbeat',
       request,
       metadata || {},
-      methodDescriptor_UserService_Heartbeat,
+      methodDescriptor_Service_Heartbeat,
       callback);
 };
 
@@ -123,13 +123,13 @@ proto.Hera.UserServiceClient.prototype.heartbeat =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.heartbeat =
+proto.Hera.ServicePromiseClient.prototype.heartbeat =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/Heartbeat',
+      '/Hera.Service/Heartbeat',
       request,
       metadata || {},
-      methodDescriptor_UserService_Heartbeat);
+      methodDescriptor_Service_Heartbeat);
 };
 
 
@@ -139,8 +139,8 @@ proto.Hera.UserServicePromiseClient.prototype.heartbeat =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_CreateUser = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/CreateUser',
+const methodDescriptor_Service_CreateUser = new grpc.web.MethodDescriptor(
+  '/Hera.Service/CreateUser',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -165,13 +165,13 @@ const methodDescriptor_UserService_CreateUser = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.createUser =
+proto.Hera.ServiceClient.prototype.createUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/CreateUser',
+      '/Hera.Service/CreateUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateUser,
+      methodDescriptor_Service_CreateUser,
       callback);
 };
 
@@ -184,13 +184,13 @@ proto.Hera.UserServiceClient.prototype.createUser =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.createUser =
+proto.Hera.ServicePromiseClient.prototype.createUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/CreateUser',
+      '/Hera.Service/CreateUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateUser);
+      methodDescriptor_Service_CreateUser);
 };
 
 
@@ -200,8 +200,8 @@ proto.Hera.UserServicePromiseClient.prototype.createUser =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_UpdateMetadata = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/UpdateMetadata',
+const methodDescriptor_Service_UpdateMetadata = new grpc.web.MethodDescriptor(
+  '/Hera.Service/UpdateMetadata',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -226,13 +226,13 @@ const methodDescriptor_UserService_UpdateMetadata = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.updateMetadata =
+proto.Hera.ServiceClient.prototype.updateMetadata =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/UpdateMetadata',
+      '/Hera.Service/UpdateMetadata',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateMetadata,
+      methodDescriptor_Service_UpdateMetadata,
       callback);
 };
 
@@ -245,13 +245,13 @@ proto.Hera.UserServiceClient.prototype.updateMetadata =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.updateMetadata =
+proto.Hera.ServicePromiseClient.prototype.updateMetadata =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/UpdateMetadata',
+      '/Hera.Service/UpdateMetadata',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateMetadata);
+      methodDescriptor_Service_UpdateMetadata);
 };
 
 
@@ -261,8 +261,8 @@ proto.Hera.UserServicePromiseClient.prototype.updateMetadata =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_UpdateUserProfile = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/UpdateUserProfile',
+const methodDescriptor_Service_UpdateUserProfile = new grpc.web.MethodDescriptor(
+  '/Hera.Service/UpdateUserProfile',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -287,13 +287,13 @@ const methodDescriptor_UserService_UpdateUserProfile = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.updateUserProfile =
+proto.Hera.ServiceClient.prototype.updateUserProfile =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/UpdateUserProfile',
+      '/Hera.Service/UpdateUserProfile',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateUserProfile,
+      methodDescriptor_Service_UpdateUserProfile,
       callback);
 };
 
@@ -306,13 +306,13 @@ proto.Hera.UserServiceClient.prototype.updateUserProfile =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.updateUserProfile =
+proto.Hera.ServicePromiseClient.prototype.updateUserProfile =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/UpdateUserProfile',
+      '/Hera.Service/UpdateUserProfile',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateUserProfile);
+      methodDescriptor_Service_UpdateUserProfile);
 };
 
 
@@ -322,8 +322,8 @@ proto.Hera.UserServicePromiseClient.prototype.updateUserProfile =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_UpdateUserContact = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/UpdateUserContact',
+const methodDescriptor_Service_UpdateUserContact = new grpc.web.MethodDescriptor(
+  '/Hera.Service/UpdateUserContact',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -348,13 +348,13 @@ const methodDescriptor_UserService_UpdateUserContact = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.updateUserContact =
+proto.Hera.ServiceClient.prototype.updateUserContact =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/UpdateUserContact',
+      '/Hera.Service/UpdateUserContact',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateUserContact,
+      methodDescriptor_Service_UpdateUserContact,
       callback);
 };
 
@@ -367,13 +367,13 @@ proto.Hera.UserServiceClient.prototype.updateUserContact =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.updateUserContact =
+proto.Hera.ServicePromiseClient.prototype.updateUserContact =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/UpdateUserContact',
+      '/Hera.Service/UpdateUserContact',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateUserContact);
+      methodDescriptor_Service_UpdateUserContact);
 };
 
 
@@ -383,8 +383,8 @@ proto.Hera.UserServicePromiseClient.prototype.updateUserContact =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_UpdateUserPassword = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/UpdateUserPassword',
+const methodDescriptor_Service_UpdateUserPassword = new grpc.web.MethodDescriptor(
+  '/Hera.Service/UpdateUserPassword',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -409,13 +409,13 @@ const methodDescriptor_UserService_UpdateUserPassword = new grpc.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.updateUserPassword =
+proto.Hera.ServiceClient.prototype.updateUserPassword =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/UpdateUserPassword',
+      '/Hera.Service/UpdateUserPassword',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateUserPassword,
+      methodDescriptor_Service_UpdateUserPassword,
       callback);
 };
 
@@ -428,13 +428,13 @@ proto.Hera.UserServiceClient.prototype.updateUserPassword =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.updateUserPassword =
+proto.Hera.ServicePromiseClient.prototype.updateUserPassword =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/UpdateUserPassword',
+      '/Hera.Service/UpdateUserPassword',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateUserPassword);
+      methodDescriptor_Service_UpdateUserPassword);
 };
 
 
@@ -444,8 +444,8 @@ proto.Hera.UserServicePromiseClient.prototype.updateUserPassword =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_SearchForUser = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/SearchForUser',
+const methodDescriptor_Service_SearchForUser = new grpc.web.MethodDescriptor(
+  '/Hera.Service/SearchForUser',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -470,13 +470,13 @@ const methodDescriptor_UserService_SearchForUser = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.searchForUser =
+proto.Hera.ServiceClient.prototype.searchForUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/SearchForUser',
+      '/Hera.Service/SearchForUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_SearchForUser,
+      methodDescriptor_Service_SearchForUser,
       callback);
 };
 
@@ -489,13 +489,13 @@ proto.Hera.UserServiceClient.prototype.searchForUser =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.searchForUser =
+proto.Hera.ServicePromiseClient.prototype.searchForUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/SearchForUser',
+      '/Hera.Service/SearchForUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_SearchForUser);
+      methodDescriptor_Service_SearchForUser);
 };
 
 
@@ -505,8 +505,8 @@ proto.Hera.UserServicePromiseClient.prototype.searchForUser =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_GetUser = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/GetUser',
+const methodDescriptor_Service_GetUser = new grpc.web.MethodDescriptor(
+  '/Hera.Service/GetUser',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -531,13 +531,13 @@ const methodDescriptor_UserService_GetUser = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.getUser =
+proto.Hera.ServiceClient.prototype.getUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/GetUser',
+      '/Hera.Service/GetUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetUser,
+      methodDescriptor_Service_GetUser,
       callback);
 };
 
@@ -550,13 +550,13 @@ proto.Hera.UserServiceClient.prototype.getUser =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.getUser =
+proto.Hera.ServicePromiseClient.prototype.getUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/GetUser',
+      '/Hera.Service/GetUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetUser);
+      methodDescriptor_Service_GetUser);
 };
 
 
@@ -566,8 +566,8 @@ proto.Hera.UserServicePromiseClient.prototype.getUser =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_ListUsers = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/ListUsers',
+const methodDescriptor_Service_ListUsers = new grpc.web.MethodDescriptor(
+  '/Hera.Service/ListUsers',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -592,13 +592,13 @@ const methodDescriptor_UserService_ListUsers = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.listUsers =
+proto.Hera.ServiceClient.prototype.listUsers =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/ListUsers',
+      '/Hera.Service/ListUsers',
       request,
       metadata || {},
-      methodDescriptor_UserService_ListUsers,
+      methodDescriptor_Service_ListUsers,
       callback);
 };
 
@@ -611,13 +611,13 @@ proto.Hera.UserServiceClient.prototype.listUsers =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.listUsers =
+proto.Hera.ServicePromiseClient.prototype.listUsers =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/ListUsers',
+      '/Hera.Service/ListUsers',
       request,
       metadata || {},
-      methodDescriptor_UserService_ListUsers);
+      methodDescriptor_Service_ListUsers);
 };
 
 
@@ -627,8 +627,8 @@ proto.Hera.UserServicePromiseClient.prototype.listUsers =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_ValidateCredentials = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/ValidateCredentials',
+const methodDescriptor_Service_ValidateCredentials = new grpc.web.MethodDescriptor(
+  '/Hera.Service/ValidateCredentials',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -653,13 +653,13 @@ const methodDescriptor_UserService_ValidateCredentials = new grpc.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.validateCredentials =
+proto.Hera.ServiceClient.prototype.validateCredentials =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/ValidateCredentials',
+      '/Hera.Service/ValidateCredentials',
       request,
       metadata || {},
-      methodDescriptor_UserService_ValidateCredentials,
+      methodDescriptor_Service_ValidateCredentials,
       callback);
 };
 
@@ -672,13 +672,13 @@ proto.Hera.UserServiceClient.prototype.validateCredentials =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.validateCredentials =
+proto.Hera.ServicePromiseClient.prototype.validateCredentials =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/ValidateCredentials',
+      '/Hera.Service/ValidateCredentials',
       request,
       metadata || {},
-      methodDescriptor_UserService_ValidateCredentials);
+      methodDescriptor_Service_ValidateCredentials);
 };
 
 
@@ -688,8 +688,8 @@ proto.Hera.UserServicePromiseClient.prototype.validateCredentials =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_Login = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/Login',
+const methodDescriptor_Service_Login = new grpc.web.MethodDescriptor(
+  '/Hera.Service/Login',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -714,13 +714,13 @@ const methodDescriptor_UserService_Login = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.login =
+proto.Hera.ServiceClient.prototype.login =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/Login',
+      '/Hera.Service/Login',
       request,
       metadata || {},
-      methodDescriptor_UserService_Login,
+      methodDescriptor_Service_Login,
       callback);
 };
 
@@ -733,13 +733,13 @@ proto.Hera.UserServiceClient.prototype.login =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.login =
+proto.Hera.ServicePromiseClient.prototype.login =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/Login',
+      '/Hera.Service/Login',
       request,
       metadata || {},
-      methodDescriptor_UserService_Login);
+      methodDescriptor_Service_Login);
 };
 
 
@@ -749,8 +749,8 @@ proto.Hera.UserServicePromiseClient.prototype.login =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_DeleteUser = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/DeleteUser',
+const methodDescriptor_Service_DeleteUser = new grpc.web.MethodDescriptor(
+  '/Hera.Service/DeleteUser',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -775,13 +775,13 @@ const methodDescriptor_UserService_DeleteUser = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.deleteUser =
+proto.Hera.ServiceClient.prototype.deleteUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/DeleteUser',
+      '/Hera.Service/DeleteUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteUser,
+      methodDescriptor_Service_DeleteUser,
       callback);
 };
 
@@ -794,13 +794,13 @@ proto.Hera.UserServiceClient.prototype.deleteUser =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.deleteUser =
+proto.Hera.ServicePromiseClient.prototype.deleteUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/DeleteUser',
+      '/Hera.Service/DeleteUser',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteUser);
+      methodDescriptor_Service_DeleteUser);
 };
 
 
@@ -810,8 +810,8 @@ proto.Hera.UserServicePromiseClient.prototype.deleteUser =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_DeleteUsers = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/DeleteUsers',
+const methodDescriptor_Service_DeleteUsers = new grpc.web.MethodDescriptor(
+  '/Hera.Service/DeleteUsers',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -836,13 +836,13 @@ const methodDescriptor_UserService_DeleteUsers = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.deleteUsers =
+proto.Hera.ServiceClient.prototype.deleteUsers =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/DeleteUsers',
+      '/Hera.Service/DeleteUsers',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteUsers,
+      methodDescriptor_Service_DeleteUsers,
       callback);
 };
 
@@ -855,13 +855,13 @@ proto.Hera.UserServiceClient.prototype.deleteUsers =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.deleteUsers =
+proto.Hera.ServicePromiseClient.prototype.deleteUsers =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/DeleteUsers',
+      '/Hera.Service/DeleteUsers',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteUsers);
+      methodDescriptor_Service_DeleteUsers);
 };
 
 
@@ -871,8 +871,8 @@ proto.Hera.UserServicePromiseClient.prototype.deleteUsers =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_CreateTokenPair = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/CreateTokenPair',
+const methodDescriptor_Service_CreateTokenPair = new grpc.web.MethodDescriptor(
+  '/Hera.Service/CreateTokenPair',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -897,13 +897,13 @@ const methodDescriptor_UserService_CreateTokenPair = new grpc.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.createTokenPair =
+proto.Hera.ServiceClient.prototype.createTokenPair =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/CreateTokenPair',
+      '/Hera.Service/CreateTokenPair',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateTokenPair,
+      methodDescriptor_Service_CreateTokenPair,
       callback);
 };
 
@@ -916,13 +916,13 @@ proto.Hera.UserServiceClient.prototype.createTokenPair =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.createTokenPair =
+proto.Hera.ServicePromiseClient.prototype.createTokenPair =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/CreateTokenPair',
+      '/Hera.Service/CreateTokenPair',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateTokenPair);
+      methodDescriptor_Service_CreateTokenPair);
 };
 
 
@@ -932,8 +932,8 @@ proto.Hera.UserServicePromiseClient.prototype.createTokenPair =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_ValidateToken = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/ValidateToken',
+const methodDescriptor_Service_ValidateToken = new grpc.web.MethodDescriptor(
+  '/Hera.Service/ValidateToken',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -958,13 +958,13 @@ const methodDescriptor_UserService_ValidateToken = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.validateToken =
+proto.Hera.ServiceClient.prototype.validateToken =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/ValidateToken',
+      '/Hera.Service/ValidateToken',
       request,
       metadata || {},
-      methodDescriptor_UserService_ValidateToken,
+      methodDescriptor_Service_ValidateToken,
       callback);
 };
 
@@ -977,13 +977,13 @@ proto.Hera.UserServiceClient.prototype.validateToken =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.validateToken =
+proto.Hera.ServicePromiseClient.prototype.validateToken =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/ValidateToken',
+      '/Hera.Service/ValidateToken',
       request,
       metadata || {},
-      methodDescriptor_UserService_ValidateToken);
+      methodDescriptor_Service_ValidateToken);
 };
 
 
@@ -993,8 +993,8 @@ proto.Hera.UserServicePromiseClient.prototype.validateToken =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_BlockToken = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/BlockToken',
+const methodDescriptor_Service_BlockToken = new grpc.web.MethodDescriptor(
+  '/Hera.Service/BlockToken',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1019,13 +1019,13 @@ const methodDescriptor_UserService_BlockToken = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.blockToken =
+proto.Hera.ServiceClient.prototype.blockToken =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/BlockToken',
+      '/Hera.Service/BlockToken',
       request,
       metadata || {},
-      methodDescriptor_UserService_BlockToken,
+      methodDescriptor_Service_BlockToken,
       callback);
 };
 
@@ -1038,13 +1038,13 @@ proto.Hera.UserServiceClient.prototype.blockToken =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.blockToken =
+proto.Hera.ServicePromiseClient.prototype.blockToken =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/BlockToken',
+      '/Hera.Service/BlockToken',
       request,
       metadata || {},
-      methodDescriptor_UserService_BlockToken);
+      methodDescriptor_Service_BlockToken);
 };
 
 
@@ -1054,8 +1054,8 @@ proto.Hera.UserServicePromiseClient.prototype.blockToken =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_RefreshToken = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/RefreshToken',
+const methodDescriptor_Service_RefreshToken = new grpc.web.MethodDescriptor(
+  '/Hera.Service/RefreshToken',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1080,13 +1080,13 @@ const methodDescriptor_UserService_RefreshToken = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.refreshToken =
+proto.Hera.ServiceClient.prototype.refreshToken =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/RefreshToken',
+      '/Hera.Service/RefreshToken',
       request,
       metadata || {},
-      methodDescriptor_UserService_RefreshToken,
+      methodDescriptor_Service_RefreshToken,
       callback);
 };
 
@@ -1099,13 +1099,13 @@ proto.Hera.UserServiceClient.prototype.refreshToken =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.refreshToken =
+proto.Hera.ServicePromiseClient.prototype.refreshToken =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/RefreshToken',
+      '/Hera.Service/RefreshToken',
       request,
       metadata || {},
-      methodDescriptor_UserService_RefreshToken);
+      methodDescriptor_Service_RefreshToken);
 };
 
 
@@ -1115,8 +1115,8 @@ proto.Hera.UserServicePromiseClient.prototype.refreshToken =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_GetTokens = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/GetTokens',
+const methodDescriptor_Service_GetTokens = new grpc.web.MethodDescriptor(
+  '/Hera.Service/GetTokens',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1141,13 +1141,13 @@ const methodDescriptor_UserService_GetTokens = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.getTokens =
+proto.Hera.ServiceClient.prototype.getTokens =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/GetTokens',
+      '/Hera.Service/GetTokens',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetTokens,
+      methodDescriptor_Service_GetTokens,
       callback);
 };
 
@@ -1160,13 +1160,13 @@ proto.Hera.UserServiceClient.prototype.getTokens =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.getTokens =
+proto.Hera.ServicePromiseClient.prototype.getTokens =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/GetTokens',
+      '/Hera.Service/GetTokens',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetTokens);
+      methodDescriptor_Service_GetTokens);
 };
 
 
@@ -1176,8 +1176,8 @@ proto.Hera.UserServicePromiseClient.prototype.getTokens =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_PublicKeys = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/PublicKeys',
+const methodDescriptor_Service_PublicKeys = new grpc.web.MethodDescriptor(
+  '/Hera.Service/PublicKeys',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1202,13 +1202,13 @@ const methodDescriptor_UserService_PublicKeys = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.publicKeys =
+proto.Hera.ServiceClient.prototype.publicKeys =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/PublicKeys',
+      '/Hera.Service/PublicKeys',
       request,
       metadata || {},
-      methodDescriptor_UserService_PublicKeys,
+      methodDescriptor_Service_PublicKeys,
       callback);
 };
 
@@ -1221,13 +1221,13 @@ proto.Hera.UserServiceClient.prototype.publicKeys =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.publicKeys =
+proto.Hera.ServicePromiseClient.prototype.publicKeys =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/PublicKeys',
+      '/Hera.Service/PublicKeys',
       request,
       metadata || {},
-      methodDescriptor_UserService_PublicKeys);
+      methodDescriptor_Service_PublicKeys);
 };
 
 
@@ -1237,8 +1237,8 @@ proto.Hera.UserServicePromiseClient.prototype.publicKeys =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_SendVerificationEmail = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/SendVerificationEmail',
+const methodDescriptor_Service_SendVerificationEmail = new grpc.web.MethodDescriptor(
+  '/Hera.Service/SendVerificationEmail',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1263,13 +1263,13 @@ const methodDescriptor_UserService_SendVerificationEmail = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.sendVerificationEmail =
+proto.Hera.ServiceClient.prototype.sendVerificationEmail =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/SendVerificationEmail',
+      '/Hera.Service/SendVerificationEmail',
       request,
       metadata || {},
-      methodDescriptor_UserService_SendVerificationEmail,
+      methodDescriptor_Service_SendVerificationEmail,
       callback);
 };
 
@@ -1282,13 +1282,13 @@ proto.Hera.UserServiceClient.prototype.sendVerificationEmail =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.sendVerificationEmail =
+proto.Hera.ServicePromiseClient.prototype.sendVerificationEmail =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/SendVerificationEmail',
+      '/Hera.Service/SendVerificationEmail',
       request,
       metadata || {},
-      methodDescriptor_UserService_SendVerificationEmail);
+      methodDescriptor_Service_SendVerificationEmail);
 };
 
 
@@ -1298,8 +1298,8 @@ proto.Hera.UserServicePromiseClient.prototype.sendVerificationEmail =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_VerifyEmail = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/VerifyEmail',
+const methodDescriptor_Service_VerifyEmail = new grpc.web.MethodDescriptor(
+  '/Hera.Service/VerifyEmail',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1324,13 +1324,13 @@ const methodDescriptor_UserService_VerifyEmail = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.verifyEmail =
+proto.Hera.ServiceClient.prototype.verifyEmail =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/VerifyEmail',
+      '/Hera.Service/VerifyEmail',
       request,
       metadata || {},
-      methodDescriptor_UserService_VerifyEmail,
+      methodDescriptor_Service_VerifyEmail,
       callback);
 };
 
@@ -1343,13 +1343,13 @@ proto.Hera.UserServiceClient.prototype.verifyEmail =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.verifyEmail =
+proto.Hera.ServicePromiseClient.prototype.verifyEmail =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/VerifyEmail',
+      '/Hera.Service/VerifyEmail',
       request,
       metadata || {},
-      methodDescriptor_UserService_VerifyEmail);
+      methodDescriptor_Service_VerifyEmail);
 };
 
 
@@ -1359,8 +1359,8 @@ proto.Hera.UserServicePromiseClient.prototype.verifyEmail =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_SendVerificationText = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/SendVerificationText',
+const methodDescriptor_Service_SendVerificationText = new grpc.web.MethodDescriptor(
+  '/Hera.Service/SendVerificationText',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1385,13 +1385,13 @@ const methodDescriptor_UserService_SendVerificationText = new grpc.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.sendVerificationText =
+proto.Hera.ServiceClient.prototype.sendVerificationText =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/SendVerificationText',
+      '/Hera.Service/SendVerificationText',
       request,
       metadata || {},
-      methodDescriptor_UserService_SendVerificationText,
+      methodDescriptor_Service_SendVerificationText,
       callback);
 };
 
@@ -1404,13 +1404,13 @@ proto.Hera.UserServiceClient.prototype.sendVerificationText =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.sendVerificationText =
+proto.Hera.ServicePromiseClient.prototype.sendVerificationText =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/SendVerificationText',
+      '/Hera.Service/SendVerificationText',
       request,
       metadata || {},
-      methodDescriptor_UserService_SendVerificationText);
+      methodDescriptor_Service_SendVerificationText);
 };
 
 
@@ -1420,8 +1420,8 @@ proto.Hera.UserServicePromiseClient.prototype.sendVerificationText =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_VerifyPhone = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/VerifyPhone',
+const methodDescriptor_Service_VerifyPhone = new grpc.web.MethodDescriptor(
+  '/Hera.Service/VerifyPhone',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1446,13 +1446,13 @@ const methodDescriptor_UserService_VerifyPhone = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.verifyPhone =
+proto.Hera.ServiceClient.prototype.verifyPhone =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/VerifyPhone',
+      '/Hera.Service/VerifyPhone',
       request,
       metadata || {},
-      methodDescriptor_UserService_VerifyPhone,
+      methodDescriptor_Service_VerifyPhone,
       callback);
 };
 
@@ -1465,13 +1465,13 @@ proto.Hera.UserServiceClient.prototype.verifyPhone =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.verifyPhone =
+proto.Hera.ServicePromiseClient.prototype.verifyPhone =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/VerifyPhone',
+      '/Hera.Service/VerifyPhone',
       request,
       metadata || {},
-      methodDescriptor_UserService_VerifyPhone);
+      methodDescriptor_Service_VerifyPhone);
 };
 
 
@@ -1481,8 +1481,8 @@ proto.Hera.UserServicePromiseClient.prototype.verifyPhone =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_SendResetPasswordEmail = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/SendResetPasswordEmail',
+const methodDescriptor_Service_SendResetPasswordEmail = new grpc.web.MethodDescriptor(
+  '/Hera.Service/SendResetPasswordEmail',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1507,13 +1507,13 @@ const methodDescriptor_UserService_SendResetPasswordEmail = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.sendResetPasswordEmail =
+proto.Hera.ServiceClient.prototype.sendResetPasswordEmail =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/SendResetPasswordEmail',
+      '/Hera.Service/SendResetPasswordEmail',
       request,
       metadata || {},
-      methodDescriptor_UserService_SendResetPasswordEmail,
+      methodDescriptor_Service_SendResetPasswordEmail,
       callback);
 };
 
@@ -1526,13 +1526,13 @@ proto.Hera.UserServiceClient.prototype.sendResetPasswordEmail =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.sendResetPasswordEmail =
+proto.Hera.ServicePromiseClient.prototype.sendResetPasswordEmail =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/SendResetPasswordEmail',
+      '/Hera.Service/SendResetPasswordEmail',
       request,
       metadata || {},
-      methodDescriptor_UserService_SendResetPasswordEmail);
+      methodDescriptor_Service_SendResetPasswordEmail);
 };
 
 
@@ -1542,8 +1542,8 @@ proto.Hera.UserServicePromiseClient.prototype.sendResetPasswordEmail =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_SendResetPasswordText = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/SendResetPasswordText',
+const methodDescriptor_Service_SendResetPasswordText = new grpc.web.MethodDescriptor(
+  '/Hera.Service/SendResetPasswordText',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1568,13 +1568,13 @@ const methodDescriptor_UserService_SendResetPasswordText = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.sendResetPasswordText =
+proto.Hera.ServiceClient.prototype.sendResetPasswordText =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/SendResetPasswordText',
+      '/Hera.Service/SendResetPasswordText',
       request,
       metadata || {},
-      methodDescriptor_UserService_SendResetPasswordText,
+      methodDescriptor_Service_SendResetPasswordText,
       callback);
 };
 
@@ -1587,13 +1587,13 @@ proto.Hera.UserServiceClient.prototype.sendResetPasswordText =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.sendResetPasswordText =
+proto.Hera.ServicePromiseClient.prototype.sendResetPasswordText =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/SendResetPasswordText',
+      '/Hera.Service/SendResetPasswordText',
       request,
       metadata || {},
-      methodDescriptor_UserService_SendResetPasswordText);
+      methodDescriptor_Service_SendResetPasswordText);
 };
 
 
@@ -1603,8 +1603,8 @@ proto.Hera.UserServicePromiseClient.prototype.sendResetPasswordText =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_ResetPassword = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/ResetPassword',
+const methodDescriptor_Service_ResetPassword = new grpc.web.MethodDescriptor(
+  '/Hera.Service/ResetPassword',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1629,13 +1629,13 @@ const methodDescriptor_UserService_ResetPassword = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.resetPassword =
+proto.Hera.ServiceClient.prototype.resetPassword =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/ResetPassword',
+      '/Hera.Service/ResetPassword',
       request,
       metadata || {},
-      methodDescriptor_UserService_ResetPassword,
+      methodDescriptor_Service_ResetPassword,
       callback);
 };
 
@@ -1648,13 +1648,13 @@ proto.Hera.UserServiceClient.prototype.resetPassword =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.resetPassword =
+proto.Hera.ServicePromiseClient.prototype.resetPassword =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/ResetPassword',
+      '/Hera.Service/ResetPassword',
       request,
       metadata || {},
-      methodDescriptor_UserService_ResetPassword);
+      methodDescriptor_Service_ResetPassword);
 };
 
 
@@ -1664,8 +1664,8 @@ proto.Hera.UserServicePromiseClient.prototype.resetPassword =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_DeleteNamespace = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/DeleteNamespace',
+const methodDescriptor_Service_DeleteNamespace = new grpc.web.MethodDescriptor(
+  '/Hera.Service/DeleteNamespace',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1690,13 +1690,13 @@ const methodDescriptor_UserService_DeleteNamespace = new grpc.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.deleteNamespace =
+proto.Hera.ServiceClient.prototype.deleteNamespace =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/DeleteNamespace',
+      '/Hera.Service/DeleteNamespace',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteNamespace,
+      methodDescriptor_Service_DeleteNamespace,
       callback);
 };
 
@@ -1709,13 +1709,13 @@ proto.Hera.UserServiceClient.prototype.deleteNamespace =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.deleteNamespace =
+proto.Hera.ServicePromiseClient.prototype.deleteNamespace =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/DeleteNamespace',
+      '/Hera.Service/DeleteNamespace',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteNamespace);
+      methodDescriptor_Service_DeleteNamespace);
 };
 
 
@@ -1725,8 +1725,8 @@ proto.Hera.UserServicePromiseClient.prototype.deleteNamespace =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_CreateNamespace = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/CreateNamespace',
+const methodDescriptor_Service_CreateNamespace = new grpc.web.MethodDescriptor(
+  '/Hera.Service/CreateNamespace',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1751,13 +1751,13 @@ const methodDescriptor_UserService_CreateNamespace = new grpc.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.createNamespace =
+proto.Hera.ServiceClient.prototype.createNamespace =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/CreateNamespace',
+      '/Hera.Service/CreateNamespace',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateNamespace,
+      methodDescriptor_Service_CreateNamespace,
       callback);
 };
 
@@ -1770,13 +1770,13 @@ proto.Hera.UserServiceClient.prototype.createNamespace =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.createNamespace =
+proto.Hera.ServicePromiseClient.prototype.createNamespace =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/CreateNamespace',
+      '/Hera.Service/CreateNamespace',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateNamespace);
+      methodDescriptor_Service_CreateNamespace);
 };
 
 
@@ -1786,8 +1786,8 @@ proto.Hera.UserServicePromiseClient.prototype.createNamespace =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_RegisterPublicKey = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/RegisterPublicKey',
+const methodDescriptor_Service_RegisterPublicKey = new grpc.web.MethodDescriptor(
+  '/Hera.Service/RegisterPublicKey',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1812,13 +1812,13 @@ const methodDescriptor_UserService_RegisterPublicKey = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.registerPublicKey =
+proto.Hera.ServiceClient.prototype.registerPublicKey =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/RegisterPublicKey',
+      '/Hera.Service/RegisterPublicKey',
       request,
       metadata || {},
-      methodDescriptor_UserService_RegisterPublicKey,
+      methodDescriptor_Service_RegisterPublicKey,
       callback);
 };
 
@@ -1831,13 +1831,13 @@ proto.Hera.UserServiceClient.prototype.registerPublicKey =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.registerPublicKey =
+proto.Hera.ServicePromiseClient.prototype.registerPublicKey =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/RegisterPublicKey',
+      '/Hera.Service/RegisterPublicKey',
       request,
       metadata || {},
-      methodDescriptor_UserService_RegisterPublicKey);
+      methodDescriptor_Service_RegisterPublicKey);
 };
 
 
@@ -1847,8 +1847,8 @@ proto.Hera.UserServicePromiseClient.prototype.registerPublicKey =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_GetConfig = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/GetConfig',
+const methodDescriptor_Service_GetConfig = new grpc.web.MethodDescriptor(
+  '/Hera.Service/GetConfig',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1873,13 +1873,13 @@ const methodDescriptor_UserService_GetConfig = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.getConfig =
+proto.Hera.ServiceClient.prototype.getConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/GetConfig',
+      '/Hera.Service/GetConfig',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetConfig,
+      methodDescriptor_Service_GetConfig,
       callback);
 };
 
@@ -1892,13 +1892,13 @@ proto.Hera.UserServiceClient.prototype.getConfig =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.getConfig =
+proto.Hera.ServicePromiseClient.prototype.getConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/GetConfig',
+      '/Hera.Service/GetConfig',
       request,
       metadata || {},
-      methodDescriptor_UserService_GetConfig);
+      methodDescriptor_Service_GetConfig);
 };
 
 
@@ -1908,8 +1908,8 @@ proto.Hera.UserServicePromiseClient.prototype.getConfig =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_UpdateConfig = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/UpdateConfig',
+const methodDescriptor_Service_UpdateConfig = new grpc.web.MethodDescriptor(
+  '/Hera.Service/UpdateConfig',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1934,13 +1934,13 @@ const methodDescriptor_UserService_UpdateConfig = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.updateConfig =
+proto.Hera.ServiceClient.prototype.updateConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/UpdateConfig',
+      '/Hera.Service/UpdateConfig',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateConfig,
+      methodDescriptor_Service_UpdateConfig,
       callback);
 };
 
@@ -1953,13 +1953,13 @@ proto.Hera.UserServiceClient.prototype.updateConfig =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.updateConfig =
+proto.Hera.ServicePromiseClient.prototype.updateConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/UpdateConfig',
+      '/Hera.Service/UpdateConfig',
       request,
       metadata || {},
-      methodDescriptor_UserService_UpdateConfig);
+      methodDescriptor_Service_UpdateConfig);
 };
 
 
@@ -1969,8 +1969,8 @@ proto.Hera.UserServicePromiseClient.prototype.updateConfig =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_DeleteConfig = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/DeleteConfig',
+const methodDescriptor_Service_DeleteConfig = new grpc.web.MethodDescriptor(
+  '/Hera.Service/DeleteConfig',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -1995,13 +1995,13 @@ const methodDescriptor_UserService_DeleteConfig = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.deleteConfig =
+proto.Hera.ServiceClient.prototype.deleteConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/DeleteConfig',
+      '/Hera.Service/DeleteConfig',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteConfig,
+      methodDescriptor_Service_DeleteConfig,
       callback);
 };
 
@@ -2014,13 +2014,13 @@ proto.Hera.UserServiceClient.prototype.deleteConfig =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.deleteConfig =
+proto.Hera.ServicePromiseClient.prototype.deleteConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/DeleteConfig',
+      '/Hera.Service/DeleteConfig',
       request,
       metadata || {},
-      methodDescriptor_UserService_DeleteConfig);
+      methodDescriptor_Service_DeleteConfig);
 };
 
 
