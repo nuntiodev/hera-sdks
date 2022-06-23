@@ -96,7 +96,7 @@ message User {
     string username_hash = 28;
 }
 
-message UserFilter {
+message Query {
     enum SortBy {
         CREATED_AT = 0;
         UPDATE_AT = 1;
@@ -109,6 +109,7 @@ message UserFilter {
     int32 to = 2;
     SortBy sort = 3;
     Order order = 4;
+    string search = 5;
 }
 
 enum TokenType {
@@ -166,21 +167,19 @@ message LoginSession {
 message UserRequest {
     User user = 1;
     User user_update = 2;
-    UserFilter filter = 3;
+    Query query = 3;
     string namespace = 4;
-    repeated User user_batch = 5;
+    repeated User users = 5;
     Token token = 6;
-    string cloud_token = 7;
-    string token_pointer = 8;
-    Config config = 9;
-    string email_verification_code = 10;
-    string reset_password_code = 11;
+    Config config = 7;
+    string cloud_token = 8;
+    string token_pointer = 9;
 }
 
 message UserResponse {
     User user = 1;
     repeated User users = 2;
-    int64 users_amount = 3;
+    int64 amount = 3;
     Token token = 4;
     repeated Token tokens = 5;
     map<string, string> public_keys = 6;
