@@ -644,21 +644,23 @@ class User extends $pb.GeneratedMessage {
   void clearUsernameHash() => clearField(28);
 }
 
-class UserFilter extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserFilter', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
+class Query extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Query', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.O3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to', $pb.PbFieldType.O3)
-    ..e<UserFilter_SortBy>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', $pb.PbFieldType.OE, defaultOrMaker: UserFilter_SortBy.CREATED_AT, valueOf: UserFilter_SortBy.valueOf, enumValues: UserFilter_SortBy.values)
-    ..e<UserFilter_Order>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'order', $pb.PbFieldType.OE, defaultOrMaker: UserFilter_Order.INC, valueOf: UserFilter_Order.valueOf, enumValues: UserFilter_Order.values)
+    ..e<Query_SortBy>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', $pb.PbFieldType.OE, defaultOrMaker: Query_SortBy.CREATED_AT, valueOf: Query_SortBy.valueOf, enumValues: Query_SortBy.values)
+    ..e<Query_Order>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'order', $pb.PbFieldType.OE, defaultOrMaker: Query_Order.INC, valueOf: Query_Order.valueOf, enumValues: Query_Order.values)
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'search')
     ..hasRequiredFields = false
   ;
 
-  UserFilter._() : super();
-  factory UserFilter({
+  Query._() : super();
+  factory Query({
     $core.int? from,
     $core.int? to,
-    UserFilter_SortBy? sort,
-    UserFilter_Order? order,
+    Query_SortBy? sort,
+    Query_Order? order,
+    $core.String? search,
   }) {
     final _result = create();
     if (from != null) {
@@ -673,28 +675,31 @@ class UserFilter extends $pb.GeneratedMessage {
     if (order != null) {
       _result.order = order;
     }
+    if (search != null) {
+      _result.search = search;
+    }
     return _result;
   }
-  factory UserFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UserFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory Query.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Query.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UserFilter clone() => UserFilter()..mergeFromMessage(this);
+  Query clone() => Query()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UserFilter copyWith(void Function(UserFilter) updates) => super.copyWith((message) => updates(message as UserFilter)) as UserFilter; // ignore: deprecated_member_use
+  Query copyWith(void Function(Query) updates) => super.copyWith((message) => updates(message as Query)) as Query; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static UserFilter create() => UserFilter._();
-  UserFilter createEmptyInstance() => create();
-  static $pb.PbList<UserFilter> createRepeated() => $pb.PbList<UserFilter>();
+  static Query create() => Query._();
+  Query createEmptyInstance() => create();
+  static $pb.PbList<Query> createRepeated() => $pb.PbList<Query>();
   @$core.pragma('dart2js:noInline')
-  static UserFilter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserFilter>(create);
-  static UserFilter? _defaultInstance;
+  static Query getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Query>(create);
+  static Query? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get from => $_getIZ(0);
@@ -715,22 +720,31 @@ class UserFilter extends $pb.GeneratedMessage {
   void clearTo() => clearField(2);
 
   @$pb.TagNumber(3)
-  UserFilter_SortBy get sort => $_getN(2);
+  Query_SortBy get sort => $_getN(2);
   @$pb.TagNumber(3)
-  set sort(UserFilter_SortBy v) { setField(3, v); }
+  set sort(Query_SortBy v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSort() => $_has(2);
   @$pb.TagNumber(3)
   void clearSort() => clearField(3);
 
   @$pb.TagNumber(4)
-  UserFilter_Order get order => $_getN(3);
+  Query_Order get order => $_getN(3);
   @$pb.TagNumber(4)
-  set order(UserFilter_Order v) { setField(4, v); }
+  set order(Query_Order v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasOrder() => $_has(3);
   @$pb.TagNumber(4)
   void clearOrder() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get search => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set search($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSearch() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSearch() => clearField(5);
 }
 
 class Token extends $pb.GeneratedMessage {
@@ -1021,35 +1035,31 @@ class LoginSession extends $pb.GeneratedMessage {
   $1.Timestamp ensureEmailExpiresAt() => $_ensure(2);
 }
 
-class UserRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
+class HeraRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HeraRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
     ..aOM<User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: User.create)
     ..aOM<User>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userUpdate', subBuilder: User.create)
-    ..aOM<UserFilter>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: UserFilter.create)
+    ..aOM<Query>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'query', subBuilder: Query.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
-    ..pc<User>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userBatch', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..pc<User>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..aOM<Token>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
-    ..aOM<Config>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailVerificationCode')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordCode')
+    ..aOM<Config>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cloudToken')
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenPointer')
     ..hasRequiredFields = false
   ;
 
-  UserRequest._() : super();
-  factory UserRequest({
+  HeraRequest._() : super();
+  factory HeraRequest({
     User? user,
     User? userUpdate,
-    UserFilter? filter,
+    Query? query,
     $core.String? namespace,
-    $core.Iterable<User>? userBatch,
+    $core.Iterable<User>? users,
     Token? token,
+    Config? config,
     $core.String? cloudToken,
     $core.String? tokenPointer,
-    Config? config,
-    $core.String? emailVerificationCode,
-    $core.String? resetPasswordCode,
   }) {
     final _result = create();
     if (user != null) {
@@ -1058,17 +1068,20 @@ class UserRequest extends $pb.GeneratedMessage {
     if (userUpdate != null) {
       _result.userUpdate = userUpdate;
     }
-    if (filter != null) {
-      _result.filter = filter;
+    if (query != null) {
+      _result.query = query;
     }
     if (namespace != null) {
       _result.namespace = namespace;
     }
-    if (userBatch != null) {
-      _result.userBatch.addAll(userBatch);
+    if (users != null) {
+      _result.users.addAll(users);
     }
     if (token != null) {
       _result.token = token;
+    }
+    if (config != null) {
+      _result.config = config;
     }
     if (cloudToken != null) {
       _result.cloudToken = cloudToken;
@@ -1076,37 +1089,28 @@ class UserRequest extends $pb.GeneratedMessage {
     if (tokenPointer != null) {
       _result.tokenPointer = tokenPointer;
     }
-    if (config != null) {
-      _result.config = config;
-    }
-    if (emailVerificationCode != null) {
-      _result.emailVerificationCode = emailVerificationCode;
-    }
-    if (resetPasswordCode != null) {
-      _result.resetPasswordCode = resetPasswordCode;
-    }
     return _result;
   }
-  factory UserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory HeraRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HeraRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UserRequest clone() => UserRequest()..mergeFromMessage(this);
+  HeraRequest clone() => HeraRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UserRequest copyWith(void Function(UserRequest) updates) => super.copyWith((message) => updates(message as UserRequest)) as UserRequest; // ignore: deprecated_member_use
+  HeraRequest copyWith(void Function(HeraRequest) updates) => super.copyWith((message) => updates(message as HeraRequest)) as HeraRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static UserRequest create() => UserRequest._();
-  UserRequest createEmptyInstance() => create();
-  static $pb.PbList<UserRequest> createRepeated() => $pb.PbList<UserRequest>();
+  static HeraRequest create() => HeraRequest._();
+  HeraRequest createEmptyInstance() => create();
+  static $pb.PbList<HeraRequest> createRepeated() => $pb.PbList<HeraRequest>();
   @$core.pragma('dart2js:noInline')
-  static UserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserRequest>(create);
-  static UserRequest? _defaultInstance;
+  static HeraRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HeraRequest>(create);
+  static HeraRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   User get user => $_getN(0);
@@ -1131,15 +1135,15 @@ class UserRequest extends $pb.GeneratedMessage {
   User ensureUserUpdate() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  UserFilter get filter => $_getN(2);
+  Query get query => $_getN(2);
   @$pb.TagNumber(3)
-  set filter(UserFilter v) { setField(3, v); }
+  set query(Query v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasFilter() => $_has(2);
+  $core.bool hasQuery() => $_has(2);
   @$pb.TagNumber(3)
-  void clearFilter() => clearField(3);
+  void clearQuery() => clearField(3);
   @$pb.TagNumber(3)
-  UserFilter ensureFilter() => $_ensure(2);
+  Query ensureQuery() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get namespace => $_getSZ(3);
@@ -1151,7 +1155,7 @@ class UserRequest extends $pb.GeneratedMessage {
   void clearNamespace() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<User> get userBatch => $_getList(4);
+  $core.List<User> get users => $_getList(4);
 
   @$pb.TagNumber(6)
   Token get token => $_getN(5);
@@ -1165,72 +1169,54 @@ class UserRequest extends $pb.GeneratedMessage {
   Token ensureToken() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $core.String get cloudToken => $_getSZ(6);
+  Config get config => $_getN(6);
   @$pb.TagNumber(7)
-  set cloudToken($core.String v) { $_setString(6, v); }
+  set config(Config v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasCloudToken() => $_has(6);
+  $core.bool hasConfig() => $_has(6);
   @$pb.TagNumber(7)
-  void clearCloudToken() => clearField(7);
+  void clearConfig() => clearField(7);
+  @$pb.TagNumber(7)
+  Config ensureConfig() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $core.String get tokenPointer => $_getSZ(7);
+  $core.String get cloudToken => $_getSZ(7);
   @$pb.TagNumber(8)
-  set tokenPointer($core.String v) { $_setString(7, v); }
+  set cloudToken($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasTokenPointer() => $_has(7);
+  $core.bool hasCloudToken() => $_has(7);
   @$pb.TagNumber(8)
-  void clearTokenPointer() => clearField(8);
+  void clearCloudToken() => clearField(8);
 
   @$pb.TagNumber(9)
-  Config get config => $_getN(8);
+  $core.String get tokenPointer => $_getSZ(8);
   @$pb.TagNumber(9)
-  set config(Config v) { setField(9, v); }
+  set tokenPointer($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasConfig() => $_has(8);
+  $core.bool hasTokenPointer() => $_has(8);
   @$pb.TagNumber(9)
-  void clearConfig() => clearField(9);
-  @$pb.TagNumber(9)
-  Config ensureConfig() => $_ensure(8);
-
-  @$pb.TagNumber(10)
-  $core.String get emailVerificationCode => $_getSZ(9);
-  @$pb.TagNumber(10)
-  set emailVerificationCode($core.String v) { $_setString(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasEmailVerificationCode() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearEmailVerificationCode() => clearField(10);
-
-  @$pb.TagNumber(11)
-  $core.String get resetPasswordCode => $_getSZ(10);
-  @$pb.TagNumber(11)
-  set resetPasswordCode($core.String v) { $_setString(10, v); }
-  @$pb.TagNumber(11)
-  $core.bool hasResetPasswordCode() => $_has(10);
-  @$pb.TagNumber(11)
-  void clearResetPasswordCode() => clearField(11);
+  void clearTokenPointer() => clearField(9);
 }
 
-class UserResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
+class HeraResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HeraResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
     ..aOM<User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: User.create)
     ..pc<User>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usersAmount')
+    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount')
     ..aOM<Token>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
     ..pc<Token>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokens', $pb.PbFieldType.PM, subBuilder: Token.create)
-    ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeys', entryClassName: 'UserResponse.PublicKeysEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('Hera'))
+    ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKeys', entryClassName: 'HeraResponse.PublicKeysEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('Hera'))
     ..aOM<Config>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: Config.create)
     ..aOM<LoginSession>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loginSession', subBuilder: LoginSession.create)
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey')
     ..hasRequiredFields = false
   ;
 
-  UserResponse._() : super();
-  factory UserResponse({
+  HeraResponse._() : super();
+  factory HeraResponse({
     User? user,
     $core.Iterable<User>? users,
-    $fixnum.Int64? usersAmount,
+    $fixnum.Int64? amount,
     Token? token,
     $core.Iterable<Token>? tokens,
     $core.Map<$core.String, $core.String>? publicKeys,
@@ -1245,8 +1231,8 @@ class UserResponse extends $pb.GeneratedMessage {
     if (users != null) {
       _result.users.addAll(users);
     }
-    if (usersAmount != null) {
-      _result.usersAmount = usersAmount;
+    if (amount != null) {
+      _result.amount = amount;
     }
     if (token != null) {
       _result.token = token;
@@ -1268,26 +1254,26 @@ class UserResponse extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory UserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory HeraResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HeraResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UserResponse clone() => UserResponse()..mergeFromMessage(this);
+  HeraResponse clone() => HeraResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UserResponse copyWith(void Function(UserResponse) updates) => super.copyWith((message) => updates(message as UserResponse)) as UserResponse; // ignore: deprecated_member_use
+  HeraResponse copyWith(void Function(HeraResponse) updates) => super.copyWith((message) => updates(message as HeraResponse)) as HeraResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static UserResponse create() => UserResponse._();
-  UserResponse createEmptyInstance() => create();
-  static $pb.PbList<UserResponse> createRepeated() => $pb.PbList<UserResponse>();
+  static HeraResponse create() => HeraResponse._();
+  HeraResponse createEmptyInstance() => create();
+  static $pb.PbList<HeraResponse> createRepeated() => $pb.PbList<HeraResponse>();
   @$core.pragma('dart2js:noInline')
-  static UserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserResponse>(create);
-  static UserResponse? _defaultInstance;
+  static HeraResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HeraResponse>(create);
+  static HeraResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   User get user => $_getN(0);
@@ -1304,13 +1290,13 @@ class UserResponse extends $pb.GeneratedMessage {
   $core.List<User> get users => $_getList(1);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get usersAmount => $_getI64(2);
+  $fixnum.Int64 get amount => $_getI64(2);
   @$pb.TagNumber(3)
-  set usersAmount($fixnum.Int64 v) { $_setInt64(2, v); }
+  set amount($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUsersAmount() => $_has(2);
+  $core.bool hasAmount() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUsersAmount() => clearField(3);
+  void clearAmount() => clearField(3);
 
   @$pb.TagNumber(4)
   Token get token => $_getN(3);

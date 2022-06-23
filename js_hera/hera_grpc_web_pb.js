@@ -75,33 +75,33 @@ proto.Hera.UserServicePromiseClient =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_Heartbeat = new grpc.web.MethodDescriptor(
   '/Hera.UserService/Heartbeat',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.heartbeat =
@@ -116,11 +116,11 @@ proto.Hera.UserServiceClient.prototype.heartbeat =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.heartbeat =
@@ -136,33 +136,33 @@ proto.Hera.UserServicePromiseClient.prototype.heartbeat =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_CreateUser = new grpc.web.MethodDescriptor(
   '/Hera.UserService/CreateUser',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.createUser =
@@ -177,11 +177,11 @@ proto.Hera.UserServiceClient.prototype.createUser =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.createUser =
@@ -197,33 +197,33 @@ proto.Hera.UserServicePromiseClient.prototype.createUser =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_UpdateMetadata = new grpc.web.MethodDescriptor(
   '/Hera.UserService/UpdateMetadata',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.updateMetadata =
@@ -238,11 +238,11 @@ proto.Hera.UserServiceClient.prototype.updateMetadata =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.updateMetadata =
@@ -258,33 +258,33 @@ proto.Hera.UserServicePromiseClient.prototype.updateMetadata =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_UpdateUserProfile = new grpc.web.MethodDescriptor(
   '/Hera.UserService/UpdateUserProfile',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.updateUserProfile =
@@ -299,11 +299,11 @@ proto.Hera.UserServiceClient.prototype.updateUserProfile =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.updateUserProfile =
@@ -319,33 +319,33 @@ proto.Hera.UserServicePromiseClient.prototype.updateUserProfile =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_UpdateUserContact = new grpc.web.MethodDescriptor(
   '/Hera.UserService/UpdateUserContact',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.updateUserContact =
@@ -360,11 +360,11 @@ proto.Hera.UserServiceClient.prototype.updateUserContact =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.updateUserContact =
@@ -380,33 +380,33 @@ proto.Hera.UserServicePromiseClient.prototype.updateUserContact =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_UpdateUserPassword = new grpc.web.MethodDescriptor(
   '/Hera.UserService/UpdateUserPassword',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.updateUserPassword =
@@ -421,11 +421,11 @@ proto.Hera.UserServiceClient.prototype.updateUserPassword =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.updateUserPassword =
@@ -441,33 +441,33 @@ proto.Hera.UserServicePromiseClient.prototype.updateUserPassword =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_SearchForUser = new grpc.web.MethodDescriptor(
   '/Hera.UserService/SearchForUser',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.searchForUser =
@@ -482,11 +482,11 @@ proto.Hera.UserServiceClient.prototype.searchForUser =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.searchForUser =
@@ -502,33 +502,33 @@ proto.Hera.UserServicePromiseClient.prototype.searchForUser =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_GetUser = new grpc.web.MethodDescriptor(
   '/Hera.UserService/GetUser',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.getUser =
@@ -543,11 +543,11 @@ proto.Hera.UserServiceClient.prototype.getUser =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.getUser =
@@ -563,33 +563,33 @@ proto.Hera.UserServicePromiseClient.prototype.getUser =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_ListUsers = new grpc.web.MethodDescriptor(
   '/Hera.UserService/ListUsers',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.listUsers =
@@ -604,11 +604,11 @@ proto.Hera.UserServiceClient.prototype.listUsers =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.listUsers =
@@ -624,33 +624,33 @@ proto.Hera.UserServicePromiseClient.prototype.listUsers =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_ValidateCredentials = new grpc.web.MethodDescriptor(
   '/Hera.UserService/ValidateCredentials',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.validateCredentials =
@@ -665,11 +665,11 @@ proto.Hera.UserServiceClient.prototype.validateCredentials =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.validateCredentials =
@@ -685,33 +685,33 @@ proto.Hera.UserServicePromiseClient.prototype.validateCredentials =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_Login = new grpc.web.MethodDescriptor(
   '/Hera.UserService/Login',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.login =
@@ -726,11 +726,11 @@ proto.Hera.UserServiceClient.prototype.login =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.login =
@@ -746,33 +746,33 @@ proto.Hera.UserServicePromiseClient.prototype.login =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_DeleteUser = new grpc.web.MethodDescriptor(
   '/Hera.UserService/DeleteUser',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.deleteUser =
@@ -787,11 +787,11 @@ proto.Hera.UserServiceClient.prototype.deleteUser =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.deleteUser =
@@ -807,33 +807,33 @@ proto.Hera.UserServicePromiseClient.prototype.deleteUser =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_DeleteUsers = new grpc.web.MethodDescriptor(
   '/Hera.UserService/DeleteUsers',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.deleteUsers =
@@ -848,11 +848,11 @@ proto.Hera.UserServiceClient.prototype.deleteUsers =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.deleteUsers =
@@ -868,33 +868,33 @@ proto.Hera.UserServicePromiseClient.prototype.deleteUsers =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_CreateToken = new grpc.web.MethodDescriptor(
   '/Hera.UserService/CreateToken',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.createToken =
@@ -909,11 +909,11 @@ proto.Hera.UserServiceClient.prototype.createToken =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.createToken =
@@ -929,33 +929,33 @@ proto.Hera.UserServicePromiseClient.prototype.createToken =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_ValidateToken = new grpc.web.MethodDescriptor(
   '/Hera.UserService/ValidateToken',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.validateToken =
@@ -970,11 +970,11 @@ proto.Hera.UserServiceClient.prototype.validateToken =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.validateToken =
@@ -990,33 +990,33 @@ proto.Hera.UserServicePromiseClient.prototype.validateToken =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_BlockToken = new grpc.web.MethodDescriptor(
   '/Hera.UserService/BlockToken',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.blockToken =
@@ -1031,11 +1031,11 @@ proto.Hera.UserServiceClient.prototype.blockToken =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.blockToken =
@@ -1051,33 +1051,33 @@ proto.Hera.UserServicePromiseClient.prototype.blockToken =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_RefreshToken = new grpc.web.MethodDescriptor(
   '/Hera.UserService/RefreshToken',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.refreshToken =
@@ -1092,11 +1092,11 @@ proto.Hera.UserServiceClient.prototype.refreshToken =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.refreshToken =
@@ -1112,33 +1112,33 @@ proto.Hera.UserServicePromiseClient.prototype.refreshToken =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_GetTokens = new grpc.web.MethodDescriptor(
   '/Hera.UserService/GetTokens',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.getTokens =
@@ -1153,11 +1153,11 @@ proto.Hera.UserServiceClient.prototype.getTokens =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.getTokens =
@@ -1173,33 +1173,33 @@ proto.Hera.UserServicePromiseClient.prototype.getTokens =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_PublicKeys = new grpc.web.MethodDescriptor(
   '/Hera.UserService/PublicKeys',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.publicKeys =
@@ -1214,11 +1214,11 @@ proto.Hera.UserServiceClient.prototype.publicKeys =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.publicKeys =
@@ -1234,33 +1234,33 @@ proto.Hera.UserServicePromiseClient.prototype.publicKeys =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_SendVerificationEmail = new grpc.web.MethodDescriptor(
   '/Hera.UserService/SendVerificationEmail',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.sendVerificationEmail =
@@ -1275,11 +1275,11 @@ proto.Hera.UserServiceClient.prototype.sendVerificationEmail =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.sendVerificationEmail =
@@ -1295,33 +1295,33 @@ proto.Hera.UserServicePromiseClient.prototype.sendVerificationEmail =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_VerifyEmail = new grpc.web.MethodDescriptor(
   '/Hera.UserService/VerifyEmail',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.verifyEmail =
@@ -1336,11 +1336,11 @@ proto.Hera.UserServiceClient.prototype.verifyEmail =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.verifyEmail =
@@ -1356,33 +1356,33 @@ proto.Hera.UserServicePromiseClient.prototype.verifyEmail =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_SendVerificationText = new grpc.web.MethodDescriptor(
   '/Hera.UserService/SendVerificationText',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.sendVerificationText =
@@ -1397,11 +1397,11 @@ proto.Hera.UserServiceClient.prototype.sendVerificationText =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.sendVerificationText =
@@ -1417,33 +1417,33 @@ proto.Hera.UserServicePromiseClient.prototype.sendVerificationText =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_VerifyPhone = new grpc.web.MethodDescriptor(
   '/Hera.UserService/VerifyPhone',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.verifyPhone =
@@ -1458,11 +1458,11 @@ proto.Hera.UserServiceClient.prototype.verifyPhone =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.verifyPhone =
@@ -1478,33 +1478,33 @@ proto.Hera.UserServicePromiseClient.prototype.verifyPhone =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_SendResetPasswordEmail = new grpc.web.MethodDescriptor(
   '/Hera.UserService/SendResetPasswordEmail',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.sendResetPasswordEmail =
@@ -1519,11 +1519,11 @@ proto.Hera.UserServiceClient.prototype.sendResetPasswordEmail =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.sendResetPasswordEmail =
@@ -1539,33 +1539,33 @@ proto.Hera.UserServicePromiseClient.prototype.sendResetPasswordEmail =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_SendResetPasswordText = new grpc.web.MethodDescriptor(
   '/Hera.UserService/SendResetPasswordText',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.sendResetPasswordText =
@@ -1580,11 +1580,11 @@ proto.Hera.UserServiceClient.prototype.sendResetPasswordText =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.sendResetPasswordText =
@@ -1600,33 +1600,33 @@ proto.Hera.UserServicePromiseClient.prototype.sendResetPasswordText =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_ResetPassword = new grpc.web.MethodDescriptor(
   '/Hera.UserService/ResetPassword',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.resetPassword =
@@ -1641,11 +1641,11 @@ proto.Hera.UserServiceClient.prototype.resetPassword =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.resetPassword =
@@ -1661,33 +1661,33 @@ proto.Hera.UserServicePromiseClient.prototype.resetPassword =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_DeleteNamespace = new grpc.web.MethodDescriptor(
   '/Hera.UserService/DeleteNamespace',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.deleteNamespace =
@@ -1702,11 +1702,11 @@ proto.Hera.UserServiceClient.prototype.deleteNamespace =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.deleteNamespace =
@@ -1722,33 +1722,33 @@ proto.Hera.UserServicePromiseClient.prototype.deleteNamespace =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_CreateNamespace = new grpc.web.MethodDescriptor(
   '/Hera.UserService/CreateNamespace',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.createNamespace =
@@ -1763,11 +1763,11 @@ proto.Hera.UserServiceClient.prototype.createNamespace =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.createNamespace =
@@ -1783,33 +1783,33 @@ proto.Hera.UserServicePromiseClient.prototype.createNamespace =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_RegisterPublicKey = new grpc.web.MethodDescriptor(
   '/Hera.UserService/RegisterPublicKey',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.registerPublicKey =
@@ -1824,11 +1824,11 @@ proto.Hera.UserServiceClient.prototype.registerPublicKey =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.registerPublicKey =
@@ -1844,33 +1844,33 @@ proto.Hera.UserServicePromiseClient.prototype.registerPublicKey =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_GetConfig = new grpc.web.MethodDescriptor(
   '/Hera.UserService/GetConfig',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.getConfig =
@@ -1885,11 +1885,11 @@ proto.Hera.UserServiceClient.prototype.getConfig =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.getConfig =
@@ -1905,33 +1905,33 @@ proto.Hera.UserServicePromiseClient.prototype.getConfig =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_UpdateConfig = new grpc.web.MethodDescriptor(
   '/Hera.UserService/UpdateConfig',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.updateConfig =
@@ -1946,11 +1946,11 @@ proto.Hera.UserServiceClient.prototype.updateConfig =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.updateConfig =
@@ -1966,33 +1966,33 @@ proto.Hera.UserServicePromiseClient.prototype.updateConfig =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.Hera.UserRequest,
- *   !proto.Hera.UserResponse>}
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
  */
 const methodDescriptor_UserService_DeleteConfig = new grpc.web.MethodDescriptor(
   '/Hera.UserService/DeleteConfig',
   grpc.web.MethodType.UNARY,
-  proto.Hera.UserRequest,
-  proto.Hera.UserResponse,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
   /**
-   * @param {!proto.Hera.UserRequest} request
+   * @param {!proto.Hera.HeraRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.Hera.UserResponse.deserializeBinary
+  proto.Hera.HeraResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.Hera.UserServiceClient.prototype.deleteConfig =
@@ -2007,11 +2007,11 @@ proto.Hera.UserServiceClient.prototype.deleteConfig =
 
 
 /**
- * @param {!proto.Hera.UserRequest} request The
+ * @param {!proto.Hera.HeraRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Hera.UserResponse>}
+ * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
 proto.Hera.UserServicePromiseClient.prototype.deleteConfig =
