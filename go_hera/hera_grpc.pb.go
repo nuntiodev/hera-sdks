@@ -47,6 +47,7 @@ type ServiceClient interface {
 	DeleteNamespace(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	CreateNamespace(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	RegisterPublicKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
+	RemovePublicKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	GetConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	UpdateConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	DeleteConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
@@ -321,6 +322,15 @@ func (c *serviceClient) RegisterPublicKey(ctx context.Context, in *HeraRequest, 
 	return out, nil
 }
 
+func (c *serviceClient) RemovePublicKey(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+	out := new(HeraResponse)
+	err := c.cc.Invoke(ctx, "/Hera.Service/RemovePublicKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *serviceClient) GetConfig(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
 	err := c.cc.Invoke(ctx, "/Hera.Service/GetConfig", in, out, opts...)
@@ -381,6 +391,7 @@ type ServiceServer interface {
 	DeleteNamespace(context.Context, *HeraRequest) (*HeraResponse, error)
 	CreateNamespace(context.Context, *HeraRequest) (*HeraResponse, error)
 	RegisterPublicKey(context.Context, *HeraRequest) (*HeraResponse, error)
+	RemovePublicKey(context.Context, *HeraRequest) (*HeraResponse, error)
 	GetConfig(context.Context, *HeraRequest) (*HeraResponse, error)
 	UpdateConfig(context.Context, *HeraRequest) (*HeraResponse, error)
 	DeleteConfig(context.Context, *HeraRequest) (*HeraResponse, error)
@@ -476,6 +487,9 @@ func (UnimplementedServiceServer) CreateNamespace(context.Context, *HeraRequest)
 }
 func (UnimplementedServiceServer) RegisterPublicKey(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterPublicKey not implemented")
+}
+func (UnimplementedServiceServer) RemovePublicKey(context.Context, *HeraRequest) (*HeraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemovePublicKey not implemented")
 }
 func (UnimplementedServiceServer) GetConfig(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConfig not implemented")
@@ -1020,6 +1034,24 @@ func _Service_RegisterPublicKey_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Service_RemovePublicKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HeraRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ServiceServer).RemovePublicKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Hera.Service/RemovePublicKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ServiceServer).RemovePublicKey(ctx, req.(*HeraRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Service_GetConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HeraRequest)
 	if err := dec(in); err != nil {
@@ -1196,6 +1228,10 @@ var Service_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RegisterPublicKey",
 			Handler:    _Service_RegisterPublicKey_Handler,
+		},
+		{
+			MethodName: "RemovePublicKey",
+			Handler:    _Service_RemovePublicKey_Handler,
 		},
 		{
 			MethodName: "GetConfig",
