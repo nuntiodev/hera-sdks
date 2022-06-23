@@ -14,7 +14,7 @@ service UserService {
     rpc UpdateUserProfile(UserRequest) returns (UserResponse) {}
     rpc UpdateUserContact(UserRequest) returns (UserResponse) {}
     rpc UpdateUserPassword(UserRequest) returns (UserResponse) {}
-
+    rpc SearchForUser(UserRequest) returns (UserResponse) {}
     rpc GetUser(UserRequest) returns (UserResponse) {}
     rpc ListUsers(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
