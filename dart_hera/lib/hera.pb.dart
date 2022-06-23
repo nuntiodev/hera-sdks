@@ -245,6 +245,7 @@ class User extends $pb.GeneratedMessage {
     ..pPS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifiedPhoneNumbers')
     ..e<LanguageCode>(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'preferredLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..aOS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usernameHash')
+    ..a<$core.int>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhoneAttempts', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -278,6 +279,7 @@ class User extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? verifiedPhoneNumbers,
     LanguageCode? preferredLanguage,
     $core.String? usernameHash,
+    $core.int? verifyPhoneAttempts,
   }) {
     final _result = create();
     if (id != null) {
@@ -363,6 +365,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (usernameHash != null) {
       _result.usernameHash = usernameHash;
+    }
+    if (verifyPhoneAttempts != null) {
+      _result.verifyPhoneAttempts = verifyPhoneAttempts;
     }
     return _result;
   }
@@ -642,6 +647,15 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasUsernameHash() => $_has(27);
   @$pb.TagNumber(28)
   void clearUsernameHash() => clearField(28);
+
+  @$pb.TagNumber(29)
+  $core.int get verifyPhoneAttempts => $_getIZ(28);
+  @$pb.TagNumber(29)
+  set verifyPhoneAttempts($core.int v) { $_setSignedInt32(28, v); }
+  @$pb.TagNumber(29)
+  $core.bool hasVerifyPhoneAttempts() => $_has(28);
+  @$pb.TagNumber(29)
+  void clearVerifyPhoneAttempts() => clearField(29);
 }
 
 class Query extends $pb.GeneratedMessage {

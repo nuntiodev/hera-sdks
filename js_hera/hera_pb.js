@@ -779,7 +779,8 @@ proto.Hera.User.toObject = function(includeInstance, msg) {
     phoneVerificationCode: jspb.Message.getFieldWithDefault(msg, 25, ""),
     verifiedPhoneNumbersList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f,
     preferredLanguage: jspb.Message.getFieldWithDefault(msg, 27, 0),
-    usernameHash: jspb.Message.getFieldWithDefault(msg, 28, "")
+    usernameHash: jspb.Message.getFieldWithDefault(msg, 28, ""),
+    verifyPhoneAttempts: jspb.Message.getFieldWithDefault(msg, 29, 0)
   };
 
   if (includeInstance) {
@@ -935,6 +936,10 @@ proto.Hera.User.deserializeBinaryFromReader = function(msg, reader) {
     case 28:
       var value = /** @type {string} */ (reader.readString());
       msg.setUsernameHash(value);
+      break;
+    case 29:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setVerifyPhoneAttempts(value);
       break;
     default:
       reader.skipField();
@@ -1166,6 +1171,13 @@ proto.Hera.User.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       28,
+      f
+    );
+  }
+  f = message.getVerifyPhoneAttempts();
+  if (f !== 0) {
+    writer.writeInt32(
+      29,
       f
     );
   }
@@ -1989,6 +2001,24 @@ proto.Hera.User.prototype.getUsernameHash = function() {
  */
 proto.Hera.User.prototype.setUsernameHash = function(value) {
   return jspb.Message.setProto3StringField(this, 28, value);
+};
+
+
+/**
+ * optional int32 verify_phone_attempts = 29;
+ * @return {number}
+ */
+proto.Hera.User.prototype.getVerifyPhoneAttempts = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 29, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.Hera.User} returns this
+ */
+proto.Hera.User.prototype.setVerifyPhoneAttempts = function(value) {
+  return jspb.Message.setProto3IntField(this, 29, value);
 };
 
 
