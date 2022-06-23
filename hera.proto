@@ -36,7 +36,7 @@ service Service {
     rpc ResetPassword(HeraRequest) returns (HeraResponse) {}
     rpc DeleteNamespace(HeraRequest) returns (HeraResponse) {}
     rpc CreateNamespace(HeraRequest) returns (HeraResponse) {}
-    rpc RegisterPublicKey(HeraRequest) returns (HeraResponse) {}
+    rpc RegisterRsaKey(HeraRequest) returns (HeraResponse) {}
     rpc RemovePublicKey(HeraRequest) returns (HeraResponse) {}
     rpc GetConfig(HeraRequest) returns (HeraResponse) {}
     rpc UpdateConfig(HeraRequest) returns (HeraResponse) {}
