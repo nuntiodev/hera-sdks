@@ -166,15 +166,14 @@ message UserRequest {
     User user_update = 2;
     UserFilter filter = 3;
     string namespace = 4;
-    string encryption_key = 5;
-    repeated User user_batch = 6;
-    Token token = 7;
-    string cloud_token = 8;
-    string token_pointer = 9;
-    Config config = 10;
-    string email_verification_code = 11;
-    string reset_password_code = 12;
-    string search = 13;
+    repeated User user_batch = 5;
+    Token token = 6;
+    string cloud_token = 7;
+    string token_pointer = 8;
+    Config config = 9;
+    string email_verification_code = 10;
+    string reset_password_code = 11;
+    string search = 12;
 }
 
 message UserResponse {
