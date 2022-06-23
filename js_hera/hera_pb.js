@@ -189,7 +189,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.Hera.Config.repeatedFields_ = [10];
+proto.Hera.Config.repeatedFields_ = [9];
 
 
 
@@ -224,16 +224,15 @@ proto.Hera.Config.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     logo: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    nuntioVerifyId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    disableSignup: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    disableLogin: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    disableSignup: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    disableLogin: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    verifyEmail: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    supportedLoginMechanismsList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
-    verifyPhone: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    publicKey: jspb.Message.getFieldWithDefault(msg, 12, "")
+    validatePassword: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    verifyEmail: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    supportedLoginMechanismsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    verifyPhone: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    publicKey: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -279,46 +278,42 @@ proto.Hera.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLogo(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNuntioVerifyId(value);
-      break;
-    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDisableSignup(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDisableLogin(value);
       break;
-    case 6:
+    case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreatedAt(value);
       break;
-    case 7:
+    case 6:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setValidatePassword(value);
       break;
-    case 9:
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setVerifyEmail(value);
       break;
-    case 10:
+    case 9:
       var values = /** @type {!Array<!proto.Hera.LoginType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addSupportedLoginMechanisms(values[i]);
       }
       break;
-    case 11:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setVerifyPhone(value);
       break;
-    case 12:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setPublicKey(value);
       break;
@@ -365,31 +360,24 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getNuntioVerifyId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getDisableSignup();
   if (f) {
     writer.writeBool(
-      4,
+      3,
       f
     );
   }
   f = message.getDisableLogin();
   if (f) {
     writer.writeBool(
-      5,
+      4,
       f
     );
   }
   f = message.getCreatedAt();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -397,7 +385,7 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getUpdatedAt();
   if (f != null) {
     writer.writeMessage(
-      7,
+      6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -405,35 +393,35 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getValidatePassword();
   if (f) {
     writer.writeBool(
-      8,
+      7,
       f
     );
   }
   f = message.getVerifyEmail();
   if (f) {
     writer.writeBool(
-      9,
+      8,
       f
     );
   }
   f = message.getSupportedLoginMechanismsList();
   if (f.length > 0) {
     writer.writePackedEnum(
-      10,
+      9,
       f
     );
   }
   f = message.getVerifyPhone();
   if (f) {
     writer.writeBool(
-      11,
+      10,
       f
     );
   }
   f = message.getPublicKey();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      11,
       f
     );
   }
@@ -477,29 +465,11 @@ proto.Hera.Config.prototype.setLogo = function(value) {
 
 
 /**
- * optional string nuntio_verify_id = 3;
- * @return {string}
- */
-proto.Hera.Config.prototype.getNuntioVerifyId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.Hera.Config} returns this
- */
-proto.Hera.Config.prototype.setNuntioVerifyId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional bool disable_signup = 4;
+ * optional bool disable_signup = 3;
  * @return {boolean}
  */
 proto.Hera.Config.prototype.getDisableSignup = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
@@ -508,16 +478,16 @@ proto.Hera.Config.prototype.getDisableSignup = function() {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.setDisableSignup = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
 /**
- * optional bool disable_login = 5;
+ * optional bool disable_login = 4;
  * @return {boolean}
  */
 proto.Hera.Config.prototype.getDisableLogin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
@@ -526,17 +496,17 @@ proto.Hera.Config.prototype.getDisableLogin = function() {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.setDisableLogin = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp created_at = 6;
+ * optional google.protobuf.Timestamp created_at = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.Hera.Config.prototype.getCreatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
 
 
@@ -545,7 +515,7 @@ proto.Hera.Config.prototype.getCreatedAt = function() {
  * @return {!proto.Hera.Config} returns this
 */
 proto.Hera.Config.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -563,17 +533,17 @@ proto.Hera.Config.prototype.clearCreatedAt = function() {
  * @return {boolean}
  */
 proto.Hera.Config.prototype.hasCreatedAt = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updated_at = 7;
+ * optional google.protobuf.Timestamp updated_at = 6;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.Hera.Config.prototype.getUpdatedAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
 };
 
 
@@ -582,7 +552,7 @@ proto.Hera.Config.prototype.getUpdatedAt = function() {
  * @return {!proto.Hera.Config} returns this
 */
 proto.Hera.Config.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -600,16 +570,16 @@ proto.Hera.Config.prototype.clearUpdatedAt = function() {
  * @return {boolean}
  */
 proto.Hera.Config.prototype.hasUpdatedAt = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional bool validate_password = 8;
+ * optional bool validate_password = 7;
  * @return {boolean}
  */
 proto.Hera.Config.prototype.getValidatePassword = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -618,16 +588,16 @@ proto.Hera.Config.prototype.getValidatePassword = function() {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.setValidatePassword = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
 /**
- * optional bool verify_email = 9;
+ * optional bool verify_email = 8;
  * @return {boolean}
  */
 proto.Hera.Config.prototype.getVerifyEmail = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
@@ -636,16 +606,16 @@ proto.Hera.Config.prototype.getVerifyEmail = function() {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.setVerifyEmail = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 9, value);
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
 /**
- * repeated LoginType supported_login_mechanisms = 10;
+ * repeated LoginType supported_login_mechanisms = 9;
  * @return {!Array<!proto.Hera.LoginType>}
  */
 proto.Hera.Config.prototype.getSupportedLoginMechanismsList = function() {
-  return /** @type {!Array<!proto.Hera.LoginType>} */ (jspb.Message.getRepeatedField(this, 10));
+  return /** @type {!Array<!proto.Hera.LoginType>} */ (jspb.Message.getRepeatedField(this, 9));
 };
 
 
@@ -654,7 +624,7 @@ proto.Hera.Config.prototype.getSupportedLoginMechanismsList = function() {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.setSupportedLoginMechanismsList = function(value) {
-  return jspb.Message.setField(this, 10, value || []);
+  return jspb.Message.setField(this, 9, value || []);
 };
 
 
@@ -664,7 +634,7 @@ proto.Hera.Config.prototype.setSupportedLoginMechanismsList = function(value) {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.addSupportedLoginMechanisms = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
 };
 
 
@@ -678,11 +648,11 @@ proto.Hera.Config.prototype.clearSupportedLoginMechanismsList = function() {
 
 
 /**
- * optional bool verify_phone = 11;
+ * optional bool verify_phone = 10;
  * @return {boolean}
  */
 proto.Hera.Config.prototype.getVerifyPhone = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -691,16 +661,16 @@ proto.Hera.Config.prototype.getVerifyPhone = function() {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.setVerifyPhone = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 11, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional string public_key = 12;
+ * optional string public_key = 11;
  * @return {string}
  */
 proto.Hera.Config.prototype.getPublicKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -709,7 +679,7 @@ proto.Hera.Config.prototype.getPublicKey = function() {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.setPublicKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
@@ -768,8 +738,8 @@ proto.Hera.User.toObject = function(includeInstance, msg) {
     verificationEmailExpiresAt: (f = msg.getVerificationEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     verifyEmailAttempts: jspb.Message.getFieldWithDefault(msg, 15, 0),
     resetPasswordCode: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    resetPasswordEmailSentAt: (f = msg.getResetPasswordEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    resetPasswordEmailExpiresAt: (f = msg.getResetPasswordEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    resetPasswordCodeSentAt: (f = msg.getResetPasswordCodeSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    resetPasswordCodeExpiresAt: (f = msg.getResetPasswordCodeExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordAttempts: jspb.Message.getFieldWithDefault(msg, 19, 0),
     verifiedEmailsList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
     emailHash: jspb.Message.getFieldWithDefault(msg, 21, ""),
@@ -889,12 +859,12 @@ proto.Hera.User.deserializeBinaryFromReader = function(msg, reader) {
     case 17:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setResetPasswordEmailSentAt(value);
+      msg.setResetPasswordCodeSentAt(value);
       break;
     case 18:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setResetPasswordEmailExpiresAt(value);
+      msg.setResetPasswordCodeExpiresAt(value);
       break;
     case 19:
       var value = /** @type {number} */ (reader.readInt32());
@@ -1087,7 +1057,7 @@ proto.Hera.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getResetPasswordEmailSentAt();
+  f = message.getResetPasswordCodeSentAt();
   if (f != null) {
     writer.writeMessage(
       17,
@@ -1095,7 +1065,7 @@ proto.Hera.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getResetPasswordEmailExpiresAt();
+  f = message.getResetPasswordCodeExpiresAt();
   if (f != null) {
     writer.writeMessage(
       18,
@@ -1658,10 +1628,10 @@ proto.Hera.User.prototype.setResetPasswordCode = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp reset_password_email_sent_at = 17;
+ * optional google.protobuf.Timestamp reset_password_code_sent_at = 17;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.Hera.User.prototype.getResetPasswordEmailSentAt = function() {
+proto.Hera.User.prototype.getResetPasswordCodeSentAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 17));
 };
@@ -1671,7 +1641,7 @@ proto.Hera.User.prototype.getResetPasswordEmailSentAt = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.Hera.User} returns this
 */
-proto.Hera.User.prototype.setResetPasswordEmailSentAt = function(value) {
+proto.Hera.User.prototype.setResetPasswordCodeSentAt = function(value) {
   return jspb.Message.setWrapperField(this, 17, value);
 };
 
@@ -1680,8 +1650,8 @@ proto.Hera.User.prototype.setResetPasswordEmailSentAt = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.Hera.User} returns this
  */
-proto.Hera.User.prototype.clearResetPasswordEmailSentAt = function() {
-  return this.setResetPasswordEmailSentAt(undefined);
+proto.Hera.User.prototype.clearResetPasswordCodeSentAt = function() {
+  return this.setResetPasswordCodeSentAt(undefined);
 };
 
 
@@ -1689,16 +1659,16 @@ proto.Hera.User.prototype.clearResetPasswordEmailSentAt = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.Hera.User.prototype.hasResetPasswordEmailSentAt = function() {
+proto.Hera.User.prototype.hasResetPasswordCodeSentAt = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp reset_password_email_expires_at = 18;
+ * optional google.protobuf.Timestamp reset_password_code_expires_at = 18;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.Hera.User.prototype.getResetPasswordEmailExpiresAt = function() {
+proto.Hera.User.prototype.getResetPasswordCodeExpiresAt = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 18));
 };
@@ -1708,7 +1678,7 @@ proto.Hera.User.prototype.getResetPasswordEmailExpiresAt = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.Hera.User} returns this
 */
-proto.Hera.User.prototype.setResetPasswordEmailExpiresAt = function(value) {
+proto.Hera.User.prototype.setResetPasswordCodeExpiresAt = function(value) {
   return jspb.Message.setWrapperField(this, 18, value);
 };
 
@@ -1717,8 +1687,8 @@ proto.Hera.User.prototype.setResetPasswordEmailExpiresAt = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.Hera.User} returns this
  */
-proto.Hera.User.prototype.clearResetPasswordEmailExpiresAt = function() {
-  return this.setResetPasswordEmailExpiresAt(undefined);
+proto.Hera.User.prototype.clearResetPasswordCodeExpiresAt = function() {
+  return this.setResetPasswordCodeExpiresAt(undefined);
 };
 
 
@@ -1726,7 +1696,7 @@ proto.Hera.User.prototype.clearResetPasswordEmailExpiresAt = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.Hera.User.prototype.hasResetPasswordEmailExpiresAt = function() {
+proto.Hera.User.prototype.hasResetPasswordCodeExpiresAt = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 

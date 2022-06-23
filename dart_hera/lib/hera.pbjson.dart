@@ -65,21 +65,20 @@ const Config$json = const {
   '2': const [
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'logo', '3': 2, '4': 1, '5': 9, '10': 'logo'},
-    const {'1': 'nuntio_verify_id', '3': 3, '4': 1, '5': 9, '10': 'nuntioVerifyId'},
-    const {'1': 'disable_signup', '3': 4, '4': 1, '5': 8, '10': 'disableSignup'},
-    const {'1': 'disable_login', '3': 5, '4': 1, '5': 8, '10': 'disableLogin'},
-    const {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'validate_password', '3': 8, '4': 1, '5': 8, '10': 'validatePassword'},
-    const {'1': 'verify_email', '3': 9, '4': 1, '5': 8, '10': 'verifyEmail'},
-    const {'1': 'supported_login_mechanisms', '3': 10, '4': 3, '5': 14, '6': '.Hera.LoginType', '10': 'supportedLoginMechanisms'},
-    const {'1': 'verify_phone', '3': 11, '4': 1, '5': 8, '10': 'verifyPhone'},
-    const {'1': 'public_key', '3': 12, '4': 1, '5': 9, '10': 'publicKey'},
+    const {'1': 'disable_signup', '3': 3, '4': 1, '5': 8, '10': 'disableSignup'},
+    const {'1': 'disable_login', '3': 4, '4': 1, '5': 8, '10': 'disableLogin'},
+    const {'1': 'created_at', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updated_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'validate_password', '3': 7, '4': 1, '5': 8, '10': 'validatePassword'},
+    const {'1': 'verify_email', '3': 8, '4': 1, '5': 8, '10': 'verifyEmail'},
+    const {'1': 'supported_login_mechanisms', '3': 9, '4': 3, '5': 14, '6': '.Hera.LoginType', '10': 'supportedLoginMechanisms'},
+    const {'1': 'verify_phone', '3': 10, '4': 1, '5': 8, '10': 'verifyPhone'},
+    const {'1': 'public_key', '3': 11, '4': 1, '5': 9, '10': 'publicKey'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEigKEG51bnRpb192ZXJpZnlfaWQYAyABKAlSDm51bnRpb1ZlcmlmeUlkEiUKDmRpc2FibGVfc2lnbnVwGAQgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBSABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYCCABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAkgASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgKIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAsgASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAwgASgJUglwdWJsaWNLZXk=');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXk=');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
@@ -100,8 +99,8 @@ const User$json = const {
     const {'1': 'verification_email_expires_at', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'verificationEmailExpiresAt'},
     const {'1': 'verify_email_attempts', '3': 15, '4': 1, '5': 5, '10': 'verifyEmailAttempts'},
     const {'1': 'reset_password_code', '3': 16, '4': 1, '5': 9, '10': 'resetPasswordCode'},
-    const {'1': 'reset_password_email_sent_at', '3': 17, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'resetPasswordEmailSentAt'},
-    const {'1': 'reset_password_email_expires_at', '3': 18, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'resetPasswordEmailExpiresAt'},
+    const {'1': 'reset_password_code_sent_at', '3': 17, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'resetPasswordCodeSentAt'},
+    const {'1': 'reset_password_code_expires_at', '3': 18, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'resetPasswordCodeExpiresAt'},
     const {'1': 'reset_password_attempts', '3': 19, '4': 1, '5': 5, '10': 'resetPasswordAttempts'},
     const {'1': 'verified_emails', '3': 20, '4': 3, '5': 9, '10': 'verifiedEmails'},
     const {'1': 'email_hash', '3': 21, '4': 1, '5': 9, '10': 'emailHash'},
@@ -127,7 +126,7 @@ const User$json = const {
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgh1c2VybmFtZRgCIAEoCUgAUgh1c2VybmFtZYgBARIZCgVlbWFpbBgDIAEoCUgBUgVlbWFpbIgBARIaCghwYXNzd29yZBgEIAEoCVIIcGFzc3dvcmQSGQoFaW1hZ2UYBSABKAlIAlIFaW1hZ2WIAQESGgoIbWV0YWRhdGEYBiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIiCgpmaXJzdF9uYW1lGAkgASgJSANSCWZpcnN0TmFtZYgBARIgCglsYXN0X25hbWUYCiABKAlIBFIIbGFzdE5hbWWIAQESPQoJYmlydGhkYXRlGAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgFUgliaXJ0aGRhdGWIAQESVwoadmVyaWZpY2F0aW9uX2VtYWlsX3NlbnRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhd2ZXJpZmljYXRpb25FbWFpbFNlbnRBdBI2ChdlbWFpbF92ZXJpZmljYXRpb25fY29kZRgNIAEoCVIVZW1haWxWZXJpZmljYXRpb25Db2RlEl0KHXZlcmlmaWNhdGlvbl9lbWFpbF9leHBpcmVzX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIadmVyaWZpY2F0aW9uRW1haWxFeHBpcmVzQXQSMgoVdmVyaWZ5X2VtYWlsX2F0dGVtcHRzGA8gASgFUhN2ZXJpZnlFbWFpbEF0dGVtcHRzEi4KE3Jlc2V0X3Bhc3N3b3JkX2NvZGUYECABKAlSEXJlc2V0UGFzc3dvcmRDb2RlEloKHHJlc2V0X3Bhc3N3b3JkX2VtYWlsX3NlbnRfYXQYESABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhhyZXNldFBhc3N3b3JkRW1haWxTZW50QXQSYAofcmVzZXRfcGFzc3dvcmRfZW1haWxfZXhwaXJlc19hdBgSIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSG3Jlc2V0UGFzc3dvcmRFbWFpbEV4cGlyZXNBdBI2ChdyZXNldF9wYXNzd29yZF9hdHRlbXB0cxgTIAEoBVIVcmVzZXRQYXNzd29yZEF0dGVtcHRzEicKD3ZlcmlmaWVkX2VtYWlscxgUIAMoCVIOdmVyaWZpZWRFbWFpbHMSHQoKZW1haWxfaGFzaBgVIAEoCVIJZW1haWxIYXNoEhkKBXBob25lGBYgASgJSAZSBXBob25liAEBEh0KCnBob25lX2hhc2gYFyABKAlSCXBob25lSGFzaBJVChl2ZXJpZmljYXRpb25fdGV4dF9zZW50X2F0GBggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIWdmVyaWZpY2F0aW9uVGV4dFNlbnRBdBI2ChdwaG9uZV92ZXJpZmljYXRpb25fY29kZRgZIAEoCVIVcGhvbmVWZXJpZmljYXRpb25Db2RlEjQKFnZlcmlmaWVkX3Bob25lX251bWJlcnMYGiADKAlSFHZlcmlmaWVkUGhvbmVOdW1iZXJzEkYKEnByZWZlcnJlZF9sYW5ndWFnZRgbIAEoDjISLkhlcmEuTGFuZ3VhZ2VDb2RlSAdSEXByZWZlcnJlZExhbmd1YWdliAEBEiMKDXVzZXJuYW1lX2hhc2gYHCABKAlSDHVzZXJuYW1lSGFzaBIyChV2ZXJpZnlfcGhvbmVfYXR0ZW1wdHMYHSABKAVSE3ZlcmlmeVBob25lQXR0ZW1wdHNCCwoJX3VzZXJuYW1lQggKBl9lbWFpbEIICgZfaW1hZ2VCDQoLX2ZpcnN0X25hbWVCDAoKX2xhc3RfbmFtZUIMCgpfYmlydGhkYXRlQggKBl9waG9uZUIVChNfcHJlZmVycmVkX2xhbmd1YWdl');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgh1c2VybmFtZRgCIAEoCUgAUgh1c2VybmFtZYgBARIZCgVlbWFpbBgDIAEoCUgBUgVlbWFpbIgBARIaCghwYXNzd29yZBgEIAEoCVIIcGFzc3dvcmQSGQoFaW1hZ2UYBSABKAlIAlIFaW1hZ2WIAQESGgoIbWV0YWRhdGEYBiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIiCgpmaXJzdF9uYW1lGAkgASgJSANSCWZpcnN0TmFtZYgBARIgCglsYXN0X25hbWUYCiABKAlIBFIIbGFzdE5hbWWIAQESPQoJYmlydGhkYXRlGAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgFUgliaXJ0aGRhdGWIAQESVwoadmVyaWZpY2F0aW9uX2VtYWlsX3NlbnRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhd2ZXJpZmljYXRpb25FbWFpbFNlbnRBdBI2ChdlbWFpbF92ZXJpZmljYXRpb25fY29kZRgNIAEoCVIVZW1haWxWZXJpZmljYXRpb25Db2RlEl0KHXZlcmlmaWNhdGlvbl9lbWFpbF9leHBpcmVzX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIadmVyaWZpY2F0aW9uRW1haWxFeHBpcmVzQXQSMgoVdmVyaWZ5X2VtYWlsX2F0dGVtcHRzGA8gASgFUhN2ZXJpZnlFbWFpbEF0dGVtcHRzEi4KE3Jlc2V0X3Bhc3N3b3JkX2NvZGUYECABKAlSEXJlc2V0UGFzc3dvcmRDb2RlElgKG3Jlc2V0X3Bhc3N3b3JkX2NvZGVfc2VudF9hdBgRIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSF3Jlc2V0UGFzc3dvcmRDb2RlU2VudEF0El4KHnJlc2V0X3Bhc3N3b3JkX2NvZGVfZXhwaXJlc19hdBgSIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGnJlc2V0UGFzc3dvcmRDb2RlRXhwaXJlc0F0EjYKF3Jlc2V0X3Bhc3N3b3JkX2F0dGVtcHRzGBMgASgFUhVyZXNldFBhc3N3b3JkQXR0ZW1wdHMSJwoPdmVyaWZpZWRfZW1haWxzGBQgAygJUg52ZXJpZmllZEVtYWlscxIdCgplbWFpbF9oYXNoGBUgASgJUgllbWFpbEhhc2gSGQoFcGhvbmUYFiABKAlIBlIFcGhvbmWIAQESHQoKcGhvbmVfaGFzaBgXIAEoCVIJcGhvbmVIYXNoElUKGXZlcmlmaWNhdGlvbl90ZXh0X3NlbnRfYXQYGCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhZ2ZXJpZmljYXRpb25UZXh0U2VudEF0EjYKF3Bob25lX3ZlcmlmaWNhdGlvbl9jb2RlGBkgASgJUhVwaG9uZVZlcmlmaWNhdGlvbkNvZGUSNAoWdmVyaWZpZWRfcGhvbmVfbnVtYmVycxgaIAMoCVIUdmVyaWZpZWRQaG9uZU51bWJlcnMSRgoScHJlZmVycmVkX2xhbmd1YWdlGBsgASgOMhIuSGVyYS5MYW5ndWFnZUNvZGVIB1IRcHJlZmVycmVkTGFuZ3VhZ2WIAQESIwoNdXNlcm5hbWVfaGFzaBgcIAEoCVIMdXNlcm5hbWVIYXNoEjIKFXZlcmlmeV9waG9uZV9hdHRlbXB0cxgdIAEoBVITdmVyaWZ5UGhvbmVBdHRlbXB0c0ILCglfdXNlcm5hbWVCCAoGX2VtYWlsQggKBl9pbWFnZUINCgtfZmlyc3RfbmFtZUIMCgpfbGFzdF9uYW1lQgwKCl9iaXJ0aGRhdGVCCAoGX3Bob25lQhUKE19wcmVmZXJyZWRfbGFuZ3VhZ2U=');
 @$core.Deprecated('Use queryDescriptor instead')
 const Query$json = const {
   '1': 'Query',
