@@ -871,8 +871,8 @@ proto.Hera.UserServicePromiseClient.prototype.deleteUsers =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
-const methodDescriptor_UserService_CreateToken = new grpc.web.MethodDescriptor(
-  '/Hera.UserService/CreateToken',
+const methodDescriptor_UserService_CreateTokenPair = new grpc.web.MethodDescriptor(
+  '/Hera.UserService/CreateTokenPair',
   grpc.web.MethodType.UNARY,
   proto.Hera.HeraRequest,
   proto.Hera.HeraResponse,
@@ -897,13 +897,13 @@ const methodDescriptor_UserService_CreateToken = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Hera.UserServiceClient.prototype.createToken =
+proto.Hera.UserServiceClient.prototype.createTokenPair =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Hera.UserService/CreateToken',
+      '/Hera.UserService/CreateTokenPair',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateToken,
+      methodDescriptor_UserService_CreateTokenPair,
       callback);
 };
 
@@ -916,13 +916,13 @@ proto.Hera.UserServiceClient.prototype.createToken =
  * @return {!Promise<!proto.Hera.HeraResponse>}
  *     Promise that resolves to the response
  */
-proto.Hera.UserServicePromiseClient.prototype.createToken =
+proto.Hera.UserServicePromiseClient.prototype.createTokenPair =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Hera.UserService/CreateToken',
+      '/Hera.UserService/CreateTokenPair',
       request,
       metadata || {},
-      methodDescriptor_UserService_CreateToken);
+      methodDescriptor_UserService_CreateTokenPair);
 };
 
 
