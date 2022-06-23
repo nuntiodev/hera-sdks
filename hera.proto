@@ -8,40 +8,41 @@ import "google/protobuf/timestamp.proto";
 
 
 service UserService {
-    rpc Heartbeat(UserRequest) returns (UserResponse) {}
-    rpc CreateUser(UserRequest) returns (UserResponse) {}
-    rpc UpdateMetadata(UserRequest) returns (UserResponse) {}
-    rpc UpdateUserProfile(UserRequest) returns (UserResponse) {}
-    rpc UpdateUserContact(UserRequest) returns (UserResponse) {}
-    rpc UpdateUserPassword(UserRequest) returns (UserResponse) {}
-    rpc SearchForUser(UserRequest) returns (UserResponse) {}
-    rpc GetUser(UserRequest) returns (UserResponse) {}
-    rpc ListUsers(UserRequest) returns (UserResponse) {}
-    rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
-    rpc Login(UserRequest) returns (UserResponse) {}
+    rpc Heartbeat(HeraRequest) returns (HeraResponse) {}
+    rpc CreateUser(HeraRequest) returns (HeraResponse) {}
+    rpc UpdateMetadata(HeraRequest) returns (HeraResponse) {}
+    rpc UpdateUserProfile(HeraRequest) returns (HeraResponse) {}
+    rpc UpdateUserContact(HeraRequest) returns (HeraResponse) {}
+    rpc UpdateUserPassword(HeraRequest) returns (HeraResponse) {}
+    rpc SearchForUser(HeraRequest) returns (HeraResponse) {}
+    rpc GetUser(HeraRequest) returns (HeraResponse) {}
+    rpc ListUsers(HeraRequest) returns (HeraResponse) {}
+    rpc ValidateCredentials(HeraRequest) returns (HeraResponse) {}
+    rpc Login(HeraRequest) returns (HeraResponse) {}
 
-    rpc DeleteUser(UserRequest) returns (UserResponse) {}
-    rpc DeleteUsers(UserRequest) returns (UserResponse) {}
+    rpc DeleteUser(HeraRequest) returns (HeraResponse) {}
+    rpc DeleteUsers(HeraRequest) returns (HeraResponse) {}
 
-    rpc CreateToken(UserRequest) returns (UserResponse) {}
-    rpc ValidateToken(UserRequest) returns (UserResponse) {}
-    rpc BlockToken(UserRequest) returns (UserResponse) {}
-    rpc RefreshToken(UserRequest) returns (UserResponse) {}
-    rpc GetTokens(UserRequest) returns (UserResponse) {}
-    rpc PublicKeys(UserRequest) returns (UserResponse) {}
-    rpc SendVerificationEmail(UserRequest) returns (UserResponse) {}
-    rpc VerifyEmail(UserRequest) returns (UserResponse) {}
-    rpc SendVerificationText(UserRequest) returns (UserResponse) {}
-    rpc VerifyPhone(UserRequest) returns (UserResponse) {}
-    rpc SendResetPasswordEmail(UserRequest) returns (UserResponse) {}
-    rpc SendResetPasswordText(UserRequest) returns (UserResponse) {}
-    rpc ResetPassword(UserRequest) returns (UserResponse) {}
-    rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
-    rpc CreateNamespace(UserRequest) returns (UserResponse) {}
-    rpc RegisterPublicKey(UserRequest) returns (UserResponse) {}
-    rpc GetConfig(UserRequest) returns (UserResponse) {}
-    rpc UpdateConfig(UserRequest) returns (UserResponse) {}
-    rpc DeleteConfig(UserRequest) returns (UserResponse) {}
+    rpc CreateToken(HeraRequest) returns (HeraResponse) {}
+    rpc ValidateToken(HeraRequest) returns (HeraResponse) {}
+
+    rpc BlockToken(HeraRequest) returns (HeraResponse) {}
+    rpc RefreshToken(HeraRequest) returns (HeraResponse) {}
+    rpc GetTokens(HeraRequest) returns (HeraResponse) {}
+    rpc PublicKeys(HeraRequest) returns (HeraResponse) {}
+    rpc SendVerificationEmail(HeraRequest) returns (HeraResponse) {}
+    rpc VerifyEmail(HeraRequest) returns (HeraResponse) {}
+    rpc SendVerificationText(HeraRequest) returns (HeraResponse) {}
+    rpc VerifyPhone(HeraRequest) returns (HeraResponse) {}
+    rpc SendResetPasswordEmail(HeraRequest) returns (HeraResponse) {}
+    rpc SendResetPasswordText(HeraRequest) returns (HeraResponse) {}
+    rpc ResetPassword(HeraRequest) returns (HeraResponse) {}
+    rpc DeleteNamespace(HeraRequest) returns (HeraResponse) {}
+    rpc CreateNamespace(HeraRequest) returns (HeraResponse) {}
+    rpc RegisterPublicKey(HeraRequest) returns (HeraResponse) {}
+    rpc GetConfig(HeraRequest) returns (HeraResponse) {}
+    rpc UpdateConfig(HeraRequest) returns (HeraResponse) {}
+    rpc DeleteConfig(HeraRequest) returns (HeraResponse) {}
 }
 
 enum LanguageCode {
