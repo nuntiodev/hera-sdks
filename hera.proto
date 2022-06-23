@@ -89,9 +89,10 @@ message User {
     string phone_hash = 24;
     bool phone_is_verified = 25;
     google.protobuf.Timestamp verification_text_sent_at = 26;
-    repeated string verified_phone_numbers = 27;
-    optional LanguageCode preferred_language = 28;
-    string username_hash = 29;
+    string phone_verification_code = 27;
+    repeated string verified_phone_numbers = 28;
+    optional LanguageCode preferred_language = 29;
+    string username_hash = 30;
 }
 
 message UserFilter {
@@ -173,7 +174,6 @@ message UserRequest {
     Config config = 9;
     string email_verification_code = 10;
     string reset_password_code = 11;
-    string search = 12;
 }
 
 message UserResponse {
