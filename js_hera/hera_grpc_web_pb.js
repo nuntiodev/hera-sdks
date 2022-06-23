@@ -444,6 +444,67 @@ proto.Hera.UserServicePromiseClient.prototype.updateUserPassword =
  *   !proto.Hera.UserRequest,
  *   !proto.Hera.UserResponse>}
  */
+const methodDescriptor_UserService_SearchForUser = new grpc.web.MethodDescriptor(
+  '/Hera.UserService/SearchForUser',
+  grpc.web.MethodType.UNARY,
+  proto.Hera.UserRequest,
+  proto.Hera.UserResponse,
+  /**
+   * @param {!proto.Hera.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Hera.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Hera.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Hera.UserServiceClient.prototype.searchForUser =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Hera.UserService/SearchForUser',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_SearchForUser,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Hera.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Hera.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Hera.UserServicePromiseClient.prototype.searchForUser =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Hera.UserService/SearchForUser',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_SearchForUser);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Hera.UserRequest,
+ *   !proto.Hera.UserResponse>}
+ */
 const methodDescriptor_UserService_GetUser = new grpc.web.MethodDescriptor(
   '/Hera.UserService/GetUser',
   grpc.web.MethodType.UNARY,

@@ -44,6 +44,11 @@ class UserServiceClient extends $grpc.Client {
           '/Hera.UserService/UpdateUserPassword',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$searchForUser =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/Hera.UserService/SearchForUser',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$getUser = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
       '/Hera.UserService/GetUser',
       ($0.UserRequest value) => value.writeToBuffer(),
@@ -204,6 +209,11 @@ class UserServiceClient extends $grpc.Client {
       $0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateUserPassword, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> searchForUser($0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$searchForUser, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> getUser($0.UserRequest request,
@@ -381,6 +391,13 @@ abstract class UserServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateUserPassword',
         updateUserPassword_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'SearchForUser',
+        searchForUser_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
@@ -592,6 +609,11 @@ abstract class UserServiceBase extends $grpc.Service {
     return updateUserPassword(call, await request);
   }
 
+  $async.Future<$0.UserResponse> searchForUser_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return searchForUser(call, await request);
+  }
+
   $async.Future<$0.UserResponse> getUser_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return getUser(call, await request);
@@ -728,6 +750,8 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> updateUserContact(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateUserPassword(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> searchForUser(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> getUser(
       $grpc.ServiceCall call, $0.UserRequest request);
