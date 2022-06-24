@@ -232,6 +232,7 @@ class User extends $pb.GeneratedMessage {
     ..e<LanguageCode>(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'preferredLanguage', $pb.PbFieldType.OE, defaultOrMaker: LanguageCode.INVALID_LANGUAGE_CODE, valueOf: LanguageCode.valueOf, enumValues: LanguageCode.values)
     ..aOS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usernameHash')
     ..a<$core.int>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhoneAttempts', $pb.PbFieldType.O3)
+    ..aOS(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role')
     ..hasRequiredFields = false
   ;
 
@@ -266,6 +267,7 @@ class User extends $pb.GeneratedMessage {
     LanguageCode? preferredLanguage,
     $core.String? usernameHash,
     $core.int? verifyPhoneAttempts,
+    $core.String? role,
   }) {
     final _result = create();
     if (id != null) {
@@ -354,6 +356,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (verifyPhoneAttempts != null) {
       _result.verifyPhoneAttempts = verifyPhoneAttempts;
+    }
+    if (role != null) {
+      _result.role = role;
     }
     return _result;
   }
@@ -642,6 +647,15 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasVerifyPhoneAttempts() => $_has(28);
   @$pb.TagNumber(29)
   void clearVerifyPhoneAttempts() => clearField(29);
+
+  @$pb.TagNumber(30)
+  $core.String get role => $_getSZ(29);
+  @$pb.TagNumber(30)
+  set role($core.String v) { $_setString(29, v); }
+  @$pb.TagNumber(30)
+  $core.bool hasRole() => $_has(29);
+  @$pb.TagNumber(30)
+  void clearRole() => clearField(30);
 }
 
 class Query extends $pb.GeneratedMessage {
