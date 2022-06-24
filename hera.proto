@@ -16,6 +16,7 @@ service Service {
     rpc UpdateUserPassword(HeraRequest) returns (HeraResponse) {}
     rpc SearchForUser(HeraRequest) returns (HeraResponse) {}
     rpc GetUser(HeraRequest) returns (HeraResponse) {}
+    rpc GetUsers(HeraRequest) returns (HeraResponse) {}
     rpc ListUsers(HeraRequest) returns (HeraResponse) {}
     rpc ValidateCredentials(HeraRequest) returns (HeraResponse) {}
     rpc Login(HeraRequest) returns (HeraResponse) {}
