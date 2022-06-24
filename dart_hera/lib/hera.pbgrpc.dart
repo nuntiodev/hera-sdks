@@ -53,6 +53,10 @@ class ServiceClient extends $grpc.Client {
       '/Hera.Service/GetUser',
       ($0.HeraRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
+  static final _$getUsers = $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
+      '/Hera.Service/GetUsers',
+      ($0.HeraRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.HeraResponse.fromBuffer(value));
   static final _$listUsers =
       $grpc.ClientMethod<$0.HeraRequest, $0.HeraResponse>(
           '/Hera.Service/ListUsers',
@@ -225,6 +229,11 @@ class ServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.HeraResponse> getUser($0.HeraRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getUser, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.HeraResponse> getUsers($0.HeraRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getUsers, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.HeraResponse> listUsers($0.HeraRequest request,
@@ -415,6 +424,13 @@ abstract class ServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$0.HeraRequest, $0.HeraResponse>(
         'GetUser',
         getUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.HeraRequest.fromBuffer(value),
+        ($0.HeraResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.HeraRequest, $0.HeraResponse>(
+        'GetUsers',
+        getUsers_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.HeraRequest.fromBuffer(value),
@@ -636,6 +652,11 @@ abstract class ServiceBase extends $grpc.Service {
     return getUser(call, await request);
   }
 
+  $async.Future<$0.HeraResponse> getUsers_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.HeraRequest> request) async {
+    return getUsers(call, await request);
+  }
+
   $async.Future<$0.HeraResponse> listUsers_Pre(
       $grpc.ServiceCall call, $async.Future<$0.HeraRequest> request) async {
     return listUsers(call, await request);
@@ -776,6 +797,8 @@ abstract class ServiceBase extends $grpc.Service {
   $async.Future<$0.HeraResponse> searchForUser(
       $grpc.ServiceCall call, $0.HeraRequest request);
   $async.Future<$0.HeraResponse> getUser(
+      $grpc.ServiceCall call, $0.HeraRequest request);
+  $async.Future<$0.HeraResponse> getUsers(
       $grpc.ServiceCall call, $0.HeraRequest request);
   $async.Future<$0.HeraResponse> listUsers(
       $grpc.ServiceCall call, $0.HeraRequest request);

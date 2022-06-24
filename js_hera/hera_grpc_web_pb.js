@@ -566,6 +566,67 @@ proto.Hera.ServicePromiseClient.prototype.getUser =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
+const methodDescriptor_Service_GetUsers = new grpc.web.MethodDescriptor(
+  '/Hera.Service/GetUsers',
+  grpc.web.MethodType.UNARY,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
+  /**
+   * @param {!proto.Hera.HeraRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Hera.HeraResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Hera.HeraRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Hera.ServiceClient.prototype.getUsers =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Hera.Service/GetUsers',
+      request,
+      metadata || {},
+      methodDescriptor_Service_GetUsers,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Hera.HeraRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Hera.HeraResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Hera.ServicePromiseClient.prototype.getUsers =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Hera.Service/GetUsers',
+      request,
+      metadata || {},
+      methodDescriptor_Service_GetUsers);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
+ */
 const methodDescriptor_Service_ListUsers = new grpc.web.MethodDescriptor(
   '/Hera.Service/ListUsers',
   grpc.web.MethodType.UNARY,
