@@ -61,7 +61,7 @@ class LoginStatus extends $pb.ProtobufEnum {
 }
 
 class LoginType extends $pb.ProtobufEnum {
-  static const LoginType LOGIN_TYPE_INVALID = LoginType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOGIN_TYPE_INVALID');
+  static const LoginType NOTHING = LoginType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTHING');
   static const LoginType EMAIL_PASSWORD = LoginType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL_PASSWORD');
   static const LoginType PHONE_PASSWORD = LoginType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PHONE_PASSWORD');
   static const LoginType USERNAME_PASSWORD = LoginType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'USERNAME_PASSWORD');
@@ -69,7 +69,7 @@ class LoginType extends $pb.ProtobufEnum {
   static const LoginType PHONE_VERIFICATION_CODE = LoginType._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PHONE_VERIFICATION_CODE');
 
   static const $core.List<LoginType> values = <LoginType> [
-    LOGIN_TYPE_INVALID,
+    NOTHING,
     EMAIL_PASSWORD,
     PHONE_PASSWORD,
     USERNAME_PASSWORD,

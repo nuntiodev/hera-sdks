@@ -4140,7 +4140,7 @@ proto.Hera.LoginStatus = {
  * @enum {number}
  */
 proto.Hera.LoginType = {
-  LOGIN_TYPE_INVALID: 0,
+  NOTHING: 0,
   EMAIL_PASSWORD: 1,
   PHONE_PASSWORD: 2,
   USERNAME_PASSWORD: 3,

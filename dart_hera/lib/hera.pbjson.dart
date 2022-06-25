@@ -48,7 +48,7 @@ final $typed_data.Uint8List loginStatusDescriptor = $convert.base64Decode('CgtMb
 const LoginType$json = const {
   '1': 'LoginType',
   '2': const [
-    const {'1': 'LOGIN_TYPE_INVALID', '2': 0},
+    const {'1': 'NOTHING', '2': 0},
     const {'1': 'EMAIL_PASSWORD', '2': 1},
     const {'1': 'PHONE_PASSWORD', '2': 2},
     const {'1': 'USERNAME_PASSWORD', '2': 3},
@@ -58,7 +58,7 @@ const LoginType$json = const {
 };
 
 /// Descriptor for `LoginType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List loginTypeDescriptor = $convert.base64Decode('CglMb2dpblR5cGUSFgoSTE9HSU5fVFlQRV9JTlZBTElEEAASEgoORU1BSUxfUEFTU1dPUkQQARISCg5QSE9ORV9QQVNTV09SRBACEhUKEVVTRVJOQU1FX1BBU1NXT1JEEAMSGwoXRU1BSUxfVkVSSUZJQ0FUSU9OX0NPREUQBBIbChdQSE9ORV9WRVJJRklDQVRJT05fQ09ERRAF');
+final $typed_data.Uint8List loginTypeDescriptor = $convert.base64Decode('CglMb2dpblR5cGUSCwoHTk9USElORxAAEhIKDkVNQUlMX1BBU1NXT1JEEAESEgoOUEhPTkVfUEFTU1dPUkQQAhIVChFVU0VSTkFNRV9QQVNTV09SRBADEhsKF0VNQUlMX1ZFUklGSUNBVElPTl9DT0RFEAQSGwoXUEhPTkVfVkVSSUZJQ0FUSU9OX0NPREUQBQ==');
 @$core.Deprecated('Use configDescriptor instead')
 const Config$json = const {
   '1': 'Config',
