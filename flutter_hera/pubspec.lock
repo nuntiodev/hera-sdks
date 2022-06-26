@@ -212,7 +212,7 @@ packages:
     source: hosted
     version: "1.0.1"
   flutter:
-    dependency: transitive
+    dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -390,7 +390,7 @@ packages:
     source: hosted
     version: "0.6.4"
   jwt_decoder:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: jwt_decoder
       url: "https://pub.dartlang.org"

@@ -1,7 +1,5 @@
 import 'package:dart_nuntio_cloud/dart_nuntio_cloud.dart';
 import 'package:grpc/grpc.dart';
-import 'package:nuntio_cloud/cloud.pbgrpc.dart';
-
 import '../../hera.pbgrpc.dart';
 
 class HeraChannel {
