@@ -6,6 +6,7 @@ require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/nuntiodev/go_hera_client v0.0.50
 	github.com/nuntiodev/hera-proto v0.2.84
+	github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud v0.0.0-20220626092636-63ba800e7617
 	google.golang.org/grpc v1.47.0
 	google.golang.org/protobuf v1.28.0
 )

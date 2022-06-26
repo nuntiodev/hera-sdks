@@ -2,7 +2,6 @@ package api_client
 
 import (
 	"context"
-	"github.com/nuntiodev/go_hera_client/nuntio_authorize"
 	"github.com/nuntiodev/hera-proto/go_hera"
 )
 

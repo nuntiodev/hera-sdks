@@ -3,7 +3,7 @@ package api_client
 import (
 	"context"
 	"github.com/nuntiodev/go_hera_client/hera_options"
-	"github.com/nuntiodev/go_hera_client/nuntio_authorize"
+	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 	"github.com/nuntiodev/hera-proto/go_hera"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )

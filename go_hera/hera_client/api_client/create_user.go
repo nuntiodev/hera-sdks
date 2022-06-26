@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"github.com/nuntiodev/go_hera_client/hera_options"
-	"github.com/nuntiodev/go_hera_client/nuntio_authorize"
 	"github.com/nuntiodev/hera-proto/go_hera"
+	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
@@ -16,7 +16,7 @@ type CreateUserRequest struct {
 	validatePassword bool
 	namespace        string
 	client           go_hera.ServiceClient
-	authorize        nuntio_authorize.Authorize
+	authorize        cloud_authorize.CloudAuthorize
 }
 
 func (r *CreateUserRequest) SetUserOptions(options *hera_options.UserOptions) *CreateUserRequest {
