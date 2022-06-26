@@ -8,8 +8,6 @@ import (
 )
 
 var (
-	// API_KEY  can be used to validate requests in the Hera server.
-	API_KEY = ""
 	// AUTHORIZE is used to override the default nuntio_authorize interface which is used to validate tokens.
 	// default is no authorization.
 	AUTHORIZE cloud_authorize.CloudAuthorize

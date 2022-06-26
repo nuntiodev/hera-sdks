@@ -3,12 +3,13 @@ package api_client
 import (
 	"context"
 	"errors"
+	"github.com/nuntiodev/go_hera_client/nuntio_authorize"
 	"github.com/nuntiodev/hera-proto/go_hera"
 	"sync"
 	"time"
 
-	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 	"github.com/nuntiodev/go_hera_client/hera_options"
+	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 	"google.golang.org/grpc"
 )
 
@@ -90,7 +91,7 @@ func (a *apiClient) getPublicKey() (string, error) {
 	return publicKey, nil
 }
 
-func NewApiClient(apiUrl string, authorize nuntio_authorize.Authorize, namespace string, dialOptions grpc.DialOption) (ApiClient, error) {
+func NewApiClient(apiUrl string, authorize cloud_authorize.CloudAuthorize, namespace string, dialOptions grpc.DialOption) (ApiClient, error) {
 	userClientConn, err := grpc.Dial(apiUrl, dialOptions)
 	if err != nil {
 		return nil, err
