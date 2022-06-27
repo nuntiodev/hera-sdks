@@ -8,14 +8,16 @@ import (
 	"github.com/nuntiodev/hera-proto/go_hera"
 )
 
-type DeleteUserRequest struct {
-	findOptions *hera_options.FindOptions
-	namespace   string
-	client      go_hera.ServiceClient
-	authorize   nuntio_authorize.Authorize
+type UpdateUserPasswordRequest struct {
+	validatePassword bool
+	password         string
+	findOptions      *hera_options.FindOptions
+	namespace        string
+	client           go_hera.ServiceClient
+	authorize        nuntio_authorize.Authorize
 }
 
-func (r *DeleteUserRequest) Execute(ctx context.Context) error {
+func (r *UpdateUserPasswordRequest) Execute(ctx context.Context) error {
 	accessToken, err := r.authorize.GetAccessToken(ctx)
 	if err != nil {
 		return err
@@ -25,15 +27,19 @@ func (r *DeleteUserRequest) Execute(ctx context.Context) error {
 	} else if err := r.findOptions.Validate(); err != nil {
 		return err
 	}
-	deleteUser := &go_hera.User{
+	findUser := &go_hera.User{
 		Email:    r.findOptions.Email,
 		Id:       r.findOptions.Id,
 		Username: r.findOptions.Username,
 		Phone:    r.findOptions.Phone,
 	}
-	if _, err = r.client.DeleteUser(ctx, &go_hera.HeraRequest{
+	updateUser := &go_hera.User{
+		Password: r.password,
+	}
+	if _, err := r.client.UpdateUserPassword(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,
-		User:       deleteUser,
+		UserUpdate: updateUser,
+		User:       findUser,
 		Namespace:  r.namespace,
 	}); err != nil {
 		return err
@@ -41,8 +47,9 @@ func (r *DeleteUserRequest) Execute(ctx context.Context) error {
 	return nil
 }
 
-func (a *apiClient) DeleteUser(findOptions *hera_options.FindOptions) *DeleteUserRequest {
-	return &DeleteUserRequest{
+func (a *apiClient) UpdateUserPassword(findOptions *hera_options.FindOptions, password string) *UpdateUserPasswordRequest {
+	return &UpdateUserPasswordRequest{
+		password:    password,
 		findOptions: findOptions,
 		namespace:   a.namespace,
 		client:      a.client,

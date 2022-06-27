@@ -53,6 +53,8 @@ github.com/nuntiodev/go_hera_client v0.0.50 h1:N6J9PTl3VDh3ZCF2jVEloODtJNQx9HfUK
 github.com/nuntiodev/go_hera_client v0.0.50/go.mod h1:o0p2KkOiT+/WLP9QwhpPCSSYgvGvOwvfydrIrKuZn3g=
 github.com/nuntiodev/hera-proto v0.2.84 h1:rCFmudpqOz7fX2WuyGMBSWNvjStKrPYmmYPsGDLbWxI=
 github.com/nuntiodev/hera-proto v0.2.84/go.mod h1:i4tVO9nn5JskVo8mR9wmmI00aNIJ4hmg9d0BYQZfFZs=
+github.com/nuntiodev/nuntio-cloud-sdks v0.0.0-20220626092636-63ba800e7617 h1:47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+github.com/nuntiodev/nuntio-cloud-sdks v0.0.0-20220626092636-63ba800e7617/go.mod h1:UWhMl6EeCNSYo2RTkCsLk0r1F2TGaGq7BIn7EDGIFUg=
 github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud v0.0.0-20220626092636-63ba800e7617 h1:DFyDev23Rgea6pHQwXQvdMjBFiY1No1Ks//bbYRmCAk=
 github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud v0.0.0-20220626092636-63ba800e7617/go.mod h1:fXOu9CMcrJArOugnqIRATYPmYu9AF/s3E86zkgcRc5c=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=

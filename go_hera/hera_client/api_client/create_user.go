@@ -3,6 +3,7 @@ package api_client
 import (
 	"context"
 	"encoding/json"
+
 	"github.com/nuntiodev/go_hera_client/hera_options"
 	"github.com/nuntiodev/hera-proto/go_hera"
 	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
