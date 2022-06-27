@@ -74,11 +74,12 @@ const Config$json = const {
     const {'1': 'supported_login_mechanisms', '3': 9, '4': 3, '5': 14, '6': '.Hera.LoginType', '10': 'supportedLoginMechanisms'},
     const {'1': 'verify_phone', '3': 10, '4': 1, '5': 8, '10': 'verifyPhone'},
     const {'1': 'public_key', '3': 11, '4': 1, '5': 9, '10': 'publicKey'},
+    const {'1': 'roles', '3': 12, '4': 3, '5': 9, '10': 'roles'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXk=');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXkSFAoFcm9sZXMYDCADKAlSBXJvbGVz');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
