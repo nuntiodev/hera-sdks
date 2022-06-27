@@ -189,7 +189,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.Hera.Config.repeatedFields_ = [9];
+proto.Hera.Config.repeatedFields_ = [9,12];
 
 
 
@@ -232,7 +232,8 @@ proto.Hera.Config.toObject = function(includeInstance, msg) {
     verifyEmail: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
     supportedLoginMechanismsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     verifyPhone: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    publicKey: jspb.Message.getFieldWithDefault(msg, 11, "")
+    publicKey: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    rolesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -316,6 +317,10 @@ proto.Hera.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setPublicKey(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addRoles(value);
       break;
     default:
       reader.skipField();
@@ -422,6 +427,13 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getRolesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      12,
       f
     );
   }
@@ -680,6 +692,43 @@ proto.Hera.Config.prototype.getPublicKey = function() {
  */
 proto.Hera.Config.prototype.setPublicKey = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * repeated string roles = 12;
+ * @return {!Array<string>}
+ */
+proto.Hera.Config.prototype.getRolesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.Hera.Config} returns this
+ */
+proto.Hera.Config.prototype.setRolesList = function(value) {
+  return jspb.Message.setField(this, 12, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.Hera.Config} returns this
+ */
+proto.Hera.Config.prototype.addRoles = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.Hera.Config} returns this
+ */
+proto.Hera.Config.prototype.clearRolesList = function() {
+  return this.setRolesList([]);
 };
 
 

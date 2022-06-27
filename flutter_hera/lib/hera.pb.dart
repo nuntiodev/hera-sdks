@@ -29,6 +29,7 @@ class Config extends $pb.GeneratedMessage {
     ..pc<LoginType>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportedLoginMechanisms', $pb.PbFieldType.KE, valueOf: LoginType.valueOf, enumValues: LoginType.values, defaultEnumValue: LoginType.NOTHING)
     ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhone')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey')
+    ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles')
     ..hasRequiredFields = false
   ;
 
@@ -45,6 +46,7 @@ class Config extends $pb.GeneratedMessage {
     $core.Iterable<LoginType>? supportedLoginMechanisms,
     $core.bool? verifyPhone,
     $core.String? publicKey,
+    $core.Iterable<$core.String>? roles,
   }) {
     final _result = create();
     if (name != null) {
@@ -79,6 +81,9 @@ class Config extends $pb.GeneratedMessage {
     }
     if (publicKey != null) {
       _result.publicKey = publicKey;
+    }
+    if (roles != null) {
+      _result.roles.addAll(roles);
     }
     return _result;
   }
@@ -199,6 +204,9 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasPublicKey() => $_has(10);
   @$pb.TagNumber(11)
   void clearPublicKey() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.List<$core.String> get roles => $_getList(11);
 }
 
 class User extends $pb.GeneratedMessage {
