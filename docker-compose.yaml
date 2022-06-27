@@ -11,7 +11,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=user
       - MONGO_INITDB_ROOT_PASSWORD=password
   hera:
-    image: nuntioio/hera:latest
+    image: nuntioio/hera:main
     ports:
       - "9000:9000"
     environment:

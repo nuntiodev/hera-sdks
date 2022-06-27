@@ -62,6 +62,7 @@ message Config {
     repeated LoginType supported_login_mechanisms = 9;
     bool verify_phone = 10;
     string public_key = 11;
+    repeated string roles = 12;
 }
 
 message User {
