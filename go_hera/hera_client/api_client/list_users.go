@@ -12,7 +12,7 @@ type ListUsersRequest struct {
 	namespace     string
 	encryptionKey string
 	client        go_hera.ServiceClient
-	authorize     cloud_authorize.Authorize
+	authorize     cloud_authorize.CloudAuthorize
 }
 
 func (r *ListUsersRequest) Execute(ctx context.Context, queryOptions *hera_options.QueryOptions) ([]*go_hera.User, error) {

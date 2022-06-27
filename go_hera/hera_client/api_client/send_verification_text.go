@@ -11,7 +11,7 @@ type SendVerificationTextRequest struct {
 	phone     string
 	namespace string
 	client    go_hera.ServiceClient
-	authorize cloud_authorize.Authorize
+	authorize cloud_authorize.CloudAuthorize
 }
 
 func (r *SendVerificationTextRequest) Build(ctx context.Context) error {

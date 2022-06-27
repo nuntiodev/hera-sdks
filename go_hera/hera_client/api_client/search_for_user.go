@@ -11,7 +11,7 @@ type SearchForUserRequest struct {
 	query     string
 	namespace string
 	client    go_hera.ServiceClient
-	authorize cloud_authorize.Authorize
+	authorize cloud_authorize.CloudAuthorize
 }
 
 func (r *SearchForUserRequest) Execute(ctx context.Context) (*go_hera.User, error) {

@@ -10,7 +10,7 @@ import (
 type RegisterRsaKeyRequest struct {
 	namespace string
 	client    go_hera.ServiceClient
-	authorize cloud_authorize.Authorize
+	authorize cloud_authorize.CloudAuthorize
 }
 
 func (r *RegisterRsaKeyRequest) Execute(ctx context.Context) (string, error) {

@@ -13,7 +13,7 @@ type LoginUserRequest struct {
 	password    string
 	namespace   string
 	client      go_hera.ServiceClient
-	authorize   cloud_authorize.Authorize
+	authorize   cloud_authorize.CloudAuthorize
 }
 
 func (r *LoginUserRequest) SetPassword(password string) *LoginUserRequest {

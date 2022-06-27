@@ -58,7 +58,7 @@ type ApiClient interface {
 
 type apiClient struct {
 	client    go_hera.ServiceClient
-	authorize cloud_authorize.Authorize
+	authorize cloud_authorize.CloudAuthorize
 	publicKey *PublicKey
 	namespace string
 }

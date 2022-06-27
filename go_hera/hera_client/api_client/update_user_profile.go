@@ -14,7 +14,7 @@ type UpdateUserProfileRequest struct {
 	userOptions *hera_options.UserOptions
 	namespace   string
 	client      go_hera.ServiceClient
-	authorize   cloud_authorize.Authorize
+	authorize   cloud_authorize.CloudAuthorize
 }
 
 func (r *UpdateUserProfileRequest) SetUserOptions(userOptions *hera_options.UserOptions) *UpdateUserProfileRequest {

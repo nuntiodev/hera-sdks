@@ -14,7 +14,7 @@ type VerifyEmailRequest struct {
 	findOptions     *hera_options.FindOptions
 	namespace       string
 	client          go_hera.ServiceClient
-	authorize       cloud_authorize.Authorize
+	authorize       cloud_authorize.CloudAuthorize
 }
 
 func (r *VerifyEmailRequest) Execute(ctx context.Context) error {
