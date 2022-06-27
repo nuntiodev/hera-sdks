@@ -122,7 +122,10 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text('okay', style: TextStyle(color: black),))
+                    child: const Text(
+                      'okay',
+                      style: TextStyle(color: black),
+                    ))
               ],
             );
           });
@@ -154,7 +157,10 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text('okay', style: TextStyle(color: black),))
+                    child: const Text(
+                      'okay',
+                      style: TextStyle(color: black),
+                    ))
               ],
             );
           });
@@ -265,7 +271,10 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 15,
                         ),
-                      if (!widget.config.disableLogin)
+                      if (!widget.config.disableLogin &&
+                          (widget.loginType == LoginType.PHONE_PASSWORD ||
+                              widget.loginType == LoginType.EMAIL_PASSWORD ||
+                              widget.loginType == LoginType.USERNAME_PASSWORD))
                         FadeInUp(
                           delay: Duration(milliseconds: 800),
                           child: NuntioTextField(

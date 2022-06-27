@@ -165,7 +165,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text('okay', style: TextStyle(color: black),))
+                    child: const Text(
+                      'okay',
+                      style: TextStyle(color: black),
+                    ))
               ],
             );
           });
@@ -187,7 +190,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text('okay', style: TextStyle(color: black),))
+                    child: const Text(
+                      'okay',
+                      style: TextStyle(color: black),
+                    ))
               ],
             );
           });
@@ -208,7 +214,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text('okay', style: TextStyle(color: black),))
+                    child: const Text(
+                      'okay',
+                      style: TextStyle(color: black),
+                    ))
               ],
             );
           });
@@ -248,7 +257,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text('okay', style: TextStyle(color: black),))
+                    child: const Text(
+                      'okay',
+                      style: TextStyle(color: black),
+                    ))
               ],
             );
           });
@@ -356,41 +368,53 @@ class _RegisterPageState extends State<RegisterPage> {
                       const SizedBox(
                         height: 15,
                       ),
-                      NuntioTextField(
-                        nuntioTextStyle: widget.nuntioTextStyle,
-                        nuntioStyle: widget.nuntioStyle,
-                        nuntioColor: widget.nuntioColor,
-                        controller: passwordController,
-                        hint: widget.nuntioText.passwordHint,
-                        textInputType: TextInputType.text,
-                        label: widget.nuntioText.passwordName,
-                        textInputAction: TextInputAction.next,
-                        onChanged: (_) => onPasswordChange(),
-                        prefix: FontAwesomeIcons.key,
-                        brightness: widget.brightness,
-                        obscureText: true,
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      NuntioTextField(
-                        nuntioTextStyle: widget.nuntioTextStyle,
-                        nuntioStyle: widget.nuntioStyle,
-                        nuntioColor: widget.nuntioColor,
-                        controller: repeatPasswordController,
-                        hint: widget.nuntioText.repeatPasswordHint,
-                        textInputType: TextInputType.text,
-                        label: widget.nuntioText.repeatPasswordName,
-                        textInputAction: TextInputAction.done,
-                        onChanged: (_) => onPasswordChange(),
-                        prefix: FontAwesomeIcons.repeat,
-                        brightness: widget.brightness,
-                        obscureText: true,
-                        onSubmitted: (_) {
-                          onRegister();
-                        },
-                      ),
-                      if (widget.config.validatePassword)
+                      if (widget.loginType == LoginType.PHONE_PASSWORD ||
+                          widget.loginType == LoginType.EMAIL_PASSWORD ||
+                          widget.loginType == LoginType.USERNAME_PASSWORD)
+                        NuntioTextField(
+                          nuntioTextStyle: widget.nuntioTextStyle,
+                          nuntioStyle: widget.nuntioStyle,
+                          nuntioColor: widget.nuntioColor,
+                          controller: passwordController,
+                          hint: widget.nuntioText.passwordHint,
+                          textInputType: TextInputType.text,
+                          label: widget.nuntioText.passwordName,
+                          textInputAction: TextInputAction.next,
+                          onChanged: (_) => onPasswordChange(),
+                          prefix: FontAwesomeIcons.key,
+                          brightness: widget.brightness,
+                          obscureText: true,
+                        ),
+                      if (widget.loginType == LoginType.PHONE_PASSWORD ||
+                          widget.loginType == LoginType.EMAIL_PASSWORD ||
+                          widget.loginType == LoginType.USERNAME_PASSWORD)
+                        const SizedBox(
+                          height: 15,
+                        ),
+                      if ((widget.loginType == LoginType.PHONE_PASSWORD ||
+                          widget.loginType == LoginType.EMAIL_PASSWORD ||
+                          widget.loginType == LoginType.USERNAME_PASSWORD))
+                        NuntioTextField(
+                          nuntioTextStyle: widget.nuntioTextStyle,
+                          nuntioStyle: widget.nuntioStyle,
+                          nuntioColor: widget.nuntioColor,
+                          controller: repeatPasswordController,
+                          hint: widget.nuntioText.repeatPasswordHint,
+                          textInputType: TextInputType.text,
+                          label: widget.nuntioText.repeatPasswordName,
+                          textInputAction: TextInputAction.done,
+                          onChanged: (_) => onPasswordChange(),
+                          prefix: FontAwesomeIcons.repeat,
+                          brightness: widget.brightness,
+                          obscureText: true,
+                          onSubmitted: (_) {
+                            onRegister();
+                          },
+                        ),
+                      if (widget.config.validatePassword &&
+                          (widget.loginType == LoginType.PHONE_PASSWORD ||
+                              widget.loginType == LoginType.EMAIL_PASSWORD ||
+                              widget.loginType == LoginType.USERNAME_PASSWORD))
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
