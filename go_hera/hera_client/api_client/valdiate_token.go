@@ -3,8 +3,9 @@ package api_client
 import (
 	"context"
 	"errors"
+
 	"github.com/golang-jwt/jwt"
-	"github.com/nuntiodev/hera-proto/go_hera"
+	"github.com/nuntiodev/hera-sdks/go_hera"
 )
 
 // ValidateToken locally validates the JWT and returns a user with the corresponding user id

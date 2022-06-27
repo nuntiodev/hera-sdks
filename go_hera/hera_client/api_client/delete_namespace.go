@@ -3,14 +3,14 @@ package api_client
 import (
 	"context"
 
-	"github.com/nuntiodev/go_hera_client/nuntio_authorize"
-	"github.com/nuntiodev/hera-proto/go_hera"
+	"github.com/nuntiodev/hera-sdks/go_hera"
+	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 )
 
 type DeleteNamespaceRequest struct {
 	namespace string
 	client    go_hera.ServiceClient
-	authorize nuntio_authorize.Authorize
+	authorize cloud_authorize.Authorize
 }
 
 func (r *DeleteNamespaceRequest) Execute(ctx context.Context) error {

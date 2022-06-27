@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/nuntiodev/go_hera_client/hera_options"
-	"github.com/nuntiodev/hera-proto/go_hera"
+	"github.com/nuntiodev/hera-sdks/go_hera"
+	"github.com/nuntiodev/hera-sdks/go_hera/hera_client/hera_options"
 	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )

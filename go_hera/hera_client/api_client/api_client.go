@@ -3,12 +3,12 @@ package api_client
 import (
 	"context"
 	"errors"
-	"github.com/nuntiodev/go_hera_client/nuntio_authorize"
-	"github.com/nuntiodev/hera-proto/go_hera"
 	"sync"
 	"time"
 
-	"github.com/nuntiodev/go_hera_client/hera_options"
+	"github.com/nuntiodev/hera-sdks/go_hera"
+
+	"github.com/nuntiodev/hera-sdks/go_hera/hera_client/hera_options"
 	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 	"google.golang.org/grpc"
 )
@@ -58,7 +58,7 @@ type ApiClient interface {
 
 type apiClient struct {
 	client    go_hera.ServiceClient
-	authorize nuntio_authorize.Authorize
+	authorize cloud_authorize.Authorize
 	publicKey *PublicKey
 	namespace string
 }

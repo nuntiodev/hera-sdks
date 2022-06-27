@@ -3,16 +3,16 @@ package api_client
 import (
 	"context"
 
-	"github.com/nuntiodev/go_hera_client/hera_options"
-	"github.com/nuntiodev/go_hera_client/nuntio_authorize"
-	"github.com/nuntiodev/hera-proto/go_hera"
+	"github.com/nuntiodev/hera-sdks/go_hera"
+	"github.com/nuntiodev/hera-sdks/go_hera/hera_client/hera_options"
+	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 )
 
 type ListUsersRequest struct {
 	namespace     string
 	encryptionKey string
 	client        go_hera.ServiceClient
-	authorize     nuntio_authorize.Authorize
+	authorize     cloud_authorize.Authorize
 }
 
 func (r *ListUsersRequest) Execute(ctx context.Context, queryOptions *hera_options.QueryOptions) ([]*go_hera.User, error) {

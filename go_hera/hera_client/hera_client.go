@@ -1,14 +1,14 @@
 package hera_client
 
 import (
-	"github.com/nuntiodev/go_hera/hera_client/api_client"
+	"github.com/nuntiodev/hera-sdks/go_hera/hera_client/api_client"
 	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_credentials"
 	"google.golang.org/grpc"
 )
 
 var (
-	// AUTHORIZE is used to override the default nuntio_authorize interface which is used to validate tokens.
+	// AUTHORIZE is used to override the default cloud_authorize interface which is used to validate tokens.
 	// default is no authorization.
 	AUTHORIZE cloud_authorize.CloudAuthorize
 	// CREDENTIALS defines what security is passed to Dial and can be overwritten
