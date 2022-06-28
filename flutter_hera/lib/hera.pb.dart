@@ -241,6 +241,7 @@ class User extends $pb.GeneratedMessage {
     ..aOS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usernameHash')
     ..a<$core.int>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhoneAttempts', $pb.PbFieldType.O3)
     ..aOS(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role')
+    ..aOS(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gender')
     ..hasRequiredFields = false
   ;
 
@@ -276,6 +277,7 @@ class User extends $pb.GeneratedMessage {
     $core.String? usernameHash,
     $core.int? verifyPhoneAttempts,
     $core.String? role,
+    $core.String? gender,
   }) {
     final _result = create();
     if (id != null) {
@@ -367,6 +369,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (role != null) {
       _result.role = role;
+    }
+    if (gender != null) {
+      _result.gender = gender;
     }
     return _result;
   }
@@ -664,6 +669,15 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasRole() => $_has(29);
   @$pb.TagNumber(30)
   void clearRole() => clearField(30);
+
+  @$pb.TagNumber(31)
+  $core.String get gender => $_getSZ(30);
+  @$pb.TagNumber(31)
+  set gender($core.String v) { $_setString(30, v); }
+  @$pb.TagNumber(31)
+  $core.bool hasGender() => $_has(30);
+  @$pb.TagNumber(31)
+  void clearGender() => clearField(31);
 }
 
 class Query extends $pb.GeneratedMessage {

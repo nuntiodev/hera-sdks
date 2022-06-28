@@ -800,7 +800,8 @@ proto.Hera.User.toObject = function(includeInstance, msg) {
     preferredLanguage: jspb.Message.getFieldWithDefault(msg, 27, 0),
     usernameHash: jspb.Message.getFieldWithDefault(msg, 28, ""),
     verifyPhoneAttempts: jspb.Message.getFieldWithDefault(msg, 29, 0),
-    role: jspb.Message.getFieldWithDefault(msg, 30, "")
+    role: jspb.Message.getFieldWithDefault(msg, 30, ""),
+    gender: jspb.Message.getFieldWithDefault(msg, 31, "")
   };
 
   if (includeInstance) {
@@ -964,6 +965,10 @@ proto.Hera.User.deserializeBinaryFromReader = function(msg, reader) {
     case 30:
       var value = /** @type {string} */ (reader.readString());
       msg.setRole(value);
+      break;
+    case 31:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGender(value);
       break;
     default:
       reader.skipField();
@@ -1209,6 +1214,13 @@ proto.Hera.User.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       30,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 31));
+  if (f != null) {
+    writer.writeString(
+      31,
       f
     );
   }
@@ -2068,6 +2080,42 @@ proto.Hera.User.prototype.getRole = function() {
  */
 proto.Hera.User.prototype.setRole = function(value) {
   return jspb.Message.setProto3StringField(this, 30, value);
+};
+
+
+/**
+ * optional string gender = 31;
+ * @return {string}
+ */
+proto.Hera.User.prototype.getGender = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 31, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Hera.User} returns this
+ */
+proto.Hera.User.prototype.setGender = function(value) {
+  return jspb.Message.setField(this, 31, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.Hera.User} returns this
+ */
+proto.Hera.User.prototype.clearGender = function() {
+  return jspb.Message.setField(this, 31, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Hera.User.prototype.hasGender = function() {
+  return jspb.Message.getField(this, 31) != null;
 };
 
 
