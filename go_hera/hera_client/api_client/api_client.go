@@ -54,6 +54,7 @@ type ApiClient interface {
 	ValidateCredentials(findOptions *hera_options.FindOptions, password string) *ValidateCredentialsUserRequest
 	VerifyEmail(code string, findOptions *hera_options.FindOptions) *VerifyEmailRequest
 	VerifyPhone(code string, findOptions *hera_options.FindOptions) *VerifyPhoneRequest
+	CreateNamespace(namespace string) *CreateNamespaceRequest
 }
 
 type apiClient struct {
