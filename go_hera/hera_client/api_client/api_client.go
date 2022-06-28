@@ -26,7 +26,7 @@ type PublicKey struct {
 }
 
 type ApiClient interface {
-	BlockToken(token string) *BlockTokenUserRequest
+	BlockToken(token string) *BlockTokenRequest
 	CreateTokenPair(findOptions *hera_options.FindOptions) *CreateTokenPairRequest
 	CreateUser() *CreateUserRequest
 	DeleteNamespace() *DeleteNamespaceRequest

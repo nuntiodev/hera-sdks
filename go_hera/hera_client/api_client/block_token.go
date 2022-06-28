@@ -7,14 +7,14 @@ import (
 	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
 )
 
-type BlockTokenUserRequest struct {
+type BlockTokenRequest struct {
 	token     string
 	namespace string
 	client    go_hera.ServiceClient
 	authorize cloud_authorize.CloudAuthorize
 }
 
-func (r *BlockTokenUserRequest) Execute(ctx context.Context) error {
+func (r *BlockTokenRequest) Execute(ctx context.Context) error {
 	accessToken, err := r.authorize.GetAccessToken(ctx)
 	if err != nil {
 		return err
@@ -32,8 +32,8 @@ func (r *BlockTokenUserRequest) Execute(ctx context.Context) error {
 	return nil
 }
 
-func (a *apiClient) BlockToken(token string) *BlockTokenUserRequest {
-	return &BlockTokenUserRequest{
+func (a *apiClient) BlockToken(token string) *BlockTokenRequest {
+	return &BlockTokenRequest{
 		token:     token,
 		namespace: a.namespace,
 		client:    a.client,
