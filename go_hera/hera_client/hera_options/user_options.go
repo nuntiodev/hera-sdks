@@ -13,4 +13,5 @@ type UserOptions struct {
 	Birthdate time.Time
 	FirstName *string
 	LastName  *string
+	Gender    *string
 }
