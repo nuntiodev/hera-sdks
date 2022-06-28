@@ -32,7 +32,6 @@ class HeraClient {
     publicKeysReq.cloudToken = await _authorize.getAccessToken();
     HeraResponse publicKeysResp =
     await _heraClient.publicKeys(publicKeysReq);
-    //todo: find out why this is empty
     String? jwtPublicKey = publicKeysResp.publicKeys["hera-public-key"];
     // biometric storage
     service = HeraService(
