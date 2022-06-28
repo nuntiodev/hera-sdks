@@ -96,7 +96,7 @@ message User {
     string username_hash = 28;
     int32 verify_phone_attempts = 29;
     string role = 30;
-    string gender = 31;
+    optional string gender = 31;
 }
 
 message Query {
