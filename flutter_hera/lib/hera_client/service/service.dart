@@ -318,8 +318,8 @@ class HeraService {
     req.namespace = namespace;
     try {
       return (await grpcUserClient.getConfig(req)).config;
-    }catch(e){
-      debug ? print(e) : (){};
+    } catch (e) {
+      debug ? print(e) : () {};
       rethrow;
     }
   }
@@ -367,7 +367,9 @@ class HeraService {
         // Location services are not enabled don't continue
         // accessing the position and request users of the
         // App to enable the location services.
-        return Future.error('Location services are disabled.');
+        print(
+            'Location services is disabled. Enable it to see where your users log in from.');
+        return null;
       }
 
       permission = await Geolocator.checkPermission();
