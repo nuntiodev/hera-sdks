@@ -19,6 +19,10 @@ var (
 	tokenIsEmptyErr       = errors.New("token is empty")
 )
 
+var (
+	maxPublicKeyAge = time.Hour * 6
+)
+
 type PublicKey struct {
 	publicKey string
 	fetchedAt time.Time
@@ -68,7 +72,7 @@ func (a *apiClient) getPublicKey() (string, error) {
 	// get public key
 	a.publicKey.Lock()
 	defer a.publicKey.Unlock()
-	if time.Now().Sub(a.publicKey.fetchedAt) < time.Hour*6 {
+	if time.Now().Sub(a.publicKey.fetchedAt) < maxPublicKeyAge {
 		return a.publicKey.publicKey, nil
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
@@ -83,7 +87,7 @@ func (a *apiClient) getPublicKey() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	publicKey, ok := publicKeyResp.PublicKeys["public-jwt-key"]
+	publicKey, ok := publicKeyResp.PublicKeys["hera-public-key"]
 	if !ok || len(publicKey) <= 10 {
 		return "", errors.New("could not fetch public jwt key")
 	}

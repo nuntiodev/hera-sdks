@@ -33,7 +33,7 @@ class HeraClient {
     HeraResponse publicKeysResp =
     await _heraClient.publicKeys(publicKeysReq);
     //todo: find out why this is empty
-    String? jwtPublicKey = publicKeysResp.publicKeys["public-jwt-key"];
+    String? jwtPublicKey = publicKeysResp.publicKeys["hera-public-key"];
     // biometric storage
     service = HeraService(
       grpcUserClient: _heraClient,
