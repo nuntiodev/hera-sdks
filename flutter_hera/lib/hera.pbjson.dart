@@ -71,6 +71,31 @@ const LoginType$json = const {
 
 /// Descriptor for `LoginType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List loginTypeDescriptor = $convert.base64Decode('CglMb2dpblR5cGUSCwoHTk9USElORxAAEhIKDkVNQUlMX1BBU1NXT1JEEAESEgoOUEhPTkVfUEFTU1dPUkQQAhIVChFVU0VSTkFNRV9QQVNTV09SRBADEhsKF0VNQUlMX1ZFUklGSUNBVElPTl9DT0RFEAQSGwoXUEhPTkVfVkVSSUZJQ0FUSU9OX0NPREUQBQ==');
+@$core.Deprecated('Use bcryptDescriptor instead')
+const Bcrypt$json = const {
+  '1': 'Bcrypt',
+  '2': const [
+    const {'1': 'cost', '3': 1, '4': 1, '5': 5, '10': 'cost'},
+  ],
+};
+
+/// Descriptor for `Bcrypt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List bcryptDescriptor = $convert.base64Decode('CgZCY3J5cHQSEgoEY29zdBgBIAEoBVIEY29zdA==');
+@$core.Deprecated('Use scryptDescriptor instead')
+const Scrypt$json = const {
+  '1': 'Scrypt',
+  '2': const [
+    const {'1': 'signer_key', '3': 1, '4': 1, '5': 12, '10': 'signerKey'},
+    const {'1': 'salt_separator', '3': 2, '4': 1, '5': 12, '10': 'saltSeparator'},
+    const {'1': 'rounds', '3': 3, '4': 1, '5': 5, '10': 'rounds'},
+    const {'1': 'mem_cost', '3': 4, '4': 1, '5': 5, '10': 'memCost'},
+    const {'1': 'p', '3': 5, '4': 1, '5': 5, '10': 'p'},
+    const {'1': 'key_len', '3': 6, '4': 1, '5': 5, '10': 'keyLen'},
+  ],
+};
+
+/// Descriptor for `Scrypt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List scryptDescriptor = $convert.base64Decode('CgZTY3J5cHQSHQoKc2lnbmVyX2tleRgBIAEoDFIJc2lnbmVyS2V5EiUKDnNhbHRfc2VwYXJhdG9yGAIgASgMUg1zYWx0U2VwYXJhdG9yEhYKBnJvdW5kcxgDIAEoBVIGcm91bmRzEhkKCG1lbV9jb3N0GAQgASgFUgdtZW1Db3N0EgwKAXAYBSABKAVSAXASFwoHa2V5X2xlbhgGIAEoBVIGa2V5TGVu');
 @$core.Deprecated('Use configDescriptor instead')
 const Config$json = const {
   '1': 'Config',
@@ -87,16 +112,14 @@ const Config$json = const {
     const {'1': 'verify_phone', '3': 10, '4': 1, '5': 8, '10': 'verifyPhone'},
     const {'1': 'public_key', '3': 11, '4': 1, '5': 9, '10': 'publicKey'},
     const {'1': 'roles', '3': 12, '4': 3, '5': 9, '10': 'roles'},
-    const {'1': 'bcrypt_cost', '3': 13, '4': 1, '5': 5, '9': 0, '10': 'bcryptCost', '17': true},
-    const {'1': 'hasing_algorithm', '3': 14, '4': 1, '5': 14, '6': '.Hera.HasingAlgorithm', '10': 'hasingAlgorithm'},
-  ],
-  '8': const [
-    const {'1': '_bcrypt_cost'},
+    const {'1': 'hasing_algorithm', '3': 13, '4': 1, '5': 14, '6': '.Hera.HasingAlgorithm', '10': 'hasingAlgorithm'},
+    const {'1': 'bcrypt', '3': 14, '4': 1, '5': 11, '6': '.Hera.Bcrypt', '10': 'bcrypt'},
+    const {'1': 'scrypt', '3': 15, '4': 1, '5': 11, '6': '.Hera.Scrypt', '10': 'scrypt'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXkSFAoFcm9sZXMYDCADKAlSBXJvbGVzEiQKC2JjcnlwdF9jb3N0GA0gASgFSABSCmJjcnlwdENvc3SIAQESQAoQaGFzaW5nX2FsZ29yaXRobRgOIAEoDjIVLkhlcmEuSGFzaW5nQWxnb3JpdGhtUg9oYXNpbmdBbGdvcml0aG1CDgoMX2JjcnlwdF9jb3N0');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXkSFAoFcm9sZXMYDCADKAlSBXJvbGVzEkAKEGhhc2luZ19hbGdvcml0aG0YDSABKA4yFS5IZXJhLkhhc2luZ0FsZ29yaXRobVIPaGFzaW5nQWxnb3JpdGhtEiQKBmJjcnlwdBgOIAEoCzIMLkhlcmEuQmNyeXB0UgZiY3J5cHQSJAoGc2NyeXB0GA8gASgLMgwuSGVyYS5TY3J5cHRSBnNjcnlwdA==');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',

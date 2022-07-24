@@ -16,6 +16,170 @@ import 'hera.pbenum.dart';
 
 export 'hera.pbenum.dart';
 
+class Bcrypt extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Bcrypt', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cost', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  Bcrypt._() : super();
+  factory Bcrypt({
+    $core.int? cost,
+  }) {
+    final _result = create();
+    if (cost != null) {
+      _result.cost = cost;
+    }
+    return _result;
+  }
+  factory Bcrypt.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Bcrypt.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Bcrypt clone() => Bcrypt()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Bcrypt copyWith(void Function(Bcrypt) updates) => super.copyWith((message) => updates(message as Bcrypt)) as Bcrypt; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Bcrypt create() => Bcrypt._();
+  Bcrypt createEmptyInstance() => create();
+  static $pb.PbList<Bcrypt> createRepeated() => $pb.PbList<Bcrypt>();
+  @$core.pragma('dart2js:noInline')
+  static Bcrypt getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Bcrypt>(create);
+  static Bcrypt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get cost => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set cost($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCost() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCost() => clearField(1);
+}
+
+class Scrypt extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Scrypt', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signerKey', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'saltSeparator', $pb.PbFieldType.OY)
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rounds', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memCost', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'p', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'keyLen', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  Scrypt._() : super();
+  factory Scrypt({
+    $core.List<$core.int>? signerKey,
+    $core.List<$core.int>? saltSeparator,
+    $core.int? rounds,
+    $core.int? memCost,
+    $core.int? p,
+    $core.int? keyLen,
+  }) {
+    final _result = create();
+    if (signerKey != null) {
+      _result.signerKey = signerKey;
+    }
+    if (saltSeparator != null) {
+      _result.saltSeparator = saltSeparator;
+    }
+    if (rounds != null) {
+      _result.rounds = rounds;
+    }
+    if (memCost != null) {
+      _result.memCost = memCost;
+    }
+    if (p != null) {
+      _result.p = p;
+    }
+    if (keyLen != null) {
+      _result.keyLen = keyLen;
+    }
+    return _result;
+  }
+  factory Scrypt.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Scrypt.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Scrypt clone() => Scrypt()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Scrypt copyWith(void Function(Scrypt) updates) => super.copyWith((message) => updates(message as Scrypt)) as Scrypt; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Scrypt create() => Scrypt._();
+  Scrypt createEmptyInstance() => create();
+  static $pb.PbList<Scrypt> createRepeated() => $pb.PbList<Scrypt>();
+  @$core.pragma('dart2js:noInline')
+  static Scrypt getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Scrypt>(create);
+  static Scrypt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get signerKey => $_getN(0);
+  @$pb.TagNumber(1)
+  set signerKey($core.List<$core.int> v) { $_setBytes(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSignerKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSignerKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get saltSeparator => $_getN(1);
+  @$pb.TagNumber(2)
+  set saltSeparator($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSaltSeparator() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSaltSeparator() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get rounds => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set rounds($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRounds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRounds() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get memCost => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set memCost($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMemCost() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMemCost() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get p => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set p($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasP() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearP() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get keyLen => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set keyLen($core.int v) { $_setSignedInt32(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasKeyLen() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearKeyLen() => clearField(6);
+}
+
 class Config extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Config', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
@@ -30,8 +194,9 @@ class Config extends $pb.GeneratedMessage {
     ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhone')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey')
     ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles')
-    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bcryptCost', $pb.PbFieldType.O3)
-    ..e<HasingAlgorithm>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasingAlgorithm', $pb.PbFieldType.OE, defaultOrMaker: HasingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HasingAlgorithm.valueOf, enumValues: HasingAlgorithm.values)
+    ..e<HasingAlgorithm>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasingAlgorithm', $pb.PbFieldType.OE, defaultOrMaker: HasingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HasingAlgorithm.valueOf, enumValues: HasingAlgorithm.values)
+    ..aOM<Bcrypt>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bcrypt', subBuilder: Bcrypt.create)
+    ..aOM<Scrypt>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'scrypt', subBuilder: Scrypt.create)
     ..hasRequiredFields = false
   ;
 
@@ -49,8 +214,9 @@ class Config extends $pb.GeneratedMessage {
     $core.bool? verifyPhone,
     $core.String? publicKey,
     $core.Iterable<$core.String>? roles,
-    $core.int? bcryptCost,
     HasingAlgorithm? hasingAlgorithm,
+    Bcrypt? bcrypt,
+    Scrypt? scrypt,
   }) {
     final _result = create();
     if (name != null) {
@@ -89,11 +255,14 @@ class Config extends $pb.GeneratedMessage {
     if (roles != null) {
       _result.roles.addAll(roles);
     }
-    if (bcryptCost != null) {
-      _result.bcryptCost = bcryptCost;
-    }
     if (hasingAlgorithm != null) {
       _result.hasingAlgorithm = hasingAlgorithm;
+    }
+    if (bcrypt != null) {
+      _result.bcrypt = bcrypt;
+    }
+    if (scrypt != null) {
+      _result.scrypt = scrypt;
     }
     return _result;
   }
@@ -219,22 +388,35 @@ class Config extends $pb.GeneratedMessage {
   $core.List<$core.String> get roles => $_getList(11);
 
   @$pb.TagNumber(13)
-  $core.int get bcryptCost => $_getIZ(12);
+  HasingAlgorithm get hasingAlgorithm => $_getN(12);
   @$pb.TagNumber(13)
-  set bcryptCost($core.int v) { $_setSignedInt32(12, v); }
+  set hasingAlgorithm(HasingAlgorithm v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasBcryptCost() => $_has(12);
+  $core.bool hasHasingAlgorithm() => $_has(12);
   @$pb.TagNumber(13)
-  void clearBcryptCost() => clearField(13);
+  void clearHasingAlgorithm() => clearField(13);
 
   @$pb.TagNumber(14)
-  HasingAlgorithm get hasingAlgorithm => $_getN(13);
+  Bcrypt get bcrypt => $_getN(13);
   @$pb.TagNumber(14)
-  set hasingAlgorithm(HasingAlgorithm v) { setField(14, v); }
+  set bcrypt(Bcrypt v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasHasingAlgorithm() => $_has(13);
+  $core.bool hasBcrypt() => $_has(13);
   @$pb.TagNumber(14)
-  void clearHasingAlgorithm() => clearField(14);
+  void clearBcrypt() => clearField(14);
+  @$pb.TagNumber(14)
+  Bcrypt ensureBcrypt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  Scrypt get scrypt => $_getN(14);
+  @$pb.TagNumber(15)
+  set scrypt(Scrypt v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasScrypt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearScrypt() => clearField(15);
+  @$pb.TagNumber(15)
+  Scrypt ensureScrypt() => $_ensure(14);
 }
 
 class User extends $pb.GeneratedMessage {
