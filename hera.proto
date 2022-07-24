@@ -69,7 +69,7 @@ message Config {
     bool verify_phone = 10;
     string public_key = 11;
     repeated string roles = 12;
-    int32 bcrypt_cost = 13;
+    optional int32 bcrypt_cost = 13;
     HasingAlgorithm hasing_algorithm = 14;
 }
 
