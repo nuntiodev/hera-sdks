@@ -524,7 +524,7 @@ class User extends $pb.GeneratedMessage {
     ..aOS(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
     ..aOS(33, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address')
     ..aOS(34, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'city')
-    ..a<$core.int>(35, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postalCode', $pb.PbFieldType.O3)
+    ..aOS(35, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postalCode')
     ..hasRequiredFields = false
   ;
 
@@ -564,7 +564,7 @@ class User extends $pb.GeneratedMessage {
     $core.String? country,
     $core.String? address,
     $core.String? city,
-    $core.int? postalCode,
+    $core.String? postalCode,
   }) {
     final _result = create();
     if (id != null) {
@@ -1008,9 +1008,9 @@ class User extends $pb.GeneratedMessage {
   void clearCity() => clearField(34);
 
   @$pb.TagNumber(35)
-  $core.int get postalCode => $_getIZ(34);
+  $core.String get postalCode => $_getSZ(34);
   @$pb.TagNumber(35)
-  set postalCode($core.int v) { $_setSignedInt32(34, v); }
+  set postalCode($core.String v) { $_setString(34, v); }
   @$pb.TagNumber(35)
   $core.bool hasPostalCode() => $_has(34);
   @$pb.TagNumber(35)

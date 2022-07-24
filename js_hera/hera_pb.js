@@ -1607,7 +1607,7 @@ proto.Hera.User.toObject = function(includeInstance, msg) {
     country: jspb.Message.getFieldWithDefault(msg, 32, ""),
     address: jspb.Message.getFieldWithDefault(msg, 33, ""),
     city: jspb.Message.getFieldWithDefault(msg, 34, ""),
-    postalCode: jspb.Message.getFieldWithDefault(msg, 35, 0)
+    postalCode: jspb.Message.getFieldWithDefault(msg, 35, "")
   };
 
   if (includeInstance) {
@@ -1790,7 +1790,7 @@ proto.Hera.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCity(value);
       break;
     case 35:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPostalCode(value);
       break;
     default:
@@ -2069,9 +2069,9 @@ proto.Hera.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 35));
+  f = /** @type {string} */ (jspb.Message.getField(message, 35));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       35,
       f
     );
@@ -3099,16 +3099,16 @@ proto.Hera.User.prototype.hasCity = function() {
 
 
 /**
- * optional int32 postal_code = 35;
- * @return {number}
+ * optional string postal_code = 35;
+ * @return {string}
  */
 proto.Hera.User.prototype.getPostalCode = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 35, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 35, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.Hera.User} returns this
  */
 proto.Hera.User.prototype.setPostalCode = function(value) {
