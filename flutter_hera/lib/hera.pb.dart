@@ -30,6 +30,8 @@ class Config extends $pb.GeneratedMessage {
     ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhone')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey')
     ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles')
+    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bcryptCost', $pb.PbFieldType.O3, protoName: 'bcryptCost')
+    ..e<HasingAlgorithm>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasingAlgorithm', $pb.PbFieldType.OE, defaultOrMaker: HasingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HasingAlgorithm.valueOf, enumValues: HasingAlgorithm.values)
     ..hasRequiredFields = false
   ;
 
@@ -47,6 +49,8 @@ class Config extends $pb.GeneratedMessage {
     $core.bool? verifyPhone,
     $core.String? publicKey,
     $core.Iterable<$core.String>? roles,
+    $core.int? bcryptCost,
+    HasingAlgorithm? hasingAlgorithm,
   }) {
     final _result = create();
     if (name != null) {
@@ -84,6 +88,12 @@ class Config extends $pb.GeneratedMessage {
     }
     if (roles != null) {
       _result.roles.addAll(roles);
+    }
+    if (bcryptCost != null) {
+      _result.bcryptCost = bcryptCost;
+    }
+    if (hasingAlgorithm != null) {
+      _result.hasingAlgorithm = hasingAlgorithm;
     }
     return _result;
   }
@@ -207,6 +217,24 @@ class Config extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(12)
   $core.List<$core.String> get roles => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $core.int get bcryptCost => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set bcryptCost($core.int v) { $_setSignedInt32(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasBcryptCost() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearBcryptCost() => clearField(13);
+
+  @$pb.TagNumber(14)
+  HasingAlgorithm get hasingAlgorithm => $_getN(13);
+  @$pb.TagNumber(14)
+  set hasingAlgorithm(HasingAlgorithm v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasHasingAlgorithm() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearHasingAlgorithm() => clearField(14);
 }
 
 class User extends $pb.GeneratedMessage {

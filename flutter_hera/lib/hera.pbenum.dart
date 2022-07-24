@@ -26,6 +26,23 @@ class LanguageCode extends $pb.ProtobufEnum {
   const LanguageCode._($core.int v, $core.String n) : super(v, n);
 }
 
+class HasingAlgorithm extends $pb.ProtobufEnum {
+  static const HasingAlgorithm INVALID_HASHING_ALGORITHM = HasingAlgorithm._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INVALID_HASHING_ALGORITHM');
+  static const HasingAlgorithm BCRYPT = HasingAlgorithm._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BCRYPT');
+  static const HasingAlgorithm SCRYPT = HasingAlgorithm._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SCRYPT');
+
+  static const $core.List<HasingAlgorithm> values = <HasingAlgorithm> [
+    INVALID_HASHING_ALGORITHM,
+    BCRYPT,
+    SCRYPT,
+  ];
+
+  static final $core.Map<$core.int, HasingAlgorithm> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static HasingAlgorithm? valueOf($core.int value) => _byValue[value];
+
+  const HasingAlgorithm._($core.int v, $core.String n) : super(v, n);
+}
+
 class TokenType extends $pb.ProtobufEnum {
   static const TokenType TOKEN_TYPE_INVALID = TokenType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TOKEN_TYPE_INVALID');
   static const TokenType TOKEN_TYPE_ACCESS = TokenType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TOKEN_TYPE_ACCESS');

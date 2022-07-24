@@ -24,6 +24,7 @@ var global = (function() {
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.Hera.Config', null, global);
+goog.exportSymbol('proto.Hera.HasingAlgorithm', null, global);
 goog.exportSymbol('proto.Hera.HeraRequest', null, global);
 goog.exportSymbol('proto.Hera.HeraResponse', null, global);
 goog.exportSymbol('proto.Hera.LanguageCode', null, global);
@@ -233,7 +234,9 @@ proto.Hera.Config.toObject = function(includeInstance, msg) {
     supportedLoginMechanismsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     verifyPhone: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     publicKey: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    rolesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
+    rolesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
+    bcryptcost: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    hasingAlgorithm: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
   if (includeInstance) {
@@ -321,6 +324,14 @@ proto.Hera.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.addRoles(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setBcryptcost(value);
+      break;
+    case 14:
+      var value = /** @type {!proto.Hera.HasingAlgorithm} */ (reader.readEnum());
+      msg.setHasingAlgorithm(value);
       break;
     default:
       reader.skipField();
@@ -434,6 +445,20 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeRepeatedString(
       12,
+      f
+    );
+  }
+  f = message.getBcryptcost();
+  if (f !== 0) {
+    writer.writeInt32(
+      13,
+      f
+    );
+  }
+  f = message.getHasingAlgorithm();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      14,
       f
     );
   }
@@ -729,6 +754,42 @@ proto.Hera.Config.prototype.addRoles = function(value, opt_index) {
  */
 proto.Hera.Config.prototype.clearRolesList = function() {
   return this.setRolesList([]);
+};
+
+
+/**
+ * optional int32 bcryptCost = 13;
+ * @return {number}
+ */
+proto.Hera.Config.prototype.getBcryptcost = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.Hera.Config} returns this
+ */
+proto.Hera.Config.prototype.setBcryptcost = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
+};
+
+
+/**
+ * optional HasingAlgorithm hasing_algorithm = 14;
+ * @return {!proto.Hera.HasingAlgorithm}
+ */
+proto.Hera.Config.prototype.getHasingAlgorithm = function() {
+  return /** @type {!proto.Hera.HasingAlgorithm} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {!proto.Hera.HasingAlgorithm} value
+ * @return {!proto.Hera.Config} returns this
+ */
+proto.Hera.Config.prototype.setHasingAlgorithm = function(value) {
+  return jspb.Message.setProto3EnumField(this, 14, value);
 };
 
 
@@ -4213,6 +4274,15 @@ proto.Hera.LanguageCode = {
   INVALID_LANGUAGE_CODE: 0,
   EN: 1,
   DK: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.Hera.HasingAlgorithm = {
+  INVALID_HASHING_ALGORITHM: 0,
+  BCRYPT: 1,
+  SCRYPT: 2
 };
 
 /**
