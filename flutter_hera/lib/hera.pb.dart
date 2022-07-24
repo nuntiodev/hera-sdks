@@ -30,7 +30,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhone')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey')
     ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles')
-    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bcryptCost', $pb.PbFieldType.O3, protoName: 'bcryptCost')
+    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bcryptCost', $pb.PbFieldType.O3)
     ..e<HasingAlgorithm>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasingAlgorithm', $pb.PbFieldType.OE, defaultOrMaker: HasingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HasingAlgorithm.valueOf, enumValues: HasingAlgorithm.values)
     ..hasRequiredFields = false
   ;

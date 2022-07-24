@@ -235,7 +235,7 @@ proto.Hera.Config.toObject = function(includeInstance, msg) {
     verifyPhone: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     publicKey: jspb.Message.getFieldWithDefault(msg, 11, ""),
     rolesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
-    bcryptcost: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    bcryptCost: jspb.Message.getFieldWithDefault(msg, 13, 0),
     hasingAlgorithm: jspb.Message.getFieldWithDefault(msg, 14, 0)
   };
 
@@ -327,7 +327,7 @@ proto.Hera.Config.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 13:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setBcryptcost(value);
+      msg.setBcryptCost(value);
       break;
     case 14:
       var value = /** @type {!proto.Hera.HasingAlgorithm} */ (reader.readEnum());
@@ -448,8 +448,8 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getBcryptcost();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
     writer.writeInt32(
       13,
       f
@@ -758,10 +758,10 @@ proto.Hera.Config.prototype.clearRolesList = function() {
 
 
 /**
- * optional int32 bcryptCost = 13;
+ * optional int32 bcrypt_cost = 13;
  * @return {number}
  */
-proto.Hera.Config.prototype.getBcryptcost = function() {
+proto.Hera.Config.prototype.getBcryptCost = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
@@ -770,8 +770,26 @@ proto.Hera.Config.prototype.getBcryptcost = function() {
  * @param {number} value
  * @return {!proto.Hera.Config} returns this
  */
-proto.Hera.Config.prototype.setBcryptcost = function(value) {
-  return jspb.Message.setProto3IntField(this, 13, value);
+proto.Hera.Config.prototype.setBcryptCost = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.Hera.Config} returns this
+ */
+proto.Hera.Config.prototype.clearBcryptCost = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Hera.Config.prototype.hasBcryptCost = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
