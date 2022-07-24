@@ -51,9 +51,9 @@ enum LanguageCode {
 }
 
 enum HasingAlgorithm {
-    INVALID_HASHING_ALGORITHM = 1;
-    BCRYPT = 2;
-    SCRYPT = 3;
+    INVALID_HASHING_ALGORITHM = 0;
+    BCRYPT = 1;
+    SCRYPT = 2;
 }
 
 message Config {
