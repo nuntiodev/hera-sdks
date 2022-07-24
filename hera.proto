@@ -56,6 +56,19 @@ enum HasingAlgorithm {
     SCRYPT = 2;
 }
 
+message Bcrypt {
+    cost = 1;
+}
+
+messge Scrypt {
+    bytes signerKey = 1;
+	bytes saltSeparator = 2; 
+	int32 rounds = 3;
+	int32 mem_cost = 4;
+	int32 p = 5;
+	int32 key_len = 6;
+}
+
 message Config {
     string name = 1;
     string logo = 2;
@@ -69,8 +82,9 @@ message Config {
     bool verify_phone = 10;
     string public_key = 11;
     repeated string roles = 12;
-    optional int32 bcrypt_cost = 13;
-    HasingAlgorithm hasing_algorithm = 14;
+    HasingAlgorithm hasing_algorithm = 13;
+    Bcrypt bcrypt = 14;
+    Scrypt scrypt = 15;
 }
 
 message User {
