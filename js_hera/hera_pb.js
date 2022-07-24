@@ -1585,10 +1585,10 @@ proto.Hera.User.toObject = function(includeInstance, msg) {
     lastName: jspb.Message.getFieldWithDefault(msg, 10, ""),
     birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     verificationEmailSentAt: (f = msg.getVerificationEmailSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    emailVerificationCode: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    emailVerificationCode: (f = msg.getEmailVerificationCode()) && proto.Hera.Hash.toObject(includeInstance, f),
     verificationEmailExpiresAt: (f = msg.getVerificationEmailExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     verifyEmailAttempts: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    resetPasswordCode: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    resetPasswordCode: (f = msg.getResetPasswordCode()) && proto.Hera.Hash.toObject(includeInstance, f),
     resetPasswordCodeSentAt: (f = msg.getResetPasswordCodeSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordCodeExpiresAt: (f = msg.getResetPasswordCodeExpiresAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     resetPasswordAttempts: jspb.Message.getFieldWithDefault(msg, 19, 0),
@@ -1597,7 +1597,7 @@ proto.Hera.User.toObject = function(includeInstance, msg) {
     phone: jspb.Message.getFieldWithDefault(msg, 22, ""),
     phoneHash: jspb.Message.getFieldWithDefault(msg, 23, ""),
     verificationTextSentAt: (f = msg.getVerificationTextSentAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    phoneVerificationCode: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    phoneVerificationCode: (f = msg.getPhoneVerificationCode()) && proto.Hera.Hash.toObject(includeInstance, f),
     verifiedPhoneNumbersList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f,
     preferredLanguage: jspb.Message.getFieldWithDefault(msg, 27, 0),
     usernameHash: jspb.Message.getFieldWithDefault(msg, 28, ""),
@@ -1698,7 +1698,8 @@ proto.Hera.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setVerificationEmailSentAt(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.Hera.Hash;
+      reader.readMessage(value,proto.Hera.Hash.deserializeBinaryFromReader);
       msg.setEmailVerificationCode(value);
       break;
     case 14:
@@ -1711,7 +1712,8 @@ proto.Hera.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setVerifyEmailAttempts(value);
       break;
     case 16:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.Hera.Hash;
+      reader.readMessage(value,proto.Hera.Hash.deserializeBinaryFromReader);
       msg.setResetPasswordCode(value);
       break;
     case 17:
@@ -1750,7 +1752,8 @@ proto.Hera.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setVerificationTextSentAt(value);
       break;
     case 25:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new proto.Hera.Hash;
+      reader.readMessage(value,proto.Hera.Hash.deserializeBinaryFromReader);
       msg.setPhoneVerificationCode(value);
       break;
     case 26:
@@ -1912,10 +1915,11 @@ proto.Hera.User.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getEmailVerificationCode();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       13,
-      f
+      f,
+      proto.Hera.Hash.serializeBinaryToWriter
     );
   }
   f = message.getVerificationEmailExpiresAt();
@@ -1934,10 +1938,11 @@ proto.Hera.User.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getResetPasswordCode();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       16,
-      f
+      f,
+      proto.Hera.Hash.serializeBinaryToWriter
     );
   }
   f = message.getResetPasswordCodeSentAt();
@@ -2000,10 +2005,11 @@ proto.Hera.User.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPhoneVerificationCode();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       25,
-      f
+      f,
+      proto.Hera.Hash.serializeBinaryToWriter
     );
   }
   f = message.getVerifiedPhoneNumbersList();
@@ -2481,20 +2487,39 @@ proto.Hera.User.prototype.hasVerificationEmailSentAt = function() {
 
 
 /**
- * optional string email_verification_code = 13;
- * @return {string}
+ * optional Hash email_verification_code = 13;
+ * @return {?proto.Hera.Hash}
  */
 proto.Hera.User.prototype.getEmailVerificationCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type{?proto.Hera.Hash} */ (
+    jspb.Message.getWrapperField(this, proto.Hera.Hash, 13));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.Hera.Hash|undefined} value
+ * @return {!proto.Hera.User} returns this
+*/
+proto.Hera.User.prototype.setEmailVerificationCode = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.Hera.User} returns this
  */
-proto.Hera.User.prototype.setEmailVerificationCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
+proto.Hera.User.prototype.clearEmailVerificationCode = function() {
+  return this.setEmailVerificationCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Hera.User.prototype.hasEmailVerificationCode = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -2554,20 +2579,39 @@ proto.Hera.User.prototype.setVerifyEmailAttempts = function(value) {
 
 
 /**
- * optional string reset_password_code = 16;
- * @return {string}
+ * optional Hash reset_password_code = 16;
+ * @return {?proto.Hera.Hash}
  */
 proto.Hera.User.prototype.getResetPasswordCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+  return /** @type{?proto.Hera.Hash} */ (
+    jspb.Message.getWrapperField(this, proto.Hera.Hash, 16));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.Hera.Hash|undefined} value
+ * @return {!proto.Hera.User} returns this
+*/
+proto.Hera.User.prototype.setResetPasswordCode = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.Hera.User} returns this
  */
-proto.Hera.User.prototype.setResetPasswordCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 16, value);
+proto.Hera.User.prototype.clearResetPasswordCode = function() {
+  return this.setResetPasswordCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Hera.User.prototype.hasResetPasswordCode = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
@@ -2810,20 +2854,39 @@ proto.Hera.User.prototype.hasVerificationTextSentAt = function() {
 
 
 /**
- * optional string phone_verification_code = 25;
- * @return {string}
+ * optional Hash phone_verification_code = 25;
+ * @return {?proto.Hera.Hash}
  */
 proto.Hera.User.prototype.getPhoneVerificationCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+  return /** @type{?proto.Hera.Hash} */ (
+    jspb.Message.getWrapperField(this, proto.Hera.Hash, 25));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.Hera.Hash|undefined} value
+ * @return {!proto.Hera.User} returns this
+*/
+proto.Hera.User.prototype.setPhoneVerificationCode = function(value) {
+  return jspb.Message.setWrapperField(this, 25, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.Hera.User} returns this
  */
-proto.Hera.User.prototype.setPhoneVerificationCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 25, value);
+proto.Hera.User.prototype.clearPhoneVerificationCode = function() {
+  return this.setPhoneVerificationCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Hera.User.prototype.hasPhoneVerificationCode = function() {
+  return jspb.Message.getField(this, 25) != null;
 };
 
 
