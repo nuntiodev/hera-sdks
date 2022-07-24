@@ -120,6 +120,29 @@ const Config$json = const {
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXkSFAoFcm9sZXMYDCADKAlSBXJvbGVzEkAKEGhhc2luZ19hbGdvcml0aG0YDSABKA4yFS5IZXJhLkhhc2luZ0FsZ29yaXRobVIPaGFzaW5nQWxnb3JpdGhtEiQKBmJjcnlwdBgOIAEoCzIMLkhlcmEuQmNyeXB0UgZiY3J5cHQSJAoGc2NyeXB0GA8gASgLMgwuSGVyYS5TY3J5cHRSBnNjcnlwdA==');
+@$core.Deprecated('Use hashDescriptor instead')
+const Hash$json = const {
+  '1': 'Hash',
+  '2': const [
+    const {'1': 'variant', '3': 1, '4': 1, '5': 14, '6': '.Hera.HasingAlgorithm', '10': 'variant'},
+    const {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
+    const {'1': 'params', '3': 3, '4': 3, '5': 11, '6': '.Hera.Hash.ParamsEntry', '10': 'params'},
+  ],
+  '3': const [Hash_ParamsEntry$json],
+};
+
+@$core.Deprecated('Use hashDescriptor instead')
+const Hash_ParamsEntry$json = const {
+  '1': 'ParamsEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
+/// Descriptor for `Hash`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hashDescriptor = $convert.base64Decode('CgRIYXNoEi8KB3ZhcmlhbnQYASABKA4yFS5IZXJhLkhhc2luZ0FsZ29yaXRobVIHdmFyaWFudBISCgRib2R5GAIgASgJUgRib2R5Ei4KBnBhcmFtcxgDIAMoCzIWLkhlcmEuSGFzaC5QYXJhbXNFbnRyeVIGcGFyYW1zGjkKC1BhcmFtc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
@@ -127,7 +150,7 @@ const User$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'username', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'username', '17': true},
     const {'1': 'email', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'email', '17': true},
-    const {'1': 'password', '3': 4, '4': 1, '5': 9, '10': 'password'},
+    const {'1': 'password', '3': 4, '4': 1, '5': 11, '6': '.Hera.Hash', '10': 'password'},
     const {'1': 'image', '3': 5, '4': 1, '5': 9, '9': 2, '10': 'image', '17': true},
     const {'1': 'metadata', '3': 6, '4': 1, '5': 9, '10': 'metadata'},
     const {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
@@ -155,6 +178,10 @@ const User$json = const {
     const {'1': 'verify_phone_attempts', '3': 29, '4': 1, '5': 5, '10': 'verifyPhoneAttempts'},
     const {'1': 'role', '3': 30, '4': 1, '5': 9, '10': 'role'},
     const {'1': 'gender', '3': 31, '4': 1, '5': 9, '9': 8, '10': 'gender', '17': true},
+    const {'1': 'country', '3': 32, '4': 1, '5': 9, '9': 9, '10': 'country', '17': true},
+    const {'1': 'address', '3': 33, '4': 1, '5': 9, '9': 10, '10': 'address', '17': true},
+    const {'1': 'city', '3': 34, '4': 1, '5': 9, '9': 11, '10': 'city', '17': true},
+    const {'1': 'postal_code', '3': 35, '4': 1, '5': 5, '9': 12, '10': 'postalCode', '17': true},
   ],
   '8': const [
     const {'1': '_username'},
@@ -166,11 +193,15 @@ const User$json = const {
     const {'1': '_phone'},
     const {'1': '_preferred_language'},
     const {'1': '_gender'},
+    const {'1': '_country'},
+    const {'1': '_address'},
+    const {'1': '_city'},
+    const {'1': '_postal_code'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgh1c2VybmFtZRgCIAEoCUgAUgh1c2VybmFtZYgBARIZCgVlbWFpbBgDIAEoCUgBUgVlbWFpbIgBARIaCghwYXNzd29yZBgEIAEoCVIIcGFzc3dvcmQSGQoFaW1hZ2UYBSABKAlIAlIFaW1hZ2WIAQESGgoIbWV0YWRhdGEYBiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIiCgpmaXJzdF9uYW1lGAkgASgJSANSCWZpcnN0TmFtZYgBARIgCglsYXN0X25hbWUYCiABKAlIBFIIbGFzdE5hbWWIAQESPQoJYmlydGhkYXRlGAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgFUgliaXJ0aGRhdGWIAQESVwoadmVyaWZpY2F0aW9uX2VtYWlsX3NlbnRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhd2ZXJpZmljYXRpb25FbWFpbFNlbnRBdBI2ChdlbWFpbF92ZXJpZmljYXRpb25fY29kZRgNIAEoCVIVZW1haWxWZXJpZmljYXRpb25Db2RlEl0KHXZlcmlmaWNhdGlvbl9lbWFpbF9leHBpcmVzX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIadmVyaWZpY2F0aW9uRW1haWxFeHBpcmVzQXQSMgoVdmVyaWZ5X2VtYWlsX2F0dGVtcHRzGA8gASgFUhN2ZXJpZnlFbWFpbEF0dGVtcHRzEi4KE3Jlc2V0X3Bhc3N3b3JkX2NvZGUYECABKAlSEXJlc2V0UGFzc3dvcmRDb2RlElgKG3Jlc2V0X3Bhc3N3b3JkX2NvZGVfc2VudF9hdBgRIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSF3Jlc2V0UGFzc3dvcmRDb2RlU2VudEF0El4KHnJlc2V0X3Bhc3N3b3JkX2NvZGVfZXhwaXJlc19hdBgSIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGnJlc2V0UGFzc3dvcmRDb2RlRXhwaXJlc0F0EjYKF3Jlc2V0X3Bhc3N3b3JkX2F0dGVtcHRzGBMgASgFUhVyZXNldFBhc3N3b3JkQXR0ZW1wdHMSJwoPdmVyaWZpZWRfZW1haWxzGBQgAygJUg52ZXJpZmllZEVtYWlscxIdCgplbWFpbF9oYXNoGBUgASgJUgllbWFpbEhhc2gSGQoFcGhvbmUYFiABKAlIBlIFcGhvbmWIAQESHQoKcGhvbmVfaGFzaBgXIAEoCVIJcGhvbmVIYXNoElUKGXZlcmlmaWNhdGlvbl90ZXh0X3NlbnRfYXQYGCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhZ2ZXJpZmljYXRpb25UZXh0U2VudEF0EjYKF3Bob25lX3ZlcmlmaWNhdGlvbl9jb2RlGBkgASgJUhVwaG9uZVZlcmlmaWNhdGlvbkNvZGUSNAoWdmVyaWZpZWRfcGhvbmVfbnVtYmVycxgaIAMoCVIUdmVyaWZpZWRQaG9uZU51bWJlcnMSRgoScHJlZmVycmVkX2xhbmd1YWdlGBsgASgOMhIuSGVyYS5MYW5ndWFnZUNvZGVIB1IRcHJlZmVycmVkTGFuZ3VhZ2WIAQESIwoNdXNlcm5hbWVfaGFzaBgcIAEoCVIMdXNlcm5hbWVIYXNoEjIKFXZlcmlmeV9waG9uZV9hdHRlbXB0cxgdIAEoBVITdmVyaWZ5UGhvbmVBdHRlbXB0cxISCgRyb2xlGB4gASgJUgRyb2xlEhsKBmdlbmRlchgfIAEoCUgIUgZnZW5kZXKIAQFCCwoJX3VzZXJuYW1lQggKBl9lbWFpbEIICgZfaW1hZ2VCDQoLX2ZpcnN0X25hbWVCDAoKX2xhc3RfbmFtZUIMCgpfYmlydGhkYXRlQggKBl9waG9uZUIVChNfcHJlZmVycmVkX2xhbmd1YWdlQgkKB19nZW5kZXI=');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIfCgh1c2VybmFtZRgCIAEoCUgAUgh1c2VybmFtZYgBARIZCgVlbWFpbBgDIAEoCUgBUgVlbWFpbIgBARImCghwYXNzd29yZBgEIAEoCzIKLkhlcmEuSGFzaFIIcGFzc3dvcmQSGQoFaW1hZ2UYBSABKAlIAlIFaW1hZ2WIAQESGgoIbWV0YWRhdGEYBiABKAlSCG1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdBIiCgpmaXJzdF9uYW1lGAkgASgJSANSCWZpcnN0TmFtZYgBARIgCglsYXN0X25hbWUYCiABKAlIBFIIbGFzdE5hbWWIAQESPQoJYmlydGhkYXRlGAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgFUgliaXJ0aGRhdGWIAQESVwoadmVyaWZpY2F0aW9uX2VtYWlsX3NlbnRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhd2ZXJpZmljYXRpb25FbWFpbFNlbnRBdBI2ChdlbWFpbF92ZXJpZmljYXRpb25fY29kZRgNIAEoCVIVZW1haWxWZXJpZmljYXRpb25Db2RlEl0KHXZlcmlmaWNhdGlvbl9lbWFpbF9leHBpcmVzX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIadmVyaWZpY2F0aW9uRW1haWxFeHBpcmVzQXQSMgoVdmVyaWZ5X2VtYWlsX2F0dGVtcHRzGA8gASgFUhN2ZXJpZnlFbWFpbEF0dGVtcHRzEi4KE3Jlc2V0X3Bhc3N3b3JkX2NvZGUYECABKAlSEXJlc2V0UGFzc3dvcmRDb2RlElgKG3Jlc2V0X3Bhc3N3b3JkX2NvZGVfc2VudF9hdBgRIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSF3Jlc2V0UGFzc3dvcmRDb2RlU2VudEF0El4KHnJlc2V0X3Bhc3N3b3JkX2NvZGVfZXhwaXJlc19hdBgSIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGnJlc2V0UGFzc3dvcmRDb2RlRXhwaXJlc0F0EjYKF3Jlc2V0X3Bhc3N3b3JkX2F0dGVtcHRzGBMgASgFUhVyZXNldFBhc3N3b3JkQXR0ZW1wdHMSJwoPdmVyaWZpZWRfZW1haWxzGBQgAygJUg52ZXJpZmllZEVtYWlscxIdCgplbWFpbF9oYXNoGBUgASgJUgllbWFpbEhhc2gSGQoFcGhvbmUYFiABKAlIBlIFcGhvbmWIAQESHQoKcGhvbmVfaGFzaBgXIAEoCVIJcGhvbmVIYXNoElUKGXZlcmlmaWNhdGlvbl90ZXh0X3NlbnRfYXQYGCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhZ2ZXJpZmljYXRpb25UZXh0U2VudEF0EjYKF3Bob25lX3ZlcmlmaWNhdGlvbl9jb2RlGBkgASgJUhVwaG9uZVZlcmlmaWNhdGlvbkNvZGUSNAoWdmVyaWZpZWRfcGhvbmVfbnVtYmVycxgaIAMoCVIUdmVyaWZpZWRQaG9uZU51bWJlcnMSRgoScHJlZmVycmVkX2xhbmd1YWdlGBsgASgOMhIuSGVyYS5MYW5ndWFnZUNvZGVIB1IRcHJlZmVycmVkTGFuZ3VhZ2WIAQESIwoNdXNlcm5hbWVfaGFzaBgcIAEoCVIMdXNlcm5hbWVIYXNoEjIKFXZlcmlmeV9waG9uZV9hdHRlbXB0cxgdIAEoBVITdmVyaWZ5UGhvbmVBdHRlbXB0cxISCgRyb2xlGB4gASgJUgRyb2xlEhsKBmdlbmRlchgfIAEoCUgIUgZnZW5kZXKIAQESHQoHY291bnRyeRggIAEoCUgJUgdjb3VudHJ5iAEBEh0KB2FkZHJlc3MYISABKAlIClIHYWRkcmVzc4gBARIXCgRjaXR5GCIgASgJSAtSBGNpdHmIAQESJAoLcG9zdGFsX2NvZGUYIyABKAVIDFIKcG9zdGFsQ29kZYgBAUILCglfdXNlcm5hbWVCCAoGX2VtYWlsQggKBl9pbWFnZUINCgtfZmlyc3RfbmFtZUIMCgpfbGFzdF9uYW1lQgwKCl9iaXJ0aGRhdGVCCAoGX3Bob25lQhUKE19wcmVmZXJyZWRfbGFuZ3VhZ2VCCQoHX2dlbmRlckIKCghfY291bnRyeUIKCghfYWRkcmVzc0IHCgVfY2l0eUIOCgxfcG9zdGFsX2NvZGU=');
 @$core.Deprecated('Use queryDescriptor instead')
 const Query$json = const {
   '1': 'Query',

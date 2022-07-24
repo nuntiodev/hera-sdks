@@ -419,12 +419,81 @@ class Config extends $pb.GeneratedMessage {
   Scrypt ensureScrypt() => $_ensure(14);
 }
 
+class Hash extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hash', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
+    ..e<HasingAlgorithm>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'variant', $pb.PbFieldType.OE, defaultOrMaker: HasingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HasingAlgorithm.valueOf, enumValues: HasingAlgorithm.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body')
+    ..m<$core.String, $core.String>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', entryClassName: 'Hash.ParamsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('Hera'))
+    ..hasRequiredFields = false
+  ;
+
+  Hash._() : super();
+  factory Hash({
+    HasingAlgorithm? variant,
+    $core.String? body,
+    $core.Map<$core.String, $core.String>? params,
+  }) {
+    final _result = create();
+    if (variant != null) {
+      _result.variant = variant;
+    }
+    if (body != null) {
+      _result.body = body;
+    }
+    if (params != null) {
+      _result.params.addAll(params);
+    }
+    return _result;
+  }
+  factory Hash.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Hash.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Hash clone() => Hash()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Hash copyWith(void Function(Hash) updates) => super.copyWith((message) => updates(message as Hash)) as Hash; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Hash create() => Hash._();
+  Hash createEmptyInstance() => create();
+  static $pb.PbList<Hash> createRepeated() => $pb.PbList<Hash>();
+  @$core.pragma('dart2js:noInline')
+  static Hash getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Hash>(create);
+  static Hash? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  HasingAlgorithm get variant => $_getN(0);
+  @$pb.TagNumber(1)
+  set variant(HasingAlgorithm v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasVariant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVariant() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get body => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set body($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBody() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBody() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.Map<$core.String, $core.String> get params => $_getMap(2);
+}
+
 class User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'username')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
+    ..aOM<Hash>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password', subBuilder: Hash.create)
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata')
     ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
@@ -452,6 +521,10 @@ class User extends $pb.GeneratedMessage {
     ..a<$core.int>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhoneAttempts', $pb.PbFieldType.O3)
     ..aOS(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role')
     ..aOS(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gender')
+    ..aOS(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
+    ..aOS(33, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address')
+    ..aOS(34, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'city')
+    ..a<$core.int>(35, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postalCode', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -460,7 +533,7 @@ class User extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? username,
     $core.String? email,
-    $core.String? password,
+    Hash? password,
     $core.String? image,
     $core.String? metadata,
     $1.Timestamp? createdAt,
@@ -488,6 +561,10 @@ class User extends $pb.GeneratedMessage {
     $core.int? verifyPhoneAttempts,
     $core.String? role,
     $core.String? gender,
+    $core.String? country,
+    $core.String? address,
+    $core.String? city,
+    $core.int? postalCode,
   }) {
     final _result = create();
     if (id != null) {
@@ -583,6 +660,18 @@ class User extends $pb.GeneratedMessage {
     if (gender != null) {
       _result.gender = gender;
     }
+    if (country != null) {
+      _result.country = country;
+    }
+    if (address != null) {
+      _result.address = address;
+    }
+    if (city != null) {
+      _result.city = city;
+    }
+    if (postalCode != null) {
+      _result.postalCode = postalCode;
+    }
     return _result;
   }
   factory User.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
@@ -634,13 +723,15 @@ class User extends $pb.GeneratedMessage {
   void clearEmail() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get password => $_getSZ(3);
+  Hash get password => $_getN(3);
   @$pb.TagNumber(4)
-  set password($core.String v) { $_setString(3, v); }
+  set password(Hash v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasPassword() => $_has(3);
   @$pb.TagNumber(4)
   void clearPassword() => clearField(4);
+  @$pb.TagNumber(4)
+  Hash ensurePassword() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.String get image => $_getSZ(4);
@@ -888,6 +979,42 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasGender() => $_has(30);
   @$pb.TagNumber(31)
   void clearGender() => clearField(31);
+
+  @$pb.TagNumber(32)
+  $core.String get country => $_getSZ(31);
+  @$pb.TagNumber(32)
+  set country($core.String v) { $_setString(31, v); }
+  @$pb.TagNumber(32)
+  $core.bool hasCountry() => $_has(31);
+  @$pb.TagNumber(32)
+  void clearCountry() => clearField(32);
+
+  @$pb.TagNumber(33)
+  $core.String get address => $_getSZ(32);
+  @$pb.TagNumber(33)
+  set address($core.String v) { $_setString(32, v); }
+  @$pb.TagNumber(33)
+  $core.bool hasAddress() => $_has(32);
+  @$pb.TagNumber(33)
+  void clearAddress() => clearField(33);
+
+  @$pb.TagNumber(34)
+  $core.String get city => $_getSZ(33);
+  @$pb.TagNumber(34)
+  set city($core.String v) { $_setString(33, v); }
+  @$pb.TagNumber(34)
+  $core.bool hasCity() => $_has(33);
+  @$pb.TagNumber(34)
+  void clearCity() => clearField(34);
+
+  @$pb.TagNumber(35)
+  $core.int get postalCode => $_getIZ(34);
+  @$pb.TagNumber(35)
+  set postalCode($core.int v) { $_setSignedInt32(34, v); }
+  @$pb.TagNumber(35)
+  $core.bool hasPostalCode() => $_has(34);
+  @$pb.TagNumber(35)
+  void clearPostalCode() => clearField(35);
 }
 
 class Query extends $pb.GeneratedMessage {
