@@ -20,9 +20,9 @@ const LanguageCode$json = const {
 
 /// Descriptor for `LanguageCode`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List languageCodeDescriptor = $convert.base64Decode('CgxMYW5ndWFnZUNvZGUSGQoVSU5WQUxJRF9MQU5HVUFHRV9DT0RFEAASBgoCRU4QARIGCgJESxAC');
-@$core.Deprecated('Use hasingAlgorithmDescriptor instead')
-const HasingAlgorithm$json = const {
-  '1': 'HasingAlgorithm',
+@$core.Deprecated('Use hashingAlgorithmDescriptor instead')
+const HashingAlgorithm$json = const {
+  '1': 'HashingAlgorithm',
   '2': const [
     const {'1': 'INVALID_HASHING_ALGORITHM', '2': 0},
     const {'1': 'BCRYPT', '2': 1},
@@ -30,8 +30,8 @@ const HasingAlgorithm$json = const {
   ],
 };
 
-/// Descriptor for `HasingAlgorithm`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List hasingAlgorithmDescriptor = $convert.base64Decode('Cg9IYXNpbmdBbGdvcml0aG0SHQoZSU5WQUxJRF9IQVNISU5HX0FMR09SSVRITRAAEgoKBkJDUllQVBABEgoKBlNDUllQVBAC');
+/// Descriptor for `HashingAlgorithm`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List hashingAlgorithmDescriptor = $convert.base64Decode('ChBIYXNoaW5nQWxnb3JpdGhtEh0KGUlOVkFMSURfSEFTSElOR19BTEdPUklUSE0QABIKCgZCQ1JZUFQQARIKCgZTQ1JZUFQQAg==');
 @$core.Deprecated('Use tokenTypeDescriptor instead')
 const TokenType$json = const {
   '1': 'TokenType',
@@ -112,19 +112,19 @@ const Config$json = const {
     const {'1': 'verify_phone', '3': 10, '4': 1, '5': 8, '10': 'verifyPhone'},
     const {'1': 'public_key', '3': 11, '4': 1, '5': 9, '10': 'publicKey'},
     const {'1': 'roles', '3': 12, '4': 3, '5': 9, '10': 'roles'},
-    const {'1': 'hasing_algorithm', '3': 13, '4': 1, '5': 14, '6': '.Hera.HasingAlgorithm', '10': 'hasingAlgorithm'},
+    const {'1': 'hashing_algorithm', '3': 13, '4': 1, '5': 14, '6': '.Hera.HashingAlgorithm', '10': 'hashingAlgorithm'},
     const {'1': 'bcrypt', '3': 14, '4': 1, '5': 11, '6': '.Hera.Bcrypt', '10': 'bcrypt'},
     const {'1': 'scrypt', '3': 15, '4': 1, '5': 11, '6': '.Hera.Scrypt', '10': 'scrypt'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXkSFAoFcm9sZXMYDCADKAlSBXJvbGVzEkAKEGhhc2luZ19hbGdvcml0aG0YDSABKA4yFS5IZXJhLkhhc2luZ0FsZ29yaXRobVIPaGFzaW5nQWxnb3JpdGhtEiQKBmJjcnlwdBgOIAEoCzIMLkhlcmEuQmNyeXB0UgZiY3J5cHQSJAoGc2NyeXB0GA8gASgLMgwuSGVyYS5TY3J5cHRSBnNjcnlwdA==');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXkSFAoFcm9sZXMYDCADKAlSBXJvbGVzEkMKEWhhc2hpbmdfYWxnb3JpdGhtGA0gASgOMhYuSGVyYS5IYXNoaW5nQWxnb3JpdGhtUhBoYXNoaW5nQWxnb3JpdGhtEiQKBmJjcnlwdBgOIAEoCzIMLkhlcmEuQmNyeXB0UgZiY3J5cHQSJAoGc2NyeXB0GA8gASgLMgwuSGVyYS5TY3J5cHRSBnNjcnlwdA==');
 @$core.Deprecated('Use hashDescriptor instead')
 const Hash$json = const {
   '1': 'Hash',
   '2': const [
-    const {'1': 'variant', '3': 1, '4': 1, '5': 14, '6': '.Hera.HasingAlgorithm', '10': 'variant'},
+    const {'1': 'variant', '3': 1, '4': 1, '5': 14, '6': '.Hera.HashingAlgorithm', '10': 'variant'},
     const {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
     const {'1': 'params', '3': 3, '4': 3, '5': 11, '6': '.Hera.Hash.ParamsEntry', '10': 'params'},
   ],
@@ -142,7 +142,7 @@ const Hash_ParamsEntry$json = const {
 };
 
 /// Descriptor for `Hash`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List hashDescriptor = $convert.base64Decode('CgRIYXNoEi8KB3ZhcmlhbnQYASABKA4yFS5IZXJhLkhhc2luZ0FsZ29yaXRobVIHdmFyaWFudBISCgRib2R5GAIgASgJUgRib2R5Ei4KBnBhcmFtcxgDIAMoCzIWLkhlcmEuSGFzaC5QYXJhbXNFbnRyeVIGcGFyYW1zGjkKC1BhcmFtc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
+final $typed_data.Uint8List hashDescriptor = $convert.base64Decode('CgRIYXNoEjAKB3ZhcmlhbnQYASABKA4yFi5IZXJhLkhhc2hpbmdBbGdvcml0aG1SB3ZhcmlhbnQSEgoEYm9keRgCIAEoCVIEYm9keRIuCgZwYXJhbXMYAyADKAsyFi5IZXJhLkhhc2guUGFyYW1zRW50cnlSBnBhcmFtcxo5CgtQYXJhbXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',

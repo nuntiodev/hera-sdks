@@ -26,7 +26,7 @@ goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.Hera.Bcrypt', null, global);
 goog.exportSymbol('proto.Hera.Config', null, global);
 goog.exportSymbol('proto.Hera.Hash', null, global);
-goog.exportSymbol('proto.Hera.HasingAlgorithm', null, global);
+goog.exportSymbol('proto.Hera.HashingAlgorithm', null, global);
 goog.exportSymbol('proto.Hera.HeraRequest', null, global);
 goog.exportSymbol('proto.Hera.HeraResponse', null, global);
 goog.exportSymbol('proto.Hera.LanguageCode', null, global);
@@ -711,7 +711,7 @@ proto.Hera.Config.toObject = function(includeInstance, msg) {
     verifyPhone: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     publicKey: jspb.Message.getFieldWithDefault(msg, 11, ""),
     rolesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
-    hasingAlgorithm: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    hashingAlgorithm: jspb.Message.getFieldWithDefault(msg, 13, 0),
     bcrypt: (f = msg.getBcrypt()) && proto.Hera.Bcrypt.toObject(includeInstance, f),
     scrypt: (f = msg.getScrypt()) && proto.Hera.Scrypt.toObject(includeInstance, f)
   };
@@ -803,8 +803,8 @@ proto.Hera.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.addRoles(value);
       break;
     case 13:
-      var value = /** @type {!proto.Hera.HasingAlgorithm} */ (reader.readEnum());
-      msg.setHasingAlgorithm(value);
+      var value = /** @type {!proto.Hera.HashingAlgorithm} */ (reader.readEnum());
+      msg.setHashingAlgorithm(value);
       break;
     case 14:
       var value = new proto.Hera.Bcrypt;
@@ -931,7 +931,7 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getHasingAlgorithm();
+  f = message.getHashingAlgorithm();
   if (f !== 0.0) {
     writer.writeEnum(
       13,
@@ -1250,19 +1250,19 @@ proto.Hera.Config.prototype.clearRolesList = function() {
 
 
 /**
- * optional HasingAlgorithm hasing_algorithm = 13;
- * @return {!proto.Hera.HasingAlgorithm}
+ * optional HashingAlgorithm hashing_algorithm = 13;
+ * @return {!proto.Hera.HashingAlgorithm}
  */
-proto.Hera.Config.prototype.getHasingAlgorithm = function() {
-  return /** @type {!proto.Hera.HasingAlgorithm} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+proto.Hera.Config.prototype.getHashingAlgorithm = function() {
+  return /** @type {!proto.Hera.HashingAlgorithm} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
 /**
- * @param {!proto.Hera.HasingAlgorithm} value
+ * @param {!proto.Hera.HashingAlgorithm} value
  * @return {!proto.Hera.Config} returns this
  */
-proto.Hera.Config.prototype.setHasingAlgorithm = function(value) {
+proto.Hera.Config.prototype.setHashingAlgorithm = function(value) {
   return jspb.Message.setProto3EnumField(this, 13, value);
 };
 
@@ -1413,7 +1413,7 @@ proto.Hera.Hash.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.Hera.HasingAlgorithm} */ (reader.readEnum());
+      var value = /** @type {!proto.Hera.HashingAlgorithm} */ (reader.readEnum());
       msg.setVariant(value);
       break;
     case 2:
@@ -1477,16 +1477,16 @@ proto.Hera.Hash.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional HasingAlgorithm variant = 1;
- * @return {!proto.Hera.HasingAlgorithm}
+ * optional HashingAlgorithm variant = 1;
+ * @return {!proto.Hera.HashingAlgorithm}
  */
 proto.Hera.Hash.prototype.getVariant = function() {
-  return /** @type {!proto.Hera.HasingAlgorithm} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.Hera.HashingAlgorithm} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.Hera.HasingAlgorithm} value
+ * @param {!proto.Hera.HashingAlgorithm} value
  * @return {!proto.Hera.Hash} returns this
  */
 proto.Hera.Hash.prototype.setVariant = function(value) {
@@ -5296,7 +5296,7 @@ proto.Hera.LanguageCode = {
 /**
  * @enum {number}
  */
-proto.Hera.HasingAlgorithm = {
+proto.Hera.HashingAlgorithm = {
   INVALID_HASHING_ALGORITHM: 0,
   BCRYPT: 1,
   SCRYPT: 2

@@ -194,7 +194,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhone')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey')
     ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles')
-    ..e<HasingAlgorithm>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasingAlgorithm', $pb.PbFieldType.OE, defaultOrMaker: HasingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HasingAlgorithm.valueOf, enumValues: HasingAlgorithm.values)
+    ..e<HashingAlgorithm>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hashingAlgorithm', $pb.PbFieldType.OE, defaultOrMaker: HashingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HashingAlgorithm.valueOf, enumValues: HashingAlgorithm.values)
     ..aOM<Bcrypt>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bcrypt', subBuilder: Bcrypt.create)
     ..aOM<Scrypt>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'scrypt', subBuilder: Scrypt.create)
     ..hasRequiredFields = false
@@ -214,7 +214,7 @@ class Config extends $pb.GeneratedMessage {
     $core.bool? verifyPhone,
     $core.String? publicKey,
     $core.Iterable<$core.String>? roles,
-    HasingAlgorithm? hasingAlgorithm,
+    HashingAlgorithm? hashingAlgorithm,
     Bcrypt? bcrypt,
     Scrypt? scrypt,
   }) {
@@ -255,8 +255,8 @@ class Config extends $pb.GeneratedMessage {
     if (roles != null) {
       _result.roles.addAll(roles);
     }
-    if (hasingAlgorithm != null) {
-      _result.hasingAlgorithm = hasingAlgorithm;
+    if (hashingAlgorithm != null) {
+      _result.hashingAlgorithm = hashingAlgorithm;
     }
     if (bcrypt != null) {
       _result.bcrypt = bcrypt;
@@ -388,13 +388,13 @@ class Config extends $pb.GeneratedMessage {
   $core.List<$core.String> get roles => $_getList(11);
 
   @$pb.TagNumber(13)
-  HasingAlgorithm get hasingAlgorithm => $_getN(12);
+  HashingAlgorithm get hashingAlgorithm => $_getN(12);
   @$pb.TagNumber(13)
-  set hasingAlgorithm(HasingAlgorithm v) { setField(13, v); }
+  set hashingAlgorithm(HashingAlgorithm v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasHasingAlgorithm() => $_has(12);
+  $core.bool hasHashingAlgorithm() => $_has(12);
   @$pb.TagNumber(13)
-  void clearHasingAlgorithm() => clearField(13);
+  void clearHashingAlgorithm() => clearField(13);
 
   @$pb.TagNumber(14)
   Bcrypt get bcrypt => $_getN(13);
@@ -421,7 +421,7 @@ class Config extends $pb.GeneratedMessage {
 
 class Hash extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hash', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
-    ..e<HasingAlgorithm>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'variant', $pb.PbFieldType.OE, defaultOrMaker: HasingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HasingAlgorithm.valueOf, enumValues: HasingAlgorithm.values)
+    ..e<HashingAlgorithm>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'variant', $pb.PbFieldType.OE, defaultOrMaker: HashingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HashingAlgorithm.valueOf, enumValues: HashingAlgorithm.values)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body')
     ..m<$core.String, $core.String>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', entryClassName: 'Hash.ParamsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('Hera'))
     ..hasRequiredFields = false
@@ -429,7 +429,7 @@ class Hash extends $pb.GeneratedMessage {
 
   Hash._() : super();
   factory Hash({
-    HasingAlgorithm? variant,
+    HashingAlgorithm? variant,
     $core.String? body,
     $core.Map<$core.String, $core.String>? params,
   }) {
@@ -467,9 +467,9 @@ class Hash extends $pb.GeneratedMessage {
   static Hash? _defaultInstance;
 
   @$pb.TagNumber(1)
-  HasingAlgorithm get variant => $_getN(0);
+  HashingAlgorithm get variant => $_getN(0);
   @$pb.TagNumber(1)
-  set variant(HasingAlgorithm v) { setField(1, v); }
+  set variant(HashingAlgorithm v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasVariant() => $_has(0);
   @$pb.TagNumber(1)
