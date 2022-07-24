@@ -128,7 +128,7 @@ message User {
     optional string country = 32;
     optional string address = 33;
     optional string city = 34;
-    optional int32 postal_code 35;
+    optional int32 postal_code = 35;
 }
 
 message Query {
