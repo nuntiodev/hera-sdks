@@ -61,8 +61,8 @@ message Bcrypt {
 }
 
 message Scrypt {
-    bytes signer_key = 1;
-	bytes salt_separator = 2; 
+    string signer_key = 1;
+	string salt_separator = 2; 
 	int32 rounds = 3;
 	int32 mem_cost = 4;
 	int32 p = 5;
