@@ -60,7 +60,7 @@ message Bcrypt {
     int32 cost = 1;
 }
 
-messge Scrypt {
+message Scrypt {
     bytes signer_key = 1;
 	bytes salt_separator = 2; 
 	int32 rounds = 3;
