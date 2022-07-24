@@ -390,8 +390,8 @@ proto.Hera.Scrypt.prototype.toObject = function(opt_includeInstance) {
  */
 proto.Hera.Scrypt.toObject = function(includeInstance, msg) {
   var f, obj = {
-    signerKey: msg.getSignerKey_asB64(),
-    saltSeparator: msg.getSaltSeparator_asB64(),
+    signerKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    saltSeparator: jspb.Message.getFieldWithDefault(msg, 2, ""),
     rounds: jspb.Message.getFieldWithDefault(msg, 3, 0),
     memCost: jspb.Message.getFieldWithDefault(msg, 4, 0),
     p: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -433,11 +433,11 @@ proto.Hera.Scrypt.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSignerKey(value);
       break;
     case 2:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSaltSeparator(value);
       break;
     case 3:
@@ -485,16 +485,16 @@ proto.Hera.Scrypt.prototype.serializeBinary = function() {
  */
 proto.Hera.Scrypt.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSignerKey_asU8();
+  f = message.getSignerKey();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getSaltSeparator_asU8();
+  f = message.getSaltSeparator();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       2,
       f
     );
@@ -531,7 +531,7 @@ proto.Hera.Scrypt.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional bytes signer_key = 1;
+ * optional string signer_key = 1;
  * @return {string}
  */
 proto.Hera.Scrypt.prototype.getSignerKey = function() {
@@ -540,40 +540,16 @@ proto.Hera.Scrypt.prototype.getSignerKey = function() {
 
 
 /**
- * optional bytes signer_key = 1;
- * This is a type-conversion wrapper around `getSignerKey()`
- * @return {string}
- */
-proto.Hera.Scrypt.prototype.getSignerKey_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getSignerKey()));
-};
-
-
-/**
- * optional bytes signer_key = 1;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getSignerKey()`
- * @return {!Uint8Array}
- */
-proto.Hera.Scrypt.prototype.getSignerKey_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getSignerKey()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.Hera.Scrypt} returns this
  */
 proto.Hera.Scrypt.prototype.setSignerKey = function(value) {
-  return jspb.Message.setProto3BytesField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional bytes salt_separator = 2;
+ * optional string salt_separator = 2;
  * @return {string}
  */
 proto.Hera.Scrypt.prototype.getSaltSeparator = function() {
@@ -582,35 +558,11 @@ proto.Hera.Scrypt.prototype.getSaltSeparator = function() {
 
 
 /**
- * optional bytes salt_separator = 2;
- * This is a type-conversion wrapper around `getSaltSeparator()`
- * @return {string}
- */
-proto.Hera.Scrypt.prototype.getSaltSeparator_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getSaltSeparator()));
-};
-
-
-/**
- * optional bytes salt_separator = 2;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getSaltSeparator()`
- * @return {!Uint8Array}
- */
-proto.Hera.Scrypt.prototype.getSaltSeparator_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getSaltSeparator()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.Hera.Scrypt} returns this
  */
 proto.Hera.Scrypt.prototype.setSaltSeparator = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

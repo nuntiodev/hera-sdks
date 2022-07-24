@@ -65,8 +65,8 @@ class Bcrypt extends $pb.GeneratedMessage {
 
 class Scrypt extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Scrypt', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Hera'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signerKey', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'saltSeparator', $pb.PbFieldType.OY)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signerKey')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'saltSeparator')
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rounds', $pb.PbFieldType.O3)
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memCost', $pb.PbFieldType.O3)
     ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'p', $pb.PbFieldType.O3)
@@ -76,8 +76,8 @@ class Scrypt extends $pb.GeneratedMessage {
 
   Scrypt._() : super();
   factory Scrypt({
-    $core.List<$core.int>? signerKey,
-    $core.List<$core.int>? saltSeparator,
+    $core.String? signerKey,
+    $core.String? saltSeparator,
     $core.int? rounds,
     $core.int? memCost,
     $core.int? p,
@@ -126,18 +126,18 @@ class Scrypt extends $pb.GeneratedMessage {
   static Scrypt? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.int> get signerKey => $_getN(0);
+  $core.String get signerKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set signerKey($core.List<$core.int> v) { $_setBytes(0, v); }
+  set signerKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasSignerKey() => $_has(0);
   @$pb.TagNumber(1)
   void clearSignerKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.int> get saltSeparator => $_getN(1);
+  $core.String get saltSeparator => $_getSZ(1);
   @$pb.TagNumber(2)
-  set saltSeparator($core.List<$core.int> v) { $_setBytes(1, v); }
+  set saltSeparator($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasSaltSeparator() => $_has(1);
   @$pb.TagNumber(2)

@@ -85,8 +85,8 @@ final $typed_data.Uint8List bcryptDescriptor = $convert.base64Decode('CgZCY3J5cH
 const Scrypt$json = const {
   '1': 'Scrypt',
   '2': const [
-    const {'1': 'signer_key', '3': 1, '4': 1, '5': 12, '10': 'signerKey'},
-    const {'1': 'salt_separator', '3': 2, '4': 1, '5': 12, '10': 'saltSeparator'},
+    const {'1': 'signer_key', '3': 1, '4': 1, '5': 9, '10': 'signerKey'},
+    const {'1': 'salt_separator', '3': 2, '4': 1, '5': 9, '10': 'saltSeparator'},
     const {'1': 'rounds', '3': 3, '4': 1, '5': 5, '10': 'rounds'},
     const {'1': 'mem_cost', '3': 4, '4': 1, '5': 5, '10': 'memCost'},
     const {'1': 'p', '3': 5, '4': 1, '5': 5, '10': 'p'},
@@ -95,7 +95,7 @@ const Scrypt$json = const {
 };
 
 /// Descriptor for `Scrypt`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List scryptDescriptor = $convert.base64Decode('CgZTY3J5cHQSHQoKc2lnbmVyX2tleRgBIAEoDFIJc2lnbmVyS2V5EiUKDnNhbHRfc2VwYXJhdG9yGAIgASgMUg1zYWx0U2VwYXJhdG9yEhYKBnJvdW5kcxgDIAEoBVIGcm91bmRzEhkKCG1lbV9jb3N0GAQgASgFUgdtZW1Db3N0EgwKAXAYBSABKAVSAXASFwoHa2V5X2xlbhgGIAEoBVIGa2V5TGVu');
+final $typed_data.Uint8List scryptDescriptor = $convert.base64Decode('CgZTY3J5cHQSHQoKc2lnbmVyX2tleRgBIAEoCVIJc2lnbmVyS2V5EiUKDnNhbHRfc2VwYXJhdG9yGAIgASgJUg1zYWx0U2VwYXJhdG9yEhYKBnJvdW5kcxgDIAEoBVIGcm91bmRzEhkKCG1lbV9jb3N0GAQgASgFUgdtZW1Db3N0EgwKAXAYBSABKAVSAXASFwoHa2V5X2xlbhgGIAEoBVIGa2V5TGVu');
 @$core.Deprecated('Use configDescriptor instead')
 const Config$json = const {
   '1': 'Config',
