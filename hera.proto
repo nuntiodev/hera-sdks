@@ -106,10 +106,10 @@ message User {
     optional string last_name = 10;
     optional google.protobuf.Timestamp birthdate = 11;
     google.protobuf.Timestamp verification_email_sent_at = 12;
-    string email_verification_code = 13;
+    Hash email_verification_code = 13;
     google.protobuf.Timestamp verification_email_expires_at = 14;
     int32 verify_email_attempts = 15;
-    string reset_password_code = 16;
+    Hash reset_password_code = 16;
     google.protobuf.Timestamp reset_password_code_sent_at = 17;
     google.protobuf.Timestamp reset_password_code_expires_at = 18;
     int32 reset_password_attempts = 19;
@@ -118,7 +118,7 @@ message User {
     optional string phone = 22;
     string phone_hash = 23;
     google.protobuf.Timestamp verification_text_sent_at = 24;
-    string phone_verification_code = 25;
+    Hash phone_verification_code = 25;
     repeated string verified_phone_numbers = 26;
     optional LanguageCode preferred_language = 27;
     string username_hash = 28;
