@@ -119,6 +119,10 @@ message User {
     int32 verify_phone_attempts = 29;
     string role = 30;
     optional string gender = 31;
+    optional string country = 32;
+    optional string address = 33;
+    optional string city = 34;
+    optional int32 postal_code 35;
 }
 
 message Query {
