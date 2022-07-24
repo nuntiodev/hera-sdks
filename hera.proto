@@ -87,11 +87,17 @@ message Config {
     Scrypt scrypt = 15;
 }
 
+message Hash {
+ HasingAlgorithm variant = 1;
+ string body = 2;
+ map<string, string> params = 3;
+}
+
 message User {
     string id = 1;
     optional string username = 2;
     optional string email = 3;
-    string password = 4;
+    Hash password = 4;
     optional string image = 5;
     string metadata = 6;
 	google.protobuf.Timestamp created_at = 7;
