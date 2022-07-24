@@ -77,113 +77,114 @@ class HeraApp extends StatefulWidget {
 
 class _HeraAppState extends State<HeraApp> {
   // init
-  late Future<AuthState> initializeNuntioUIFuture;
+  AuthState authState = AuthState.loading;
+  late Future<void> initializeNuntioUIFuture;
   late Config _config;
 
-  Future<void> initializeConfig() async {
-    _config = await HeraClient.service.getConfig();
-    if(_config.logo == ""){
-      _config.logo = "https://raw.githubusercontent.com/nuntiodev/website/main/nuntio/nuntio.png";
-    }
-    return;
-  }
-
-  Future<AuthState> initializeAuthStatus() async {
+  Future<void> initializeAuthStatus() async {
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.none) {
       //  no data connection
-      return AuthState.noConnection;
+      setState(() {
+        authState = AuthState.noConnection;
+      });
+      return;
     }
-    bool isAuthenticated = await HeraClient.service.isAuthenticated();
-    if (isAuthenticated) {
-      return AuthState.authenticated;
+    bool authenticated = await HeraClient.service.isAuthenticated();
+    if (authenticated) {
+      setState(() {
+        authState = AuthState.authenticated;
+      });
+    } else {
+      _config = await HeraClient.service.getConfig();
+      if (_config.logo == "") {
+        _config.logo =
+            "https://raw.githubusercontent.com/nuntiodev/website/main/nuntio/nuntio.png";
+      }
+      setState(() {
+        authState = AuthState.notAuthenticated;
+      });
     }
-    return AuthState.notAuthenticated;
+    debugPrint(authState.toString());
   }
 
-  Future<AuthState> initializeNuntioUI() async {
-    await initializeConfig();
-    return await initializeAuthStatus();
-  }
-
-  _HeraAppState() {
-    initializeNuntioUIFuture = initializeNuntioUI();
+  @override
+  void initState() {
+    HeraClient.onLogout = (){
+      setState(() {
+        authState = AuthState.notAuthenticated;
+      });
+    };
+    initializeAuthStatus();
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
-      debugShowCheckedModeBanner: false,
-      theme: CupertinoThemeData(
-        primaryColor: widget.nuntioColor.primaryColor,
-      ),
-      home: FutureBuilder<AuthState>(
-        future: initializeNuntioUIFuture,
-        builder: (BuildContext context, AsyncSnapshot<AuthState> snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.waiting:
+        debugShowCheckedModeBanner: false,
+        theme: CupertinoThemeData(
+          primaryColor: widget.nuntioColor.primaryColor,
+        ),
+        home: Builder(builder: (context) {
+          switch (authState) {
+            case AuthState.loading:
               return Center(
-                child: NuntioIndicator(
-                  size: 20,
-                ),
+                  child: NuntioIndicator(
+                size: 28,
+                color: widget.brightness == Brightness.light
+                    ? CupertinoColors.black
+                    : CupertinoColors.white,
+              ));
+            case AuthState.authenticated:
+              return widget.child;
+            case AuthState.notAuthenticated:
+              return LoginPage(
+                loginType: widget.loginType,
+                identifierInputType: widget.identifierInputType,
+                brightness: widget.brightness,
+                nuntioFooter: widget.nuntioFooter,
+                logo: widget.logo ??
+                    SvgPicture.network(
+                      _config.logo,
+                      height: widget.nuntioStyle.logoHeight,
+                      placeholderBuilder: (context) {
+                        return Image(
+                          image: NetworkImage(_config.logo),
+                          height: widget.nuntioStyle.logoHeight,
+                        );
+                      },
+                    ),
+                nuntioText: widget.nuntioText,
+                nuntioColor: widget.nuntioColor,
+                nuntioStyle: widget.nuntioStyle,
+                nuntioTextStyle: widget.nuntioTextStyle,
+                onLogin: (BuildContext buildContext) {
+                  setState(() {
+                    authState = AuthState.authenticated;
+                  });
+                },
+                onRegister: (BuildContext buildContext) {
+                  setState(() {
+                    authState = AuthState.authenticated;
+                  });
+                },
+                background: widget.nuntioStyle.background,
+                config: _config,
               );
-            case ConnectionState.done:
-              if (snapshot.data == AuthState.authenticated) {
-                return widget.child;
-              }
-              if (snapshot.data == null ||
-                  snapshot.data == AuthState.notAuthenticated) {
-                return LoginPage(
-                  loginType: widget.loginType,
-                  identifierInputType: widget.identifierInputType,
-                  brightness: widget.brightness,
-                  nuntioFooter: widget.nuntioFooter,
-                  logo: widget.logo ??
-                      SvgPicture.network(
-                        _config.logo,
-                        height: widget.nuntioStyle.logoHeight,
-                        placeholderBuilder: (context) {
-                          return Image(
-                            image: NetworkImage(_config.logo),
-                            height: widget.nuntioStyle.logoHeight,
-                          );
-                        },
-                      ),
-                  nuntioText: widget.nuntioText,
-                  nuntioColor: widget.nuntioColor,
-                  nuntioStyle: widget.nuntioStyle,
-                  nuntioTextStyle: widget.nuntioTextStyle,
-                  onLogin: (BuildContext buildContext) {
-                    Navigator.of(buildContext).pushReplacement(
-                      CupertinoPageRoute(builder: (context) => widget.child),
-                    );
-                  },
-                  onRegister: (BuildContext buildContext) {
-                    Navigator.of(buildContext).pushReplacement(
-                      CupertinoPageRoute(builder: (context) => widget.child),
-                    );
-                  },
-                  background: widget.nuntioStyle.background,
-                  config: _config,
-                );
-              } else {
-                return NoConnection(
-                  background: widget.nuntioStyle.background,
-                  logo: widget.logo ??
-                      Image(
-                        image: NetworkImage(_config.logo),
-                        height: widget.nuntioStyle.logoHeight,
-                      ),
-                  nuntioText: widget.nuntioText,
-                  nuntioTextStyle: widget.nuntioTextStyle,
-                  nuntioColor: widget.nuntioColor,
-                );
-              }
             default:
-              return Text("Error");
+              return NoConnection(
+                background: widget.nuntioStyle.background,
+                logo: widget.logo ??
+                    Image(
+                      image: NetworkImage(_config.logo),
+                      height: widget.nuntioStyle.logoHeight,
+                    ),
+                nuntioText: widget.nuntioText,
+                nuntioTextStyle: widget.nuntioTextStyle,
+                nuntioColor: widget.nuntioColor,
+              );
           }
-        },
-      ),
-    );
+        }));
   }
 }

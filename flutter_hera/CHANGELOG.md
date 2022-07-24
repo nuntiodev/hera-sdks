@@ -5,3 +5,4 @@
 ## 0.0.2
 
 - Hera now comes with UI and with support for multiple authentication schemes.
+

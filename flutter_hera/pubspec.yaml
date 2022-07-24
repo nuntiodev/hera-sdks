@@ -1,6 +1,6 @@
 name: flutter_hera
 description: gRPC files for Hera
-version: 0.0.4
+version: 0.0.15
 homepage: https://github.com/nuntiodev
 
 environment:

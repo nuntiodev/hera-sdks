@@ -21,8 +21,6 @@ class HeraService {
     required this.sharedPreferences,
     required this.namespace,
     required this.debug,
-    Function? onLogin,
-    Function? onLogout,
   }) {
     _authorize = authorize;
   }

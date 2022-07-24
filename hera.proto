@@ -50,6 +50,12 @@ enum LanguageCode {
     DK = 2;
 }
 
+enum HasingAlgorithm {
+    INVALID_HASHING_ALGORITHM = 1;
+    BCRYPT = 2;
+    SCRYPT = 3;
+}
+
 message Config {
     string name = 1;
     string logo = 2;
@@ -63,6 +69,8 @@ message Config {
     bool verify_phone = 10;
     string public_key = 11;
     repeated string roles = 12;
+    int32 bcryptCost = 13;
+    HasingAlgorithm hasing_algorithm = 14;
 }
 
 message User {

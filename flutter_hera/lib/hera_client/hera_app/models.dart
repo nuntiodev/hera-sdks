@@ -295,7 +295,7 @@ class NuntioStyle {
     borderColor = _borderColor ??
         (brightness == Brightness.dark ? Color(0xff1d1d1d) : Color(0xffDBE3E7));
     textFieldColor =
-        _textFieldColor ?? (brightness == Brightness.dark ? black : white);
+        _textFieldColor ?? (brightness == Brightness.dark ? Color(0xff3b3c3e) : white);
     buttonWidth = _buttonWidth ?? double.infinity;
     buttonHeight = _buttonHeight ?? 48;
     logoHeight = _logoHeight ?? 120;
@@ -303,12 +303,12 @@ class NuntioStyle {
         (brightness == Brightness.dark
             ? BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [0.4, 1.0],
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+            //stops: [0.4, 1.0],
             colors: [
-              Color(0xff000000),
-              Color(0xff343434),
+              Color(0xff0f0f0f),
+              Color(0xff414346),
             ],
           ),
         )

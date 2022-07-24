@@ -7,4 +7,5 @@ enum AuthState {
   authenticated,
   notAuthenticated,
   noConnection,
+  loading,
 }
