@@ -50,7 +50,7 @@ enum LanguageCode {
     DK = 2;
 }
 
-enum HasingAlgorithm {
+enum HashingAlgorithm {
     INVALID_HASHING_ALGORITHM = 0;
     BCRYPT = 1;
     SCRYPT = 2;
@@ -82,13 +82,13 @@ message Config {
     bool verify_phone = 10;
     string public_key = 11;
     repeated string roles = 12;
-    HasingAlgorithm hasing_algorithm = 13;
+    HashingAlgorithm hashing_algorithm = 13;
     Bcrypt bcrypt = 14;
     Scrypt scrypt = 15;
 }
 
 message Hash {
- HasingAlgorithm variant = 1;
+ HashingAlgorithm variant = 1;
  string body = 2;
  map<string, string> params = 3;
 }
