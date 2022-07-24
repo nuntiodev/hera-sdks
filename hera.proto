@@ -57,7 +57,7 @@ enum HasingAlgorithm {
 }
 
 message Bcrypt {
-    cost = 1;
+    int32 cost = 1;
 }
 
 messge Scrypt {
