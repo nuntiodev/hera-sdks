@@ -34,7 +34,7 @@ func (r *UpdateUserPasswordRequest) Execute(ctx context.Context) error {
 		Phone:    r.findOptions.Phone,
 	}
 	updateUser := &go_hera.User{
-		Password: r.password,
+		Password: &go_hera.Hash{Body: r.password},
 	}
 	if _, err := r.client.UpdateUserPassword(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,

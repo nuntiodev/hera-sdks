@@ -36,7 +36,7 @@ func (r *LoginUserRequest) Execute(ctx context.Context) (*go_hera.Token, error) 
 		Id:       r.findOptions.Id,
 		Username: r.findOptions.Username,
 		Phone:    r.findOptions.Phone,
-		Password: r.password,
+		Password: &go_hera.Hash{Body: r.password},
 	}
 	resp, err := r.client.Login(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,

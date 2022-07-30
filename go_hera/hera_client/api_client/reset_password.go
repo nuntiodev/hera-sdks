@@ -47,8 +47,8 @@ func (r *ResetPasswordRequest) Execute(ctx context.Context) error {
 		Id:                r.findOptions.Id,
 		Username:          r.findOptions.Username,
 		Phone:             r.findOptions.Phone,
-		ResetPasswordCode: r.resetPasswordCode,
-		Password:          r.password,
+		ResetPasswordCode: &go_hera.Hash{Body: r.resetPasswordCode},
+		Password:          &go_hera.Hash{Body: r.password},
 	}
 	if _, err := r.client.ResetPassword(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,

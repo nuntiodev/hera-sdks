@@ -1,14 +1,28 @@
 {
-  "logo": "",
-  "app_name": "",
-  "disable_signup": false,
-  "disable_login": false,
-  "verify_email": false,
-  "verify_phone": false,
-  "validate_password": true,
-  "login_mechanisms": [
-    "email/password",
-    "phone/password",
-    "username/password"
+  "default_config": {
+    "logo": "",
+    "app_name": "",
+    "hashing_algorithm": "scrypt",
+    "disable_signup": false,
+    "disable_login": false,
+    "verify_email": false,
+    "verify_phone": false,
+    "validate_password": true,
+    "login_mechanisms": [
+      "email/password",
+      "phone/password",
+      "username/password"
+    ]
+  },
+  "users": [
+    {
+      "first_name": "Root",
+      "last_name": "User",
+      "email": "root@nuntio.io",
+      "password": "TeamNuntio22!",
+      "username": "nuntio-root-user",
+      "image": "https://static.wikia.nocookie.net/imagecomics/images/c/ca/Invincible_Vol_1_79_002.jpg/revision/latest/scale-to-width-down/200?cb=20150415153523",
+      "birthdate": "1997-09-07"
+    }
   ]
 }

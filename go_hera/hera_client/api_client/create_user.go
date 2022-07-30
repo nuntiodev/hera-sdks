@@ -47,7 +47,9 @@ func (r *CreateUserRequest) Execute(ctx context.Context) (*go_hera.User, error) 
 		return nil, err
 	}
 	createUser := &go_hera.User{
-		Password: r.password,
+		Password: &go_hera.Hash{
+			Body: r.password,
+		},
 	}
 	if r.userOptions != nil {
 		createUser.Id = r.userOptions.Id

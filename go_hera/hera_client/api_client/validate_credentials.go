@@ -30,7 +30,7 @@ func (r *ValidateCredentialsUserRequest) Execute(ctx context.Context) (*go_hera.
 		Email:    r.findOptions.Email,
 		Id:       r.findOptions.Id,
 		Username: r.findOptions.Username,
-		Password: r.password,
+		Password: &go_hera.Hash{Body: r.password},
 		Phone:    r.findOptions.Phone,
 	}
 	resp, err := r.client.ValidateCredentials(ctx, &go_hera.HeraRequest{

@@ -31,11 +31,13 @@ func (r *VerifyEmailRequest) Execute(ctx context.Context) error {
 		return err
 	}
 	user := &go_hera.User{
-		Email:                 r.findOptions.Email,
-		Id:                    r.findOptions.Id,
-		Username:              r.findOptions.Username,
-		Phone:                 r.findOptions.Phone,
-		EmailVerificationCode: r.verifyEmailCode,
+		Email:    r.findOptions.Email,
+		Id:       r.findOptions.Id,
+		Username: r.findOptions.Username,
+		Phone:    r.findOptions.Phone,
+		EmailVerificationCode: &go_hera.Hash{
+			Body: r.verifyEmailCode,
+		},
 	}
 	if _, err := r.client.VerifyEmail(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,

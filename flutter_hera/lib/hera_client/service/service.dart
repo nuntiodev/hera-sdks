@@ -127,7 +127,7 @@ class HeraService {
     user.username = username ?? "";
     user.email = email ?? "";
     user.image = image ?? "";
-    user.password = password ?? "";
+    user.password = Hash(body: password ?? "");
     req.cloudToken = await _authorize.getAccessToken();
     req.user = user;
     req.namespace = namespace;
@@ -164,7 +164,7 @@ class HeraService {
     user.id = userId ?? "";
     user.username = username ?? "";
     user.email = email ?? "";
-    user.password = password;
+    user.password = Hash(body: password);;
     req.cloudToken = cloudToken;
     req.user = user;
     req.namespace = namespace;
@@ -243,8 +243,8 @@ class HeraService {
     user.id = userId ?? "";
     user.username = username ?? "";
     user.email = email ?? "";
-    user.emailVerificationCode = code;
-    user.phoneVerificationCode = code;
+    user.emailVerificationCode = Hash(body: code);
+    user.phoneVerificationCode = Hash(body: code);
     req.cloudToken = cloudToken;
     req.user = user;
     req.namespace = namespace;

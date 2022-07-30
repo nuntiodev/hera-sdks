@@ -35,7 +35,7 @@ func (r *VerifyPhoneRequest) Execute(ctx context.Context) error {
 		Id:                    r.findOptions.Id,
 		Username:              r.findOptions.Username,
 		Phone:                 r.findOptions.Phone,
-		PhoneVerificationCode: r.verifyPhoneCode,
+		PhoneVerificationCode: &go_hera.Hash{Body: r.verifyPhoneCode},
 	}
 	if _, err := r.client.VerifyPhone(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,
