@@ -210,9 +210,12 @@ const Query$json = const {
     const {'1': 'sort', '3': 3, '4': 1, '5': 14, '6': '.Hera.Query.SortBy', '10': 'sort'},
     const {'1': 'order', '3': 4, '4': 1, '5': 14, '6': '.Hera.Query.Order', '10': 'order'},
     const {'1': 'search', '3': 5, '4': 1, '5': 9, '10': 'search'},
-    const {'1': 'role', '3': 6, '4': 1, '5': 9, '10': 'role'},
+    const {'1': 'role', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'role', '17': true},
   ],
   '4': const [Query_SortBy$json, Query_Order$json],
+  '8': const [
+    const {'1': '_role'},
+  ],
 };
 
 @$core.Deprecated('Use queryDescriptor instead')
@@ -234,7 +237,7 @@ const Query_Order$json = const {
 };
 
 /// Descriptor for `Query`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List queryDescriptor = $convert.base64Decode('CgVRdWVyeRISCgRmcm9tGAEgASgFUgRmcm9tEg4KAnRvGAIgASgFUgJ0bxImCgRzb3J0GAMgASgOMhIuSGVyYS5RdWVyeS5Tb3J0QnlSBHNvcnQSJwoFb3JkZXIYBCABKA4yES5IZXJhLlF1ZXJ5Lk9yZGVyUgVvcmRlchIWCgZzZWFyY2gYBSABKAlSBnNlYXJjaBISCgRyb2xlGAYgASgJUgRyb2xlIicKBlNvcnRCeRIOCgpDUkVBVEVEX0FUEAASDQoJVVBEQVRFX0FUEAEiGQoFT3JkZXISBwoDSU5DEAASBwoDREVDEAE=');
+final $typed_data.Uint8List queryDescriptor = $convert.base64Decode('CgVRdWVyeRISCgRmcm9tGAEgASgFUgRmcm9tEg4KAnRvGAIgASgFUgJ0bxImCgRzb3J0GAMgASgOMhIuSGVyYS5RdWVyeS5Tb3J0QnlSBHNvcnQSJwoFb3JkZXIYBCABKA4yES5IZXJhLlF1ZXJ5Lk9yZGVyUgVvcmRlchIWCgZzZWFyY2gYBSABKAlSBnNlYXJjaBIXCgRyb2xlGAYgASgJSABSBHJvbGWIAQEiJwoGU29ydEJ5Eg4KCkNSRUFURURfQVQQABINCglVUERBVEVfQVQQASIZCgVPcmRlchIHCgNJTkMQABIHCgNERUMQAUIHCgVfcm9sZQ==');
 @$core.Deprecated('Use tokenDescriptor instead')
 const Token$json = const {
   '1': 'Token',

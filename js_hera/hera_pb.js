@@ -3310,8 +3310,8 @@ proto.Hera.Query.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getRole();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
     writer.writeString(
       6,
       f
@@ -3440,7 +3440,25 @@ proto.Hera.Query.prototype.getRole = function() {
  * @return {!proto.Hera.Query} returns this
  */
 proto.Hera.Query.prototype.setRole = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.Hera.Query} returns this
+ */
+proto.Hera.Query.prototype.clearRole = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Hera.Query.prototype.hasRole = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
