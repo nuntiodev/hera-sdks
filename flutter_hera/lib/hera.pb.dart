@@ -1037,7 +1037,7 @@ class Query extends $pb.GeneratedMessage {
     ..e<Query_Order>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'order', $pb.PbFieldType.OE, defaultOrMaker: Query_Order.INC, valueOf: Query_Order.valueOf, enumValues: Query_Order.values)
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'search')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metaFilter')
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'searchMetadata')
     ..hasRequiredFields = false
   ;
 
@@ -1049,7 +1049,7 @@ class Query extends $pb.GeneratedMessage {
     Query_Order? order,
     $core.String? search,
     $core.String? role,
-    $core.String? metaFilter,
+    $core.String? searchMetadata,
   }) {
     final _result = create();
     if (from != null) {
@@ -1070,8 +1070,8 @@ class Query extends $pb.GeneratedMessage {
     if (role != null) {
       _result.role = role;
     }
-    if (metaFilter != null) {
-      _result.metaFilter = metaFilter;
+    if (searchMetadata != null) {
+      _result.searchMetadata = searchMetadata;
     }
     return _result;
   }
@@ -1151,13 +1151,13 @@ class Query extends $pb.GeneratedMessage {
   void clearRole() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get metaFilter => $_getSZ(6);
+  $core.String get searchMetadata => $_getSZ(6);
   @$pb.TagNumber(7)
-  set metaFilter($core.String v) { $_setString(6, v); }
+  set searchMetadata($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasMetaFilter() => $_has(6);
+  $core.bool hasSearchMetadata() => $_has(6);
   @$pb.TagNumber(7)
-  void clearMetaFilter() => clearField(7);
+  void clearSearchMetadata() => clearField(7);
 }
 
 class Token extends $pb.GeneratedMessage {
