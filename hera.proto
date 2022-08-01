@@ -82,10 +82,9 @@ message Config {
     repeated LoginType supported_login_mechanisms = 9;
     bool verify_phone = 10;
     string public_key = 11;
-    repeated string roles = 12;
-    HashingAlgorithm hashing_algorithm = 13;
-    Bcrypt bcrypt = 14;
-    Scrypt scrypt = 15;
+    HashingAlgorithm hashing_algorithm = 12;
+    Bcrypt bcrypt = 13;
+    Scrypt scrypt = 14;
 }
 
 message Hash {
