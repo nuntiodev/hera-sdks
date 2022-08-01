@@ -6,23 +6,17 @@ import (
 	"github.com/nuntiodev/hera-sdks/go_hera"
 	"github.com/nuntiodev/hera-sdks/go_hera/hera_client/hera_options"
 	"github.com/nuntiodev/nuntio-cloud-sdks/go_nuntio_cloud/cloud_authorize"
-	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-type UpdateUserProfileRequest struct {
+type UpdateUserRoleRequest struct {
 	findOptions *hera_options.FindOptions
-	userOptions *hera_options.UserOptions
+	role        string
 	namespace   string
 	client      go_hera.ServiceClient
 	authorize   cloud_authorize.CloudAuthorize
 }
 
-func (r *UpdateUserProfileRequest) SetUserOptions(userOptions *hera_options.UserOptions) *UpdateUserProfileRequest {
-	r.userOptions = userOptions
-	return r
-}
-
-func (r *UpdateUserProfileRequest) Execute(ctx context.Context) error {
+func (r *UpdateUserRoleRequest) Execute(ctx context.Context) error {
 	accessToken, err := r.authorize.GetAccessToken(ctx)
 	if err != nil {
 		return err
@@ -37,12 +31,8 @@ func (r *UpdateUserProfileRequest) Execute(ctx context.Context) error {
 		Id:       r.findOptions.Id,
 		Username: r.findOptions.Username,
 	}
-	updateUser := &go_hera.User{}
-	if r.userOptions != nil {
-		updateUser.FirstName = r.userOptions.FirstName
-		updateUser.LastName = r.userOptions.LastName
-		updateUser.Birthdate = timestamppb.New(r.userOptions.Birthdate)
-		updateUser.Image = r.userOptions.Image
+	updateUser := &go_hera.User{
+		Role: r.role,
 	}
 	if _, err := r.client.UpdateUserProfile(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,
@@ -55,11 +45,12 @@ func (r *UpdateUserProfileRequest) Execute(ctx context.Context) error {
 	return nil
 }
 
-func (a *apiClient) UpdateUserProfile(findOptions *hera_options.FindOptions) *UpdateUserProfileRequest {
-	return &UpdateUserProfileRequest{
+func (a *apiClient) UpdateUserRole(findOptions *hera_options.FindOptions, role string) *UpdateUserRoleRequest {
+	return &UpdateUserRoleRequest{
 		findOptions: findOptions,
 		namespace:   a.namespace,
 		client:      a.client,
 		authorize:   a.authorize,
+		role:        role,
 	}
 }

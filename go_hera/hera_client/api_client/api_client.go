@@ -54,6 +54,7 @@ type ApiClient interface {
 	UpdateUserMetadata(findOptions *hera_options.FindOptions) *UpdateUserMetadataRequest
 	UpdateUserPassword(findOptions *hera_options.FindOptions, password string) *UpdateUserPasswordRequest
 	UpdateUserProfile(findOptions *hera_options.FindOptions) *UpdateUserProfileRequest
+	UpdateUserRole(findOptions *hera_options.FindOptions, role string) *UpdateUserRoleRequest
 	ValidateToken(ctx context.Context, jwtToken string, forceValidateServerSide bool) (*go_hera.User, error)
 	ValidateCredentials(findOptions *hera_options.FindOptions, password string) *ValidateCredentialsUserRequest
 	VerifyEmail(code string, findOptions *hera_options.FindOptions) *VerifyEmailRequest
