@@ -666,7 +666,7 @@ proto.Hera.Scrypt.prototype.setKeyLen = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.Hera.Config.repeatedFields_ = [9,12];
+proto.Hera.Config.repeatedFields_ = [9];
 
 
 
@@ -710,8 +710,7 @@ proto.Hera.Config.toObject = function(includeInstance, msg) {
     supportedLoginMechanismsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     verifyPhone: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     publicKey: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    rolesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
-    hashingAlgorithm: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    hashingAlgorithm: jspb.Message.getFieldWithDefault(msg, 12, 0),
     bcrypt: (f = msg.getBcrypt()) && proto.Hera.Bcrypt.toObject(includeInstance, f),
     scrypt: (f = msg.getScrypt()) && proto.Hera.Scrypt.toObject(includeInstance, f)
   };
@@ -799,19 +798,15 @@ proto.Hera.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPublicKey(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addRoles(value);
-      break;
-    case 13:
       var value = /** @type {!proto.Hera.HashingAlgorithm} */ (reader.readEnum());
       msg.setHashingAlgorithm(value);
       break;
-    case 14:
+    case 13:
       var value = new proto.Hera.Bcrypt;
       reader.readMessage(value,proto.Hera.Bcrypt.deserializeBinaryFromReader);
       msg.setBcrypt(value);
       break;
-    case 15:
+    case 14:
       var value = new proto.Hera.Scrypt;
       reader.readMessage(value,proto.Hera.Scrypt.deserializeBinaryFromReader);
       msg.setScrypt(value);
@@ -924,24 +919,17 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getRolesList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      12,
-      f
-    );
-  }
   f = message.getHashingAlgorithm();
   if (f !== 0.0) {
     writer.writeEnum(
-      13,
+      12,
       f
     );
   }
   f = message.getBcrypt();
   if (f != null) {
     writer.writeMessage(
-      14,
+      13,
       f,
       proto.Hera.Bcrypt.serializeBinaryToWriter
     );
@@ -949,7 +937,7 @@ proto.Hera.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getScrypt();
   if (f != null) {
     writer.writeMessage(
-      15,
+      14,
       f,
       proto.Hera.Scrypt.serializeBinaryToWriter
     );
@@ -1213,48 +1201,11 @@ proto.Hera.Config.prototype.setPublicKey = function(value) {
 
 
 /**
- * repeated string roles = 12;
- * @return {!Array<string>}
- */
-proto.Hera.Config.prototype.getRolesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.Hera.Config} returns this
- */
-proto.Hera.Config.prototype.setRolesList = function(value) {
-  return jspb.Message.setField(this, 12, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.Hera.Config} returns this
- */
-proto.Hera.Config.prototype.addRoles = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.Hera.Config} returns this
- */
-proto.Hera.Config.prototype.clearRolesList = function() {
-  return this.setRolesList([]);
-};
-
-
-/**
- * optional HashingAlgorithm hashing_algorithm = 13;
+ * optional HashingAlgorithm hashing_algorithm = 12;
  * @return {!proto.Hera.HashingAlgorithm}
  */
 proto.Hera.Config.prototype.getHashingAlgorithm = function() {
-  return /** @type {!proto.Hera.HashingAlgorithm} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+  return /** @type {!proto.Hera.HashingAlgorithm} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
@@ -1263,17 +1214,17 @@ proto.Hera.Config.prototype.getHashingAlgorithm = function() {
  * @return {!proto.Hera.Config} returns this
  */
 proto.Hera.Config.prototype.setHashingAlgorithm = function(value) {
-  return jspb.Message.setProto3EnumField(this, 13, value);
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
 /**
- * optional Bcrypt bcrypt = 14;
+ * optional Bcrypt bcrypt = 13;
  * @return {?proto.Hera.Bcrypt}
  */
 proto.Hera.Config.prototype.getBcrypt = function() {
   return /** @type{?proto.Hera.Bcrypt} */ (
-    jspb.Message.getWrapperField(this, proto.Hera.Bcrypt, 14));
+    jspb.Message.getWrapperField(this, proto.Hera.Bcrypt, 13));
 };
 
 
@@ -1282,7 +1233,7 @@ proto.Hera.Config.prototype.getBcrypt = function() {
  * @return {!proto.Hera.Config} returns this
 */
 proto.Hera.Config.prototype.setBcrypt = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -1300,17 +1251,17 @@ proto.Hera.Config.prototype.clearBcrypt = function() {
  * @return {boolean}
  */
 proto.Hera.Config.prototype.hasBcrypt = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional Scrypt scrypt = 15;
+ * optional Scrypt scrypt = 14;
  * @return {?proto.Hera.Scrypt}
  */
 proto.Hera.Config.prototype.getScrypt = function() {
   return /** @type{?proto.Hera.Scrypt} */ (
-    jspb.Message.getWrapperField(this, proto.Hera.Scrypt, 15));
+    jspb.Message.getWrapperField(this, proto.Hera.Scrypt, 14));
 };
 
 
@@ -1319,7 +1270,7 @@ proto.Hera.Config.prototype.getScrypt = function() {
  * @return {!proto.Hera.Config} returns this
 */
 proto.Hera.Config.prototype.setScrypt = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -1337,7 +1288,7 @@ proto.Hera.Config.prototype.clearScrypt = function() {
  * @return {boolean}
  */
 proto.Hera.Config.prototype.hasScrypt = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
@@ -3233,7 +3184,8 @@ proto.Hera.Query.toObject = function(includeInstance, msg) {
     to: jspb.Message.getFieldWithDefault(msg, 2, 0),
     sort: jspb.Message.getFieldWithDefault(msg, 3, 0),
     order: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    search: jspb.Message.getFieldWithDefault(msg, 5, "")
+    search: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    role: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -3289,6 +3241,10 @@ proto.Hera.Query.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setSearch(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRole(value);
       break;
     default:
       reader.skipField();
@@ -3351,6 +3307,13 @@ proto.Hera.Query.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getRole();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -3460,6 +3423,24 @@ proto.Hera.Query.prototype.getSearch = function() {
  */
 proto.Hera.Query.prototype.setSearch = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string role = 6;
+ * @return {string}
+ */
+proto.Hera.Query.prototype.getRole = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Hera.Query} returns this
+ */
+proto.Hera.Query.prototype.setRole = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

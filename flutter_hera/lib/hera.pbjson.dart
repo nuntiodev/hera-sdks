@@ -111,15 +111,14 @@ const Config$json = const {
     const {'1': 'supported_login_mechanisms', '3': 9, '4': 3, '5': 14, '6': '.Hera.LoginType', '10': 'supportedLoginMechanisms'},
     const {'1': 'verify_phone', '3': 10, '4': 1, '5': 8, '10': 'verifyPhone'},
     const {'1': 'public_key', '3': 11, '4': 1, '5': 9, '10': 'publicKey'},
-    const {'1': 'roles', '3': 12, '4': 3, '5': 9, '10': 'roles'},
-    const {'1': 'hashing_algorithm', '3': 13, '4': 1, '5': 14, '6': '.Hera.HashingAlgorithm', '10': 'hashingAlgorithm'},
-    const {'1': 'bcrypt', '3': 14, '4': 1, '5': 11, '6': '.Hera.Bcrypt', '10': 'bcrypt'},
-    const {'1': 'scrypt', '3': 15, '4': 1, '5': 11, '6': '.Hera.Scrypt', '10': 'scrypt'},
+    const {'1': 'hashing_algorithm', '3': 12, '4': 1, '5': 14, '6': '.Hera.HashingAlgorithm', '10': 'hashingAlgorithm'},
+    const {'1': 'bcrypt', '3': 13, '4': 1, '5': 11, '6': '.Hera.Bcrypt', '10': 'bcrypt'},
+    const {'1': 'scrypt', '3': 14, '4': 1, '5': 11, '6': '.Hera.Scrypt', '10': 'scrypt'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXkSFAoFcm9sZXMYDCADKAlSBXJvbGVzEkMKEWhhc2hpbmdfYWxnb3JpdGhtGA0gASgOMhYuSGVyYS5IYXNoaW5nQWxnb3JpdGhtUhBoYXNoaW5nQWxnb3JpdGhtEiQKBmJjcnlwdBgOIAEoCzIMLkhlcmEuQmNyeXB0UgZiY3J5cHQSJAoGc2NyeXB0GA8gASgLMgwuSGVyYS5TY3J5cHRSBnNjcnlwdA==');
+final $typed_data.Uint8List configDescriptor = $convert.base64Decode('CgZDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRsb2dvGAIgASgJUgRsb2dvEiUKDmRpc2FibGVfc2lnbnVwGAMgASgIUg1kaXNhYmxlU2lnbnVwEiMKDWRpc2FibGVfbG9naW4YBCABKAhSDGRpc2FibGVMb2dpbhI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSKwoRdmFsaWRhdGVfcGFzc3dvcmQYByABKAhSEHZhbGlkYXRlUGFzc3dvcmQSIQoMdmVyaWZ5X2VtYWlsGAggASgIUgt2ZXJpZnlFbWFpbBJNChpzdXBwb3J0ZWRfbG9naW5fbWVjaGFuaXNtcxgJIAMoDjIPLkhlcmEuTG9naW5UeXBlUhhzdXBwb3J0ZWRMb2dpbk1lY2hhbmlzbXMSIQoMdmVyaWZ5X3Bob25lGAogASgIUgt2ZXJpZnlQaG9uZRIdCgpwdWJsaWNfa2V5GAsgASgJUglwdWJsaWNLZXkSQwoRaGFzaGluZ19hbGdvcml0aG0YDCABKA4yFi5IZXJhLkhhc2hpbmdBbGdvcml0aG1SEGhhc2hpbmdBbGdvcml0aG0SJAoGYmNyeXB0GA0gASgLMgwuSGVyYS5CY3J5cHRSBmJjcnlwdBIkCgZzY3J5cHQYDiABKAsyDC5IZXJhLlNjcnlwdFIGc2NyeXB0');
 @$core.Deprecated('Use hashDescriptor instead')
 const Hash$json = const {
   '1': 'Hash',
@@ -211,6 +210,7 @@ const Query$json = const {
     const {'1': 'sort', '3': 3, '4': 1, '5': 14, '6': '.Hera.Query.SortBy', '10': 'sort'},
     const {'1': 'order', '3': 4, '4': 1, '5': 14, '6': '.Hera.Query.Order', '10': 'order'},
     const {'1': 'search', '3': 5, '4': 1, '5': 9, '10': 'search'},
+    const {'1': 'role', '3': 6, '4': 1, '5': 9, '10': 'role'},
   ],
   '4': const [Query_SortBy$json, Query_Order$json],
 };
@@ -234,7 +234,7 @@ const Query_Order$json = const {
 };
 
 /// Descriptor for `Query`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List queryDescriptor = $convert.base64Decode('CgVRdWVyeRISCgRmcm9tGAEgASgFUgRmcm9tEg4KAnRvGAIgASgFUgJ0bxImCgRzb3J0GAMgASgOMhIuSGVyYS5RdWVyeS5Tb3J0QnlSBHNvcnQSJwoFb3JkZXIYBCABKA4yES5IZXJhLlF1ZXJ5Lk9yZGVyUgVvcmRlchIWCgZzZWFyY2gYBSABKAlSBnNlYXJjaCInCgZTb3J0QnkSDgoKQ1JFQVRFRF9BVBAAEg0KCVVQREFURV9BVBABIhkKBU9yZGVyEgcKA0lOQxAAEgcKA0RFQxAB');
+final $typed_data.Uint8List queryDescriptor = $convert.base64Decode('CgVRdWVyeRISCgRmcm9tGAEgASgFUgRmcm9tEg4KAnRvGAIgASgFUgJ0bxImCgRzb3J0GAMgASgOMhIuSGVyYS5RdWVyeS5Tb3J0QnlSBHNvcnQSJwoFb3JkZXIYBCABKA4yES5IZXJhLlF1ZXJ5Lk9yZGVyUgVvcmRlchIWCgZzZWFyY2gYBSABKAlSBnNlYXJjaBISCgRyb2xlGAYgASgJUgRyb2xlIicKBlNvcnRCeRIOCgpDUkVBVEVEX0FUEAASDQoJVVBEQVRFX0FUEAEiGQoFT3JkZXISBwoDSU5DEAASBwoDREVDEAE=');
 @$core.Deprecated('Use tokenDescriptor instead')
 const Token$json = const {
   '1': 'Token',

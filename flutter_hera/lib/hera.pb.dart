@@ -193,10 +193,9 @@ class Config extends $pb.GeneratedMessage {
     ..pc<LoginType>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportedLoginMechanisms', $pb.PbFieldType.KE, valueOf: LoginType.valueOf, enumValues: LoginType.values, defaultEnumValue: LoginType.NOTHING)
     ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verifyPhone')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey')
-    ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles')
-    ..e<HashingAlgorithm>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hashingAlgorithm', $pb.PbFieldType.OE, defaultOrMaker: HashingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HashingAlgorithm.valueOf, enumValues: HashingAlgorithm.values)
-    ..aOM<Bcrypt>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bcrypt', subBuilder: Bcrypt.create)
-    ..aOM<Scrypt>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'scrypt', subBuilder: Scrypt.create)
+    ..e<HashingAlgorithm>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hashingAlgorithm', $pb.PbFieldType.OE, defaultOrMaker: HashingAlgorithm.INVALID_HASHING_ALGORITHM, valueOf: HashingAlgorithm.valueOf, enumValues: HashingAlgorithm.values)
+    ..aOM<Bcrypt>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bcrypt', subBuilder: Bcrypt.create)
+    ..aOM<Scrypt>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'scrypt', subBuilder: Scrypt.create)
     ..hasRequiredFields = false
   ;
 
@@ -213,7 +212,6 @@ class Config extends $pb.GeneratedMessage {
     $core.Iterable<LoginType>? supportedLoginMechanisms,
     $core.bool? verifyPhone,
     $core.String? publicKey,
-    $core.Iterable<$core.String>? roles,
     HashingAlgorithm? hashingAlgorithm,
     Bcrypt? bcrypt,
     Scrypt? scrypt,
@@ -251,9 +249,6 @@ class Config extends $pb.GeneratedMessage {
     }
     if (publicKey != null) {
       _result.publicKey = publicKey;
-    }
-    if (roles != null) {
-      _result.roles.addAll(roles);
     }
     if (hashingAlgorithm != null) {
       _result.hashingAlgorithm = hashingAlgorithm;
@@ -385,38 +380,35 @@ class Config extends $pb.GeneratedMessage {
   void clearPublicKey() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.List<$core.String> get roles => $_getList(11);
+  HashingAlgorithm get hashingAlgorithm => $_getN(11);
+  @$pb.TagNumber(12)
+  set hashingAlgorithm(HashingAlgorithm v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasHashingAlgorithm() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearHashingAlgorithm() => clearField(12);
 
   @$pb.TagNumber(13)
-  HashingAlgorithm get hashingAlgorithm => $_getN(12);
+  Bcrypt get bcrypt => $_getN(12);
   @$pb.TagNumber(13)
-  set hashingAlgorithm(HashingAlgorithm v) { setField(13, v); }
+  set bcrypt(Bcrypt v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasHashingAlgorithm() => $_has(12);
+  $core.bool hasBcrypt() => $_has(12);
   @$pb.TagNumber(13)
-  void clearHashingAlgorithm() => clearField(13);
+  void clearBcrypt() => clearField(13);
+  @$pb.TagNumber(13)
+  Bcrypt ensureBcrypt() => $_ensure(12);
 
   @$pb.TagNumber(14)
-  Bcrypt get bcrypt => $_getN(13);
+  Scrypt get scrypt => $_getN(13);
   @$pb.TagNumber(14)
-  set bcrypt(Bcrypt v) { setField(14, v); }
+  set scrypt(Scrypt v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasBcrypt() => $_has(13);
+  $core.bool hasScrypt() => $_has(13);
   @$pb.TagNumber(14)
-  void clearBcrypt() => clearField(14);
+  void clearScrypt() => clearField(14);
   @$pb.TagNumber(14)
-  Bcrypt ensureBcrypt() => $_ensure(13);
-
-  @$pb.TagNumber(15)
-  Scrypt get scrypt => $_getN(14);
-  @$pb.TagNumber(15)
-  set scrypt(Scrypt v) { setField(15, v); }
-  @$pb.TagNumber(15)
-  $core.bool hasScrypt() => $_has(14);
-  @$pb.TagNumber(15)
-  void clearScrypt() => clearField(15);
-  @$pb.TagNumber(15)
-  Scrypt ensureScrypt() => $_ensure(14);
+  Scrypt ensureScrypt() => $_ensure(13);
 }
 
 class Hash extends $pb.GeneratedMessage {
@@ -1030,6 +1022,7 @@ class Query extends $pb.GeneratedMessage {
     ..e<Query_SortBy>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', $pb.PbFieldType.OE, defaultOrMaker: Query_SortBy.CREATED_AT, valueOf: Query_SortBy.valueOf, enumValues: Query_SortBy.values)
     ..e<Query_Order>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'order', $pb.PbFieldType.OE, defaultOrMaker: Query_Order.INC, valueOf: Query_Order.valueOf, enumValues: Query_Order.values)
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'search')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role')
     ..hasRequiredFields = false
   ;
 
@@ -1040,6 +1033,7 @@ class Query extends $pb.GeneratedMessage {
     Query_SortBy? sort,
     Query_Order? order,
     $core.String? search,
+    $core.String? role,
   }) {
     final _result = create();
     if (from != null) {
@@ -1056,6 +1050,9 @@ class Query extends $pb.GeneratedMessage {
     }
     if (search != null) {
       _result.search = search;
+    }
+    if (role != null) {
+      _result.role = role;
     }
     return _result;
   }
@@ -1124,6 +1121,15 @@ class Query extends $pb.GeneratedMessage {
   $core.bool hasSearch() => $_has(4);
   @$pb.TagNumber(5)
   void clearSearch() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get role => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set role($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasRole() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRole() => clearField(6);
 }
 
 class Token extends $pb.GeneratedMessage {

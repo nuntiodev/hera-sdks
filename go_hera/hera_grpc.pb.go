@@ -24,6 +24,7 @@ type ServiceClient interface {
 	UpdateUserProfile(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	UpdateUserContact(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	UpdateUserPassword(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
+	UpdateUserRole(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	SearchForUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	GetUser(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
 	GetUsers(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error)
@@ -110,6 +111,15 @@ func (c *serviceClient) UpdateUserContact(ctx context.Context, in *HeraRequest, 
 func (c *serviceClient) UpdateUserPassword(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
 	out := new(HeraResponse)
 	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateUserPassword", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *serviceClient) UpdateUserRole(ctx context.Context, in *HeraRequest, opts ...grpc.CallOption) (*HeraResponse, error) {
+	out := new(HeraResponse)
+	err := c.cc.Invoke(ctx, "/Hera.Service/UpdateUserRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -378,6 +388,7 @@ type ServiceServer interface {
 	UpdateUserProfile(context.Context, *HeraRequest) (*HeraResponse, error)
 	UpdateUserContact(context.Context, *HeraRequest) (*HeraResponse, error)
 	UpdateUserPassword(context.Context, *HeraRequest) (*HeraResponse, error)
+	UpdateUserRole(context.Context, *HeraRequest) (*HeraResponse, error)
 	SearchForUser(context.Context, *HeraRequest) (*HeraResponse, error)
 	GetUser(context.Context, *HeraRequest) (*HeraResponse, error)
 	GetUsers(context.Context, *HeraRequest) (*HeraResponse, error)
@@ -429,6 +440,9 @@ func (UnimplementedServiceServer) UpdateUserContact(context.Context, *HeraReques
 }
 func (UnimplementedServiceServer) UpdateUserPassword(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserPassword not implemented")
+}
+func (UnimplementedServiceServer) UpdateUserRole(context.Context, *HeraRequest) (*HeraResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserRole not implemented")
 }
 func (UnimplementedServiceServer) SearchForUser(context.Context, *HeraRequest) (*HeraResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchForUser not implemented")
@@ -630,6 +644,24 @@ func _Service_UpdateUserPassword_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ServiceServer).UpdateUserPassword(ctx, req.(*HeraRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Service_UpdateUserRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HeraRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ServiceServer).UpdateUserRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Hera.Service/UpdateUserRole",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ServiceServer).UpdateUserRole(ctx, req.(*HeraRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1168,6 +1200,10 @@ var Service_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateUserPassword",
 			Handler:    _Service_UpdateUserPassword_Handler,
+		},
+		{
+			MethodName: "UpdateUserRole",
+			Handler:    _Service_UpdateUserRole_Handler,
 		},
 		{
 			MethodName: "SearchForUser",

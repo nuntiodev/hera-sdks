@@ -444,6 +444,67 @@ proto.Hera.ServicePromiseClient.prototype.updateUserPassword =
  *   !proto.Hera.HeraRequest,
  *   !proto.Hera.HeraResponse>}
  */
+const methodDescriptor_Service_UpdateUserRole = new grpc.web.MethodDescriptor(
+  '/Hera.Service/UpdateUserRole',
+  grpc.web.MethodType.UNARY,
+  proto.Hera.HeraRequest,
+  proto.Hera.HeraResponse,
+  /**
+   * @param {!proto.Hera.HeraRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Hera.HeraResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Hera.HeraRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Hera.HeraResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Hera.HeraResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Hera.ServiceClient.prototype.updateUserRole =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Hera.Service/UpdateUserRole',
+      request,
+      metadata || {},
+      methodDescriptor_Service_UpdateUserRole,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Hera.HeraRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Hera.HeraResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Hera.ServicePromiseClient.prototype.updateUserRole =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Hera.Service/UpdateUserRole',
+      request,
+      metadata || {},
+      methodDescriptor_Service_UpdateUserRole);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Hera.HeraRequest,
+ *   !proto.Hera.HeraResponse>}
+ */
 const methodDescriptor_Service_SearchForUser = new grpc.web.MethodDescriptor(
   '/Hera.Service/SearchForUser',
   grpc.web.MethodType.UNARY,
