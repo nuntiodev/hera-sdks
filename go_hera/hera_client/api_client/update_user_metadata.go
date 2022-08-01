@@ -3,6 +3,7 @@ package api_client
 import (
 	"context"
 	"encoding/json"
+	"github.com/nuntiodev/x/pointerx"
 
 	"github.com/nuntiodev/hera-sdks/go_hera"
 	"github.com/nuntiodev/hera-sdks/go_hera/hera_client/hera_options"
@@ -10,15 +11,25 @@ import (
 )
 
 type UpdateUserMetadataRequest struct {
-	metadata    interface{}
-	findOptions *hera_options.FindOptions
-	namespace   string
-	client      go_hera.ServiceClient
-	authorize   cloud_authorize.CloudAuthorize
+	encryptedMetadata  interface{}
+	searchableMetadata interface{}
+	findOptions        *hera_options.FindOptions
+	namespace          string
+	client             go_hera.ServiceClient
+	authorize          cloud_authorize.CloudAuthorize
 }
 
-func (r *UpdateUserMetadataRequest) SetMetadata(metadata interface{}) *UpdateUserMetadataRequest {
-	r.metadata = metadata
+func (r *UpdateUserMetadataRequest) SetSearchableMetadata(metadata interface{}) *UpdateUserMetadataRequest {
+	if metadata != nil {
+		r.searchableMetadata = metadata
+	}
+	return r
+}
+
+func (r *UpdateUserMetadataRequest) SetEncryptedMetadata(metadata interface{}) *UpdateUserMetadataRequest {
+	if metadata != nil {
+		r.encryptedMetadata = metadata
+	}
 	return r
 }
 
@@ -38,14 +49,19 @@ func (r *UpdateUserMetadataRequest) Execute(ctx context.Context) error {
 		Username: r.findOptions.Username,
 	}
 	updateUser := &go_hera.User{}
-	if r.metadata != nil {
-		jsonMetadata, err := json.Marshal(r.metadata)
+	if r.encryptedMetadata != nil {
+		jsonMetadata, err := json.Marshal(r.encryptedMetadata)
 		if err != nil {
 			return err
 		}
-		updateUser.Metadata = string(jsonMetadata)
-	} else {
-		r.metadata = ""
+		updateUser.EncryptedMetadata = pointerx.StringPtr(string(jsonMetadata))
+	}
+	if r.searchableMetadata != nil {
+		jsonMetadata, err := json.Marshal(r.searchableMetadata)
+		if err != nil {
+			return err
+		}
+		updateUser.SearchableMetadata = pointerx.StringPtr(string(jsonMetadata))
 	}
 	if _, err := r.client.UpdateUserMetadata(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,

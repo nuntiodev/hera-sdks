@@ -3,6 +3,7 @@ package api_client
 import (
 	"context"
 	"encoding/json"
+	"github.com/nuntiodev/x/pointerx"
 
 	"github.com/nuntiodev/hera-sdks/go_hera"
 	"github.com/nuntiodev/hera-sdks/go_hera/hera_client/hera_options"
@@ -11,13 +12,14 @@ import (
 )
 
 type CreateUserRequest struct {
-	userOptions      *hera_options.UserOptions
-	metadata         interface{}
-	password         string
-	validatePassword bool
-	namespace        string
-	client           go_hera.ServiceClient
-	authorize        cloud_authorize.CloudAuthorize
+	userOptions        *hera_options.UserOptions
+	encryptedMetadata  interface{}
+	searchableMetadata interface{}
+	password           string
+	validatePassword   bool
+	namespace          string
+	client             go_hera.ServiceClient
+	authorize          cloud_authorize.CloudAuthorize
 }
 
 func (r *CreateUserRequest) SetUserOptions(options *hera_options.UserOptions) *CreateUserRequest {
@@ -27,9 +29,16 @@ func (r *CreateUserRequest) SetUserOptions(options *hera_options.UserOptions) *C
 	return r
 }
 
-func (r *CreateUserRequest) SetMetadata(metadata interface{}) *CreateUserRequest {
+func (r *CreateUserRequest) SetEncryptedMetadata(metadata interface{}) *CreateUserRequest {
 	if metadata != nil {
-		r.metadata = metadata
+		r.encryptedMetadata = metadata
+	}
+	return r
+}
+
+func (r *CreateUserRequest) SetSearchableMetadata(metadata interface{}) *CreateUserRequest {
+	if metadata != nil {
+		r.searchableMetadata = metadata
 	}
 	return r
 }
@@ -62,12 +71,19 @@ func (r *CreateUserRequest) Execute(ctx context.Context) (*go_hera.User, error) 
 		createUser.Birthdate = timestamppb.New(r.userOptions.Birthdate)
 		createUser.Image = r.userOptions.Image
 	}
-	if r.metadata != nil {
-		jsonMetadata, err := json.Marshal(r.metadata)
+	if r.encryptedMetadata != nil {
+		jsonMetadata, err := json.Marshal(r.encryptedMetadata)
 		if err != nil {
 			return nil, err
 		}
-		createUser.Metadata = string(jsonMetadata)
+		createUser.EncryptedMetadata = pointerx.StringPtr(string(jsonMetadata))
+	}
+	if r.searchableMetadata != nil {
+		jsonMetadata, err := json.Marshal(r.searchableMetadata)
+		if err != nil {
+			return nil, err
+		}
+		createUser.SearchableMetadata = pointerx.StringPtr(string(jsonMetadata))
 	}
 	userResp, err := r.client.CreateUser(ctx, &go_hera.HeraRequest{
 		CloudToken: accessToken,
