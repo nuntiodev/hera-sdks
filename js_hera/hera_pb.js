@@ -3185,7 +3185,8 @@ proto.Hera.Query.toObject = function(includeInstance, msg) {
     sort: jspb.Message.getFieldWithDefault(msg, 3, 0),
     order: jspb.Message.getFieldWithDefault(msg, 4, 0),
     search: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    role: jspb.Message.getFieldWithDefault(msg, 6, "")
+    role: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    metaFilter: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -3245,6 +3246,10 @@ proto.Hera.Query.deserializeBinaryFromReader = function(msg, reader) {
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setRole(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetaFilter(value);
       break;
     default:
       reader.skipField();
@@ -3314,6 +3319,13 @@ proto.Hera.Query.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -3459,6 +3471,42 @@ proto.Hera.Query.prototype.clearRole = function() {
  */
 proto.Hera.Query.prototype.hasRole = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string meta_filter = 7;
+ * @return {string}
+ */
+proto.Hera.Query.prototype.getMetaFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Hera.Query} returns this
+ */
+proto.Hera.Query.prototype.setMetaFilter = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.Hera.Query} returns this
+ */
+proto.Hera.Query.prototype.clearMetaFilter = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Hera.Query.prototype.hasMetaFilter = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
