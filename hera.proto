@@ -99,8 +99,8 @@ message User {
     optional string email = 3;
     Hash password = 4;
     optional string image = 5;
-    string searchable_metadata = 6;
-    string encrypted_metadata = 7;
+    optional string searchable_metadata = 6;
+    optional string encrypted_metadata = 7;
 	  google.protobuf.Timestamp created_at = 8;
     google.protobuf.Timestamp updated_at = 9;
     optional string first_name = 10;
