@@ -147,7 +147,7 @@ message Query {
     Order order = 4;
     string search = 5;
     optional string role = 6;
-    optional string meta_filter = 7;
+    optional string search_metadata = 7;
 }
 
 enum TokenType {
