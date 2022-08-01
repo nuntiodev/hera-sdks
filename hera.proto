@@ -145,7 +145,7 @@ message Query {
     SortBy sort = 3;
     Order order = 4;
     string search = 5;
-    string role = 6;
+    optional string role = 6;
 }
 
 enum TokenType {
